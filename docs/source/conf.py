@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'PIP'
+project = 'Semina'
 copyright = '2026, Enos'
 author = 'Enos'
 release = '1.0.0'
@@ -24,5 +24,25 @@ language = 'ja'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+html_title = 'Semina'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+html_css_files = ['custom.css']
+
+default_role = 'math'
+mathjax3_config = {
+    "tex": {
+        "macros": {
+            "R": r"\mathbb{R}",
+            "C": r"\mathbb{C}",
+            "N": r"\mathbb{N}",
+            "Z": r"\mathbb{Z}",
+            "Q": r"\mathbb{Q}",
+            "coloneqq": r"\mathrel{\mathop:}=",
+            "dd": r"\mathrm{d}",
+            "bm": [r"\boldsymbol{#1}", 1],
+            "dv": [r"\frac{\mathrm{d} #1}{\mathrm{d} #2}", 2],
+            "pdv": [r"\frac{\partial #1}{\partial #2}", 2],
+        }
+    }
+}

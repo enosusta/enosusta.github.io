@@ -1,10 +1,8 @@
-PIP
+Semina
 =================
 
 .. toctree::
    :maxdepth: 2
-   :caption: 目次:
+   :caption: ノート一覧
 
-   intro
-   notes/cat
-
+   qm

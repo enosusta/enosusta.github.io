@@ -1,0 +1,16 @@
+body {
+    font-family:
+        "Source Sans 3",
+        "Noto Sans JP",
+        sans-serif;
+}
+
+.toctree-wrapper .caption {
+    font-size: 125% !important;
+}
+
+div.math {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
