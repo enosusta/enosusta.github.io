@@ -8,3 +8,5 @@
    wavefunction/schrodinger
    wavefunction/probability
    wavefunction/normalization
+   wavefunction/momentum
+   wavefunction/uncertainty

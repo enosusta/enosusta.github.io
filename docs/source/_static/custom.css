@@ -13,4 +13,12 @@ div.math {
     overflow-x: auto;
     overflow-y: hidden;
     max-width: 100%;
+    position: relative;
+}
+
+div.math .eqno {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }

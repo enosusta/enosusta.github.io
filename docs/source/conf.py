@@ -43,6 +43,7 @@ mathjax3_config = {
             "bm": [r"\boldsymbol{#1}", 1],
             "dv": [r"\frac{\mathrm{d} #1}{\mathrm{d} #2}", 2],
             "pdv": [r"\frac{\partial #1}{\partial #2}", 2],
+            "braket": [r"\left\langle #1 \right\rangle", 1],
         }
     }
 }

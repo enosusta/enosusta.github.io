@@ -13,6 +13,7 @@
    :caption: 目次
 
    notes/qm/wavefunction
+   notes/qm/1dschrodinger
 
 参考文献
 ~~~~~~~~~~~~~~~~~
