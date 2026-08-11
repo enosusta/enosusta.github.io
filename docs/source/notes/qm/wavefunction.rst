@@ -7,3 +7,4 @@
 
    wavefunction/schrodinger
    wavefunction/probability
+   wavefunction/normalization
