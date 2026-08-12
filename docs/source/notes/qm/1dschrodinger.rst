@@ -7,3 +7,4 @@
 
    1dschrodinger/stationary
    1dschrodinger/infinitesquare
+   1dschrodinger/harmonic
