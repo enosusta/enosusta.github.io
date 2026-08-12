@@ -1,4 +1,4 @@
-1次元Schrödinger方程式
+1次元 Schrödinger 方程式
 ==========================
 
 .. toctree::
@@ -8,3 +8,5 @@
    1dschrodinger/stationary
    1dschrodinger/infinitesquare
    1dschrodinger/harmonic
+   1dschrodinger/harmonic2
+   1dschrodinger/free

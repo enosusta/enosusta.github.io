@@ -137,3 +137,137 @@
         \end{aligned}
 
 したがって， `\hat{a}_{+}` は時間に依存しない Schrödinger 方程式の解に作用して，それより一段高いエネルギーの解を生み出す。一方で， `\hat{a}_{-}` は時間に依存しない Schrödinger 方程式の解に作用して，それより一段低いエネルギーの解を生み出す。そのため， `\hat{a}_{+}` は **上昇演算子** (raising operator) と呼ばれ， `\hat{a}_{-}` は **下降演算子** (lowering operator) と呼ばれ，両方合わせて **昇降演算子** (ladder operator) と呼ばれる。
+
+これで時間に依存しない Schrödinger 方程式を解く方法が得られる。ある解が分かっていれば， `\hat{a}_+` を繰り返し作用させることで，より高いエネルギーを持つ解の「はしご」を作ることができる。しかし， `\hat{a}_-` を繰り返し作用させれば，やがて `E<0` の状態に到達してしまうが，これは不可能である。したがって，ある段階で `\hat{a}_-` を作用させるとゼロにならなければならない。つまり，ある解 `\psi_0` が存在して，
+
+.. math::
+    \hat{a}_-\psi_0 = 0
+
+とならなければならない。この条件から基底状態を求めることができる。この条件は，
+
+.. math::
+    \frac{1}{\sqrt{2\hbar m\omega}}\left(\hbar\dv{}{x} + m\omega x\right)\psi_0 = 0
+
+すなわち，
+
+.. math::
+    \dv{\psi_0}{x} = -\frac{m\omega}{\hbar}x\psi_0
+
+となる。両辺を積分すると，
+
+.. math::
+    \int \frac{\dd \psi_0}{\psi_0} = -\frac{m\omega}{\hbar}\int x\,\dd x
+
+よって，
+
+.. math::
+    \ln\psi_0 = -\frac{m\omega}{2\hbar}x^2 + \text{const.}
+
+すなわち，
+
+.. math::
+    \psi_0 = Ae^{-m\omega x^2/2\hbar}
+
+となる。規格化条件は，
+
+.. math::
+    1 = |A|^2 \int_{-\infty}^{\infty} e^{-m\omega x^2/\hbar}\,\dd x = |A|^2 \sqrt{\frac{\pi\hbar}{m\omega}}
+
+となるので， `A = (m\omega/\pi\hbar)^{1/4}` と選べる。したがって，基底状態は
+
+.. math::
+    \boxed{\psi_0 = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4} e^{-m\omega x^2/2\hbar}}
+
+となる。基底状態のエネルギーは，
+
+.. math::
+    E_0\psi_0 = \hbar\omega\left(\hat{a}_+\hat{a}_-+\frac{1}{2}\right)\psi_0 = \frac{1}{2}\hbar\omega\psi_0
+
+となる。励起状態は基底状態に上昇演算子を繰り返し作用させれば得られる：
+
+.. math::
+    \boxed{\psi_n(x) = A_n (\hat{a}_+)^n \psi_0(x),\quad E_n = \hbar\omega\left(n+\frac{1}{2}\right)}
+
+ここで `A_n` は規格化定数である。この手続きによって，全ての規格化可能な解が得られる [#]_ 。
+
+規格化定数 `A_n` も代数的に求めることができる。まず，規格化された解 `\{\psi_n\}` について
+
+.. math::
+    \hat{a}_+\psi_n = c_n\psi_{n+1},\quad \hat{a}_-\psi_n = d_n\psi_{n-1}
+
+と置く。ここで，任意の関数 `f,g` について，
+
+.. math::
+    \begin{aligned}
+        \int f^*(\hat{a}_+ g)\,\dd x &= \frac{1}{\sqrt{2\hbar m\omega}}\int f^*\left(-\hbar\dv{g}{x} + m\omega x g\right)\,\dd x
+        \\
+        &= \frac{1}{\sqrt{2\hbar m\omega}}\int \left(\hbar\dv{f^*}{x} + m\omega x f^*\right)g\,\dd x
+        \\
+        &= \int (\hat{a}_- f)^* g\,\dd x
+    \end{aligned}
+
+となる。ここで部分積分を使った。同様に，
+
+.. math::
+    \int f^*(\hat{a}_- g)\,\dd x = \int (\hat{a}_+ f)^* g\,\dd x
+
+となる。すなわち， `\hat{a}_\mp` は `\hat{a}_\pm` のエルミート共役である。また，
+
+.. math::
+    \begin{aligned}
+        \hat{a}_+\hat{a}_-\psi_n &= (\hat{a}_-\hat{a}_+ - 1)\psi_n
+        \\
+        &= \left[\left(\frac{1}{\hbar\omega}\hat{H} + \frac{1}{2}\right) - 1\right]\psi_n
+        \\
+        &= \left[\left(\frac{1}{\hbar\omega}E_n + \frac{1}{2}\right) - 1\right]\psi_n
+        \\
+        &= \left[\left(n+\frac{1}{2}\right) - \frac{1}{2}\right]\psi_n = n\psi_n
+        \\
+        \hat{a}_-\hat{a}_+\psi_n &= (\hat{a}_+\hat{a}_- + 1)\psi_n
+        \\
+        &= \left[\left(\frac{1}{\hbar\omega}E_n + \frac{1}{2}\right) + 1\right]\psi_n
+        \\
+        &= \left[\left(n+\frac{1}{2}\right) + \frac{1}{2}\right]\psi_n = (n+1)\psi_n
+    \end{aligned}
+
+となる。以上より，
+
+.. math::
+    \begin{aligned}
+        |c_n|^2 &= \int (\hat{a}_+\psi_n)^*(\hat{a}_+\psi_n)\,\dd x
+        \\
+        &= \int \psi_n^*\hat{a}_-\hat{a}_+\psi_n\,\dd x = n+1
+        \\
+        |d_n|^2 &= \int (\hat{a}_-\psi_n)^*(\hat{a}_-\psi_n)\,\dd x
+        \\
+        &= \int \psi_n^*\hat{a}_+\hat{a}_-\psi_n\,\dd x = n
+    \end{aligned}
+
+となる。よって，位相を適当に選べば，
+
+.. math::
+    \boxed{\hat{a}_+\psi_n = \sqrt{n+1}\psi_{n+1},\quad \hat{a}_-\psi_n = \sqrt{n}\psi_{n-1}}
+
+となる。したがって，規格化された励起状態は，
+
+.. math::
+    \begin{aligned}
+        \psi_1 &= \hat{a}_+\psi_0
+        \\
+        \psi_2 &= \frac{1}{\sqrt{2}}\hat{a}_+\psi_1 = \frac{1}{\sqrt{2!}}(\hat{a}_+)^2\psi_0
+        \\
+        \psi_3 &= \frac{1}{\sqrt{3}}\hat{a}_+\psi_2 = \frac{1}{\sqrt{3!}}(\hat{a}_+)^3\psi_0
+        \\
+        \psi_4 &= \frac{1}{\sqrt{4}}\hat{a}_+\psi_3 = \frac{1}{\sqrt{4!}}(\hat{a}_+)^4\psi_0
+    \end{aligned}
+
+となり，一般に
+
+.. math::
+    \boxed{\psi_n = \frac{1}{\sqrt{n!}}(\hat{a}_+)^n\psi_0}
+
+となる。すなわち規格化定数 `A_n` は `1/\sqrt{n!}` である。
+
+調和振動子型ポテンシャルの場合も，無限井戸型ポテンシャルの場合と同様に，解は正規直交していて完全である。
+
+.. [#] もし別の解があると仮定すると，別のはしごが得られると思われるかもしれないが，最下段は `\hat{a}_-\psi_0=0` を必ず満たさなければならないので，結局はしごは同じでなければならない。
