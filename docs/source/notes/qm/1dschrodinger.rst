@@ -10,3 +10,4 @@
    1dschrodinger/harmonic
    1dschrodinger/harmonic2
    1dschrodinger/free
+   1dschrodinger/delta
