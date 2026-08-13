@@ -2,7 +2,7 @@
 ==========================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: 目次
 
    1dschrodinger/stationary
@@ -11,3 +11,4 @@
    1dschrodinger/harmonic2
    1dschrodinger/free
    1dschrodinger/delta
+   1dschrodinger/finitesquare
