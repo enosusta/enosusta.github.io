@@ -8,3 +8,6 @@
    formalism/hilbert
    formalism/observable
    formalism/eigen
+   formalism/probability
+   formalism/uncertainty
+   formalism/component
