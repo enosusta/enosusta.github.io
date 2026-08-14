@@ -6,3 +6,5 @@
    :caption: 目次
 
    formalism/hilbert
+   formalism/observable
+   formalism/eigen
