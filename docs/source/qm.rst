@@ -17,6 +17,7 @@
    notes/qm/wavefunction
    notes/qm/1dschrodinger
    notes/qm/formalism
+   notes/qm/3dschrodinger
 
 Griffiths's QM (3rd Ed.) 解答例
 ------------------------------------

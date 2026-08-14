@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Semina'
+project = 'Seminarium'
 copyright = '2026, Enos'
 author = 'Enos'
 release = '1.0.0'
@@ -28,7 +28,7 @@ language = 'ja'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_title = 'Semina'
+html_title = 'Seminarium'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
@@ -47,6 +47,8 @@ mathjax3_config = {
             "bm": [r"\boldsymbol{#1}", 1],
             "dv": [r"\frac{\mathrm{d} #1}{\mathrm{d} #2}", 2],
             "pdv": [r"\frac{\partial #1}{\partial #2}", 2],
+            "ket": [r"\left| #1 \right\rangle", 1],
+            "bra": [r"\left\langle #1 \right|", 1],
             "braket": [r"\left\langle #1 \right\rangle", 1],
         }
     }

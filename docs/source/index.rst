@@ -1,8 +1,8 @@
-Semina
+Home
 =================
 
 .. toctree::
    :maxdepth: 2
-   :caption: ノート一覧
+   :caption: Notes
 
    qm
