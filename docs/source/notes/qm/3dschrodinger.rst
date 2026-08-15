@@ -6,3 +6,5 @@
    :caption: 目次
 
    3dschrodinger/schrodinger
+   3dschrodinger/hydrogen
+   3dschrodinger/angular

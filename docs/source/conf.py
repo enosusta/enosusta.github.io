@@ -43,6 +43,7 @@ mathjax3_config = {
             "Z": r"\mathbb{Z}",
             "Q": r"\mathbb{Q}",
             "coloneqq": r"\mathrel{\mathop:}=",
+            "eqqcolon": r"=\mathrel{\mathop:}",
             "dd": r"\mathrm{d}",
             "bm": [r"\boldsymbol{#1}", 1],
             "dv": [r"\frac{\mathrm{d} #1}{\mathrm{d} #2}", 2],

@@ -34,3 +34,4 @@ Griffiths's QM (3rd Ed.) 解答例
 ~~~~~~~~~~~~~~~~~
 
 .. bibliography::
+   :filter: docname in docnames
