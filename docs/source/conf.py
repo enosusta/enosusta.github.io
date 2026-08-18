@@ -45,6 +45,8 @@ mathjax3_config = {
             "coloneqq": r"\mathrel{\mathop:}=",
             "eqqcolon": r"=\mathrel{\mathop:}",
             "dd": r"\mathrm{d}",
+            "up": r"\uparrow",
+            "down": r"\downarrow",
             "bm": [r"\boldsymbol{#1}", 1],
             "dv": [r"\frac{\mathrm{d} #1}{\mathrm{d} #2}", 2],
             "pdv": [r"\frac{\partial #1}{\partial #2}", 2],

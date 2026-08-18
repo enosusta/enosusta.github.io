@@ -8,3 +8,5 @@
    3dschrodinger/schrodinger
    3dschrodinger/hydrogen
    3dschrodinger/angular
+   3dschrodinger/spin
+   3dschrodinger/elemag
