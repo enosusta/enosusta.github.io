@@ -6,4 +6,5 @@
    :caption: 目次
 
    identical/twoparticles
-   identical/atom
+   identical/atoms
+   identical/solids

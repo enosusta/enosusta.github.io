@@ -19,6 +19,7 @@
    notes/qm/formalism
    notes/qm/3dschrodinger
    notes/qm/identical
+   notes/qm/symmetries
 
 Griffiths's QM (3rd Ed.) 解答例
 ------------------------------------
