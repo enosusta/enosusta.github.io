@@ -6,3 +6,4 @@
    :caption: 目次
 
    identical/twoparticles
+   identical/atom
