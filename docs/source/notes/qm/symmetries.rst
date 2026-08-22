@@ -6,3 +6,4 @@
    :caption: 目次
 
    symmetries/intro
+   symmetries/translation
