@@ -6,11 +6,9 @@ Home
 
    -- Joseph Polchinski :cite:p:`Polchinski:1998rr`
 
-Notes
---------------
-
 .. toctree::
    :maxdepth: 2
+   :caption: ノート
 
    qm
 
