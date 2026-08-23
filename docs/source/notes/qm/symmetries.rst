@@ -8,3 +8,4 @@
    symmetries/intro
    symmetries/translation
    symmetries/conservation
+   symmetries/parity
