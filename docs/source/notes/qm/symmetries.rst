@@ -9,3 +9,5 @@
    symmetries/translation
    symmetries/conservation
    symmetries/parity
+   symmetries/rotation
+   symmetries/degeneracy
