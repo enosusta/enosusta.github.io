@@ -11,3 +11,4 @@
    symmetries/parity
    symmetries/rotation
    symmetries/degeneracy
+   symmetries/selection
