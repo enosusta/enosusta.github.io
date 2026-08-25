@@ -12,3 +12,4 @@
    symmetries/rotation
    symmetries/degeneracy
    symmetries/selection
+   symmetries/time
