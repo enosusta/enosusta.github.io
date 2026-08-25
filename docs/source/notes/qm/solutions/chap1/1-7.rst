@@ -1,0 +1,38 @@
+Problem 1.7
+===================
+
+積分範囲は `(-\infty,+\infty)` とし， `V` は実数であるとする。式 (1.35) より，
+
+.. math::
+    \braket{p} = -i\hbar\int \Psi^*\pdv{\Psi}{x}\,\dd x
+
+なので，
+
+.. math::
+    \dv{\braket{p}}{t} = -i\hbar\int\left[\pdv{\Psi^*}{t}\pdv{\Psi}{x} + \Psi^*\pdv{}{x}\left(\pdv{\Psi}{t}\right)\right]\,\dd x
+
+時間に依存しない Schrödinger 方程式とその複素共役から，
+
+.. math::
+    \begin{aligned}
+        \pdv{\Psi}{t} &= \frac{i\hbar}{2m}\pdv{^2\Psi}{x^2} - \frac{i}{\hbar}V\Psi
+        \\
+        \pdv{\Psi^*}{t} &= -\frac{i\hbar}{2m}\pdv{^2\Psi^*}{x^2} + \frac{i}{\hbar}V\Psi^*
+    \end{aligned}
+
+となる。これらを代入すると，
+
+.. math::
+    \dv{\braket{p}}{t} = \frac{\hbar^2}{2m}\int\left(\Psi^*\pdv{^3\Psi}{x^3}-\pdv{^2\Psi^*}{x^2}\pdv{\Psi}{x}\right)\,\dd x - \int |\Psi|^2\pdv{V}{x}\,\dd x
+
+となる。ここで第一項は部分積分により
+
+.. math::
+    \int\left(\Psi^*\pdv{^3\Psi}{x^3}-\pdv{^2\Psi^*}{x^2}\pdv{\Psi}{x}\right)\, \dd x = \left[\Psi^*\pdv{^2\Psi}{x^2}-\pdv{\Psi^*}{x}\pdv{\Psi}{x}\right]_{-\infty}^{+\infty} = 0
+
+となる。ここで波動関数とその導関数が無限遠でゼロになることを用いた。したがって，
+
+.. math::
+    \dv{\braket{p}}{t} = -\int |\Psi|^2\pdv{V}{x}\,\dd x = \braket{-\pdv{V}{x}}
+
+となる。

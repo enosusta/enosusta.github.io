@@ -1,0 +1,70 @@
+Problem 1.4
+================
+
+a.  規格化条件より，
+
+    .. math::
+        \begin{aligned}
+            1 &= A^2\left[\int_0^a \frac{x^2}{a^2}\,\dd x + \int_a^b\frac{(b-x)^2}{(b-a)^2}\,\dd x\right]
+            \\
+            &= A^2\left(\frac{a}{3} + \frac{b-a}{3}\right) = A^2\frac{b}{3}
+        \end{aligned}
+
+    となり， `A` は正なので，
+
+    .. math::
+        A = \sqrt{\frac{3}{b}}
+
+    となる。
+
+b.  
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        a = 1.0
+        b = 3.0
+        A = np.sqrt(3.0 / b)
+
+        x = np.linspace(0.0, b, 1000)
+        psi = np.piecewise(
+            x,
+            [x <= a, x > a],
+            [
+                lambda x: A * x / a,
+                lambda x: A * (b - x) / (b - a),
+            ],
+        )
+
+        plt.plot(x, psi)
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$\Psi(x,0)$")
+        plt.xticks([0.0, a, b], [r"$0$", r"$a$", r"$b$"])
+        plt.yticks([0.0, A], [r"$0$", r"$A$"])
+        plt.grid(alpha=0.25)
+        plt.show()
+
+c.  \(b) より `x=a` に見出される可能性が最も高い。
+
+d.  `x=a` より左で見出す確率は，
+
+    .. math::
+        P(x<a) = A^2\int_0^a \frac{x^2}{a^2}\,\dd x = \frac{3}{b}\frac{a}{3} = \frac{a}{b}
+
+    となる。 `b=a` では， `P(x<a)\to 1` となる。 `b=2a` では， `P(x<a)\to 1/2` となる。
+
+e.  `x` の期待値は，
+
+    .. math::
+        \begin{aligned}
+            \braket{x} &= A^2\left[\int_0^a x\frac{x^2}{a^2}\,\dd x + \int_a^b x\frac{(b-x)^2}{(b-a)^2}\,\dd x\right]
+            \\
+            &= A^2\left[\frac{a^2}{4} + \frac{b(b-a)}{3} - \frac{(b-a)^2}{4}\right]
+            \\
+            &= \frac{3}{b}\frac{b(b+2a)}{12} = \frac{2a+b}{4}
+        \end{aligned}
+
+    となる。

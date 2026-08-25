@@ -38,3 +38,16 @@ div.math .eqno {
     top: 50%;
     transform: translateY(-50%);
 }
+
+ol.loweralpha {
+    list-style-type: none;
+    counter-reset: item;
+}
+
+ol.loweralpha > li {
+    counter-increment: item;
+}
+
+ol.loweralpha > li::marker {
+    content: "(" counter(item, lower-alpha) ") ";
+}

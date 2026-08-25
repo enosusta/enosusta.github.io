@@ -1,0 +1,74 @@
+Problem 1.3
+===================
+
+a.  変数変換 `u=\sqrt{\lambda}(x-a)` により規格化条件は
+
+    .. math::
+        \begin{aligned}
+            1 &= A\int_{-\infty}^{\infty} e^{-\lambda(x-a)^2}\,\dd x
+            \\
+            &= \frac{A}{\sqrt{\lambda}}\int_{-\infty}^{\infty} e^{-u^2}\,\dd u
+            \\
+            &= A\sqrt{\frac{\pi}{\lambda}}
+        \end{aligned}
+
+    となるので，規格化定数は
+
+    .. math::
+        A = \sqrt{\frac{\lambda}{\pi}}
+
+    となる。
+
+b.  `y=x-a` と置くと， `\rho` は `y` の偶関数であるから，
+
+    .. math::
+        \braket{x} = \braket{y+a} = \braket{y}+a = a
+
+    同様に，
+
+    .. math::
+        \braket{x^2} = \braket{(y+a)^2} = \braket{y^2}+2a\braket{y}+a^2 = \braket{y^2}+a^2
+
+    となる。ここで，
+
+    .. math::
+        \begin{aligned}
+            \braket{y^2} &= \sqrt{\frac{\lambda}{\pi}}\int_{-\infty}^{\infty} y^2 e^{-\lambda y^2}\,\dd y
+            \\
+            &= \sqrt{\frac{\lambda}{\pi}}\frac{\sqrt{\pi}}{2\lambda^{3/2}}
+            \\
+            &= \frac{1}{2\lambda}
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        \braket{x^2} = \frac{1}{2\lambda}+a^2
+
+    となる。したがって，標準偏差は，
+
+    .. math::
+        \sigma = \sqrt{\braket{x^2}-\braket{x}^2} = \frac{1}{\sqrt{2\lambda}}
+
+    となる。
+
+c.  
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        x = np.linspace(-5, 5, 100)
+        a = 1.0
+        lambda_ = 1.0
+        A = np.sqrt(lambda_/np.pi)
+        rho = A * np.exp(-lambda_ * (x - a)**2)
+
+        plt.plot(x, rho)
+        plt.title(r'$\rho(x) = A e^{-\lambda (x-a)^2}$')
+        plt.xlabel('x')
+        plt.ylabel(r'$\rho(x)$')
+        plt.grid()
+        plt.show()

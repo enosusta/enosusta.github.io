@@ -1,0 +1,85 @@
+Problem 1.5
+======================
+
+a.  規格化条件より，
+
+    .. math::
+        \begin{aligned}
+            1 &= A^2\int_{-\infty}^{\infty} e^{-2\lambda |x|}\,\dd x
+            \\
+            &= 2A^2\int_0^{\infty} e^{-2\lambda x}\,\dd x
+            \\
+            &= 2A^2\frac{1}{2\lambda} = \frac{A^2}{\lambda}
+        \end{aligned}
+
+    となり， `A` は正なので，
+
+    .. math::
+        A = \sqrt{\lambda}
+
+    となる。
+
+b.  `|\Psi|^2 = A^2e^{-2\lambda |x|}` は `x` の偶関数であるから，
+
+    .. math::
+        \braket{x} = 0
+
+    となる。また，
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= 2\lambda\int_0^{\infty} x^2 e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\lambda\left[-\frac{1}{2\lambda}x^2 e^{-2\lambda x}\right]_0^{\infty} + 2\lambda\int_0^{\infty} \frac{1}{\lambda}x e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\int_0^{\infty} x e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\left[-\frac{1}{2\lambda}x e^{-2\lambda x}\right]_0^{\infty} + 2\int_0^{\infty} \frac{1}{2\lambda} e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\frac{1}{2\lambda}\int_0^{\infty} e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\frac{1}{2\lambda}\frac{1}{2\lambda} = \frac{1}{2\lambda^2}
+        \end{aligned}
+
+    となる。
+
+c.  \(b) より標準偏差は，
+
+    .. math::
+        \sigma = \sqrt{\braket{x^2} - \braket{x}^2} = \frac{1}{\sqrt{2}\lambda}
+
+    となる。区間 `[\braket{x}-\sigma, \braket{x}+\sigma]=[-\sigma,\sigma]` の外で粒子を見出す確率は，
+
+    .. math::
+        \begin{aligned}
+            P(|x|>\sigma) &= 2\lambda\int_{\sigma}^{\infty}e^{-2\lambda x}\,\dd x
+            \\
+            &= e^{-2\lambda \sigma} = e^{-\sqrt{2}}
+        \end{aligned}
+
+    となる。
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        lam = 1.0
+        sigma = 1.0 / (np.sqrt(2.0) * lam)
+
+        x = np.linspace(-4.0 * sigma, 4.0 * sigma, 1001)
+        probability_density = lam * np.exp(-2.0 * lam * np.abs(x))
+
+        plt.plot(x, probability_density)
+        plt.axvline(-sigma, color="tab:gray", linestyle="--")
+        plt.axvline(sigma, color="tab:gray", linestyle="--")
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$|\Psi(x,0)|^2$")
+        plt.xticks(
+            [-sigma, 0.0, sigma],
+            [r"$-\sigma$", r"$0$", r"$\sigma$"],
+        )
+        plt.grid(alpha=0.25)
+        plt.show()

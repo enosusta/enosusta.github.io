@@ -1,0 +1,29 @@
+Problem 1.8
+================
+
+元のポテンシャルを `V(x,t)` ，それに対する時間に依存する Schrödinger 方程式の解を `\Psi(x,t)` とし，
+
+.. math::
+    \Psi'(x,t) \coloneqq e^{-iV_0t/\hbar}\Psi(x,t)
+
+と定義する。時間微分を計算すると，
+
+.. math::
+    \begin{aligned}
+        i\hbar\pdv{\Psi'}{t} &= i\hbar\left[-\frac{iV_0}{\hbar}e^{-iV_0t/\hbar}\Psi(x,t) + e^{-iV_0t/\hbar}\pdv{\Psi}{t}\right]
+        \\
+        &= e^{-iV_0t/\hbar}\left[V_0\Psi(x,t) + i\hbar\pdv{\Psi}{t}\right]
+        \\
+        &= e^{-iV_0t/\hbar}\left[-\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2} + (V+V_0)\Psi(x,t)\right]
+        \\
+        &= \left[-\frac{\hbar^2}{2m}\pdv{^2}{x^2} + (V+V_0)\right]\Psi'(x,t)
+    \end{aligned}
+
+となる。ここで，時間に依存する Schrödinger 方程式を用いた。したがって， `\Psi'` はポテンシャル `V+V_0` に対する時間に依存する Schrödinger 方程式の解である。
+
+この因子は位相因子であり，任意の力学変数 `Q` と可換なので，
+
+.. math::
+    \braket{Q}' = \int \Psi'^*\hat{Q}\Psi'\,\dd x = \int \Psi^*\hat{Q}\Psi\,\dd x = \braket{Q}
+
+したがって，ポテンシャルに定数を加えても，力学変数の期待値は変化しない。

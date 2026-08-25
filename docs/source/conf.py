@@ -16,6 +16,7 @@ release = '1.0.0'
 
 extensions = [
     "sphinxcontrib.bibtex",
+    "matplotlib.sphinxext.plot_directive",
 ]
 
 bibtex_bibfiles = ['references.bib']
