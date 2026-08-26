@@ -1,2 +1,66 @@
 Problem 1.12
 ======================
+
+a.  Problem 1.11 \(b) の調和振動子の運動量は初期条件を `x(0)=A` とすると，
+
+    .. math::
+        p(t) = -m\omega A\sin(\theta),\quad \theta = \omega t
+
+    と書ける。特に最大値を
+
+    .. math::
+        p_0 \coloneqq m\omega A = \sqrt{2mE}
+
+    と置く。粒子を範囲 `\dd p` の中で見出す確率は，周期 `2\pi` の内，粒子が区間 `\dd \theta` の中で過ごす時間の割合に等しい。しかし1つの `p` に対応する `\theta` は1周期の内に2つあるので，
+
+    .. math::
+        \rho(p)\,\dd p = \frac{2\dd\theta}{2\pi} = \frac{\dd\theta}{\pi}
+
+    となる。ここで `\dv{p}{\theta} = -p_0\cos(\theta)` なので，
+
+    .. math::
+        \rho(p) = \frac{1}{\pi}\dv{\theta}{p} = \frac{1}{\pi\sqrt{p_0^2-p^2}}
+
+    となる。したがって，式 (1.43) は
+
+    .. math::
+        \rho(p) = \begin{cases}
+            \frac{1}{\pi\sqrt{p_0^2-p^2}} & (|p|<p_0) \\
+            0 & (|p|\ge p_0)
+        \end{cases}
+
+    となる。これは Problem 1.11 \(b) と同様に規格化されている。
+
+b.  `\rho(p)` は偶関数なので，
+
+    .. math::
+        \braket{p} = 0
+
+    である。また， `p=p_0\sin\theta` と積分変数を変換すると，
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2} &= \frac{1}{\pi}\int_{-p_0}^{p_0}\frac{p^2\,\dd p}{\sqrt{p_0^2-p^2}}
+            \\
+            &= \frac{p_0^2}{\pi}\int_{-\pi/2}^{\pi/2}\sin^2\theta\,\dd\theta = \frac{p_0^2}{2} = mE
+        \end{aligned}
+
+    となる。したがって，標準偏差は
+
+    .. math::
+        \sigma_p = \sqrt{\braket{p^2}-\braket{p}^2} = \sqrt{mE}
+
+    となる。
+
+c.  Problem 1.11 \(b) の結果より，
+
+    .. math::
+        \sigma_x\sigma_p = \sqrt{\frac{E}{k}}\sqrt{mE} = \frac{E}{\omega}
+
+    となる。量子力学では `E\ge \hbar\omega/2` なので，
+
+    .. math::
+        \sigma_x\sigma_p \ge \frac{\hbar}{2}
+
+    となる。これは Heisenberg の不確定性原理にほかならない。
+        

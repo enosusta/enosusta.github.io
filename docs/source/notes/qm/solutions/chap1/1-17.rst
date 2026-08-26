@@ -1,2 +1,48 @@
 Problem 1.17
 ======================
+
+a.  複素数のポテンシャル `V=V_0-i\Gamma` に対する時間に依存する Schrödinger 方程式とその複素共役は，
+
+    .. math::
+        i\hbar\pdv{\Psi}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2} + (V_0-i\Gamma)\Psi
+        \\
+        -i\hbar\pdv{\Psi^*}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi^*}{x^2} + (V_0+i\Gamma)\Psi^*
+
+    となる。Problem 1.14 と同様の計算をすると，今度はポテンシャルの虚部が相殺されず，
+
+    .. math::
+        \pdv{}{t}|\Psi|^2 = -\pdv{J}{x} - \frac{2\Gamma}{\hbar}|\Psi|^2
+
+    となる。これを全空間で積分すると，
+
+    .. math::
+        \dv{P}{t} = -[J(x,t)]_{-\infty}^{\infty} - \frac{2\Gamma}{\hbar}\int_{-\infty}^{\infty}|\Psi|^2\,\dd x
+
+    となる。規格化可能な状態では無限遠の確率の流れはゼロなので，
+
+    .. math::
+        \dv{P}{t} = -\frac{2\Gamma}{\hbar}P
+
+    となる。
+
+b.  この微分方程式を変数分離すると，
+
+    .. math::
+        \frac{\dd P}{P} = -\frac{2\Gamma}{\hbar}\,\dd t
+
+    となる。これを積分すると，
+
+    .. math::
+        \ln P = -\frac{2\Gamma}{\hbar}t + C
+
+    となる。ここで `C` は積分定数である。したがって，
+
+    .. math::
+        P(t) = P(0)\exp\left(-\frac{2\Gamma}{\hbar}t\right)
+
+    となる。初期状態が規格化されていれば `P(0)=1` である。これと `P(t)=e^{-t/\tau}` を比較すると，「寿命」 `\tau` は，
+
+    .. math::
+        \tau = \frac{\hbar}{2\Gamma}
+
+    となる。

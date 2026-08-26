@@ -1,2 +1,85 @@
 Problem 1.16
 ======================
+
+a.  規格化条件より，
+
+    .. math::
+        1 &= A^2\int_{-a}^{a}(a^2-x^2)^2\,\dd x
+        \\
+        &= 2A^2\left[a^4x-\frac{2a^2x^3}{3} + \frac{x^5}{5}\right]_0^a
+        \\
+        &= \frac{16}{15}A^2a^5
+
+    したがって，
+
+    .. math::
+        A = \frac{\sqrt{15}}{4a^{5/2}}
+
+    と選べる。
+
+b.  `|\Psi(x,0)|^2` は偶関数なので，
+
+    .. math::
+        \braket{x} = 0
+
+    となる。
+
+c.  区間 `(-a,a)` では `\Psi'(x,0) = -2Ax` であるから，
+
+    .. math::
+        \begin{aligned}
+            \braket{p} &= -i\hbar\int_{-a}^{a}\Psi^*(x,0)\Psi'(x,0)\,\dd x
+            \\
+            &= 2i\hbar A^2\int_{-a}^{a}x(a^2-x^2)\,\dd x
+            \\
+            &= 0
+        \end{aligned}
+
+    となる。この問題で与えられているのは `\Psi(x,0)` のみであり，ポテンシャル，したがって時間発展が与えられていないので， `\dv{\braket{x}}{t}` を計算することはできない。
+
+d.  `|\Psi(x,0)|^2` は偶関数なので，
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= 2A^2\int_0^a x^2(a^2-x^2)^2\,\dd x
+            \\
+            &= 2A^2\left[\frac{a^4x^3}{3} - \frac{2a^2x^5}{5} + \frac{x^7}{7}\right]_0^a
+            \\
+            &= \frac{16A^2a^7}{105} = \frac{a^2}{7}
+        \end{aligned}
+
+    となる。
+
+e.  部分積分と境界で `\Psi(\pm a,0) = 0` となることから，
+
+    .. math::
+        \braket{p^2} &= \int_{-\infty}^{\infty}\Psi^*(x,0)\left(-\hbar^2\dv{^2}{x^2}\right)\Psi(x,0)\,\dd x
+        \\
+        &= \hbar^2\int_{-a}^{a}|\Psi'(x,0)|^2\,\dd x
+        \\
+        &= 4A^2\hbar^2\int_{-a}^{a}x^2\,\dd x
+        \\
+        &= \frac{8A^2\hbar^2a^3}{3} = \frac{5\hbar^2}{2a^2}
+
+    となる。
+
+f.  \(b) と \(d) より，
+
+    .. math::
+        \sigma_x = \sqrt{\braket{x^2}-\braket{x}^2} = \frac{a}{\sqrt{7}}
+
+    となる。
+
+g.  \(c) と \(e) より，
+
+    .. math::
+        \sigma_p = \sqrt{\braket{p^2}-\braket{p}^2} = \sqrt{\frac{5}{2}}\frac{\hbar}{a}
+
+    となる。
+
+h.  \(f) と \(g) より，
+
+    .. math::
+        \sigma_x\sigma_p = \sqrt{\frac{5}{14}}\hbar \ge \frac{\hbar}{2}
+
+    となるので，不確定性原理と整合する。

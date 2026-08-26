@@ -1,2 +1,46 @@
 Problem 1.18
 ======================
+
+a.  式 (1.45) より，
+
+    .. math::
+        \frac{h}{\sqrt{3m k_BT}} > d \implies T < \frac{h^2}{3 m k_B d^2}
+
+    ここで `d=0.3\,\mathrm{nm} = 3\times 10^{-10}\,\mathrm{m}` とすると，自由電子について，
+
+    .. math::
+        T < 1.29 \times 10^5\,\mathrm{K}
+
+    となる。通常の固体の融点よりはるかに高い温度までこの基準を満たすので，通常の固体中の自由電子は量子力学的に扱わなければならない。ケイ素の原子質量は `m_\mathrm{Si}=28.09\,\mathrm{u}=4.66 \times 10^{-26}\,\mathrm{kg}` であるので，ケイ素原子核については，
+
+    .. math::
+        T < 2.5\,\mathrm{K}
+
+    となる。したがって，ケイ素原子核が量子力学的に振る舞うのは，数 Kelvin 以下の極低温に限られる。
+
+b.  理想気体の状態方程式より，1原子当たりの体積は，
+
+    .. math::
+        \frac{V}{N} = \frac{k_B T}{P}
+        
+    となる。したがって，典型的な原子間隔は
+
+    .. math::
+        d = \left(\frac{V}{N}\right)^{1/3} = \left(\frac{k_B T}{P}\right)^{1/3}
+
+    となる。式 (1.45) より，
+
+    .. math::
+        \frac{h}{\sqrt{3 m k_B T}} > \left(\frac{k_B T}{P}\right)^{1/3} \implies T < \frac{1}{k_B}\left(\frac{h^2}{3 m}\right)^{3/5}P^{2/5}
+
+    となる。大気圧 `P=1.013\times 10^5\,\mathrm{Pa}` 下のヘリウム（ `m_{\mathrm{He}}=4.003\,\mathrm{u}=6.65 \times 10^{-27}\,\mathrm{kg}` ）については，
+
+    .. math::
+        T < 2.9\,\mathrm{K}
+
+    となる。また，宇宙空間（ `T=3\,\mathrm{K}` ）の水素原子（ `m_{\mathrm{H}}=1.67 \times 10^{-27}\,\mathrm{kg}` ）については，
+
+    .. math::
+        \lambda = \frac{h}{\sqrt{3m_\mathrm{H} k_B T}} = 1.45 \times 10^{-9}\,\mathrm{m} = 1.45\,\mathrm{nm}
+
+    となる。これは原子間隔およそ `1\,\mathrm{cm}=10^{-2}\,\mathrm{m}` よりはるかに小さいので，宇宙空間の水素原子は量子力学的ではない。

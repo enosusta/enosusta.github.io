@@ -1,2 +1,89 @@
 Problem 1.11
 ======================
+
+a.  エネルギー保存則
+
+    .. math::
+        E = \frac{1}{2}mv(x)^2 + V(x)
+
+    より，速さは
+
+    .. math::
+        v(x) = \sqrt{\frac{2}{m}(E-V(x))}
+
+    となる。
+
+b.  `V(x)=kx^2/2` とし，
+
+    .. math::
+        A \coloneqq \sqrt{\frac{2E}{k}},\quad \omega \coloneqq \sqrt{\frac{k}{m}}
+
+    と置く。このとき，速さは
+
+    .. math::
+        v(x) = \sqrt{\frac{k}{m}(A^2-x^2)} = \omega\sqrt{A^2-x^2}
+
+    となる。左の転回点 `x=-A` から右の転回点 `x=A` までの時間は
+
+    .. math::
+        \begin{aligned}
+            T &= \int_{-A}^{A}\frac{\dd x}{\omega\sqrt{A^2-x^2}}
+            \\
+            &= \frac{1}{\omega}\left[\arcsin\left(\frac{x}{A}\right)\right]_{-A}^{A} = \frac{\pi}{\omega}
+        \end{aligned}
+
+    となる。したがって，式 (1.43) は
+
+    .. math::
+        \rho(x) = \begin{cases}
+            \frac{1}{\pi\sqrt{A^2-x^2}} & (|x|<A) \\
+            0 & (|x|\ge A)
+        \end{cases}
+
+    となる。これは，
+
+    .. math::
+        \int_{-\infty}^{\infty}\rho(x)\,\dd x = \frac{1}{\pi}\left[\arcsin\left(\frac{x}{A}\right)\right]_{-A}^{A} = 1
+
+    と規格化されている。
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        A = 1.0
+
+        x = np.linspace(-0.995 * A, 0.995 * A, 1001)
+        rho = 1.0 / (np.pi * np.sqrt(A**2 - x**2))
+
+        plt.plot(x, rho)
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$\rho(x)$")
+        plt.xticks([-A, 0.0, A], [r"$-A$", r"$0$", r"$A$"])
+        plt.xlim(-1.1 * A, 1.1 * A)
+        plt.grid(alpha=0.25)
+        plt.show()
+
+c.  `\rho(x)` は偶関数なので，
+
+    .. math::
+        \braket{x} = 0
+
+    である。また `x=A\sin\theta` と積分変数を変換すれば，
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= \frac{1}{\pi}\int_{-A}^{A}\frac{x^2}{\sqrt{A^2-x^2}}\,\dd x
+            \\
+            &= \frac{A^2}{\pi}\int_{-\pi/2}^{\pi/2}\sin^2\theta\,\dd\theta = \frac{E}{k}
+        \end{aligned}
+
+    となる。したがって，標準偏差は
+
+    .. math::
+        \sigma_x = \sqrt{\braket{x^2}-\braket{x}^2} = \sqrt{\frac{E}{k}}
+
+    となる。

@@ -1,2 +1,61 @@
 Problem 1.14
 ======================
+
+a.  実数ポテンシャルに対する時間に依存する Schrödinger 方程式とその複素共役は，
+
+    .. math::
+        \begin{aligned}
+            i\hbar\pdv{\Psi}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2} + V(x)\Psi
+            \\
+            -i\hbar\pdv{\Psi^*}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi^*}{x^2} + V(x)\Psi^*
+        \end{aligned}
+
+    である。したがって，
+
+    .. math::
+        \begin{aligned}
+            \pdv{|\Psi|^2}{t} &= \Psi^*\pdv{\Psi}{t} + \Psi\pdv{\Psi^*}{t}
+            \\
+            &= \frac{i\hbar}{2m}\left(\Psi^*\pdv{^2\Psi}{x^2}-\Psi\pdv{^2\Psi^*}{x^2}\right)
+            \\
+            &= -\pdv{}{x}\left[\frac{i\hbar}{2m}\left(\Psi\pdv{\Psi^*}{x}-\Psi^*\pdv{\Psi}{x}\right)\right]
+            \\
+            &= -\pdv{J}{x}
+        \end{aligned}
+
+    となる。これを `a` から `b` まで積分すると，
+
+    .. math::
+        \begin{aligned}
+            \dv{P_{ab}}{t} &= \dv{t}\int_a^b|\Psi|^2\,\dd x
+            \\
+            &= -\int_a^b\pdv{J}{x}\,\dd x = J(a,t)-J(b,t)
+        \end{aligned}
+
+    となる。1次元では確率解釈より `\Psi` の次元は `\mathbf{L}^{-1/2}` であり， `\hbar/m` の次元は `\mathbf{L}^2\mathbf{T}^{-1}` なので，
+
+    .. math::
+        [J] = \mathbf{L}^2\mathbf{T}^{-1}\mathbf{L}^{-1/2}\mathbf{L}^{-3/2} = \mathbf{T}^{-1}
+
+    となる。
+
+b.  Problem 1.9 の波動関数は
+
+    .. math::
+        \Psi = Ae^{-amx^2/\hbar}e^{-iat}
+
+    であり，
+
+    .. math::
+        \begin{aligned}
+            \pdv{\Psi}{x} &= -\frac{2amx}{\hbar}\Psi
+            \\
+            \pdv{\Psi^*}{x} &= -\frac{2amx}{\hbar}\Psi^*
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        J(x,t) = 0
+
+    となる。
