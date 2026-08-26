@@ -1,0 +1,61 @@
+Problem 2.2
+==================
+
+`V(x)` の最小値を `V_\mathrm{min}` とし， `\psi` は規格化されているとする。時間に依存しない Schrödinger 方程式
+
+.. math::
+    -\frac{\hbar^2}{2m}\psi'' + V\psi = E\psi
+
+に左から `\psi^*` を掛けて積分すると，
+
+.. math::
+    -\frac{\hbar^2}{2m}\int_{-\infty}^{\infty}\psi^*\psi''\,\dd x + \int_{-\infty}^{\infty}V|\psi|^2\,\dd x = E
+
+左辺第一項を部分積分すると，
+
+.. math::
+    \begin{aligned}
+        -\int_{-\infty}^{\infty}\psi^*\psi''\,\dd x &= -[\psi^*\psi']_{-\infty}^{\infty} + \int_{-\infty}^{\infty}(\psi^*)'\psi'\,\dd x
+        \\
+        &= \int_{-\infty}^{\infty}|\psi'|^2\,\dd x
+    \end{aligned}
+
+規格化可能な波動関数は通常，無限遠でゼロになるので，境界項は消える。したがって，
+
+.. math::
+    E = \frac{\hbar^2}{2m}\int|\psi'|^2\,\dd x + \int V(x)|\psi|^2\,\dd x
+
+ここで `V=V_\mathrm{min} + (V - V_\mathrm{min})` と分けると，
+
+.. math::
+    \begin{aligned}
+        E - V_\mathrm{min} &= \frac{\hbar^2}{2m}\int|\psi'|^2\,\dd x + \int [V(x) - V_\mathrm{min}]|\psi|^2\,\dd x
+        \\
+        &\ge 0
+    \end{aligned}
+
+となる。等号 `E=V_\mathrm{min}` が成り立つには，特に
+
+.. math::
+    \int|\psi'|^2\,\dd x = 0
+
+でなければならず，したがって `\psi'=0` が成り立つ。つまり `\psi` は定数である。しかし全実数に渡るゼロでない定数関数は規格化できず， `\psi=0` も規格化できない。したがって，規格化可能な状態について，
+
+.. math::
+    E > V_\mathrm{min}
+
+が成り立つ。
+
+ヒントに沿った解答も示しておく。もし `E<V_\mathrm{min}` であるとすると，Schrödinger 方程式
+
+.. math::
+    \psi'' = \frac{2m}{\hbar^2}[V(x) - E]\psi
+
+の係数 `2m(V-E)/\hbar^2` は正である。したがって， `\psi>0` の区間では `\psi''>0` ， `\psi<0` の区間では `\psi''<0` となる。正の波動関数で両側でゼロへ近づくには `\psi` は凸関数（ `\psi''<0` ）でなければならず，負の波動関数で両側でゼロへ近づくには `\psi` は凹関数（ `\psi''>0` ）でなければならない。したがって， `E<V_\mathrm{min}` では規格化可能な解は存在しない。
+
+古典力学においても，
+
+.. math::
+    E = \frac{p^2}{2m} + V(x) \ge V_\mathrm{min}
+
+である。ただし古典粒子はポテンシャルの最小点で `E=V_\mathrm{min}` となることができるが，量子力学では規格化可能な状態については `E>V_\mathrm{min}` である。

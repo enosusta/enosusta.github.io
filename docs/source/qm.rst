@@ -31,6 +31,7 @@ Griffiths's QM (3rd Ed.) 解答例
    :caption: 目次
 
    notes/qm/solutions/chap1
+   notes/qm/solutions/chap2
 
 参考文献
 ~~~~~~~~~~~~~~~~~
