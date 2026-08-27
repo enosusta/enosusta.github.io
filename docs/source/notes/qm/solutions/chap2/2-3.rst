@@ -1,2 +1,36 @@
 Problem 2.3
 ==================
+
+`E=0` の場合，時間に依存しない Schrödinger 方程式は
+
+.. math::
+    \psi'' = 0
+
+となる。よって，
+
+.. math::
+    \psi(x) = Ax + B
+
+となる。 `\psi(0)=0` より `B=0` であり， `\psi(a)=0` より `A=0` となる。したがって許される解は存在しない。
+
+`E<0` の場合，時間に依存しない Schrödinger 方程式は
+
+.. math::
+    \psi'' = \kappa^2\psi,\quad \kappa \coloneqq \frac{\sqrt{-2mE}}{\hbar} > 0
+
+となる。よって，
+
+.. math::
+    \psi(x) = A\sinh(\kappa x) + B\cosh(\kappa x)
+
+となる。 `\psi(0)=0` より `B=0` であり， `\psi(a)=0` より，
+
+.. math::
+    \sinh(\kappa a) = 0
+
+となる。 `\kappa a>0` より，
+
+.. math::
+    \sinh(\kappa a) = \frac{e^{\kappa a} - e^{-\kappa a}}{2} > 0
+
+なので `A=0` となる。したがって許される解は存在しない。

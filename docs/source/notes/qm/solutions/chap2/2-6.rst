@@ -1,2 +1,64 @@
 Problem 2.6
 ==================
+
+正規直交性より，
+
+.. math::
+    \begin{aligned}
+        1 &= |A|^2\int_0^a(\psi_1+e^{-i\phi}\psi_2)(\psi_1+e^{i\phi}\psi_2)\,\dd x
+        \\
+        &= |A|^2\int_0^a(\psi_1^2+\psi_2^2)\,\dd x = 2|A|^2
+    \end{aligned}
+
+となるので，位相 `\phi` に依らず
+
+.. math::
+    A = \frac{1}{\sqrt{2}}
+
+と選べる。時間発展は，
+
+.. math::
+    \Psi(x,t) = \frac{1}{\sqrt{2}}[\psi_1(x)e^{-i\omega t} + e^{i\phi}\psi_2(x)e^{-i4\omega t}]
+
+となるので，確率密度の交差項は，
+
+.. math::
+    e^{i\omega t}\psi_1 e^{i\phi}e^{-i4\omega t}\psi_2 + e^{-i\phi}e^{i4\omega t}\psi_2 e^{-i\omega t}\psi_1 = 2\psi_1\psi_2\cos(3\omega t - \phi)
+
+となり，
+
+.. math::
+    |\Psi(x,t)|^2 = \frac{1}{2}[\psi_1^2+\psi_2^2+2\psi_1\psi_2\cos(3\omega t - \phi)]
+
+となる。したがって，
+
+.. math::
+    \begin{aligned}
+        \braket{x} &= \frac{1}{2}\left[\braket{1|x|1}+\braket{2|x|2}+e^{i(\phi-3\omega t)}\braket{1|x|2} + e^{-i(\phi-3\omega t)}\braket{2|x|1}\right]
+        \\
+        &= \frac{a}{2} - \frac{16a}{9\pi^2}\cos(3\omega t - \phi)
+    \end{aligned}
+
+となる。すなわち相対位相は確率密度と  `\braket{x}` を時間方向へ `\phi/3\omega` だけシフトさせるが，角振動数と振幅には影響を与えない。
+
+特に `\phi=\pi/2` の場合，
+
+.. math::
+    \begin{aligned}
+        |\Psi|^2 &= \frac{1}{2}[\psi_1^2+\psi_2^2+2\psi_1\psi_2\sin(3\omega t)]
+        \\
+        \braket{x} &= \frac{a}{2} + \frac{16a}{9\pi^2}\sin(3\omega t)
+    \end{aligned}
+
+となる。特に `t=0` では干渉項が消える。
+
+特に `\phi=\pi` の場合，
+
+.. math::
+    \begin{aligned}
+        |\Psi|^2 &= \frac{1}{2}[\psi_1^2+\psi_2^2-2\psi_1\psi_2\cos(3\omega t)]
+        \\
+        \braket{x} &= \frac{a}{2} + \frac{16a}{9\pi^2}\cos(3\omega t)
+    \end{aligned}
+
+となる。これは `\phi=0` の場合と比べて，干渉項の符号が逆になっている。

@@ -1,2 +1,116 @@
 Problem 2.5
 ==================
+
+a.  正規直交性より，
+
+    .. math::
+        \begin{aligned}
+            1 &= |A|^2\int_0^a(\psi_1+\psi_2)^*(\psi_1+\psi_2)\,\dd x
+            \\
+            &= |A|^2\int_0^a(\psi_1^2+\psi_2^2)\,\dd x = 2|A|^2
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        A = \frac{1}{\sqrt{2}}
+
+    と選べる。
+
+b.  任意の時刻における波動関数は，
+
+    .. math::
+        \Psi(x,t) = \frac{1}{\sqrt{2}}[\psi_1(x)e^{-i\omega t} + \psi_2(x)e^{-i4\omega t}]
+
+    である。したがって，
+
+    .. math::
+        \begin{aligned}
+            |\Psi(x,t)|^2 &= \frac{1}{2}(\psi_1 e^{i\omega t} + \psi_2 e^{i4\omega t})(\psi_1 e^{-i\omega t} + \psi_2 e^{-i4\omega t})
+            \\
+            &= \frac{1}{2}[\psi_1^2+\psi_2^2+\psi_1\psi_2(e^{i3\omega t}+e^{-i3\omega t})]
+            \\
+            &= \frac{1}{2}[\psi_1^2+\psi_2^2+2\psi_1\psi_2\cos(3\omega t)]
+            \\
+            &= \frac{1}{a}\left[\sin^2\left(\frac{\pi x}{a}\right) + \sin^2\left(\frac{2\pi x}{a}\right) + 2\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)\cos(3\omega t)\right]
+        \end{aligned}
+
+    となる。
+
+c.  `\psi_n` は `a/2` に対して対称なので，行列要素の対角成分は，
+
+    .. math::
+        \braket{1|x|1} = \braket{2|x|2} = \frac{a}{2}
+
+    となる。非対角成分は，
+
+    .. math::
+        \begin{aligned}
+            \braket{1|x|2} &= \frac{2}{a}\int_0^a x\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)\,\dd x
+            \\
+            &= \frac{1}{a}\int_0^a x\left[\cos\left(\frac{\pi x}{a}\right)-\cos\left(\frac{3\pi x}{a}\right)\right]\,\dd x
+        \end{aligned}
+
+    ここで一般に，
+
+    .. math::
+        \begin{aligned}
+            J_n &\coloneqq \int_0^a x\cos\left(\frac{n\pi x}{a}\right)\,\dd x
+            \\
+            &= \left[\frac{ax}{n\pi}\sin\left(\frac{n\pi x}{a}\right) + \frac{a^2}{n^2\pi^2}\cos\left(\frac{n\pi x}{a}\right) \right]_0^a
+            \\
+            &= \frac{a^2}{n^2\pi^2}\left[(-1)^n - 1\right]
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        \braket{1|x|2} = \frac{1}{a}(J_1 - J_3) = -\frac{16a}{9\pi^2}
+
+    となる。 `\hat{x}` はエルミート演算子なので `\braket{2|x|1} = \braket{1|x|2}` である。したがって，
+
+    .. math::
+        \begin{aligned}
+            \braket{x} &= \frac{1}{2}[\braket{1|x|1}+\braket{2|x|2}+e^{-i3\omega t}\braket{1|x|2}+e^{i3\omega t}\braket{2|x|1}]
+            \\
+            &= \frac{a}{2} - \frac{16a}{9\pi^2}\cos(3\omega t)
+        \end{aligned}
+
+    となる。振動の角振動数は，
+
+    .. math::
+        \omega_\text{osc} = 3\omega = \frac{E_2-E_1}{\hbar} = \frac{3\pi^2\hbar}{2ma^2}
+
+    となり，振幅は，
+
+    .. math::
+        A_\text{osc} = \frac{16a}{9\pi^2} < \frac{a}{2}
+
+    となる。
+
+d.  Ehrenfest の定理 `\braket{p} = m\dv{\braket{x}}{t}` より，
+
+    .. math::
+        \begin{aligned}
+            \braket{p} &= m\frac{16a}{9\pi^2}\frac{3\pi^2\hbar}{2ma^2}\sin(3\omega t)
+            \\
+            &= \frac{8\hbar}{3a}\sin(3\omega t)
+        \end{aligned}
+
+    となる。
+
+e.  エネルギー固有状態の係数は `c_1 = c_2 = 1/\sqrt{2}` であるので，エネルギーの測定値と確率は，
+
+    .. math::
+        \begin{aligned}
+            E_1 &= \hbar\omega,\quad P(E_1) = |c_1|^2 = \frac{1}{2}
+            \\
+            E_2 &= 4\hbar\omega,\quad P(E_2) = |c_2|^2 = \frac{1}{2}
+        \end{aligned}
+
+    となる。したがって，エネルギーの期待値は，
+
+    .. math::
+        \braket{E} = \frac{1}{2}(E_1+E_2) = \frac{5}{2}\hbar\omega
+
+    となる。これは `E_1` と `E_2` のちょうど中間の値である。

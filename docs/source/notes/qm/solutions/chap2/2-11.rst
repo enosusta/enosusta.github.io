@@ -1,2 +1,101 @@
 Problem 2.11
 ==================
+
+a.  `|\psi_0|^2,|\psi_1|^2` はともに偶関数であるから，
+
+    .. math::
+        \braket{x}_n = 0 \quad (n=0,1)
+
+    となる。また，
+
+    .. math::
+        \begin{aligned}
+            \braket{p}_n &= -i\hbar\int_{-\infty}^{\infty}\psi_n\dv{\psi_n}{x}\,\dd x
+            \\
+            &= -\frac{i\hbar}{2}[\psi_n^2]_{-\infty}^{\infty} = 0
+        \end{aligned}
+
+    となる。ここで `\beta\coloneqq m\omega/\hbar,\xi\coloneqq\sqrt{\beta}x` と置くと，
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2}_0 &= \frac{1}{\beta\sqrt{\pi}}\int_{-\infty}^{\infty}\xi^2 e^{-\xi^2}\,\dd\xi
+            \\
+            &= \frac{1}{\beta\sqrt{\pi}}\frac{\sqrt{\pi}}{2} = \frac{\hbar}{2m\omega}
+            \\
+            \braket{x^2}_1 &= \frac{2}{\beta\sqrt{\pi}}\int_{-\infty}^{\infty}\xi^4 e^{-\xi^2}\,\dd\xi
+            \\
+            &= \frac{2}{\beta\sqrt{\pi}}\frac{3\sqrt{\pi}}{4} = \frac{3\hbar}{2m\omega}
+        \end{aligned}
+
+    となる。さらに，
+
+    .. math::
+        \begin{aligned}
+            \dv{^2\psi_0}{x^2} &= \beta(\xi^2-1)\psi_0
+            \\
+            \dv{^2\psi_1}{x^2} &= \beta(\xi^2-3)\psi_1
+        \end{aligned}
+
+    より，
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2}_0 &= -\hbar^2\beta(\braket{\xi^2}_0-1)
+            \\
+            &= -\hbar^2\beta\left(\frac{1}{2}-1\right) = \frac{m\hbar\omega}{2}
+            \\
+            \braket{p^2}_1 &= -\hbar^2\beta(\braket{\xi^2}_1-3)
+            \\
+            &= -\hbar^2\beta\left(\frac{3}{2}-3\right) = \frac{3m\hbar\omega}{2}
+        \end{aligned}
+
+    となる。
+
+b.  \(a) より標準偏差は，
+
+    .. math::
+        \begin{aligned}
+            (\sigma_x)_0 &= \sqrt{\braket{x^2}_0-\braket{x}_0^2} = \sqrt{\frac{\hbar}{2m\omega}}
+            \\
+            (\sigma_x)_1 &= \sqrt{\braket{x^2}_1-\braket{x}_1^2} = \sqrt{\frac{3\hbar}{2m\omega}}
+            \\
+            (\sigma_p)_0 &= \sqrt{\braket{p^2}_0-\braket{p}_0^2} = \sqrt{\frac{m\hbar\omega}{2}}
+            \\
+            (\sigma_p)_1 &= \sqrt{\braket{p^2}_1-\braket{p}_1^2} = \sqrt{\frac{3m\hbar\omega}{2}}
+        \end{aligned}
+
+    となる。したがって，これらの積は，
+
+    .. math::
+        \begin{aligned}
+            (\sigma_x\sigma_p)_0 &= \frac{\hbar}{2}
+            \\
+            (\sigma_x\sigma_p)_1 &= \frac{3\hbar}{2}
+        \end{aligned}
+
+    となり，どちらも Heisenberg の不確定性原理を満たす。
+
+c.  運動エネルギーとポテンシャルエネルギーは，
+
+    .. math::
+        \begin{aligned}
+            \braket{T}_0 &= \frac{\braket{p^2}_0}{2m} = \frac{\hbar\omega}{4}
+            \\
+            \braket{V}_0 &= \frac{1}{2}m\omega^2\braket{x^2}_0 = \frac{\hbar\omega}{4}
+            \\
+            \braket{T}_1 &= \frac{\braket{p^2}_1}{2m} = \frac{3\hbar\omega}{4}
+            \\
+            \braket{V}_1 &= \frac{1}{2}m\omega^2\braket{x^2}_1 = \frac{3\hbar\omega}{4}
+        \end{aligned}
+
+    となる。特に各状態について `\braket{T}_n=\braket{V}_n` であり，和は，
+
+    .. math::
+        \begin{aligned}
+            \braket{H}_0 &= \braket{T}_0+\braket{V}_0 = \frac{\hbar\omega}{2} = E_0
+            \\
+            \braket{H}_1 &= \braket{T}_1+\braket{V}_1 = \frac{3\hbar\omega}{2} = E_1
+        \end{aligned}
+
+    となり，予想通り各定常状態のエネルギー固有値と一致する。

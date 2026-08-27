@@ -1,2 +1,82 @@
 Problem 2.12
 ==================
+
+位置演算子と運動量演算子は，
+
+.. math::
+    c \coloneqq \sqrt{\frac{\hbar}{2m\omega}},\quad d \coloneqq \sqrt{\frac{\hbar m\omega}{2}}
+
+と置くと，
+
+.. math::
+    \hat{x} = c(\hat{a}_+ + \hat{a}_-),\quad \hat{p} = id(\hat{a}_+ - \hat{a}_-)
+
+と表せる。また，
+
+.. math::
+    \hat{a}_+\ket{n} = \sqrt{n+1}\ket{n+1},\quad \hat{a}_-\ket{n} = \sqrt{n}\ket{n-1}
+
+である。したがって，異なる固有状態の直交性より，
+
+.. math::
+    \begin{aligned}
+        \braket{x}_n &= c(\sqrt{n+1}\braket{n|n+1} + \sqrt{n}\braket{n|n-1}) = 0
+        \\
+        \braket{p}_n &= id(\sqrt{n+1}\braket{n|n+1} - \sqrt{n}\braket{n|n-1}) = 0
+    \end{aligned}
+
+となる。さらに，
+
+.. math::
+    \begin{aligned}
+        \hat{x}^2 &= c^2(\hat{a}_+^2 + \hat{a}_+\hat{a}_- + \hat{a}_-\hat{a}_+ + \hat{a}_-^2)
+        \\
+        \hat{p}^2 &= -d^2(\hat{a}_+^2 - \hat{a}_+\hat{a}_- - \hat{a}_-\hat{a}_+ + \hat{a}_-^2)
+    \end{aligned}
+
+であり，
+
+.. math::
+    \begin{aligned}
+        \braket{\hat{a}_+^2}_n &= \sqrt{(n+1)(n+2)}\braket{n|n+2} = 0
+        \\
+        \braket{\hat{a}_-^2}_n &= \sqrt{n(n-1)}\braket{n|n-2} = 0
+        \\
+        \braket{\hat{a}_+\hat{a}_-}_n &= \sqrt{n}\braket{n|\hat{a}_+|n-1} = n
+        \\
+        \braket{\hat{a}_-\hat{a}_+}_n &= \sqrt{n+1}\braket{n|\hat{a}_-|n+1} = n+1
+    \end{aligned}
+
+となるので，
+
+.. math::
+    \begin{aligned}
+        \braket{x^2}_n &= c^2[n+(n+1)] = \frac{\hbar}{m\omega}\left(n+\frac{1}{2}\right)
+        \\
+        \braket{p^2}_n &= d^2[n+(n+1)] = \hbar m\omega\left(n+\frac{1}{2}\right)
+    \end{aligned}
+
+となる。運動エネルギーは，
+
+.. math::
+    \braket{T}_n = \frac{\braket{p^2}_n}{2m} = \frac{\hbar\omega}{2}\left(n+\frac{1}{2}\right)
+
+となる。標準偏差は，
+
+.. math::
+    \begin{aligned}
+        (\sigma_x)_n &= \sqrt{\braket{x^2}_n - \braket{x}_n^2} = \sqrt{\frac{\hbar}{m\omega}\left(n+\frac{1}{2}\right)}
+        \\
+        (\sigma_p)_n &= \sqrt{\braket{p^2}_n - \braket{p}_n^2} = \sqrt{\hbar m\omega\left(n+\frac{1}{2}\right)}
+    \end{aligned}
+
+となるので，これらの積は，
+
+.. math::
+    \begin{aligned}
+        (\sigma_x\sigma_p)_n &= \sqrt{\frac{\hbar}{m\omega}\left(n+\frac{1}{2}\right)}\sqrt{\hbar m\omega\left(n+\frac{1}{2}\right)}
+        \\
+        &= \hbar\left(n+\frac{1}{2}\right) \geq \frac{\hbar}{2}
+    \end{aligned}
+
+となり，Heisenbergの不確定性原理を満たす。
