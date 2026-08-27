@@ -1,2 +1,111 @@
 Problem 2.13
 ==================
+
+a.  `\psi_0,\psi_1` の正規直交性より，
+
+    .. math::
+        \begin{aligned}
+            1 &= \int_{-\infty}^{\infty}|\Psi(x,0)|^2\,\dd x
+            \\
+            &= |A|^2[9\braket{\psi_0|\psi_0}+16\braket{\psi_1|\psi_1}]
+            \\
+            &= 25|A|^2
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        A = \frac{1}{5}
+    
+    と選べる。
+
+b.  `E_0=\hbar\omega/2,E_1=3\hbar\omega/2` なので，
+
+    .. math::
+        \Psi(x,t) = \frac{3}{5}\psi_0(x) e^{-i\omega t/2} + \frac{4}{5}\psi_1(x) e^{-3i\omega t/2}
+
+    となる。確率密度は，
+
+    .. math::
+        \begin{aligned}
+            |\Psi|^2 &= \left(\frac{3}{5}\psi_0 e^{-i\omega t/2} + \frac{4}{5}\psi_1 e^{-3i\omega t/2}\right)\left(\frac{3}{5}\psi_0 e^{i\omega t/2} + \frac{4}{5}\psi_1 e^{3i\omega t/2}\right)
+            \\
+            &= \frac{9}{25}\psi_0^2 + \frac{16}{25}\psi_1^2 + \frac{12}{25}\psi_0\psi_1(e^{i\omega t} + e^{-i\omega t})
+            \\
+            &= \frac{9}{25}\psi_0^2 + \frac{16}{25}\psi_1^2 + \frac{24}{25}\psi_0\psi_1\cos(\omega t)
+        \end{aligned}
+
+    となる。干渉項の角振動数は，
+
+    .. math::
+        \omega = \frac{E_1-E_0}{\hbar}
+
+    であり，もし `\psi_1` の代わりに `\psi_2` を用いた場合は，
+
+    .. math::
+        \omega' = \frac{E_2-E_0}{\hbar} = 2\omega
+
+    となる。
+
+c.  位置演算子と運動量演算子は，
+
+    .. math::
+        \begin{aligned}
+            \hat{x} &= \sqrt{\frac{\hbar}{2m\omega}}(\hat{a}_+ + \hat{a}_-)
+            \\
+            \hat{p} &= i\sqrt{\frac{\hbar m\omega}{2}}(\hat{a}_+ - \hat{a}_-)
+        \end{aligned}
+
+    と表せるので， `\hat{a}_+\ket{n}=\sqrt{n+1}\ket{n+1}, \hat{a}_-\ket{n}=\sqrt{n}\ket{n-1}` より，
+
+    .. math::
+        \begin{aligned}
+            \braket{0|\hat{x}|0} &= 0,\quad \braket{1|\hat{x}|1} = 0
+            \\
+            \braket{0|\hat{p}|0} &= 0,\quad \braket{1|\hat{p}|1} = 0
+            \\
+            \braket{0|\hat{x}|1} &= \sqrt{\frac{\hbar}{2m\omega}}\braket{0|(\hat{a}_+ + \hat{a}_-)|1} = \sqrt{\frac{\hbar}{2m\omega}}
+            \\
+            \braket{0|\hat{p}|1} &= i\sqrt{\frac{\hbar m\omega}{2}}\braket{0|(\hat{a}_+ - \hat{a}_-)|1} = -i\sqrt{\frac{\hbar m\omega}{2}}
+        \end{aligned}
+
+    となる。またエルミート性より `\braket{1|\hat{x}|0} = \braket{0|\hat{x}|1}, \braket{1|\hat{p}|0} = \braket{0|\hat{p}|1}` である。ここで，
+
+    .. math::
+        c_0(t) \coloneqq \frac{3}{5}e^{-i\omega t/2},\quad c_1(t) \coloneqq \frac{4}{5}e^{-3i\omega t/2}
+
+    と置くと，
+
+    .. math::
+        \begin{aligned}
+            \braket{x} &= c_0^*c_1\braket{0|\hat{x}|1} + c_1^*c_0\braket{1|\hat{x}|0}
+            \\
+            &= \frac{12}{25}\sqrt{\frac{\hbar}{2m\omega}}(e^{-i\omega t} + e^{i\omega t})
+            \\
+            &= \frac{24}{25}\sqrt{\frac{\hbar}{2m\omega}}\cos(\omega t)
+            \\
+            \braket{p} &= c_0^*c_1\braket{0|\hat{p}|1} + c_1^*c_0\braket{1|\hat{p}|0}
+            \\
+            &= \frac{12}{25}\sqrt{\frac{\hbar m\omega}{2}}(-ie^{-i\omega t} + ie^{i\omega t})
+            \\
+            &= -\frac{24}{25}\sqrt{\frac{\hbar m\omega}{2}}\sin(\omega t)
+        \end{aligned}
+
+    となる。これを微分すると，
+
+    .. math::
+        m\dv{\braket{x}}{t}  = -\frac{24}{25}\sqrt{\frac{\hbar m\omega}{2}}\sin(\omega t) = \braket{p}
+
+    となる。また `V=m\omega^2x^2/2` なので，
+
+    .. math::
+        \dv{\braket{p}}{t} = -m\omega^2\braket{x} = -\braket{\dv{V}{x}}
+
+    となる。よって Ehrenfest の定理が成り立つことが確認できる。
+
+d.  エネルギー固有状態の係数は `3/5,4/5` なので，
+
+    .. math::
+        P(E_0) = \frac{9}{25},\quad P(E_1) = \frac{16}{25}
+
+    となる。

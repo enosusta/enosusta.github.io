@@ -1,2 +1,20 @@
 Problem 2.18
 ==================
+
+波動関数を微分すると，
+
+.. math::
+    \pdv{\Psi_k}{x} = ik\Psi_k,\quad \pdv{\Psi_k^*}{x} = -ik\Psi_k^*
+
+となるので，確率の流れは，
+
+.. math::
+    \begin{aligned}
+        J &= \frac{i\hbar}{2m}\left(\Psi_k\pdv{\Psi_k^*}{x} - \Psi_k^*\pdv{\Psi_k}{x}\right)
+        \\
+        &= \frac{i\hbar}{2m}\left[\Psi_k(-ik\Psi_k^*) - \Psi_k^*(ik\Psi_k)\right]
+        \\
+        &= \frac{i\hbar}{2m}(-2ik|A|^2) = \frac{\hbar k}{m}|A|^2
+    \end{aligned}
+
+となる。したがって， `k>0` なら `J>0` で確率は `+x` 方向に流れ， `k<0` なら `J<0` で確率は `-x` 方向に流れ， `k=0` なら `J=0` で確率は流れない。

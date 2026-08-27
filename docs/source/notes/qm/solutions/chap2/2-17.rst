@@ -1,2 +1,32 @@
 Problem 2.17
 ==================
+
+Euler の公式
+
+.. math::
+    \begin{aligned}
+        e^{ikx} &= \cos(kx) + i\sin(kx)
+        \\
+        e^{-ikx} &= \cos(kx) - i\sin(kx)
+    \end{aligned}
+
+より，
+
+.. math::
+    \begin{aligned}
+        Ae^{ikx} + Be^{-ikx} &= A(\cos(kx) + i\sin(kx)) + B(\cos(kx) - i\sin(kx))
+        \\
+        &= (A + B)\cos(kx) + i(A - B)\sin(kx)
+    \end{aligned}
+
+となる。したがって，
+
+.. math::
+    C = A + B,\quad D = i(A - B)
+
+となる。逆に `C-iD=2A,C+iD=2B` となるので，
+
+.. math::
+    A = \frac{C-iD}{2},\quad B = \frac{C+iD}{2}
+
+となる。

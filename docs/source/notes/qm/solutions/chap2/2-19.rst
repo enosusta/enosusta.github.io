@@ -1,2 +1,104 @@
 Problem 2.19
 ==================
+
+a.  `\theta_n\coloneqq n\pi x/a` と置くと，Euler の公式より，
+
+    .. math::
+        \begin{aligned}
+            a_n\sin\theta_n+b_n\cos\theta_n &= \frac{a_n}{2i}\left(e^{i\theta_n}-e^{-i\theta_n}\right) + \frac{b_n}{2}\left(e^{i\theta_n}+e^{-i\theta_n}\right)
+            \\
+            &= \frac{b_n-ia_n}{2}e^{i\theta_n} + \frac{b_n+ia_n}{2}e^{-i\theta_n}
+        \end{aligned}
+
+    となる。そこで，
+
+    .. math::
+        c_0 \coloneqq b_0,\quad c_n \coloneqq \frac{b_n-ia_n}{2},\quad c_{-n} \coloneqq \frac{b_n+ia_n}{2}\quad (n=1,2,3,\ldots)
+
+    と置けば，
+
+    .. math::
+        f(x) = \sum_{n=-\infty}^{\infty}c_n e^{in\pi x/a}
+
+    となる。
+
+b.  複素級数の両辺に `e^{-im\pi x/a}` を掛けて `-a` から `a` まで積分すると，
+
+    .. math::
+        \int_{-a}^{a}f(x)e^{-im\pi x/a}\,\dd{x} = \sum_{n=-\infty}^{\infty}c_n\int_{-a}^{a}e^{i(n-m)\pi x/a}\,\dd{x}
+
+    となる。ここで， `q\coloneqq n-m` と置くと， `q=0` なら右辺の積分は `2a` となり， `q\neq 0` なら
+
+    .. math::
+        \begin{aligned}
+            \int_{-a}^a e^{iq\pi x/a}\,\dd x &= \frac{a}{iq\pi}[e^{iq\pi x/a}]_{-a}^a
+            \\
+            &= \frac{a}{iq\pi}(e^{iq\pi}-e^{-iq\pi})
+            \\
+            &= \frac{2a}{q\pi}\sin(q\pi) = 0
+        \end{aligned}
+
+    となる。まとめると，
+
+    .. math::
+        \int_{-a}^{a}e^{i(n-m)\pi x/a}\,\dd{x} = 2a\delta_{nm}
+
+    となる。和の中では `n=m` の項だけが残るので，
+
+    .. math::
+        \int_{-a}^{a}f(x)e^{-im\pi x/a}\,\dd{x} = 2ac_m
+
+    となる。したがって，
+
+    .. math::
+        c_n = \frac{1}{2a}\int_{-a}^{a}f(x)e^{-in\pi x/a}\,\dd{x}
+
+    となる。
+
+c.  `k_n=n\pi/a` より，
+
+    .. math::
+        \Delta k = k_{n+1}-k_n = \frac{\pi}{a}
+
+    となる。また `F(k_n)=a\sqrt{2/\pi}c_n` より，
+
+    .. math::
+        c_n = \frac{F(k_n)}{a\sqrt{2/\pi}} = \frac{\Delta k}{\sqrt{2\pi}}F(k_n)
+
+    となる。これを \(a) の複素級数に代入すると，
+
+    .. math::
+        \begin{aligned}
+            f(x) &= \sum_{n=-\infty}^{\infty}\frac{\Delta k}{\sqrt{2\pi}}F(k_n)e^{ik_nx}
+            \\
+            &= \frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty}F(k_n)e^{ik_nx}\Delta k
+        \end{aligned}
+
+    となる。一方で \(b) の結果より，
+
+    .. math::
+        \begin{aligned}
+            F(k_n) &= a\sqrt{\frac{2}{\pi}}c_n
+            \\
+            &= a\sqrt{\frac{2}{\pi}}\frac{1}{2a}\int_{-a}^{a}f(x)e^{-ik_nx}\,\dd x
+            \\
+            &= \frac{1}{\sqrt{2\pi}}\int_{-a}^{a}f(x)e^{-ik_nx}\,\dd x
+        \end{aligned}
+
+    となる。
+
+d.  `a\to\infty` とすると，適当な収束条件の下で \(c) の和は，
+
+    .. math::
+        \sum_{n=-\infty}^{\infty}F(k_n)e^{ik_nx}\Delta k \to \int_{-\infty}^{\infty}F(k)e^{ikx}\,\dd k
+
+    という Riemann 和の極限に収束する。したがって，
+
+    .. math::
+        \begin{aligned}
+            f(x) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(k)e^{ikx}\,\dd k
+            \\
+            F(k) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(x)e^{-ikx}\,\dd x
+        \end{aligned}
+
+    となる。
