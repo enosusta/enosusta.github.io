@@ -95,8 +95,7 @@
 .. important::
     `\psi` がエネルギー `E` を持つ Schrödinger 方程式の解であるとする。このとき， `\hat{a}_{\pm}\psi` はエネルギー `E \pm \hbar\omega` を持つ Schrödinger 方程式の解である。
 
-.. admonition:: 証明 [hide/show]
-    :collapsible: closed
+.. dropdown:: 証明
 
     まず， `\hat{a}_{+}` の場合を考える：
     

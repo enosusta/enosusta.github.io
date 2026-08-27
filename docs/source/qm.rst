@@ -21,6 +21,15 @@
    notes/qm/identical
    notes/qm/symmetries
 
+.. todo::
+   追加する予定の章
+
+   * 時間に依存しない（resp. する）摂動論
+   * 変分法
+   * 半古典近似
+   * 散乱
+   * 量子情報理論入門
+
 Griffiths's QM (3rd Ed.) 解答例
 ------------------------------------
 
@@ -32,6 +41,16 @@ Griffiths's QM (3rd Ed.) 解答例
 
    notes/qm/solutions/chap1
    notes/qm/solutions/chap2
+
+.. todo::
+   追加する予定の解答
+
+   * Chapter 6
+   * Chapter 7
+   * Chapter 8
+   * Chapter 9
+   * Chapter 10
+   * Chapter 11
 
 参考文献
 ~~~~~~~~~~~~~~~~~

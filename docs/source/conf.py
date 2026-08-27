@@ -18,9 +18,16 @@ extensions = [
     "sphinxcontrib.bibtex",
     "matplotlib.sphinxext.plot_directive",
     "sphinx_exec_code",
+    "sphinx_copybutton",
+    "sphinx_design",
+    "sphinx.ext.autosectionlabel",
+    "sphinx.ext.todo",
 ]
 
 bibtex_bibfiles = ['references.bib']
+autosectionlabel_prefix_document = True
+todo_include_todos = True
+todo_link_only = True
 
 templates_path = ['_templates']
 exclude_patterns = []

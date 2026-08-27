@@ -16,8 +16,7 @@
 .. important::
     固有値は実数である。
 
-.. admonition:: 証明 [hide/show]
-    :collapsible: closed
+.. dropdown:: 証明
 
     次を仮定する：
 
@@ -39,8 +38,7 @@
 .. important::
     異なる固有値に属する固有関数は直交する。
 
-.. admonition:: 証明 [hide/show]
-    :collapsible: closed
+.. dropdown:: 証明
 
     次を仮定する：
 

@@ -11,8 +11,7 @@
 
     が成り立つ。
 
-.. admonition:: 証明 [hide/show]
-    :collapsible: closed
+.. dropdown:: 証明
 
     任意の可観測量 `A` について，
 

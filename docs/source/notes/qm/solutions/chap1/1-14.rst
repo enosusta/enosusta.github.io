@@ -39,7 +39,7 @@ a.  実数ポテンシャルに対する時間に依存する Schrödinger 方�
 
     となる。
 
-b.  Problem 1.9 の波動関数は
+b.  :ref:`notes/qm/solutions/chap1/1-9:Problem 1.9` の波動関数は
 
     .. math::
         \Psi = Ae^{-amx^2/\hbar}e^{-iat}

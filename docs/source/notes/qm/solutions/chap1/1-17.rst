@@ -8,7 +8,7 @@ a.  複素数のポテンシャル `V=V_0-i\Gamma` に対する時間に依存�
         \\
         -i\hbar\pdv{\Psi^*}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi^*}{x^2} + (V_0+i\Gamma)\Psi^*
 
-    となる。Problem 1.14 と同様の計算をすると，今度はポテンシャルの虚部が相殺されず，
+    となる。:ref:`notes/qm/solutions/chap1/1-14:Problem 1.14` と同様の計算をすると，今度はポテンシャルの虚部が相殺されず，
 
     .. math::
         \pdv{}{t}|\Psi|^2 = -\pdv{J}{x} - \frac{2\Gamma}{\hbar}|\Psi|^2
