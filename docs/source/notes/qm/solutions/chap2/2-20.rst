@@ -1,2 +1,85 @@
 Problem 2.20
 ==================
+
+a.  規格化条件より，
+
+    .. math::
+        \begin{aligned}
+            1 &= A^2\int_{-\infty}^{\infty}e^{-2a|x|}\,\dd x
+            \\
+            &= 2A^2\int_{0}^{\infty}e^{-2ax}\,\dd x
+            \\
+            &= 2A^2\left[-\frac{e^{-2ax}}{2a}\right]_{0}^{\infty} = \frac{A^2}{a}
+        \end{aligned}
+
+    となり， `A` は正なので，
+
+    .. math::
+        A = \sqrt{a}
+
+    となる。
+
+b.  Foutier 変換は，
+
+    .. math::
+        \begin{aligned}
+            \phi(k) &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left[\int_{-\infty}^{0}e^{ax}e^{-ikx}\,\dd x + \int_0^\infty e^{-ax}e^{-ikx}\,\dd x\right]
+            \\
+            &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left[\int_{-\infty}^{0}e^{(a-ik)x}\,\dd x + \int_0^\infty e^{-(a+ik)x}\,\dd x\right]
+            \\
+            &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left(\left[\frac{e^{(a-ik)x}}{a-ik}\right]_{-\infty}^{0} + \left[-\frac{e^{-(a+ik)x}}{a+ik}\right]_0^\infty\right)
+            \\
+            &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left(\frac{1}{a-ik} + \frac{1}{a+ik}\right) = \sqrt{\frac{2}{\pi}}\frac{a^{3/2}}{a^2+k^2}
+        \end{aligned}
+
+    となる。
+
+c.  一般解
+
+    .. math::
+        \Psi(x,t) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\phi(k)e^{i(kx-\hbar k^2t/2m)}\,\dd k
+
+    に \(b) の結果を代入すると，
+
+    .. math::
+        \begin{aligned}
+            \Psi(x,t) &= \frac{1}{\sqrt{2\pi}}\sqrt{\frac{2}{\pi}}a^{3/2}\int_{-\infty}^{\infty}\frac{e^{i(kx-\hbar k^2t/2m)}}{a^2+k^2}\,\dd k
+            \\
+            &= \frac{a^{3/2}}{\pi}\int_{-\infty}^{\infty}\frac{e^{i(kx-\hbar k^2t/2m)}}{a^2+k^2}\,\dd k
+        \end{aligned}
+
+    となる。
+
+d.  `|\Psi(x,0)|^2,|\phi(k)|^2` は偶関数なので，
+
+    .. math::
+        \braket{x} = \braket{k} = 0
+
+    となる。また，
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= 2a\int_0^\infty x^2e^{-2ax}\,\dd x
+            \\
+            &= 2a\frac{2!}{(2a)^3} = \frac{1}{2a^2}
+            \\
+            \braket{k^2} &= \frac{2a^3}{\pi}\int_{-\infty}^{\infty}\frac{k^2}{(a^2+k^2)^2}\,\dd k
+            \\
+            &= \frac{2a^3}{\pi}\frac{\pi}{2a} = a^2
+        \end{aligned}
+
+    となるので，標準偏差は，
+
+    .. math::
+        \begin{aligned}
+            \sigma_x &= \sqrt{\braket{x^2}-\braket{x}^2} = \frac{1}{\sqrt{2}a}
+            \\
+            \sigma_p &= \hbar\sqrt{\braket{k^2}-\braket{k}^2} = \hbar a
+        \end{aligned}
+
+    となり，これらの積は，
+
+    .. math::
+        \sigma_x\sigma_p = \frac{\hbar}{\sqrt{2}}
+
+    となり，Heisenberg の不確定性原理を満たす。したがって， `a` が非常に大きい場合，初期波動関数は `x=0` 近傍に鋭いピークを持ち， `\phi(k)` は大きく広がる。逆に， `a` が非常に小さい場合，初期波動関数は大きく広がり， `\phi(k)` は `k=0` 近傍に鋭いピークを持つ。

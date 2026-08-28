@@ -1,2 +1,29 @@
 Problem 2.25
 ==================
+
+束縛状態を `\psi_b` ，散乱状態を `\psi_k` とすると，
+
+.. math::
+    \begin{aligned}
+        \braket{\psi_b|\psi_k} &= \sqrt{\kappa}\left[\int_{-\infty}^{0}e^{\kappa x}(Ae^{ikx}+Be^{-ikx})\,\dd x + \int_0^{\infty}e^{-\kappa x}Fe^{ikx}\,\dd x\right]
+        \\
+        &= \sqrt{\kappa}\left(A\left[\frac{e^{(\kappa+ik)x}}{\kappa+ik}\right]_{-\infty}^{0} + B\left[\frac{e^{(\kappa-ik)x}}{\kappa-ik}\right]_{-\infty}^0 + F\left[-\frac{e^{(-\kappa + ik)x}}{\kappa-ik}\right]_0^{\infty}\right)
+        \\
+        &= \sqrt{\kappa}\left[\frac{A}{\kappa+ik} + \frac{B+F}{\kappa-ik}\right]
+    \end{aligned}
+
+ここで，
+
+.. math::
+    \begin{aligned}
+        B + F &= \frac{1+i(\kappa/k)}{1-i(\kappa/k)}A
+        \\
+        &= \frac{k+i\kappa}{k-i\kappa}A = -\frac{\kappa-ik}{\kappa+ik}A
+    \end{aligned}
+
+となるので，
+
+.. math::
+    \braket{\psi_b|\psi_k} = 0
+
+となる。

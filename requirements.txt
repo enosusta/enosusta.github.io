@@ -6,3 +6,7 @@ matplotlib==3.11.1
 sphinx-exec-code==0.18
 sphinx-copybutton==0.5.2
 sphinx-design==0.7.0
+
+sphinx-sitemap==2.9.0
+sphinxext-opengraph==0.13.0
+sphinx-notfound-page==1.1.0

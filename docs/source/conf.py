@@ -22,6 +22,9 @@ extensions = [
     "sphinx_design",
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.todo",
+    "sphinx_sitemap",
+    "sphinxext.opengraph",
+    "notfound.extension",
 ]
 
 bibtex_bibfiles = ['references.bib']
@@ -42,7 +45,7 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 html_favicon = '_static/logo.svg'
-
+html_baseurl = 'https://enosusta.github.io/'
 html_theme_options = {
     # 'analytics_id': 'G-XXXXXXXXXX',
     'analytics_anonymize_ip': False,
@@ -60,6 +63,12 @@ html_theme_options = {
     'navigation_depth': 4,
     'includehidden': True,
     'titles_only': False
+}
+
+ogp_site_url = 'https://enosusta.github.io/' # check usage later
+ogp_social_cards = {
+    "font": "Noto Sans CJK JP",
+    "enable": False,
 }
 
 # -- Options for LaTeX output ------------------------------------------------

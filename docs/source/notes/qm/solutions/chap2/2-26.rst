@@ -1,2 +1,14 @@
 Problem 2.26
 ==================
+
+`\delta(x)` の Fourier 変換は，
+
+.. math::
+    \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\delta(x)e^{-ikx}\,\dd x = \frac{1}{\sqrt{2\pi}}
+
+となる。これを逆 Fourier 変換すると，
+
+.. math::
+    \delta(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{ikx}\,\dd k = \frac{1}{2\pi}\int_{-\infty}^{\infty}e^{ikx}\,\dd k
+
+となる。

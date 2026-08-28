@@ -1,2 +1,49 @@
 Problem 2.23
 ==================
+
+a.  任意の滑らかなテスト関数 `f(x)` に対して
+
+    .. math::
+        I \coloneqq \int_{-\infty}^{\infty}f(x)\delta(cx)\,\dd x
+
+    を考える。積分変数を `u=cx\,(c>0)` と変換すると，
+
+    .. math::
+        I = \frac{1}{c}\int_{-\infty}^{\infty}f\left(\frac{u}{c}\right)\delta(u)\,\dd u = \frac{f(0)}{c}
+
+    となる。一方で `c<0` の場合は，
+
+    .. math::
+        I = -\frac{1}{c}\int_{-\infty}^{\infty}f\left(\frac{u}{c}\right)\delta(u)\,\dd u = -\frac{f(0)}{c}
+
+    となる。まとめると，
+
+    .. math::
+        \int f(x)\delta(cx)\,\dd x = \frac{f(0)}{|c|} = \int f(x)\frac{\delta(x)}{|c|}\,\dd x
+
+    となる。したがって，
+
+    .. math::
+        \delta(cx) = \frac{\delta(x)}{|c|}
+
+    となる。
+
+b.  無限遠でゼロになる滑らかな関数 `f(x)` に対して，
+
+    .. math::
+        \begin{aligned}
+            \int_{-\infty}^{\infty}f(x)\dv{\theta}{x}\,\dd x &= -\int_{-\infty}^{\infty}f'(x)\theta(x)\,\dd x
+            \\
+            &= -\int^{\infty}_{0}f'(x)\,\dd x
+            \\
+            &= -[f(x)]_0^{\infty}
+            \\
+            &= f(0) = \int_{-\infty}^{\infty}f(x)\delta(x)\,\dd x
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \dv{\theta}{x} = \delta(x)
+
+    となる。

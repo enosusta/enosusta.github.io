@@ -51,6 +51,8 @@ Griffiths's QM (3rd Ed.) 解答例
    * Chapter 9
    * Chapter 10
    * Chapter 11
+   * Chapter 12
+   * Chapter A
 
 参考文献
 ~~~~~~~~~~~~~~~~~
