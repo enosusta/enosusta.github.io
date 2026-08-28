@@ -1,2 +1,97 @@
 Problem 2.29
 ==================
+
+奇関数では井戸内の `\cos` 項が消え `\sin` 項だけが残るので，
+
+.. math::
+    \psi(x) = \begin{cases}
+        -F e^{\kappa x} & (x < -a)
+        \\
+        C \sin(lx) & (-a < x < a)
+        \\
+        F e^{-\kappa x} & (x > a)
+    \end{cases}
+
+となる。 `x=a` における波動関数の連続性より，
+
+.. math::
+    F e^{-\kappa a} = C\sin(la)
+
+導関数の連続性より，
+
+.. math::
+    -\kappa F e^{-\kappa a} = l C \cos(la)
+
+となる。第二式で第一式を割ると，
+
+.. math::
+    \kappa = -l \cot(la)
+
+となる。ここで，`\kappa^2+l^2 = 2mV_0/\hbar^2` より，
+
+.. math::
+    \kappa a = \sqrt{z_0^2 - z^2}
+
+となるので，境界条件は，
+
+.. math::
+    -\cot(z) = \sqrt{\left(\frac{z_0}{z}\right)^2 - 1}\quad (0 < z < z_0)
+
+となる。
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    z_0 = 8.0
+    y_max = 5.0
+    z = np.linspace(1.0e-3, z_0 - 1.0e-3, 5000)
+
+    left_hand_side = -1.0 / np.tan(z)
+    right_hand_side = np.sqrt((z_0 / z) ** 2 - 1.0)
+
+    left_hand_side[
+        (left_hand_side < 0.0) | (left_hand_side > y_max)
+    ] = np.nan
+    right_hand_side[right_hand_side > y_max] = np.nan
+
+    plt.plot(z, left_hand_side, label=r"$-\cot z$")
+    plt.plot(
+        z,
+        right_hand_side,
+        linewidth=2.0,
+        label=r"$\sqrt{(z_0/z)^2-1}$",
+    )
+    plt.xlabel(r"$z$")
+    plt.ylabel("Both sides of the boundary condition")
+    plt.xticks(
+        [0.0, np.pi / 2.0, np.pi, 3.0 * np.pi / 2.0, 2.0 * np.pi,
+         5.0 * np.pi / 2.0],
+        [r"$0$", r"$\pi/2$", r"$\pi$", r"$3\pi/2$", r"$2\pi$",
+         r"$5\pi/2$"],
+    )
+    plt.xlim(0.0, z_0)
+    plt.ylim(0.0, y_max)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()
+
+`z_0 \gg 1` で各交点は，
+
+.. math::
+    z_n \approx \frac{n\pi}{2} \quad (n=2,4,6,\ldots)
+
+となるので，エネルギーは，
+
+.. math::
+    E_n + V_0 = \frac{\hbar^2 z_n^2}{2ma^2} \approx \frac{n^2\pi^2\hbar^2}{2m(2a)^2}
+
+となる。これは幅 `2a` の無限井戸型ポテンシャルの内， `n` が偶数である奇関数の固有状態のエネルギーに一致する。また束縛状態が少なくともひとつ存在するためには
+
+.. math::
+    z_0 > \frac{\pi}{2} \iff V_0 > \frac{\pi^2\hbar^2}{8ma^2}
+
+でなければならない。つまり，奇関数の束縛状態は常に存在するとは限らない。

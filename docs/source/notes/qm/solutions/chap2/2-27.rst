@@ -1,2 +1,307 @@
 Problem 2.27
 ==================
+
+a.
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        alpha = 1.0
+        a = 1.0
+        epsilon = 0.06 * a
+
+        def delta_approximation(x):
+            return (
+                np.exp(-x**2 / (2.0 * epsilon**2))
+                / (np.sqrt(2.0 * np.pi) * epsilon)
+            )
+
+        x = np.linspace(-2.5 * a, 2.5 * a, 2001)
+        potential = -alpha * (
+            delta_approximation(x + a) + delta_approximation(x - a)
+        )
+
+        plt.plot(x, potential)
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$V(x)$")
+        plt.xticks([-a, 0.0, a], [r"$-a$", r"$0$", r"$a$"])
+        plt.xlim(x[0], x[-1])
+        plt.grid(alpha=0.25)
+        plt.show()
+
+b.  デルタ関数の無い領域では，束縛状態に対する時間に依存しない Schrödinger 方程式は
+
+    .. math::
+        \psi'' = \kappa^2\psi,\quad \kappa \coloneqq \sqrt{-2mE}/\hbar > 0
+
+    である。ポテンシャルは偶関数なので，固有関数は偶関数か奇関数である。無限遠でゼロにある解を両方のデルタ関数の中心に置いた形で組み合わせると，
+
+    .. math::
+        \begin{aligned}
+            \psi_+(x) &= N_+(e^{-\kappa|x-a|} + e^{-\kappa|x+a|})
+            \\
+            \psi_-(x) &= N_-(e^{-\kappa|x-a|} - e^{-\kappa|x+a|})
+        \end{aligned}
+
+    となる。ここで `N_\pm` は規格化定数である。波動関数そのものは `x=\pm a` で連続であるが，導関数はデルタ関数の中心 `x_0` で
+
+    .. math::
+        \psi'(x_0^+) - \psi'(x_0^-) = -2\gamma\psi(x_0),\quad \gamma \coloneqq m\alpha/\hbar^2
+
+    となる。この境界条件は `x=a` で課せば十分である。偶関数解について，
+
+    .. math::
+        \begin{aligned}
+            \psi_+(a) &= N_+(1 + e^{-2\kappa a})
+            \\
+            \psi_+'(a^+) - \psi_+'(a^-) &= -2\kappa N_+
+        \end{aligned}
+
+    となるので，境界条件より，
+
+    .. math::
+        \kappa = \gamma(1 + e^{-2\kappa a})
+
+    となる。同様に奇関数解について，
+
+    .. math::
+        \begin{aligned}
+            \psi_-(a) &= N_-(1 - e^{-2\kappa a})
+            \\
+            \psi_-'(a^+) - \psi_-'(a^-) &= -2\kappa N_-
+        \end{aligned}
+
+    となるので，境界条件より，
+
+    .. math::
+        \kappa = \gamma(1 - e^{-2\kappa a})
+
+    となる。ここで，
+
+    .. math::
+        y \coloneqq \kappa a,\quad g \coloneqq \gamma a = \frac{m\alpha a}{\hbar^2}
+
+    と置けば，これらの境界条件は，
+
+    .. math::
+        \begin{aligned}
+            y &= g(1\pm e^{-2y}),\quad E = -\frac{\hbar^2}{2ma^2}y^2
+        \end{aligned}
+
+    となる。ここで奇関数について `\kappa=0` の周りで右辺が `2\gamma a \kappa` となるが，この傾きが `1` より小さい場合，すなわち `2\gamma a < 1` の場合，正の解は存在しないことに注意する（グラフ参照）。
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        def plot_boundary_conditions(ax, g, y_max):
+            y = np.linspace(0.0, y_max, 1001)
+
+            ax.plot(y, y, color="black", label=r"$y$")
+            ax.plot(
+                y,
+                g * (1.0 + np.exp(-2.0 * y)),
+                label=r"$g(1+e^{-2y})$",
+            )
+            ax.plot(
+                y,
+                g * (1.0 - np.exp(-2.0 * y)),
+                label=r"$g(1-e^{-2y})$",
+            )
+            ax.set(
+                xlabel=r"$y$",
+                title=rf"$g={g:g}$",
+                xlim=(0.0, y_max),
+                ylim=(0.0, y_max),
+            )
+            ax.grid(alpha=0.25)
+            ax.legend()
+
+        fig, axes = plt.subplots(
+            1,
+            2,
+            figsize=(10, 4.2),
+            constrained_layout=True,
+        )
+        plot_boundary_conditions(axes[0], g=1.0, y_max=2.0)
+        plot_boundary_conditions(axes[1], g=1.0 / 4.0, y_max=0.7)
+        axes[1].set_title(r"$g=1/4$")
+        axes[0].set_ylabel("Both sides of the boundary condition")
+        plt.show()
+
+    まず， `\alpha=\hbar^2/ma` の場合，すなわち `g=1` の場合，解 `y` とエネルギー `E` は次のようになる：
+
+    .. exec_code::
+
+        import numpy as np
+        from scipy.optimize import brentq
+
+        g = 1.0
+
+        def even_boundary_condition(y):
+            return y - g * (1.0 + np.exp(-2.0 * y))
+
+        def odd_boundary_condition(y):
+            return y - g * (1.0 - np.exp(-2.0 * y))
+
+        y_even = brentq(even_boundary_condition, 0.0, 2.0 * g)
+
+        y_odd = brentq(odd_boundary_condition, 1.0e-8, 2.0 * g)
+
+        energy_even = -0.5 * y_even**2
+        energy_odd = -0.5 * y_odd**2
+
+        print(f"even: y = {y_even:.6f}, E = {energy_even:.6f} hbar^2/(m a^2)")
+        print(f"odd : y = {y_odd:.6f}, E = {energy_odd:.6f} hbar^2/(m a^2)")
+
+    次に， `\alpha=\hbar^2/4ma` の場合，すなわち `g=1/4` の場合，解 `y` とエネルギー `E` は次のようになる：
+
+    .. exec_code::
+
+        import numpy as np
+        from scipy.optimize import brentq
+
+        g = 1.0 / 4.0
+
+        def even_boundary_condition(y):
+            return y - g * (1.0 + np.exp(-2.0 * y))
+
+        def odd_boundary_condition(y):
+            return y - g * (1.0 - np.exp(-2.0 * y))
+
+        y_even = brentq(even_boundary_condition, 0.0, 2.0 * g)
+
+        energy_even = -0.5 * y_even**2
+
+        print(f"even: y = {y_even:.6f}, E = {energy_even:.7f} hbar^2/(m a^2)")
+
+        if 2.0 * g > 1.0:
+            y_odd = brentq(odd_boundary_condition, 1.0e-8, 2.0 * g)
+            energy_odd = -0.5 * y_odd**2
+            print(f"odd : y = {y_odd:.6f}, E = {energy_odd:.7f} hbar^2/(m a^2)")
+        else:
+            print("odd : no positive root (2g <= 1)")
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.optimize import brentq
+
+        a = 1.0
+
+        def boundary_condition(y, g, parity):
+            sign = 1.0 if parity == "even" else -1.0
+            return y - g * (1.0 + sign * np.exp(-2.0 * y))
+
+        def wave_function(x, y, parity):
+            kappa = y / a
+            sign = 1.0 if parity == "even" else -1.0
+            unnormalized = (
+                np.exp(-kappa * np.abs(x - a))
+                + sign * np.exp(-kappa * np.abs(x + a))
+            )
+            norm_squared = (
+                2.0 / kappa
+                + 2.0 * sign * np.exp(-2.0 * kappa * a)
+                * (2.0 * a + 1.0 / kappa)
+            )
+            return unnormalized / np.sqrt(norm_squared)
+
+        g_one = 1.0
+        y_even_one = brentq(
+            lambda y: boundary_condition(y, g_one, "even"),
+            0.0,
+            2.0 * g_one,
+        )
+        y_odd_one = brentq(
+            lambda y: boundary_condition(y, g_one, "odd"),
+            1.0e-8,
+            2.0 * g_one,
+        )
+
+        g_quarter = 1.0 / 4.0
+        y_even_quarter = brentq(
+            lambda y: boundary_condition(y, g_quarter, "even"),
+            0.0,
+            2.0 * g_quarter,
+        )
+
+        x_one = np.linspace(-6.0 * a, 6.0 * a, 2001)
+        x_quarter = np.linspace(-8.0 * a, 8.0 * a, 2001)
+
+        fig, axes = plt.subplots(
+            1,
+            2,
+            figsize=(10, 4.2),
+            sharey=True,
+            constrained_layout=True,
+        )
+
+        axes[0].plot(
+            x_one,
+            wave_function(x_one, y_even_one, "even"),
+            label=r"$\psi_+$",
+        )
+        axes[0].plot(
+            x_one,
+            wave_function(x_one, y_odd_one, "odd"),
+            label=r"$\psi_-$",
+        )
+        axes[0].set_title(r"$g=1$")
+        axes[0].legend()
+
+        axes[1].plot(
+            x_quarter,
+            wave_function(x_quarter, y_even_quarter, "even"),
+            label=r"$\psi_+$",
+        )
+        axes[1].set_title(r"$g=1/4$")
+        axes[1].legend()
+
+        for ax in axes:
+            ax.axhline(0.0, color="black", linewidth=0.8)
+            ax.axvline(-a, color="tab:gray", linestyle="--", linewidth=0.8)
+            ax.axvline(a, color="tab:gray", linestyle="--", linewidth=0.8)
+            ax.set_xlabel(r"$x$")
+            ax.set_xticks([-a, a], [r"$-a$", r"$a$"])
+            ax.grid(alpha=0.25)
+
+        axes[0].set_ylabel(r"$\psi(x)$")
+        plt.show()
+
+c.  `\alpha` を固定して `a\to 0` とすると，
+
+    .. math::
+        V(x) \to -2\alpha\delta(x)
+
+    となる。また， `e^{-2\kappa a}\to 1` なので偶関数の境界条件より
+
+    .. math::
+        \kappa \to 2\gamma
+
+    となり，束縛状態のエネルギーは
+
+    .. math::
+        E_+ \to -\frac{2m\alpha^2}{\hbar^2}
+
+    となる。これは強さ `2\alpha` のひとつのデルタ関数型ポテンシャルの束縛状態のエネルギーに一致する。また `2\gamma a > 1` はこの極限で破れるため，奇関数解は無くなる。一方で， `a\to\infty` とすると， `e^{-2\kappa a}\to 0` なので境界条件より
+
+    .. math::
+        \kappa \to \gamma
+
+    となり，偶奇どちらについても束縛状態のエネルギーは
+
+    .. math::
+        E_{\pm} \to -\frac{m\alpha^2}{2\hbar^2}
+
+    となる。これは強さ `\alpha` のひとつのデルタ関数型ポテンシャルの束縛状態のエネルギーに一致する。これは，二つのデルタ関数が十分離れている場合，それぞれの束縛状態が独立して存在することを意味する。

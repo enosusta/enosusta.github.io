@@ -65,7 +65,7 @@ html_theme_options = {
     'titles_only': False
 }
 
-ogp_site_url = 'https://enosusta.github.io/' # check usage later
+ogp_site_url = 'https://enosusta.github.io/'
 ogp_social_cards = {
     "font": "Noto Sans CJK JP",
     "enable": False,

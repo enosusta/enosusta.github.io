@@ -1,2 +1,53 @@
 Problem 2.28
 ==================
+
+ひとつのデルタ関数型ポテンシャルに対する透過波と反射波の振幅は，式 (2.140) より，
+
+.. math::
+    t_1 = \frac{1}{1-i\beta},\quad r_1 = \frac{i\beta}{1-i\beta}
+
+である。2つのデルタ関数の間の伝播で位相因子 `e^{2ika}` を得るので，左から入射してきた入射波が左のデルタ関数を透過し，さらに右のデルタ関数を透過する振幅は
+
+.. math::
+    t_1 e^{2ika} t_1 = t_1^2 e^{2ika}
+
+となる。一般に，左のデルタ関数を透過した後，デルタ関数の間を `n` 往復して，右のデルタ関数を透過する振幅は `t_1^2 e^{2ika} (r_1^2 e^{4ika})^n` である。したがって，左から入射してきた入射波が右のデルタ関数を透過する振幅は，
+
+.. math::
+    \begin{aligned}
+        t &= t_1^2 e^{2ika} \sum_{n=0}^{\infty}(r_1^2 e^{4ika})^n
+        \\
+        &= t_1^2 e^{2ika} \frac{1}{1-r_1^2 e^{4ika}}
+        \\
+        &= \frac{e^{2ika}}{(1-i\beta)^2 + \beta^2 e^{4ika}}
+    \end{aligned}
+
+となる。ここで， `\theta \coloneqq 2ka` と置くと，分母は，
+
+.. math::
+    \begin{aligned}
+        (1-i\beta)^2 + \beta^2 e^{2i\theta} &= 1 - 2i\beta - \beta^2 + \beta^2(\cos\theta + i\sin\theta)
+        \\
+        &= (1-2\beta^2\sin^2\theta) + 2i\beta(-1 + \beta\sin\theta\cos\theta)
+    \end{aligned}
+
+となるので，
+
+.. math::
+    |(1-i\beta)^2 + \beta^2 e^{4ika}| &= (1-2\beta^2\sin^2\theta)^2 + 4\beta^2(1 - \beta\sin\theta\cos\theta)^2
+    \\
+    &= 1 + 4\beta^2\cos^2\theta - 8\beta^3\sin\theta\cos\theta + 4\beta^4\sin^2\theta
+    \\
+    &= 1 + 4\beta^2(\cos\theta-\beta\sin\theta)^2
+
+となり，透過係数は，
+
+.. math::
+    T = |t|^2 = \frac{1}{1 + 4\beta^2[\cos(2ka)-\beta\sin(2ka)]^2}
+
+となる。実際 `a\to 0` で
+
+.. math::
+    T \to \frac{1}{1 + 4\beta^2}
+
+となり，強さ `2\alpha` のひとつのデルタ関数型ポテンシャルの透過係数に一致する。
