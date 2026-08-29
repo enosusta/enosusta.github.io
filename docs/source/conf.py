@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Seminarium'
+project = 'Enos\'s Archive'
 copyright = '2026, Enos'
 author = 'Enos'
 release = '1.0.0'
@@ -40,7 +40,7 @@ language = 'ja'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_title = 'Seminarium'
+html_title = 'Enos\'s Archive'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
@@ -52,7 +52,7 @@ html_theme_options = {
     'logo_only': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
-    'vcs_pageview_mode': '',
+    'vcs_pageview_mode': 'blob',
     'style_nav_header_background': '#2980b9',
     'flyout_display': 'hidden',
     'version_selector': True,
@@ -63,6 +63,13 @@ html_theme_options = {
     'navigation_depth': 4,
     'includehidden': True,
     'titles_only': False
+}
+html_context = {
+    'display_github': True,
+    'github_user': 'enosusta',
+    'github_repo': 'enosusta.github.io',
+    'github_version': 'main',
+    'conf_py_path': '/docs/source/',
 }
 
 notfound_urls_prefix = '/'

@@ -1,2 +1,74 @@
 Problem 2.35
 ==================
+
+a.  波動関数は，
+
+    .. math::
+        \psi(x) = \begin{cases}
+            Ae^{ikx} + Be^{-ikx} & (x<0)
+            \\
+            Fe^{iqx} & (x>0)
+        \end{cases}
+
+    である。ここで，
+
+    .. math::
+        q \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
+
+    である。 `x=0` における `\psi` と `\psi'` の連続性より，
+
+    .. math::
+        \begin{aligned}
+            A + B &= F
+            \\
+            k(A-B) &= qF
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        \frac{B}{A} = \frac{k-q}{k+q},\quad \frac{F}{A} = \frac{2k}{k+q}
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            R = \left|\frac{B}{A}\right|^2 &= \left(\frac{k-q}{k+q}\right)^2
+            \\
+            &= \left(\frac{\sqrt{E}-\sqrt{E+V_0}}{\sqrt{E}+\sqrt{E+V_0}}\right)^2
+            \\
+            T = \frac{q}{k}\left|\frac{F}{A}\right|^2 &= \frac{4kq}{(k+q)^2}
+            \\
+            &= 1-R
+        \end{aligned}
+
+    となる。 `E=V_0/3` の場合，
+
+    .. math::
+        \frac{q}{k} = \sqrt{\frac{E+V_0}{E}} = 2
+
+    となるので，
+
+    .. math::
+        R = \left(\frac{1-q/k}{1+q/k}\right)^2 = \frac{1}{9}
+
+    となる。
+
+b.  `V(x)` は `x=0` を通過した瞬間に `0` から `-V_0` へ不連続に変化するが，実際の崖の場合，重力ポテンシャル `mgy` に従って連続的に変化するので，このポテンシャルは崖を正しく表していない。
+
+c.  中性子について，
+
+    .. math::
+        E = 4\,\mathrm{MeV},\quad V_0 = 12\,\mathrm{MeV} = 3E
+
+    より， \(a) と同様に，
+
+    .. math::
+        R = \frac{1}{9}
+
+    となる。したがって原子核表面を透過し中性子が吸収される確率は，
+
+    .. math::
+        T = 1-R = \frac{8}{9}
+
+    となる。

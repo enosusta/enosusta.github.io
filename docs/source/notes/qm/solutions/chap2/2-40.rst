@@ -1,2 +1,107 @@
 Problem 2.40
 ==================
+
+a.  初めの3つのエルミート多項式を用いると，
+
+    .. math::
+        \begin{aligned}
+            3H_0 - 2H_1 + H_2  &= 3-4\xi+(4\xi^2-2)
+            \\
+            &= 1-4\xi+4\xi^2 = (1-2\xi)^2
+        \end{aligned}
+
+    となるので，初期状態は，
+
+    .. math::
+        \Psi(x,0) = A[3H_0(\xi)-2H_1(\xi)+H_2(\xi)]e^{-\xi^2/2}
+
+    と書ける。一方で基底状態で展開すると，
+
+    .. math::
+        \Psi(x,0) = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\xi^2/2}\left[c_0H_0 + \frac{c_1}{\sqrt{2}}H_1 + \frac{c_2}{\sqrt{8}}H_2 + \cdots\right]
+    
+    となるので，係数を比較すると，
+
+    .. math::
+        c_0 = 3A\left(\frac{\pi\hbar}{m\omega}\right)^{1/4},\quad
+        c_1 = -2\sqrt{2}A\left(\frac{\pi\hbar}{m\omega}\right)^{1/4},\quad
+        c_2 = 2\sqrt{2}A\left(\frac{\pi\hbar}{m\omega}\right)^{1/4}
+
+    で `c_n=0\,(n\ge 3)` となる。規格化条件より，
+
+    .. math::
+        \begin{aligned}
+            1 &= |c_0|^2 + |c_1|^2 + |c_2|^2
+            \\
+            &= 25A^2\left(\frac{\pi\hbar}{m\omega}\right)^{1/2}
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        A = \frac{1}{5}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+
+    と選べる。したがって，
+
+    .. math::
+        c_0 = \frac{3}{5},\quad
+        c_1 = -\frac{2\sqrt{2}}{5},\quad
+        c_2 = \frac{2\sqrt{2}}{5},\quad
+        c_n = 0\,(n\ge 3)
+
+    となる。
+
+b.  粒子のエネルギーを測定したとき，得られる値とその確率は，
+
+    .. math::
+        \begin{aligned}
+            E_1 &= \frac{1}{2}\hbar\omega,\quad P_1 = |c_0|^2 = \frac{9}{25}
+            \\
+            E_2 &= \frac{3}{2}\hbar\omega,\quad P_2 = |c_1|^2 = \frac{8}{25}
+            \\
+            E_3 &= \frac{5}{2}\hbar\omega,\quad P_3 = |c_2|^2 = \frac{8}{25}
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            \braket{H} &= \frac{9}{25}\frac{\hbar\omega}{2} + \frac{8}{25}\frac{3\hbar\omega}{2} + \frac{8}{25}\frac{5\hbar\omega}{2}
+            \\
+            &= \frac{73}{50}\hbar\omega
+        \end{aligned}
+
+    となる。
+
+c.  時刻 `T` における波動関数は，初期状態に加えて，
+
+    .. math::
+        (1+2\xi)^2 = 3H_0(\xi) + 2H_1(\xi) + H_2(\xi),\quad e^{-i(n+1/2)\omega T}
+
+    という因子を含む。 `n=0,2` の成分の符号は初期状態と同じであり， `n=1` の成分の符号は逆である。ここで `g \coloneqq B/A` と置いて， `n=0,1,2` 成分を比較すると，
+
+    .. math::
+        \begin{aligned}
+            g &= e^{-i\omega T/2}
+            \\
+            g &= -e^{-3i\omega T/2}
+            \\
+            g &= e^{-5i\omega T/2}
+        \end{aligned}
+
+    となり，整理すると，
+
+    .. math::
+        e^{-i\omega T} = -1,\quad e^{-2i\omega T} = 1
+
+    となる。これらを同時に満たすのは，
+
+    .. math::
+        \omega T = (2n+1)\pi,\quad n=0,1,2,\dots
+
+    である。したがって，最小の正の時刻は，
+
+    .. math::
+        T_{\min} = \frac{\pi}{\omega}
+
+    となる。

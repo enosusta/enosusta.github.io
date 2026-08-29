@@ -1,2 +1,42 @@
 Problem 2.38
 ==================
+
+a.  波動関数の時間依存性 `e^{-iE_nt/\hbar}` は，量子的な回帰時間で，
+
+    .. math::
+        \begin{aligned}
+            \exp\left(-i\frac{E_nT}{\hbar}\right) &= \exp\left(-i\frac{n^2\pi^2\hbar^2}{2ma^2}\frac{1}{\hbar}\frac{4ma^2}{\pi\hbar}\right)
+            \\
+            &= \exp(-i2\pi n^2) = 1
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        \Psi(x,T) = \Psi(x,0)
+
+    となる。
+
+b.  古典的な粒子の運動エネルギーは，
+
+    .. math::
+        E = \frac{1}{2}mv^2
+
+    なので，速さは `v=\sqrt{2E/m}` である。したがって，古典的な回帰時間は，
+
+    .. math::
+        T_\text{cl} = \frac{2a}{v} = a\sqrt{\frac{2m}{E}}
+
+    となる。
+
+c.  2つの回帰時間が等しいとき，
+
+    .. math::
+        \frac{4ma^2}{\pi\hbar} = a\sqrt{\frac{2m}{E}}
+
+    となるので，エネルギーは，
+
+    .. math::
+        E = \frac{\pi^2\hbar^2}{8ma^2}
+
+    となる。しかし実際に許されるどんな定常状態のエネルギーにも一致しない。

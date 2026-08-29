@@ -1,2 +1,90 @@
 Problem 2.36
 ==================
+
+井戸の外側では波動関数はゼロであるから，境界条件は，
+
+.. math::
+    \psi(-a) = \psi(a) = 0
+
+である。井戸の内部では，
+
+.. math::
+    \psi(x) = C\cos(kx) + D\sin(kx)
+
+となる。ポテンシャルが対称なので，固有関数は偶関数か奇関数である。偶関数の場合， `D=0` であり，境界条件から，
+
+.. math::
+    \cos(ka) = 0 \implies ka = \frac{(2r+1)\pi}{2} \quad (r=0,1,2,\ldots)
+
+奇関数の場合， `C=0` であり，境界条件から，
+
+.. math::
+    \sin(ka) = 0 \implies ka = r\pi \quad (r=1,2,3,\ldots)
+
+となるので，まとめると，
+
+.. math::
+    k_n = \frac{n\pi}{2a} \quad (n=1,2,3,\ldots)
+
+となる。したがって許されるエネルギーは，
+
+.. math::
+    E_n = \frac{\hbar^2 k_n^2}{2m} = \frac{n^2\pi^2\hbar^2}{8ma^2} \quad (n=1,2,3,\ldots)
+
+となり，井戸の幅が `2a` の場合の式 (2.30) と一致する。また許される `k_n` に対して，
+
+.. math::
+    \int_{-a}^{a}\cos^2(k_n x)\,\dd x = \int_{-a}^{a}\sin^2(k_n x)\,\dd x = a
+
+となるので，規格化された固有関数は，
+
+.. math::
+    \psi_n(x) = \begin{cases}
+        \frac{1}{\sqrt{a}}\cos\left(\frac{n\pi x}{2a}\right) & (|x|<a; n=1,3,5,\ldots)
+        \\
+        \frac{1}{\sqrt{a}}\sin\left(\frac{n\pi x}{2a}\right) & (|x|<a; n=2,4,6,\ldots)
+        \\
+        0 & (|x|\ge a)
+    \end{cases}
+
+となり，式 (2.31) で `x\mapsto (x+a)/2` として，規格化定数の `a` を `2a` にしたものと一致する。
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    a = 1.0
+
+    def wave_function(x, n):
+        inside_well = np.abs(x) <= a
+        k_n = n * np.pi / (2.0 * a)
+
+        if n % 2 == 1:
+            psi_inside = np.cos(k_n * x) / np.sqrt(a)
+        else:
+            psi_inside = np.sin(k_n * x) / np.sqrt(a)
+
+        return np.where(inside_well, psi_inside, 0.0)
+
+    x = np.linspace(-1.2 * a, 1.2 * a, 1201)
+
+    for n in range(1, 4):
+        plt.plot(x, wave_function(x, n), label=rf"$\psi_{n}$")
+
+    plt.axhline(0.0, color="black", linewidth=0.8)
+    plt.axvline(-a, color="tab:gray", linestyle="--", linewidth=0.8)
+    plt.axvline(a, color="tab:gray", linestyle="--", linewidth=0.8)
+    plt.xlabel(r"$x$")
+    plt.ylabel(r"$\psi_n(x)$")
+    plt.xticks([-a, 0.0, a], [r"$-a$", r"$0$", r"$a$"])
+    plt.yticks(
+        [-1.0 / np.sqrt(a), 0.0, 1.0 / np.sqrt(a)],
+        [r"$-1/\sqrt{a}$", r"$0$", r"$1/\sqrt{a}$"],
+    )
+    plt.xlim(x[0], x[-1])
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()

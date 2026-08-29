@@ -1,2 +1,120 @@
 Problem 2.33
 ==================
+
+`E>V_0` の場合，波動関数は，
+
+.. math::
+    \psi(x) = \begin{cases}
+        Ae^{ikx} + Be^{-ikx} & (x<-a)
+        \\
+        C\cos(qx) + D\sin(qx) \eqqcolon \psi_\text{in}(x) & (-a<x<a)
+        \\
+        Fe^{ikx} & (a<x)
+    \end{cases}
+
+である。ここで，
+
+.. math::
+    k \coloneqq \frac{\sqrt{2mE}}{\hbar},\quad q \coloneqq \frac{\sqrt{2m(E-V_0)}}{\hbar}
+
+である。 :ref:`notes/qm/solutions/chap2/2-32:Problem 2.32` の `l` を `q` に置き換えると，
+
+.. math::
+    \frac{F}{A} = \frac{e^{-2ika}}{\cos(2qa) - i\frac{k^2+q^2}{2kq}\sin(2qa)}
+
+となるので，
+
+.. math::
+    \begin{aligned}
+        T^{-1} &= \cos^2(2qa) + \frac{(k^2+q^2)^2}{4k^2q^2}\sin^2(2qa)
+        \\
+        &= 1+ \frac{(k^2-q^2)^2}{4k^2q^2}\sin^2(2qa)
+    \end{aligned}
+
+となる。ここで，
+
+.. math::
+    k^2-q^2 = \frac{2mV_0}{\hbar^2},\quad k^2q^2 = \frac{4m^2E(E-V_0)}{\hbar^4}
+
+なので，
+
+.. math::
+    T^{-1} = 1 + \frac{V_0^2}{4E(E-V_0)}\sin^2\left(\frac{2a}{\hbar}\sqrt{2m(E-V_0)}\right)
+
+となる。
+
+`E< V_0` の場合，波動関数は，
+
+.. math::
+    \psi_\text{in}(x) = C\cosh(\kappa x) + D\sinh(\kappa x),\quad \kappa \coloneqq \frac{\sqrt{2m(V_0-E)}}{\hbar}
+
+となる。以上の議論で `q=i\kappa` とすると，
+
+.. math::
+    \cos(2qa) = \cosh(2\kappa a),\quad \sin(2qa) = i\sinh(2\kappa a)
+
+より，
+
+.. math::
+    \frac{F}{A} = \frac{e^{-2ika}}{\cosh(2\kappa a) - i\frac{k^2-\kappa^2}{2k\kappa}\sinh(2\kappa a)}
+
+となるので，
+
+.. math::
+    \begin{aligned}
+        T^{-1} &= \cosh^2(2\kappa a) + \frac{(k^2-\kappa^2)^2}{4k^2\kappa^2}\sinh^2(2\kappa a)
+        \\
+        &= 1 + \frac{(k^2+\kappa^2)^2}{4k^2\kappa^2}\sinh^2(2\kappa a)
+    \end{aligned}
+
+となる。ここで，
+
+.. math::
+    k^2+\kappa^2 = \frac{2mV_0}{\hbar^2},\quad k^2\kappa^2 = \frac{4m^2E(V_0-E)}{\hbar^4}
+
+なので，
+
+.. math::
+    T^{-1} = 1 + \frac{V_0^2}{4E(V_0-E)}\sinh^2\left(\frac{2a}{\hbar}\sqrt{2m(V_0-E)}\right)
+
+となる。
+
+`E=V_0` の場合，波動関数は，
+
+.. math::
+    \psi_\text{in}(x) = Cx + D
+
+となる。 `x=a` での連続性より，
+
+.. math::
+    \begin{aligned}
+        Ca + D &= Fe^{ika}
+        \\
+        C &= ikFe^{ika}
+    \end{aligned}
+
+となる。一方で `x=-a` での連続性より，
+
+.. math::
+    \begin{aligned}
+        Ae^{-ika} + Be^{ika} &= -Ca + D = Fe^{ika}(1-2ika)
+        \\
+        Ae^{-ika} - Be^{ika} &= \frac{C}{ik} = Fe^{ika}
+    \end{aligned}
+
+となる。両式を足すと，
+
+.. math::
+    A = Fe^{2ika}(1-ika)
+
+となるので，
+
+.. math::
+    \frac{F}{A} = \frac{e^{-2ika}}{1-ika}
+
+となる。したがって，
+
+.. math::
+    T^{-1} = 1 + k^2a^2 = 1 + \frac{2ma^2V_0}{\hbar^2}
+
+となる。

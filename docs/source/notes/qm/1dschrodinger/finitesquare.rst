@@ -38,12 +38,12 @@
 すなわち，
 
 .. math::
-    \dv{^2\psi}{x^2} = -\ell^2\psi,\quad \ell \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
+    \dv{^2\psi}{x^2} = -l^2\psi,\quad l \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
 
-となる。束縛状態では `E` は負であるが， `E>V_\text{min}=-V_0` でなければならない。したがって， `\ell` も正の実数である。一般解は，
+となる。束縛状態では `E` は負であるが， `E>V_\text{min}=-V_0` でなければならない。したがって， `l` も正の実数である。一般解は，
 
 .. math::
-    \psi(x) = C\sin(\ell x) + D\cos(\ell x),\quad -a<x<a
+    \psi(x) = C\sin(l x) + D\cos(l x),\quad -a<x<a
 
 である。ここで `C,D` は任意定数である。領域 `x>a` では `V(x)=0` なので，領域 `x<-a` の場合と同様に，一般解は `\psi(x)=Fe^{-\kappa x}+Ge^{\kappa x}` であるが，第二項は `x\to\infty` で発散するので，物理的に許される解は，
 
@@ -58,7 +58,7 @@
     \psi(x) = \begin{cases}
         Fe^{-\kappa x} & x>a
         \\
-        D\cos(\ell x) & 0 < x < a
+        D\cos(l x) & 0 < x < a
         \\
         \psi(-x) & x<0
     \end{cases}
@@ -66,24 +66,24 @@
 `x=0` における `\psi(x)` の連続性は，
 
 .. math::
-    Fe^{-\kappa a} = D\cos(\ell a)
+    Fe^{-\kappa a} = D\cos(l a)
 
 を与え， `\dv{\psi}{x}` の連続性は，
 
 .. math::
-    -\kappa Fe^{-\kappa a} = -\ell D\sin(\ell a)
+    -\kappa Fe^{-\kappa a} = -l D\sin(l a)
 
 を与える。これらの式から， `D` を消去すると，
 
 .. math::
-    \kappa = \ell\tan(\ell a)
+    \kappa = l\tan(l a)
 
-となる。 `\kappa` と `\ell` はともに `E` の関数なので，これは許されるエネルギーを与える条件である。そこで `E` について解くために，より扱いやすい記号
+となる。 `\kappa` と `l` はともに `E` の関数なので，これは許されるエネルギーを与える条件である。そこで `E` について解くために，より扱いやすい記号
 
 .. math::
-    z \coloneqq \ell a,\quad z_0 \coloneqq \frac{a}{\hbar}\sqrt{2mV_0}
+    z \coloneqq l a,\quad z_0 \coloneqq \frac{a}{\hbar}\sqrt{2mV_0}
 
-を導入する。定義より `\kappa^2+\ell^2=2mV_0/\hbar^2` なので， `\kappa a=\sqrt{z_0^2-z^2}` となり，条件式は
+を導入する。定義より `\kappa^2+l^2=2mV_0/\hbar^2` なので， `\kappa a=\sqrt{z_0^2-z^2}` となり，条件式は
 
 .. math::
     \tan(z) = \sqrt{\left(\frac{z_0}{z}\right)^2-1}
@@ -110,7 +110,7 @@
 である。井戸の内部 `V(x)=-V_0` では，
 
 .. math::
-    \psi(x) = C\sin(\ell x)+D\cos(\ell x),\quad -a<x<a,\quad \ell \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
+    \psi(x) = C\sin(l x)+D\cos(l x),\quad -a<x<a,\quad l \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
 
 である。右側の `V(x)=0` の領域では，右から入射する波がないと仮定すれば，
 
@@ -122,30 +122,30 @@
 境界条件は4つある [#]_ 。 `x=-a` における `\psi(x)` の連続性は，
 
 .. math::
-    Ae^{-ika}+Be^{ika} = -C\sin(\ell a)+D\cos(\ell a)
+    Ae^{-ika}+Be^{ika} = -C\sin(l a)+D\cos(l a)
 
 を与え， `\dv{\psi}{x}` の連続性は，
 
 .. math::
-    ik[Ae^{-ika}-Be^{ika}] = \ell[C\cos(\ell a)+D\sin(\ell a)]
+    ik[Ae^{-ika}-Be^{ika}] = l[C\cos(l a)+D\sin(l a)]
 
 を与える。 `x=+a` における `\psi(x)` の連続性は，
 
 .. math::
-    C\sin(\ell a)+D\cos(\ell a) = Fe^{ika}
+    C\sin(l a)+D\cos(l a) = Fe^{ika}
 
 を与え， `\dv{\psi}{x}` の連続性は，
 
 .. math::
-    \ell[C\cos(\ell a)-D\sin(\ell a)] = ikFe^{ika}
+    l[C\cos(l a)-D\sin(l a)] = ikFe^{ika}
 
 を与える。このうち2つを使って `C,D` を消去し，残り2つを使って `B,F` を求めると，
 
 .. math::
     \begin{aligned}
-        B &= i\frac{\sin(2\ell a)}{2k\ell}(\ell^2-k^2)F
+        B &= i\frac{\sin(2l a)}{2kl}(l^2-k^2)F
         \\
-        F &= \frac{e^{-2ika}A}{\cos(2\ell a)-i\frac{k^2+\ell^2}{2k\ell}\sin(2\ell a)}
+        F &= \frac{e^{-2ika}A}{\cos(2l a)-i\frac{k^2+l^2}{2kl}\sin(2l a)}
     \end{aligned}
 
 となる。したがって，透過係数 `T` は，元の変数で

@@ -1,2 +1,99 @@
 Problem 2.32
 ==================
+
+`s\coloneqq \sin(la),c\coloneqq \cos(la)` とおくと， `x=a` における `\psi` と `\psi'` の連続性より，
+
+.. math::
+    \begin{aligned}
+        Cs + Dc &= Fe^{ika}
+        \\
+        lCc - lDs &= ikFe^{ika}
+    \end{aligned}
+
+となる。第二式を `l` で割ると，係数行列
+
+.. math::
+    \begin{pmatrix}
+        s & c
+        \\
+        c & -s
+    \end{pmatrix}
+
+は自分自身の行列であるから，
+
+.. math::
+    \begin{aligned}
+        C &= sFe^{ika} + c\left(i\frac{k}{l}Fe^{ika}\right)
+        \\
+        &= \left(s + i\frac{k}{l}c\right)e^{ika}F
+        \\
+        D &= cFe^{ika} - s\left(i\frac{k}{l}Fe^{ika}\right)
+        \\
+        &= \left(c - i\frac{k}{l}s\right)e^{ika}F
+    \end{aligned}
+
+となる。一方で， `x=-a` における連続性より，
+
+.. math::
+    \begin{aligned}
+        A e^{-ika} + B e^{ika} &= -Cs + Dc
+        \\
+        ik(Ae^{-ika} - Be^{ika}) &= l(Cc + Ds)
+    \end{aligned}
+
+となる。右辺は，
+
+.. math::
+    \begin{aligned}
+        -Cs + Dc &= e^{ika}F\left[-s^2-i\frac{k}{l}sc + c^2 -i\frac{k}{l}sc\right]
+        \\
+        &= e^{ika}F\left[\cos(2la)-i\frac{k}{l}\sin(2la)\right]
+        \\
+        Cc + Ds &= e^{ika}F\left[2sc + i\frac{k}{l}(c^2-s^2)\right]
+        \\
+        &= e^{ika}F\left[\sin(2la)+i\frac{k}{l}\cos(2la)\right]
+    \end{aligned}
+
+となるので，第一式から第二式を `ik` で割ったものを引くと，
+
+.. math::
+    2Be^{ika} = ie^{ika}F\left(\frac{l}{k}-\frac{k}{l}\right)\sin(2la)
+
+となる。したがって，
+
+.. math::
+    B = i\frac{l^2-k^2}{2kl}\sin(2la)F
+
+となる。同様に第一式と第二式を `ik` で割ったものを足すと，
+
+.. math::
+    2Ae^{-ika} = 2e^{ika}F\left[\cos(2la)-i\frac{k^2+l^2}{2kl}\sin(2la)\right]
+
+となる。したがって，
+
+.. math::
+    F = \frac{e^{-ika}A}{\cos(2la)-i\frac{k^2+l^2}{2kl}\sin(2la)}
+
+となる。透過係数は，
+
+.. math::
+    \begin{aligned}
+        T^{-1} = \left|\frac{A}{F}\right|^2 &= \cos^2(2la) + \frac{(k^2+l^2)^2}{4k^2l^2}\sin^2(2la)
+        \\
+        &= 1 + \left[\frac{(k^2-l^2)^2}{4k^2l^2}-1\right]\sin^2(2la)
+        \\
+        &= 1 + \frac{(l^2-k^2)^2}{4k^2l^2}\sin^2(2la) 
+    \end{aligned}
+
+となる。ここで，
+
+.. math::
+    l^2-k^2 = \frac{2mV_0}{\hbar^2},\quad k^2l^2 = \frac{4m^2E(E+V_0)}{\hbar^4}
+
+なので，
+
+.. math::
+    T^{-1} = 1 + \frac{V_0^2}{4E(E+V_0)}\sin^2\left(\frac{2a}{\hbar}\sqrt{2m(E+V_0)}\right)
+
+となり，式 (2.172) に一致する。
+    

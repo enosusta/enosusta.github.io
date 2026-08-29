@@ -1,2 +1,77 @@
 Problem 2.37
 ==================
+
+規格化条件より，積分変数を `u=\pi x/a` と変換すると，
+
+.. math::
+    \begin{aligned}
+        1 &= |A|^2\int_0^a\sin^6\left(\frac{\pi x}{a}\right)\,\dd x
+        \\
+        &= |A|^2\frac{a}{\pi}\int_0^\pi\sin^6(u)\,\dd u
+    \end{aligned}
+
+となる。ここで半角の公式を繰り返し用いると，
+
+.. math::
+    \sin^6(u) = \frac{10-15\cos(2u)+6\cos(4u)-\cos(6u)}{32}
+
+となるので，
+
+.. math::
+    1 = |A|^2\frac{5a}{16}
+
+となる。したがって，規格化定数は，
+
+.. math::
+    A = \frac{4}{\sqrt{5a}}
+
+と選べる。初期状態は，
+
+.. math::
+    \begin{aligned}
+        \Psi(x,0) &= \frac{A}{4}\left[3\sin\left(\frac{\pi x}{a}\right)-\sin\left(\frac{3\pi x}{a}\right)\right]
+        \\
+        &= \frac{3A}{4}\sqrt{\frac{a}{2}}\psi_1(x)-\frac{A}{4}\sqrt{\frac{a}{2}}\psi_3(x)
+        \\
+        &= \frac{3}{\sqrt{10}}\psi_1(x)-\frac{1}{\sqrt{10}}\psi_3(x)
+    \end{aligned}
+
+と書けるので，
+
+.. math::
+    \Psi(x,t) = \frac{3}{\sqrt{10}}\psi_1(x)e^{-i E_1 t/\hbar}-\frac{1}{\sqrt{10}}\psi_3(x)e^{-i E_3 t/\hbar}
+
+となる。ここで奇数 `n` に対して
+
+.. math::
+    \psi_n(a-x) = \psi_n(x)
+
+となるので，
+
+.. math::
+    \begin{aligned}
+        \braket{x} &= \int_0^a x|\Psi(x,t)|^2\,\dd x
+        \\
+        &= \int_0^a (a-x)|\Psi(a-x,t)|^2\,\dd x
+        \\
+        &= a - \braket{x}
+    \end{aligned}
+
+となり，
+
+.. math::
+    \braket{x} = \frac{a}{2}
+
+となる。また，
+
+.. math::
+    \begin{aligned}
+        \braket{H} &= \frac{9}{10}E_1+\frac{1}{10}E_3
+        \\
+        &= \frac{9}{10}E_1 + \frac{9}{10}E_1
+        \\
+        &= \frac{9}{5}E_1 = \frac{9\pi^2\hbar^2}{10ma^2}
+    \end{aligned}
+
+となる。
+    

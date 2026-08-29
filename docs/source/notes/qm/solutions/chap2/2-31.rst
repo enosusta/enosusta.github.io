@@ -1,2 +1,74 @@
 Problem 2.31
 ==================
+
+有限井戸型ポテンシャルを
+
+.. math::
+    V_a(x) = \begin{cases}
+        -V_0 & (|x| \le a)
+        \\
+        0 & (|x| > a)
+    \end{cases}
+
+とすると，その面積は，
+
+.. math::
+    \alpha \coloneqq \int_{-\infty}^{\infty} V_a(x) dx = -2 a V_0
+
+となる。 `\alpha` を固定して `a\to 0` とすると，任意の滑らかなテスト関数 `f(x)` に対して，
+
+.. math::
+    \begin{aligned}
+        \int_{-\infty}^{\infty} V_a(x) f(x)\,\dd x &= -V_0 \int_{-a}^{a} f(x)\,\dd x
+        \\
+        &\to -V_0f(0)2a = -\alpha f(0)
+    \end{aligned}
+
+となるので，
+
+.. math::
+    V_a(x) \to -\alpha \delta(x)
+
+となる。このとき，
+
+.. math::
+    z_0 \coloneqq \frac{a}{\hbar}\sqrt{2mV_0} = \frac{\sqrt{m\alpha a}}{\hbar} \to 0
+
+となるので，深さは `V_0\to \infty` となるが，この意味で「弱い」ポテンシャルである。
+
+境界条件は，`0 < la < z_0 \to 0` なので，
+
+.. math::
+    \begin{aligned}
+        \kappa = l\tan(la) &\approx al^2
+        \\
+        &= a\left(\frac{2mV_0}{\hbar^2}-\kappa^2\right)
+        \\
+        &= \frac{m\alpha}{\hbar^2} - a\kappa^2 \to \frac{m\alpha}{\hbar^2}
+    \end{aligned}
+
+となる。したがって，束縛状態のエネルギーは，
+
+.. math::
+    E = -\frac{\hbar^2\kappa^2}{2m} \to -\frac{m\alpha^2}{2\hbar^2}
+
+となり，デルタ関数型ポテンシャルの束縛状態のエネルギーと一致する。
+
+一方で式 (2.172) は
+
+.. math::
+    \begin{aligned}
+        T^{-1} -1 &\approx \frac{V_0^2}{4E(E+V_0)}(2al)^2
+        \\
+        &= \frac{V_0^2}{4E(E+V_0)}4a^2\frac{2m(E+V_0)}{\hbar^2}
+        \\
+        &= \frac{m\alpha^2}{2\hbar^2E}
+    \end{aligned}
+
+となるので，
+
+.. math::
+    T \to \frac{1}{1 + m\alpha^2/(2\hbar^2E)}
+
+となり，デルタ関数型ポテンシャルの透過率と一致する。
+    
