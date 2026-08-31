@@ -1,2 +1,59 @@
 Problem 2.46
 ==================
+
+平面波解は
+
+.. math::
+    \psi(x) = Ce^{ikx}
+
+である。周期的境界条件 `\psi(x+L)=\psi(x)` より，
+
+.. math::
+    e^{ikL} = 1 \implies k_n = \frac{2\pi n}{L}\quad (n\in\Z)
+
+となる。また，規格化条件より，
+
+.. math::
+    1 = \int_0^L |C|^2\,\dd x = L|C|^2
+
+となるので，
+
+.. math::
+    C = \frac{1}{\sqrt{L}}
+
+と選べる。ここで `n=1,2,\ldots` に対して時計回りと反時計回りの状態を
+
+.. math::
+    \begin{aligned}
+        \psi_n^+(x) &= \frac{1}{\sqrt{L}}e^{i2\pi nx/L}
+        \\
+        \psi_n^-(x) &= \frac{1}{\sqrt{L}}e^{-i2\pi nx/L}
+    \end{aligned}
+
+とすると，
+
+.. math::
+    \int_0^L (\psi_n^+)^*\psi_n^-\,\dd x = \frac{1}{L}\int_0^L e^{-i4\pi nx/L}\,\dd x = 0
+
+と直交し線形独立である。このとき，`n\ge 1` に対して許されるエネルギー
+
+.. math::
+    E_n = \frac{\hbar^2k_n^2}{2m} = \frac{2\pi^2\hbar^2n^2}{mL^2}
+
+は二重に縮退し， `n=0` に対しては
+
+.. math::
+    \psi_0(x) = \frac{1}{\sqrt{L}},\quad E_0 = 0
+
+となる。
+
+さて， :ref:`notes/qm/solutions/chap2/2-44:Problem 2.44` で示した定理の証明では，実数上の規格化可能な束縛状態が無限遠でゼロになることを使った。しかし円はコンパクトで無限遠がなく，波動関数はゼロではなく周期的である。実際，縮退した平面波の Wronskian は
+
+.. math::
+    \begin{aligned}
+        W &= \psi_n^-\dv{\psi_n^+}{x} - \psi_n^+\dv{\psi_n^-}{x}
+        \\
+        &= \frac{2ik_n}{L} \neq 0
+    \end{aligned}
+
+となる。したがって，この系では :ref:`notes/qm/solutions/chap2/2-44:Problem 2.44` の定理は成り立たず，縮退が許される。

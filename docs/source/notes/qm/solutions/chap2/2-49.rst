@@ -1,2 +1,124 @@
 Problem 2.49
 ==================
+
+a.  簡単のため
+
+    .. math::
+        N \coloneqq \left(\frac{m\omega}{\pi\hbar}\right)^{1/4},\quad q(t) \coloneqq x_0e^{-i\omega t}
+
+    と置き，
+
+    .. math::
+        \begin{aligned}
+            L &\coloneqq \log \Psi(x,t)
+            \\
+            &= \log N -\frac{m\omega}{2\hbar}\left[x^2+\frac{x_0^2}{2}+\frac{q^2}{2}+\frac{i\hbar t}{m}-2xq\right]
+        \end{aligned}
+
+    とする。そうすると，
+
+    .. math::
+        \begin{aligned}
+            L_x &= -\frac{m\omega}{\hbar}(x-q)
+            \\
+            L_{xx} &= -\frac{m\omega}{\hbar}
+        \end{aligned}
+
+    となり， `\Psi_x = L_x\Psi` であるから，
+
+    .. math::
+        \Psi_{xx} = (L_{xx}+L_x^2)\Psi
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            \frac{\hat{H}\Psi}{\Psi} &= -\frac{\hbar^2}{2m}(L_{xx}+L_x^2)+\frac{1}{2}m\omega^2x^2
+            \\
+            &= \frac{\hbar\omega}{2}+\frac{m\omega^2}{2}(x-q)^2 +  \frac{1}{2}m\omega^2x^2
+            \\
+            &= \frac{\hbar\omega}{2}+m\omega^2xq-\frac{1}{2}m\omega^2q^2
+        \end{aligned}
+
+    となる。一方で `q=-i\omega q` より，
+
+    .. math::
+        \begin{aligned}
+            L_t &= -\frac{m\omega}{2\hbar}\left[qq'+\frac{i\hbar}{m}-2xq'\right]
+            \\
+            &= -\frac{m\omega}{2\hbar}\left[-i\omega q^2+\frac{i\hbar}{m}+2i\omega xq\right]
+        \end{aligned}
+
+    となり， `\Psi_t = L_t\Psi` であるから，
+
+    .. math::
+        \frac{i\hbar\Psi_t}{\Psi} = \frac{\hat{H}\Psi}{\Psi}
+
+    となる。したがって， `\Psi` は調和振動子型ポテンシャルに対する時間に依存する Schrödinger 方程式を満たす。
+
+b.  `\Psi` の指数関数の引数の実部は，
+
+    .. math::
+        \operatorname{Re}q = x_0\cos(\omega t),\quad \operatorname{Re}q^2 = x_0^2\cos(2\omega t)
+
+    および
+
+    .. math::
+        \frac{x_0^2}{2}[1+\cos(2\omega t)] = x_0^2\cos^2(\omega t)
+
+    より，
+
+    .. math::
+        x^2+x_0^2\cos^2(\omega t)-2xx_0\cos(\omega t) = (x-x_0\cos(\omega t))^2
+
+    となるので，Gaussian
+
+    .. math::
+        |\Psi(x,t)|^2 = \sqrt{\frac{m\omega}{\pi\hbar}}\exp\left[-\frac{m\omega}{\hbar}(x-x_0\cos(\omega t))^2\right]
+
+    となる。この波束は， `x_0\cos(\omega t)` を中心として分散 `\hbar/(2m\omega)` を持つ。したがって，波束は形を変えず，中心の運動は古典的な調和振動子の運動に従う。
+
+c.  \(b) の結果より，
+
+    .. math::
+        \braket{x} = x_0\cos(\omega t)
+
+    となる。運動量については，
+
+    .. math::
+        \hat{p}\Psi = -i\hbar \Psi_x = -i\hbar L_x\Psi = im\omega(x-q)\Psi
+
+    となるので，
+
+    .. math::
+        \begin{aligned}
+            \braket{p} &= im\omega\int_{-\infty}^{\infty}(x-q)|\Psi|^2\,\dd x
+            \\
+            &= im\omega(\braket{x}-q)
+        \end{aligned}
+
+    となる。ここで，
+
+    .. math::
+        q = x_0\cos(\omega t)-ix_0\sin(\omega t)
+
+    であるから，
+
+    .. math::
+        \braket{p} = -m\omega x_0\sin(\omega t)
+
+    となる。時間微分をとると，
+
+    .. math::
+        \begin{aligned}
+            \dv{\braket{x}}{t} &= -\omega x_0\sin(\omega t) = \frac{\braket{p}}{m}
+            \\
+            \dv{\braket{p}}{t} &= -m\omega^2x_0\cos(\omega t) = -m\omega^2\braket{x}
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        \dv{\braket{x}}{t} = \frac{\braket{p}}{m},\quad \dv{\braket{p}}{t} = -\braket{\dv{V}{x}}
+
+    となり，Ehrenfest の定理が満たされる。

@@ -1,2 +1,96 @@
 Problem 2.42
 ==================
+
+規格化条件より，
+
+.. math::
+    \begin{aligned}
+        1 &= |A|^2\int_{-\infty}^{\infty} e^{-2ax^2}\,\dd x
+        \\
+        &= |A|^2\sqrt{\frac{\pi}{2a}}
+    \end{aligned}
+
+となるので，
+
+.. math::
+    A = \left(\frac{2a}{\pi}\right)^{1/4}
+
+と選べる。また，Fourier 変換は，
+
+.. math::
+    \begin{aligned}
+        \phi(k) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi(x,0)e^{-ikx}\,\dd x
+        \\
+        &= \frac{A}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\exp[-ax^2-i(k-l)x]\,\dd x
+    \end{aligned}
+
+であり，指数関数の引数を平方完成すると，
+
+.. math::
+    ax^2 + i(k-l)x = a\left(x+\frac{i(k-l)}{2a}\right)^2 + \frac{(k-l)^2}{4a}
+
+となるので，
+
+.. math::
+    \phi(k) = \frac{A}{\sqrt{2a}}\exp\left[-\frac{(k-l)^2}{4a}\right]
+
+となる。波動関数の時間発展は，
+
+.. math::
+    \Psi(x,t) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\phi(k)e^{ikx-i\hbar k^2t/2m}\,\dd k
+
+であり， `u\coloneqq k-l` と置くと，指数関数の引数は，
+
+.. math::
+    \begin{aligned}
+        ikx - \frac{i\hbar k^2t}{2m} &= i(u+l)x - \frac{i\hbar(u+l)^2t}{2m}
+        \\
+        &= ilx - \frac{i\hbar l^2t}{2m} + iu\left(x-\frac{\hbar lt}{m}\right) - \frac{i\hbar u^2t}{2m}
+    \end{aligned}
+
+となるので， `X\coloneqq x-\hbar lt/m` と置くと，波動関数は，
+
+.. math::
+    \Psi(x,t) = \frac{A}{\sqrt{2\pi}}e^{ilx-i\hbar l^2t/2m}\int_{-\infty}^{\infty}\exp\left[-\left(\frac{1}{4a}+\frac{i\hbar t}{2m}\right)u^2+iuX\right]\,\dd u
+
+となる。ここで `u` の2次の係数は，
+
+.. math::
+    \frac{1}{4a} + \frac{i\hbar t}{2m} = \frac{\gamma^2}{4a}
+
+であるから，積分は，
+
+.. math::
+    \int_{-\infty}^{\infty}e^{-\gamma^2u^2/(4a) + iuX}\,\dd u = \frac{2\sqrt{\pi a}}{\gamma}e^{-aX^2/\gamma^2}
+
+となる。したがって，
+
+.. math::
+    \Psi(x,t) = \left(\frac{2a}{\pi}\right)^{1/4}\frac{1}{\gamma}\exp\left[-\frac{a(x-\hbar lt/m)^2}{\gamma^2}\right]\exp\left[il\left(x-\frac{\hbar lt}{m}\right)\right]
+
+となる。したがって，位相速度は，
+
+.. math::
+    v_p = \frac{\hbar l}{2m}
+
+となる。ここで， `\beta\coloneqq 2\hbar at/m` と置くと，
+
+.. math::
+    |\gamma|^2 = \sqrt{1 + \beta^2}
+
+であるから，確率密度は，Gaussian
+
+.. math::
+    |\Psi(x,t)|^2 = \sqrt{\frac{2a}{\pi}}\frac{1}{\sqrt{1+\beta^2}}\exp\left[-\frac{2a(x-\hbar lt/m)^2}{1+\beta^2}\right]
+
+となる。したがって，
+
+.. math::
+    \braket{x} = \frac{\hbar l}{m}t
+    
+となり，群速度は，
+
+.. math::
+    v_g = \frac{\hbar l}{m}
+
+となる。

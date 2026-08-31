@@ -1,2 +1,47 @@
 Problem 2.44
 ==================
+
+同じエネルギー `E` を持つ2つの状態 `\psi_1,\psi_2` があると仮定する。それぞれの 時間に依存しない Schrödinger 方程式は，
+
+.. math::
+    \begin{aligned}
+        -\frac{\hbar^2}{2m}\psi_1'' + V\psi_1 &= E\psi_1
+        \\
+        -\frac{\hbar^2}{2m}\psi_2'' + V\psi_2 &= E\psi_2
+    \end{aligned}
+
+である。第一式に `\psi_2` を掛け，第二式に `\psi_1` を掛けて引き算すると，
+
+.. math::
+    -\frac{\hbar^2}{2m}(\psi_2\psi_1'' - \psi_1\psi_2'') = 0
+
+となる。ここで Wronskian を
+
+.. math::
+    W(x) \coloneqq \psi_2(x)\psi_1'(x) - \psi_1(x)\psi_2'(x)
+
+と定義すると，
+
+.. math::
+    \begin{aligned}
+        W'(x) &= \psi_2'\psi_1' + \psi_2\psi_1'' - \psi_1'\psi_2' - \psi_1\psi_2''
+        \\
+        &= \psi_2\psi_1'' - \psi_1\psi_2'' = 0
+    \end{aligned}
+
+となるので， `W(x)` は定数である。規格化可能な束縛状態は通常 `x\to\pm\infty` でゼロになるので，
+
+.. math::
+    \lim_{x\to\pm\infty} W(x) = 0
+
+となる。しかし `W` は定数であるから，全領域で
+
+.. math::
+    W(x) = 0
+
+でなければならない。 `\psi_1\neq 0` の場合，
+
+.. math::
+    \dv{}{x}\left(\frac{\psi_2}{\psi_1}\right) = \frac{\psi_2'\psi_1 - \psi_2\psi_1'}{\psi_1^2} = -\frac{W}{\psi_1^2} = 0
+
+となるので， `\psi_2=C\psi_1` となる。 `\psi_1(x_0)=0` の場合， `\psi_1'(x_0)=0` とすると， `\psi_1` は恒等的にゼロとなり物理的ではない。 `\psi_1'(x_0)\neq 0` の場合，同様に `\psi_2'(x_0) = C\psi_1'(x_0)` となるので， `\psi_2` と `C\psi_1` は同じ初期条件を与えるため解の一意性より `\psi_2=C\psi_1` となる。したがって，解 `\psi_1` と `\psi_2` は線形従属である。

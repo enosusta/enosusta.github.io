@@ -39,15 +39,21 @@ div.math .eqno {
     transform: translateY(-50%);
 }
 
-ol.loweralpha {
+ol.loweralpha,
+ol.lowerroman {
     list-style-type: none;
     counter-reset: item;
 }
 
-ol.loweralpha > li {
+ol.loweralpha > li,
+ol.lowerroman > li {
     counter-increment: item;
 }
 
 ol.loweralpha > li::marker {
     content: "(" counter(item, lower-alpha) ") ";
+}
+
+ol.lowerroman > li::marker {
+    content: "(" counter(item, lower-roman) ") ";
 }
