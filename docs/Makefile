@@ -35,10 +35,6 @@ build-language:
 
 site: html
 	@cp site/index.html "$(BUILDDIR)/html/index.html"
-	@if test ! -f "$(BUILDDIR)/html/en/index.html"; then \
-		mkdir -p "$(BUILDDIR)/html/en"; \
-		cp site/en/index.html "$(BUILDDIR)/html/en/index.html"; \
-	fi
 	@touch "$(BUILDDIR)/html/.nojekyll"
 
 clean:

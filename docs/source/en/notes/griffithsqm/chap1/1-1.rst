@@ -1,0 +1,45 @@
+Problem 1.1
+================
+
+a.  Using the number of people of each age as weights, we obtain
+
+    .. math::
+        \begin{aligned}
+            \braket{j^2} &= \frac{14^2 + 15^2 + 3\cdot 16^2 + 2\cdot 22^2 + 2\cdot 24^2 + 5\cdot 25^2}{14}
+            \\
+            &= \frac{6434}{14} = \frac{3217}{7}.
+        \end{aligned}
+
+    Since `\braket{j} = 21`,
+
+    .. math::
+        \braket{j}^2 = 21^2 = 441.
+
+b.  The deviation from the mean for each age is
+
+    +------------+------+-----+-----+-----+-----+-----+
+    | `j`        | 14   | 15  | 16  | 22  | 24  | 25  |
+    +------------+------+-----+-----+-----+-----+-----+
+    | `\Delta j` | -7   | -6  | -5  | 1   | 3   | 4   |
+    +------------+------+-----+-----+-----+-----+-----+
+
+    Therefore, the variance is
+
+    .. math::
+        \begin{aligned}
+            \sigma^2 &= \frac{(-7)^2 + (-6)^2 + 3\cdot (-5)^2 + 2\cdot 1^2 + 2\cdot 3^2 + 5\cdot 4^2}{14}
+            \\
+            &= \frac{260}{14} = \frac{130}{7}.
+        \end{aligned}
+
+    Hence, the standard deviation is
+
+    .. math::
+        \sigma = \sqrt{\frac{130}{7}}.
+
+c.  From (a),
+
+    .. math::
+        \sigma = \sqrt{\braket{j^2} - \braket{j}^2} = \sqrt{\frac{3217}{7} - 441} = \sqrt{\frac{130}{7}}.
+
+    This agrees with the result in (b).

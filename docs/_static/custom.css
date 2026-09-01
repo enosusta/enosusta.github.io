@@ -5,12 +5,40 @@ body {
         sans-serif;
 }
 
+.sidebar-brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.809rem;
+}
+
 .custom-site-title {
     display: flex !important;
     align-items: center;
     justify-content: flex-start;
     gap: 0.5rem;
+    min-width: 0;
+    margin: 0;
+    padding: 4px 6px;
+    color: #ffffff;
     font-size: 1.25rem !important;
+    font-weight: 700;
+}
+
+.custom-site-title:visited {
+    color: inherit;
+}
+
+.custom-site-title:hover,
+.custom-site-title:focus {
+    background: rgb(255 255 255 / 10%);
+}
+
+.custom-site-title span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .custom-site-logo {
@@ -22,13 +50,23 @@ body {
 }
 
 .language-switcher {
-    margin: 0.5rem 0;
-    text-align: center;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    line-height: 1;
 }
 
 .language-switcher a,
 .language-switcher span {
     color: #ffffff;
+}
+
+.language-switcher a {
+    padding: 0.25rem 0;
 }
 
 .language-switcher span[aria-current="page"] {

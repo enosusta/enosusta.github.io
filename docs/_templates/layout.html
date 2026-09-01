@@ -1,25 +1,27 @@
 {% extends "!layout.html" %}
 
 {% block sidebartitle %}
-<a href="{{ pathto(master_doc) }}" class="custom-site-title">
-    <img src="{{ pathto('_static/logo.svg', 1) }}"
-         class="custom-site-logo"
-         alt="">
-    <span>{{ project }}</span>
-</a>
+<div class="sidebar-brand-row">
+    <a href="{{ pathto(master_doc) }}" class="custom-site-title">
+        <img src="{{ pathto('_static/logo.svg', 1) }}"
+             class="custom-site-logo"
+             alt="">
+        <span>{{ project }}</span>
+    </a>
 
-{% if language_links|length > 1 %}
-<nav class="language-switcher" aria-label="Language">
-    {% for item in language_links %}
-        {% if not loop.first %}<span aria-hidden="true"> | </span>{% endif %}
-        {% if item.code == current_language %}
-            <span lang="{{ item.code }}" aria-current="page">{{ item.label }}</span>
-        {% else %}
-            <a lang="{{ item.code }}" hreflang="{{ item.code }}" href="{{ item.url }}">{{ item.label }}</a>
-        {% endif %}
-    {% endfor %}
-</nav>
-{% endif %}
+    {% if language_links|length > 1 %}
+    <nav class="language-switcher" aria-label="Language">
+        {% for item in language_links %}
+            {% if not loop.first %}<span aria-hidden="true">|</span>{% endif %}
+            {% if item.code == current_language %}
+                <span lang="{{ item.code }}" aria-current="page">{{ item.code|upper }}</span>
+            {% else %}
+                <a lang="{{ item.code }}" hreflang="{{ item.code }}" href="{{ item.url }}">{{ item.code|upper }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+    {% endif %}
+</div>
 
 {% include "searchbox.html" %}
 {% endblock %}

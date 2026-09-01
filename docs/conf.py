@@ -56,7 +56,7 @@ html_css_files = ["custom.css"]
 html_favicon = str(DOCS_DIR / "_static" / "logo.svg")
 html_baseurl = f"{SITE_URL}/{language}/"
 
-language_labels = {"en": "English", "ja": "日本語"}
+language_labels = {"en": "EN", "ja": "JA"}
 available_languages = sorted(
     (
         path.parent.name
