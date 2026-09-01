@@ -75,6 +75,23 @@ available_languages = sorted(
     (code for code, documents in language_documents.items() if "index" in documents),
     key=lambda code: (code != "ja", code),
 )
+all_documents = {
+    pagename
+    for documents in language_documents.values()
+    for pagename in documents
+}
+alternate_language_links = {}
+for pagename in sorted(all_documents - SEARCH_EXCLUDED_PAGES):
+    links = [
+        {
+            "code": code,
+            "url": f"{SITE_URL}/{code}/{pagename}.html",
+        }
+        for code in available_languages
+        if pagename in language_documents[code]
+    ]
+    if len(links) > 1:
+        alternate_language_links[pagename] = links
 
 html_theme_options = {
     "analytics_anonymize_ip": False,
@@ -99,6 +116,8 @@ html_context = {
     "conf_py_path": f"/docs/source/{language}/",
     "current_language": language,
     "search_excluded_pages": sorted(SEARCH_EXCLUDED_PAGES),
+    "alternate_language_links": alternate_language_links,
+    "x_default_url": f"{SITE_URL}/",
     "language_links": [
         {
             "code": code,
