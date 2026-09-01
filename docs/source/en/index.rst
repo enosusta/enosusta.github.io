@@ -1,5 +1,12 @@
+.. meta::
+   :description: This site contains notes and solutions to textbook problems mainly related to physics. The content will be updated as needed.
+
+:og:description: This site contains notes and solutions to textbook problems mainly related to physics. The content will be updated as needed.
+
 Home
 =================
+
+This site contains notes and solutions to textbook problems mainly related to physics. The content will be updated as needed.
 
 .. epigraph::
    When I first decided to write a book on string theory, more than ten years ago, my memories of my student years were much more vivid than they are today. Still, I remember that one of the greatest pleasures was finding a text that made a difficult subject accessible, and I hoped to provide the same for string theory.
