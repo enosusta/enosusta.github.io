@@ -1,2 +1,154 @@
 Problem 2.52
 ==================
+
+a.
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        ax = np.linspace(-4.0, 4.0, 800)
+        potential = -1.0 / np.cosh(ax) ** 2
+
+        plt.plot(ax, potential, label=r"$V(x)=-\hbar^2a^2\,\mathrm{sech}^2(ax)/m$")
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$ax$")
+        plt.ylabel(r"$V(x)\,/\,(\hbar^2a^2/m)$")
+        plt.xlim(ax[0], ax[-1])
+        plt.ylim(-1.1, 0.1)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+b.  簡単のため
+
+    .. math::
+        s \coloneqq \mathrm{sech}(ax),\quad t \coloneqq \tanh(ax)
+
+    と置くと，
+
+    .. math::
+        s'=-ast,\quad t' = a s^2,\quad s^2+t^2=1
+
+    となるので，
+
+    .. math::
+        \begin{aligned}
+            s'' &= -a(s't+st')
+            \\
+            &= a^2st^2 - a^2s^3 = a^2s(1-2s^2)
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            \hat{H}\psi_0 &= -\frac{\hbar^2}{2m}Aa^2s(1-2s^2)-\frac{\hbar^2a^2}{m}s^2(As)
+            \\
+            &= -\frac{\hbar^2a^2}{2m}As + \frac{\hbar^2a^2}{m}As^3 - \frac{\hbar^2a^2}{m}As^3
+            \\
+            &= -\frac{\hbar^2a^2}{2m}\psi_0
+        \end{aligned}
+
+    となる。規格化条件より，
+
+    .. math::
+        \begin{aligned}
+            1 &= |A|^2\int_{-\infty}^{\infty}\mathrm{sech}^2(ax)\,dx
+            \\
+            &= |A|^2\left[\frac{\tanh(ax)}{a}\right]_{-\infty}^{\infty} = |A|^2\frac{2}{a}
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        A = \sqrt{\frac{a}{2}}
+
+    と選べる。この波動関数は節をもたないため基底状態であり，そのエネルギーは，
+
+    .. math::
+        E_0 = -\frac{\hbar^2a^2}{2m}
+
+    となる。
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        ax = np.linspace(-4.0, 4.0, 800)
+        psi_0 = 1.0 / (np.sqrt(2.0) * np.cosh(ax))
+
+        plt.plot(
+            ax,
+            psi_0,
+            label=r"$\psi_0(x)=\sqrt{a/2}\,\mathrm{sech}(ax)$",
+        )
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$ax$")
+        plt.ylabel(r"$\psi_0(x)/\sqrt{a}$")
+        plt.xlim(ax[0], ax[-1])
+        plt.ylim(-0.05, 0.8)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+c.  簡単のため
+
+    .. math::
+        C \coloneqq \frac{A}{ik+a}
+
+    とし，
+
+    .. math::
+        f(x) \coloneqq ik-a\tanh(ax) = ik-at
+
+    とすれば，
+
+    .. math::
+        \psi_k(x) = Cf(x)e^{ikx}
+
+    と書ける。ここで `t'=as^2` より，
+
+    .. math::
+        f' = -a^2s^2,\quad f'' = 2a^3s^2t
+
+    となるので，
+
+    .. math::
+        \psi_k'' = Ce^{ikx}(f''+2ikf'-k^2f)
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            \psi_k'' + (k^2+2a^2s^2)\psi_k &= Ce^{ikx}(f''+2ikf'+2a^2s^2f)
+            \\
+            &= 2a^2s^2Ce^{ikx}(at-ik+(ik-at)) = 0
+        \end{aligned}
+
+    となり `\psi_k` は時間に依存しない Schrödinger 方程式を満たす。 `x\to-\infty` で `t\to -1` となるので，
+
+    .. math::
+        \psi_k(x) \approx A\frac{ik+a}{ik+a}e^{ikx} = Ae^{ikx}
+
+    となり，左向きの平面波が存在しないため，反射係数 `R` はゼロである。一方で `x\to\infty` で `t\to 1` となるので，
+
+    .. math::
+        \psi_k(x) \approx A\frac{ik-a}{ik+a}e^{ikx}
+
+    となる。したがって，透過振幅は
+
+    .. math::
+        t_k = \frac{ik-a}{ik+a}
+
+    となる。ポテンシャルの左右で波数は同じなので，透過係数は
+
+    .. math::
+        T = |t_k|^2 = \frac{k^2+a^2}{k^2+a^2} = 1
+
+    となる。

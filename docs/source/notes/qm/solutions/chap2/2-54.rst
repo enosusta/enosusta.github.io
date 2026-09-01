@@ -1,2 +1,179 @@
 Problem 2.54
 ==================
+
+a.  散乱行列の関係
+
+    .. math::
+        \begin{aligned}
+            B &= S_{11}A + S_{12}G
+            \\
+            F &= S_{21}A + S_{22}G
+        \end{aligned}
+
+    より，第一式を `G` について解くと，
+
+    .. math::
+        G = -\frac{S_{11}}{S_{12}}A + \frac{1}{S_{12}}B
+
+    となる。これを第二式に代入すると，
+
+    .. math::
+        \begin{aligned}
+            F &= \left(S_{21}-\frac{S_{22}S_{11}}{S_{12}}\right)A + \frac{S_{22}}{S_{12}}B
+            \\
+            &= -\frac{\det\bm{S}}{S_{12}}A + \frac{S_{22}}{S_{12}}B
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \bm{M} = \frac{1}{S_{12}}\begin{pmatrix}
+            -\det\bm{S} & S_{22}
+            \\
+            -S_{11} & 1
+        \end{pmatrix}
+
+    となる。逆に転送行列の関係
+
+    .. math::
+        G = M_{21}A + M_{22}B
+
+    を `B` について解くと，
+
+    .. math::
+        B = -\frac{M_{21}}{M_{22}}A + \frac{1}{M_{22}}G
+
+    となる。これを `F=M_{11}A + M_{12}B` に代入すると，
+
+    .. math::
+        F = \frac{\det\bm{M}}{M_{22}}A + \frac{M_{12}}{M_{22}}G
+
+    となる。したがって，
+
+    .. math::
+        \bm{S} = \frac{1}{M_{22}}\begin{pmatrix}
+            -M_{21} & 1
+            \\
+            \det\bm{M} & M_{12}
+        \end{pmatrix}
+
+    となる。式 (2.185) および式 (2.186) と比較すると，
+
+    .. math::
+        \begin{aligned}
+            R_l &= \left|\frac{M_{21}}{M_{22}}\right|^2,\quad T_l = \left|\frac{\det\bm{M}}{M_{22}}\right|^2
+            \\
+            R_r &= \left|\frac{M_{12}}{M_{22}}\right|^2,\quad T_r = \left|\frac{1}{M_{22}}\right|^2
+        \end{aligned}
+
+    となる。
+
+b.  第一のポテンシャルの左側，中間，第二のポテンシャルの右側における振幅をそれぞれ
+
+    .. math::
+        \bm{v}_L = \begin{pmatrix}
+            A
+            \\
+            B
+        \end{pmatrix},\quad
+        \bm{v}_C = \begin{pmatrix}
+            C
+            \\
+            D
+        \end{pmatrix},\quad
+        \bm{v}_R = \begin{pmatrix}
+            F
+            \\
+            G
+        \end{pmatrix}
+
+    とする。転送行列の定義より，
+
+    .. math::
+        \bm{v}_C = \bm{M}_1\bm{v}_L,\quad
+        \bm{v}_R = \bm{M}_2\bm{v}_C
+
+    となるので，
+
+    .. math::
+        \bm{v}_R = \bm{M}_2\bm{M}_1\bm{v}_L
+
+    となる。したがって，組み合わせに対する転送行列は
+
+    .. math::
+        \bm{M} = \bm{M}_2\bm{M}_1
+
+    となる。
+
+c.  点 `x=a` の左側と右側で
+
+    .. math::
+        \begin{aligned}
+            \psi_L &= A e^{ikx} + B e^{-ikx}
+            \\
+            \psi_R &= F e^{ikx} + G e^{-ikx}
+        \end{aligned}
+
+    とする。境界条件より，
+
+    .. math::
+        \begin{aligned}
+            Fe^{ika} + Ge^{-ika} &= Ae^{ika} + Be^{-ika}
+            \\
+            ik(Fe^{ika}-Ge^{-ika}-Ae^{ika}+Be^{-ika}) &= -\frac{2m\alpha}{\hbar^2}(Ae^{ika}+Be^{-ika})
+        \end{aligned}
+
+    となるので， `\beta \coloneqq m\alpha/\hbar^2 k` と置いて， `F,G` について解くと，
+
+    .. math::
+        \begin{aligned}
+            F &= (1+i\beta)A + i\beta e^{-2ika}B
+            \\
+            G &= -i\beta e^{2ika}A + (1-i\beta)B
+        \end{aligned}
+
+    となる。したがって，転送行列は
+
+    .. math::
+        \bm{M}(a) = \begin{pmatrix}
+            1+i\beta & i\beta e^{-2ika}
+            \\
+            -i\beta e^{2ika} & 1-i\beta
+        \end{pmatrix}
+
+    となる。行列式は，
+
+    .. math::
+        \det\bm{M}(a) = (1+i\beta)(1-i\beta)-\beta^2 = 1
+
+    となる。
+
+d.  \(b) より全体の転送行列は，
+
+    .. math::
+        \begin{aligned}
+            \bm{M} &= \bm{M}(a)\bm{M}(-a)
+            \\
+            &= \begin{pmatrix}
+                (1+i\beta)^2+\beta^2e^{-4ika} & 2i\beta[\cos(2ka)-\beta\sin(2ka)]
+                \\
+                -2i\beta[\cos(2ka)-\beta\sin(2ka)] & (1-i\beta)^2 + \beta^2e^{4ika}
+            \end{pmatrix}
+        \end{aligned}
+
+    となる。左から入射する場合，各行列式が `1` で `\det\bm{M} = 1` となるので，
+
+    .. math::
+        T = \left|\frac{\det\bm{M}}{M_{22}}\right|^2 = \frac{1}{|M_{22}|^2}
+
+    となる。ここで，
+
+    .. math::
+        |M_{22}|^2 = 1 + 4\beta^2[\cos(2ka)-\beta\sin(2ka)]^2
+
+    となるので，透過係数は
+
+    .. math::
+        T = \frac{1}{1 + 4\beta^2[\cos(2ka)-\beta\sin(2ka)]^2}
+
+    となる。

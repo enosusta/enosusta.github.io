@@ -1,2 +1,86 @@
 Problem 2.53
 ==================
+
+a.  ポテンシャルは対称なので，
+
+    .. math::
+        S_{11}=S_{22}\eqqcolon r,\quad S_{12}=S_{21}\eqqcolon t.
+
+    となり，散乱行列は
+
+    .. math::
+        \bm{S} = \begin{pmatrix}
+            r & t
+            \\
+            t & r
+        \end{pmatrix}
+
+    となる。デルタ関数型ポテンシャル (2.117) に左から単位振幅で入射する場合，波動関数は
+
+    .. math::
+        \psi(x) = \begin{cases}
+            e^{ikx} + re^{-ikx} & (x<0)
+            \\
+            te^{ikx} & (x>0)
+        \end{cases}
+
+    となる。原点における境界条件より，
+
+    .. math::
+        \begin{aligned}
+            1 + r &= t
+            \\
+            ikt-ik(1-r) &= -\frac{2m\alpha}{\hbar^2}t
+        \end{aligned}
+
+    となるので， `\beta\coloneqq m\alpha/\hbar^2 k` と置いて，第一式を第二式に代入すると，
+
+    .. math::
+        2ikr = -2ik\beta t \implies r = i\beta t
+
+    となり，
+
+    .. math::
+        t = \frac{1}{1-i\beta},\quad r = \frac{i\beta}{1-i\beta}
+
+    となる。すなわち，
+
+    .. math::
+        \bm{S} = \frac{1}{1-i\beta}\begin{pmatrix}
+            i\beta & 1
+            \\
+            1 & i\beta
+        \end{pmatrix}.
+
+    となる。
+
+b.  有限矩形型ポテンシャル (2.148) について，
+
+    .. math::
+        k \coloneqq \frac{\sqrt{2mE}}{\hbar},\quad l \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
+
+    とし，
+
+    .. math::
+        \eta \coloneqq \frac{l^2-k^2}{2kl},\quad \zeta \coloneqq \frac{k^2+l^2}{2kl}
+
+    とし，
+
+    .. math::
+        D \coloneqq \cos(2la) - i\zeta\sin(2la)
+
+    とする。 :ref:`notes/qm/solutions/chap2/2-32:Problem 2.32` より，
+
+    .. math::
+        t = \frac{e^{-2ika}}{D},\quad r = i\eta\sin(2la)t
+
+    となるので，
+
+    .. math::
+        \bm{S} = \frac{e^{-2ika}}{D}\begin{pmatrix}
+            i\eta\sin(2la) & 1
+            \\
+            1 & i\eta\sin(2la)
+        \end{pmatrix}.
+
+    となる。

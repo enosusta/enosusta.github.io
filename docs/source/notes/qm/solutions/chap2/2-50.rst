@@ -1,2 +1,117 @@
 Problem 2.50
 ==================
+
+a.  簡単のため，
+
+    .. math::
+        y\coloneqq x-vt,\quad \kappa \coloneqq \frac{m\alpha}{\hbar^2}
+
+    と置き，
+
+    .. math::
+        \phi(y) \coloneqq \sqrt{\kappa}e^{-\kappa|y|}
+
+    とする。そうすると，
+
+    .. math::
+        \begin{aligned}
+            \int_{-\infty}^{\infty}|\Psi(x,t)|^2\,\dd y &= \int_{-\infty}^{\infty}|\phi(y)|^2\,\dd y
+            \\
+            &= 2\kappa\int_0^{\infty}e^{-2\kappa y}\,\dd y = 1
+        \end{aligned}
+
+    となるので，$\Psi(x,t)$ は規格化されている。 :ref:`notes/qm/solutions/chap2/2-23:Problem 2.23` \(b) より，
+
+    .. math::
+        \dv{^2}{y^2}e^{-\kappa|y|} = \kappa^2 e^{-\kappa|y|} - 2\kappa\delta(y)
+
+    となるので，
+
+    .. math::
+        \phi''(y) = \kappa^2\phi(y) - 2\kappa\phi(0)\delta(y)
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            \left[-\frac{\hbar^2}{2m}\dv{^2}{y^2}-\alpha\delta(y)\right]\phi(y) &= -\frac{\hbar^2\kappa^2}{2m}\phi(y) + \left(\frac{\hbar^2\kappa}{m}-\alpha\right)\phi(0)\delta(y)
+            \\
+            &= -\frac{m\alpha^2}{2\hbar^2}\phi(y)
+        \end{aligned}
+        
+    となる。次に位相因子を
+
+    .. math::
+        G(x,t) \coloneqq e^{imvx/\hbar}e^{-i(E+mv^2/2)t/\hbar}
+
+    と置くと， `\Psi=G\phi` なので，
+
+    .. math::
+        i\hbar\pdv{\Psi}{t} = G\left[\left(E+\frac{1}{2}mv^2\right)\phi-i\hbar v\phi'\right]
+
+    となる。一方で，
+
+    .. math::
+        \begin{aligned}
+            \pdv{\Psi}{x} &= G\left(\phi'+\frac{imv}{\hbar}\phi\right)
+            \\
+            \pdv{^2\Psi}{x^2} &= G\left(\phi'' + \frac{2imv}{\hbar}\phi' -\frac{m^2v^2}{\hbar^2}\phi\right)
+        \end{aligned}
+
+    となるので，
+
+    .. math::
+        \begin{aligned}
+            \hat{H}\Psi &= \left[-\frac{\hbar^2}{2m}\pdv{^2}{x^2}-\alpha\delta(x-vt)\right]\Psi
+            \\
+            &= G\left[-\frac{\hbar^2}{2m}\phi''-\alpha\delta(y)\phi-i\hbar v\phi'+\frac{1}{2}mv^2\phi\right]
+            \\
+            &= G\left[\left(E+\frac{1}{2}mv^2\right)\phi-i\hbar v\phi'\right]
+            \\
+            &= i\hbar\pdv{\Psi}{t}
+        \end{aligned}
+
+    となる。
+
+b.   `\phi(\pm\infty)=0` なので
+
+    .. math::
+        \braket{p}_\phi = \int_{-\infty}^{\infty}\phi(-i\hbar\phi')\,\dd y = -\frac{i\hbar}{2}[\phi^2]_{-\infty}^{\infty} = 0
+
+    となる。位相因子 `e^{imvx/\hbar}` によって運動量演算子は `\hat{p}\\mapsto \hat{p}+mv` となるので，
+
+    .. math::
+        \braket{p^2}_\Psi  = \braket{p^2}_\phi + m^2v^2
+
+    となる。したがって，運動エネルギーの期待値は，
+
+    .. math::
+        \begin{aligned}
+            \braket{T}_\Psi &= \frac{\hbar^2}{2m}\braket{p^2}_\phi + \frac{1}{2}mv^2
+            \\
+            &= \frac{\hbar^2}{2m}\int_{-\infty}^{\infty}|\phi'(y)|^2\,\dd y + \frac{1}{2}mv^2
+            \\
+            &= \frac{\hbar^2}{2m}\kappa^2\int_{-\infty}^{\infty}|\phi(y)|^2\,\dd y + \frac{1}{2}mv^2
+            \\
+            &= \frac{m\alpha^2}{2\hbar^2} + \frac{1}{2}mv^2
+        \end{aligned}
+
+    となる。一方でポテンシャルエネルギーの期待値は，
+
+    .. math::
+        \begin{aligned}
+            \braket{V}_\Psi &= -\alpha\int_{-\infty}^{\infty}\delta(x-vt)|\Psi(x,t)|^2\,\dd x
+            \\
+            &= -\alpha|\phi(0)|^2
+            \\
+            &= -\alpha\kappa = -\frac{m\alpha^2}{\hbar^2}
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \braket{H}_\Psi &= \braket{T}_\Psi + \braket{V}_\Psi
+        \\
+        &= -\frac{m\alpha^2}{2\hbar^2} + \frac{1}{2}mv^2
+
+    となる。すなわち移動するデルタ関数型ポテンシャルのエネルギー期待値は，静止しているデルタ関数型ポテンシャルのエネルギー期待値に運動エネルギー `mv^2/2` を加えたものとなる。

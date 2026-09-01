@@ -1,2 +1,74 @@
 Problem 2.57
 ==================
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.integrate import solve_ivp
+    from scipy.optimize import brentq
+
+    def schrodinger_equation(y, state, epsilon):
+        psi, derivative = state
+        return derivative, -epsilon * psi
+
+    def solve_wavefunction(epsilon, y_values=None):
+        return solve_ivp(
+            lambda y, state: schrodinger_equation(y, state, epsilon),
+            (0.0, 1.0),
+            (0.0, 1.0),
+            t_eval=y_values,
+            method="DOP853",
+            rtol=1.0e-10,
+            atol=1.0e-12,
+        )
+
+    def tail(epsilon):
+        solution = solve_wavefunction(epsilon)
+        return solution.y[0, -1]
+
+    epsilon_grid = np.linspace(0.1, 180.0, 361)
+    tail_values = np.array([tail(epsilon) for epsilon in epsilon_grid])
+
+    energy_levels = []
+    for lower, upper, tail_lower, tail_upper in zip(
+        epsilon_grid[:-1],
+        epsilon_grid[1:],
+        tail_values[:-1],
+        tail_values[1:],
+    ):
+        if tail_lower * tail_upper < 0.0:
+            root = brentq(tail, lower, upper, xtol=1.0e-12)
+            energy_levels.append(root)
+        if len(energy_levels) == 4:
+            break
+
+    for n, epsilon in enumerate(energy_levels, start=1):
+        print(
+            f"E_{n} = {epsilon:.5g} "
+            "[hbar^2/(2 m a^2)]"
+        )
+
+    y = np.linspace(0.0, 1.0, 1001)
+    for n, epsilon in enumerate(energy_levels, start=1):
+        psi = solve_wavefunction(epsilon, y).y[0]
+        psi /= np.max(np.abs(psi))
+        plt.plot(
+            y,
+            psi,
+            label=(
+                rf"$E_{n}/[\hbar^2/(2ma^2)]="
+                rf"{epsilon:.5g}$"
+            ),
+        )
+
+    plt.axhline(0.0, color="black", linewidth=0.8)
+    plt.xlabel(r"$y=x/a$")
+    plt.ylabel(r"$\psi_n(y)$ (normalized amplitude)")
+    plt.xlim(0.0, 1.0)
+    plt.ylim(-1.1, 1.1)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()
