@@ -7,10 +7,11 @@ Home
    -- Joseph Polchinski :cite:p:`Polchinski:1998rr`
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: ノート
 
    qm
+   griffithsqm
 
 .. todolist::
 

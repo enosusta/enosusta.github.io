@@ -41,7 +41,7 @@ Problem 2.24
 .. math::
     \psi'(x) = -\kappa\sqrt{\kappa}[\theta(x)-\theta(-x)]e^{-\kappa|x|}
 
-となる。さらに， :ref:`notes/qm/solutions/chap2/2-23:Problem 2.23` \(b) より，
+となる。さらに， :ref:`notes/griffithsqm/chap2/2-23:Problem 2.23` \(b) より，
 
 .. math::
     \begin{aligned}

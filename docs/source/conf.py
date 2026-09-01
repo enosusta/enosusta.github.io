@@ -28,6 +28,7 @@ extensions = [
 ]
 
 bibtex_bibfiles = ['references.bib']
+suppress_warnings = ['bibtex.duplicate_citation']
 autosectionlabel_prefix_document = True
 todo_include_todos = True
 todo_link_only = True

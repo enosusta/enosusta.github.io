@@ -20,7 +20,7 @@ a.  簡単のため，
             &= 2\kappa\int_0^{\infty}e^{-2\kappa y}\,\dd y = 1
         \end{aligned}
 
-    となるので，$\Psi(x,t)$ は規格化されている。 :ref:`notes/qm/solutions/chap2/2-23:Problem 2.23` \(b) より，
+    となるので，$\Psi(x,t)$ は規格化されている。 :ref:`notes/griffithsqm/chap2/2-23:Problem 2.23` \(b) より，
 
     .. math::
         \dv{^2}{y^2}e^{-\kappa|y|} = \kappa^2 e^{-\kappa|y|} - 2\kappa\delta(y)

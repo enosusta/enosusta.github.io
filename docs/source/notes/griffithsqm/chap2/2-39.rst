@@ -1,14 +1,14 @@
 Problem 2.39
 ==================
 
-a.  :ref:`notes/qm/solutions/chap2/2-7:Problem 2.7` より，
+a.  :ref:`notes/griffithsqm/chap2/2-7:Problem 2.7` より，
 
     .. math::
         \Psi'(x,0) = A\left[1-2\theta\left(x-\frac{a}{2}\right)\right]\quad (0<x<a)
 
     となる。
 
-b.  :ref:`notes/qm/solutions/chap2/2-23:Problem 2.23` \(b) より，
+b.  :ref:`notes/griffithsqm/chap2/2-23:Problem 2.23` \(b) より，
 
     .. math::
         \Psi''(x,0) = -2A\delta\left(x-\frac{a}{2}\right)\quad (0<x<a)
@@ -30,4 +30,4 @@ c.  \(b) より，
             &= \frac{\hbar^2}{2m}\frac{12}{a^3}a = \frac{6\hbar^2}{ma^2}
         \end{aligned}
 
-    となり， :ref:`notes/qm/solutions/chap2/2-7:Problem 2.7` \(d) の結果と一致する。
+    となり， :ref:`notes/griffithsqm/chap2/2-7:Problem 2.7` \(d) の結果と一致する。

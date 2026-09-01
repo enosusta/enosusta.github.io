@@ -47,7 +47,7 @@ Problem 2.46
 
 となる。
 
-さて， :ref:`notes/qm/solutions/chap2/2-44:Problem 2.44` で示した定理の証明では，実数上の規格化可能な束縛状態が無限遠でゼロになることを使った。しかし円はコンパクトで無限遠がなく，波動関数はゼロではなく周期的である。実際，縮退した平面波の Wronskian は
+さて， :ref:`notes/griffithsqm/chap2/2-44:Problem 2.44` で示した定理の証明では，実数上の規格化可能な束縛状態が無限遠でゼロになることを使った。しかし円はコンパクトで無限遠がなく，波動関数はゼロではなく周期的である。実際，縮退した平面波の Wronskian は
 
 .. math::
     \begin{aligned}
@@ -56,4 +56,4 @@ Problem 2.46
         &= \frac{2ik_n}{L} \neq 0
     \end{aligned}
 
-となる。したがって，この系では :ref:`notes/qm/solutions/chap2/2-44:Problem 2.44` の定理は成り立たず，縮退が許される。
+となる。したがって，この系では :ref:`notes/griffithsqm/chap2/2-44:Problem 2.44` の定理は成り立たず，縮退が許される。

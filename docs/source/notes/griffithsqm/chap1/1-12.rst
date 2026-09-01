@@ -1,7 +1,7 @@
 Problem 1.12
 ======================
 
-a.  :ref:`notes/qm/solutions/chap1/1-11:Problem 1.11` \(b) の調和振動子の運動量は初期条件を `x(0)=A` とすると，
+a.  :ref:`notes/griffithsqm/chap1/1-11:Problem 1.11` \(b) の調和振動子の運動量は初期条件を `x(0)=A` とすると，
 
     .. math::
         p(t) = -m\omega A\sin(\theta),\quad \theta = \omega t
@@ -29,7 +29,7 @@ a.  :ref:`notes/qm/solutions/chap1/1-11:Problem 1.11` \(b) の調和振動子の
             0 & (|p|\ge p_0)
         \end{cases}
 
-    となる。これは :ref:`notes/qm/solutions/chap1/1-11:Problem 1.11` \(b) と同様に規格化されている。
+    となる。これは :ref:`notes/griffithsqm/chap1/1-11:Problem 1.11` \(b) と同様に規格化されている。
 
 b.  `\rho(p)` は偶関数なので，
 
@@ -52,7 +52,7 @@ b.  `\rho(p)` は偶関数なので，
 
     となる。
 
-c.  :ref:`notes/qm/solutions/chap1/1-11:Problem 1.11` \(b) の結果より，
+c.  :ref:`notes/griffithsqm/chap1/1-11:Problem 1.11` \(b) の結果より，
 
     .. math::
         \sigma_x\sigma_p = \sqrt{\frac{E}{k}}\sqrt{mE} = \frac{E}{\omega}

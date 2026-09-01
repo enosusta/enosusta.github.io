@@ -69,7 +69,7 @@ b.  有限矩形型ポテンシャル (2.148) について，
     .. math::
         D \coloneqq \cos(2la) - i\zeta\sin(2la)
 
-    とする。 :ref:`notes/qm/solutions/chap2/2-32:Problem 2.32` より，
+    とする。 :ref:`notes/griffithsqm/chap2/2-32:Problem 2.32` より，
 
     .. math::
         t = \frac{e^{-2ika}}{D},\quad r = i\eta\sin(2la)t

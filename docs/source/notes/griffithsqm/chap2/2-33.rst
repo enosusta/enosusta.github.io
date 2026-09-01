@@ -17,7 +17,7 @@ Problem 2.33
 .. math::
     k \coloneqq \frac{\sqrt{2mE}}{\hbar},\quad q \coloneqq \frac{\sqrt{2m(E-V_0)}}{\hbar}
 
-である。 :ref:`notes/qm/solutions/chap2/2-32:Problem 2.32` の `l` を `q` に置き換えると，
+である。 :ref:`notes/griffithsqm/chap2/2-32:Problem 2.32` の `l` を `q` に置き換えると，
 
 .. math::
     \frac{F}{A} = \frac{e^{-2ika}}{\cos(2qa) - i\frac{k^2+q^2}{2kq}\sin(2qa)}
