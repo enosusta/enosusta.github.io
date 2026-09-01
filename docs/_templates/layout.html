@@ -14,9 +14,13 @@
         {% for item in language_links %}
             {% if not loop.first %}<span aria-hidden="true">|</span>{% endif %}
             {% if item.code == current_language %}
-                <span lang="{{ item.code }}" aria-current="page">{{ item.code|upper }}</span>
+                <span lang="{{ item.code }}" aria-current="page">{{ item.label }}</span>
             {% else %}
-                <a lang="{{ item.code }}" hreflang="{{ item.code }}" href="{{ item.url }}">{{ item.code|upper }}</a>
+                {% set target_url = item.url %}
+                {% if pagename != "index" and pagename in item.documents %}
+                    {% set target_url = item.url ~ pagename ~ ".html" %}
+                {% endif %}
+                <a lang="{{ item.code }}" hreflang="{{ item.code }}" href="{{ target_url }}">{{ item.label }}</a>
             {% endif %}
         {% endfor %}
     </nav>

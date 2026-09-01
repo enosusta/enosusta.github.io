@@ -57,12 +57,15 @@ html_favicon = str(DOCS_DIR / "_static" / "logo.svg")
 html_baseurl = f"{SITE_URL}/{language}/"
 
 language_labels = {"en": "EN", "ja": "JA"}
+language_documents = {
+    code: sorted(
+        path.relative_to(DOCS_DIR / "source" / code).with_suffix("").as_posix()
+        for path in (DOCS_DIR / "source" / code).rglob("*.rst")
+    )
+    for code in SUPPORTED_LANGUAGES
+}
 available_languages = sorted(
-    (
-        path.parent.name
-        for path in (DOCS_DIR / "source").glob("*/index.rst")
-        if path.parent.name in SUPPORTED_LANGUAGES
-    ),
+    (code for code, documents in language_documents.items() if "index" in documents),
     key=lambda code: (code != "ja", code),
 )
 
@@ -93,6 +96,7 @@ html_context = {
             "code": code,
             "label": language_labels[code],
             "url": f"/{code}/",
+            "documents": language_documents[code],
         }
         for code in available_languages
     ],
