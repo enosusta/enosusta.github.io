@@ -40,7 +40,7 @@ jobs:
       #   run: python -m sphinx -b html docs/source/en docs/build/en/html
 
       - name: Copy root files
-        run: cp docs/root/index.html docs/build/html/index.html
+        run: cp docs/source/root/index.html docs/build/html/index.html
 
       - name: Disable Jekyll
         run: touch docs/build/html/.nojekyll
