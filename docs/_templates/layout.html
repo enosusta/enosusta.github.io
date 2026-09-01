@@ -1,5 +1,13 @@
 {% extends "!layout.html" %}
 
+{% block htmltitle %}
+{% if pagename == "index" %}
+<title>{{ project|e }}</title>
+{% else %}
+{{ super() }}
+{% endif %}
+{% endblock %}
+
 {% block extrahead %}
 {{ super() }}
 {% if pagename == "index" and google_site_verification %}
