@@ -21,6 +21,20 @@ body {
     object-fit: contain;
 }
 
+.language-switcher {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.language-switcher a,
+.language-switcher span {
+    color: #ffffff;
+}
+
+.language-switcher span[aria-current="page"] {
+    font-weight: 700;
+}
+
 .toctree-wrapper .caption {
     font-size: 125% !important;
 }
