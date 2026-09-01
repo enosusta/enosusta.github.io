@@ -26,13 +26,13 @@ body {
     font-weight: 700;
 }
 
-.custom-site-title:visited {
-    color: inherit;
-}
-
+.custom-site-title:visited,
+.custom-site-title:active,
 .custom-site-title:hover,
 .custom-site-title:focus {
-    background: rgb(255 255 255 / 10%);
+    color: inherit;
+    background: none;
+    text-decoration: none;
 }
 
 .custom-site-title span {
@@ -71,6 +71,53 @@ body {
 
 .language-switcher span[aria-current="page"] {
     font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .wy-nav-top {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.5rem;
+        line-height: normal;
+    }
+
+    .wy-nav-top::before,
+    .wy-nav-top::after {
+        display: none;
+        content: none;
+    }
+
+    .wy-nav-top i {
+        float: none;
+        justify-self: start;
+        padding-top: 0;
+    }
+
+    .mobile-site-title {
+        display: flex !important;
+        align-items: center;
+        justify-self: center;
+        gap: 0.5rem;
+        min-width: 0;
+    }
+
+    .mobile-site-title span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .wy-nav-top .mobile-site-logo {
+        flex: 0 0 auto;
+        background: transparent;
+        border-radius: 0;
+    }
+
+    .mobile-language-switcher {
+        justify-self: end;
+        padding: 0;
+    }
 }
 
 .toctree-wrapper .caption {

@@ -1,5 +1,24 @@
 {% extends "!layout.html" %}
 
+{% macro render_language_switcher(extra_class="") %}
+{% if language_links|length > 1 %}
+<nav class="language-switcher{% if extra_class %} {{ extra_class }}{% endif %}" aria-label="Language">
+    {% for item in language_links %}
+        {% if not loop.first %}<span aria-hidden="true">|</span>{% endif %}
+        {% if item.code == current_language %}
+            <span lang="{{ item.code }}" aria-current="page">{{ item.label }}</span>
+        {% else %}
+            {% set target_url = item.url %}
+            {% if pagename != "index" and pagename in item.documents %}
+                {% set target_url = item.url ~ pagename ~ ".html" %}
+            {% endif %}
+            <a lang="{{ item.code }}" hreflang="{{ item.code }}" href="{{ target_url }}">{{ item.label }}</a>
+        {% endif %}
+    {% endfor %}
+</nav>
+{% endif %}
+{% endmacro %}
+
 {% block sidebartitle %}
 <div class="sidebar-brand-row">
     <a href="{{ pathto(master_doc) }}" class="custom-site-title">
@@ -9,23 +28,19 @@
         <span>{{ project }}</span>
     </a>
 
-    {% if language_links|length > 1 %}
-    <nav class="language-switcher" aria-label="Language">
-        {% for item in language_links %}
-            {% if not loop.first %}<span aria-hidden="true">|</span>{% endif %}
-            {% if item.code == current_language %}
-                <span lang="{{ item.code }}" aria-current="page">{{ item.label }}</span>
-            {% else %}
-                {% set target_url = item.url %}
-                {% if pagename != "index" and pagename in item.documents %}
-                    {% set target_url = item.url ~ pagename ~ ".html" %}
-                {% endif %}
-                <a lang="{{ item.code }}" hreflang="{{ item.code }}" href="{{ target_url }}">{{ item.label }}</a>
-            {% endif %}
-        {% endfor %}
-    </nav>
-    {% endif %}
+    {{ render_language_switcher() }}
 </div>
 
 {% include "searchbox.html" %}
+{% endblock %}
+
+{% block mobile_nav %}
+<i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+<a href="{{ pathto(master_doc) }}" class="mobile-site-title">
+    <img src="{{ pathto('_static/logo.svg', 1) }}"
+         class="custom-site-logo mobile-site-logo"
+         alt="">
+    <span>{{ project }}</span>
+</a>
+{{ render_language_switcher("mobile-language-switcher") }}
 {% endblock %}
