@@ -1,0 +1,72 @@
+Problem 2.51
+==================
+
+For convenience, define
+
+.. math::
+    X \coloneqq x + \frac{1}{2}gt^2,\quad S(x,t) \coloneqq -mgt\left(x+\frac{1}{6}gt^2\right)
+
+Then the wave function can be written as
+
+.. math::
+    \Psi(x,t) = \Psi_0(X,t)e^{iS(x,t)/\hbar}
+
+The derivatives of `X,S` are
+
+.. math::
+    \begin{aligned}
+        X_x &= 1
+        \\
+        X_t &= gt
+        \\
+        S_x &= -mgt
+        \\
+        S_{xx} &= 0
+        \\
+        S_t &= -mgx - \frac{1}{2}mg^2t^2
+    \end{aligned}
+
+and hence
+
+.. math::
+    \begin{aligned}
+        \pdv{\Psi}{t} &= e^{iS/\hbar}\left[\Psi_{0t}+X_t\Psi_{0X}+\frac{i}{\hbar}S_t\Psi_0\right]
+        \\
+        \pdv{\Psi}{x} &= e^{iS/\hbar}\left(\Psi_{0X}+\frac{iS_x}{\hbar}\Psi_0\right)
+        \\
+        \pdv{^2\Psi}{x^2} &= e^{iS/\hbar}\left[\Psi_{0XX}+\frac{2iS_x}{\hbar}\Psi_{0X}+\left(\frac{iS_{xx}}{\hbar}-\frac{S_x^2}{\hbar^2}\right)\Psi_0\right]
+        \\
+        &= e^{iS/\hbar}\left[\Psi_{0XX} -\frac{2imgt}{\hbar}\Psi_{0X}-\frac{m^2g^2t^2}{\hbar^2}\Psi_0\right]
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        \left[-\frac{\hbar^2}{2m}\pdv{^2}{x^2}+mgx\right]\Psi &= e^{iS/\hbar}\left[-\frac{\hbar^2}{2m}\Psi_{0XX} + i\hbar gt\Psi_{0X} + \left(\frac{1}{2}mg^2t^2+mgx\right)\Psi_0\right]
+        \\
+        &= e^{iS/\hbar}[i\hbar\Psi_{0t}+i\hbar gt\Psi_{0X} -S_t\Psi_0] = i\hbar\pdv{\Psi}{t}
+    \end{aligned}
+
+The probability density is
+
+.. math::
+    |\Psi(x,t)|^2 = |\Psi_0(X,t)|^2
+
+Changing the integration variable from `x` to `X` gives
+
+.. math::
+    \begin{aligned}
+        \braket{x} &= \int_{-\infty}^{\infty}x|\Psi_0(X,t)|^2\,\dd x
+        \\
+        &= \int_{-\infty}^{\infty}\left(X-\frac{1}{2}gt^2\right)|\Psi_0(X,t)|^2\,\dd X
+        \\
+        &= \braket{X}_0 - \frac{1}{2}gt^2
+    \end{aligned}
+
+Since the free Gaussian wave packet (2.111) is symmetric about the origin, `\braket{X}_0=0`, and
+
+.. math::
+    \braket{x} = -\frac{1}{2}gt^2
+
+Thus, the center of the wave packet follows the same free-fall trajectory as a classical particle with zero initial velocity.

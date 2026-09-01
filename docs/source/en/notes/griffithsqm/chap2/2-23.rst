@@ -1,0 +1,45 @@
+Problem 2.23
+==================
+
+a.  For an arbitrary smooth test function `f(x)`, consider
+
+    .. math::
+        I \coloneqq \int_{-\infty}^{\infty}f(x)\delta(cx)\,\dd x.
+
+    When the integration variable is changed to `u=cx\,(c>0)`,
+
+    .. math::
+        I = \frac{1}{c}\int_{-\infty}^{\infty}f\left(\frac{u}{c}\right)\delta(u)\,\dd u = \frac{f(0)}{c}.
+
+    On the other hand, for `c<0`,
+
+    .. math::
+        I = -\frac{1}{c}\int_{-\infty}^{\infty}f\left(\frac{u}{c}\right)\delta(u)\,\dd u = -\frac{f(0)}{c}.
+
+    Combining the two cases,
+
+    .. math::
+        \int f(x)\delta(cx)\,\dd x = \frac{f(0)}{|c|} = \int f(x)\frac{\delta(x)}{|c|}\,\dd x.
+
+    Therefore,
+
+    .. math::
+        \delta(cx) = \frac{\delta(x)}{|c|}.
+
+b.  For a smooth function `f(x)` that vanishes at infinity,
+
+    .. math::
+        \begin{aligned}
+            \int_{-\infty}^{\infty}f(x)\dv{\theta}{x}\,\dd x &= -\int_{-\infty}^{\infty}f'(x)\theta(x)\,\dd x
+            \\
+            &= -\int^{\infty}_{0}f'(x)\,\dd x
+            \\
+            &= -[f(x)]_0^{\infty}
+            \\
+            &= f(0) = \int_{-\infty}^{\infty}f(x)\delta(x)\,\dd x.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \dv{\theta}{x} = \delta(x).

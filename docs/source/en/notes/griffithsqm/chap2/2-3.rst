@@ -1,0 +1,36 @@
+Problem 2.3
+==================
+
+For `E=0`, the time-independent Schrödinger equation is
+
+.. math::
+    \psi'' = 0.
+
+Thus,
+
+.. math::
+    \psi(x) = Ax + B.
+
+The condition `\psi(0)=0` gives `B=0`, and `\psi(a)=0` then gives `A=0`. Therefore, there is no admissible solution.
+
+For `E<0`, the time-independent Schrödinger equation is
+
+.. math::
+    \psi'' = \kappa^2\psi,\quad \kappa \coloneqq \frac{\sqrt{-2mE}}{\hbar} > 0.
+
+Thus,
+
+.. math::
+    \psi(x) = A\sinh(\kappa x) + B\cosh(\kappa x).
+
+The condition `\psi(0)=0` gives `B=0`, while `\psi(a)=0` requires
+
+.. math::
+    \sinh(\kappa a) = 0.
+
+Since `\kappa a>0`,
+
+.. math::
+    \sinh(\kappa a) = \frac{e^{\kappa a} - e^{-\kappa a}}{2} > 0,
+
+and hence `A=0`. Therefore, there is no admissible solution.

@@ -1,0 +1,64 @@
+Problem 2.6
+==================
+
+By orthonormality,
+
+.. math::
+    \begin{aligned}
+        1 &= |A|^2\int_0^a(\psi_1+e^{-i\phi}\psi_2)(\psi_1+e^{i\phi}\psi_2)\,\dd x
+        \\
+        &= |A|^2\int_0^a(\psi_1^2+\psi_2^2)\,\dd x = 2|A|^2.
+    \end{aligned}
+
+Thus, independently of the phase `\phi`, we may choose
+
+.. math::
+    A = \frac{1}{\sqrt{2}}.
+
+The time evolution is
+
+.. math::
+    \Psi(x,t) = \frac{1}{\sqrt{2}}[\psi_1(x)e^{-i\omega t} + e^{i\phi}\psi_2(x)e^{-i4\omega t}],
+
+so the cross term in the probability density is
+
+.. math::
+    e^{i\omega t}\psi_1 e^{i\phi}e^{-i4\omega t}\psi_2 + e^{-i\phi}e^{i4\omega t}\psi_2 e^{-i\omega t}\psi_1 = 2\psi_1\psi_2\cos(3\omega t - \phi),
+
+and hence
+
+.. math::
+    |\Psi(x,t)|^2 = \frac{1}{2}[\psi_1^2+\psi_2^2+2\psi_1\psi_2\cos(3\omega t - \phi)].
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        \braket{x} &= \frac{1}{2}\left[\braket{1|x|1}+\braket{2|x|2}+e^{i(\phi-3\omega t)}\braket{1|x|2} + e^{-i(\phi-3\omega t)}\braket{2|x|1}\right]
+        \\
+        &= \frac{a}{2} - \frac{16a}{9\pi^2}\cos(3\omega t - \phi).
+    \end{aligned}
+
+Thus, the relative phase shifts the probability density and `\braket{x}` in time by `\phi/(3\omega)`, but it does not affect the angular frequency or amplitude.
+
+For `\phi=\pi/2` in particular,
+
+.. math::
+    \begin{aligned}
+        |\Psi|^2 &= \frac{1}{2}[\psi_1^2+\psi_2^2+2\psi_1\psi_2\sin(3\omega t)]
+        \\
+        \braket{x} &= \frac{a}{2} + \frac{16a}{9\pi^2}\sin(3\omega t).
+    \end{aligned}
+
+In particular, the interference term vanishes at `t=0`.
+
+For `\phi=\pi`,
+
+.. math::
+    \begin{aligned}
+        |\Psi|^2 &= \frac{1}{2}[\psi_1^2+\psi_2^2-2\psi_1\psi_2\cos(3\omega t)]
+        \\
+        \braket{x} &= \frac{a}{2} + \frac{16a}{9\pi^2}\cos(3\omega t).
+    \end{aligned}
+
+Compared with the case `\phi=0`, the interference term has the opposite sign.

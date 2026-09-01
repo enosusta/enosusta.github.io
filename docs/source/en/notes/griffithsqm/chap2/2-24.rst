@@ -1,0 +1,76 @@
+Problem 2.24
+==================
+
+Since `|\psi|^2` is an even function,
+
+.. math::
+    \braket{x} = 0.
+
+Also,
+
+.. math::
+    \begin{aligned}
+        \braket{p} &= -i\hbar\int_{-\infty}^{\infty}\psi\psi'\,\dd x
+        \\
+        &= -\frac{i\hbar}{2}[\psi^2]_{-\infty}^{\infty} = 0.
+    \end{aligned}
+
+Furthermore,
+
+.. math::
+    \begin{aligned}
+        \braket{x^2} &= 2\kappa\int_0^\infty x^2 e^{-2\kappa x}\,\dd x
+        \\
+        &= 2\kappa\frac{2}{(2\kappa)^3} = \frac{1}{2\kappa^2},
+    \end{aligned}
+
+so
+
+.. math::
+    \sigma_x = \sqrt{\braket{x^2} - \braket{x}^2} = \frac{1}{\sqrt{2}\kappa}.
+
+Now, differentiating `|x|` gives
+
+.. math::
+    \dv{}{x}|x| = \theta(x)-\theta(-x),
+
+and hence
+
+.. math::
+    \psi'(x) = -\kappa\sqrt{\kappa}[\theta(x)-\theta(-x)]e^{-\kappa|x|}.
+
+Furthermore, from part (b) of :ref:`notes/griffithsqm/chap2/2-23:Problem 2.23`,
+
+.. math::
+    \begin{aligned}
+        \psi''(x) &= -2\kappa\sqrt{\kappa}\delta(x)e^{-\kappa|x|} + \kappa^2\sqrt{\kappa}[\theta(x)-\theta(-x)]^2e^{-\kappa|x|}
+        \\
+        &= \kappa^2\psi(x) - 2\kappa\sqrt{\kappa}\delta(x),
+    \end{aligned}
+
+so
+
+.. math::
+    \begin{aligned}
+        \braket{p^2} &= -\hbar^2\int_{-\infty}^{\infty}\psi(x)\psi''(x)\,\dd x
+        \\
+        &= -\hbar^2\kappa^2\int_{-\infty}^{\infty}\psi^2(x)\,\dd x + 2\hbar^2\kappa\sqrt{\kappa}\int_{-\infty}^{\infty}\psi(x)\delta(x)\,\dd x
+        \\
+        &= -\hbar^2\kappa^2 + 2\hbar^2\kappa\sqrt{\kappa}\psi(0)
+        \\
+        &= -\hbar^2\kappa^2 + 2\hbar^2\kappa^2
+        \\
+        &= \hbar^2\kappa^2 = \left(\frac{m\alpha}{\hbar}\right)^2.
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    \sigma_p = \sqrt{\braket{p^2} - \braket{p}^2} = \hbar\kappa,
+
+and hence
+
+.. math::
+    \sigma_x\sigma_p = \frac{1}{\sqrt{2}\kappa}\hbar\kappa = \frac{\hbar}{\sqrt{2}} > \frac{\hbar}{2}.
+
+Thus, the Heisenberg uncertainty principle is satisfied.

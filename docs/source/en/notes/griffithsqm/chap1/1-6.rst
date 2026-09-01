@@ -1,0 +1,9 @@
+Problem 1.6
+====================
+
+Integration by parts can transfer a derivative from one factor to another only when the variable of differentiation and the variable of integration are the same. In the middle expression of Equation (1.29),
+
+.. math::
+    \int_{-\infty}^{\infty}x\pdv{}{t}|\Psi(x,t)|^2\,\dd x,
+
+the variable of integration is `x`, whereas the variable of differentiation is `t`. Therefore, integration by parts cannot be applied.

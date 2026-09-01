@@ -1,0 +1,165 @@
+Problem 2.47
+==================
+
+a.  Since the potential is symmetric, the ground state `\psi_1` is an even function with no nodes, while the first excited state `\psi_2` is an odd function with one node at the origin.
+
+    i.  When `b=0`, the two wells join to form a single well of width `2a`. Thus, `\psi_1` has a peak whose maximum is at the origin, while `\psi_2` has two peaks of opposite sign on the left and right.
+
+    ii.  When `b\approx a`, the finite-width barrier in the center causes both wave functions to have two peaks, one in each well. The peaks of `\psi_1` have the same sign, while those of `\psi_2` have opposite signs.
+
+    iii.  When `b\gg a`, tunneling from one well to the other becomes very weak. If `\phi_L,\phi_R` denote the isolated ground states of the respective wells, then
+
+        .. math::
+            \psi_1 \approx \frac{\phi_L + \phi_R}{\sqrt{2}}, \quad
+            \psi_2 \approx \frac{\phi_L - \phi_R}{\sqrt{2}}
+
+        approximately.
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.linalg import eigh_tridiagonal
+
+        a = 1.0
+        V_0 = 20.0
+        dx = 0.01
+
+        def double_well_potential(x, b):
+            tolerance = dx / 4.0
+            in_left_well = (
+                -b / 2.0 - a - tolerance <= x
+            ) & (x <= -b / 2.0 + tolerance)
+            in_right_well = (
+                b / 2.0 - tolerance <= x
+            ) & (x <= b / 2.0 + a + tolerance)
+            return np.where(in_left_well | in_right_well, -V_0, 0.0)
+
+        def two_lowest_states(b):
+            domain_half_width = b / 2.0 + a + 2.5 * a
+            number_of_points = round(2.0 * domain_half_width / dx) + 1
+            x = np.linspace(
+                -domain_half_width,
+                domain_half_width,
+                number_of_points,
+            )
+            actual_dx = x[1] - x[0]
+            potential = double_well_potential(x, b)
+
+            diagonal = 2.0 / actual_dx**2 + potential
+            off_diagonal = -np.ones(len(x) - 1) / actual_dx**2
+            _, states = eigh_tridiagonal(
+                diagonal,
+                off_diagonal,
+                select="i",
+                select_range=(0, 1),
+            )
+
+            psi_1 = states[:, 0] + states[::-1, 0]
+            psi_2 = states[:, 1] - states[::-1, 1]
+            psi_1 /= np.sqrt(np.trapezoid(psi_1**2, x))
+            psi_2 /= np.sqrt(np.trapezoid(psi_2**2, x))
+
+            center = np.argmin(np.abs(x))
+            right_well_center = np.argmin(np.abs(x - (b + a) / 2.0))
+            if psi_1[center] < 0.0:
+                psi_1 *= -1.0
+            if psi_2[right_well_center] < 0.0:
+                psi_2 *= -1.0
+
+            return x, psi_1, psi_2
+
+        cases = [
+            (0.0, r"(i) $b=0$"),
+            (a, r"(ii) $b=a$"),
+            (4.0 * a, r"(iii) $b=4a\gg a$"),
+        ]
+
+        fig, axes = plt.subplots(
+            1,
+            3,
+            figsize=(12, 4.0),
+            sharey=True,
+            constrained_layout=True,
+        )
+
+        for ax, (b, title) in zip(axes, cases):
+            x, psi_1, psi_2 = two_lowest_states(b)
+
+            ax.axvspan(-b / 2.0 - a, -b / 2.0, color="tab:gray", alpha=0.18)
+            ax.axvspan(b / 2.0, b / 2.0 + a, color="tab:gray", alpha=0.18)
+            ax.plot(x, psi_1, label=r"$\psi_1$")
+            ax.plot(x, psi_2, linestyle="--", label=r"$\psi_2$")
+            ax.axhline(0.0, color="black", linewidth=0.8)
+            ax.axvline(0.0, color="tab:gray", linestyle=":", linewidth=0.8)
+            ax.set_title(title)
+            ax.set_xlabel(r"$x$")
+            ax.set_xlim(x[0], x[-1])
+            ax.grid(alpha=0.25)
+            ax.legend()
+
+        axes[0].set_ylabel(r"$\psi(x)$")
+        plt.show()
+
+b.  At `b=0`, the ground state can spread across the full width `2a`, lowering its kinetic energy. As the separation `b` increases, the overlap between its left and right peaks decreases and its kinetic energy increases; therefore, `E_1(b)` increases. The odd function `\psi_2`, however, vanishes at the origin. As the wells separate, it no longer needs to change sign rapidly near the origin, so its kinetic energy and `E_2(b)` decrease. As `b\to\infty`, both approach the ground-state energy of a single isolated well of width `a`, and `E_1(b)` and `E_2(b)` approach the same value.
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.linalg import eigh_tridiagonal
+
+        a = 1.0
+        V_0 = 20.0
+        dx = 0.01
+
+        def double_well_potential(x, b):
+            tolerance = dx / 4.0
+            in_left_well = (
+                -b / 2.0 - a - tolerance <= x
+            ) & (x <= -b / 2.0 + tolerance)
+            in_right_well = (
+                b / 2.0 - tolerance <= x
+            ) & (x <= b / 2.0 + a + tolerance)
+            return np.where(in_left_well | in_right_well, -V_0, 0.0)
+
+        def two_lowest_energies(b):
+            domain_half_width = b / 2.0 + a + 2.5 * a
+            number_of_points = round(2.0 * domain_half_width / dx) + 1
+            x = np.linspace(
+                -domain_half_width,
+                domain_half_width,
+                number_of_points,
+            )
+            actual_dx = x[1] - x[0]
+            potential = double_well_potential(x, b)
+
+            diagonal = 2.0 / actual_dx**2 + potential
+            off_diagonal = -np.ones(len(x) - 1) / actual_dx**2
+            return eigh_tridiagonal(
+                diagonal,
+                off_diagonal,
+                select="i",
+                select_range=(0, 1),
+                eigvals_only=True,
+            )
+
+        b_values = np.linspace(0.0, 5.0 * a, 101)
+        energy_levels = np.array(
+            [two_lowest_energies(b) for b in b_values]
+        )
+
+        plt.plot(b_values / a, energy_levels[:, 0], label=r"$E_1(b)$")
+        plt.plot(b_values / a, energy_levels[:, 1], label=r"$E_2(b)$")
+        plt.xlabel(r"$b/a$")
+        plt.ylabel(r"$E\,/\,[\hbar^2/(2ma^2)]$")
+        plt.xlim(b_values[0] / a, b_values[-1] / a)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+c.  When the electron is in the ground state `\psi_1`, smaller well separation gives a lower `E_1`. The electron therefore tends to draw the two wells—that is, the two nuclei—toward each other.

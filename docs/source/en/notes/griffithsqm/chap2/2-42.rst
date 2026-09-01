@@ -1,0 +1,94 @@
+Problem 2.42
+==================
+
+The normalization condition gives
+
+.. math::
+    \begin{aligned}
+        1 &= |A|^2\int_{-\infty}^{\infty} e^{-2ax^2}\,\dd x
+        \\
+        &= |A|^2\sqrt{\frac{\pi}{2a}},
+    \end{aligned}
+
+so we may choose
+
+.. math::
+    A = \left(\frac{2a}{\pi}\right)^{1/4}.
+
+The Fourier transform is
+
+.. math::
+    \begin{aligned}
+        \phi(k) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi(x,0)e^{-ikx}\,\dd x
+        \\
+        &= \frac{A}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\exp[-ax^2-i(k-l)x]\,\dd x.
+    \end{aligned}
+
+Completing the square in the exponent gives
+
+.. math::
+    ax^2 + i(k-l)x = a\left(x+\frac{i(k-l)}{2a}\right)^2 + \frac{(k-l)^2}{4a},
+
+and hence
+
+.. math::
+    \phi(k) = \frac{A}{\sqrt{2a}}\exp\left[-\frac{(k-l)^2}{4a}\right].
+
+The time evolution of the wave function is
+
+.. math::
+    \Psi(x,t) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\phi(k)e^{ikx-i\hbar k^2t/2m}\,\dd k.
+
+Setting `u\coloneqq k-l`, the exponent becomes
+
+.. math::
+    \begin{aligned}
+        ikx - \frac{i\hbar k^2t}{2m} &= i(u+l)x - \frac{i\hbar(u+l)^2t}{2m}
+        \\
+        &= ilx - \frac{i\hbar l^2t}{2m} + iu\left(x-\frac{\hbar lt}{m}\right) - \frac{i\hbar u^2t}{2m}.
+    \end{aligned}
+
+Thus, defining `X\coloneqq x-\hbar lt/m`, the wave function is
+
+.. math::
+    \Psi(x,t) = \frac{A}{\sqrt{2\pi}}e^{ilx-i\hbar l^2t/2m}\int_{-\infty}^{\infty}\exp\left[-\left(\frac{1}{4a}+\frac{i\hbar t}{2m}\right)u^2+iuX\right]\,\dd u.
+
+Since the coefficient of `u^2` is
+
+.. math::
+    \frac{1}{4a} + \frac{i\hbar t}{2m} = \frac{\gamma^2}{4a},
+
+the integral is
+
+.. math::
+    \int_{-\infty}^{\infty}e^{-\gamma^2u^2/(4a) + iuX}\,\dd u = \frac{2\sqrt{\pi a}}{\gamma}e^{-aX^2/\gamma^2}.
+
+Therefore,
+
+.. math::
+    \Psi(x,t) = \left(\frac{2a}{\pi}\right)^{1/4}\frac{1}{\gamma}\exp\left[-\frac{a(x-\hbar lt/m)^2}{\gamma^2}\right]\exp\left[il\left(x-\frac{\hbar lt}{m}\right)\right].
+
+The phase velocity is therefore
+
+.. math::
+    v_p = \frac{\hbar l}{2m}.
+
+Let `\beta\coloneqq 2\hbar at/m`. Since
+
+.. math::
+    |\gamma|^2 = \sqrt{1 + \beta^2},
+
+the probability density is the Gaussian
+
+.. math::
+    |\Psi(x,t)|^2 = \sqrt{\frac{2a}{\pi}}\frac{1}{\sqrt{1+\beta^2}}\exp\left[-\frac{2a(x-\hbar lt/m)^2}{1+\beta^2}\right].
+
+Therefore,
+
+.. math::
+    \braket{x} = \frac{\hbar l}{m}t,
+
+and the group velocity is
+
+.. math::
+    v_g = \frac{\hbar l}{m}.

@@ -1,0 +1,96 @@
+Problem 2.19
+==================
+
+a.  Define `\theta_n\coloneqq n\pi x/a`. Euler's formulas give
+
+    .. math::
+        \begin{aligned}
+            a_n\sin\theta_n+b_n\cos\theta_n &= \frac{a_n}{2i}\left(e^{i\theta_n}-e^{-i\theta_n}\right) + \frac{b_n}{2}\left(e^{i\theta_n}+e^{-i\theta_n}\right)
+            \\
+            &= \frac{b_n-ia_n}{2}e^{i\theta_n} + \frac{b_n+ia_n}{2}e^{-i\theta_n}.
+        \end{aligned}
+
+    Thus, if we define
+
+    .. math::
+        c_0 \coloneqq b_0,\quad c_n \coloneqq \frac{b_n-ia_n}{2},\quad c_{-n} \coloneqq \frac{b_n+ia_n}{2}\quad (n=1,2,3,\ldots),
+
+    then
+
+    .. math::
+        f(x) = \sum_{n=-\infty}^{\infty}c_n e^{in\pi x/a}.
+
+b.  Multiply both sides of the complex series by `e^{-im\pi x/a}` and integrate from `-a` to `a`:
+
+    .. math::
+        \int_{-a}^{a}f(x)e^{-im\pi x/a}\,\dd{x} = \sum_{n=-\infty}^{\infty}c_n\int_{-a}^{a}e^{i(n-m)\pi x/a}\,\dd{x}.
+
+    Let `q\coloneqq n-m`. If `q=0`, the integral on the right is `2a`. If `q\neq 0`,
+
+    .. math::
+        \begin{aligned}
+            \int_{-a}^a e^{iq\pi x/a}\,\dd x &= \frac{a}{iq\pi}[e^{iq\pi x/a}]_{-a}^a
+            \\
+            &= \frac{a}{iq\pi}(e^{iq\pi}-e^{-iq\pi})
+            \\
+            &= \frac{2a}{q\pi}\sin(q\pi) = 0.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \int_{-a}^{a}e^{i(n-m)\pi x/a}\,\dd{x} = 2a\delta_{nm}.
+
+    Only the term `n=m` survives in the sum, so
+
+    .. math::
+        \int_{-a}^{a}f(x)e^{-im\pi x/a}\,\dd{x} = 2ac_m.
+
+    Hence,
+
+    .. math::
+        c_n = \frac{1}{2a}\int_{-a}^{a}f(x)e^{-in\pi x/a}\,\dd{x}.
+
+c.  Since `k_n=n\pi/a`,
+
+    .. math::
+        \Delta k = k_{n+1}-k_n = \frac{\pi}{a}.
+
+    Also, `F(k_n)=a\sqrt{2/\pi}c_n` gives
+
+    .. math::
+        c_n = \frac{F(k_n)}{a\sqrt{2/\pi}} = \frac{\Delta k}{\sqrt{2\pi}}F(k_n).
+
+    Substituting this into the complex series from (a),
+
+    .. math::
+        \begin{aligned}
+            f(x) &= \sum_{n=-\infty}^{\infty}\frac{\Delta k}{\sqrt{2\pi}}F(k_n)e^{ik_nx}
+            \\
+            &= \frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty}F(k_n)e^{ik_nx}\Delta k.
+        \end{aligned}
+
+    Meanwhile, the result from (b) gives
+
+    .. math::
+        \begin{aligned}
+            F(k_n) &= a\sqrt{\frac{2}{\pi}}c_n
+            \\
+            &= a\sqrt{\frac{2}{\pi}}\frac{1}{2a}\int_{-a}^{a}f(x)e^{-ik_nx}\,\dd x
+            \\
+            &= \frac{1}{\sqrt{2\pi}}\int_{-a}^{a}f(x)e^{-ik_nx}\,\dd x.
+        \end{aligned}
+
+d.  As `a\to\infty`, under suitable convergence conditions, the sum in (c) converges to the Riemann-integral limit
+
+    .. math::
+        \sum_{n=-\infty}^{\infty}F(k_n)e^{ik_nx}\Delta k \to \int_{-\infty}^{\infty}F(k)e^{ikx}\,\dd k.
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            f(x) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(k)e^{ikx}\,\dd k
+            \\
+            F(k) &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(x)e^{-ikx}\,\dd x.
+        \end{aligned}

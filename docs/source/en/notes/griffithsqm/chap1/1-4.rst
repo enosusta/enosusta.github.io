@@ -1,0 +1,66 @@
+Problem 1.4
+================
+
+a.  The normalization condition gives
+
+    .. math::
+        \begin{aligned}
+            1 &= A^2\left[\int_0^a \frac{x^2}{a^2}\,\dd x + \int_a^b\frac{(b-x)^2}{(b-a)^2}\,\dd x\right]
+            \\
+            &= A^2\left(\frac{a}{3} + \frac{b-a}{3}\right) = A^2\frac{b}{3}.
+        \end{aligned}
+
+    Since `A` is positive,
+
+    .. math::
+        A = \sqrt{\frac{3}{b}}.
+
+b.
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        a = 1.0
+        b = 3.0
+        A = np.sqrt(3.0 / b)
+
+        x = np.linspace(0.0, b, 1000)
+        psi = np.piecewise(
+            x,
+            [x <= a, x > a],
+            [
+                lambda x: A * x / a,
+                lambda x: A * (b - x) / (b - a),
+            ],
+        )
+
+        plt.plot(x, psi)
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$\Psi(x,0)$")
+        plt.xticks([0.0, a, b], [r"$0$", r"$a$", r"$b$"])
+        plt.yticks([0.0, A], [r"$0$", r"$A$"])
+        plt.grid(alpha=0.25)
+        plt.show()
+
+c.  From (b), the particle is most likely to be found at `x=a`.
+
+d.  The probability of finding the particle to the left of `x=a` is
+
+    .. math::
+        P(x<a) = A^2\int_0^a \frac{x^2}{a^2}\,\dd x = \frac{3}{b}\frac{a}{3} = \frac{a}{b}.
+
+    For `b=a`, `P(x<a)=1`. For `b=2a`, `P(x<a)=1/2`.
+
+e.  The expectation value of `x` is
+
+    .. math::
+        \begin{aligned}
+            \braket{x} &= A^2\left[\int_0^a x\frac{x^2}{a^2}\,\dd x + \int_a^b x\frac{(b-x)^2}{(b-a)^2}\,\dd x\right]
+            \\
+            &= A^2\left[\frac{a^2}{4} + \frac{b(b-a)}{3} - \frac{(b-a)^2}{4}\right]
+            \\
+            &= \frac{3}{b}\frac{b(b+2a)}{12} = \frac{2a+b}{4}.
+        \end{aligned}

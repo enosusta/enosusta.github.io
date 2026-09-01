@@ -1,0 +1,117 @@
+Problem 2.50
+==================
+
+a.  For convenience, define
+
+    .. math::
+        y\coloneqq x-vt,\quad \kappa \coloneqq \frac{m\alpha}{\hbar^2}
+
+    and let
+
+    .. math::
+        \phi(y) \coloneqq \sqrt{\kappa}e^{-\kappa|y|}
+
+    Then
+
+    .. math::
+        \begin{aligned}
+            \int_{-\infty}^{\infty}|\Psi(x,t)|^2\,\dd y &= \int_{-\infty}^{\infty}|\phi(y)|^2\,\dd y
+            \\
+            &= 2\kappa\int_0^{\infty}e^{-2\kappa y}\,\dd y = 1
+        \end{aligned}
+
+    so $\Psi(x,t)$ is normalized. From part (b) of :ref:`notes/griffithsqm/chap2/2-23:Problem 2.23`,
+
+    .. math::
+        \dv{^2}{y^2}e^{-\kappa|y|} = \kappa^2 e^{-\kappa|y|} - 2\kappa\delta(y)
+
+    and hence
+
+    .. math::
+        \phi''(y) = \kappa^2\phi(y) - 2\kappa\phi(0)\delta(y)
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            \left[-\frac{\hbar^2}{2m}\dv{^2}{y^2}-\alpha\delta(y)\right]\phi(y) &= -\frac{\hbar^2\kappa^2}{2m}\phi(y) + \left(\frac{\hbar^2\kappa}{m}-\alpha\right)\phi(0)\delta(y)
+            \\
+            &= -\frac{m\alpha^2}{2\hbar^2}\phi(y)
+        \end{aligned}
+
+    Next, define the phase factor
+
+    .. math::
+        G(x,t) \coloneqq e^{imvx/\hbar}e^{-i(E+mv^2/2)t/\hbar}
+
+    Since `\Psi=G\phi`,
+
+    .. math::
+        i\hbar\pdv{\Psi}{t} = G\left[\left(E+\frac{1}{2}mv^2\right)\phi-i\hbar v\phi'\right]
+
+    On the other hand,
+
+    .. math::
+        \begin{aligned}
+            \pdv{\Psi}{x} &= G\left(\phi'+\frac{imv}{\hbar}\phi\right)
+            \\
+            \pdv{^2\Psi}{x^2} &= G\left(\phi'' + \frac{2imv}{\hbar}\phi' -\frac{m^2v^2}{\hbar^2}\phi\right)
+        \end{aligned}
+
+    and therefore
+
+    .. math::
+        \begin{aligned}
+            \hat{H}\Psi &= \left[-\frac{\hbar^2}{2m}\pdv{^2}{x^2}-\alpha\delta(x-vt)\right]\Psi
+            \\
+            &= G\left[-\frac{\hbar^2}{2m}\phi''-\alpha\delta(y)\phi-i\hbar v\phi'+\frac{1}{2}mv^2\phi\right]
+            \\
+            &= G\left[\left(E+\frac{1}{2}mv^2\right)\phi-i\hbar v\phi'\right]
+            \\
+            &= i\hbar\pdv{\Psi}{t}
+        \end{aligned}
+
+    as required.
+
+b.  Since `\phi(\pm\infty)=0`,
+
+    .. math::
+        \braket{p}_\phi = \int_{-\infty}^{\infty}\phi(-i\hbar\phi')\,\dd y = -\frac{i\hbar}{2}[\phi^2]_{-\infty}^{\infty} = 0
+
+    The phase factor `e^{imvx/\hbar}` shifts the momentum operator as `\hat{p}\\mapsto \hat{p}+mv`, so
+
+    .. math::
+        \braket{p^2}_\Psi  = \braket{p^2}_\phi + m^2v^2
+
+    Therefore, the expectation value of the kinetic energy is
+
+    .. math::
+        \begin{aligned}
+            \braket{T}_\Psi &= \frac{\hbar^2}{2m}\braket{p^2}_\phi + \frac{1}{2}mv^2
+            \\
+            &= \frac{\hbar^2}{2m}\int_{-\infty}^{\infty}|\phi'(y)|^2\,\dd y + \frac{1}{2}mv^2
+            \\
+            &= \frac{\hbar^2}{2m}\kappa^2\int_{-\infty}^{\infty}|\phi(y)|^2\,\dd y + \frac{1}{2}mv^2
+            \\
+            &= \frac{m\alpha^2}{2\hbar^2} + \frac{1}{2}mv^2
+        \end{aligned}
+
+    The expectation value of the potential energy is
+
+    .. math::
+        \begin{aligned}
+            \braket{V}_\Psi &= -\alpha\int_{-\infty}^{\infty}\delta(x-vt)|\Psi(x,t)|^2\,\dd x
+            \\
+            &= -\alpha|\phi(0)|^2
+            \\
+            &= -\alpha\kappa = -\frac{m\alpha^2}{\hbar^2}
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \braket{H}_\Psi &= \braket{T}_\Psi + \braket{V}_\Psi
+        \\
+        &= -\frac{m\alpha^2}{2\hbar^2} + \frac{1}{2}mv^2
+
+    Thus, the energy expectation value for the moving delta-function potential is the energy expectation value for the stationary delta-function potential plus the kinetic energy `mv^2/2`.

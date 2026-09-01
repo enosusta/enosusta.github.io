@@ -1,0 +1,20 @@
+Problem 2.18
+==================
+
+Differentiating the wave function gives
+
+.. math::
+    \pdv{\Psi_k}{x} = ik\Psi_k,\quad \pdv{\Psi_k^*}{x} = -ik\Psi_k^*.
+
+Therefore, the probability current is
+
+.. math::
+    \begin{aligned}
+        J &= \frac{i\hbar}{2m}\left(\Psi_k\pdv{\Psi_k^*}{x} - \Psi_k^*\pdv{\Psi_k}{x}\right)
+        \\
+        &= \frac{i\hbar}{2m}\left[\Psi_k(-ik\Psi_k^*) - \Psi_k^*(ik\Psi_k)\right]
+        \\
+        &= \frac{i\hbar}{2m}(-2ik|A|^2) = \frac{\hbar k}{m}|A|^2.
+    \end{aligned}
+
+Thus, if `k>0`, then `J>0` and probability flows in the `+x` direction. If `k<0`, then `J<0` and probability flows in the `-x` direction. If `k=0`, then `J=0` and there is no probability flow.

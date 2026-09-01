@@ -1,0 +1,85 @@
+Problem 2.45
+==================
+
+a.  Each eigenstate satisfies
+
+    .. math::
+        -\frac{\hbar^2}{2m}\psi_j'' + V\psi_j = E_j\psi_j,
+
+    so
+
+    .. math::
+        \psi_j'' = \frac{2m}{\hbar^2}(V-E_j)\psi_j.
+
+    Substituting this into
+
+    .. math::
+        \begin{aligned}
+            \dv{}{x}(\psi_m'\psi_n-\psi_m\psi_n') &= \psi_m''\psi_n + \psi_m'\psi_n' - \psi_m'\psi_n' - \psi_m\psi_n''
+            \\
+            &= \psi_m''\psi_n - \psi_m\psi_n''
+        \end{aligned}
+
+    gives
+
+    .. math::
+        \psi_m''\psi_n - \psi_m\psi_n'' &= \frac{2m}{\hbar^2}[(V-E_m)-(V-E_n)]\psi_m\psi_n
+        \\
+        &= \frac{2m}{\hbar^2}(E_n-E_m)\psi_m\psi_n.
+
+    Therefore,
+
+    .. math::
+        \dv{}{x}(\psi_m'\psi_n-\psi_m\psi_n') = \frac{2m}{\hbar^2}(E_n-E_m)\psi_m\psi_n.
+
+b.  Integrating the result of part (a) from `x_1` to `x_2` gives
+
+    .. math::
+        [\psi_m'\psi_n-\psi_m\psi_n']_{x_1}^{x_2} = \frac{2m}{\hbar^2}(E_n-E_m)\int_{x_1}^{x_2}\psi_m\psi_n\,\dd x.
+
+    Since
+
+    .. math::
+        \psi_m(x_1) = \psi_m(x_2) = 0,
+
+    it follows that
+
+    .. math::
+        \psi_m'(x_2)\psi_n(x_2)-\psi_m'(x_1)\psi_n(x_1) = \frac{2m}{\hbar^2}(E_n-E_m)\int_{x_1}^{x_2}\psi_m\psi_n\,\dd x.
+
+c.  Since `x_1,x_2` are adjacent nodes, `\psi_m` does not change sign on the open interval `(x_1,x_2)`. We can therefore choose its phase so that
+
+    .. math::
+        \psi_m(x) > 0 \quad (x_1<x<x_2).
+
+    Then
+
+    .. math::
+        \psi_m'(x_1) > 0, \quad \psi_m'(x_2) < 0.
+
+    Suppose `\psi_n` has no node in `(x_1,x_2)`. We can choose its phase so that
+
+    .. math::
+        \psi_n(x) > 0 \quad (x_1<x<x_2).
+
+    Then
+
+    .. math::
+        \psi_n(x_1),\psi_n(x_2) \ge 0,
+
+    and hence
+
+    .. math::
+        \psi_m'(x_2)\psi_n(x_2)-\psi_m'(x_1)\psi_n(x_1) \le 0.
+
+    But since
+
+    .. math::
+        E_n-E_m > 0,\quad \psi_m(x)\psi_n(x) > 0 \quad (x_1<x<x_2),
+
+    we have
+
+    .. math::
+        \frac{2m}{\hbar^2}(E_n-E_m)\int_{x_1}^{x_2}\psi_m\psi_n\,\dd x > 0,
+
+    a contradiction. Therefore, there is at least one node of `\psi_n` between every pair of adjacent nodes of `\psi_m`.

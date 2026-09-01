@@ -1,0 +1,83 @@
+Problem 1.11
+======================
+
+a.  By conservation of energy,
+
+    .. math::
+        E = \frac{1}{2}mv(x)^2 + V(x),
+
+    so the speed is
+
+    .. math::
+        v(x) = \sqrt{\frac{2}{m}(E-V(x))}.
+
+b.  Let `V(x)=kx^2/2` and define
+
+    .. math::
+        A \coloneqq \sqrt{\frac{2E}{k}},\quad \omega \coloneqq \sqrt{\frac{k}{m}}.
+
+    The speed is then
+
+    .. math::
+        v(x) = \sqrt{\frac{k}{m}(A^2-x^2)} = \omega\sqrt{A^2-x^2}.
+
+    The time required to travel from the left turning point `x=-A` to the right turning point `x=A` is
+
+    .. math::
+        \begin{aligned}
+            T &= \int_{-A}^{A}\frac{\dd x}{\omega\sqrt{A^2-x^2}}
+            \\
+            &= \frac{1}{\omega}\left[\arcsin\left(\frac{x}{A}\right)\right]_{-A}^{A} = \frac{\pi}{\omega}.
+        \end{aligned}
+
+    Therefore, Equation (1.43) becomes
+
+    .. math::
+        \rho(x) = \begin{cases}
+            \frac{1}{\pi\sqrt{A^2-x^2}} & (|x|<A) \\
+            0 & (|x|\ge A).
+        \end{cases}
+
+    This is normalized, since
+
+    .. math::
+        \int_{-\infty}^{\infty}\rho(x)\,\dd x = \frac{1}{\pi}\left[\arcsin\left(\frac{x}{A}\right)\right]_{-A}^{A} = 1.
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        A = 1.0
+
+        x = np.linspace(-0.995 * A, 0.995 * A, 1001)
+        rho = 1.0 / (np.pi * np.sqrt(A**2 - x**2))
+
+        plt.plot(x, rho)
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$\rho(x)$")
+        plt.xticks([-A, 0.0, A], [r"$-A$", r"$0$", r"$A$"])
+        plt.xlim(-1.1 * A, 1.1 * A)
+        plt.grid(alpha=0.25)
+        plt.show()
+
+c.  Since `\rho(x)` is an even function,
+
+    .. math::
+        \braket{x} = 0.
+
+    Changing the variable of integration to `x=A\sin\theta` gives
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= \frac{1}{\pi}\int_{-A}^{A}\frac{x^2}{\sqrt{A^2-x^2}}\,\dd x
+            \\
+            &= \frac{A^2}{\pi}\int_{-\pi/2}^{\pi/2}\sin^2\theta\,\dd\theta = \frac{E}{k}.
+        \end{aligned}
+
+    Therefore, the standard deviation is
+
+    .. math::
+        \sigma_x = \sqrt{\braket{x^2}-\braket{x}^2} = \sqrt{\frac{E}{k}}.

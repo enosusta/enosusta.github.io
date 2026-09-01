@@ -1,0 +1,32 @@
+Problem 1.15
+======================
+
+Define the inner product of the two solutions `\Psi_1,\Psi_2` by
+
+.. math::
+    I(t) \coloneqq \int_{-\infty}^{\infty}\Psi_1^*(x,t)\Psi_2(x,t)\,\dd x.
+
+These wave functions satisfy the time-dependent Schrödinger equation for the same real potential `V(x)`, so
+
+.. math::
+    \begin{aligned}
+        \pdv{\Psi_2}{t} &= \frac{i\hbar}{2m}\pdv{^2\Psi_2}{x^2}-\frac{i}{\hbar}V\Psi_2
+        \\
+        \pdv{\Psi_1^*}{t} &= -\frac{i\hbar}{2m}\pdv{^2\Psi_1^*}{x^2}+\frac{i}{\hbar}V\Psi_1^*.
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        \dv{I}{t} &= \int_{-\infty}^{\infty}\left(\pdv{\Psi_1^*}{t}\Psi_2 + \Psi_1^*\pdv{\Psi_2}{t}\right)\,\dd x
+        \\
+        &= \frac{i\hbar}{2m}\int_{-\infty}^{\infty}\left(\Psi_1^*\pdv{^2\Psi_2}{x^2}-\pdv{^2\Psi_1^*}{x^2}\Psi_2\right)\,\dd x
+        \\
+        &= \frac{i\hbar}{2m}\left[\Psi_1^*\pdv{\Psi_2}{x}-\pdv{\Psi_1^*}{x}\Psi_2\right]_{-\infty}^{\infty}.
+    \end{aligned}
+
+Normalizable wave functions ordinarily vanish at infinity, and hence
+
+.. math::
+    \dv{I}{t} = 0.

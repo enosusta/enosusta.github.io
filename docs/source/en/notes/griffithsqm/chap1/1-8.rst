@@ -1,0 +1,29 @@
+Problem 1.8
+================
+
+Let the original potential be `V(x,t)` and let `\Psi(x,t)` be a solution of the corresponding time-dependent Schrödinger equation. Define
+
+.. math::
+    \Psi'(x,t) \coloneqq e^{-iV_0t/\hbar}\Psi(x,t).
+
+Taking the time derivative gives
+
+.. math::
+    \begin{aligned}
+        i\hbar\pdv{\Psi'}{t} &= i\hbar\left[-\frac{iV_0}{\hbar}e^{-iV_0t/\hbar}\Psi(x,t) + e^{-iV_0t/\hbar}\pdv{\Psi}{t}\right]
+        \\
+        &= e^{-iV_0t/\hbar}\left[V_0\Psi(x,t) + i\hbar\pdv{\Psi}{t}\right]
+        \\
+        &= e^{-iV_0t/\hbar}\left[-\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2} + (V+V_0)\Psi(x,t)\right]
+        \\
+        &= \left[-\frac{\hbar^2}{2m}\pdv{^2}{x^2} + (V+V_0)\right]\Psi'(x,t).
+    \end{aligned}
+
+Here we used the time-dependent Schrödinger equation. Thus, `\Psi'` is a solution of the time-dependent Schrödinger equation for the potential `V+V_0`.
+
+The additional factor is a phase factor and commutes with any dynamical variable `Q`, so
+
+.. math::
+    \braket{Q}' = \int \Psi'^*\hat{Q}\Psi'\,\dd x = \int \Psi^*\hat{Q}\Psi\,\dd x = \braket{Q}.
+
+Therefore, adding a constant to the potential does not change the expectation value of any dynamical variable.

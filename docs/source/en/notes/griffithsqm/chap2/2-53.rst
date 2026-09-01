@@ -1,0 +1,82 @@
+Problem 2.53
+==================
+
+a.  Since the potential is symmetric,
+
+    .. math::
+        S_{11}=S_{22}\eqqcolon r,\quad S_{12}=S_{21}\eqqcolon t.
+
+    and the scattering matrix is
+
+    .. math::
+        \bm{S} = \begin{pmatrix}
+            r & t
+            \\
+            t & r
+        \end{pmatrix}
+
+    For unit-amplitude incidence from the left on the delta-function potential (2.117), the wave function is
+
+    .. math::
+        \psi(x) = \begin{cases}
+            e^{ikx} + re^{-ikx} & (x<0)
+            \\
+            te^{ikx} & (x>0)
+        \end{cases}
+
+    The boundary conditions at the origin give
+
+    .. math::
+        \begin{aligned}
+            1 + r &= t
+            \\
+            ikt-ik(1-r) &= -\frac{2m\alpha}{\hbar^2}t
+        \end{aligned}
+
+    Defining `\beta\coloneqq m\alpha/\hbar^2 k` and substituting the first equation into the second gives
+
+    .. math::
+        2ikr = -2ik\beta t \implies r = i\beta t
+
+    and hence
+
+    .. math::
+        t = \frac{1}{1-i\beta},\quad r = \frac{i\beta}{1-i\beta}
+
+    Thus,
+
+    .. math::
+        \bm{S} = \frac{1}{1-i\beta}\begin{pmatrix}
+            i\beta & 1
+            \\
+            1 & i\beta
+        \end{pmatrix}.
+
+b.  For the finite rectangular potential (2.148), define
+
+    .. math::
+        k \coloneqq \frac{\sqrt{2mE}}{\hbar},\quad l \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
+
+    and
+
+    .. math::
+        \eta \coloneqq \frac{l^2-k^2}{2kl},\quad \zeta \coloneqq \frac{k^2+l^2}{2kl}
+
+    and let
+
+    .. math::
+        D \coloneqq \cos(2la) - i\zeta\sin(2la)
+
+    From :ref:`notes/griffithsqm/chap2/2-32:Problem 2.32`,
+
+    .. math::
+        t = \frac{e^{-2ika}}{D},\quad r = i\eta\sin(2la)t
+
+    so
+
+    .. math::
+        \bm{S} = \frac{e^{-2ika}}{D}\begin{pmatrix}
+            i\eta\sin(2la) & 1
+            \\
+            1 & i\eta\sin(2la)
+        \end{pmatrix}.

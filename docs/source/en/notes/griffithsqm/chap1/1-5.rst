@@ -1,0 +1,79 @@
+Problem 1.5
+======================
+
+a.  The normalization condition gives
+
+    .. math::
+        \begin{aligned}
+            1 &= A^2\int_{-\infty}^{\infty} e^{-2\lambda |x|}\,\dd x
+            \\
+            &= 2A^2\int_0^{\infty} e^{-2\lambda x}\,\dd x
+            \\
+            &= 2A^2\frac{1}{2\lambda} = \frac{A^2}{\lambda}.
+        \end{aligned}
+
+    Since `A` is positive,
+
+    .. math::
+        A = \sqrt{\lambda}.
+
+b.  Since `|\Psi|^2 = A^2e^{-2\lambda |x|}` is an even function of `x`,
+
+    .. math::
+        \braket{x} = 0.
+
+    Moreover,
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= 2\lambda\int_0^{\infty} x^2 e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\lambda\left[-\frac{1}{2\lambda}x^2 e^{-2\lambda x}\right]_0^{\infty} + 2\lambda\int_0^{\infty} \frac{1}{\lambda}x e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\int_0^{\infty} x e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\left[-\frac{1}{2\lambda}x e^{-2\lambda x}\right]_0^{\infty} + 2\int_0^{\infty} \frac{1}{2\lambda} e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\frac{1}{2\lambda}\int_0^{\infty} e^{-2\lambda x}\,\dd x
+            \\
+            &= 2\frac{1}{2\lambda}\frac{1}{2\lambda} = \frac{1}{2\lambda^2}.
+        \end{aligned}
+
+c.  From (b), the standard deviation is
+
+    .. math::
+        \sigma = \sqrt{\braket{x^2} - \braket{x}^2} = \frac{1}{\sqrt{2}\lambda}.
+
+    The probability of finding the particle outside the interval `[\braket{x}-\sigma, \braket{x}+\sigma]=[-\sigma,\sigma]` is
+
+    .. math::
+        \begin{aligned}
+            P(|x|>\sigma) &= 2\lambda\int_{\sigma}^{\infty}e^{-2\lambda x}\,\dd x
+            \\
+            &= e^{-2\lambda \sigma} = e^{-\sqrt{2}}.
+        \end{aligned}
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        lam = 1.0
+        sigma = 1.0 / (np.sqrt(2.0) * lam)
+
+        x = np.linspace(-4.0 * sigma, 4.0 * sigma, 1001)
+        probability_density = lam * np.exp(-2.0 * lam * np.abs(x))
+
+        plt.plot(x, probability_density)
+        plt.axvline(-sigma, color="tab:gray", linestyle="--")
+        plt.axvline(sigma, color="tab:gray", linestyle="--")
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$|\Psi(x,0)|^2$")
+        plt.xticks(
+            [-sigma, 0.0, sigma],
+            [r"$-\sigma$", r"$0$", r"$\sigma$"],
+        )
+        plt.grid(alpha=0.25)
+        plt.show()

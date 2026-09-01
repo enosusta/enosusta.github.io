@@ -35,6 +35,7 @@ extensions = [
     "sphinx_sitemap",
     "sphinxcontrib.bibtex",
     "sphinxext.opengraph",
+    "sphinx_last_updated_by_git",
 ]
 
 root_doc = "index"

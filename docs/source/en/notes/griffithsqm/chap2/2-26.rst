@@ -1,0 +1,12 @@
+Problem 2.26
+==================
+
+The Fourier transform of `\delta(x)` is
+
+.. math::
+    \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\delta(x)e^{-ikx}\,\dd x = \frac{1}{\sqrt{2\pi}}.
+
+Taking the inverse Fourier transform gives
+
+.. math::
+    \delta(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{ikx}\,\dd k = \frac{1}{2\pi}\int_{-\infty}^{\infty}e^{ikx}\,\dd k.

@@ -1,0 +1,57 @@
+Problem 2.46
+==================
+
+The plane-wave solution is
+
+.. math::
+    \psi(x) = Ce^{ikx}.
+
+The periodic boundary condition `\psi(x+L)=\psi(x)` gives
+
+.. math::
+    e^{ikL} = 1 \implies k_n = \frac{2\pi n}{L}\quad (n\in\Z).
+
+The normalization condition gives
+
+.. math::
+    1 = \int_0^L |C|^2\,\dd x = L|C|^2,
+
+so we may choose
+
+.. math::
+    C = \frac{1}{\sqrt{L}}.
+
+For `n=1,2,\ldots`, define the clockwise and counterclockwise states by
+
+.. math::
+    \begin{aligned}
+        \psi_n^+(x) &= \frac{1}{\sqrt{L}}e^{i2\pi nx/L}
+        \\
+        \psi_n^-(x) &= \frac{1}{\sqrt{L}}e^{-i2\pi nx/L}.
+    \end{aligned}
+
+They are orthogonal and linearly independent because
+
+.. math::
+    \int_0^L (\psi_n^+)^*\psi_n^-\,\dd x = \frac{1}{L}\int_0^L e^{-i4\pi nx/L}\,\dd x = 0.
+
+Thus, for `n\ge1`, the allowed energy
+
+.. math::
+    E_n = \frac{\hbar^2k_n^2}{2m} = \frac{2\pi^2\hbar^2n^2}{mL^2}
+
+is twofold degenerate, while for `n=0`,
+
+.. math::
+    \psi_0(x) = \frac{1}{\sqrt{L}},\quad E_0 = 0.
+
+The proof of the theorem in :ref:`notes/griffithsqm/chap2/2-44:Problem 2.44` used the fact that a normalizable bound state on the real line vanishes at infinity. A circle, however, is compact and has no infinity; the wave function is periodic rather than zero. Indeed, the Wronskian of the degenerate plane waves is
+
+.. math::
+    \begin{aligned}
+        W &= \psi_n^-\dv{\psi_n^+}{x} - \psi_n^+\dv{\psi_n^-}{x}
+        \\
+        &= \frac{2ik_n}{L} \neq 0.
+    \end{aligned}
+
+Therefore, the theorem in :ref:`notes/griffithsqm/chap2/2-44:Problem 2.44` does not apply to this system, and degeneracy is allowed.

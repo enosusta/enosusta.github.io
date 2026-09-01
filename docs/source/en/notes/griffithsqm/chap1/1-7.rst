@@ -1,0 +1,36 @@
+Problem 1.7
+===================
+
+Take the range of integration to be `(-\infty,+\infty)` and assume that `V` is real. From Equation (1.35),
+
+.. math::
+    \braket{p} = -i\hbar\int \Psi^*\pdv{\Psi}{x}\,\dd x,
+
+so
+
+.. math::
+    \dv{\braket{p}}{t} = -i\hbar\int\left[\pdv{\Psi^*}{t}\pdv{\Psi}{x} + \Psi^*\pdv{}{x}\left(\pdv{\Psi}{t}\right)\right]\,\dd x.
+
+The time-dependent Schrödinger equation and its complex conjugate give
+
+.. math::
+    \begin{aligned}
+        \pdv{\Psi}{t} &= \frac{i\hbar}{2m}\pdv{^2\Psi}{x^2} - \frac{i}{\hbar}V\Psi
+        \\
+        \pdv{\Psi^*}{t} &= -\frac{i\hbar}{2m}\pdv{^2\Psi^*}{x^2} + \frac{i}{\hbar}V\Psi^*.
+    \end{aligned}
+
+Substitution yields
+
+.. math::
+    \dv{\braket{p}}{t} = \frac{\hbar^2}{2m}\int\left(\Psi^*\pdv{^3\Psi}{x^3}-\pdv{^2\Psi^*}{x^2}\pdv{\Psi}{x}\right)\,\dd x - \int |\Psi|^2\pdv{V}{x}\,\dd x.
+
+Integrating the first term by parts gives
+
+.. math::
+    \int\left(\Psi^*\pdv{^3\Psi}{x^3}-\pdv{^2\Psi^*}{x^2}\pdv{\Psi}{x}\right)\, \dd x = \left[\Psi^*\pdv{^2\Psi}{x^2}-\pdv{\Psi^*}{x}\pdv{\Psi}{x}\right]_{-\infty}^{+\infty} = 0.
+
+Here we used the fact that the wave function and its derivative vanish at infinity. Therefore,
+
+.. math::
+    \dv{\braket{p}}{t} = -\int |\Psi|^2\pdv{V}{x}\,\dd x = \braket{-\pdv{V}{x}}.

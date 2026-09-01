@@ -1,0 +1,90 @@
+Problem 2.36
+==================
+
+Since the wave function vanishes outside the well, the boundary conditions are
+
+.. math::
+    \psi(-a) = \psi(a) = 0.
+
+Inside the well,
+
+.. math::
+    \psi(x) = C\cos(kx) + D\sin(kx).
+
+Since the potential is symmetric, each eigenfunction is either even or odd. For an even function, `D=0`, and the boundary condition gives
+
+.. math::
+    \cos(ka) = 0 \implies ka = \frac{(2r+1)\pi}{2} \quad (r=0,1,2,\ldots).
+
+For an odd function, `C=0`, and the boundary condition gives
+
+.. math::
+    \sin(ka) = 0 \implies ka = r\pi \quad (r=1,2,3,\ldots).
+
+Combining the two cases,
+
+.. math::
+    k_n = \frac{n\pi}{2a} \quad (n=1,2,3,\ldots).
+
+Therefore, the allowed energies are
+
+.. math::
+    E_n = \frac{\hbar^2 k_n^2}{2m} = \frac{n^2\pi^2\hbar^2}{8ma^2} \quad (n=1,2,3,\ldots),
+
+which agrees with Equation (2.30) for a well of width `2a`. Moreover, for the allowed values `k_n`,
+
+.. math::
+    \int_{-a}^{a}\cos^2(k_n x)\,\dd x = \int_{-a}^{a}\sin^2(k_n x)\,\dd x = a,
+
+so the normalized eigenfunctions are
+
+.. math::
+    \psi_n(x) = \begin{cases}
+        \frac{1}{\sqrt{a}}\cos\left(\frac{n\pi x}{2a}\right) & (|x|<a; n=1,3,5,\ldots)
+        \\
+        \frac{1}{\sqrt{a}}\sin\left(\frac{n\pi x}{2a}\right) & (|x|<a; n=2,4,6,\ldots)
+        \\
+        0 & (|x|\ge a).
+    \end{cases}
+
+This agrees with Equation (2.31) after making the substitution `x\mapsto (x+a)/2` and replacing `a` in the normalization constant by `2a`.
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    a = 1.0
+
+    def wave_function(x, n):
+        inside_well = np.abs(x) <= a
+        k_n = n * np.pi / (2.0 * a)
+
+        if n % 2 == 1:
+            psi_inside = np.cos(k_n * x) / np.sqrt(a)
+        else:
+            psi_inside = np.sin(k_n * x) / np.sqrt(a)
+
+        return np.where(inside_well, psi_inside, 0.0)
+
+    x = np.linspace(-1.2 * a, 1.2 * a, 1201)
+
+    for n in range(1, 4):
+        plt.plot(x, wave_function(x, n), label=rf"$\psi_{n}$")
+
+    plt.axhline(0.0, color="black", linewidth=0.8)
+    plt.axvline(-a, color="tab:gray", linestyle="--", linewidth=0.8)
+    plt.axvline(a, color="tab:gray", linestyle="--", linewidth=0.8)
+    plt.xlabel(r"$x$")
+    plt.ylabel(r"$\psi_n(x)$")
+    plt.xticks([-a, 0.0, a], [r"$-a$", r"$0$", r"$a$"])
+    plt.yticks(
+        [-1.0 / np.sqrt(a), 0.0, 1.0 / np.sqrt(a)],
+        [r"$-1/\sqrt{a}$", r"$0$", r"$1/\sqrt{a}$"],
+    )
+    plt.xlim(x[0], x[-1])
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()

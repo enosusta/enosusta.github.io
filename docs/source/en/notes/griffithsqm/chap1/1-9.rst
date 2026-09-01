@@ -1,0 +1,92 @@
+Problem 1.9
+==================
+
+a.  The normalization condition gives
+
+    .. math::
+        1 = A^2\int_{-\infty}^{\infty}e^{-2amx^2/\hbar}\,\dd x = A^2\sqrt{\frac{\pi\hbar}{2am}}.
+
+    Since `A` is positive,
+
+    .. math::
+        A = \left(\frac{2am}{\pi\hbar}\right)^{1/4}.
+
+b.  Differentiating the wave function gives
+
+    .. math::
+        \begin{aligned}
+            \pdv{\Psi}{t} &= -ia\Psi
+            \\
+            \pdv{\Psi}{x} &= -\frac{2am}{\hbar}x\Psi
+            \\
+            \pdv{^2\Psi}{x^2} &= \left(-\frac{2am}{\hbar} + \frac{4a^2m^2}{\hbar^2}x^2\right)\Psi.
+        \end{aligned}
+
+    Thus, the left-hand side of the time-dependent Schrödinger equation is
+
+    .. math::
+        i\hbar\pdv{\Psi}{t} = a\hbar\Psi.
+
+    Meanwhile, the kinetic-energy term is
+
+    .. math::
+        -\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2} = (a\hbar - 2ma^2x^2)\Psi.
+
+    Therefore, `\Psi` satisfies the time-dependent Schrödinger equation if the potential has the harmonic-oscillator form
+
+    .. math::
+        V(x) = 2ma^2x^2.
+
+c.  Since the probability density `|\Psi|^2 = A^2e^{-2amx^2/\hbar}` is an even function of `x`,
+
+    .. math::
+        \braket{x} = 0.
+
+    Moreover,
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= A^2\int_{-\infty}^{\infty}x^2e^{-2amx^2/\hbar}\,\dd x
+            \\
+            &= A^2\frac{\sqrt{\pi}}{2}\left(\frac{\hbar}{2am}\right)^{3/2} = \frac{\hbar}{4am}.
+        \end{aligned}
+
+    For the momentum,
+
+    .. math::
+        \hat{p}\Psi = -i\hbar\pdv{\Psi}{x} = 2iamx\Psi,
+
+    so
+
+    .. math::
+        \braket{p} = 0.
+
+    Also,
+
+    .. math::
+        \hat{p}^2\Psi = -\hbar^2\pdv{^2\Psi}{x^2} = (2am\hbar - 4a^2m^2x^2)\Psi,
+
+    and hence
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2} &= 2am\hbar - 4a^2m^2\braket{x^2}
+            \\
+            &= 2am\hbar - 4a^2m^2\frac{\hbar}{4am} = am\hbar.
+        \end{aligned}
+
+d.  From (c), the two standard deviations are
+
+    .. math::
+        \begin{aligned}
+            \sigma_x &= \sqrt{\braket{x^2} - \braket{x}^2} = \sqrt{\frac{\hbar}{4am}} = \frac{1}{2}\sqrt{\frac{\hbar}{am}}
+            \\
+            \sigma_p &= \sqrt{\braket{p^2} - \braket{p}^2} = \sqrt{am\hbar}.
+        \end{aligned}
+
+    Their product is
+
+    .. math::
+        \sigma_x\sigma_p = \frac{\hbar}{2},
+
+    which is exactly equal to the lower bound imposed by the uncertainty principle.

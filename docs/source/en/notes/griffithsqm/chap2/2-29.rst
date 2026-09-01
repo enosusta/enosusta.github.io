@@ -1,0 +1,95 @@
+Problem 2.29
+==================
+
+For an odd function, the `\cos` term inside the well vanishes and only the `\sin` term remains, so
+
+.. math::
+    \psi(x) = \begin{cases}
+        -F e^{\kappa x} & (x < -a)
+        \\
+        C \sin(lx) & (-a < x < a)
+        \\
+        F e^{-\kappa x} & (x > a).
+    \end{cases}
+
+Continuity of the wave function at `x=a` gives
+
+.. math::
+    F e^{-\kappa a} = C\sin(la).
+
+Continuity of the derivative gives
+
+.. math::
+    -\kappa F e^{-\kappa a} = l C \cos(la).
+
+Dividing the second equation by the first gives
+
+.. math::
+    \kappa = -l \cot(la).
+
+Since `\kappa^2+l^2 = 2mV_0/\hbar^2`,
+
+.. math::
+    \kappa a = \sqrt{z_0^2 - z^2},
+
+and therefore the boundary condition is
+
+.. math::
+    -\cot(z) = \sqrt{\left(\frac{z_0}{z}\right)^2 - 1}\quad (0 < z < z_0).
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    z_0 = 8.0
+    y_max = 5.0
+    z = np.linspace(1.0e-3, z_0 - 1.0e-3, 5000)
+
+    left_hand_side = -1.0 / np.tan(z)
+    right_hand_side = np.sqrt((z_0 / z) ** 2 - 1.0)
+
+    left_hand_side[
+        (left_hand_side < 0.0) | (left_hand_side > y_max)
+    ] = np.nan
+    right_hand_side[right_hand_side > y_max] = np.nan
+
+    plt.plot(z, left_hand_side, label=r"$-\cot z$")
+    plt.plot(
+        z,
+        right_hand_side,
+        linewidth=2.0,
+        label=r"$\sqrt{(z_0/z)^2-1}$",
+    )
+    plt.xlabel(r"$z$")
+    plt.ylabel("Both sides of the boundary condition")
+    plt.xticks(
+        [0.0, np.pi / 2.0, np.pi, 3.0 * np.pi / 2.0, 2.0 * np.pi,
+         5.0 * np.pi / 2.0],
+        [r"$0$", r"$\pi/2$", r"$\pi$", r"$3\pi/2$", r"$2\pi$",
+         r"$5\pi/2$"],
+    )
+    plt.xlim(0.0, z_0)
+    plt.ylim(0.0, y_max)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()
+
+For `z_0 \gg 1`, each intersection is approximately
+
+.. math::
+    z_n \approx \frac{n\pi}{2} \quad (n=2,4,6,\ldots),
+
+so the energy is
+
+.. math::
+    E_n + V_0 = \frac{\hbar^2 z_n^2}{2ma^2} \approx \frac{n^2\pi^2\hbar^2}{2m(2a)^2}.
+
+This agrees with the energies of the odd-parity eigenstates, for which `n` is even, in an infinite square well of width `2a`. Moreover, for at least one bound state to exist, it is necessary that
+
+.. math::
+    z_0 > \frac{\pi}{2} \iff V_0 > \frac{\pi^2\hbar^2}{8ma^2}.
+
+Thus, an odd bound state does not always exist.

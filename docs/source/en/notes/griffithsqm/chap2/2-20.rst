@@ -1,0 +1,79 @@
+Problem 2.20
+==================
+
+a.  The normalization condition gives
+
+    .. math::
+        \begin{aligned}
+            1 &= A^2\int_{-\infty}^{\infty}e^{-2a|x|}\,\dd x
+            \\
+            &= 2A^2\int_{0}^{\infty}e^{-2ax}\,\dd x
+            \\
+            &= 2A^2\left[-\frac{e^{-2ax}}{2a}\right]_{0}^{\infty} = \frac{A^2}{a}.
+        \end{aligned}
+
+    Since `A` is positive,
+
+    .. math::
+        A = \sqrt{a}.
+
+b.  The Fourier transform is
+
+    .. math::
+        \begin{aligned}
+            \phi(k) &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left[\int_{-\infty}^{0}e^{ax}e^{-ikx}\,\dd x + \int_0^\infty e^{-ax}e^{-ikx}\,\dd x\right]
+            \\
+            &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left[\int_{-\infty}^{0}e^{(a-ik)x}\,\dd x + \int_0^\infty e^{-(a+ik)x}\,\dd x\right]
+            \\
+            &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left(\left[\frac{e^{(a-ik)x}}{a-ik}\right]_{-\infty}^{0} + \left[-\frac{e^{-(a+ik)x}}{a+ik}\right]_0^\infty\right)
+            \\
+            &= \frac{\sqrt{a}}{\sqrt{2\pi}}\left(\frac{1}{a-ik} + \frac{1}{a+ik}\right) = \sqrt{\frac{2}{\pi}}\frac{a^{3/2}}{a^2+k^2}.
+        \end{aligned}
+
+c.  Substituting the result from (b) into the general solution
+
+    .. math::
+        \Psi(x,t) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\phi(k)e^{i(kx-\hbar k^2t/2m)}\,\dd k
+
+    gives
+
+    .. math::
+        \begin{aligned}
+            \Psi(x,t) &= \frac{1}{\sqrt{2\pi}}\sqrt{\frac{2}{\pi}}a^{3/2}\int_{-\infty}^{\infty}\frac{e^{i(kx-\hbar k^2t/2m)}}{a^2+k^2}\,\dd k
+            \\
+            &= \frac{a^{3/2}}{\pi}\int_{-\infty}^{\infty}\frac{e^{i(kx-\hbar k^2t/2m)}}{a^2+k^2}\,\dd k.
+        \end{aligned}
+
+d.  Since `|\Psi(x,0)|^2` and `|\phi(k)|^2` are even,
+
+    .. math::
+        \braket{x} = \braket{k} = 0.
+
+    Also,
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= 2a\int_0^\infty x^2e^{-2ax}\,\dd x
+            \\
+            &= 2a\frac{2!}{(2a)^3} = \frac{1}{2a^2}
+            \\
+            \braket{k^2} &= \frac{2a^3}{\pi}\int_{-\infty}^{\infty}\frac{k^2}{(a^2+k^2)^2}\,\dd k
+            \\
+            &= \frac{2a^3}{\pi}\frac{\pi}{2a} = a^2.
+        \end{aligned}
+
+    Therefore, the standard deviations are
+
+    .. math::
+        \begin{aligned}
+            \sigma_x &= \sqrt{\braket{x^2}-\braket{x}^2} = \frac{1}{\sqrt{2}a}
+            \\
+            \sigma_p &= \hbar\sqrt{\braket{k^2}-\braket{k}^2} = \hbar a,
+        \end{aligned}
+
+    and their product is
+
+    .. math::
+        \sigma_x\sigma_p = \frac{\hbar}{\sqrt{2}},
+
+    which satisfies the Heisenberg uncertainty principle. Thus, when `a` is very large, the initial wave function has a sharp peak near `x=0` and `\phi(k)` is broadly spread. Conversely, when `a` is very small, the initial wave function is broadly spread and `\phi(k)` has a sharp peak near `k=0`.

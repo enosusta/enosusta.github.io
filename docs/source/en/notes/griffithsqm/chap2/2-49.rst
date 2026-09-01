@@ -1,0 +1,124 @@
+Problem 2.49
+==================
+
+a.  For convenience, define
+
+    .. math::
+        N \coloneqq \left(\frac{m\omega}{\pi\hbar}\right)^{1/4},\quad q(t) \coloneqq x_0e^{-i\omega t}
+
+    and let
+
+    .. math::
+        \begin{aligned}
+            L &\coloneqq \log \Psi(x,t)
+            \\
+            &= \log N -\frac{m\omega}{2\hbar}\left[x^2+\frac{x_0^2}{2}+\frac{q^2}{2}+\frac{i\hbar t}{m}-2xq\right]
+        \end{aligned}
+
+    Then
+
+    .. math::
+        \begin{aligned}
+            L_x &= -\frac{m\omega}{\hbar}(x-q)
+            \\
+            L_{xx} &= -\frac{m\omega}{\hbar}
+        \end{aligned}
+
+    Since `\Psi_x=L_x\Psi`,
+
+    .. math::
+        \Psi_{xx} = (L_{xx}+L_x^2)\Psi
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            \frac{\hat{H}\Psi}{\Psi} &= -\frac{\hbar^2}{2m}(L_{xx}+L_x^2)+\frac{1}{2}m\omega^2x^2
+            \\
+            &= \frac{\hbar\omega}{2}+\frac{m\omega^2}{2}(x-q)^2 +  \frac{1}{2}m\omega^2x^2
+            \\
+            &= \frac{\hbar\omega}{2}+m\omega^2xq-\frac{1}{2}m\omega^2q^2
+        \end{aligned}
+
+    On the other hand, using `q'=-i\omega q`,
+
+    .. math::
+        \begin{aligned}
+            L_t &= -\frac{m\omega}{2\hbar}\left[qq'+\frac{i\hbar}{m}-2xq'\right]
+            \\
+            &= -\frac{m\omega}{2\hbar}\left[-i\omega q^2+\frac{i\hbar}{m}+2i\omega xq\right]
+        \end{aligned}
+
+    Since `\Psi_t=L_t\Psi`,
+
+    .. math::
+        \frac{i\hbar\Psi_t}{\Psi} = \frac{\hat{H}\Psi}{\Psi}
+
+    Thus, `\Psi` satisfies the time-dependent Schrödinger equation for the harmonic-oscillator potential.
+
+b.  For the real part of the exponent in `\Psi`, using
+
+    .. math::
+        \operatorname{Re}q = x_0\cos(\omega t),\quad \operatorname{Re}q^2 = x_0^2\cos(2\omega t)
+
+    and
+
+    .. math::
+        \frac{x_0^2}{2}[1+\cos(2\omega t)] = x_0^2\cos^2(\omega t)
+
+    gives
+
+    .. math::
+        x^2+x_0^2\cos^2(\omega t)-2xx_0\cos(\omega t) = (x-x_0\cos(\omega t))^2
+
+    Therefore, the Gaussian probability density is
+
+    .. math::
+        |\Psi(x,t)|^2 = \sqrt{\frac{m\omega}{\pi\hbar}}\exp\left[-\frac{m\omega}{\hbar}(x-x_0\cos(\omega t))^2\right]
+
+    This wave packet is centered at `x_0\cos(\omega t)` and has variance `\hbar/(2m\omega)`. Thus, it retains its shape while its center follows the motion of a classical harmonic oscillator.
+
+c.  From the result of part (b),
+
+    .. math::
+        \braket{x} = x_0\cos(\omega t)
+
+    For the momentum,
+
+    .. math::
+        \hat{p}\Psi = -i\hbar \Psi_x = -i\hbar L_x\Psi = im\omega(x-q)\Psi
+
+    and hence
+
+    .. math::
+        \begin{aligned}
+            \braket{p} &= im\omega\int_{-\infty}^{\infty}(x-q)|\Psi|^2\,\dd x
+            \\
+            &= im\omega(\braket{x}-q)
+        \end{aligned}
+
+    Since
+
+    .. math::
+        q = x_0\cos(\omega t)-ix_0\sin(\omega t)
+
+    it follows that
+
+    .. math::
+        \braket{p} = -m\omega x_0\sin(\omega t)
+
+    Taking time derivatives gives
+
+    .. math::
+        \begin{aligned}
+            \dv{\braket{x}}{t} &= -\omega x_0\sin(\omega t) = \frac{\braket{p}}{m}
+            \\
+            \dv{\braket{p}}{t} &= -m\omega^2x_0\cos(\omega t) = -m\omega^2\braket{x}
+        \end{aligned}
+
+    and therefore
+
+    .. math::
+        \dv{\braket{x}}{t} = \frac{\braket{p}}{m},\quad \dv{\braket{p}}{t} = -\braket{\dv{V}{x}}
+
+    so Ehrenfest's theorem is satisfied.

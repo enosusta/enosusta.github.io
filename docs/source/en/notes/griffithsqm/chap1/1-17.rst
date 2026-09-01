@@ -1,0 +1,44 @@
+Problem 1.17
+======================
+
+a.  The time-dependent Schrödinger equation for the complex potential `V=V_0-i\Gamma` and its complex conjugate are
+
+    .. math::
+        i\hbar\pdv{\Psi}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2} + (V_0-i\Gamma)\Psi
+        \\
+        -i\hbar\pdv{\Psi^*}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi^*}{x^2} + (V_0+i\Gamma)\Psi^*.
+
+    Repeating the calculation in :ref:`notes/griffithsqm/chap1/1-14:Problem 1.14`, the imaginary parts of the potential no longer cancel, and we obtain
+
+    .. math::
+        \pdv{}{t}|\Psi|^2 = -\pdv{J}{x} - \frac{2\Gamma}{\hbar}|\Psi|^2.
+
+    Integrating this over all space gives
+
+    .. math::
+        \dv{P}{t} = -[J(x,t)]_{-\infty}^{\infty} - \frac{2\Gamma}{\hbar}\int_{-\infty}^{\infty}|\Psi|^2\,\dd x.
+
+    For a normalizable state, the probability current vanishes at infinity, so
+
+    .. math::
+        \dv{P}{t} = -\frac{2\Gamma}{\hbar}P.
+
+b.  Separating variables in this differential equation gives
+
+    .. math::
+        \frac{\dd P}{P} = -\frac{2\Gamma}{\hbar}\,\dd t.
+
+    Integrating yields
+
+    .. math::
+        \ln P = -\frac{2\Gamma}{\hbar}t + C,
+
+    where `C` is a constant of integration. Therefore,
+
+    .. math::
+        P(t) = P(0)\exp\left(-\frac{2\Gamma}{\hbar}t\right).
+
+    If the initial state is normalized, `P(0)=1`. Comparing this with `P(t)=e^{-t/\tau}`, the “lifetime” `\tau` is
+
+    .. math::
+        \tau = \frac{\hbar}{2\Gamma}.

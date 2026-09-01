@@ -1,0 +1,150 @@
+Problem 2.52
+==================
+
+a.
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        ax = np.linspace(-4.0, 4.0, 800)
+        potential = -1.0 / np.cosh(ax) ** 2
+
+        plt.plot(ax, potential, label=r"$V(x)=-\hbar^2a^2\,\mathrm{sech}^2(ax)/m$")
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$ax$")
+        plt.ylabel(r"$V(x)\,/\,(\hbar^2a^2/m)$")
+        plt.xlim(ax[0], ax[-1])
+        plt.ylim(-1.1, 0.1)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+b.  For convenience, define
+
+    .. math::
+        s \coloneqq \mathrm{sech}(ax),\quad t \coloneqq \tanh(ax)
+
+    Then
+
+    .. math::
+        s'=-ast,\quad t' = a s^2,\quad s^2+t^2=1
+
+    and hence
+
+    .. math::
+        \begin{aligned}
+            s'' &= -a(s't+st')
+            \\
+            &= a^2st^2 - a^2s^3 = a^2s(1-2s^2)
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            \hat{H}\psi_0 &= -\frac{\hbar^2}{2m}Aa^2s(1-2s^2)-\frac{\hbar^2a^2}{m}s^2(As)
+            \\
+            &= -\frac{\hbar^2a^2}{2m}As + \frac{\hbar^2a^2}{m}As^3 - \frac{\hbar^2a^2}{m}As^3
+            \\
+            &= -\frac{\hbar^2a^2}{2m}\psi_0
+        \end{aligned}
+
+    The normalization condition gives
+
+    .. math::
+        \begin{aligned}
+            1 &= |A|^2\int_{-\infty}^{\infty}\mathrm{sech}^2(ax)\,dx
+            \\
+            &= |A|^2\left[\frac{\tanh(ax)}{a}\right]_{-\infty}^{\infty} = |A|^2\frac{2}{a}
+        \end{aligned}
+
+    so we may choose
+
+    .. math::
+        A = \sqrt{\frac{a}{2}}
+
+    This wave function has no nodes and is therefore the ground state, with energy
+
+    .. math::
+        E_0 = -\frac{\hbar^2a^2}{2m}
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        ax = np.linspace(-4.0, 4.0, 800)
+        psi_0 = 1.0 / (np.sqrt(2.0) * np.cosh(ax))
+
+        plt.plot(
+            ax,
+            psi_0,
+            label=r"$\psi_0(x)=\sqrt{a/2}\,\mathrm{sech}(ax)$",
+        )
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$ax$")
+        plt.ylabel(r"$\psi_0(x)/\sqrt{a}$")
+        plt.xlim(ax[0], ax[-1])
+        plt.ylim(-0.05, 0.8)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+c.  For convenience, define
+
+    .. math::
+        C \coloneqq \frac{A}{ik+a}
+
+    and let
+
+    .. math::
+        f(x) \coloneqq ik-a\tanh(ax) = ik-at
+
+    Then
+
+    .. math::
+        \psi_k(x) = Cf(x)e^{ikx}
+
+    Since `t'=as^2`,
+
+    .. math::
+        f' = -a^2s^2,\quad f'' = 2a^3s^2t
+
+    and hence
+
+    .. math::
+        \psi_k'' = Ce^{ikx}(f''+2ikf'-k^2f)
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            \psi_k'' + (k^2+2a^2s^2)\psi_k &= Ce^{ikx}(f''+2ikf'+2a^2s^2f)
+            \\
+            &= 2a^2s^2Ce^{ikx}(at-ik+(ik-at)) = 0
+        \end{aligned}
+
+    so `\psi_k` satisfies the time-independent Schrödinger equation. As `x\to-\infty`, `t\to-1`, and hence
+
+    .. math::
+        \psi_k(x) \approx A\frac{ik+a}{ik+a}e^{ikx} = Ae^{ikx}
+
+    There is no left-moving plane wave, so the reflection coefficient `R` is zero. As `x\to\infty`, `t\to1`, and hence
+
+    .. math::
+        \psi_k(x) \approx A\frac{ik-a}{ik+a}e^{ikx}
+
+    Therefore, the transmission amplitude is
+
+    .. math::
+        t_k = \frac{ik-a}{ik+a}
+
+    Since the wave number is the same on both sides of the potential, the transmission coefficient is
+
+    .. math::
+        T = |t_k|^2 = \frac{k^2+a^2}{k^2+a^2} = 1

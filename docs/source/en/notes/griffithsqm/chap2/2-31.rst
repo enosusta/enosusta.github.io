@@ -1,0 +1,73 @@
+Problem 2.31
+==================
+
+Let the finite square-well potential be
+
+.. math::
+    V_a(x) = \begin{cases}
+        -V_0 & (|x| \le a)
+        \\
+        0 & (|x| > a).
+    \end{cases}
+
+Its area is
+
+.. math::
+    \alpha \coloneqq \int_{-\infty}^{\infty} V_a(x) dx = -2 a V_0.
+
+Holding `\alpha` fixed and taking `a\to 0`, for any smooth test function `f(x)` we have
+
+.. math::
+    \begin{aligned}
+        \int_{-\infty}^{\infty} V_a(x) f(x)\,\dd x &= -V_0 \int_{-a}^{a} f(x)\,\dd x
+        \\
+        &\to -V_0f(0)2a = -\alpha f(0),
+    \end{aligned}
+
+so
+
+.. math::
+    V_a(x) \to -\alpha \delta(x).
+
+At the same time,
+
+.. math::
+    z_0 \coloneqq \frac{a}{\hbar}\sqrt{2mV_0} = \frac{\sqrt{m\alpha a}}{\hbar} \to 0.
+
+Thus, although the depth tends to `V_0\to \infty`, the potential is “weak” in this sense.
+
+Since `0 < la < z_0 \to 0`, the boundary condition becomes
+
+.. math::
+    \begin{aligned}
+        \kappa = l\tan(la) &\approx al^2
+        \\
+        &= a\left(\frac{2mV_0}{\hbar^2}-\kappa^2\right)
+        \\
+        &= \frac{m\alpha}{\hbar^2} - a\kappa^2 \to \frac{m\alpha}{\hbar^2}.
+    \end{aligned}
+
+Therefore, the bound-state energy is
+
+.. math::
+    E = -\frac{\hbar^2\kappa^2}{2m} \to -\frac{m\alpha^2}{2\hbar^2},
+
+which agrees with the bound-state energy of the delta-function potential.
+
+Meanwhile, Equation (2.172) becomes
+
+.. math::
+    \begin{aligned}
+        T^{-1} -1 &\approx \frac{V_0^2}{4E(E+V_0)}(2al)^2
+        \\
+        &= \frac{V_0^2}{4E(E+V_0)}4a^2\frac{2m(E+V_0)}{\hbar^2}
+        \\
+        &= \frac{m\alpha^2}{2\hbar^2E},
+    \end{aligned}
+
+so
+
+.. math::
+    T \to \frac{1}{1 + m\alpha^2/(2\hbar^2E)},
+
+which agrees with the transmission coefficient of the delta-function potential.

@@ -1,0 +1,70 @@
+Problem 2.35
+==================
+
+a.  The wave function is
+
+    .. math::
+        \psi(x) = \begin{cases}
+            Ae^{ikx} + Be^{-ikx} & (x<0)
+            \\
+            Fe^{iqx} & (x>0),
+        \end{cases}
+
+    where
+
+    .. math::
+        q \coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}.
+
+    Continuity of `\psi` and `\psi'` at `x=0` gives
+
+    .. math::
+        \begin{aligned}
+            A + B &= F
+            \\
+            k(A-B) &= qF,
+        \end{aligned}
+
+    so
+
+    .. math::
+        \frac{B}{A} = \frac{k-q}{k+q},\quad \frac{F}{A} = \frac{2k}{k+q}.
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            R = \left|\frac{B}{A}\right|^2 &= \left(\frac{k-q}{k+q}\right)^2
+            \\
+            &= \left(\frac{\sqrt{E}-\sqrt{E+V_0}}{\sqrt{E}+\sqrt{E+V_0}}\right)^2
+            \\
+            T = \frac{q}{k}\left|\frac{F}{A}\right|^2 &= \frac{4kq}{(k+q)^2}
+            \\
+            &= 1-R.
+        \end{aligned}
+
+    For `E=V_0/3`,
+
+    .. math::
+        \frac{q}{k} = \sqrt{\frac{E+V_0}{E}} = 2,
+
+    so
+
+    .. math::
+        R = \left(\frac{1-q/k}{1+q/k}\right)^2 = \frac{1}{9}.
+
+b.  Although `V(x)` changes discontinuously from `0` to `-V_0` the instant the particle passes through `x=0`, the gravitational potential `mgy` changes continuously at a real cliff. Thus, this potential does not correctly represent a cliff.
+
+c.  For a neutron,
+
+    .. math::
+        E = 4\,\mathrm{MeV},\quad V_0 = 12\,\mathrm{MeV} = 3E.
+
+    Therefore, as in part (a),
+
+    .. math::
+        R = \frac{1}{9}.
+
+    Hence, the probability that the neutron passes through the nuclear surface and is absorbed is
+
+    .. math::
+        T = 1-R = \frac{8}{9}.

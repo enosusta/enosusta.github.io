@@ -1,0 +1,164 @@
+Problem 2.48
+==================
+
+a.  Since `\psi(0)=0` for `x<0`, defining `V_0\coloneqq -32\hbar^2/ma^2`, in `0<x<a` we have
+
+    .. math::
+        \psi(x) = A\sin(kx),\quad k\coloneqq \frac{\sqrt{2m(E+V_0)}}{\hbar}
+
+    For `x>a`, after excluding the solution that diverges as `x\to\infty`,
+
+    .. math::
+        \psi(x) = Be^{-\kappa(x-a)},\quad \kappa\coloneqq \frac{\sqrt{-2mE}}{\hbar}
+
+    Continuity of `\psi` and `\psi'` at `x=a` gives
+
+    .. math::
+        \begin{aligned}
+            A\sin(ka) &= B
+            \\
+            Ak\cos(ka) &= -\kappa B
+        \end{aligned}
+
+    Dividing the second equation by the first gives
+
+    .. math::
+        k\cot(ka) = -\kappa
+
+    Define
+
+    .. math::
+        z \coloneqq ka,\quad q \coloneqq \kappa a
+
+    Then
+
+    .. math::
+        z^2 + q^2 = 64,\quad z\cot z = -q
+
+    Therefore, there are three bound states (see the figure below).
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.optimize import brentq
+
+        z_0 = 8.0
+        epsilon = 1.0e-3
+
+        def q_circle(z):
+            return np.sqrt(z_0**2 - z**2)
+
+        def q_boundary(z):
+            return -z / np.tan(z)
+
+        z = np.linspace(0.0, z_0, 1000)
+        plt.plot(z, q_circle(z), label=r"$z^2+q^2=64$")
+
+        branches = [
+            (np.pi / 2.0 + epsilon, np.pi - epsilon),
+            (3.0 * np.pi / 2.0 + epsilon, 2.0 * np.pi - epsilon),
+            (5.0 * np.pi / 2.0 + epsilon, z_0 - epsilon),
+        ]
+
+        roots = []
+        for index, (z_min, z_max) in enumerate(branches):
+            z_branch = np.linspace(z_min, z_max, 400)
+            label = r"$z\cot z=-q$" if index == 0 else None
+            plt.plot(
+                z_branch,
+                q_boundary(z_branch),
+                color="tab:orange",
+                label=label,
+            )
+
+            root = brentq(
+                lambda value: q_boundary(value) - q_circle(value),
+                z_min,
+                z_max,
+            )
+            roots.append(root)
+
+        roots = np.array(roots)
+        plt.scatter(
+            roots,
+            q_circle(roots),
+            color="black",
+            zorder=3,
+            label="intersections",
+        )
+
+        plt.xlabel(r"$z$")
+        plt.ylabel(r"$q$")
+        plt.xlim(0.0, z_0)
+        plt.ylim(0.0, z_0)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+b.  The probability of being inside the well is
+
+    .. math::
+        \begin{aligned}
+            P_\text{in} &= |A|^2\int_0^a \sin^2(kx)\,\dd x
+            \\
+            &= |A|^2\left[\frac{x}{2} - \frac{\sin(2kx)}{4k}\right]_0^a
+            \\
+            &= |A|^2a\left(\frac{1}{2} - \frac{\sin(2z)}{4z}\right)
+        \end{aligned}
+
+    while the probability of being outside the well is
+
+    .. math::
+        \begin{aligned}
+            P_\text{out} &= |A|^2\sin^2(z)\int_a^\infty e^{-2\kappa(x-a)}\,\dd x
+            \\
+            &= |A|^2\sin^2(z)\frac{1}{2\kappa}
+            \\
+            &= |A|^2a\frac{\sin^2(z)}{2q}
+        \end{aligned}
+
+    Define
+
+    .. math::
+        I_\text{in} \coloneqq \frac{1}{2} - \frac{\sin(2z)}{4z},\quad I_\text{out} \coloneqq \frac{\sin^2(z)}{2q}
+
+    Then
+
+    .. math::
+        P(x>a) = \frac{P_\text{out}}{P_\text{in}+P_\text{out}} = \frac{I_\text{out}}{I_\text{in}+I_\text{out}}
+
+    For the highest-energy state, the probability of finding the particle outside the well is as follows:
+
+    .. exec_code::
+
+        import numpy as np
+        from scipy.optimize import brentq
+
+        z_0 = 8.0
+        epsilon = 1.0e-8
+
+        def q_circle(z):
+            return np.sqrt(z_0**2 - z**2)
+
+        def boundary_condition(z):
+            return -z / np.tan(z) - q_circle(z)
+
+        z_highest = brentq(
+            boundary_condition,
+            5.0 * np.pi / 2.0 + epsilon,
+            z_0 - epsilon,
+        )
+        q_highest = q_circle(z_highest)
+        energy = -0.5 * q_highest**2
+
+        i_in = 0.5 - np.sin(2.0 * z_highest) / (4.0 * z_highest)
+        i_out = np.sin(z_highest) ** 2 / (2.0 * q_highest)
+        probability_outside = i_out / (i_in + i_out)
+
+        print(f"z = {z_highest:.6f}")
+        print(f"q = {q_highest:.6f}")
+        print(f"E = {energy:.6f} hbar^2/(m a^2)")
+        print(f"P(x > a) = {probability_outside:.6f}")

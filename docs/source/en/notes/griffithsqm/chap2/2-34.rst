@@ -1,0 +1,124 @@
+Problem 2.34
+==================
+
+a.  The wave function is
+
+    .. math::
+        \psi(x) = \begin{cases}
+            Ae^{ikx} + Be^{-ikx} & (x<0)
+            \\
+            Fe^{-\kappa x} & (x>0).
+        \end{cases}
+
+    Continuity of `\psi` and `\psi'` at `x=0` gives
+
+    .. math::
+        \begin{aligned}
+            A + B &= F
+            \\
+            ik(A-B) &= -\kappa F,
+        \end{aligned}
+
+    so
+
+    .. math::
+        (ik+\kappa)A = (ik-\kappa)B,
+
+    and hence
+
+    .. math::
+        \frac{B}{A} = \frac{ik+\kappa}{ik-\kappa} = \frac{k-i\kappa}{k+i\kappa}.
+
+    Therefore,
+
+    .. math::
+        R = \frac{k^2+\kappa^2}{k^2+\kappa^2} = 1.
+
+    Thus, there is no transmission.
+
+b.  The wave function is
+
+    .. math::
+        \psi(x) = \begin{cases}
+            Ae^{ikx} + Be^{-ikx} & (x<0)
+            \\
+            Fe^{iqx} & (x>0),
+        \end{cases}
+
+    where
+
+    .. math::
+        q = \frac{\sqrt{2m(E-V_0)}}{\hbar}.
+
+    Continuity of `\psi` and `\psi'` at `x=0` gives
+
+    .. math::
+        \begin{aligned}
+            A + B &= F
+            \\
+            k(A-B) &= qF,
+        \end{aligned}
+
+    so
+
+    .. math::
+        (k-q)A = (k+q)B,
+
+    and hence
+
+    .. math::
+        \frac{B}{A} = \frac{k-q}{k+q}.
+
+    Therefore,
+
+    .. math::
+        R = \left(\frac{k-q}{k+q}\right)^2.
+
+c.  In general, the probability current of a plane wave `\psi = Ce^{isx}` is
+
+    .. math::
+        \begin{aligned}
+            J &= \frac{\hbar}{2mi}\left(\psi^*\dv{\psi}{x}-\psi\dv{\psi^*}{x}\right)
+            \\
+            &= \frac{\hbar s}{m}|C|^2.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        J_\text{inc} = \frac{\hbar k}{m}|A|^2, \quad J_\text{trans} = \frac{\hbar q}{m}|F|^2.
+
+    Strictly speaking, the transmission coefficient is the ratio of probability currents, so
+
+    .. math::
+        \begin{aligned}
+            T &= \frac{J_\text{trans}}{J_\text{inc}}
+            \\
+            &= \frac{q}{k}\frac{|F|^2}{|A|^2} = \sqrt{\frac{E-V_0}{E}}\frac{|F|^2}{|A|^2}.
+        \end{aligned}
+
+    For `E<V_0`, `\psi=Fe^{-\kappa x}`, and
+
+    .. math::
+        \psi^*\psi' - \psi\psi'^* = 0,
+
+    so `T=0`.
+
+d.  From the boundary conditions in part (b),
+
+    .. math::
+        \frac{F}{A} = 1 + \frac{B}{A} = 1 + \frac{k-q}{k+q} = \frac{2k}{k+q},
+
+    and therefore
+
+    .. math::
+        T = \frac{q}{k}\left|\frac{F}{A}\right|^2 = \frac{4kq}{(k+q)^2}.
+
+    Indeed,
+
+    .. math::
+        \begin{aligned}
+            R+T &= \left(\frac{k-q}{k+q}\right)^2 + \frac{4kq}{(k+q)^2}
+            \\
+            &= \frac{(k+q)^2}{(k+q)^2} = 1.
+        \end{aligned}

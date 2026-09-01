@@ -1,0 +1,29 @@
+Problem 2.39
+==================
+
+a.  From :ref:`notes/griffithsqm/chap2/2-7:Problem 2.7`,
+
+    .. math::
+        \Psi'(x,0) = A\left[1-2\theta\left(x-\frac{a}{2}\right)\right]\quad (0<x<a).
+
+b.  From part (b) of :ref:`notes/griffithsqm/chap2/2-23:Problem 2.23`,
+
+    .. math::
+        \Psi''(x,0) = -2A\delta\left(x-\frac{a}{2}\right)\quad (0<x<a).
+
+c.  From part (b),
+
+    .. math::
+        \begin{aligned}
+            \braket{H} &= -\frac{\hbar^2}{2m}\int_0^a \Psi(x,0)^*\Psi''(x,0)\,\dd x
+            \\
+            &= -\frac{\hbar^2}{2m}\int_0^a \Psi(x,0)\left[-2A\delta\left(x-\frac{a}{2}\right)\right]\,\dd x
+            \\
+            &= \frac{\hbar^2A}{m}\Psi\left(\frac{a}{2},0\right)
+            \\
+            &= \frac{\hbar^2A^2}{m}\frac{Aa}{2}
+            \\
+            &= \frac{\hbar^2}{2m}\frac{12}{a^3}a = \frac{6\hbar^2}{ma^2}.
+        \end{aligned}
+
+    This agrees with the result of part (d) of :ref:`notes/griffithsqm/chap2/2-7:Problem 2.7`.

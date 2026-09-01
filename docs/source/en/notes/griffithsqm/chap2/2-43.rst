@@ -1,0 +1,104 @@
+Problem 2.43
+==================
+
+Since the potential is even, the eigenfunctions are either even or odd. For an odd function, in `0<x<a`,
+
+.. math::
+    \psi(x) = C\sin(kx),\quad ka = j\pi \quad (j=1,2,\ldots),
+
+and the allowed energies are
+
+.. math::
+    E_j = \frac{j^2\pi^2\hbar^2}{2ma^2}.
+
+The boundary condition at `x=0` is
+
+.. math::
+    \psi'(0^+) - \psi'(0^-) = \frac{2m\alpha}{\hbar^2}\psi(0).
+
+Since `\psi(0)=0` and `\psi'(0^+) = \psi'(0^-)`, it is satisfied automatically. Physically, too,
+
+.. math::
+    \alpha\delta(x)\psi(x) = \alpha\delta(x)\psi(0) = 0,
+
+so odd-parity states are unaffected by the delta-function potential. For an even function, the wave function satisfying `\psi(-a)=\psi(a)=0` can be written as
+
+.. math::
+    \psi(x) = \begin{cases}
+        C\sin(k(a+x)) & (-a<x<0)
+        \\
+        C\sin(k(a-x)) & (0<x<a),
+    \end{cases}
+
+or, more compactly,
+
+.. math::
+    \psi(x) = C\sin(k(a-|x|)) \quad (|x|<a).
+
+Here,
+
+.. math::
+    \begin{aligned}
+        \psi(0) &= C\sin(ka)
+        \\
+        \psi'(0^+) &= -Ck\cos(ka)
+        \\
+        \psi'(0^-) &= Ck\cos(ka),
+    \end{aligned}
+
+so the boundary condition at `x=0` is
+
+.. math::
+    -2Ck\cos(ka) = \frac{2m\alpha}{\hbar^2}C\sin(ka),
+
+or
+
+.. math::
+    k\cot(ka) = -\frac{m\alpha}{\hbar^2}.
+
+Defining
+
+.. math::
+    z \coloneqq ka,\quad \lambda \coloneqq \frac{m\alpha a}{\hbar^2},
+
+the boundary condition and allowed energies become
+
+.. math::
+    z\cot(z) = -\lambda,\quad E = \frac{\hbar^2 z^2}{2ma^2}.
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    lam = 1.0
+    z_max = 3.0 * np.pi
+    y_min = -8.0
+    z = np.linspace(1.0e-3, z_max - 1.0e-3, 6000)
+
+    left_hand_side = z / np.tan(z)
+    right_hand_side = -lam * np.ones_like(z)
+
+    left_hand_side[
+        (left_hand_side > 0.0) | (left_hand_side < y_min)
+    ] = np.nan
+
+    plt.plot(z, left_hand_side, label=r"$z\cot z$")
+    plt.plot(z, right_hand_side, label=r"$-\lambda$")
+    plt.xlabel(r"$z$")
+    plt.ylabel("Both sides of the boundary condition")
+    plt.xticks(
+        [0.0, np.pi / 2.0, np.pi, 3.0 * np.pi / 2.0,
+         2.0 * np.pi, 5.0 * np.pi / 2.0, 3.0 * np.pi],
+        [r"$0$", r"$\pi/2$", r"$\pi$", r"$3\pi/2$",
+         r"$2\pi$", r"$5\pi/2$", r"$3\pi$"],
+    )
+    plt.xlim(0.0, z_max)
+    plt.ylim(y_min, 0.0)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()
+
+Thus, the delta-function potential increases `z`, and hence the energy, of every even state. However, these levels never reach the `z` values of the odd states, so the energy levels still alternate. As `\alpha\to 0`, `\lambda\to 0`, so `z\cot(z)=0`, recovering the levels `z\to(n+1/2)\pi\,(n=0,1,2,\ldots)` of an infinite square well of width `2a`. As `\alpha\to\infty`, `\lambda\to\infty`, so `z\to(n+1)\pi`, approaching the odd-state energy levels.

@@ -1,0 +1,38 @@
+Problem 2.38
+==================
+
+a.  At the quantum recurrence time, the time dependence `e^{-iE_nt/\hbar}` of the wave function satisfies
+
+    .. math::
+        \begin{aligned}
+            \exp\left(-i\frac{E_nT}{\hbar}\right) &= \exp\left(-i\frac{n^2\pi^2\hbar^2}{2ma^2}\frac{1}{\hbar}\frac{4ma^2}{\pi\hbar}\right)
+            \\
+            &= \exp(-i2\pi n^2) = 1,
+        \end{aligned}
+
+    so
+
+    .. math::
+        \Psi(x,T) = \Psi(x,0).
+
+b.  The kinetic energy of a classical particle is
+
+    .. math::
+        E = \frac{1}{2}mv^2,
+
+    so its speed is `v=\sqrt{2E/m}`. Therefore, the classical recurrence time is
+
+    .. math::
+        T_\text{cl} = \frac{2a}{v} = a\sqrt{\frac{2m}{E}}.
+
+c.  When the two recurrence times are equal,
+
+    .. math::
+        \frac{4ma^2}{\pi\hbar} = a\sqrt{\frac{2m}{E}},
+
+    and hence the energy is
+
+    .. math::
+        E = \frac{\pi^2\hbar^2}{8ma^2}.
+
+    However, this does not coincide with the energy of any actually allowed stationary state.

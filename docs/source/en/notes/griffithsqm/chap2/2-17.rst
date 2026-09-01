@@ -1,0 +1,30 @@
+Problem 2.17
+==================
+
+Euler's formulas,
+
+.. math::
+    \begin{aligned}
+        e^{ikx} &= \cos(kx) + i\sin(kx)
+        \\
+        e^{-ikx} &= \cos(kx) - i\sin(kx),
+    \end{aligned}
+
+give
+
+.. math::
+    \begin{aligned}
+        Ae^{ikx} + Be^{-ikx} &= A(\cos(kx) + i\sin(kx)) + B(\cos(kx) - i\sin(kx))
+        \\
+        &= (A + B)\cos(kx) + i(A - B)\sin(kx).
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    C = A + B,\quad D = i(A - B).
+
+Conversely, `C-iD=2A` and `C+iD=2B`, so
+
+.. math::
+    A = \frac{C-iD}{2},\quad B = \frac{C+iD}{2}.

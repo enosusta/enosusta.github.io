@@ -1,0 +1,28 @@
+Problem 2.8
+==================
+
+The normalization condition gives
+
+.. math::
+    1 = |A|^2\int_0^{a/2}\dd x = |A|^2\frac{a}{2},
+
+so we may choose
+
+.. math::
+    A = \sqrt{\frac{2}{a}}.
+
+The probability of obtaining `E_1 = \pi^2\hbar^2/(2ma^2)` follows from
+
+.. math::
+    \begin{aligned}
+        c_1 &= \sqrt{\frac{2}{a}}\int_0^a\sin\left(\frac{\pi x}{a}\right)\Psi(x,0)\,\dd x
+        \\
+        &= \frac{2}{a}\int_0^{a/2}\sin\left(\frac{\pi x}{a}\right)\dd x
+        \\
+        &= \frac{2}{a}\left[-\frac{a}{\pi}\cos\left(\frac{\pi x}{a}\right)\right]_0^{a/2} = \frac{2}{\pi}.
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    P(E_1) = |c_1|^2 = \frac{4}{\pi^2} \approx 0.405.

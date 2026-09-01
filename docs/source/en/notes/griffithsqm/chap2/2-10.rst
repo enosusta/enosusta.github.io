@@ -1,0 +1,88 @@
+Problem 2.10
+==================
+
+a.  For convenience, define
+
+    .. math::
+        \xi \coloneqq \sqrt{\frac{m\omega}{\hbar}}x,\quad \alpha \coloneqq \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}.
+
+    The normalized first excited state is then
+
+    .. math::
+        \psi_1 = \sqrt{2}\alpha\xi e^{-\xi^2/2},
+
+    and the raising operator is
+
+    .. math::
+        \hat{a}_+ = \frac{1}{\sqrt{2}}\left(-\dv{}{\xi} + \xi\right).
+
+    Since `\hat{a}_+\psi_n = \sqrt{n+1}\psi_{n+1}`, we have `\hat{a}_+\psi_1 = \sqrt{2}\psi_2`. Also,
+
+    .. math::
+        \dv{}{\xi}(\xi e^{-\xi^2/2}) = (1-\xi^2)e^{-\xi^2/2},
+
+    and therefore
+
+    .. math::
+        \begin{aligned}
+            \psi_2 &= \frac{1}{\sqrt{2}}\hat{a}_+\psi_1
+            \\
+            &= \frac{1}{2}\left(-\dv{}{\xi}+\xi\right)(\sqrt{2}\alpha\xi e^{-\xi^2/2})
+            \\
+            &= \frac{\sqrt{2}\alpha}{2}[-(1-\xi^2)+\xi^2]e^{-\xi^2/2}
+            \\
+            &= \frac{\alpha}{\sqrt{2}}(2\xi^2-1)e^{-\xi^2/2}.
+        \end{aligned}
+
+    By construction, `\psi_2` is already normalized.
+
+b.
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        xi = np.linspace(-4.0, 4.0, 1001)
+        alpha = np.pi ** (-0.25)
+
+        psi_0 = alpha * np.exp(-xi**2 / 2.0)
+        psi_1 = np.sqrt(2.0) * alpha * xi * np.exp(-xi**2 / 2.0)
+        psi_2 = (
+            alpha / np.sqrt(2.0)
+            * (2.0 * xi**2 - 1.0)
+            * np.exp(-xi**2 / 2.0)
+        )
+
+        plt.plot(xi, psi_0, label=r"$\psi_0$")
+        plt.plot(xi, psi_1, label=r"$\psi_1$")
+        plt.plot(xi, psi_2, label=r"$\psi_2$")
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$\xi$")
+        plt.ylabel(r"$\psi_n$")
+        plt.xlim(xi[0], xi[-1])
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+c.  Since `\psi_0,\psi_2` are even and `\psi_1` is odd,
+
+    .. math::
+        \psi_0\psi_1,\quad \psi_1\psi_2
+
+    are odd functions, and hence
+
+    .. math::
+        \braket{\psi_0|\psi_1} = \braket{\psi_1|\psi_2} = 0.
+
+    For the two even functions, changing the variable of integration from `x` to `\xi` gives
+
+    .. math::
+        \begin{aligned}
+            \braket{\psi_0|\psi_2} &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}(2\xi^2-1)e^{-\xi^2}\,\dd\xi
+            \\
+            &= \frac{1}{\sqrt{2\pi}}\left(2\frac{\sqrt{\pi}}{2} - \sqrt{\pi}\right) = 0.
+        \end{aligned}
+
+    Here we used the Gaussian integral formulas. Therefore, `\psi_0,\psi_1,\psi_2` are mutually orthogonal.

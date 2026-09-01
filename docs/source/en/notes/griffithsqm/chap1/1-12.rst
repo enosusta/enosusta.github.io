@@ -1,0 +1,63 @@
+Problem 1.12
+======================
+
+a.  For the harmonic oscillator in part (b) of :ref:`notes/griffithsqm/chap1/1-11:Problem 1.11`, take the initial condition to be `x(0)=A`. Its momentum can then be written as
+
+    .. math::
+        p(t) = -m\omega A\sin(\theta),\quad \theta = \omega t.
+
+    In particular, define its maximum magnitude by
+
+    .. math::
+        p_0 \coloneqq m\omega A = \sqrt{2mE}.
+
+    The probability of finding the particle within the range `\dd p` equals the fraction of one period `2\pi` that the particle spends within the interval `\dd\theta`. However, each value of `p` corresponds to two values of `\theta` during one period, so
+
+    .. math::
+        \rho(p)\,\dd p = \frac{2\dd\theta}{2\pi} = \frac{\dd\theta}{\pi}.
+
+    Since `\dv{p}{\theta} = -p_0\cos(\theta)`,
+
+    .. math::
+        \rho(p) = \frac{1}{\pi}\dv{\theta}{p} = \frac{1}{\pi\sqrt{p_0^2-p^2}}.
+
+    Therefore, Equation (1.43) becomes
+
+    .. math::
+        \rho(p) = \begin{cases}
+            \frac{1}{\pi\sqrt{p_0^2-p^2}} & (|p|<p_0) \\
+            0 & (|p|\ge p_0).
+        \end{cases}
+
+    This is normalized in the same way as the result in part (b) of :ref:`notes/griffithsqm/chap1/1-11:Problem 1.11`.
+
+b.  Since `\rho(p)` is an even function,
+
+    .. math::
+        \braket{p} = 0.
+
+    Changing the variable of integration to `p=p_0\sin\theta` gives
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2} &= \frac{1}{\pi}\int_{-p_0}^{p_0}\frac{p^2\,\dd p}{\sqrt{p_0^2-p^2}}
+            \\
+            &= \frac{p_0^2}{\pi}\int_{-\pi/2}^{\pi/2}\sin^2\theta\,\dd\theta = \frac{p_0^2}{2} = mE.
+        \end{aligned}
+
+    Therefore, the standard deviation is
+
+    .. math::
+        \sigma_p = \sqrt{\braket{p^2}-\braket{p}^2} = \sqrt{mE}.
+
+c.  From the result in part (b) of :ref:`notes/griffithsqm/chap1/1-11:Problem 1.11`,
+
+    .. math::
+        \sigma_x\sigma_p = \sqrt{\frac{E}{k}}\sqrt{mE} = \frac{E}{\omega}.
+
+    In quantum mechanics, `E\ge \hbar\omega/2`, so
+
+    .. math::
+        \sigma_x\sigma_p \ge \frac{\hbar}{2}.
+
+    This is precisely the Heisenberg uncertainty principle.

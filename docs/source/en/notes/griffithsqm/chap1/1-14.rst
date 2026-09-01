@@ -1,0 +1,57 @@
+Problem 1.14
+======================
+
+a.  The time-dependent Schrödinger equation for a real potential and its complex conjugate are
+
+    .. math::
+        \begin{aligned}
+            i\hbar\pdv{\Psi}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2} + V(x)\Psi
+            \\
+            -i\hbar\pdv{\Psi^*}{t} &= -\frac{\hbar^2}{2m}\pdv{^2\Psi^*}{x^2} + V(x)\Psi^*.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            \pdv{|\Psi|^2}{t} &= \Psi^*\pdv{\Psi}{t} + \Psi\pdv{\Psi^*}{t}
+            \\
+            &= \frac{i\hbar}{2m}\left(\Psi^*\pdv{^2\Psi}{x^2}-\Psi\pdv{^2\Psi^*}{x^2}\right)
+            \\
+            &= -\pdv{}{x}\left[\frac{i\hbar}{2m}\left(\Psi\pdv{\Psi^*}{x}-\Psi^*\pdv{\Psi}{x}\right)\right]
+            \\
+            &= -\pdv{J}{x}.
+        \end{aligned}
+
+    Integrating this from `a` to `b` gives
+
+    .. math::
+        \begin{aligned}
+            \dv{P_{ab}}{t} &= \dv{t}\int_a^b|\Psi|^2\,\dd x
+            \\
+            &= -\int_a^b\pdv{J}{x}\,\dd x = J(a,t)-J(b,t).
+        \end{aligned}
+
+    In one dimension, the probability interpretation implies that `\Psi` has dimensions `\mathbf{L}^{-1/2}`. Since `\hbar/m` has dimensions `\mathbf{L}^2\mathbf{T}^{-1}`,
+
+    .. math::
+        [J] = \mathbf{L}^2\mathbf{T}^{-1}\mathbf{L}^{-1/2}\mathbf{L}^{-3/2} = \mathbf{T}^{-1}.
+
+b.  The wave function in :ref:`notes/griffithsqm/chap1/1-9:Problem 1.9` is
+
+    .. math::
+        \Psi = Ae^{-amx^2/\hbar}e^{-iat},
+
+    and
+
+    .. math::
+        \begin{aligned}
+            \pdv{\Psi}{x} &= -\frac{2amx}{\hbar}\Psi
+            \\
+            \pdv{\Psi^*}{x} &= -\frac{2amx}{\hbar}\Psi^*.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        J(x,t) = 0.

@@ -1,0 +1,101 @@
+Problem 2.40
+==================
+
+a.  Using the first three Hermite polynomials,
+
+    .. math::
+        \begin{aligned}
+            3H_0 - 2H_1 + H_2  &= 3-4\xi+(4\xi^2-2)
+            \\
+            &= 1-4\xi+4\xi^2 = (1-2\xi)^2,
+        \end{aligned}
+
+    so the initial state can be written as
+
+    .. math::
+        \Psi(x,0) = A[3H_0(\xi)-2H_1(\xi)+H_2(\xi)]e^{-\xi^2/2}.
+
+    On the other hand, expanding in the stationary states gives
+
+    .. math::
+        \Psi(x,0) = \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\xi^2/2}\left[c_0H_0 + \frac{c_1}{\sqrt{2}}H_1 + \frac{c_2}{\sqrt{8}}H_2 + \cdots\right].
+
+    Comparing coefficients gives
+
+    .. math::
+        c_0 = 3A\left(\frac{\pi\hbar}{m\omega}\right)^{1/4},\quad
+        c_1 = -2\sqrt{2}A\left(\frac{\pi\hbar}{m\omega}\right)^{1/4},\quad
+        c_2 = 2\sqrt{2}A\left(\frac{\pi\hbar}{m\omega}\right)^{1/4},
+
+    with `c_n=0\,(n\ge 3)`. From the normalization condition,
+
+    .. math::
+        \begin{aligned}
+            1 &= |c_0|^2 + |c_1|^2 + |c_2|^2
+            \\
+            &= 25A^2\left(\frac{\pi\hbar}{m\omega}\right)^{1/2},
+        \end{aligned}
+
+    so we may choose
+
+    .. math::
+        A = \frac{1}{5}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}.
+
+    Therefore,
+
+    .. math::
+        c_0 = \frac{3}{5},\quad
+        c_1 = -\frac{2\sqrt{2}}{5},\quad
+        c_2 = \frac{2\sqrt{2}}{5},\quad
+        c_n = 0\,(n\ge 3).
+
+b.  When the energy of the particle is measured, the possible values and their probabilities are
+
+    .. math::
+        \begin{aligned}
+            E_1 &= \frac{1}{2}\hbar\omega,\quad P_1 = |c_0|^2 = \frac{9}{25}
+            \\
+            E_2 &= \frac{3}{2}\hbar\omega,\quad P_2 = |c_1|^2 = \frac{8}{25}
+            \\
+            E_3 &= \frac{5}{2}\hbar\omega,\quad P_3 = |c_2|^2 = \frac{8}{25}.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            \braket{H} &= \frac{9}{25}\frac{\hbar\omega}{2} + \frac{8}{25}\frac{3\hbar\omega}{2} + \frac{8}{25}\frac{5\hbar\omega}{2}
+            \\
+            &= \frac{73}{50}\hbar\omega.
+        \end{aligned}
+
+c.  At time `T`, in addition to the initial-state factors, the wave function contains the factors
+
+    .. math::
+        (1+2\xi)^2 = 3H_0(\xi) + 2H_1(\xi) + H_2(\xi),\quad e^{-i(n+1/2)\omega T}.
+
+    The signs of the `n=0,2` components are the same as in the initial state, while the sign of the `n=1` component is reversed. Setting `g \coloneqq B/A` and comparing the `n=0,1,2` components gives
+
+    .. math::
+        \begin{aligned}
+            g &= e^{-i\omega T/2}
+            \\
+            g &= -e^{-3i\omega T/2}
+            \\
+            g &= e^{-5i\omega T/2}.
+        \end{aligned}
+
+    Rearranging,
+
+    .. math::
+        e^{-i\omega T} = -1,\quad e^{-2i\omega T} = 1.
+
+    Both conditions are satisfied when
+
+    .. math::
+        \omega T = (2n+1)\pi,\quad n=0,1,2,\dots.
+
+    Therefore, the smallest positive time is
+
+    .. math::
+        T_{\min} = \frac{\pi}{\omega}.

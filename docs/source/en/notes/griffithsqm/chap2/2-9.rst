@@ -1,0 +1,34 @@
+Problem 2.9
+==================
+
+Inside the well,
+
+.. math::
+    \hat{H} = -\frac{\hbar^2}{2m}\dv{^2}{x^2}.
+
+Since
+
+.. math::
+    \begin{aligned}
+        \dv{}{x}[Ax(a-x)] &= A(a-2x)
+        \\
+        \dv{^2}{x^2}[Ax(a-x)] &= -2A,
+    \end{aligned}
+
+we have
+
+.. math::
+    \hat{H}\Psi(x,0) = \frac{\hbar^2A}{m}.
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        \braket{H} &= \int_0^a\Psi(x,0)^*\hat{H}\Psi(x,0)\,\dd x
+        \\
+        &= \frac{\hbar^2A^2}{m}\int_0^a (ax-x^2)\,\dd x
+        \\
+        &= \frac{\hbar^2 A^2}{m}\frac{a^3}{6} = \frac{5\hbar^2}{ma^2}.
+    \end{aligned}
+
+This agrees with the result obtained in Example 2.3.

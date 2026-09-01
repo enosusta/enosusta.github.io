@@ -1,0 +1,307 @@
+Problem 2.27
+==================
+
+a.
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        alpha = 1.0
+        a = 1.0
+        epsilon = 0.06 * a
+
+        def delta_approximation(x):
+            return (
+                np.exp(-x**2 / (2.0 * epsilon**2))
+                / (np.sqrt(2.0 * np.pi) * epsilon)
+            )
+
+        x = np.linspace(-2.5 * a, 2.5 * a, 2001)
+        potential = -alpha * (
+            delta_approximation(x + a) + delta_approximation(x - a)
+        )
+
+        plt.plot(x, potential)
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$V(x)$")
+        plt.xticks([-a, 0.0, a], [r"$-a$", r"$0$", r"$a$"])
+        plt.xlim(x[0], x[-1])
+        plt.grid(alpha=0.25)
+        plt.show()
+
+b.  In the regions without delta functions, the time-independent Schrödinger equation for a bound state is
+
+    .. math::
+        \psi'' = \kappa^2\psi,\quad \kappa \coloneqq \sqrt{-2mE}/\hbar > 0.
+
+    Since the potential is even, the eigenfunctions are either even or odd. Combining solutions that vanish at infinity and centering them on the two delta functions gives
+
+    .. math::
+        \begin{aligned}
+            \psi_+(x) &= N_+(e^{-\kappa|x-a|} + e^{-\kappa|x+a|})
+            \\
+            \psi_-(x) &= N_-(e^{-\kappa|x-a|} - e^{-\kappa|x+a|}),
+        \end{aligned}
+
+    where `N_\pm` are normalization constants. The wave function itself is continuous at `x=\pm a`, but its derivative has the discontinuity
+
+    .. math::
+        \psi'(x_0^+) - \psi'(x_0^-) = -2\gamma\psi(x_0),\quad \gamma \coloneqq m\alpha/\hbar^2
+
+    at the center `x_0` of a delta function. It is sufficient to impose this boundary condition at `x=a`. For the even solution,
+
+    .. math::
+        \begin{aligned}
+            \psi_+(a) &= N_+(1 + e^{-2\kappa a})
+            \\
+            \psi_+'(a^+) - \psi_+'(a^-) &= -2\kappa N_+,
+        \end{aligned}
+
+    so the boundary condition gives
+
+    .. math::
+        \kappa = \gamma(1 + e^{-2\kappa a}).
+
+    Similarly, for the odd solution,
+
+    .. math::
+        \begin{aligned}
+            \psi_-(a) &= N_-(1 - e^{-2\kappa a})
+            \\
+            \psi_-'(a^+) - \psi_-'(a^-) &= -2\kappa N_-,
+        \end{aligned}
+
+    so the boundary condition gives
+
+    .. math::
+        \kappa = \gamma(1 - e^{-2\kappa a}).
+
+    Defining
+
+    .. math::
+        y \coloneqq \kappa a,\quad g \coloneqq \gamma a = \frac{m\alpha a}{\hbar^2},
+
+    these boundary conditions become
+
+    .. math::
+        \begin{aligned}
+            y &= g(1\pm e^{-2y}),\quad E = -\frac{\hbar^2}{2ma^2}y^2.
+        \end{aligned}
+
+    For the odd solution, note that near `\kappa=0` the right-hand side is `2\gamma a\kappa`. If this slope is less than `1`, that is, if `2\gamma a < 1`, there is no positive solution (see the graph).
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        def plot_boundary_conditions(ax, g, y_max):
+            y = np.linspace(0.0, y_max, 1001)
+
+            ax.plot(y, y, color="black", label=r"$y$")
+            ax.plot(
+                y,
+                g * (1.0 + np.exp(-2.0 * y)),
+                label=r"$g(1+e^{-2y})$",
+            )
+            ax.plot(
+                y,
+                g * (1.0 - np.exp(-2.0 * y)),
+                label=r"$g(1-e^{-2y})$",
+            )
+            ax.set(
+                xlabel=r"$y$",
+                title=rf"$g={g:g}$",
+                xlim=(0.0, y_max),
+                ylim=(0.0, y_max),
+            )
+            ax.grid(alpha=0.25)
+            ax.legend()
+
+        fig, axes = plt.subplots(
+            1,
+            2,
+            figsize=(10, 4.2),
+            constrained_layout=True,
+        )
+        plot_boundary_conditions(axes[0], g=1.0, y_max=2.0)
+        plot_boundary_conditions(axes[1], g=1.0 / 4.0, y_max=0.7)
+        axes[1].set_title(r"$g=1/4$")
+        axes[0].set_ylabel("Both sides of the boundary condition")
+        plt.show()
+
+    First, for `\alpha=\hbar^2/ma`, or `g=1`, the solutions `y` and energies `E` are as follows:
+
+    .. exec_code::
+
+        import numpy as np
+        from scipy.optimize import brentq
+
+        g = 1.0
+
+        def even_boundary_condition(y):
+            return y - g * (1.0 + np.exp(-2.0 * y))
+
+        def odd_boundary_condition(y):
+            return y - g * (1.0 - np.exp(-2.0 * y))
+
+        y_even = brentq(even_boundary_condition, 0.0, 2.0 * g)
+
+        y_odd = brentq(odd_boundary_condition, 1.0e-8, 2.0 * g)
+
+        energy_even = -0.5 * y_even**2
+        energy_odd = -0.5 * y_odd**2
+
+        print(f"even: y = {y_even:.6f}, E = {energy_even:.6f} hbar^2/(m a^2)")
+        print(f"odd : y = {y_odd:.6f}, E = {energy_odd:.6f} hbar^2/(m a^2)")
+
+    Next, for `\alpha=\hbar^2/4ma`, or `g=1/4`, the solution `y` and energy `E` are as follows:
+
+    .. exec_code::
+
+        import numpy as np
+        from scipy.optimize import brentq
+
+        g = 1.0 / 4.0
+
+        def even_boundary_condition(y):
+            return y - g * (1.0 + np.exp(-2.0 * y))
+
+        def odd_boundary_condition(y):
+            return y - g * (1.0 - np.exp(-2.0 * y))
+
+        y_even = brentq(even_boundary_condition, 0.0, 2.0 * g)
+
+        energy_even = -0.5 * y_even**2
+
+        print(f"even: y = {y_even:.6f}, E = {energy_even:.7f} hbar^2/(m a^2)")
+
+        if 2.0 * g > 1.0:
+            y_odd = brentq(odd_boundary_condition, 1.0e-8, 2.0 * g)
+            energy_odd = -0.5 * y_odd**2
+            print(f"odd : y = {y_odd:.6f}, E = {energy_odd:.7f} hbar^2/(m a^2)")
+        else:
+            print("odd : no positive root (2g <= 1)")
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.optimize import brentq
+
+        a = 1.0
+
+        def boundary_condition(y, g, parity):
+            sign = 1.0 if parity == "even" else -1.0
+            return y - g * (1.0 + sign * np.exp(-2.0 * y))
+
+        def wave_function(x, y, parity):
+            kappa = y / a
+            sign = 1.0 if parity == "even" else -1.0
+            unnormalized = (
+                np.exp(-kappa * np.abs(x - a))
+                + sign * np.exp(-kappa * np.abs(x + a))
+            )
+            norm_squared = (
+                2.0 / kappa
+                + 2.0 * sign * np.exp(-2.0 * kappa * a)
+                * (2.0 * a + 1.0 / kappa)
+            )
+            return unnormalized / np.sqrt(norm_squared)
+
+        g_one = 1.0
+        y_even_one = brentq(
+            lambda y: boundary_condition(y, g_one, "even"),
+            0.0,
+            2.0 * g_one,
+        )
+        y_odd_one = brentq(
+            lambda y: boundary_condition(y, g_one, "odd"),
+            1.0e-8,
+            2.0 * g_one,
+        )
+
+        g_quarter = 1.0 / 4.0
+        y_even_quarter = brentq(
+            lambda y: boundary_condition(y, g_quarter, "even"),
+            0.0,
+            2.0 * g_quarter,
+        )
+
+        x_one = np.linspace(-6.0 * a, 6.0 * a, 2001)
+        x_quarter = np.linspace(-8.0 * a, 8.0 * a, 2001)
+
+        fig, axes = plt.subplots(
+            1,
+            2,
+            figsize=(10, 4.2),
+            sharey=True,
+            constrained_layout=True,
+        )
+
+        axes[0].plot(
+            x_one,
+            wave_function(x_one, y_even_one, "even"),
+            label=r"$\psi_+$",
+        )
+        axes[0].plot(
+            x_one,
+            wave_function(x_one, y_odd_one, "odd"),
+            label=r"$\psi_-$",
+        )
+        axes[0].set_title(r"$g=1$")
+        axes[0].legend()
+
+        axes[1].plot(
+            x_quarter,
+            wave_function(x_quarter, y_even_quarter, "even"),
+            label=r"$\psi_+$",
+        )
+        axes[1].set_title(r"$g=1/4$")
+        axes[1].legend()
+
+        for ax in axes:
+            ax.axhline(0.0, color="black", linewidth=0.8)
+            ax.axvline(-a, color="tab:gray", linestyle="--", linewidth=0.8)
+            ax.axvline(a, color="tab:gray", linestyle="--", linewidth=0.8)
+            ax.set_xlabel(r"$x$")
+            ax.set_xticks([-a, a], [r"$-a$", r"$a$"])
+            ax.grid(alpha=0.25)
+
+        axes[0].set_ylabel(r"$\psi(x)$")
+        plt.show()
+
+c.  If `\alpha` is held fixed and `a\to 0`, then
+
+    .. math::
+        V(x) \to -2\alpha\delta(x).
+
+    Also, since `e^{-2\kappa a}\to 1`, the even boundary condition gives
+
+    .. math::
+        \kappa \to 2\gamma,
+
+    and the bound-state energy becomes
+
+    .. math::
+        E_+ \to -\frac{2m\alpha^2}{\hbar^2}.
+
+    This agrees with the bound-state energy of a single delta-function potential of strength `2\alpha`. Since the condition `2\gamma a > 1` fails in this limit, the odd solution disappears. On the other hand, as `a\to\infty`, `e^{-2\kappa a}\to 0`, so the boundary condition gives
+
+    .. math::
+        \kappa \to \gamma,
+
+    and for both parities the bound-state energy becomes
+
+    .. math::
+        E_{\pm} \to -\frac{m\alpha^2}{2\hbar^2}.
+
+    This agrees with the bound-state energy of a single delta-function potential of strength `\alpha`. It means that when the two delta functions are sufficiently far apart, their respective bound states exist independently.

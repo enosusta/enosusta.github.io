@@ -1,0 +1,46 @@
+Problem 1.18
+======================
+
+a.  From Equation (1.45),
+
+    .. math::
+        \frac{h}{\sqrt{3m k_BT}} > d \implies T < \frac{h^2}{3 m k_B d^2}.
+
+    Taking `d=0.3\,\mathrm{nm} = 3\times 10^{-10}\,\mathrm{m}`, we find for a free electron that
+
+    .. math::
+        T < 1.29 \times 10^5\,\mathrm{K}.
+
+    This criterion is satisfied up to temperatures far above the melting points of ordinary solids, so free electrons in ordinary solids must be treated quantum mechanically. The atomic mass of silicon is `m_\mathrm{Si}=28.09\,\mathrm{u}=4.66 \times 10^{-26}\,\mathrm{kg}`, and for a silicon nucleus we obtain
+
+    .. math::
+        T < 2.5\,\mathrm{K}.
+
+    Thus, silicon nuclei behave quantum mechanically only at extremely low temperatures of a few kelvin or less.
+
+b.  From the ideal gas law, the volume per atom is
+
+    .. math::
+        \frac{V}{N} = \frac{k_B T}{P}.
+
+    Therefore, the typical interatomic spacing is
+
+    .. math::
+        d = \left(\frac{V}{N}\right)^{1/3} = \left(\frac{k_B T}{P}\right)^{1/3}.
+
+    Equation (1.45) gives
+
+    .. math::
+        \frac{h}{\sqrt{3 m k_B T}} > \left(\frac{k_B T}{P}\right)^{1/3} \implies T < \frac{1}{k_B}\left(\frac{h^2}{3 m}\right)^{3/5}P^{2/5}.
+
+    For helium at atmospheric pressure, `P=1.013\times 10^5\,\mathrm{Pa}`, with `m_{\mathrm{He}}=4.003\,\mathrm{u}=6.65 \times 10^{-27}\,\mathrm{kg}`, this gives
+
+    .. math::
+        T < 2.9\,\mathrm{K}.
+
+    For hydrogen atoms in outer space, where `T=3\,\mathrm{K}` and `m_{\mathrm{H}}=1.67 \times 10^{-27}\,\mathrm{kg}`,
+
+    .. math::
+        \lambda = \frac{h}{\sqrt{3m_\mathrm{H} k_B T}} = 1.45 \times 10^{-9}\,\mathrm{m} = 1.45\,\mathrm{nm}.
+
+    This is far smaller than the interatomic spacing of approximately `1\,\mathrm{cm}=10^{-2}\,\mathrm{m}`, so hydrogen atoms in outer space do not behave quantum mechanically.

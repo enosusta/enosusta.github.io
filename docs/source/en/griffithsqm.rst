@@ -8,11 +8,11 @@ Practice is essential for learning how to use quantum mechanics. Fortunately, th
    :caption: Contents
 
    notes/griffithsqm/chap1
+   notes/griffithsqm/chap2
 
 .. todo::
    Solutions to be added
 
-   * Chapter 2
    * Chapter 3
    * Chapter 4
    * Chapter 5

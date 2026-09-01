@@ -1,0 +1,32 @@
+Problem 2.30
+==================
+
+Since `\psi(x)` is even, the normalization condition gives
+
+.. math::
+    \begin{aligned}
+        1  &= 2D^2\int_0^a\cos^2(lx)\,\dd x + 2F^2\int_a^\infty e^{-2\kappa x}\,\dd x
+        \\
+        &= 2D^2\int_0^a \frac{1+\cos(2lx)}{2}\,\dd x + 2F^2\left[-\frac{e^{-2\kappa x}}{2\kappa}\right]_a^\infty
+        \\
+        &= D^2\left[a + \frac{\sin(2la)}{2l}\right] + \frac{F^2e^{-2\kappa a}}{\kappa}.
+    \end{aligned}
+
+From the boundary condition,
+
+.. math::
+    F^2 e^{-2\kappa a} = D^2 \cos^2(la),
+
+so
+
+.. math::
+    1 = D^2\left[a + \frac{\sin(2la)}{2l} + \frac{\cos^2(la)}{\kappa}\right].
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        D &= \left[a + \frac{\sin(2la)}{2l} + \frac{\cos^2(la)}{\kappa}\right]^{-1/2}
+        \\
+        F &= e^{\kappa a}\cos(la)\left[a + \frac{\sin(2la)}{2l} + \frac{\cos^2(la)}{\kappa}\right]^{-1/2}.
+    \end{aligned}

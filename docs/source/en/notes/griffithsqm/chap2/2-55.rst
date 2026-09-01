@@ -1,0 +1,58 @@
+Problem 2.55
+==================
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.integrate import solve_ivp
+    from scipy.optimize import brentq
+
+    xi_max = 6.0
+
+    def schrodinger_equation(xi, state, K):
+        psi, derivative = state
+        return derivative, (xi**2 - K) * psi
+
+    def solve_wavefunction(K, xi_values=None):
+        return solve_ivp(
+            lambda xi, state: schrodinger_equation(xi, state, K),
+            (0.0, xi_max),
+            (1.0, 0.0),
+            t_eval=xi_values,
+            method="DOP853",
+            rtol=1.0e-10,
+            atol=1.0e-12,
+        )
+
+    def tail(K):
+        solution = solve_wavefunction(K)
+        return solution.y[0, -1]
+
+    K_ground = brentq(tail, 0.9, 1.1, xtol=1.0e-12)
+    energy = K_ground / 2.0
+
+    print(f"K_0 = {K_ground:.4f}")
+    print(f"E_0 = {energy:.5f} hbar omega")
+
+    xi = np.linspace(0.0, xi_max, 1201)
+    cases = [
+        (0.9, "--", r"$K=0.9$"),
+        (K_ground, "-", rf"$K={K_ground:.4f}$"),
+        (1.1, ":", r"$K=1.1$"),
+    ]
+
+    for K, linestyle, label in cases:
+        psi = solve_wavefunction(K, xi).y[0]
+        plt.plot(xi, psi, linestyle=linestyle, label=label)
+
+    plt.axhline(0.0, color="black", linewidth=0.8)
+    plt.xlabel(r"$\xi$")
+    plt.ylabel(r"$\psi(\xi)$")
+    plt.xlim(0.0, xi_max)
+    plt.ylim(-2.0, 2.0)
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()

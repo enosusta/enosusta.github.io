@@ -1,0 +1,47 @@
+Problem 2.44
+==================
+
+Suppose there are two states `\psi_1,\psi_2` with the same energy `E`. Their respective time-independent Schrödinger equations are
+
+.. math::
+    \begin{aligned}
+        -\frac{\hbar^2}{2m}\psi_1'' + V\psi_1 &= E\psi_1
+        \\
+        -\frac{\hbar^2}{2m}\psi_2'' + V\psi_2 &= E\psi_2.
+    \end{aligned}
+
+Multiplying the first equation by `\psi_2`, the second by `\psi_1`, and subtracting gives
+
+.. math::
+    -\frac{\hbar^2}{2m}(\psi_2\psi_1'' - \psi_1\psi_2'') = 0.
+
+Define the Wronskian by
+
+.. math::
+    W(x) \coloneqq \psi_2(x)\psi_1'(x) - \psi_1(x)\psi_2'(x).
+
+Then
+
+.. math::
+    \begin{aligned}
+        W'(x) &= \psi_2'\psi_1' + \psi_2\psi_1'' - \psi_1'\psi_2' - \psi_1\psi_2''
+        \\
+        &= \psi_2\psi_1'' - \psi_1\psi_2'' = 0,
+    \end{aligned}
+
+so `W(x)` is constant. A normalizable bound state ordinarily vanishes as `x\to\pm\infty`, and hence
+
+.. math::
+    \lim_{x\to\pm\infty} W(x) = 0.
+
+Since `W` is constant, it must satisfy
+
+.. math::
+    W(x) = 0
+
+throughout the domain. Where `\psi_1\neq0`,
+
+.. math::
+    \dv{}{x}\left(\frac{\psi_2}{\psi_1}\right) = \frac{\psi_2'\psi_1 - \psi_2\psi_1'}{\psi_1^2} = -\frac{W}{\psi_1^2} = 0,
+
+so `\psi_2=C\psi_1`. If `\psi_1(x_0)=0` and `\psi_1'(x_0)=0`, then `\psi_1` vanishes identically and is not physical. If `\psi_1'(x_0)\neq0`, then similarly `\psi_2'(x_0)=C\psi_1'(x_0)`. Thus `\psi_2` and `C\psi_1` have the same initial conditions, and uniqueness of the solution implies `\psi_2=C\psi_1`. Therefore, the solutions `\psi_1` and `\psi_2` are linearly dependent.

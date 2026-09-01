@@ -1,0 +1,59 @@
+Problem 2.2
+==================
+
+Let `V_\mathrm{min}` be the minimum value of `V(x)`, and suppose that `\psi` is normalized. Multiplying the time-independent Schrödinger equation
+
+.. math::
+    -\frac{\hbar^2}{2m}\psi'' + V\psi = E\psi
+
+by `\psi^*` from the left and integrating gives
+
+.. math::
+    -\frac{\hbar^2}{2m}\int_{-\infty}^{\infty}\psi^*\psi''\,\dd x + \int_{-\infty}^{\infty}V|\psi|^2\,\dd x = E.
+
+Integrating the first term on the left by parts,
+
+.. math::
+    \begin{aligned}
+        -\int_{-\infty}^{\infty}\psi^*\psi''\,\dd x &= -[\psi^*\psi']_{-\infty}^{\infty} + \int_{-\infty}^{\infty}(\psi^*)'\psi'\,\dd x
+        \\
+        &= \int_{-\infty}^{\infty}|\psi'|^2\,\dd x.
+    \end{aligned}
+
+Normalizable wave functions ordinarily vanish at infinity, so the boundary term vanishes. Therefore,
+
+.. math::
+    E = \frac{\hbar^2}{2m}\int|\psi'|^2\,\dd x + \int V(x)|\psi|^2\,\dd x.
+
+Writing `V=V_\mathrm{min} + (V - V_\mathrm{min})`, we obtain
+
+.. math::
+    \begin{aligned}
+        E - V_\mathrm{min} &= \frac{\hbar^2}{2m}\int|\psi'|^2\,\dd x + \int [V(x) - V_\mathrm{min}]|\psi|^2\,\dd x
+        \\
+        &\ge 0.
+    \end{aligned}
+
+For equality, `E=V_\mathrm{min}`, to hold, we would in particular need
+
+.. math::
+    \int|\psi'|^2\,\dd x = 0,
+
+and hence `\psi'=0`. Thus, `\psi` would be constant. A nonzero constant function on the entire real line cannot be normalized, and `\psi=0` cannot be normalized either. Therefore, every normalizable state satisfies
+
+.. math::
+    E > V_\mathrm{min}.
+
+For completeness, we also give a solution following the hint. If `E<V_\mathrm{min}`, the coefficient `2m(V-E)/\hbar^2` in the Schrödinger equation
+
+.. math::
+    \psi'' = \frac{2m}{\hbar^2}[V(x) - E]\psi
+
+is positive. Hence, `\psi''>0` wherever `\psi>0` and `\psi''<0` wherever `\psi<0`. A positive wave function that approaches zero on both sides would have to be concave downward (`\psi''<0`), while a negative wave function that approaches zero on both sides would have to be concave upward (`\psi''>0`). Therefore, no normalizable solution exists when `E<V_\mathrm{min}`.
+
+In classical mechanics as well,
+
+.. math::
+    E = \frac{p^2}{2m} + V(x) \ge V_\mathrm{min}.
+
+However, a classical particle can have `E=V_\mathrm{min}` at a minimum of the potential, whereas every normalizable quantum state has `E>V_\mathrm{min}`.

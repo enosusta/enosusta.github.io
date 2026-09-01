@@ -1,0 +1,53 @@
+Problem 2.28
+==================
+
+From Equation (2.140), the transmitted- and reflected-wave amplitudes for a single delta-function potential are
+
+.. math::
+    t_1 = \frac{1}{1-i\beta},\quad r_1 = \frac{i\beta}{1-i\beta}.
+
+Propagation between the two delta functions introduces the phase factor `e^{2ika}`, so the amplitude for a wave incident from the left to pass through the left delta function and then the right one is
+
+.. math::
+    t_1 e^{2ika} t_1 = t_1^2 e^{2ika}.
+
+In general, the amplitude for the wave to make `n` round trips between the delta functions after passing through the left one, and then pass through the right one, is `t_1^2 e^{2ika} (r_1^2 e^{4ika})^n`. Therefore, the amplitude for the incident wave from the left to pass through the right delta function is
+
+.. math::
+    \begin{aligned}
+        t &= t_1^2 e^{2ika} \sum_{n=0}^{\infty}(r_1^2 e^{4ika})^n
+        \\
+        &= t_1^2 e^{2ika} \frac{1}{1-r_1^2 e^{4ika}}
+        \\
+        &= \frac{e^{2ika}}{(1-i\beta)^2 + \beta^2 e^{4ika}}.
+    \end{aligned}
+
+Let `\theta \coloneqq 2ka`. The denominator then becomes
+
+.. math::
+    \begin{aligned}
+        (1-i\beta)^2 + \beta^2 e^{2i\theta} &= 1 - 2i\beta - \beta^2 + \beta^2(\cos\theta + i\sin\theta)
+        \\
+        &= (1-2\beta^2\sin^2\theta) + 2i\beta(-1 + \beta\sin\theta\cos\theta),
+    \end{aligned}
+
+so
+
+.. math::
+    |(1-i\beta)^2 + \beta^2 e^{4ika}| &= (1-2\beta^2\sin^2\theta)^2 + 4\beta^2(1 - \beta\sin\theta\cos\theta)^2
+    \\
+    &= 1 + 4\beta^2\cos^2\theta - 8\beta^3\sin\theta\cos\theta + 4\beta^4\sin^2\theta
+    \\
+    &= 1 + 4\beta^2(\cos\theta-\beta\sin\theta)^2,
+
+and the transmission coefficient is
+
+.. math::
+    T = |t|^2 = \frac{1}{1 + 4\beta^2[\cos(2ka)-\beta\sin(2ka)]^2}.
+
+Indeed, as `a\to 0`,
+
+.. math::
+    T \to \frac{1}{1 + 4\beta^2},
+
+which agrees with the transmission coefficient for a single delta-function potential of strength `2\alpha`.

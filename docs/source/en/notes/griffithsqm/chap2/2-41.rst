@@ -1,0 +1,17 @@
+Problem 2.41
+==================
+
+For `x<0`, the wave function is
+
+.. math::
+    \psi(x) = 0 \quad (x<0).
+
+For `x>0`, on the other hand, the time-independent Schrödinger equation is the same as for the ordinary harmonic-oscillator potential:
+
+.. math::
+    -\frac{\hbar^2}{2m}\psi''(x) + \frac{1}{2}m\omega^2 x^2\psi(x) = E\psi(x) \quad (x>0).
+
+The solutions for the ordinary harmonic-oscillator potential are either even or odd, and only the odd solutions vanish at the origin. Therefore, the allowed energies for the half-harmonic oscillator potential are
+
+.. math::
+    E_n = \left(2n + \frac{3}{2}\right)\quad (n=0,1,2,\ldots).

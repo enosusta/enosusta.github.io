@@ -1,0 +1,73 @@
+Problem 1.16
+======================
+
+a.  The normalization condition gives
+
+    .. math::
+        1 &= A^2\int_{-a}^{a}(a^2-x^2)^2\,\dd x
+        \\
+        &= 2A^2\left[a^4x-\frac{2a^2x^3}{3} + \frac{x^5}{5}\right]_0^a
+        \\
+        &= \frac{16}{15}A^2a^5.
+
+    Therefore, we may choose
+
+    .. math::
+        A = \frac{\sqrt{15}}{4a^{5/2}}.
+
+b.  Since `|\Psi(x,0)|^2` is an even function,
+
+    .. math::
+        \braket{x} = 0.
+
+c.  In the interval `(-a,a)`, `\Psi'(x,0) = -2Ax`, so
+
+    .. math::
+        \begin{aligned}
+            \braket{p} &= -i\hbar\int_{-a}^{a}\Psi^*(x,0)\Psi'(x,0)\,\dd x
+            \\
+            &= 2i\hbar A^2\int_{-a}^{a}x(a^2-x^2)\,\dd x
+            \\
+            &= 0.
+        \end{aligned}
+
+    Only `\Psi(x,0)` is specified in this problem. Since neither the potential nor, consequently, the time evolution is given, `\dv{\braket{x}}{t}` cannot be calculated.
+
+d.  Since `|\Psi(x,0)|^2` is an even function,
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= 2A^2\int_0^a x^2(a^2-x^2)^2\,\dd x
+            \\
+            &= 2A^2\left[\frac{a^4x^3}{3} - \frac{2a^2x^5}{5} + \frac{x^7}{7}\right]_0^a
+            \\
+            &= \frac{16A^2a^7}{105} = \frac{a^2}{7}.
+        \end{aligned}
+
+e.  Integration by parts, together with `\Psi(\pm a,0) = 0` at the boundaries, gives
+
+    .. math::
+        \braket{p^2} &= \int_{-\infty}^{\infty}\Psi^*(x,0)\left(-\hbar^2\dv{^2}{x^2}\right)\Psi(x,0)\,\dd x
+        \\
+        &= \hbar^2\int_{-a}^{a}|\Psi'(x,0)|^2\,\dd x
+        \\
+        &= 4A^2\hbar^2\int_{-a}^{a}x^2\,\dd x
+        \\
+        &= \frac{8A^2\hbar^2a^3}{3} = \frac{5\hbar^2}{2a^2}.
+
+f.  From (b) and (d),
+
+    .. math::
+        \sigma_x = \sqrt{\braket{x^2}-\braket{x}^2} = \frac{a}{\sqrt{7}}.
+
+g.  From (c) and (e),
+
+    .. math::
+        \sigma_p = \sqrt{\braket{p^2}-\braket{p}^2} = \sqrt{\frac{5}{2}}\frac{\hbar}{a}.
+
+h.  From (f) and (g),
+
+    .. math::
+        \sigma_x\sigma_p = \sqrt{\frac{5}{14}}\hbar \ge \frac{\hbar}{2},
+
+    which is consistent with the uncertainty principle.

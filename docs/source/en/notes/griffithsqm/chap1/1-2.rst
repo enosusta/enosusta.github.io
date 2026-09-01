@@ -1,0 +1,46 @@
+Problem 1.2
+================
+
+a.  The probability density is
+
+    .. math::
+        \rho(x) = \frac{1}{2\sqrt{hx}}\quad (0 \le x \le h),
+
+    and `\braket{x}=h/3`. Moreover,
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2} &= \int_0^h x^2\rho(x)\,\dd x
+            \\
+            &= \frac{1}{2\sqrt{h}}\int_0^h x^{3/2}\,\dd x
+            \\
+            &= \frac{1}{2\sqrt{h}}\left[\frac{2}{5}x^{5/2}\right]_0^h = \frac{h^2}{5}.
+        \end{aligned}
+
+    Therefore, the variance is
+
+    .. math::
+        \sigma^2 = \braket{x^2} - \braket{x}^2 = h^2\left(\frac{1}{5} - \frac{1}{9}\right) = \frac{4h^2}{45}.
+
+    Hence, the standard deviation is
+
+    .. math::
+        \sigma = \frac{2h}{3\sqrt{5}}.
+
+b.  Define the endpoints of the interval one standard deviation from the mean by
+
+    .. math::
+        x_{\pm} \coloneqq \braket{x} \pm \sigma = \frac{h}{3}\left(1\pm\frac{2}{\sqrt{5}}\right).
+
+    Both satisfy `0 < x_- < x_+ < h`. Therefore,
+
+    .. math::
+        \begin{aligned}
+            P(|x-\braket{x}| > \sigma) &= \int_0^{x_-}\rho(x)\,\dd x + \int_{x_+}^h\rho(x)\,\dd x
+            \\
+            &= \frac{1}{\sqrt{h}}\left(\sqrt{x_-} + \sqrt{h} - \sqrt{x_+}\right)
+            \\
+            &= 1 + \frac{1}{\sqrt{3}}\left(\sqrt{1-\frac{2}{\sqrt{5}}} - \sqrt{1+\frac{2}{\sqrt{5}}}\right)
+            \\
+            &\approx 0.393.
+        \end{aligned}
