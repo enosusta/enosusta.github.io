@@ -39,22 +39,8 @@ jobs:
       # - name: Build English documentation
       #   run: python -m sphinx -b html docs/source/en docs/build/en/html
 
-      - name: Create root redirect
-        run: |
-          cat > docs/build/html/index.html <<'EOF'
-          <!doctype html>
-          <html>
-          <head>
-            <meta charset="utf-8">
-            <meta http-equiv="refresh" content="0; url=ja/">
-            <title>Enos's Archive</title>
-          </head>
-          <body>
-            <a href="ja/">日本語</a> |
-            <a href="en/">English</a>
-          </body>
-          </html>
-          EOF
+      - name: Copy root files
+        run: cp docs/root/index.html docs/build/html/index.html
 
       - name: Disable Jekyll
         run: touch docs/build/html/.nojekyll
