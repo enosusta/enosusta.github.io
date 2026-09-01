@@ -1,20 +1,27 @@
 # Minimal makefile for Sphinx documentation
-#
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = source
-BUILDDIR      = build
+JA_SOURCEDIR     = source/ja
+EN_SOURCEDIR     = source/en
+JA_BUILDDIR      = build/ja
+EN_BUILDDIR      = build/en
 
-# Put it first so that "make" without argument is like "make help".
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@echo "make html    Build all"
+	@echo "make html-ja Build Japanese"
+	@echo "make html-en Build English"
+	@echo "make clean   Remove build files"
 
-.PHONY: help Makefile
+.PHONY: help html html-ja html-en clean
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+html: html-ja html-en
+
+html-ja:
+	@$(SPHINXBUILD) -M html "$(JA_SOURCEDIR)" "$(JA_BUILDDIR)" $(SPHINXOPTS)
+
+html-en:
+	@$(SPHINXBUILD) -M html "$(EN_SOURCEDIR)" "$(EN_BUILDDIR)" $(SPHINXOPTS)
+
+clean:
+	rm -rf build

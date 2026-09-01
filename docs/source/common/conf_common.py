@@ -6,6 +6,10 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+from pathlib import Path
+
+COMMON_DIR = Path(__file__).resolve().parent
+
 project = 'Enos\'s Archive'
 copyright = '2026, Enos'
 author = 'Enos'
@@ -27,25 +31,23 @@ extensions = [
     "notfound.extension",
 ]
 
-bibtex_bibfiles = ['references.bib']
+bibtex_bibfiles = [str(COMMON_DIR / 'references.bib')]
 suppress_warnings = ['bibtex.duplicate_citation']
 autosectionlabel_prefix_document = True
 todo_include_todos = True
 todo_link_only = True
 
-templates_path = ['_templates']
+templates_path = [str(COMMON_DIR / '_templates')]
 exclude_patterns = []
-
-language = 'ja'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_title = 'Enos\'s Archive'
 html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
+html_static_path = [str(COMMON_DIR / '_static')]
 html_css_files = ['custom.css']
-html_favicon = '_static/logo.svg'
+html_favicon = str(COMMON_DIR / '_static/logo.svg')
 html_baseurl = 'https://enosusta.github.io/'
 html_theme_options = {
     # 'analytics_id': 'G-XXXXXXXXXX',
@@ -70,14 +72,12 @@ html_context = {
     'github_user': 'enosusta',
     'github_repo': 'enosusta.github.io',
     'github_version': 'main',
-    'conf_py_path': '/docs/source/',
 }
 
 notfound_urls_prefix = '/'
 
 ogp_site_url = 'https://enosusta.github.io/'
 ogp_social_cards = {
-    "font": "Noto Sans CJK JP",
     "enable": False,
 }
 
