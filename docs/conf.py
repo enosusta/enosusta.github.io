@@ -7,6 +7,7 @@ from pathlib import Path
 DOCS_DIR = Path(__file__).resolve().parent
 SITE_URL = "https://enosusta.github.io"
 SUPPORTED_LANGUAGES = {"en", "ja"}
+GOOGLE_SITE_VERIFICATION = os.environ.get("GOOGLE_SITE_VERIFICATION", "").strip()
 SEARCH_EXCLUDED_PAGES = {
     "404",
     "genindex",
@@ -118,6 +119,7 @@ html_context = {
     "search_excluded_pages": sorted(SEARCH_EXCLUDED_PAGES),
     "alternate_language_links": alternate_language_links,
     "x_default_url": f"{SITE_URL}/",
+    "google_site_verification": GOOGLE_SITE_VERIFICATION,
     "language_links": [
         {
             "code": code,

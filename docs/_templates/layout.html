@@ -2,6 +2,9 @@
 
 {% block extrahead %}
 {{ super() }}
+{% if pagename == "index" and google_site_verification %}
+<meta name="google-site-verification" content="{{ google_site_verification|e }}">
+{% endif %}
 {% for item in alternate_language_links.get(pagename, []) %}
 <link rel="alternate" hreflang="{{ item.code }}" href="{{ item.url }}">
 {% endfor %}

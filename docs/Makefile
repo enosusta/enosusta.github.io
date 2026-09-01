@@ -1,5 +1,6 @@
 SPHINXOPTS   ?=
-SPHINXBUILD  ?= python -m sphinx
+PYTHON       ?= python
+SPHINXBUILD  ?= $(PYTHON) -m sphinx
 SOURCEDIR     = source
 BUILDDIR      = build
 
@@ -34,7 +35,7 @@ build-language:
 		"$(SOURCEDIR)/$(LANGUAGE)" "$(BUILDDIR)/html/$(LANGUAGE)"
 
 site: html
-	@cp site/index.html "$(BUILDDIR)/html/index.html"
+	@$(PYTHON) render_site_index.py site/index.html "$(BUILDDIR)/html/index.html"
 	@touch "$(BUILDDIR)/html/.nojekyll"
 
 clean:
