@@ -1,5 +1,12 @@
 {% extends "!layout.html" %}
 
+{% block extrahead %}
+{{ super() }}
+{% if pagename in search_excluded_pages %}
+<meta name="robots" content="noindex">
+{% endif %}
+{% endblock %}
+
 {% macro render_language_switcher(extra_class="") %}
 {% if language_links|length > 1 %}
 <nav class="language-switcher{% if extra_class %} {{ extra_class }}{% endif %}" aria-label="Language">

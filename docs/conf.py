@@ -7,6 +7,12 @@ from pathlib import Path
 DOCS_DIR = Path(__file__).resolve().parent
 SITE_URL = "https://enosusta.github.io"
 SUPPORTED_LANGUAGES = {"en", "ja"}
+SEARCH_EXCLUDED_PAGES = {
+    "404",
+    "genindex",
+    "search",
+    *(f"notes/griffithsqm/chap2/2-{number}" for number in range(58, 65)),
+}
 
 language = os.environ.get("DOCS_LANGUAGE", "ja")
 if language not in SUPPORTED_LANGUAGES:
@@ -92,6 +98,7 @@ html_context = {
     "github_version": "main",
     "conf_py_path": f"/docs/source/{language}/",
     "current_language": language,
+    "search_excluded_pages": sorted(SEARCH_EXCLUDED_PAGES),
     "language_links": [
         {
             "code": code,
@@ -105,6 +112,9 @@ html_context = {
 
 notfound_urls_prefix = f"/{language}/"
 sitemap_url_scheme = "{link}"
+sitemap_excludes = [
+    f"{pagename}.html" for pagename in sorted(SEARCH_EXCLUDED_PAGES)
+]
 
 ogp_site_url = html_baseurl
 ogp_social_cards = {"enable": False}
