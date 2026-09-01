@@ -1,6 +1,8 @@
 .. meta::
+   :title: Enos's Archive
    :description: 主に物理学に関するノートや教科書の問題の解答例をまとめています。内容は随時更新していきます。
 
+:og:title: Enos's Archive
 :og:description: 主に物理学に関するノートや教科書の問題の解答例をまとめています。内容は随時更新していきます。
 
 Home

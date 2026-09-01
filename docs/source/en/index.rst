@@ -1,6 +1,8 @@
 .. meta::
+   :title: Enos's Archive
    :description: This site contains notes and solutions to textbook problems mainly related to physics. The content will be updated as needed.
 
+:og:title: Enos's Archive
 :og:description: This site contains notes and solutions to textbook problems mainly related to physics. The content will be updated as needed.
 
 Home
