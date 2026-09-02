@@ -60,7 +60,7 @@ todo_link_only = True
 html_title = project
 html_theme = "sphinx_rtd_theme"
 html_static_path = [str(DOCS_DIR / "_static")]
-html_css_files = ["custom.css"]
+html_css_files = ["fonts/fonts.css", "custom.css"]
 html_favicon = str(DOCS_DIR / "_static" / "logo.svg")
 html_baseurl = f"{SITE_URL}/{language}/"
 
