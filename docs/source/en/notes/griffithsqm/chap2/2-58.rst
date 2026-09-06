@@ -1,2 +1,61 @@
 Problem 2.58
 ==================
+
+a.  The ground-state energy of an infinite square well of width `a` is
+
+    .. math::
+        E_n^{(a)} = \frac{\pi^2\hbar^2}{2ma^2}
+
+    so the total energy of `N` isolated atoms is
+
+    .. math::
+        E_\text{atom} = NE_1^{(a)} = \frac{N\pi^2\hbar^2}{2ma^2}.
+
+b.  If the metal is regarded as a single infinite square well of width `L=Na`, the energy levels of one electron are
+
+    .. math::
+        \varepsilon_n = \frac{n^2\pi^2\hbar^2}{2mL^2} = \frac{n^2\pi^2\hbar^2}{2mN^2a^2}
+
+    Ignoring spin, the Pauli exclusion principle allows only one electron in each level. In the lowest-energy state, the electrons occupy the levels from `n=1` through `n=N`, one per level, so
+
+    .. math::
+        E_\text{metal} = \sum_{n=1}^{N}\varepsilon_n = \frac{\pi^2\hbar^2}{2mN^2a^2}\sum_{n=1}^{N}n^2
+
+    Since
+
+    .. math::
+        \sum_{n=1}^{N}n^2 = \frac{N(N+1)(2N+1)}{6}
+
+    we obtain
+
+    .. math::
+        E_\text{metal} = \frac{\pi^2\hbar^2(N+1)(2N+1)}{12mNa^2}.
+
+c.  Define the cohesive energy by
+
+    .. math::
+        E_\text{coh} \coloneqq E_\text{atom} - E_\text{metal}
+
+    Then, per atom,
+
+    .. math::
+        \begin{aligned}
+            \frac{E_\text{coh}}{N} &= \frac{\pi^2\hbar^2}{2ma^2} - \frac{\pi^2\hbar^2(N+1)(2N+1)}{12mN^2a^2}
+            \\
+            &= \frac{\pi^2\hbar^2}{ma^2}\left[\frac{1}{2}-\frac{(N+1)(2N+1)}{12N^2}\right]
+        \end{aligned}
+
+    As `N\to\infty`,
+
+    .. math::
+        \frac{(N+1)(2N+1)}{12N^2} \to \frac{1}{6}
+
+    and therefore
+
+    .. math::
+        \lim_{N\to\infty}\frac{E_\text{coh}}{N} = \frac{\pi^2\hbar^2}{3ma^2}.
+
+d.  For electrons,
+
+    .. math::
+        \frac{E_\text{coh}}{N} \approx 1.57\,\mathrm{eV}.

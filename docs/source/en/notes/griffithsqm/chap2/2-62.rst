@@ -1,2 +1,78 @@
 Problem 2.62
 ==================
+
+.. exec_code::
+
+    import numpy as np
+    from scipy.linalg import eigh_tridiagonal
+
+    N = 100
+
+    x_over_a = np.arange(1, N + 1) / (N + 1)
+
+    kinetic_scale = (N + 1)**2
+    potential = 500.0 * np.sin(np.pi * x_over_a)
+    diagonal = 2.0 * kinetic_scale + potential
+    off_diagonal = -kinetic_scale * np.ones(N - 1)
+
+    eigenvalues = eigh_tridiagonal(
+        diagonal,
+        off_diagonal,
+        select="i",
+        select_range=(0, 2),
+        eigvals_only=True,
+    )
+
+    print(f"N = {N}")
+    print("Energy unit: V_0 = hbar^2/(2 m a^2)")
+    for n, energy in enumerate(eigenvalues, start=1):
+        print(f"E_{n}/V_0 = {energy:.10f}")
+
+.. plot::
+    :include-source: True
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.linalg import eigh_tridiagonal
+
+    N = 100
+    dx_over_a = 1.0 / (N + 1)
+    x_interior = np.arange(1, N + 1) * dx_over_a
+
+    kinetic_scale = (N + 1)**2
+    potential = 500.0 * np.sin(np.pi * x_interior)
+    diagonal = 2.0 * kinetic_scale + potential
+    off_diagonal = -kinetic_scale * np.ones(N - 1)
+
+    eigenvalues, eigenvectors = eigh_tridiagonal(
+        diagonal,
+        off_diagonal,
+        select="i",
+        select_range=(0, 2),
+    )
+
+    eigenvectors /= np.sqrt(dx_over_a)
+
+    x_over_a = np.linspace(0.0, 1.0, N + 2)
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+
+    for i, energy in enumerate(eigenvalues):
+        psi = eigenvectors[:, i]
+        if psi[0] < 0:
+            psi = -psi
+        psi = np.pad(psi, (1, 1))  # psi(0) = psi(a) = 0
+        ax.plot(
+            x_over_a,
+            psi,
+            label=rf"$n={i + 1},\quad E_{i + 1}/V_0={energy:.6f}$",
+        )
+
+    ax.axhline(0.0, color="black", linewidth=0.7)
+    ax.set_xlabel(r"$x/a$")
+    ax.set_ylabel(r"$\sqrt{a}\,\psi_n(x)$")
+    ax.set_xlim(0.0, 1.0)
+    ax.grid(alpha=0.25)
+    ax.legend()
+    fig.tight_layout()
+    plt.show()

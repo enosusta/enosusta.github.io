@@ -1,2 +1,256 @@
 Problem 2.60
 ==================
+
+a.  Since the potential energy is `-\alpha/x^2`,
+
+    .. math::
+        [\alpha] = \mathbf{M}\mathbf{L}^4\mathbf{T}^{-2}
+
+    Suppose an energy can be constructed from powers of `m,\hbar,\alpha`:
+
+    .. math::
+        E_0 \propto m^r\hbar^s\alpha^t
+
+    Then
+
+    .. math::
+        [E_0] = \mathbf{M}^{r+s+t}\mathbf{L}^{2s+4t}\mathbf{T}^{-s-2t}
+
+    Comparing this with the dimensions of energy, `\mathbf{M}\mathbf{L}^2\mathbf{T}^{-2}`, gives
+
+    .. math::
+        \begin{aligned}
+            r + s + t &= 1
+            \\
+            2s + 4t &= 2
+            \\
+            -s - 2t &= -2
+        \end{aligned}
+
+    However, the second and third equations are inconsistent. Therefore, an energy cannot be constructed from powers of `m,\hbar,\alpha`.
+
+b.  Let `\psi(x)` be a solution corresponding to `E<0`, satisfying
+
+    .. math::
+        \psi''(x) + \frac{\beta}{x^2}\psi(x) = \kappa^2\psi(x)
+
+    For any `\lambda>0`, define
+
+    .. math::
+        \tilde{\psi}(x) \coloneqq \sqrt{\lambda}\psi(\lambda x)
+
+    Then
+
+    .. math::
+        \tilde{\psi}''(x) = \lambda^{5/2}\psi''(\lambda x)
+
+    and hence
+
+    .. math::
+        \begin{aligned}
+            \tilde{\psi}''(x) + \frac{\beta}{x^2}\tilde{\psi}(x) &= \lambda^{5/2}\left[\psi''(\lambda x)+\frac{\beta}{(\lambda x)^2}\psi(\lambda x)\right]
+            \\
+            &= \lambda^{5/2}\kappa^2\psi(\lambda x) = (\lambda\kappa)^2\tilde{\psi}(x)
+        \end{aligned}
+
+    Therefore, `\tilde{\psi}(x)` is a solution corresponding to `\kappa'=\lambda\kappa`, or equivalently `E'=\lambda^2E`.
+
+c.  For convenience, define
+
+    .. math::
+        u \coloneqq \kappa x,\quad \psi(x) \eqqcolon \sqrt{x}w(u)
+
+    Then
+
+    .. math::
+        \begin{aligned}
+            \psi' &= \frac{1}{2\sqrt{x}}w + \kappa\sqrt{x}w'
+            \\
+            \psi'' &= -\frac{1}{4x^{3/2}}w + \frac{x}{\sqrt{x}}w' + \kappa^2\sqrt{x}w''
+        \end{aligned}
+
+    so the Schrödinger equation in part (b) becomes
+
+    .. math::
+        u^2w'' + uw' - (u^2-g^2)w = 0,\quad g \coloneqq \sqrt{\beta - \frac{1}{4}}
+
+    This is the modified Bessel equation
+
+    .. math::
+        u^2w'' + uw' - (u^2+\nu^2)w = 0
+
+    with `\nu=ig`. Therefore, the general solution is
+
+    .. math::
+        w(u)=C_1 I_{ig}(u)+C_2 K_{ig}(u).
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import mpmath as mp
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        g = 4.0
+        kappa = 1.0
+        x = np.geomspace(1.0e-3, 5.0, 1000)
+        x_K = np.geomspace(1.0e-5, 20.0, 1600)
+
+        with mp.workdps(30):
+            psi_I = np.sqrt(x) * np.array([
+                complex(mp.besseli(1j * g, kappa * t)) for t in x
+            ])
+            psi_K = np.sqrt(x_K) * np.array([
+                complex(mp.besselk(1j * g, kappa * t)) for t in x_K
+            ])
+
+        fig, axes = plt.subplots(
+            1, 2, figsize=(10, 3.8), constrained_layout=True,
+        )
+        axes[0].plot(
+            x, psi_I.real,
+            label=r"$\mathrm{Re}[\sqrt{x}I_{ig}(\kappa x)]$",
+        )
+        axes[0].plot(
+            x, psi_I.imag, "--",
+            label=r"$\mathrm{Im}[\sqrt{x}I_{ig}(\kappa x)]$",
+        )
+        axes[1].plot(
+            x_K, psi_K.real, label=r"$\sqrt{x}K_{ig}(\kappa x)$",
+        )
+
+        for ax, grid in zip(axes, (x, x_K)):
+            ax.set_xscale("log")
+            ax.set_xlim(grid[0], grid[-1])
+            ax.axhline(0.0, color="black", linewidth=0.8)
+            ax.set_xlabel(r"$x$")
+            ax.set_ylabel(r"$\psi(x)$")
+            ax.set_title(rf"$g={g:g},\ \kappa={kappa:g}$")
+            ax.grid(alpha=0.25)
+            ax.legend()
+        plt.show()
+
+    Thus, the normalizable solution is
+
+    .. math::
+        \psi_\kappa(x) = A\sqrt{x}K_{ig}(\kappa x)
+
+    The normalization condition gives
+
+    .. math::
+        \begin{aligned}
+            1 &= |A|^2\int_0^\infty xK_{ig}(\kappa x)^2\,\dd x
+            \\
+            &= \frac{|A|^2}{\kappa^2}\int_0^\infty uK_{ig}(u)^2\,\dd u
+            \\
+            &= \frac{|A|^2}{\kappa^2}\frac{\pi g}{2\sinh(\pi g)}
+        \end{aligned}
+
+    so we may choose
+
+    .. math::
+        A = \kappa\sqrt{\frac{2\sinh(\pi g)}{\pi g}}.
+
+d.  Placing the potential barrier at `x=\varepsilon>0`, the boundary condition gives
+
+    .. math::
+        K_{ig}(\kappa\varepsilon) = 0
+
+    Let `u_n` denote the positive zeros of `K_{ig}(u)`. Then
+
+    .. math::
+        \kappa_n = \frac{u_n}{\varepsilon},\quad E_n = -\frac{\hbar^2u_n^2}{2m\varepsilon^2}
+
+    Thus, the ground-state energy corresponds to the largest positive zero `u_\mathrm{max}` of `K_{ig}`.
+
+    .. exec_code::
+
+        import mpmath as mp
+        import numpy as np
+        from scipy.optimize import brentq
+
+        g = 4.0
+
+        with mp.workdps(40):
+            def K_ig(u):
+                return float(mp.re(mp.besselk(1j * g, u)))
+
+            grid = np.geomspace(g, 1.0e-6, 2001)
+            upper = grid[0]
+            value_upper = K_ig(upper)
+
+            for lower in grid[1:]:
+                value_lower = K_ig(lower)
+                if value_lower * value_upper <= 0.0:
+                    u_max = brentq(K_ig, lower, upper, xtol=1.0e-14)
+                    break
+                upper, value_upper = lower, value_lower
+            else:
+                raise RuntimeError("No zero found; extend the search range.")
+
+            print(f"g = {g:g}")
+            print(f"largest positive zero: u_max = {u_max:.12f}")
+            print(f"K_ig(u_max) = {K_ig(u_max):.3e}")
+            print(f"E_ground = -{u_max**2:.12f} hbar^2/(2 m epsilon^2)")
+
+    Therefore, for `\varepsilon=1`, the ground state is
+
+    .. math::
+        \psi_0(x) = \begin{cases}
+            0 & (x\le 1)
+            \\
+            A\sqrt{x}K_{i4}(u_\mathrm{max}x) & (x>1).
+        \end{cases}
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import mpmath as mp
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.integrate import quad
+        from scipy.optimize import brentq
+
+        g = 4.0
+        epsilon = 1.0
+
+        with mp.workdps(30):
+            def K_ig(u):
+                return float(mp.re(mp.besselk(1j * g, u)))
+
+            u_max = brentq(K_ig, 1.5, 2.0, xtol=1.0e-14)
+            kappa = u_max / epsilon
+
+            def unnormalized(x):
+                return np.sqrt(x) * K_ig(kappa * x)
+
+            norm_squared, _ = quad(
+                lambda x: unnormalized(x)**2,
+                epsilon, np.inf, epsabs=1.0e-13, epsrel=1.0e-10,
+            )
+            A = 1.0 / np.sqrt(norm_squared)
+
+            x = np.linspace(0.0, 6.0, 1201)
+            psi_0 = np.zeros_like(x)
+            allowed = x > epsilon
+            psi_0[allowed] = [A * unnormalized(t) for t in x[allowed]]
+
+        plt.plot(x, psi_0, label=r"$\psi_0(x)$")
+        plt.axvspan(0.0, epsilon, color="tab:gray", alpha=0.15)
+        plt.axvline(epsilon, color="tab:gray", linestyle="--", label=r"$x=\varepsilon=1$")
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$x$")
+        plt.ylabel(r"$\psi_0(x)$")
+        plt.title(rf"$g={g:g},\ \kappa={kappa:.7f}$")
+        plt.xlim(0.0, 6.0)
+        plt.ylim(bottom=0.0)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+    For general `\beta` (and hence general `g`), let the largest positive zero be `u_0=u_0(\beta)`. The ground-state energy can then be written as
+
+    .. math::
+        E_0 = -\frac{\alpha}{\varepsilon^2}f(\beta),\quad f(\beta) \coloneqq \frac{u_0(\beta)^2}{\beta}.

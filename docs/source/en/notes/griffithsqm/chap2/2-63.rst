@@ -1,2 +1,109 @@
 Problem 2.63
 ==================
+
+a.  Substituting the Boltzmann distribution into Equation (2.203) gives
+
+    .. math::
+        \bar{E}=\sum_n E_nP(n) = \frac{1}{Z}\sum_n E_n e^{-\beta E_n}
+
+    Differentiating the partition function with respect to `\beta` gives
+
+    .. math::
+        \begin{aligned}
+            \pdv{Z}{\beta} &= \sum_n\pdv{\beta} e^{-\beta E_n}
+            \\
+            &= -\sum_n E_n e^{-\beta E_n} = -Z\bar{E}
+        \end{aligned}
+
+    Since `\pdv{\ln Z}{\beta}=(1/Z)\pdv{Z}{\beta}`,
+
+    .. math::
+        \bar{E}=-\pdv{}{\beta}\ln Z.
+
+b.  For the harmonic-oscillator potential,
+
+    .. math::
+        E_n = \left(n+\frac{1}{2}\right)\hbar\omega\quad(n=0,1,2,\ldots)
+
+    and hence
+
+    .. math::
+        Z &= \sum_{n=0}^{\infty}e^{-\beta(n+1/2)\hbar\omega}
+        \\
+        &= e^{-\beta\hbar\omega/2}\sum_{n=0}^{\infty}(e^{-\beta\hbar\omega})^n
+        \\
+        &= \frac{e^{-\beta\hbar\omega/2}}{1-e^{-\beta\hbar\omega}}.
+
+c.  From part (b),
+
+    .. math::
+        \ln Z = -\frac{1}{2}\beta\hbar\omega - \ln(1-e^{-\beta\hbar\omega})
+
+    so part (a) gives
+
+    .. math::
+        \begin{aligned}
+            \bar{E} &= -\pdv{}{\beta}\ln Z
+            \\
+            &= \frac{\hbar\omega}{2} + \frac{\hbar\omega e^{-\beta\hbar\omega}}{1-e^{-\beta\hbar\omega}}
+            \\
+            &= \frac{\hbar\omega}{2} + \frac{\hbar\omega}{e^{\beta\hbar\omega}-1}
+            \\
+            &= \frac{\hbar\omega}{2}\frac{1+e^{-\beta\hbar\omega}}{1-e^{-\beta\hbar\omega}}.
+        \end{aligned}
+
+d.  For convenience, define
+
+    .. math::
+        u \coloneqq \beta\hbar\omega = \frac{\theta_E}{T}
+
+    Then
+
+    .. math::
+        \pdv{u}{T} = -\frac{\theta_E}{T^2} = -\frac{u}{T}
+
+    and hence
+
+    .. math::
+        \begin{aligned}
+            \pdv{\bar{E}}{T} &= \hbar\omega\left[-\frac{e^u}{(e^u-1)^2}\right]\left(-\frac{u}{T}\right)
+            \\
+            &= \frac{\hbar\omega}{T}u\frac{e^u}{(e^u-1)^2}
+            \\
+            &= k_B u^2 \frac{e^u}{(e^u-1)^2}
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        C = 3k_B\left(\frac{\theta_E}{T}\right)^2\frac{e^{\theta_E/T}}{(e^{\theta_E/T}-1)^2}.
+
+e.
+    .. plot::
+        :include-source: True
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        T_over_theta_E = np.linspace(0.0, 2.0, 500)
+        C_over_k_B = np.zeros_like(T_over_theta_E)
+
+        positive = T_over_theta_E > 0.0
+        u = 1.0 / T_over_theta_E[positive]
+
+        exp_minus_u = np.exp(-u)
+        C_over_k_B[positive] = (
+            3.0 * u**2 * exp_minus_u / (1.0 - exp_minus_u)**2
+        )
+
+        fig, ax = plt.subplots(figsize=(6.5, 4.2))
+        ax.plot(T_over_theta_E, C_over_k_B, color="tab:blue")
+        ax.axhline(3.0, color="gray", linestyle="--", linewidth=1.0)
+        ax.set_xlabel(r"$T/\theta_E$")
+        ax.set_ylabel(r"$C/k_B$")
+        ax.set_xlim(0.0, 2.0)
+        ax.set_ylim(0.0, 3.2)
+        ax.grid(alpha=0.25)
+        fig.tight_layout()
+        plt.show()
