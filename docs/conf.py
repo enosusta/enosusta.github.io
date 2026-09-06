@@ -12,7 +12,6 @@ SEARCH_EXCLUDED_PAGES = {
     "404",
     "genindex",
     "search",
-    *(f"notes/griffithsqm/chap2/2-{number}" for number in range(58, 65)),
 }
 
 language = os.environ.get("DOCS_LANGUAGE", "ja")
