@@ -1,2 +1,69 @@
 Problem 2.58
 ==================
+
+a.  幅 `a` の無限井戸型ポテンシャルの基底エネルギーは
+
+    .. math::
+        E_n^{(a)} = \frac{\pi^2\hbar^2}{2ma^2}
+
+    であるから， `N` 個の孤立した原子の全エネルギーは
+
+    .. math::
+        E_\text{atom} = NE_1^{(a)} = \frac{N\pi^2\hbar^2}{2ma^2}
+
+    となる。
+
+b.  金属を幅 `L=Na` のひとつの無限井戸型ポテンシャルとみなすと，ひとつの電子のエネルギー準位は
+
+    .. math::
+        \varepsilon_n = \frac{n^2\pi^2\hbar^2}{2mL^2} = \frac{n^2\pi^2\hbar^2}{2mN^2a^2}
+
+    となる。スピンを無視すると，Pauli の排他原理より，各準位にはひとつの電子のみが入る。最低エネルギー状態では，電子は `n=1` から `n=N` までの順位をひとつずつ占有するので
+
+    .. math::
+        E_\text{metal} = \sum_{n=1}^{N}\varepsilon_n = \frac{\pi^2\hbar^2}{2mN^2a^2}\sum_{n=1}^{N}n^2
+
+    となる。ここで，
+
+    .. math::
+        \sum_{n=1}^{N}n^2 = \frac{N(N+1)(2N+1)}{6}
+
+    であるから，
+
+    .. math::
+        E_\text{metal} = \frac{\pi^2\hbar^2(N+1)(2N+1)}{12mNa^2}
+
+    となる。
+
+c.  凝集エネルギーを
+
+    .. math::
+        E_\text{coh} \coloneqq E_\text{atom} - E_\text{metal}
+
+    とすると，原子ひとつ当たり
+
+    .. math::
+        \begin{aligned}
+            \frac{E_\text{coh}}{N} &= \frac{\pi^2\hbar^2}{2ma^2} - \frac{\pi^2\hbar^2(N+1)(2N+1)}{12mN^2a^2}
+            \\
+            &= \frac{\pi^2\hbar^2}{ma^2}\left[\frac{1}{2}-\frac{(N+1)(2N+1)}{12N^2}\right]
+        \end{aligned}
+
+    となる。 `N\to\infty` では，
+
+    .. math::
+        \frac{(N+1)(2N+1)}{12N^2} \to \frac{1}{6}
+
+    となるので，
+
+    .. math::
+        \lim_{N\to\infty}\frac{E_\text{coh}}{N} = \frac{\pi^2\hbar^2}{3ma^2}
+
+    となる。
+
+d.  電子について
+
+    .. math::
+        \frac{E_\text{coh}}{N} \approx 1.57\,\mathrm{eV}
+
+    となる。

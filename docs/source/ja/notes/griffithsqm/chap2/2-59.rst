@@ -1,2 +1,344 @@
 Problem 2.59
 ==================
+
+a.  `x>0` における時間に依存しない Schrödinger 方程式は
+
+    .. math::
+        -\frac{\hbar^2}{2m}\psi''(x) + mgx\psi(x) = E\psi(x)
+
+    である。ここで，
+
+    .. math::
+        z \coloneqq ax,\quad y(z) \coloneqq \frac{1}{\sqrt{a}}\psi(x)
+
+    とおくと，
+
+    .. math::
+        \psi''(x) = a^{5/2}y''(z)
+
+    となるので，時間に依存しない Schrödinger 方程式は
+
+    .. math::
+        -y''(z) + \frac{2m^2g}{\hbar^2a^3}zy(z) = \frac{2mE}{\hbar^2a^2}y(z)
+
+    となる。ここで
+
+    .. math::
+        \begin{aligned}
+            a &\coloneqq \left(\frac{2m^2g}{\hbar^2}\right)^{1/3}
+            \\
+            \epsilon &\coloneqq \frac{2mE}{\hbar^2a^2} = \frac{aE}{mg}
+        \end{aligned}
+
+    と置くと，
+
+    .. math::
+        -y''(z) + zy(z) = \epsilon y(z)
+
+    となる。
+
+    .. exec_code::
+
+        import sympy as sp
+
+        z, epsilon = sp.symbols("z epsilon", real=True)
+        y = sp.Function("y")
+        equation = sp.Eq(sp.diff(y(z), z, 2), (z - epsilon) * y(z))
+        solution = sp.dsolve(equation, y(z))
+        print(solution)
+
+    よって一般解は，
+
+    .. math::
+        y(z) = C_1\mathrm{Ai}(z-\epsilon) + C_2\mathrm{Bi}(z-\epsilon)
+
+    である。ここで， `\mathrm{Ai}(z)` および `\mathrm{Bi}(z)` は Airy 関数である。
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.special import airy
+
+        def general_solution(z, epsilon, C1, C2):
+            ai, _, bi, _ = airy(z - epsilon)
+            return C1 * ai + C2 * bi
+
+        z = np.linspace(-15.0, 5.0, 2001)
+        fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), constrained_layout=True)
+        for ax, C1, C2, label in zip(
+            axes, [1.0, 0.0], [0.0, 1.0],
+            [r"$\mathrm{Ai}(z)$", r"$\mathrm{Bi}(z)$"],
+        ):
+            ax.plot(z, general_solution(z, 0.0, C1, C2), label=label)
+            ax.axhline(0.0, color="black", linewidth=0.8)
+            ax.set_xlim(-15.0, 5.0)
+            ax.set_xlabel(r"$z$")
+            ax.grid(alpha=0.25)
+            ax.legend()
+            axes[0].set_ylabel("Basis function")
+            plt.show()
+
+    ここで Airy 関数について
+
+    .. math::
+        \int_0^\infty \mathrm{Ai}(z-\epsilon)^2\,\dd z = \mathrm{Ai}'(-\epsilon)^2
+
+    となるので，規格化された `y(z)` は，
+
+    .. math::
+        y(z) = \frac{\mathrm{Ai}(z-\epsilon)}{\left|\mathrm{Ai}'(-\epsilon)\right|}
+
+    となる。境界条件 `y(0)=0` より，
+
+    .. math::
+        \mathrm{Ai}(-\epsilon) = 0
+
+    でなければならない。この条件によって許される `\epsilon` の値が決まる。
+
+    .. exec_code::
+
+        import numpy as np
+        from scipy.optimize import brentq
+        from scipy.special import airy
+
+        def boundary_condition(epsilon):
+            return airy(-epsilon)[0]
+
+        grid = np.linspace(0.0, 15.0, 151)
+        energy_levels = []
+        for lower, upper in zip(grid[:-1], grid[1:]):
+            if boundary_condition(lower) * boundary_condition(upper) < 0.0:
+                energy_levels.append(
+                    brentq(boundary_condition, lower, upper, xtol=1.0e-12)
+                )
+            if len(energy_levels) == 10:
+                break
+
+        if len(energy_levels) < 10:
+            raise RuntimeError("Extend the energy scan to find ten roots.")
+
+        for n in (1, 10):
+            epsilon = energy_levels[n - 1]
+            print(f"epsilon_{n} = {epsilon:.10f}")
+            print(f"Ai(-epsilon_{n}) = {boundary_condition(epsilon):.2e}")
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.optimize import brentq
+        from scipy.special import airy
+
+        grid = np.linspace(0.0, 15.0, 151)
+        energy_levels = []
+        for lower, upper in zip(grid[:-1], grid[1:]):
+            if airy(-lower)[0] * airy(-upper)[0] < 0.0:
+                energy_levels.append(
+                    brentq(lambda e: airy(-e)[0], lower, upper, xtol=1.0e-12)
+                )
+            if len(energy_levels) == 10:
+                break
+
+        z = np.linspace(0.0, 16.0, 2401, endpoint=False)
+        for n in (1, 10):
+            epsilon = energy_levels[n - 1]
+            y = airy(z - epsilon)[0] / abs(airy(-epsilon)[1])
+            plt.plot(z, y, label=rf"$n={n},\ \epsilon_{{{n}}}={epsilon:.7f}$")
+
+        plt.axhline(0.0, color="black", linewidth=0.8)
+        plt.xlabel(r"$z=ax$")
+        plt.ylabel(r"$\psi_n(x)/\sqrt{a}$")
+        plt.xlim(0.0, 16.0)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+    異なる解 `y_m,y_n` に対する時間に依存しない Schrödinger 方程式
+
+    .. math::
+        \begin{aligned}
+            -y_m'' + zy_m &= \epsilon_m y_m
+            \\
+            -y_n'' + zy_n &= \epsilon_n y_n
+        \end{aligned}
+
+    に対して， `y_m` を第 2 式に掛け， `y_n` を第 1 式に掛けて引くと，
+
+    .. math::
+        \begin{aligned}
+            (\epsilon_n - \epsilon_m)y_my_n &= y_ny_m'' - y_n''y_m
+            \\
+            &= \frac{\dd}{\dd z}\left[y_m'y_n - y_my_n'\right]
+        \end{aligned}
+
+    となる。これを `z` について積分すると，
+
+    .. math::
+        (\epsilon_n - \epsilon_m)\int_0^\infty y_my_n\,\dd z = \left[y_m'y_n - y_my_n'\right]_0^\infty = 0
+
+    となる。ここで `\epsilon_n \neq \epsilon_m` であるから，
+
+    .. math::
+        \int_0^\infty y_my_n\,\dd z = 0
+
+    となる。すなわち，異なる解は直交する。
+        
+b.  無次元化されたハミルトニアンは
+
+    .. math::
+        \hat{h} = -\dv{^2}{z^2} + z
+
+    である。ここでビリアル定理を用いると，
+
+    .. math::
+        2\braket{-\dv{^2}{z^2}} = \braket{z}
+
+    となる。一方で，
+
+    .. math::
+        \braket{-\dv{^2}{z^2}} + \braket{z} = \epsilon
+
+    であるから，
+
+    .. math::
+        \braket{z} = \frac{2\epsilon_n}{3},\quad \braket{-\dv{^2}{z^2}} = \frac{\epsilon_n}{3}
+
+    となる。さらに超ビリアル定理より，
+
+    .. math::
+        \braket{z^r} = \frac{2r\epsilon_n}{2r+1}\braket{z^{r-1}} + \frac{r(r-1)(r-2)}{2r+1}\braket{z^{r-3}}
+
+    となるので， `r=2` の場合，
+
+    .. math::
+        \braket{z^2} = \frac{8\epsilon_n^2}{15}
+
+    となる。したがって，
+
+    .. math::
+        \sigma_x = \frac{\sigma_z}{a} = \frac{1}{a}\sqrt{\braket{z^2}-\braket{z}^2} = \frac{2\epsilon_n}{3\sqrt{5}a}
+
+    となる。固有関数は実で両端でゼロになるので，
+
+    .. math::
+        \braket{p} = -i\hbar a\int_0^\infty y_ny_n'\,\dd z = -\frac{i\hbar a}{2}\left[y_n^2\right]_0^\infty = 0
+
+    となる。また，
+
+    .. math::
+        \braket{p^2} = (\hbar a)^2\braket{-\dv{^2}{z^2}} = \frac{(\hbar a)^2\epsilon_n}{3}
+
+    となるので，
+
+    .. math::
+        \sigma_p = \sqrt{\braket{p^2}-\braket{p}^2} = \hbar a\sqrt{\frac{\epsilon_n}{3}}
+
+    となる。したがって，
+
+    .. math::
+        \sigma_x\sigma_p = \frac{2\hbar\epsilon_n^{3/2}}{3\sqrt{15}}
+
+    となる。
+
+    .. exec_code::
+
+        import numpy as np
+        from scipy.integrate import quad
+        from scipy.special import ai_zeros, airy
+
+        energy_levels = -ai_zeros(10)[0]
+
+        for n in (1, 10):
+            epsilon = energy_levels[n - 1]
+            normalization = abs(airy(-epsilon)[1])
+
+            def y(z):
+                return airy(z - epsilon)[0] / normalization
+
+            def dy(z):
+                return airy(z - epsilon)[1] / normalization
+
+            def integrate(f):
+                return quad(
+                    f, 0.0, np.inf, epsabs=1.0e-10,
+                    epsrel=1.0e-10, limit=200,
+                )[0]
+
+            mean_z = integrate(lambda z: z * y(z)**2)
+            mean_z2 = integrate(lambda z: z**2 * y(z)**2)
+            mean_p2_scaled = integrate(lambda z: dy(z)**2)
+
+            sigma_x_scaled = np.sqrt(mean_z2 - mean_z**2)  # a * sigma_x
+            sigma_p_scaled = np.sqrt(mean_p2_scaled)  # sigma_p / (hbar * a)
+            product = sigma_x_scaled * sigma_p_scaled  # sigma_x * sigma_p / hbar
+            analytic = 2.0 * epsilon**1.5 / (3.0 * np.sqrt(15.0))
+
+            print(f"n = {n}, epsilon = {epsilon:.10f}")
+            print(f"a * sigma_x = {sigma_x_scaled:.10f}")
+            print(f"sigma_p / (hbar * a) = {sigma_p_scaled:.10f}")
+            print(f"sigma_x * sigma_p = {product:.10f} hbar")
+            print(f"analytic value = {analytic:.10f} hbar")
+            print()
+        
+c.  エネルギー保存則より，高さ `x` における速さは，
+
+    .. math::
+        v(x) = \sqrt{\frac{2(E-mgx)}{m}}
+
+    である。したがって， `x=0` から最高点 `x_\mathrm{max}=E/(mg)` までの時間は，
+
+    .. math::
+        \begin{aligned}
+            t &= \int_0^{x_\mathrm{max}}\frac{\dd x}{v(x)}
+            \\
+            &= \sqrt{\frac{m}{2}}\int_0^{x_\mathrm{max}}\frac{\dd x}{\sqrt{E-mgx}}
+            \\
+            &= \frac{\sqrt{2E/m}}{g}
+        \end{aligned}
+
+    となる。1周期は `2t` であり，高さ `x` の区間 `\dd x` は上昇時と下降時に2回通過するので，その区間で過ごす時間は `2\dd x/v(x)` である。したがって，確率密度は，
+
+    .. math::
+        \rho_C(x)\dd x = \frac{2\dd x/v(x)}{2t} = \frac{mg}{2\sqrt{E(E-mgx)}}\dd x
+
+    となる。ここで `z,\epsilon` を用いると，
+
+    .. math::
+        \rho_C(x) = \frac{1}{2\sqrt{\epsilon(\epsilon-x)}}\quad(0<x<\epsilon)
+
+    となる（ `a=1` ）。量子的な確率密度は粗視化すると古典的な確率密度と一致する。
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.special import ai_zeros, airy
+
+        a = 1.0
+        epsilon = -ai_zeros(10)[0][-1]
+        x = np.linspace(0.0, 12.5, 2501)
+
+        psi_10 = (
+            np.sqrt(a) * airy(a * x - epsilon)[0]
+            / abs(airy(-epsilon)[1])
+        )
+        rho_Q = np.abs(psi_10)**2
+        rho_C = a / (2.0 * np.sqrt(epsilon * (epsilon - a * x)))
+
+        plt.plot(x, rho_Q, label=r"$\rho_Q(x)=|\psi_{10}(x)|^2$")
+        plt.plot(x, rho_C, linestyle="--", label=r"$\rho_C(x)$")
+        plt.xlabel(r"$x\quad(a=1)$")
+        plt.ylabel(r"$\rho(x)$")
+        plt.title(rf"$n=10,\ \epsilon_{{10}}={epsilon:.7f}$")
+        plt.xlim(0.0, 12.5)
+        plt.ylim(bottom=0.0)
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
