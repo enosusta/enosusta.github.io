@@ -9,11 +9,11 @@ Griffiths's QM (3rd Ed.) 解答例
 
    notes/griffithsqm/chap1
    notes/griffithsqm/chap2
+   notes/griffithsqm/chap3
 
 .. todo::
    追加する予定の解答
 
-   * Chapter 3
    * Chapter 4
    * Chapter 5
    * Chapter 6
