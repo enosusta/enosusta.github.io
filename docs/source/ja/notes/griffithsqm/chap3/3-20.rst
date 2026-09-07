@@ -1,2 +1,226 @@
 Problem 3.20
 ==================
+
+問題 2.5 では，幅 `a` の無限深井戸について，
+
+.. math::
+    \Psi(x,t)
+    =\frac{1}{\sqrt{2}}
+    \left[
+        \psi_1(x)e^{-i\omega t}
+        +\psi_2(x)e^{-i4\omega t}
+    \right],
+    \quad
+    \omega=\frac{\pi^2\hbar}{2ma^2}
+
+であった。ここで，
+
+.. math::
+    \psi_n(x)
+    =\sqrt{\frac{2}{a}}
+    \sin\left(\frac{n\pi x}{a}\right),
+    \quad
+    E_n=n^2\hbar\omega
+
+である。
+
+まず，エネルギー `E_1=\hbar\omega` と `E_2=4\hbar\omega` は，それぞれ確率 `1/2` で得られるので，
+
+.. math::
+    \begin{aligned}
+        \braket{H}
+        &=\frac{1}{2}(E_1+E_2)
+        =\frac{5}{2}\hbar\omega
+        \\
+        \braket{H^2}
+        &=\frac{1}{2}(E_1^2+E_2^2)
+        =\frac{17}{2}(\hbar\omega)^2
+    \end{aligned}
+
+となる。したがって，
+
+.. math::
+    \begin{aligned}
+        \sigma_H^2
+        &=\braket{H^2}-\braket{H}^2
+        \\
+        &=\left(\frac{17}{2}-\frac{25}{4}\right)
+        (\hbar\omega)^2
+        \\
+        &=\frac{9}{4}(\hbar\omega)^2
+    \end{aligned}
+
+であり，
+
+.. math::
+    \sigma_H=\frac{3}{2}\hbar\omega
+
+となる。
+
+次に位置の分散を求める。問題 2.5 で得た結果は，
+
+.. math::
+    \braket{x}
+    =\frac{a}{2}
+    -\frac{16a}{9\pi^2}\cos(3\omega t)
+
+である。 `x^2` の対角行列要素は，
+
+.. math::
+    \braket{n|x^2|n}
+    =a^2\left(
+        \frac{1}{3}-\frac{1}{2n^2\pi^2}
+    \right)
+
+なので，
+
+.. math::
+    \braket{1|x^2|1}
+    =a^2\left(
+        \frac{1}{3}-\frac{1}{2\pi^2}
+    \right),
+    \quad
+    \braket{2|x^2|2}
+    =a^2\left(
+        \frac{1}{3}-\frac{1}{8\pi^2}
+    \right)
+
+となる。非対角要素は，積和公式を用いると，
+
+.. math::
+    \begin{aligned}
+        \braket{1|x^2|2}
+        &=\frac{2}{a}\int_0^a x^2
+        \sin\left(\frac{\pi x}{a}\right)
+        \sin\left(\frac{2\pi x}{a}\right)\,\dd x
+        \\
+        &=\frac{1}{a}\int_0^a x^2
+        \left[
+            \cos\left(\frac{\pi x}{a}\right)
+            -\cos\left(\frac{3\pi x}{a}\right)
+        \right]\,\dd x
+    \end{aligned}
+
+となる。正の整数 `r` に対して，
+
+.. math::
+    \int_0^a x^2
+    \cos\left(\frac{r\pi x}{a}\right)\,\dd x
+    =\frac{2a^3(-1)^r}{r^2\pi^2}
+
+であるから，
+
+.. math::
+    \braket{1|x^2|2}
+    =-\frac{16a^2}{9\pi^2}
+
+となる。行列要素は実数なので， `\braket{2|x^2|1}` も同じ値である。したがって，
+
+.. math::
+    \begin{aligned}
+        \braket{x^2}
+        &=\frac{1}{2}\left(
+            \braket{1|x^2|1}
+            +\braket{2|x^2|2}
+        \right)
+        +\braket{1|x^2|2}\cos(3\omega t)
+        \\
+        &=a^2\left(
+            \frac{1}{3}
+            -\frac{5}{16\pi^2}
+            -\frac{16}{9\pi^2}\cos(3\omega t)
+        \right)
+    \end{aligned}
+
+となる。ここから `\braket{x}^2` を引くと， `\cos(3\omega t)` に比例する一次の項が相殺され，
+
+.. math::
+    \sigma_x^2
+    =a^2\left[
+        \frac{1}{12}
+        -\frac{5}{16\pi^2}
+        -\frac{256}{81\pi^4}\cos^2(3\omega t)
+    \right]
+
+となる。よって，
+
+.. math::
+    \sigma_x
+    =a\sqrt{
+        \frac{1}{12}
+        -\frac{5}{16\pi^2}
+        -\frac{256}{81\pi^4}\cos^2(3\omega t)
+    }
+
+である。また， `\braket{x}` を微分すると，
+
+.. math::
+    \dv{\braket{x}}{t}
+    =\frac{16a\omega}{3\pi^2}\sin(3\omega t)
+
+となる。
+
+エネルギー–時間不確定性原理を，式 (3.74) の，
+
+.. math::
+    \sigma_H\sigma_x
+    \geq\frac{\hbar}{2}
+    \left|\dv{\braket{x}}{t}\right|
+
+という形で検証する。両辺を自乗して差を取ると，
+
+.. math::
+    \begin{aligned}
+        &\sigma_H^2\sigma_x^2
+        -\frac{\hbar^2}{4}
+        \left(\dv{\braket{x}}{t}\right)^2
+        \\
+        &\quad
+        =\hbar^2a^2\omega^2
+        \left(
+            \frac{3}{16}
+            -\frac{45}{64\pi^2}
+            -\frac{64}{9\pi^4}
+        \right)
+        \\
+        &\quad
+        \simeq0.043256\,
+        \hbar^2a^2\omega^2
+        >0
+    \end{aligned}
+
+となる。最後の係数が厳密に正であることは， `\pi^2>9` を用いると，
+
+.. math::
+    \frac{3}{16}
+    -\frac{45}{64\pi^2}
+    -\frac{64}{9\pi^4}
+    >
+    \frac{3}{16}
+    -\frac{5}{64}
+    -\frac{64}{729}
+    =
+    \frac{1007}{46656}
+    >0
+
+となることからも確認できる。したがって，不等式はすべての時刻で満たされる。
+
+`\dd\braket{x}/\dd t=0` となる瞬間には右辺がゼロとなり，不等式は自明に成立する。それ以外の時刻には，
+
+.. math::
+    \Delta t
+    =\frac{\sigma_x}{
+        \left|\dd\braket{x}/\dd t\right|
+    }
+
+と定義すれば， `\Delta E=\sigma_H` より，
+
+.. math::
+    \sigma_H\sigma_x
+    \geq
+    \frac{\hbar}{2}
+    \left|\dv{\braket{x}}{t}\right|
+    \iff
+    \Delta E\,\Delta t\geq\frac{\hbar}{2}
+
+となる。

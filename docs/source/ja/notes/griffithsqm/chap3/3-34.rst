@@ -1,2 +1,171 @@
 Problem 3.34
 ==================
+
+a.  無限深井戸を `0<x<a` とし，
+
+    .. math::
+        k_n=\frac{n\pi}{a},
+        \quad
+        p_n=\hbar k_n=\frac{n\pi\hbar}{a},
+        \quad
+        E_n=\frac{p_n^2}{2m}
+
+    と置く。位置空間の第 `n` 定常状態は，
+
+    .. math::
+        \Psi_n(x,t)
+        =\sqrt{\frac{2}{a}}
+        \sin(k_nx)e^{-iE_nt/\hbar},
+        \quad
+        0<x<a
+
+    である。したがって，運動量空間波動関数は，
+
+    .. math::
+        \begin{aligned}
+            \Phi_n(p,t)
+            &=\frac{1}{\sqrt{2\pi\hbar}}
+            \int_0^a e^{-ipx/\hbar}\Psi_n(x,t)\,\dd x
+            \\
+            &=\frac{e^{-iE_nt/\hbar}}{\sqrt{\pi a\hbar}}
+            \int_0^a\sin(k_nx)e^{-ipx/\hbar}\,\dd x
+        \end{aligned}
+
+    となる。 `q=p/\hbar` と置くと，積分は，
+
+    .. math::
+        \begin{aligned}
+            \int_0^a\sin(k_nx)e^{-iqx}\,\dd x
+            &=\left[
+                \frac{e^{-iqx}
+                \left(-iq\sin k_nx-k_n\cos k_nx\right)}
+                {k_n^2-q^2}
+            \right]_0^a
+            \\
+            &=\frac{k_n
+            \left[1-(-1)^ne^{-iqa}\right]}
+            {k_n^2-q^2}
+        \end{aligned}
+
+    となる。よって，
+
+    .. math::
+        \Phi_n(p,t)
+        =\sqrt{\frac{\hbar}{\pi a}}
+        \frac{p_n
+        \left[1-(-1)^ne^{-ipa/\hbar}\right]}
+        {p_n^2-p^2}
+        e^{-iE_nt/\hbar}
+
+    を得る。 `p=\pm p_n` では分子と分母がともに0となるが，これは除去可能特異点であり，元の積分は有限である。
+
+b.  時間依存因子の絶対値は1であり，
+
+    .. math::
+        \left|1-(-1)^ne^{-ipa/\hbar}\right|^2
+        =2\left[
+            1-(-1)^n\cos\left(\frac{pa}{\hbar}\right)
+        \right]
+
+    なので，
+
+    .. math::
+        |\Phi_n(p,t)|^2
+        =\frac{2\hbar p_n^2}{\pi a}
+        \frac{
+            1-(-1)^n\cos\left(pa/\hbar\right)
+        }
+        {\left(p_n^2-p^2\right)^2}
+
+    となる。分布の形を見やすくするため，
+
+    .. math::
+        u=\frac{pa}{\pi\hbar},
+        \quad
+        F_n(u)=\frac{\pi^3\hbar}{2a}|\Phi_n(p,t)|^2
+
+    と置くと，
+
+    .. math::
+        F_n(u)
+        =\frac{n^2
+        \left[1-(-1)^n\cos(\pi u)\right]}
+        {\left(n^2-u^2\right)^2}
+
+    を得る。横軸を `v=u/n=p/p_n` としたグラフは，次のようになる。 `v=\pm1` における連続な極限値は `\pi^2/8` である。
+
+    .. plot::
+        :include-source: True
+        :context: reset
+
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        def scaled_density(v, n):
+            numerator = 1 - (-1) ** n * np.cos(np.pi * n * v)
+            denominator = n**2 * (1 - v**2) ** 2
+            values = np.divide(
+                numerator,
+                denominator,
+                out=np.zeros_like(v),
+                where=np.abs(1 - np.abs(v)) > 1e-8,
+            )
+            values[np.isclose(np.abs(v), 1)] = np.pi**2 / 8
+            return values
+
+        v = np.linspace(-1.5, 1.5, 3001)
+        fig, axes = plt.subplots(2, 2, figsize=(9, 6), sharex=True)
+
+        for ax, n in zip(axes.flat, (1, 2, 5, 10)):
+            ax.plot(v, scaled_density(v, n))
+            ax.axvline(-1, color="gray", linestyle=":", linewidth=0.8)
+            ax.axvline(1, color="gray", linestyle=":", linewidth=0.8)
+            ax.set_title(rf"$n={n}$")
+            ax.set_ylabel(r"$F_n(nv)$")
+            ax.grid(alpha=0.25)
+
+        for ax in axes[-1]:
+            ax.set_xlabel(r"$v=p/p_n$")
+
+        fig.tight_layout()
+        plt.show()
+
+    `n` が大きくなるにつれて，確率密度は `p=\pm p_n` の近くに鋭い2つのピークをもつ。したがって，最も確からしい運動量は漸近的に，
+
+    .. math::
+        p\simeq\pm p_n
+        =\pm\frac{n\pi\hbar}{a}
+
+    となる。古典的には，エネルギー `E_n` をもつ粒子の運動量は `p=\pm\sqrt{2mE_n}=\pm p_n` なので，これは対応原理から予想される結果である。ただし，問題 3.10 で確認したように，井戸の定常状態は運動量固有状態ではない。有限の `n` では分布に幅と副ピークがあり， `\pm p_n` の2値だけには集中していない。
+
+c.  \(a) の Fourier 変換と微分則より，
+
+    .. math::
+        p\Phi_n(p,t)
+        =\mathcal{F}\left[
+            -i\hbar\pdv{\Psi_n}{x}
+        \right](p)
+
+    となる。Plancherel の等式を用いると，
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2}
+            &=\int_{-\infty}^{\infty}
+            p^2|\Phi_n(p,t)|^2\,\dd p
+            \\
+            &=\hbar^2\int_0^a
+            \left|
+                \dv{x}\left(
+                    \sqrt{\frac{2}{a}}\sin k_nx
+                \right)
+            \right|^2\,\dd x
+            \\
+            &=\hbar^2\frac{2k_n^2}{a}
+            \int_0^a\cos^2(k_nx)\,\dd x
+            \\
+            &=\hbar^2k_n^2
+            =\left(\frac{n\pi\hbar}{a}\right)^2
+        \end{aligned}
+
+    となる。これは問題 2.4 で位置表示の演算子 `-\hbar^2\dd^2/\dd x^2` を用いて得た結果と一致し， `E_n=\braket{p^2}/(2m)` も満たす。

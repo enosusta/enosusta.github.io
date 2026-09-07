@@ -1,2 +1,46 @@
 Problem 3.3
 ==================
+
+任意の関数 `u,v` に対して，
+
+.. math::
+    D(u,v)\coloneqq
+    \braket{u|\hat{Q}v}-\braket{\hat{Q}u|v}
+
+と定義する。問題の仮定より，すべての `h` に対して `D(h,h)=0` である。まず `h=f+g` とし，内積の第一引数に関する共役線形性と第二引数に関する線形性を用いると，
+
+.. math::
+    \begin{aligned}
+        0=D(f+g,f+g)
+        &=D(f,f)+D(f,g)+D(g,f)+D(g,g)
+        \\
+        &=D(f,g)+D(g,f)
+    \end{aligned}
+
+となる。したがって，
+
+.. math::
+    D(f,g)+D(g,f)=0
+
+である。次に `h=f+ig` とする。第一引数の係数 `i` は複素共役されることに注意すると，
+
+.. math::
+    \begin{aligned}
+        0=D(f+ig,f+ig)
+        &=D(f,f)+iD(f,g)-iD(g,f)+D(g,g)
+        \\
+        &=iD(f,g)-iD(g,f)
+    \end{aligned}
+
+となるので，
+
+.. math::
+    D(f,g)-D(g,f)=0
+
+である。和と差の2式を組み合わせると， `D(f,g)=D(g,f)=0` となる。したがって，任意の `f,g` に対して，
+
+.. math::
+    \braket{f|\hat{Q}g}
+    =\braket{\hat{Q}f|g}
+
+が成り立つ。逆に，この式で `g=f` と置けば `\braket{f|\hat{Q}f}=\braket{\hat{Q}f|f}` が得られる。したがって，2つの定義は同値である。

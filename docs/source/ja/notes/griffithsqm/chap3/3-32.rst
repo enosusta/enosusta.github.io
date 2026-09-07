@@ -1,2 +1,127 @@
 Problem 3.32
 ==================
+
+a.  規格化された状態 `|\psi\rangle` における期待値を，
+
+    .. math::
+        q=\braket{\psi|\hat{Q}\psi}
+
+    と置く。随伴の定義と `\hat{Q}^\dagger=-\hat{Q}` より，
+
+    .. math::
+        \begin{aligned}
+            q
+            &=\braket{\hat{Q}^\dagger\psi|\psi}
+            \\
+            &=\braket{-\hat{Q}\psi|\psi}
+            \\
+            &=-\braket{\hat{Q}\psi|\psi}
+            =-q^*
+        \end{aligned}
+
+    となる。よって， `\operatorname{Re}q=0` であり，期待値 `q` は0を含む純虚数である。
+
+b.  `\hat{Q}|q\rangle=q|q\rangle` とし， `|q\rangle\neq0` とする。このとき，
+
+    .. math::
+        \braket{q|\hat{Q}|q}
+        =q\braket{q|q}
+
+    である。一方，
+
+    .. math::
+        \hat{Q}^\dagger|q\rangle
+        =-\hat{Q}|q\rangle
+        =-q|q\rangle
+
+    なので，
+
+    .. math::
+        \braket{q|\hat{Q}|q}
+        =\braket{\hat{Q}^\dagger q|q}
+        =-q^*\braket{q|q}
+
+    となる。 `\braket{q|q}>0` より `q=-q^*` であるから，固有値 `q` は純虚数である。
+
+c.  2つの固有値方程式を，
+
+    .. math::
+        \hat{Q}|q\rangle=q|q\rangle,
+        \quad
+        \hat{Q}|q'\rangle=q'|q'\rangle
+
+    とする。すると，
+
+    .. math::
+        \braket{q|\hat{Q}|q'}
+        =q'\braket{q|q'}
+
+    である。他方，\(b) の `q^*=-q` を用いると，
+
+    .. math::
+        \begin{aligned}
+            \braket{q|\hat{Q}|q'}
+            &=\braket{\hat{Q}^\dagger q|q'}
+            \\
+            &=\braket{-\hat{Q}q|q'}
+            \\
+            &=-q^*\braket{q|q'}
+            =q\braket{q|q'}
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \left(q'-q\right)\braket{q|q'}=0
+
+    であり， `q'\neq q` ならば `\braket{q|q'}=0` となる。よって，相異なる固有値に属する固有ベクトルは直交する。
+
+d.  `\hat{A}`， `\hat{B}` がともに Hermitian 演算子ならば，
+
+    .. math::
+        \begin{aligned}
+            [\hat{A},\hat{B}]^\dagger
+            &=\left(\hat{A}\hat{B}-\hat{B}\hat{A}\right)^\dagger
+            \\
+            &=\hat{B}^\dagger\hat{A}^\dagger
+            -\hat{A}^\dagger\hat{B}^\dagger
+            \\
+            &=\hat{B}\hat{A}-\hat{A}\hat{B}
+            =-[\hat{A},\hat{B}]
+        \end{aligned}
+
+    となるので，その交換子は反 Hermitian である。また， `\hat{A}`， `\hat{B}` がともに反 Hermitian 演算子の場合にも，
+
+    .. math::
+        \begin{aligned}
+            [\hat{A},\hat{B}]^\dagger
+            &=\left(-\hat{B}\right)\left(-\hat{A}\right)
+            -\left(-\hat{A}\right)\left(-\hat{B}\right)
+            \\
+            &=\hat{B}\hat{A}-\hat{A}\hat{B}
+            =-[\hat{A},\hat{B}]
+        \end{aligned}
+
+    となる。したがって，この場合の交換子も反 Hermitian である。
+
+e.  次の2つの演算子を定める。
+
+    .. math::
+        \hat{A}
+        =\frac{\hat{Q}+\hat{Q}^\dagger}{2},
+        \quad
+        \hat{B}
+        =\frac{\hat{Q}-\hat{Q}^\dagger}{2}
+
+    このとき， `\hat{Q}=\hat{A}+\hat{B}` であり，
+
+    .. math::
+        \hat{A}^\dagger
+        =\frac{\hat{Q}^\dagger+\hat{Q}}{2}
+        =\hat{A},
+        \quad
+        \hat{B}^\dagger
+        =\frac{\hat{Q}^\dagger-\hat{Q}}{2}
+        =-\hat{B}
+
+    となる。よって， `\hat{A}` は Hermitian 演算子， `\hat{B}` は反 Hermitian 演算子であり，任意の `\hat{Q}` が両者の和に分解された。

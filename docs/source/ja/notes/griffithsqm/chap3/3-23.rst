@@ -1,2 +1,64 @@
 Problem 3.23
 ==================
+
+規格化されたベクトル `|\alpha\rangle` への射影演算子は，
+
+.. math::
+    \hat{P}=|\alpha\rangle\langle\alpha|,
+    \quad
+    \braket{\alpha|\alpha}=1
+
+である。したがって，
+
+.. math::
+    \begin{aligned}
+        \hat{P}^{\,2}
+        &=|\alpha\rangle\langle\alpha|
+        \alpha\rangle\langle\alpha|
+        \\
+        &=|\alpha\rangle
+        \braket{\alpha|\alpha}\langle\alpha|
+        \\
+        &=|\alpha\rangle\langle\alpha|
+        =\hat{P}
+    \end{aligned}
+
+となり， `\hat{P}` は冪等である。
+
+次に， `|v\rangle\neq0` が固有値 `\lambda` の固有ベクトルであるとする。 `\hat{P}|v\rangle=\lambda|v\rangle` にもう一度 `\hat{P}` を作用させると，
+
+.. math::
+    \hat{P}^{\,2}|v\rangle
+    =\lambda\hat{P}|v\rangle
+    =\lambda^2|v\rangle
+
+である。一方， `\hat{P}^{\,2}=\hat{P}` より，左辺は `\lambda|v\rangle` に等しい。よって，
+
+.. math::
+    \left(\lambda^2-\lambda\right)|v\rangle=0
+    \quad\Longrightarrow\quad
+    \lambda=0,1
+
+となる。
+
+実際，
+
+.. math::
+    \hat{P}|\alpha\rangle
+    =|\alpha\rangle\braket{\alpha|\alpha}
+    =|\alpha\rangle
+
+なので， `|\alpha\rangle` の張る1次元部分空間の非零ベクトルは固有値1に属する。一方， `\braket{\alpha|v_\perp}=0` ならば，
+
+.. math::
+    \hat{P}|v_\perp\rangle
+    =|\alpha\rangle\braket{\alpha|v_\perp}
+    =0
+
+なので， `|\alpha\rangle` に直交する部分空間の非零ベクトルは固有値0に属する。任意のベクトルは，
+
+.. math::
+    |v\rangle
+    =\braket{\alpha|v}|\alpha\rangle+|v_\perp\rangle
+
+と分解でき， `\hat{P}` は第1項だけを取り出す。

@@ -1,2 +1,140 @@
 Problem 3.48
 ==================
+
+a.  関数は区間内で絶対連続であり，関数自身と弱微分がともに `L^2` に属するものとする。まず，
+
+    .. math::
+        \mathcal{D}(\hat{p})
+        =\left\{
+            f\mathrel{\big|}
+            f,f'\in L^2(0,a),\quad f(0)=f(a)=0
+        \right\}
+
+    とする。 `f\in\mathcal{D}(\hat{p})` に対して部分積分すると，
+
+    .. math::
+        \begin{aligned}
+            \braket{g|\hat{p}f}
+            &=\int_0^a g(x)^*\left(-i\hbar f'(x)\right)\,\dd x
+            \\
+            &=-i\hbar\left[g^*f\right]_0^a
+            +\int_0^a i\hbar g'(x)^*f(x)\,\dd x
+            \\
+            &=\int_0^a\left(-i\hbar g'(x)\right)^*
+            f(x)\,\dd x
+            \\
+            &=\braket{\hat{p}^\dagger g|f}
+        \end{aligned}
+
+    となる。境界項は `f(0)=f(a)=0` だけで消えるため， `g(0)`， `g(a)` には条件を課す必要がない。したがって，随伴の作用は，
+
+    .. math::
+        \hat{p}^\dagger g=-i\hbar g'
+
+    と元の演算子と同じであるが，その定義域は，
+
+    .. math::
+        \mathcal{D}(\hat{p}^\dagger)
+        =\left\{
+            g\mathrel{\big|}g,g'\in L^2(0,a)
+        \right\}
+
+    となる。よって，共通の定義域上では作用が随伴と一致するため Hermitian であるが，
+
+    .. math::
+        \mathcal{D}(\hat{p})
+        \subsetneq\mathcal{D}(\hat{p}^\dagger)
+
+    なので，自己随伴ではない。
+
+b.  今度は，
+
+    .. math::
+        \mathcal{D}_\lambda(\hat{p})
+        =\left\{
+            f\mathrel{\big|}
+            f,f'\in L^2(0,a),\quad f(a)=\lambda f(0)
+        \right\}
+
+    とする。部分積分で現れる境界項は，
+
+    .. math::
+        \begin{aligned}
+            -i\hbar\left[g^*f\right]_0^a
+            &=-i\hbar\left[
+                g^*(a)f(a)-g^*(0)f(0)
+            \right]
+            \\
+            &=-i\hbar\left[
+                \lambda g^*(a)-g^*(0)
+            \right]f(0)
+        \end{aligned}
+
+    となる。これがすべての `f\in\mathcal{D}_\lambda(\hat{p})` に対して0となる条件は，
+
+    .. math::
+        g^*(0)=\lambda g^*(a)
+        \iff
+        g(0)=\lambda^*g(a)
+
+    である。 `\lambda\neq0` ならば，これは，
+
+    .. math::
+        g(a)=\frac{1}{\lambda^*}g(0)
+
+    とも書ける。したがって，元の境界条件と随伴の境界条件が一致するための必要十分条件は，
+
+    .. math::
+        \lambda=\frac{1}{\lambda^*}
+        \iff
+        |\lambda|=1
+
+    である。よって，自己随伴な拡張は，
+
+    .. math::
+        \lambda=e^{i\theta},
+        \quad
+        0\leq\theta<2\pi
+
+    によって分類され，境界条件は，
+
+    .. math::
+        f(a)=e^{i\theta}f(0)
+
+    となる。このとき，同じ定義域に属する `f`， `g` に対して，
+
+    .. math::
+        g^*(a)f(a)-g^*(0)f(0)
+        =\left(|\lambda|^2-1\right)g^*(0)f(0)
+        =0
+
+    となり，Hermitian 性も直接確かめられる。
+
+c.  半無限区間では無限遠の境界項が消えるため，境界形式は，
+
+    .. math::
+        -i\hbar\left[g^*f\right]_0^\infty
+        =i\hbar g^*(0)f(0)
+
+    だけである。これを同じ定義域に属するすべての `f`， `g` に対して0とするには， `f(0)=0` を課す必要がある。しかし，この定義域から定まる随伴には `g(0)` の制限がなく，両者の定義域は一致しない。
+
+    自己随伴拡張が存在しないことは，不足指数からも確かめられる。任意の `\eta>0` に対して，
+
+    .. math::
+        \left(\hat{p}^\dagger-i\eta\right)g_+=0,
+        \quad
+        \left(\hat{p}^\dagger+i\eta\right)g_-=0
+
+    を解くと，
+
+    .. math::
+        g_+(x)=C_+e^{-\eta x/\hbar},
+        \quad
+        g_-(x)=C_-e^{\eta x/\hbar}
+
+    となる。前者だけが `L^2(0,\infty)` に属するため，不足指数は，
+
+    .. math::
+        \left(n_+,n_-\right)=\left(1,0\right)
+
+    と異なる。したがって，半無限区間 `0\leq x<\infty` 上の `-i\hbar\dd/\dd x` には，自己随伴拡張が存在しない。

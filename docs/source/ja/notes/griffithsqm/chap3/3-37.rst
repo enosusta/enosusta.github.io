@@ -1,2 +1,109 @@
 Problem 3.37
 ==================
+
+`\hat{Q}=xp` は時間に陽に依存しないので，一般化された Ehrenfest の定理より，
+
+.. math::
+    \dv{}{t}\braket{xp}
+    =\frac{i}{\hbar}\braket{[\hat{H},xp]}
+
+となる。ここで，
+
+.. math::
+    \hat{H}=\frac{p^2}{2m}+V(x),
+    \quad
+    [x,p]=i\hbar
+
+である。まず，
+
+.. math::
+    [p^2,x]
+    =p[p,x]+[p,x]p
+    =-2i\hbar p
+
+なので，
+
+.. math::
+    [p^2,xp]
+    =[p^2,x]p+x[p^2,p]
+    =-2i\hbar p^2
+
+となる。また， `[V(x),x]=0` および `[V(x),p]=i\hbar V'(x)` より，
+
+.. math::
+    [V(x),xp]
+    =[V(x),x]p+x[V(x),p]
+    =i\hbar xV'(x)
+
+である。したがって，
+
+.. math::
+    \begin{aligned}
+        \dv{}{t}\braket{xp}
+        &=\frac{i}{\hbar}
+        \left\langle
+            -\frac{i\hbar}{m}p^2
+            +i\hbar xV'(x)
+        \right\rangle
+        \\
+        &=\frac{\braket{p^2}}{m}
+        -\braket{xV'(x)}
+        \\
+        &=2\braket{T}
+        -\left\langle x\pdv{V}{x}\right\rangle
+    \end{aligned}
+
+を得る。
+
+定常状態では，
+
+.. math::
+    |\Psi(t)\rangle
+    =e^{-iEt/\hbar}|\psi\rangle
+
+である。任意の時間に陽に依存しない演算子 `\hat{Q}` について，
+
+.. math::
+    \begin{aligned}
+        \braket{\Psi(t)|\hat{Q}|\Psi(t)}
+        &=e^{iEt/\hbar}e^{-iEt/\hbar}
+        \braket{\psi|\hat{Q}|\psi}
+        \\
+        &=\braket{\psi|\hat{Q}|\psi}
+    \end{aligned}
+
+となるので， `\braket{xp}` も時間に依存しない。よって，
+
+.. math::
+    2\braket{T}
+    =\left\langle x\dv{V}{x}\right\rangle
+
+となり，ビリアル定理が得られる。
+
+調和振動子では，
+
+.. math::
+    V(x)=\frac{1}{2}m\omega^2x^2,
+    \quad
+    xV'(x)=m\omega^2x^2=2V(x)
+
+なので，ビリアル定理は，
+
+.. math::
+    2\braket{T}=2\braket{V},
+    \quad
+    \braket{T}=\braket{V}
+
+を与える。また，定常状態の全エネルギーは，
+
+.. math::
+    E_n=\left(n+\frac{1}{2}\right)\hbar\omega
+    =\braket{T}_n+\braket{V}_n
+
+なので，
+
+.. math::
+    \braket{T}_n=\braket{V}_n
+    =\frac{1}{2}\left(n+\frac{1}{2}\right)\hbar\omega
+
+となる。 `n=0,1` では，それぞれ `\hbar\omega/4`， `3\hbar\omega/4` となり，問題 2.11 の結果と一致する。また，任意の `n` に対する上式は問題 2.12 の結果と一致する。

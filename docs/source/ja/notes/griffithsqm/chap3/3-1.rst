@@ -1,2 +1,74 @@
 Problem 3.1
 ==================
+
+a.  区間 `(a,b)` 上の任意の `f,g\in L^2(a,b)` に対して，
+
+    .. math::
+        \int_a^b|f|^2\,\dd x<\infty,\qquad
+        \int_a^b|g|^2\,\dd x<\infty
+
+    である。和の絶対値の二乗を展開すると，
+
+    .. math::
+        \begin{aligned}
+            \int_a^b|f+g|^2\,\dd x
+            &= \int_a^b\left(|f|^2+|g|^2+f^*g+g^*f\right)\,\dd x
+            \\
+            &= \int_a^b|f|^2\,\dd x
+            +\int_a^b|g|^2\,\dd x
+            +2\mathop{\mathrm{Re}}\braket{f|g}
+        \end{aligned}
+
+    となる。Schwarz の不等式より，
+
+    .. math::
+        |\braket{f|g}|
+        \leq
+        \left(\int_a^b|f|^2\,\dd x\right)^{1/2}
+        \left(\int_a^b|g|^2\,\dd x\right)^{1/2}
+        <\infty
+
+    であるから， `f+g\in L^2(a,b)` である。また，任意の `c\in\mathbb{C}` に対して，
+
+    .. math::
+        \int_a^b|cf|^2\,\dd x
+        =|c|^2\int_a^b|f|^2\,\dd x
+        <\infty
+
+    であるから， `cf\in L^2(a,b)` である。零関数は `L^2(a,b)` に属し， `-f` も属する。加法の結合則や分配則など，残りのベクトル空間の公理は複素数値関数の点ごとの演算から従う。したがって，すべての自乗可積分関数の集合は複素ベクトル空間である。
+
+    一方，規格化された関数全体の集合はベクトル空間ではない。零関数が含まれず，規格化された関数 `f` に対しても，
+
+    .. math::
+        \braket{cf|cf}=|c|^2\braket{f|f}=|c|^2
+
+    となるので， `|c|\neq1` ならば `cf` は規格化されていない。また，規格化された2つの関数の和も一般には規格化されない。
+
+b.  式 (3.6) の定義より，複素共役を取ると，
+
+    .. math::
+        \begin{aligned}
+            \braket{f|g}^*
+            &=\left(\int_a^b f^*g\,\dd x\right)^*
+            \\
+            &=\int_a^b fg^*\,\dd x
+            \\
+            &=\braket{g|f}
+        \end{aligned}
+
+    となり，共役対称性を満たす。また，任意の `c_1,c_2\in\mathbb{C}` に対して，
+
+    .. math::
+        \begin{aligned}
+            \bra{f}\left(c_1\ket{g}+c_2\ket{h}\right)
+            &=\int_a^b f^*(c_1g+c_2h)\,\dd x
+            \\
+            &=c_1\braket{f|g}+c_2\braket{f|h}
+        \end{aligned}
+
+    となるので，第二引数について線形である。共役対称性と合わせれば，第一引数について共役線形であることも従う。最後に，
+
+    .. math::
+        \braket{f|f}=\int_a^b|f(x)|^2\,\dd x\geq0
+
+    であり，この値がゼロとなるのは `f=0` がほとんど至る所で成り立つ場合に限る。 `L^2(a,b)` では，ほとんど至る所で等しい関数を同一視するので，これは正定値性を表す。したがって，式 (3.6) の積分は内積の条件をすべて満たす。

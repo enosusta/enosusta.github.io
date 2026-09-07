@@ -1,2 +1,78 @@
 Problem 3.38
 ==================
+
+`\psi_1`， `\psi_2` のエネルギー固有値を，それぞれ `E_1`， `E_2` とし， `E_1\neq E_2` とする。時刻 `t` における状態は，
+
+.. math::
+    |\Psi(t)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(
+        e^{-iE_1t/\hbar}|\psi_1\rangle
+        +e^{-iE_2t/\hbar}|\psi_2\rangle
+    \right)
+
+である。正規直交性を用いると，初期状態との重なりは，
+
+.. math::
+    \begin{aligned}
+        \braket{\Psi(0)|\Psi(t)}
+        &=\frac{1}{2}
+        \left(
+            e^{-iE_1t/\hbar}+e^{-iE_2t/\hbar}
+        \right)
+        \\
+        &=e^{-i\left(E_1+E_2\right)t/(2\hbar)}
+        \cos\left(
+            \frac{\left(E_2-E_1\right)t}{2\hbar}
+        \right)
+    \end{aligned}
+
+となる。この重なりが初めて0となる正の時刻 `\tau` は，
+
+.. math::
+    \frac{|E_2-E_1|\tau}{2\hbar}=\frac{\pi}{2},
+    \quad
+    \tau=\frac{\pi\hbar}{|E_2-E_1|}
+
+である。したがって，問題で定義された時間幅は，
+
+.. math::
+    \Delta t=\frac{\tau}{\pi}
+    =\frac{\hbar}{|E_2-E_1|}
+
+となる。
+
+一方，エネルギーの1次および2次の期待値は，
+
+.. math::
+    \braket{H}=\frac{E_1+E_2}{2},
+    \quad
+    \braket{H^2}=\frac{E_1^2+E_2^2}{2}
+
+である。よって，
+
+.. math::
+    \begin{aligned}
+        (\Delta E)^2
+        &=\braket{H^2}-\braket{H}^2
+        \\
+        &=\frac{E_1^2+E_2^2}{2}
+        -\frac{\left(E_1+E_2\right)^2}{4}
+        \\
+        &=\frac{\left(E_2-E_1\right)^2}{4}
+    \end{aligned}
+
+となるので，
+
+.. math::
+    \Delta E=\frac{|E_2-E_1|}{2}
+
+を得る。以上より，
+
+.. math::
+    \Delta E\,\Delta t
+    =\frac{|E_2-E_1|}{2}
+    \frac{\hbar}{|E_2-E_1|}
+    =\frac{\hbar}{2}
+
+となり，この状態は提示されたエネルギー–時間不確定性関係の等号を満たす。

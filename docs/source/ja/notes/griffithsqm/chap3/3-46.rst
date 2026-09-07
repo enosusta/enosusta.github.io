@@ -1,2 +1,160 @@
 Problem 3.46
 ==================
+
+a.  標準基底を，
+
+    .. math::
+        e_1=\begin{pmatrix}1\\0\\0\end{pmatrix},
+        \quad
+        e_2=\begin{pmatrix}0\\1\\0\end{pmatrix},
+        \quad
+        e_3=\begin{pmatrix}0\\0\\1\end{pmatrix}
+
+    と書く。 `\mathbf{H}` はすでに対角形なので，その固有値と固有空間は，
+
+    .. math::
+        \hbar\omega
+        \longleftrightarrow e_1,
+        \quad
+        2\hbar\omega
+        \longleftrightarrow
+        \operatorname{span}\{e_2,e_3\}
+
+    である。固有値 `2\hbar\omega` は2重に縮退している。
+
+    `\mathbf{A}` の固有値と規格化固有ベクトルは，
+
+    .. math::
+        \begin{aligned}
+            \lambda
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\1\\0\end{pmatrix}
+            \\
+            -\lambda
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\-1\\0\end{pmatrix}
+            \\
+            2\lambda
+            &\longleftrightarrow e_3
+        \end{aligned}
+
+    となる。同様に， `\mathbf{B}` については，
+
+    .. math::
+        \begin{aligned}
+            2\mu
+            &\longleftrightarrow e_1
+            \\
+            \mu
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}0\\1\\1\end{pmatrix}
+            \\
+            -\mu
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}0\\1\\-1\end{pmatrix}
+        \end{aligned}
+
+    である。
+
+b.  行列を直接掛けると，時刻 `t=0` における期待値は，
+
+    .. math::
+        \begin{aligned}
+            \braket{H}_0
+            &=\hbar\omega\left(
+                |c_1|^2+2|c_2|^2+2|c_3|^2
+            \right)
+            \\
+            &=\hbar\omega\left(2-|c_1|^2\right)
+            \\
+            \braket{A}_0
+            &=\lambda\left(
+                c_1^*c_2+c_2^*c_1+2|c_3|^2
+            \right)
+            \\
+            &=2\lambda\left[
+                \operatorname{Re}\left(c_1^*c_2\right)
+                +|c_3|^2
+            \right]
+            \\
+            \braket{B}_0
+            &=\mu\left(
+                2|c_1|^2+c_2^*c_3+c_3^*c_2
+            \right)
+            \\
+            &=2\mu\left[
+                |c_1|^2
+                +\operatorname{Re}\left(c_2^*c_3\right)
+            \right]
+        \end{aligned}
+
+    となる。
+
+c.  時間発展は Hamiltonian の各固有成分へ位相を付けるので，
+
+    .. math::
+        |S(t)\rangle
+        =\begin{pmatrix}
+            c_1e^{-i\omega t}
+            \\
+            c_2e^{-2i\omega t}
+            \\
+            c_3e^{-2i\omega t}
+        \end{pmatrix}
+
+    となる。エネルギー測定では，縮退した固有空間への射影のノルムを取る必要がある。したがって，得られる値と確率は，
+
+    .. math::
+        P_H(\hbar\omega)=|c_1|^2,
+        \quad
+        P_H(2\hbar\omega)=|c_2|^2+|c_3|^2
+
+    である。
+
+    `A` の測定については，各固有ベクトルとの内積から，
+
+    .. math::
+        \begin{aligned}
+            P_A(\lambda;t)
+            &=\frac{1}{2}
+            \left|
+                c_1e^{-i\omega t}+c_2e^{-2i\omega t}
+            \right|^2
+            \\
+            P_A(-\lambda;t)
+            &=\frac{1}{2}
+            \left|
+                c_1e^{-i\omega t}-c_2e^{-2i\omega t}
+            \right|^2
+            \\
+            P_A(2\lambda;t)
+            &=|c_3|^2
+        \end{aligned}
+
+    となる。最初の2つは，
+
+    .. math::
+        P_A(\pm\lambda;t)
+        =\frac{1}{2}\left[
+            |c_1|^2+|c_2|^2
+            \mathbin{\pm}2\operatorname{Re}\left(
+                c_1^*c_2e^{-i\omega t}
+            \right)
+        \right]
+
+    とも書ける。 `H` と `A` は交換しないので，これらの確率は一般に時間に依存する。
+
+    最後に， `B` の測定で得られる値と確率は，
+
+    .. math::
+        P_B(2\mu;t)=|c_1|^2,
+        \quad
+        P_B(\mu;t)=\frac{1}{2}|c_2+c_3|^2,
+        \quad
+        P_B(-\mu;t)=\frac{1}{2}|c_2-c_3|^2
+
+    である。第2，第3成分は同じ時間位相をもつため，これらの確率は時間に依存しない。これは `[H,B]=0` とも整合する。それぞれの測定について，全確率は規格化条件により1となる。

@@ -1,2 +1,70 @@
 Problem 3.15
 ==================
+
+Hamiltonian を，
+
+.. math::
+    \hat{H}=\frac{\hat{p}^{\,2}}{2m}+V(x)
+
+とする。 `x` と `V(x)` はともに位置の関数なので， `[x,V(x)]=0` である。また，積に対する交換子の公式より，
+
+.. math::
+    \begin{aligned}
+        [x,\hat{p}^{\,2}]
+        &=[x,\hat{p}]\hat{p}
+        +\hat{p}[x,\hat{p}]
+        \\
+        &=(i\hbar)\hat{p}+\hat{p}(i\hbar)
+        \\
+        &=2i\hbar\hat{p}
+    \end{aligned}
+
+となる。したがって，
+
+.. math::
+    [x,\hat{H}]
+    =\frac{1}{2m}[x,\hat{p}^{\,2}]+[x,V]
+    =\frac{i\hbar}{m}\hat{p}
+
+である。一般化された不確定性原理 (3.62) で `\hat{A}=x` ， `\hat{B}=\hat{H}` とすると，
+
+.. math::
+    \begin{aligned}
+        \sigma_x^2\sigma_H^2
+        &\geq
+        \left(
+            \frac{1}{2i}\braket{[x,\hat{H}]}
+        \right)^2
+        \\
+        &=\left(
+            \frac{1}{2i}\frac{i\hbar}{m}\braket{p}
+        \right)^2
+        \\
+        &=\left(
+            \frac{\hbar}{2m}\braket{p}
+        \right)^2
+    \end{aligned}
+
+となる。両辺の非負な平方根を取ると，
+
+.. math::
+    \sigma_x\sigma_H
+    \geq\frac{\hbar}{2m}\left|\braket{p}\right|
+
+を得る。
+
+定常状態は Hamiltonian の固有状態なので，エネルギーの分散は，
+
+.. math::
+    \sigma_H^2
+    =\braket{H^2}-\braket{H}^2
+    =E^2-E^2
+    =0
+
+である。また，定常状態では `\braket{x}` が時間に依存しないので，Ehrenfest の定理，
+
+.. math::
+    \dv{\braket{x}}{t}
+    =\frac{\braket{p}}{m}
+
+より， `\braket{p}=0` である。したがって，不等式は単に `0\geq0` となり，位置の不確定さについて何の制限も与えない。

@@ -1,2 +1,158 @@
 Problem 3.49
 ==================
+
+a.  自由粒子の位置表示における Schrödinger 方程式は，
+
+    .. math::
+        i\hbar\pdv{\Psi}{t}
+        =-\frac{\hbar^2}{2m}\pdv[2]{\Psi}{x}
+
+    である。Fourier 変換，
+
+    .. math::
+        \Phi(p,t)
+        =\frac{1}{\sqrt{2\pi\hbar}}
+        \int_{-\infty}^{\infty}
+        e^{-ipx/\hbar}\Psi(x,t)\,\dd x
+
+    の下で， `-i\hbar\partial/\partial x` は `p` の掛け算へ移る。したがって，運動量空間における方程式は，
+
+    .. math::
+        i\hbar\pdv{\Phi(p,t)}{t}
+        =\frac{p^2}{2m}\Phi(p,t)
+
+    となる。これは各 `p` ごとに独立な1階常微分方程式であり，
+
+    .. math::
+        \frac{1}{\Phi}\pdv{\Phi}{t}
+        =-\frac{ip^2}{2m\hbar}
+
+    を積分すると，
+
+    .. math::
+        \Phi(p,t)
+        =e^{-ip^2t/(2m\hbar)}\Phi(p,0)
+
+    を得る。
+
+b.  問題 2.42 の初期状態は，
+
+    .. math::
+        \Psi(x,0)=Ae^{-ax^2}e^{i\ell x},
+        \quad
+        A=\left(\frac{2a}{\pi}\right)^{1/4}
+
+    である。その Fourier 変換は，
+
+    .. math::
+        \begin{aligned}
+            \Phi(p,0)
+            &=\frac{A}{\sqrt{2\pi\hbar}}
+            \int_{-\infty}^{\infty}
+            \exp\left[
+                -ax^2-i\left(\frac{p}{\hbar}-\ell\right)x
+            \right]\,\dd x
+            \\
+            &=\frac{A}{\sqrt{2\pi\hbar}}
+            \sqrt{\frac{\pi}{a}}
+            \exp\left[
+                -\frac{\left(p/\hbar-\ell\right)^2}{4a}
+            \right]
+            \\
+            &=\frac{1}{\left(2\pi a\hbar^2\right)^{1/4}}
+            \exp\left[
+                -\frac{\left(p-\hbar\ell\right)^2}
+                {4a\hbar^2}
+            \right]
+        \end{aligned}
+
+    となる。\(a) の時間発展を掛けると，
+
+    .. math::
+        \Phi(p,t)
+        =\frac{1}{\left(2\pi a\hbar^2\right)^{1/4}}
+        \exp\left[
+            -\frac{\left(p-\hbar\ell\right)^2}{4a\hbar^2}
+            -\frac{ip^2t}{2m\hbar}
+        \right]
+
+    を得る。時間依存因子は純粋な位相なので，確率密度は，
+
+    .. math::
+        |\Phi(p,t)|^2
+        =\frac{1}{\hbar\sqrt{2\pi a}}
+        \exp\left[
+            -\frac{\left(p-\hbar\ell\right)^2}{2a\hbar^2}
+        \right]
+
+    となり，時間に依存しない。これは，自由粒子では運動量が保存されることの直接的な表現である。
+
+c.  次の変数を定める。
+
+    .. math::
+        p_0\coloneqq\hbar\ell,
+        \quad
+        s^2\coloneqq a\hbar^2,
+        \quad
+        q=p-p_0
+
+    と置くと，確率密度は，
+
+    .. math::
+        |\Phi|^2
+        =\frac{1}{\sqrt{2\pi}s}
+        e^{-q^2/(2s^2)}
+
+    という規格化された Gaussian となる。 `q` の奇数次の積分は0であり，
+
+    .. math::
+        \frac{1}{\sqrt{2\pi}s}
+        \int_{-\infty}^{\infty}
+        q^2e^{-q^2/(2s^2)}\,\dd q
+        =s^2
+
+    なので，
+
+    .. math::
+        \begin{aligned}
+            \braket{p}
+            &=\int_{-\infty}^{\infty}
+            \left(p_0+q\right)|\Phi|^2\,\dd q
+            =p_0
+            \\
+            \braket{p^2}
+            &=\int_{-\infty}^{\infty}
+            \left(p_0+q\right)^2|\Phi|^2\,\dd q
+            =p_0^2+s^2
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \braket{p}=\hbar\ell,
+        \quad
+        \braket{p^2}=\hbar^2\ell^2+a\hbar^2,
+        \quad
+        \sigma_p^2=a\hbar^2
+
+    であり，問題 2.42 で位置表示から得た結果と一致する。
+
+d.  自由粒子では `H=p^2/(2m)` なので，\(c) より，
+
+    .. math::
+        \begin{aligned}
+            \braket{H}
+            &=\frac{\braket{p^2}}{2m}
+            \\
+            &=\frac{\hbar^2\ell^2}{2m}
+            +\frac{a\hbar^2}{2m}
+            \\
+            &=\frac{\braket{p}^2}{2m}+\braket{H}_0
+        \end{aligned}
+
+    となる。ここで，
+
+    .. math::
+        \braket{H}_0=\frac{a\hbar^2}{2m}
+
+    は `\ell=0` の静止 Gaussian の平均エネルギーである。第1項は波束全体の平均運動量，すなわち重心運動に伴う古典的運動エネルギーであり，第2項は波束を有限の幅に局在させるために残る運動エネルギーである。したがって，平均運動量が0でも波束の平均エネルギーは0にならず，波束は時間とともに広がる。

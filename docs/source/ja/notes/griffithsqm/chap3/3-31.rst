@@ -1,2 +1,131 @@
 Problem 3.31
 ==================
+
+区間 `[-1,1]` 上の内積を，
+
+.. math::
+    \braket{f|g}
+    =\int_{-1}^{1}f(x)^*g(x)\,\dd x
+
+とする。まず， `u_0(x)=1` と置くと，
+
+.. math::
+    \|u_0\|^2=\int_{-1}^{1}\dd x=2
+
+なので，第1の規格化された関数は，
+
+.. math::
+    e_0(x)=\frac{1}{\sqrt{2}}
+
+である。
+
+次に， `x` の `e_0` への射影は奇関数の積分となるため0であり，
+
+.. math::
+    u_1(x)=x,
+    \quad
+    \|u_1\|^2
+    =\int_{-1}^{1}x^2\,\dd x
+    =\frac{2}{3}
+
+となる。したがって，
+
+.. math::
+    e_1(x)=\sqrt{\frac{3}{2}}\,x
+
+である。
+
+`x^2` については，
+
+.. math::
+    \braket{e_0|x^2}
+    =\frac{1}{\sqrt{2}}
+    \int_{-1}^{1}x^2\,\dd x
+    =\frac{\sqrt{2}}{3},
+    \quad
+    \braket{e_1|x^2}=0
+
+なので，直交化された関数は，
+
+.. math::
+    u_2(x)
+    =x^2-\braket{e_0|x^2}e_0(x)
+    =x^2-\frac{1}{3}
+
+となる。そのノルムは，
+
+.. math::
+    \begin{aligned}
+        \|u_2\|^2
+        &=\int_{-1}^{1}
+        \left(x^2-\frac{1}{3}\right)^2\,\dd x
+        \\
+        &=\frac{2}{5}-\frac{4}{9}+\frac{2}{9}
+        =\frac{8}{45}
+    \end{aligned}
+
+であるから，
+
+.. math::
+    e_2(x)
+    =\sqrt{\frac{45}{8}}
+    \left(x^2-\frac{1}{3}\right)
+    =\sqrt{\frac{5}{8}}\left(3x^2-1\right)
+
+を得る。
+
+最後に， `x^3` は偶関数 `e_0`， `e_2` と直交する。また，
+
+.. math::
+    \braket{e_1|x^3}
+    =\sqrt{\frac{3}{2}}
+    \int_{-1}^{1}x^4\,\dd x
+    =\frac{2}{5}\sqrt{\frac{3}{2}}
+
+なので，
+
+.. math::
+    u_3(x)
+    =x^3-\braket{e_1|x^3}e_1(x)
+    =x^3-\frac{3}{5}x
+
+となる。さらに，
+
+.. math::
+    \begin{aligned}
+        \|u_3\|^2
+        &=\int_{-1}^{1}
+        \left(x^3-\frac{3}{5}x\right)^2\,\dd x
+        \\
+        &=\frac{2}{7}-\frac{12}{25}+\frac{6}{25}
+        =\frac{8}{175}
+    \end{aligned}
+
+であるから，
+
+.. math::
+    e_3(x)
+    =\sqrt{\frac{175}{8}}
+    \left(x^3-\frac{3}{5}x\right)
+    =\sqrt{\frac{7}{8}}\left(5x^3-3x\right)
+
+を得る。以上をまとめると，求める正規直交系は，
+
+.. math::
+    e_0=\frac{1}{\sqrt{2}},
+    \quad
+    e_1=\sqrt{\frac{3}{2}}\,x,
+    \quad
+    e_2=\sqrt{\frac{5}{8}}\left(3x^2-1\right),
+    \quad
+    e_3=\sqrt{\frac{7}{8}}\left(5x^3-3x\right)
+
+である。これらは，
+
+.. math::
+    e_\ell(x)
+    =\sqrt{\frac{2\ell+1}{2}}P_\ell(x),
+    \quad
+    \ell=0,1,2,3
+
+と書けるので，規格化された Legendre 多項式である。

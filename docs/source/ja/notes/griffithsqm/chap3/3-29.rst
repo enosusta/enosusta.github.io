@@ -1,2 +1,129 @@
 Problem 3.29
 ==================
+
+a.  `\hat{C}=[\hat{A},\hat{B}]` とし， `[\hat{A},\hat{C}]=[\hat{B},\hat{C}]=0` を仮定する。 `n=1` の場合は，
+
+    .. math::
+        [\hat{A},\hat{B}]=\hat{C}
+
+    なので，主張が成り立つ。ある正整数 `n` について，
+
+    .. math::
+        [\hat{A}^{\,n},\hat{B}]
+        =n\hat{A}^{\,n-1}\hat{C}
+
+    が成り立つと仮定する。交換子の積の公式より，
+
+    .. math::
+        \begin{aligned}
+            [\hat{A}^{\,n+1},\hat{B}]
+            &=[\hat{A}^{\,n}\hat{A},\hat{B}]
+            \\
+            &=\hat{A}^{\,n}[\hat{A},\hat{B}]
+            +[\hat{A}^{\,n},\hat{B}]\hat{A}
+            \\
+            &=\hat{A}^{\,n}\hat{C}
+            +n\hat{A}^{\,n-1}\hat{C}\hat{A}
+            \\
+            &=\left(n+1\right)\hat{A}^{\,n}\hat{C}
+        \end{aligned}
+
+    となる。最後の等号では `\hat{A}` と `\hat{C}` が交換することを用いた。よって，数学的帰納法により，
+
+    .. math::
+        [\hat{A}^{\,n},\hat{B}]
+        =n\hat{A}^{\,n-1}\hat{C}
+
+    がすべての正整数 `n` について成り立つ。
+
+b.  指数演算子を冪級数として展開し，\(a) の結果を用いると，
+
+    .. math::
+        \begin{aligned}
+            [e^{\lambda\hat{A}},\hat{B}]
+            &=\sum_{n=0}^{\infty}
+            \frac{\lambda^n}{n!}
+            [\hat{A}^{\,n},\hat{B}]
+            \\
+            &=\sum_{n=1}^{\infty}
+            \frac{\lambda^n}{n!}
+            n\hat{A}^{\,n-1}\hat{C}
+            \\
+            &=\lambda\sum_{r=0}^{\infty}
+            \frac{\lambda^r\hat{A}^{\,r}}{r!}\hat{C}
+            \\
+            &=\lambda e^{\lambda\hat{A}}\hat{C}
+        \end{aligned}
+
+    となる。ここでは `r=n-1` と置いた。
+
+c.  次の2つの演算子値関数を定める。
+
+    .. math::
+        \hat{f}(\lambda)
+        =e^{\lambda\left(\hat{A}+\hat{B}\right)},
+        \quad
+        \hat{g}(\lambda)
+        =e^{\lambda\hat{A}}
+        e^{\lambda\hat{B}}
+        e^{-\lambda^2\hat{C}/2}
+
+    `\lambda=0` では，
+
+    .. math::
+        \hat{f}(0)=\hat{g}(0)=\mathbf{1}
+
+    であり， `\hat{f}` は，
+
+    .. math::
+        \dv{\hat{f}}{\lambda}
+        =\left(\hat{A}+\hat{B}\right)\hat{f}
+
+    を満たす。
+
+    次に，因子の順序を保ったまま `\hat{g}` を微分する。 `\hat{C}` は `\hat{A}` および `\hat{B}` と交換するので，
+
+    .. math::
+        \begin{aligned}
+            \dv{\hat{g}}{\lambda}
+            &=\hat{A}e^{\lambda\hat{A}}
+            e^{\lambda\hat{B}}e^{-\lambda^2\hat{C}/2}
+            \\
+            &\quad
+            +e^{\lambda\hat{A}}\hat{B}
+            e^{\lambda\hat{B}}e^{-\lambda^2\hat{C}/2}
+            \\
+            &\quad
+            -\lambda e^{\lambda\hat{A}}
+            e^{\lambda\hat{B}}\hat{C}
+            e^{-\lambda^2\hat{C}/2}
+        \end{aligned}
+
+    となる。\(b) より，
+
+    .. math::
+        e^{\lambda\hat{A}}\hat{B}
+        =\hat{B}e^{\lambda\hat{A}}
+        +\lambda e^{\lambda\hat{A}}\hat{C}
+
+    であるから，微分の第2項は，
+
+    .. math::
+        e^{\lambda\hat{A}}\hat{B}
+        e^{\lambda\hat{B}}e^{-\lambda^2\hat{C}/2}
+        =\hat{B}\hat{g}+\lambda\hat{C}\hat{g}
+
+    となる。この右辺の第2項は，微分の第3項 `-\lambda\hat{C}\hat{g}` と相殺する。したがって，
+
+    .. math::
+        \dv{\hat{g}}{\lambda}
+        =\hat{A}\hat{g}+\hat{B}\hat{g}
+        =\left(\hat{A}+\hat{B}\right)\hat{g}
+
+    となる。 `\hat{f}` と `\hat{g}` は同じ初期条件の下で同じ1階微分方程式を満たすので，すべての `\lambda` について `\hat{f}(\lambda)=\hat{g}(\lambda)` である。 `\lambda=1` と置くと，Baker--Campbell--Hausdorff の公式，
+
+    .. math::
+        e^{\hat{A}+\hat{B}}
+        =e^{\hat{A}}e^{\hat{B}}e^{-\hat{C}/2}
+
+    を得る。

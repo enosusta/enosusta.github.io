@@ -1,2 +1,79 @@
 Problem 3.27
 ==================
+
+a.  固有ベクトルの集合は完全な正規直交系なので，任意のベクトル `|\alpha\rangle` は，
+
+    .. math::
+        |\alpha\rangle
+        =\sum_n a_n|e_n\rangle,
+        \quad
+        a_n=\braket{e_n|\alpha}
+
+    と展開できる。固有値方程式を用いると，
+
+    .. math::
+        \hat{Q}|\alpha\rangle
+        =\sum_n a_n\hat{Q}|e_n\rangle
+        =\sum_n q_na_n|e_n\rangle
+
+    となる。一方，スペクトル分解の候補を `|\alpha\rangle` に作用させると，
+
+    .. math::
+        \begin{aligned}
+            \left(
+                \sum_n q_n|e_n\rangle\langle e_n|
+            \right)|\alpha\rangle
+            &=\sum_n q_n|e_n\rangle
+            \braket{e_n|\alpha}
+            \\
+            &=\sum_n q_na_n|e_n\rangle
+        \end{aligned}
+
+    となる。両演算子は任意の `|\alpha\rangle` に同じ作用をするので，
+
+    .. math::
+        \hat{Q}
+        =\sum_n q_n|e_n\rangle\langle e_n|
+
+    である。
+
+b.  射影演算子を，
+
+    .. math::
+        \hat{P}_n\coloneqq|e_n\rangle\langle e_n|
+
+    と置く。正規直交性および完全性から，
+
+    .. math::
+        \hat{P}_n\hat{P}_m
+        =\delta_{nm}\hat{P}_n,
+        \quad
+        \sum_n\hat{P}_n=\mathbf{1}
+
+    となる。したがって，\(a) の結果を繰り返し掛けると，
+
+    .. math::
+        \hat{Q}^{\,k}
+        =\left(\sum_n q_n\hat{P}_n\right)^k
+        =\sum_n q_n^k\hat{P}_n
+
+    を得る。これを指数演算子の冪級数へ代入すると，
+
+    .. math::
+        \begin{aligned}
+            e^{\hat{Q}}
+            &=\sum_{k=0}^{\infty}
+            \frac{\hat{Q}^{\,k}}{k!}
+            \\
+            &=\sum_{k=0}^{\infty}\frac{1}{k!}
+            \sum_n q_n^k\hat{P}_n
+            \\
+            &=\sum_n
+            \left(
+                \sum_{k=0}^{\infty}\frac{q_n^k}{k!}
+            \right)\hat{P}_n
+            \\
+            &=\sum_n e^{q_n}|e_n\rangle\langle e_n|
+        \end{aligned}
+
+    となる。これはスペクトル分解による定義で `f(q)=e^q` とした結果であり，冪級数による定義と同値である。

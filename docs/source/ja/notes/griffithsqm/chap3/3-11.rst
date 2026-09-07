@@ -1,2 +1,94 @@
 Problem 3.11
 ==================
+
+調和振動子の基底状態を，
+
+.. math::
+    \Psi_0(x,t)
+    =\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+    \exp\left(-\frac{m\omega x^2}{2\hbar}\right)
+    e^{-i\omega t/2}
+
+と書く。式 (3.54) に代入すると，
+
+.. math::
+    \Phi_0(p,t)
+    =\frac{1}{\sqrt{2\pi\hbar}}
+    \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+    e^{-i\omega t/2}
+    \int_{-\infty}^{\infty}
+    \exp\left(
+        -\frac{m\omega}{2\hbar}x^2-\frac{ip}{\hbar}x
+    \right)\,\dd x
+
+となる。Gauss 積分，
+
+.. math::
+    \int_{-\infty}^{\infty}e^{-Ax^2+Bx}\,\dd x
+    =\sqrt{\frac{\pi}{A}}
+    \exp\left(\frac{B^2}{4A}\right),
+    \quad \operatorname{Re}A>0
+
+において，
+
+.. math::
+    A=\frac{m\omega}{2\hbar},
+    \quad
+    B=-\frac{ip}{\hbar}
+
+と置くと，
+
+.. math::
+    \int_{-\infty}^{\infty}
+    \exp\left(
+        -\frac{m\omega}{2\hbar}x^2-\frac{ip}{\hbar}x
+    \right)\,\dd x
+    =
+    \sqrt{\frac{2\pi\hbar}{m\omega}}
+    \exp\left(-\frac{p^2}{2m\hbar\omega}\right)
+
+となる。したがって，運動量空間の波動関数は，
+
+.. math::
+    \Phi_0(p,t)
+    =\left(\frac{1}{\pi m\hbar\omega}\right)^{1/4}
+    \exp\left(-\frac{p^2}{2m\hbar\omega}\right)
+    e^{-i\omega t/2}
+
+である。位置空間と同じく，運動量空間でも Gauss 型となる。
+
+基底状態のエネルギーは `E_0=\hbar\omega/2` である。古典的には，
+
+.. math::
+    \frac{p^2}{2m}+\frac{1}{2}m\omega^2x^2=E_0
+
+なので，運動量の絶対値が最大となるのは `x=0` のときである。したがって，運動量の古典的範囲は，
+
+.. math::
+    |p|\leq p_{\mathrm{c}},
+    \quad
+    p_{\mathrm{c}}=\sqrt{2mE_0}=\sqrt{m\hbar\omega}
+
+となる。一方，量子的な確率密度は，
+
+.. math::
+    |\Phi_0(p,t)|^2
+    =\frac{1}{\sqrt{\pi m\hbar\omega}}
+    \exp\left(-\frac{p^2}{m\hbar\omega}\right)
+
+であり，時間に依存しない。分布の偶性を用い， `u=p/\sqrt{m\hbar\omega}` と変数変換すると，古典的範囲外に出る確率は，
+
+.. math::
+    \begin{aligned}
+        P\left(|p|>p_{\mathrm{c}}\right)
+        &=2\int_{p_{\mathrm{c}}}^{\infty}
+        |\Phi_0(p,t)|^2\,\dd p
+        \\
+        &=\frac{2}{\sqrt{\pi}}\int_1^\infty e^{-u^2}\,\dd u
+        \\
+        &=\operatorname{erfc}(1)
+        \\
+        &=0.157299\ldots
+    \end{aligned}
+
+となる。よって，有効数字2桁では `P\simeq0.16` ，すなわち約 `16\%` である。

@@ -1,2 +1,137 @@
 Problem 3.14
 ==================
+
+a.  交換子の定義を展開すると，
+
+    .. math::
+        \begin{aligned}
+            [\hat{A}+\hat{B},\hat{C}]
+            &=\left(\hat{A}+\hat{B}\right)\hat{C}
+            -\hat{C}\left(\hat{A}+\hat{B}\right)
+            \\
+            &=\hat{A}\hat{C}-\hat{C}\hat{A}
+            +\hat{B}\hat{C}-\hat{C}\hat{B}
+            \\
+            &=[\hat{A},\hat{C}]+[\hat{B},\hat{C}]
+        \end{aligned}
+
+    となる。また，積については，途中に `\hat{A}\hat{C}\hat{B}` を足して引くと，
+
+    .. math::
+        \begin{aligned}
+            [\hat{A}\hat{B},\hat{C}]
+            &=\hat{A}\hat{B}\hat{C}-\hat{C}\hat{A}\hat{B}
+            \\
+            &=\hat{A}\hat{B}\hat{C}
+            -\hat{A}\hat{C}\hat{B}
+            +\hat{A}\hat{C}\hat{B}
+            -\hat{C}\hat{A}\hat{B}
+            \\
+            &=\hat{A}\left(\hat{B}\hat{C}-\hat{C}\hat{B}\right)
+            +\left(\hat{A}\hat{C}-\hat{C}\hat{A}\right)\hat{B}
+            \\
+            &=\hat{A}[\hat{B},\hat{C}]
+            +[\hat{A},\hat{C}]\hat{B}
+        \end{aligned}
+
+    を得る。
+
+b.  基本交換関係は，
+
+    .. math::
+        [x,\hat{p}]=i\hbar
+
+    である。 `n=1` では主張はこの式そのものである。 `n` について，
+
+    .. math::
+        [x^n,\hat{p}]=i\hbar nx^{n-1}
+
+    が成り立つと仮定する。\(a) の積の公式で `\hat{A}=x^n` ， `\hat{B}=x` ， `\hat{C}=\hat{p}` と置くと，
+
+    .. math::
+        \begin{aligned}
+            [x^{n+1},\hat{p}]
+            &=x^n[x,\hat{p}]+[x^n,\hat{p}]x
+            \\
+            &=x^n(i\hbar)+(i\hbar nx^{n-1})x
+            \\
+            &=i\hbar(n+1)x^n
+        \end{aligned}
+
+    となる。したがって，数学的帰納法により，
+
+    .. math::
+        [x^n,\hat{p}]=i\hbar nx^{n-1}
+
+    がすべての正整数 `n` について成り立つ。 `n=0` でも両辺はゼロとなるので，同じ式が成り立つ。
+
+c.  `f(x)` が Taylor 展開，
+
+    .. math::
+        f(x)=\sum_{n=0}^{\infty}c_nx^n
+
+    をもつとする。交換子の線形性と \(b) を用いると，
+
+    .. math::
+        \begin{aligned}
+            [f(x),\hat{p}]
+            &=\sum_{n=0}^{\infty}c_n[x^n,\hat{p}]
+            \\
+            &=i\hbar\sum_{n=1}^{\infty}nc_nx^{n-1}
+            \\
+            &=i\hbar\dv{f}{x}
+        \end{aligned}
+
+    となる。ここで，右辺の `f'(x)` は，関数 `f'(x)` を掛ける演算子を表す。したがって，
+
+    .. math::
+        [f(x),\hat{p}]=i\hbar f'(x)
+
+    である。
+
+d.  式 (2.54) と基本交換関係 `[\hat{a}_-,\hat{a}_+]=1` より，
+
+    .. math::
+        \hat{H}
+        =\hbar\omega
+        \left(\hat{a}_-\hat{a}_+-\frac{1}{2}\right)
+
+    である。定数項は任意の演算子と交換するので，\(a) の積の公式から，
+
+    .. math::
+        \begin{aligned}
+            [\hat{H},\hat{a}_+]
+            &=\hbar\omega
+            [\hat{a}_-\hat{a}_+,\hat{a}_+]
+            \\
+            &=\hbar\omega\left(
+                \hat{a}_-[\hat{a}_+,\hat{a}_+]
+                +[\hat{a}_-,\hat{a}_+]\hat{a}_+
+            \right)
+            \\
+            &=\hbar\omega\hat{a}_+
+        \end{aligned}
+
+    となる。同様に， `[\hat{a}_+,\hat{a}_-]=-1` を用いると，
+
+    .. math::
+        \begin{aligned}
+            [\hat{H},\hat{a}_-]
+            &=\hbar\omega
+            [\hat{a}_-\hat{a}_+,\hat{a}_-]
+            \\
+            &=\hbar\omega\left(
+                \hat{a}_-[\hat{a}_+,\hat{a}_-]
+                +[\hat{a}_-,\hat{a}_-]\hat{a}_+
+            \right)
+            \\
+            &=-\hbar\omega\hat{a}_-
+        \end{aligned}
+
+    となる。以上より，
+
+    .. math::
+        [\hat{H},\hat{a}_\pm]
+        =\pm\hbar\omega\hat{a}_\pm
+
+    が示された。

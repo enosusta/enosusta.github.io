@@ -1,2 +1,146 @@
 Problem 3.39
 ==================
+
+簡単のため，
+
+.. math::
+    c=\sqrt{\frac{\hbar}{2m\omega}},
+    \quad
+    d=\sqrt{\frac{\hbar m\omega}{2}}
+
+と置く。位置と運動量の演算子は，昇降演算子を用いて，
+
+.. math::
+    x=c\left(a_++a_-\right),
+    \quad
+    p=id\left(a_+-a_-\right)
+
+と書ける。また，
+
+.. math::
+    a_+|n'\rangle
+    =\sqrt{n'+1}|n'+1\rangle,
+    \quad
+    a_-|n'\rangle
+    =\sqrt{n'}|n'-1\rangle
+
+である。したがって，位置の行列要素は，
+
+.. math::
+    \begin{aligned}
+        \braket{n|x|n'}
+        &=c\left(
+            \sqrt{n'+1}\,\delta_{n,n'+1}
+            +\sqrt{n'}\,\delta_{n,n'-1}
+        \right)
+        \\
+        &=c\left(
+            \sqrt{n}\,\delta_{n',n-1}
+            +\sqrt{n'}\,\delta_{n,n'-1}
+        \right)
+    \end{aligned}
+
+となる。同様に，運動量の行列要素は，
+
+.. math::
+    \begin{aligned}
+        \braket{n|p|n'}
+        &=id\left(
+            \sqrt{n'+1}\,\delta_{n,n'+1}
+            -\sqrt{n'}\,\delta_{n,n'-1}
+        \right)
+        \\
+        &=id\left(
+            \sqrt{n}\,\delta_{n',n-1}
+            -\sqrt{n'}\,\delta_{n,n'-1}
+        \right)
+    \end{aligned}
+
+となる。よって，対応する無限行列は，
+
+.. math::
+    \mathbf{X}
+    =c\begin{pmatrix}
+        0 & 1 & 0 & 0 & \cdots
+        \\
+        1 & 0 & \sqrt{2} & 0 & \cdots
+        \\
+        0 & \sqrt{2} & 0 & \sqrt{3} & \cdots
+        \\
+        0 & 0 & \sqrt{3} & 0 & \ddots
+        \\
+        \vdots & \vdots & \vdots & \ddots & \ddots
+    \end{pmatrix}
+
+および，
+
+.. math::
+    \mathbf{P}
+    =id\begin{pmatrix}
+        0 & -1 & 0 & 0 & \cdots
+        \\
+        1 & 0 & -\sqrt{2} & 0 & \cdots
+        \\
+        0 & \sqrt{2} & 0 & -\sqrt{3} & \cdots
+        \\
+        0 & 0 & \sqrt{3} & 0 & \ddots
+        \\
+        \vdots & \vdots & \vdots & \ddots & \ddots
+    \end{pmatrix}
+
+である。 `\mathbf{X}` は実対称行列であり， `\mathbf{P}` は純虚数の Hermitian 行列である。
+
+次に，二乗を因子の順序を保って展開する。 `c^2=\hbar/(2m\omega)`， `d^2=\hbar m\omega/2` より，
+
+.. math::
+    \begin{aligned}
+        \frac{p^2}{2m}
+        &=-\frac{\hbar\omega}{4}
+        \left(
+            a_+^2-a_+a_--a_-a_++a_-^2
+        \right)
+        \\
+        \frac{m\omega^2x^2}{2}
+        &=\frac{\hbar\omega}{4}
+        \left(
+            a_+^2+a_+a_-+a_-a_++a_-^2
+        \right)
+    \end{aligned}
+
+となる。両者を加えると， `n` を2だけ変える `a_+^2`， `a_-^2` の項が相殺され，
+
+.. math::
+    \begin{aligned}
+        H
+        &=\frac{\hbar\omega}{2}
+        \left(a_+a_-+a_-a_+\right)
+        \\
+        &=\hbar\omega
+        \left(a_+a_-+\frac{1}{2}\right)
+    \end{aligned}
+
+を得る。最後の等号では `[a_-,a_+]=1` を用いた。 `a_+a_-|n\rangle=n|n\rangle` なので，
+
+.. math::
+    \braket{n|H|n'}
+    =\hbar\omega
+    \left(n+\frac{1}{2}\right)\delta_{nn'}
+
+となる。したがって，
+
+.. math::
+    \frac{1}{2m}\mathbf{P}^2
+    +\frac{m\omega^2}{2}\mathbf{X}^2
+    =\mathbf{H}
+    =\hbar\omega
+    \begin{pmatrix}
+        \dfrac{1}{2} & 0 & 0 & \cdots
+        \\
+        0 & \dfrac{3}{2} & 0 & \cdots
+        \\
+        0 & 0 & \dfrac{5}{2} & \cdots
+        \\
+        \vdots & \vdots & \vdots & \ddots
+    \end{pmatrix}
+
+である。対角要素は，予想どおり `E_n=(n+1/2)\hbar\omega` となっている。

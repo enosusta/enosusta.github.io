@@ -1,2 +1,85 @@
 Problem 3.30
 ==================
+
+位置空間の波動関数を，
+
+.. math::
+    \Psi(x,t)=\braket{x|S(t)}
+
+とする。エネルギー基底における成分は，
+
+.. math::
+    c_n(t)=\braket{n|S(t)}
+
+である。この内積に位置基底による恒等演算子の分解を挿入すると，
+
+.. math::
+    \begin{aligned}
+        c_n(t)
+        &=\left\langle
+            n\middle|
+            \left(
+                \int_{-\infty}^{\infty}
+                |x\rangle\langle x|\,\dd x
+            \right)
+            \middle|S(t)
+        \right\rangle
+        \\
+        &=\int_{-\infty}^{\infty}
+        \braket{n|x}\braket{x|S(t)}\,\dd x
+    \end{aligned}
+
+となる。位置表示における第 `n` エネルギー固有状態を，
+
+.. math::
+    \psi_n(x)=\braket{x|n}
+
+と書くと，
+
+.. math::
+    \braket{n|x}=\braket{x|n}^*=\psi_n(x)^*
+
+なので，求める変換は，
+
+.. math::
+    c_n(t)
+    =\int_{-\infty}^{\infty}
+    \psi_n(x)^*\Psi(x,t)\,\dd x
+
+となる。逆変換は，エネルギー固有状態の完全性から，
+
+.. math::
+    \Psi(x,t)=\sum_n c_n(t)\psi_n(x)
+
+である。
+
+ポテンシャルが時間に依存しないため， `\hat{H}|n\rangle=E_n|n\rangle` を満たす基底は時間によらない。状態を，
+
+.. math::
+    |S(t)\rangle=\sum_n c_n(t)|n\rangle
+
+と展開し，Schrödinger 方程式へ代入すると，
+
+.. math::
+    i\hbar\sum_n\dot{c}_n(t)|n\rangle
+    =\sum_n E_nc_n(t)|n\rangle
+
+となる。左から `\langle m|` を作用させ，正規直交性を用いると，
+
+.. math::
+    i\hbar\dot{c}_m(t)=E_mc_m(t)
+
+を得る。したがって，
+
+.. math::
+    c_n(t)=c_n(0)e^{-iE_nt/\hbar},
+    \quad
+    c_n(0)=\int_{-\infty}^{\infty}
+    \psi_n(x)^*\Psi(x,0)\,\dd x
+
+である。よって，
+
+.. math::
+    |c_n(t)|^2=|c_n(0)|^2
+
+となり，各エネルギーを測定する確率は時間によらない。

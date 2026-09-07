@@ -1,2 +1,121 @@
 Problem 3.4
 ==================
+
+a.  `\hat{Q}` と `\hat{R}` が Hermitian 演算子ならば，
+
+    .. math::
+        \begin{aligned}
+            \braket{f|(\hat{Q}+\hat{R})g}
+            &=\braket{f|\hat{Q}g}
+            +\braket{f|\hat{R}g}
+            \\
+            &=\braket{\hat{Q}f|g}
+            +\braket{\hat{R}f|g}
+            \\
+            &=\braket{(\hat{Q}+\hat{R})f|g}
+        \end{aligned}
+
+    となる。したがって， `\hat{Q}+\hat{R}` も Hermitian 演算子である。
+
+b.  `\hat{Q}` が Hermitian 演算子ならば，
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\alpha\hat{Q}g}
+            &=\alpha\braket{f|\hat{Q}g}
+            \\
+            &=\alpha\braket{\hat{Q}f|g}
+            \\
+            &=\braket{\alpha^*\hat{Q}f|g}
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        (\alpha\hat{Q})^\dagger=\alpha^*\hat{Q}
+
+    である。 `\hat{Q}\neq0` の場合， `\alpha\hat{Q}` が Hermitian 演算子となるための必要十分条件は，
+
+    .. math::
+        \alpha^*=\alpha\quad\iff\quad
+        \alpha\in\mathbb{R}
+
+    である。なお， `\hat{Q}=0` ならば，任意の `\alpha` に対して `\alpha\hat{Q}` は零演算子となるので，自明に Hermitian 演算子である。
+
+c.  2つの Hermitian 演算子について，
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\hat{Q}\hat{R}g}
+            &=\braket{\hat{Q}f|\hat{R}g}
+            \\
+            &=\braket{\hat{R}\hat{Q}f|g}
+        \end{aligned}
+
+    であるから，
+
+    .. math::
+        (\hat{Q}\hat{R})^\dagger
+        =\hat{R}\hat{Q}
+
+    となる。したがって，積 `\hat{Q}\hat{R}` が Hermitian 演算子であるための必要十分条件は，
+
+    .. math::
+        \hat{Q}\hat{R}=\hat{R}\hat{Q}
+        \quad\iff\quad
+        [\hat{Q},\hat{R}]=0
+
+    である。すなわち，2つの演算子が可換であるとき，かつそのときに限る。
+
+d.  位置演算子について， `x` は実数であるから，
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\hat{x}g}
+            &=\int f^*(x)xg(x)\,\dd x
+            \\
+            &=\int\left(xf(x)\right)^*g(x)\,\dd x
+            \\
+            &=\braket{\hat{x}f|g}
+        \end{aligned}
+
+    となり， `\hat{x}` は Hermitian 演算子である。
+
+    Hamiltonian の運動エネルギー部分を，
+
+    .. math::
+        \hat{T}\coloneqq-\frac{\hbar^2}{2m}\dv{^2}{x^2}
+
+    と置く。2回部分積分すると，
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\hat{T}g}
+            &=-\frac{\hbar^2}{2m}\int f^*g''\,\dd x
+            \\
+            &=-\frac{\hbar^2}{2m}
+            \left[f^*g'-f'^*g\right]_{\text{boundary}}
+            -\frac{\hbar^2}{2m}\int f''^*g\,\dd x
+            \\
+            &=\braket{\hat{T}f|g}
+        \end{aligned}
+
+    となる。最後の等号では，仮定した境界条件により境界項がゼロになることを用いた。また，物理的なポテンシャル `V(x)` は実数値なので，
+
+    .. math::
+        \begin{aligned}
+            \braket{f|Vg}
+            &=\int f^*Vg\,\dd x
+            \\
+            &=\int(Vf)^*g\,\dd x
+            \\
+            &=\braket{Vf|g}
+        \end{aligned}
+
+    となり，ポテンシャル演算子も Hermitian 演算子である。したがって，\(a) より，それらの和，
+
+    .. math::
+        \hat{H}
+        =-\frac{\hbar^2}{2m}\dv{^2}{x^2}+V(x)
+
+    も Hermitian 演算子である。

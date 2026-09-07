@@ -1,2 +1,133 @@
 Problem 3.21
 ==================
+
+問題 2.42 の初期波動関数は，
+
+.. math::
+    \Psi(x,0)
+    =\left(\frac{2a}{\pi}\right)^{1/4}
+    e^{-ax^2}e^{i\ell x},
+    \quad
+    a>0
+
+である。波数 `k=p/\hbar` の確率分布は，平均 `\ell`，分散 `a` の Gaussian である。したがって，運動量の平均と分散を，
+
+.. math::
+    \mu\coloneqq\braket{p}=\hbar\ell,
+    \quad
+    s^2\coloneqq\sigma_p^2=a\hbar^2
+
+と書ける。Gaussian の2次および4次モーメントは，
+
+.. math::
+    \braket{p^2}=\mu^2+s^2,
+    \quad
+    \braket{p^4}=\mu^4+6\mu^2s^2+3s^4
+
+なので，
+
+.. math::
+    \begin{aligned}
+        \braket{p^2}
+        &=\hbar^2\left(\ell^2+a\right)
+        \\
+        \braket{p^4}
+        &=\hbar^4\left(\ell^4+6a\ell^2+3a^2\right)
+    \end{aligned}
+
+となる。
+
+自由粒子では `\hat{H}=\hat{p}^{\,2}/(2m)` であるから，
+
+.. math::
+    \begin{aligned}
+        \braket{H}
+        &=\frac{\hbar^2}{2m}\left(\ell^2+a\right)
+        \\
+        \braket{H^2}
+        &=\frac{\hbar^4}{4m^2}
+        \left(\ell^4+6a\ell^2+3a^2\right)
+    \end{aligned}
+
+を得る。よって，
+
+.. math::
+    \begin{aligned}
+        \sigma_H^2
+        &=\braket{H^2}-\braket{H}^2
+        \\
+        &=\frac{\hbar^4}{4m^2}
+        \left[
+            \ell^4+6a\ell^2+3a^2
+            -\left(\ell^2+a\right)^2
+        \right]
+        \\
+        &=\frac{\hbar^4}{m^2}
+        a\left(\ell^2+\frac{a}{2}\right)
+    \end{aligned}
+
+であり，
+
+.. math::
+    \sigma_H
+    =\frac{\hbar^2}{m}
+    \sqrt{a\left(\ell^2+\frac{a}{2}\right)}
+
+となる。
+
+問題 2.42 で得た結果において，
+
+.. math::
+    \beta\coloneqq\frac{2\hbar at}{m}
+
+と置くと，
+
+.. math::
+    \braket{x}=\frac{\hbar\ell}{m}t,
+    \quad
+    \sigma_x^2=\frac{1+\beta^2}{4a}
+
+である。したがって，
+
+.. math::
+    \sigma_x
+    =\frac{1}{2\sqrt{a}}
+    \sqrt{1+\left(\frac{2\hbar at}{m}\right)^2},
+    \quad
+    \dv{\braket{x}}{t}=\frac{\hbar\ell}{m}
+
+となる。
+
+ここで，エネルギー–時間不確定性原理の両辺は，
+
+.. math::
+    \begin{aligned}
+        \sigma_H\sigma_x
+        &=\frac{\hbar^2}{2m}
+        \sqrt{
+            \left(\ell^2+\frac{a}{2}\right)
+            \left(1+\beta^2\right)
+        }
+        \\
+        \frac{\hbar}{2}
+        \left|\dv{\braket{x}}{t}\right|
+        &=\frac{\hbar^2}{2m}|\ell|
+    \end{aligned}
+
+である。根号内と `\ell^2` の差は，
+
+.. math::
+    \left(\ell^2+\frac{a}{2}\right)
+    \left(1+\beta^2\right)-\ell^2
+    =\frac{a}{2}
+    +\beta^2\left(\ell^2+\frac{a}{2}\right)>0
+
+となる。よって，すべての時刻で，
+
+.. math::
+    \sigma_H\sigma_x
+    \geq
+    \frac{\hbar}{2}
+    \left|\dv{\braket{x}}{t}\right|
+
+が成り立つ。なお， `\ell=0` の場合は右辺が0となるが，波束そのものは時間とともに広がる。

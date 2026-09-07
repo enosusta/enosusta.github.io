@@ -1,2 +1,70 @@
 Problem 3.13
 ==================
+
+逆 Fourier 変換である式 (3.55) より，
+
+.. math::
+    \Psi(x,t)
+    =\frac{1}{\sqrt{2\pi\hbar}}
+    \int_{-\infty}^{\infty}
+    e^{ipx/\hbar}\Phi(p,t)\,\dd p
+
+である。指数関数について，
+
+.. math::
+    xe^{ipx/\hbar}
+    =-i\hbar\pdv{}{p}e^{ipx/\hbar}
+
+となるので，両辺に `x` を掛けると，
+
+.. math::
+    x\Psi(x,t)
+    =\frac{1}{\sqrt{2\pi\hbar}}
+    \int_{-\infty}^{\infty}
+    \left(
+        -i\hbar\pdv{}{p}e^{ipx/\hbar}
+    \right)\Phi(p,t)\,\dd p
+
+となる。 `p` について部分積分すると，
+
+.. math::
+    \begin{aligned}
+        x\Psi(x,t)
+        &=-\frac{i\hbar}{\sqrt{2\pi\hbar}}
+        \left[e^{ipx/\hbar}\Phi(p,t)\right]_{-\infty}^{\infty}
+        \\
+        &\quad+\frac{1}{\sqrt{2\pi\hbar}}
+        \int_{-\infty}^{\infty}
+        e^{ipx/\hbar}
+        \left(i\hbar\pdv{\Phi}{p}\right)\,\dd p
+    \end{aligned}
+
+となる。物理的な波束では `p\to\pm\infty` のとき `\Phi(p,t)\to0` となるので，境界項は消える。したがって，位置空間で `x` を掛ける操作は，運動量空間で，
+
+.. math::
+    \hat{x}=i\hbar\pdv{}{p}
+
+を作用させる操作に対応する。
+
+Fourier 変換は内積を保つので，Plancherel の定理を `\Psi` と `x\Psi` に適用すると，
+
+.. math::
+    \begin{aligned}
+        \braket{x}
+        &=\braket{\Psi|x\Psi}
+        \\
+        &=\int_{-\infty}^{\infty}
+        \Phi(p,t)^*
+        \left(i\hbar\pdv{\Phi(p,t)}{p}\right)\,\dd p
+    \end{aligned}
+
+となる。よって，
+
+.. math::
+    \braket{x}
+    =\int_{-\infty}^{\infty}
+    \Phi^*
+    \left(i\hbar\pdv{}{p}\right)
+    \Phi\,\dd p
+
+が示された。

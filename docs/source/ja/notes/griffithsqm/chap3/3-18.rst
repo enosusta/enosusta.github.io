@@ -1,2 +1,88 @@
 Problem 3.18
 ==================
+
+a.  一般化された Ehrenfest の定理に `Q=1` を適用する。恒等演算子 `1` は時間に陽に依存せず，すべての演算子と交換するので，
+
+    .. math::
+        \dv{\braket{1}}{t}
+        =\frac{i}{\hbar}\braket{[\hat{H},1]}
+        =0
+
+    となる。ここで，
+
+    .. math::
+        \braket{1}
+        =\braket{\Psi|\Psi}
+        =\int|\Psi(x,t)|^2\,\dd x
+
+    なので，これは全確率，すなわち波動関数の規格化が時間とともに保存されることを表す。局所的な連続の方程式を全空間で積分して得られる式 (1.27) と同じ内容である。
+
+b.  `Q=H` とすると， `[\hat{H},\hat{H}]=0` なので，
+
+    .. math::
+        \dv{\braket{H}}{t}
+        =\left\langle\pdv{\hat{H}}{t}\right\rangle
+
+    となる。通常の時間に陽に依存しない Hamiltonian では `\partial\hat{H}/\partial t=0` なので，
+
+    .. math::
+        \dv{\braket{H}}{t}=0
+
+    となり，エネルギーの期待値が保存される。Hamiltonian が時間に陽に依存する場合には，その陽な時間依存性がエネルギーの変化率を与える。
+
+c.  `Q=x` は時間に陽に依存しない。Hamiltonian を，
+
+    .. math::
+        \hat{H}=\frac{\hat{p}^{\,2}}{2m}+V(x)
+
+    と書くと， `[V(x),x]=0` であり，
+
+    .. math::
+        \begin{aligned}
+            [\hat{p}^{\,2},x]
+            &=\hat{p}[\hat{p},x]+[\hat{p},x]\hat{p}
+            \\
+            &=\hat{p}(-i\hbar)+(-i\hbar)\hat{p}
+            \\
+            &=-2i\hbar\hat{p}
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        [\hat{H},x]=-\frac{i\hbar}{m}\hat{p}
+
+    であり，
+
+    .. math::
+        \dv{\braket{x}}{t}
+        =\frac{\braket{p}}{m}
+
+    を得る。これは式 (1.33) であり，速度と運動量の古典的関係 `p=mv` の期待値版である。
+
+d.  `Q=p` も時間に陽に依存しない。 `[\hat{p}^{\,2},\hat{p}]=0` であり，問題 3.14 の \(c) より，
+
+    .. math::
+        [V(x),\hat{p}]
+        =i\hbar\dv{V}{x}
+
+    なので，
+
+    .. math::
+        [\hat{H},\hat{p}]
+        =i\hbar\dv{V}{x}
+
+    となる。よって，
+
+    .. math::
+        \dv{\braket{p}}{t}
+        =-\left\langle\dv{V}{x}\right\rangle
+        =\braket{F}
+
+    である。これは式 (1.38) であり，Newton の第2法則 `\dd p/\dd t=F` の量子力学的な期待値版である。\(c) と \(d) を組み合わせると，
+
+    .. math::
+        m\dv{^2\braket{x}}{t^2}
+        =-\left\langle\dv{V}{x}\right\rangle
+
+    という通常の Ehrenfest の定理も得られる。

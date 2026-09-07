@@ -1,2 +1,42 @@
 Problem 3.24
 ==================
+
+正規直交基底 `\{|e_n\rangle\}` における行列要素を，
+
+.. math::
+    Q_{mn}=\braket{e_m|\hat{Q}e_n}
+
+と書く。 `\hat{Q}` の Hermitian 性より，
+
+.. math::
+    \braket{e_m|\hat{Q}e_n}
+    =\braket{\hat{Q}e_m|e_n}
+
+である。一方，内積の共役対称性から，
+
+.. math::
+    \begin{aligned}
+        Q_{nm}^*
+        &=\braket{e_n|\hat{Q}e_m}^*
+        \\
+        &=\braket{\hat{Q}e_m|e_n}
+    \end{aligned}
+
+となる。したがって，
+
+.. math::
+    Q_{mn}=Q_{nm}^*
+
+である。行列の随伴の成分は，
+
+.. math::
+    \left(\mathbf{Q}^\dagger\right)_{mn}=Q_{nm}^*
+
+であるから，
+
+.. math::
+    Q_{mn}=Q_{nm}^*
+    \iff
+    \mathbf{Q}^\dagger=\mathbf{Q}
+
+となる。特に， `m=n` とすると `Q_{nn}=Q_{nn}^*` なので，対角要素は実数である。

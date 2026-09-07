@@ -1,2 +1,103 @@
 Problem 3.43
 ==================
+
+a.  規格化された状態 `|\psi\rangle` に対して，
+
+    .. math::
+        |f\rangle
+        =\left(\hat{A}-\braket{A}\right)|\psi\rangle,
+        \quad
+        |g\rangle
+        =\left(\hat{B}-\braket{B}\right)|\psi\rangle
+
+    と置く。このとき，
+
+    .. math::
+        \braket{f|f}=\sigma_A^2,
+        \quad
+        \braket{g|g}=\sigma_B^2
+
+    である。Schwarz の不等式より，
+
+    .. math::
+        \sigma_A^2\sigma_B^2
+        =\braket{f|f}\braket{g|g}
+        \geq|\braket{f|g}|^2
+
+    を得る。 `z=\braket{f|g}` と置けば，
+
+    .. math::
+        |z|^2
+        =\left(\operatorname{Re}z\right)^2
+        +\left(\operatorname{Im}z\right)^2
+
+    である。 `\hat{A}`， `\hat{B}` は Hermitian 演算子なので，
+
+    .. math::
+        \begin{aligned}
+            z
+            &=\left\langle
+                \left(\hat{A}-\braket{A}\right)
+                \left(\hat{B}-\braket{B}\right)
+            \right\rangle
+            \\
+            z^*
+            &=\left\langle
+                \left(\hat{B}-\braket{B}\right)
+                \left(\hat{A}-\braket{A}\right)
+            \right\rangle
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            2\operatorname{Re}z
+            &=z+z^*
+            \\
+            &=\braket{AB+BA}
+            -2\braket{A}\braket{B}
+            =\braket{D}
+            \\
+            2i\operatorname{Im}z
+            &=z-z^*
+            =\braket{[A,B]}
+            =i\braket{C}
+        \end{aligned}
+
+    である。よって，
+
+    .. math::
+        \operatorname{Re}z=\frac{1}{2}\braket{D},
+        \quad
+        \operatorname{Im}z=\frac{1}{2}\braket{C}
+
+    となり，Schwarz の不等式へ戻すと，
+
+    .. math::
+        \sigma_A^2\sigma_B^2
+        \geq\frac{1}{4}
+        \left(\braket{C}^2+\braket{D}^2\right)
+
+    を得る。通常の不確定性関係は，右辺から非負の `\braket{D}^2/4` を除いたものである。
+
+b.  `B=A` とすると， `[A,A]=0` なので `\hat{C}=0` である。また，
+
+    .. math::
+        \hat{D}=2\hat{A}^2-2\braket{A}^2
+
+    であり，その期待値は，
+
+    .. math::
+        \braket{D}
+        =2\left(\braket{A^2}-\braket{A}^2\right)
+        =2\sigma_A^2
+
+    となる。したがって，拡張された不確定性関係は，
+
+    .. math::
+        \sigma_A^4
+        \geq\frac{1}{4}\left(2\sigma_A^2\right)^2
+        =\sigma_A^4
+
+    となり，常に等号を満たす。ただし，これは恒等式にすぎず，新しい制約を与えない。

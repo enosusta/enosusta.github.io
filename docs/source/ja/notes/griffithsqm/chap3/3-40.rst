@@ -1,2 +1,116 @@
 Problem 3.40
 ==================
+
+位置の期待値をエネルギー固有基底で展開すると，
+
+.. math::
+    \braket{x}
+    =\sum_{m,n=0}^{\infty}
+    c_m^*c_n
+    e^{i\left(E_m-E_n\right)t/\hbar}
+    \braket{m|x|n}
+
+となる。問題 3.39 で得た行列要素より， `\braket{m|x|n}` は `m=n\pm1` の場合にだけ0でない。また，
+
+.. math::
+    E_{n+1}-E_n=\hbar\omega
+
+である。ここで，
+
+.. math::
+    S=\sum_{n=0}^{\infty}
+    \sqrt{n+1}\,c_{n+1}^*c_n
+
+と置く。 `m=n+1` の項の和は，
+
+.. math::
+    \sqrt{\frac{\hbar}{2m\omega}}Se^{i\omega t}
+
+となり， `m=n-1` の項の和はその複素共役となる。したがって，
+
+.. math::
+    \begin{aligned}
+        \braket{x}
+        &=\sqrt{\frac{\hbar}{2m\omega}}
+        \left(
+            Se^{i\omega t}+S^*e^{-i\omega t}
+        \right)
+        \\
+        &=2\sqrt{\frac{\hbar}{2m\omega}}
+        \operatorname{Re}\left(Se^{i\omega t}\right)
+    \end{aligned}
+
+となる。ここで，実定数 `C`， `\phi` を，
+
+.. math::
+    Ce^{-i\phi}
+    =\sqrt{\frac{2\hbar}{m\omega}}S
+    =\sqrt{\frac{2\hbar}{m\omega}}
+    \sum_{n=0}^{\infty}
+    \sqrt{n+1}\,c_{n+1}^*c_n
+
+によって定めると，
+
+.. math::
+    \begin{aligned}
+        \braket{x}
+        &=\operatorname{Re}\left(
+            Ce^{-i\phi}e^{i\omega t}
+        \right)
+        \\
+        &=C\cos\left(\omega t-\phi\right)
+    \end{aligned}
+
+となる。よって，係数 `c_n` によらず，位置の期待値は古典的な角振動数 `\omega` で振動する。
+
+問題 2.40 の波動関数では，0でない展開係数は，
+
+.. math::
+    c_0=\frac{3}{5},
+    \quad
+    c_1=-\frac{2\sqrt{2}}{5},
+    \quad
+    c_2=\frac{2\sqrt{2}}{5}
+
+であり，すべて実数である。したがって，
+
+.. math::
+    \begin{aligned}
+        S
+        &=c_1c_0+\sqrt{2}\,c_2c_1
+        \\
+        &=\left(-\frac{2\sqrt{2}}{5}\right)
+        \frac{3}{5}
+        +\sqrt{2}
+        \left(\frac{2\sqrt{2}}{5}\right)
+        \left(-\frac{2\sqrt{2}}{5}\right)
+        \\
+        &=-\frac{6\sqrt{2}}{25}
+        -\frac{8\sqrt{2}}{25}
+        =-\frac{14\sqrt{2}}{25}
+    \end{aligned}
+
+となる。よって，
+
+.. math::
+    Ce^{-i\phi}
+    =-\frac{28}{25}
+    \sqrt{\frac{\hbar}{m\omega}}
+
+である。 `C\geq0` とする通常の位相規約を採用すれば，
+
+.. math::
+    C=\frac{28}{25}
+    \sqrt{\frac{\hbar}{m\omega}},
+    \quad
+    \phi=\pi\pmod{2\pi}
+
+となる。したがって，この例では，
+
+.. math::
+    \braket{x}
+    =-\frac{28}{25}
+    \sqrt{\frac{\hbar}{m\omega}}
+    \cos(\omega t)
+
+である。

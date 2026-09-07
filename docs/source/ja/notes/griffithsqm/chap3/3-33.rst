@@ -1,2 +1,63 @@
 Problem 3.33
 ==================
+
+a.  `A` の測定で `a_1` を得た直後には，射影公準により，状態は対応する規格化固有状態へ収縮する。したがって，
+
+    .. math::
+        |\Psi\rangle=|\psi_1\rangle
+
+    となる。ただし，物理的に意味をもたない全体位相は任意である。
+
+b.  測定直前の状態を `B` の固有基底で表すと，
+
+    .. math::
+        |\psi_1\rangle
+        =\frac{3}{5}|\phi_1\rangle
+        +\frac{4}{5}|\phi_2\rangle
+
+    となる。よって，可能な測定結果と Born の規則による確率は，
+
+    .. math::
+        P(b_1)=\frac{9}{25},
+        \quad
+        P(b_2)=\frac{16}{25}
+
+    である。各結果を得た直後の状態は，それぞれ `|\phi_1\rangle`， `|\phi_2\rangle` となる。
+
+c.  与えられた基底変換は直交変換なので，逆変換は，
+
+    .. math::
+        |\phi_1\rangle
+        =\frac{3}{5}|\psi_1\rangle
+        +\frac{4}{5}|\psi_2\rangle,
+        \quad
+        |\phi_2\rangle
+        =\frac{4}{5}|\psi_1\rangle
+        -\frac{3}{5}|\psi_2\rangle
+
+    である。したがって，条件付き確率は，
+
+    .. math::
+        P(a_1\mid b_1)
+        =|\braket{\psi_1|\phi_1}|^2
+        =\frac{9}{25},
+        \quad
+        P(a_1\mid b_2)
+        =|\braket{\psi_1|\phi_2}|^2
+        =\frac{16}{25}
+
+    となる。 `B` の測定結果は知らされていないので，全確率の公式より，
+
+    .. math::
+        \begin{aligned}
+            P(a_1)
+            &=P(b_1)P(a_1\mid b_1)
+            +P(b_2)P(a_1\mid b_2)
+            \\
+            &=\frac{9}{25}\frac{9}{25}
+            +\frac{16}{25}\frac{16}{25}
+            \\
+            &=\frac{337}{625}
+        \end{aligned}
+
+    を得る。これは， `B` の測定によって生じた2つの状態を，結果が不明なため確率的混合として扱った結果である。

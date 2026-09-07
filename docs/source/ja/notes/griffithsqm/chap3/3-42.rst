@@ -1,2 +1,242 @@
 Problem 3.42
 ==================
+
+a.  `a_-|\alpha\rangle=\alpha|\alpha\rangle` とし，状態は規格化されているものとする。 `a_+=a_-^\dagger` なので，Hermitian 共役を取ると，
+
+    .. math::
+        \langle\alpha|a_+
+        =\alpha^*\langle\alpha|
+
+    となる。したがって，
+
+    .. math::
+        \braket{a_-}=\alpha,
+        \quad
+        \braket{a_+}=\alpha^*,
+        \quad
+        \braket{a_+a_-}=|\alpha|^2
+
+    である。さらに， `[a_-,a_+]=1` より，
+
+    .. math::
+        \braket{a_-a_+}=|\alpha|^2+1,
+        \quad
+        \braket{a_-^2}=\alpha^2,
+        \quad
+        \braket{a_+^2}=\left(\alpha^*\right)^2
+
+    となる。ここで，
+
+    .. math::
+        x=c\left(a_++a_-\right),
+        \quad
+        p=id\left(a_+-a_-\right),
+        \quad
+        c=\sqrt{\frac{\hbar}{2m\omega}},
+        \quad
+        d=\sqrt{\frac{\hbar m\omega}{2}}
+
+    と置くと，1次の期待値は，
+
+    .. math::
+        \begin{aligned}
+            \braket{x}
+            &=c\left(\alpha+\alpha^*\right)
+            =\sqrt{\frac{2\hbar}{m\omega}}
+            \operatorname{Re}\alpha
+            \\
+            \braket{p}
+            &=id\left(\alpha^*-\alpha\right)
+            =\sqrt{2\hbar m\omega}
+            \operatorname{Im}\alpha
+        \end{aligned}
+
+    となる。また，二乗を演算子の順序を保って展開すると，
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2}
+            &=c^2\left[
+                \left(\alpha^*\right)^2
+                +|\alpha|^2
+                +\left(|\alpha|^2+1\right)
+                +\alpha^2
+            \right]
+            \\
+            &=c^2\left[
+                \left(\alpha+\alpha^*\right)^2+1
+            \right]
+            \\
+            &=\braket{x}^2+\frac{\hbar}{2m\omega}
+        \end{aligned}
+
+    および，
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2}
+            &=-d^2\left[
+                \left(\alpha^*\right)^2
+                -|\alpha|^2
+                -\left(|\alpha|^2+1\right)
+                +\alpha^2
+            \right]
+            \\
+            &=d^2\left[
+                1-\left(\alpha-\alpha^*\right)^2
+            \right]
+            \\
+            &=\braket{p}^2+\frac{\hbar m\omega}{2}
+        \end{aligned}
+
+    を得る。
+
+b.  \(a) の結果から，
+
+    .. math::
+        \sigma_x^2
+        =\braket{x^2}-\braket{x}^2
+        =\frac{\hbar}{2m\omega},
+        \quad
+        \sigma_p^2
+        =\braket{p^2}-\braket{p}^2
+        =\frac{\hbar m\omega}{2}
+
+    となる。よって，
+
+    .. math::
+        \sigma_x=\sqrt{\frac{\hbar}{2m\omega}},
+        \quad
+        \sigma_p=\sqrt{\frac{\hbar m\omega}{2}},
+        \quad
+        \sigma_x\sigma_p=\frac{\hbar}{2}
+
+    である。これらの不確定さは `\alpha` に依存せず，基底状態と同じである。
+
+c.  展開，
+
+    .. math::
+        |\alpha\rangle
+        =\sum_{n=0}^{\infty}c_n|n\rangle
+
+    に `a_-` を作用させると，
+
+    .. math::
+        \begin{aligned}
+            a_-|\alpha\rangle
+            &=\sum_{n=1}^{\infty}
+            c_n\sqrt{n}|n-1\rangle
+            \\
+            &=\sum_{r=0}^{\infty}
+            c_{r+1}\sqrt{r+1}|r\rangle
+        \end{aligned}
+
+    となる。これが，
+
+    .. math::
+        \alpha|\alpha\rangle
+        =\sum_{r=0}^{\infty}\alpha c_r|r\rangle
+
+    に等しいので，各 `r` について，
+
+    .. math::
+        c_{r+1}\sqrt{r+1}=\alpha c_r,
+        \quad
+        c_{r+1}=\frac{\alpha}{\sqrt{r+1}}c_r
+
+    となる。この漸化式を反復すると，
+
+    .. math::
+        c_n=\frac{\alpha^n}{\sqrt{n!}}c_0
+
+    を得る。
+
+d.  規格化条件は，
+
+    .. math::
+        \begin{aligned}
+            1=\braket{\alpha|\alpha}
+            &=\sum_{n=0}^{\infty}|c_n|^2
+            \\
+            &=|c_0|^2
+            \sum_{n=0}^{\infty}
+            \frac{|\alpha|^{2n}}{n!}
+            =|c_0|^2e^{|\alpha|^2}
+        \end{aligned}
+
+    である。したがって， `|c_0|=e^{-|\alpha|^2/2}` となる。全体位相を選んで `c_0` を正の実数に取れば，
+
+    .. math::
+        c_0=e^{-|\alpha|^2/2},
+        \quad
+        |\alpha\rangle
+        =e^{-|\alpha|^2/2}
+        \sum_{n=0}^{\infty}
+        \frac{\alpha^n}{\sqrt{n!}}|n\rangle
+
+    である。
+
+e.  `E_n=(n+1/2)\hbar\omega` を代入すると，時刻 `t` の状態は，
+
+    .. math::
+        \begin{aligned}
+            |\alpha;t\rangle
+            &=e^{-|\alpha|^2/2}
+            \sum_{n=0}^{\infty}
+            \frac{\alpha^n}{\sqrt{n!}}
+            e^{-i\left(n+1/2\right)\omega t}|n\rangle
+            \\
+            &=e^{-i\omega t/2}e^{-|\alpha|^2/2}
+            \sum_{n=0}^{\infty}
+            \frac{\left(\alpha e^{-i\omega t}\right)^n}
+            {\sqrt{n!}}|n\rangle
+            \\
+            &=e^{-i\omega t/2}
+            |\alpha e^{-i\omega t}\rangle
+        \end{aligned}
+
+    となる。先頭の因子は全体位相にすぎない。したがって，
+
+    .. math::
+        a_-|\alpha;t\rangle
+        =\alpha e^{-i\omega t}|\alpha;t\rangle,
+        \quad
+        \alpha(t)=\alpha e^{-i\omega t}
+
+    となる。状態はすべての時刻でコヒーレント状態のままであり，\(b) の最小不確定性も保たれる。
+
+f.  複素数 `\alpha` を，
+
+    .. math::
+        \alpha
+        =C\sqrt{\frac{m\omega}{2\hbar}}e^{i\phi}
+
+    と書くと，
+
+    .. math::
+        \alpha(t)
+        =C\sqrt{\frac{m\omega}{2\hbar}}
+        e^{i\left(\phi-\omega t\right)}
+
+    となる。\(a) の結果に代入すれば，
+
+    .. math::
+        \braket{x}(t)
+        =\sqrt{\frac{2\hbar}{m\omega}}
+        \operatorname{Re}\alpha(t)
+        =C\cos\left(\omega t-\phi\right)
+
+    を得る。一方，\(b) より，
+
+    .. math::
+        \sigma_x(t)
+        =\sqrt{\frac{\hbar}{2m\omega}}
+
+    であり，波束の幅は時間によらない。したがって，形と幅を保った波束の中心だけが古典的な調和運動を行う。
+
+g.  基底状態は，
+
+    .. math::
+        a_-|0\rangle=0
+
+    を満たす。したがって， `|0\rangle` は固有値 `\alpha=0` のコヒーレント状態である。

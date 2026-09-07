@@ -1,2 +1,72 @@
 Problem 3.28
 ==================
+
+a.  正弦関数の冪級数より，
+
+    .. math::
+        \sin\hat{D}
+        =\hat{D}-\frac{\hat{D}^{\,3}}{3!}
+        +\frac{\hat{D}^{\,5}}{5!}
+        -\frac{\hat{D}^{\,7}}{7!}+\cdots
+
+    である。これを `x^5` に作用させると，6階以上の導関数は0となる。また，
+
+    .. math::
+        \hat{D}x^5=5x^4,
+        \quad
+        \hat{D}^{\,3}x^5=60x^2,
+        \quad
+        \hat{D}^{\,5}x^5=120
+
+    なので，
+
+    .. math::
+        \begin{aligned}
+            \left(\sin\hat{D}\right)x^5
+            &=5x^4-\frac{60x^2}{3!}+\frac{120}{5!}
+            \\
+            &=5x^4-10x^2+1
+        \end{aligned}
+
+    となる。
+
+b.  幾何級数を用いると，
+
+    .. math::
+        \frac{1}{\mathbf{1}-\hat{D}/2}
+        =\sum_{n=0}^{\infty}
+        \left(\frac{\hat{D}}{2}\right)^n
+
+    となる。 `\cos x` の導関数について，
+
+    .. math::
+        \hat{D}^{\,2k}\cos x=(-1)^k\cos x,
+        \quad
+        \hat{D}^{\,2k+1}\cos x=(-1)^{k+1}\sin x
+
+    なので，偶数次と奇数次に分ければ，
+
+    .. math::
+        \begin{aligned}
+            \left(
+                \frac{1}{\mathbf{1}-\hat{D}/2}
+            \right)\cos x
+            &=\sum_{k=0}^{\infty}
+            \frac{(-1)^k}{2^{2k}}\cos x
+            +\sum_{k=0}^{\infty}
+            \frac{(-1)^{k+1}}{2^{2k+1}}\sin x
+            \\
+            &=\frac{1}{1+1/4}\cos x
+            -\frac{1}{2}\frac{1}{1+1/4}\sin x
+            \\
+            &=\frac{4}{5}\cos x-\frac{2}{5}\sin x
+        \end{aligned}
+
+    となる。確認のため， `g=(4/5)\cos x-(2/5)\sin x` と置くと，
+
+    .. math::
+        \left(\mathbf{1}-\frac{\hat{D}}{2}\right)g
+        =g-\frac{1}{2}g'
+        =\cos x
+
+    となる。

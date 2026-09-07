@@ -1,2 +1,73 @@
 Problem 3.41
 ==================
+
+測定確率が等しいことから，時刻 `t=0` の状態は，全体位相を除いて，
+
+.. math::
+    |S(0)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(|0\rangle+e^{i\theta}|1\rangle\right)
+
+と書ける。ここで，相対位相 `\theta` は任意である。調和振動子の運動量演算子を，
+
+.. math::
+    p=i\sqrt{\frac{\hbar m\omega}{2}}
+    \left(a_+-a_-\right)
+    \coloneqq id\left(a_+-a_-\right)
+
+と書く。この2準位部分空間で0でない行列要素は，
+
+.. math::
+    \braket{0|p|1}=-id,
+    \quad
+    \braket{1|p|0}=id
+
+である。したがって，
+
+.. math::
+    \begin{aligned}
+        \braket{p}_{t=0}
+        &=\frac{1}{2}\left(
+            e^{i\theta}\braket{0|p|1}
+            +e^{-i\theta}\braket{1|p|0}
+        \right)
+        \\
+        &=\frac{id}{2}
+        \left(e^{-i\theta}-e^{i\theta}\right)
+        =d\sin\theta
+    \end{aligned}
+
+となる。 `\sin\theta\leq1` なので，最大値は `\theta=\pi/2` のときに達せられ，
+
+.. math::
+    \braket{p}_{\max}
+    =\sqrt{\frac{\hbar m\omega}{2}}
+
+となる。この相対位相をもつ初期状態は，
+
+.. math::
+    |S(0)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(|0\rangle+i|1\rangle\right)
+
+である。 `E_0=\hbar\omega/2`， `E_1=3\hbar\omega/2` を用いて時間発展させると，
+
+.. math::
+    |S(t)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(
+        e^{-i\omega t/2}|0\rangle
+        +ie^{-3i\omega t/2}|1\rangle
+    \right)
+
+を得る。したがって，位置表示では，
+
+.. math::
+    \Psi(x,t)
+    =\frac{1}{\sqrt{2}}
+    \left[
+        \psi_0(x)e^{-i\omega t/2}
+        +i\psi_1(x)e^{-3i\omega t/2}
+    \right]
+
+である。なお，状態全体に一定の位相を掛けても同じ物理状態を表す。

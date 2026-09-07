@@ -1,2 +1,55 @@
 Problem 3.2
 ==================
+
+a.  `0<x<1` では `x^\nu` は実数かつ正なので，
+
+    .. math::
+        \int_0^1|x^\nu|^2\,\dd x
+        =\int_0^1x^{2\nu}\,\dd x
+
+    を調べればよい。 `2\nu\neq-1` のとき， `\varepsilon>0` として，
+
+    .. math::
+        \int_\varepsilon^1x^{2\nu}\,\dd x
+        =\frac{1-\varepsilon^{2\nu+1}}{2\nu+1}
+
+    となる。 `\varepsilon\to0^+` で有限な極限をもつための条件は `2\nu+1>0` である。境界値 `2\nu+1=0` では，
+
+    .. math::
+        \int_\varepsilon^1\frac{\dd x}{x}=-\ln\varepsilon
+
+    が発散し， `2\nu+1<0` でもべき発散する。したがって，
+
+    .. math::
+        x^\nu\in L^2(0,1)\quad\iff\quad
+        \nu>-\frac{1}{2}
+
+    となる。
+
+b.  `\nu=1/2` のとき， `f(x)=x^{1/2}` について，
+
+    .. math::
+        \int_0^1|f(x)|^2\,\dd x
+        =\int_0^1x\,\dd x
+        =\frac{1}{2}<\infty
+
+    なので， `f\in L^2(0,1)` である。また， `xf(x)=x^{3/2}` であるから，
+
+    .. math::
+        \int_0^1|xf(x)|^2\,\dd x
+        =\int_0^1x^3\,\dd x
+        =\frac{1}{4}<\infty
+
+    となり， `xf` も同じ Hilbert 空間に属する。一方，
+
+    .. math::
+        \dv{f}{x}=\frac{1}{2\sqrt{x}}
+
+    なので，
+
+    .. math::
+        \int_0^1\left|\dv{f}{x}\right|^2\,\dd x
+        =\frac{1}{4}\int_0^1\frac{\dd x}{x}
+        =\infty
+
+    となる。したがって， `f'\notin L^2(0,1)` である。つまり，ある関数が Hilbert 空間に属しても，微分演算子を作用させた結果が同じ空間に属するとは限らない。

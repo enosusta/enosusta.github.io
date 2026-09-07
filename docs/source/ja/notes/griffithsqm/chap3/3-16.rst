@@ -1,2 +1,43 @@
 Problem 3.16
 ==================
+
+背理法で示す。 `\hat{P}` と `\hat{Q}` が，共通固有関数の完全な集合 `\{f_n\}` をもつと仮定する。各 `n` について，
+
+.. math::
+    \hat{P}f_n=p_nf_n,\quad
+    \hat{Q}f_n=q_nf_n
+
+と書ける。このとき，
+
+.. math::
+    \begin{aligned}
+        [\hat{P},\hat{Q}]f_n
+        &=\hat{P}\hat{Q}f_n-\hat{Q}\hat{P}f_n
+        \\
+        &=\hat{P}(q_nf_n)-\hat{Q}(p_nf_n)
+        \\
+        &=q_np_nf_n-p_nq_nf_n
+        \\
+        &=0
+    \end{aligned}
+
+となる。
+
+集合が完全なので，Hilbert 空間内の任意の関数 `f` は，
+
+.. math::
+    f=\sum_n c_nf_n
+
+と展開できる。交換子の線形性より，
+
+.. math::
+    [\hat{P},\hat{Q}]f
+    =\sum_n c_n[\hat{P},\hat{Q}]f_n
+    =0
+
+である。これはすべての `f` について成り立つので，演算子として，
+
+.. math::
+    [\hat{P},\hat{Q}]=0
+
+でなければならない。したがって， `[\hat{P},\hat{Q}]\neq0` である2つの演算子が共通固有関数の完全系をもつという仮定は矛盾する。よって，交換しない2つの演算子は共通固有関数の完全系をもちえない。

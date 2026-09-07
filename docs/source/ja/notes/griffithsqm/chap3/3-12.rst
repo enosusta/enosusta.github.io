@@ -1,2 +1,54 @@
 Problem 3.12
 ==================
+
+自由粒子の一般解は，式 (2.101) より，
+
+.. math::
+    \Psi(x,t)
+    =\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}
+    \phi(k)e^{ikx}e^{-i\hbar k^2t/(2m)}\,\dd k
+
+である。運動量固有関数の波数と運動量は `p=\hbar k` で結ばれる。そこで， `p'=\hbar k` および `\dd k=\dd p'/\hbar` と変数変換すると，
+
+.. math::
+    \begin{aligned}
+        \Psi(x,t)
+        &=\frac{1}{\sqrt{2\pi}\hbar}
+        \int_{-\infty}^{\infty}
+        \phi\left(\frac{p'}{\hbar}\right)
+        e^{ip'x/\hbar}e^{-ip'^2t/(2m\hbar)}\,\dd p'
+        \\
+        &=\frac{1}{\sqrt{2\pi\hbar}}
+        \int_{-\infty}^{\infty}e^{ip'x/\hbar}
+        \left[
+            \frac{1}{\sqrt{\hbar}}
+            \phi\left(\frac{p'}{\hbar}\right)
+            e^{-ip'^2t/(2m\hbar)}
+        \right]\,\dd p'
+    \end{aligned}
+
+となる。これを逆変換の式 (3.55) と比較すると，
+
+.. math::
+    \Phi(p,t)
+    =\frac{1}{\sqrt{\hbar}}
+    \phi\left(\frac{p}{\hbar}\right)
+    \exp\left(-\frac{ip^2t}{2m\hbar}\right)
+
+を得る。因子 `1/\sqrt{\hbar}` は， `k` と `p` の確率密度の間で，
+
+.. math::
+    |\phi(k)|^2\,\dd k
+    =|\Phi(p,t)|^2\,\dd p
+
+が成り立つために必要である。
+
+時間依存性は絶対値が `1` の位相因子だけなので，
+
+.. math::
+    |\Phi(p,t)|^2
+    =\frac{1}{\hbar}
+    \left|\phi\left(\frac{p}{\hbar}\right)\right|^2
+
+となり，時間に依存しない。したがって，自由粒子の運動量分布は時間発展によって変化せず，運動量が保存される。
