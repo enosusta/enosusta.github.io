@@ -36,6 +36,7 @@ build-language:
 
 site: html
 	@$(PYTHON) render_site_index.py site/index.html "$(BUILDDIR)/html/index.html"
+	@cp site/sitemap.xml "$(BUILDDIR)/html/sitemap.xml"
 	@touch "$(BUILDDIR)/html/.nojekyll"
 
 clean:
