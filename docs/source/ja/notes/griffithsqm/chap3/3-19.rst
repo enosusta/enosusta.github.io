@@ -1,7 +1,7 @@
 Problem 3.19
 ==================
 
-a.  問題 3.18 で得た関係，
+a.  :ref:`notes/griffithsqm/chap3/3-18:Problem 3.18` より，
 
     .. math::
         \dv{\braket{x}}{t}
@@ -10,19 +10,19 @@ a.  問題 3.18 で得た関係，
         \dv{\braket{p}}{t}
         =-\left\langle\dv{V}{x}\right\rangle
 
-    を用いる。自由粒子では `V(x)=0` なので，
+    である。自由粒子では `V(x)=0` なので，
 
     .. math::
         \dv{\braket{p}}{t}=0
 
-    となる。したがって， `\braket{p}=\braket{p}_0` は時間に依存しない。これを第1式に代入して積分すると，
+    となる。したがって， `\braket{p}` は時間に依存しない。これを第1式に代入して積分すると，
 
     .. math::
         \braket{x}(t)
         =\braket{x}(0)
-        +\frac{\braket{p}(0)}{m}t
+        +\frac{\braket{p}}{m}t
 
-    となる。よって，任意の規格化された自由粒子の波束の重心は，一定速度 `\braket{p}(0)/m` で運動する。波束の形そのものは広がりうるが，重心は等速運動する。
+    となる。
 
 b.  調和振動子では，
 
@@ -31,7 +31,7 @@ b.  調和振動子では，
         \quad
         \dv{V}{x}=m\omega^2x
 
-    なので，問題 3.18 の結果より，
+    なので，
 
     .. math::
         \dv{\braket{p}}{t}
@@ -44,11 +44,4 @@ b.  調和振動子では，
         =\frac{1}{m}\dv{\braket{p}}{t}
         =-\omega^2\braket{x}
 
-    となる。したがって， `\braket{x}` は古典的な単振動方程式を満たし，
-
-    .. math::
-        \braket{x}(t)
-        =\braket{x}(0)\cos(\omega t)
-        +\frac{\braket{p}(0)}{m\omega}\sin(\omega t)
-
-    と表される。これは波束の詳しい形によらず，その重心が古典的な角振動数 `\omega` で振動することを示している。
+    となる。したがって， `\braket{x}` は古典的な単振動方程式を満たす。

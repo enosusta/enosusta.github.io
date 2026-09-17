@@ -1,7 +1,7 @@
 Problem 3.13
 ==================
 
-逆 Fourier 変換である式 (3.55) より，
+式 (3.55) より，
 
 .. math::
     \Psi(x,t)
@@ -9,7 +9,7 @@ Problem 3.13
     \int_{-\infty}^{\infty}
     e^{ipx/\hbar}\Phi(p,t)\,\dd p
 
-である。指数関数について，
+であり，指数関数について，
 
 .. math::
     xe^{ipx/\hbar}
@@ -39,14 +39,7 @@ Problem 3.13
         \left(i\hbar\pdv{\Phi}{p}\right)\,\dd p
     \end{aligned}
 
-となる。物理的な波束では `p\to\pm\infty` のとき `\Phi(p,t)\to0` となるので，境界項は消える。したがって，位置空間で `x` を掛ける操作は，運動量空間で，
-
-.. math::
-    \hat{x}=i\hbar\pdv{}{p}
-
-を作用させる操作に対応する。
-
-Fourier 変換は内積を保つので，Plancherel の定理を `\Psi` と `x\Psi` に適用すると，
+となる。 `p\to\pm\infty` のとき `\Phi(p,t)\to0` と仮定すると境界項はゼロとなる。Fourier 変換は内積を保つので，
 
 .. math::
     \begin{aligned}
@@ -56,15 +49,11 @@ Fourier 変換は内積を保つので，Plancherel の定理を `\Psi` と `x\P
         &=\int_{-\infty}^{\infty}
         \Phi(p,t)^*
         \left(i\hbar\pdv{\Phi(p,t)}{p}\right)\,\dd p
+        \\
+        &=\int_{-\infty}^{\infty}
+        \Phi^*
+        \left(i\hbar\pdv{}{p}\right)
+        \Phi\,\dd p
     \end{aligned}
 
-となる。よって，
-
-.. math::
-    \braket{x}
-    =\int_{-\infty}^{\infty}
-    \Phi^*
-    \left(i\hbar\pdv{}{p}\right)
-    \Phi\,\dd p
-
-が示された。
+となる。

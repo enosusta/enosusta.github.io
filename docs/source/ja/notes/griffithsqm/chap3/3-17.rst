@@ -7,13 +7,13 @@ Problem 3.17
     x_0\coloneqq\braket{x},\quad
     p_0\coloneqq\braket{p}
 
-と置く。式 (3.69) は，
+と置くと，式 (3.69) は，
 
 .. math::
     \left(-i\hbar\dv{}{x}-p_0\right)\Psi
     =ia(x-x_0)\Psi
 
-である。微分項を左辺に残して整理すると，
+となる。微分項を左辺に残して整理すると，
 
 .. math::
     -i\hbar\dv{\Psi}{x}
@@ -25,7 +25,7 @@ Problem 3.17
     \frac{1}{\Psi}\dv{\Psi}{x}
     =\frac{ip_0}{\hbar}-\frac{a}{\hbar}(x-x_0)
 
-である。両辺を `x` について積分すると，
+となり，両辺を `x` について積分すると，
 
 .. math::
     \ln\Psi
@@ -40,46 +40,4 @@ Problem 3.17
     \exp\left[-\frac{a}{2\hbar}(x-x_0)^2\right]
     \exp\left(\frac{ip_0x}{\hbar}\right)
 
-である。全実線上で規格化可能となるためには `a>0` が必要である。このとき，
-
-.. math::
-    1
-    =|A|^2\int_{-\infty}^{\infty}
-    e^{-a(x-x_0)^2/\hbar}\,\dd x
-    =|A|^2\sqrt{\frac{\pi\hbar}{a}}
-
-より，全体位相を除いて，
-
-.. math::
-    |A|=\left(\frac{a}{\pi\hbar}\right)^{1/4}
-
 となる。
-
-確認として，この Gauss 波束では，
-
-.. math::
-    \sigma_x^2=\frac{\hbar}{2a}
-
-である。また，もとの方程式より，
-
-.. math::
-    \left(\hat{p}-p_0\right)\Psi
-    =ia(x-x_0)\Psi
-
-なので，
-
-.. math::
-    \begin{aligned}
-        \sigma_p^2
-        &=\braket{
-            \left(\hat{p}-p_0\right)\Psi
-            |
-            \left(\hat{p}-p_0\right)\Psi
-        }
-        \\
-        &=a^2\sigma_x^2
-        \\
-        &=\frac{a\hbar}{2}
-    \end{aligned}
-
-となる。したがって， `\sigma_x\sigma_p=\hbar/2` となり，最小不確定波束であることも確認できる。
