@@ -1,7 +1,7 @@
 Problem 3.5
 ==================
 
-a.  位置を掛ける演算子について， `x` は実数なので，
+a.  `x` は実数なので，
 
     .. math::
         \braket{f|xg}
@@ -14,7 +14,7 @@ a.  位置を掛ける演算子について， `x` は実数なので，
     .. math::
         x^\dagger=x
 
-    である。定数 `i` を掛ける演算子については，
+    である。定数 `i` については，
 
     .. math::
         \braket{f|ig}
@@ -26,7 +26,7 @@ a.  位置を掛ける演算子について， `x` は実数なので，
     .. math::
         i^\dagger=-i
 
-    である。最後に，境界項が消える関数を考えると，部分積分により，
+    である。最後に，部分積分により，
 
     .. math::
         \begin{aligned}
@@ -39,14 +39,14 @@ a.  位置を掛ける演算子について， `x` は実数なので，
             &=\braket{-\dv{}{x}f|g}
         \end{aligned}
 
-    となる。したがって，
+    となるので，
 
     .. math::
         \left(\dv{}{x}\right)^\dagger=-\dv{}{x}
 
-    である。つまり， `\dd/\dd x` は反 Hermitian 演算子であり， `-i\hbar\dd/\dd x` は Hermitian 演算子である。
+    となる。
 
-b.  随伴の定義を繰り返し用いると，
+b.  定義より，
 
     .. math::
         \begin{aligned}
@@ -56,13 +56,13 @@ b.  随伴の定義を繰り返し用いると，
             &=\braket{\hat{R}^\dagger\hat{Q}^\dagger f|g}
         \end{aligned}
 
-    となる。したがって，
+    となるので，
 
     .. math::
         (\hat{Q}\hat{R})^\dagger
         =\hat{R}^\dagger\hat{Q}^\dagger
 
-    であり，積の順序は逆転する。同様に，
+    となる。同様に，
 
     .. math::
         \begin{aligned}
@@ -79,29 +79,29 @@ b.  随伴の定義を繰り返し用いると，
         (\hat{Q}+\hat{R})^\dagger
         =\hat{Q}^\dagger+\hat{R}^\dagger
 
-    である。また，第一引数の係数が複素共役されることから，
+    となる。また，
 
     .. math::
         \braket{f|c\hat{Q}g}
         =c\braket{\hat{Q}^\dagger f|g}
         =\braket{c^*\hat{Q}^\dagger f|g}
 
-    となり，
+    となるので，
 
     .. math::
         (c\hat{Q})^\dagger
         =c^*\hat{Q}^\dagger
 
-    を得る。
+    となる。
 
-c.  式 (2.48) より，
+c.  式 (2.48) は
 
     .. math::
         \hat{a}_+
         =\frac{1}{\sqrt{2\hbar m\omega}}
         \left(-i\hat{p}+m\omega x\right)
 
-    である。係数および `m,\omega` は実数であり， `\hat{p}^\dagger=\hat{p}` および `x^\dagger=x` であるから，
+    であるから，
 
     .. math::
         \begin{aligned}
@@ -115,9 +115,4 @@ c.  式 (2.48) より，
             &=\hat{a}_-
         \end{aligned}
 
-    となる。したがって，
-
-    .. math::
-        \hat{a}_+^\dagger=\hat{a}_-,\quad \hat{a}_-^\dagger=\hat{a}_+
-
-    であり，上昇演算子と下降演算子は互いに Hermitian 共役である。
+    となる。

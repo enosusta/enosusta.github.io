@@ -31,7 +31,7 @@ a.  規格化された状態 `|\psi\rangle` に対して，
         =\left(\operatorname{Re}z\right)^2
         +\left(\operatorname{Im}z\right)^2
 
-    である。 `\hat{A}`， `\hat{B}` は Hermitian 演算子なので，
+    である。 `\hat{A}`， `\hat{B}` はエルミート演算子なので，
 
     .. math::
         \begin{aligned}

@@ -1,7 +1,7 @@
 Problem 3.15
 ==================
 
-Hamiltonian を，
+ハミルトニアン を，
 
 .. math::
     \hat{H}=\frac{\hat{p}^{\,2}}{2m}+V(x)
@@ -53,7 +53,7 @@ Hamiltonian を，
 
 を得る。
 
-定常状態は Hamiltonian の固有状態なので，エネルギーの分散は，
+定常状態は ハミルトニアン の固有状態なので，エネルギーの分散は，
 
 .. math::
     \sigma_H^2

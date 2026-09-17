@@ -78,4 +78,4 @@ c.  外積 `\hat{A}=|\alpha\rangle\langle\beta|` の行列は，列ベクトル 
             A_{31}=-1,\quad A_{32}=0,\quad A_{33}=-2i
         \end{gathered}
 
-    である。対角要素 `A_{33}=-2i` が実数でなく，また `A_{12}=0` に対して `A_{21}^*=-2i\neq0` であるから， `\hat{A}` は Hermitian 演算子ではない。実際， `\hat{A}^\dagger=|\beta\rangle\langle\alpha|\neq\hat{A}` である。
+    である。対角要素 `A_{33}=-2i` が実数でなく，また `A_{12}=0` に対して `A_{21}^*=-2i\neq0` であるから， `\hat{A}` はエルミート演算子ではない。実際， `\hat{A}^\dagger=|\beta\rangle\langle\alpha|\neq\hat{A}` である。

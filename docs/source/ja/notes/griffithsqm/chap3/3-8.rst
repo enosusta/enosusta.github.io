@@ -1,20 +1,13 @@
 Problem 3.8
 ==================
 
-a.  例 3.1 の演算子は `\hat{Q}=i\,\dd/\dd\phi` であり，その規格化された固有関数を，
+a.  例 3.1 の演算子は `\hat{Q}=i\,\dd/\dd\phi` で，規格化された固有関数は，
 
     .. math::
         f_n(\phi)=\frac{1}{\sqrt{2\pi}}e^{-in\phi},
         \quad n=0,\pm1,\pm2,\ldots
 
-    と書ける。実際，
-
-    .. math::
-        \hat{Q}f_n
-        =i\dv{}{\phi}\left(\frac{e^{-in\phi}}{\sqrt{2\pi}}\right)
-        =nf_n
-
-    なので，固有値は整数 `q_n=n` であり，すべて実数である。また， `m,n\in\mathbb{Z}` に対して，
+    となる。固有値は整数 `q_n=n` である。また，異なる整数 `m,n` に対して，
 
     .. math::
         \begin{aligned}
@@ -25,36 +18,23 @@ a.  例 3.1 の演算子は `\hat{Q}=i\,\dd/\dd\phi` であり，その規格化
             &=\frac{1}{2\pi}\int_0^{2\pi}
             e^{i(m-n)\phi}\,\dd\phi
             \\
-            &=\delta_{mn}
+            &= \left.\frac{e^{i(m-n)\phi}}{i(m-n)}\right|_0^{2\pi} =0
         \end{aligned}
 
-    となる。最後の等号は， `m=n` ならば積分が `2\pi` となり， `m\neq n` ならば，
+    となるので，異なる固有値に属する固有関数は直交する。
 
-    .. math::
-        \left.
-        \frac{e^{i(m-n)\phi}}{i(m-n)}
-        \right|_0^{2\pi}
-        =0
-
-    となることから従う。したがって，異なる固有値に属する固有関数は直交する。
-
-b.  問題 3.6 の演算子 `\hat{Q}=\dd^2/\dd\phi^2` について，規格化された固有関数を，
+b.  :ref:`notes/griffithsqm/chap3/3-7:Problem 3.7` の演算子は `\hat{Q}=\dd^2/\dd\phi^2` で，規格化された固有関数は，
 
     .. math::
         u_n(\phi)=\frac{1}{\sqrt{2\pi}}e^{in\phi},
         \quad n\in\mathbb{Z}
 
-    と選ぶと，
-
-    .. math::
-        \hat{Q}u_n=-n^2u_n
-
-    となる。したがって，固有値 `q_n=-n^2` はすべて実数である。さらに，
+    である。固有値 `q_n=-n^2` である。また，異なる整数 `m,n` に対して，
 
     .. math::
         \braket{u_m|u_n}
         =\frac{1}{2\pi}\int_0^{2\pi}
         e^{-im\phi}e^{in\phi}\,\dd\phi
-        =\delta_{mn}
+        =0
 
-    なので，この基底では異なる `n` をもつ固有関数はすべて直交する。特に，異なる固有値，すなわち `m^2\neq n^2` に属する固有関数は必ず直交する。なお， `m=-n\neq0` の場合は固有値が等しく，問題 3.6 で見た二重縮退に対応するが，選んだ2つの固有関数 `e^{in\phi}` と `e^{-in\phi}` はやはり互いに直交している。
+    なるので，異なる `n` をもつ固有関数はすべて直交する。

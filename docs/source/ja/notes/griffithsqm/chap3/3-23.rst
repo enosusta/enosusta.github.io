@@ -48,14 +48,14 @@ Problem 3.23
     =|\alpha\rangle\braket{\alpha|\alpha}
     =|\alpha\rangle
 
-なので， `|\alpha\rangle` の張る1次元部分空間の非零ベクトルは固有値1に属する。一方， `\braket{\alpha|v_\perp}=0` ならば，
+なので， `|\alpha\rangle` の張る1次元部分空間の非ゼロベクトルは固有値1に属する。一方， `\braket{\alpha|v_\perp}=0` ならば，
 
 .. math::
     \hat{P}|v_\perp\rangle
     =|\alpha\rangle\braket{\alpha|v_\perp}
     =0
 
-なので， `|\alpha\rangle` に直交する部分空間の非零ベクトルは固有値0に属する。任意のベクトルは，
+なので， `|\alpha\rangle` に直交する部分空間の非ゼロベクトルは固有値0に属する。任意のベクトルは，
 
 .. math::
     |v\rangle

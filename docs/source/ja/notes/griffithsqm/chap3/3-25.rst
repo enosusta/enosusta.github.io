@@ -12,7 +12,7 @@ Problem 3.25
         &=\epsilon\left(|1\rangle-|2\rangle\right)
     \end{aligned}
 
-となる。したがって， `\{|1\rangle,|2\rangle\}` 基底における Hamiltonian の行列は，
+となる。したがって， `\{|1\rangle,|2\rangle\}` 基底における ハミルトニアン の行列は，
 
 .. math::
     \mathbf{H}

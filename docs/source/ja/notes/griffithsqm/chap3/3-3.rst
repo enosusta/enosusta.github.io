@@ -7,7 +7,7 @@ Problem 3.3
     D(u,v)\coloneqq
     \braket{u|\hat{Q}v}-\braket{\hat{Q}u|v}
 
-と定義する。問題の仮定より，すべての `h` に対して `D(h,h)=0` である。まず `h=f+g` とし，内積の第一引数に関する共役線形性と第二引数に関する線形性を用いると，
+と定義する。問題の仮定より，すべての `h` に対して `D(h,h)=0` である。まず `h=f+g` とし，内積の第一引数に関する線形性と第二引数に関する線形性を用いると，
 
 .. math::
     \begin{aligned}
@@ -26,7 +26,8 @@ Problem 3.3
 
 .. math::
     \begin{aligned}
-        0=D(f+ig,f+ig)
+        0&=D(f+ig,f+ig)
+        \\
         &=D(f,f)+iD(f,g)-iD(g,f)+D(g,g)
         \\
         &=iD(f,g)-iD(g,f)

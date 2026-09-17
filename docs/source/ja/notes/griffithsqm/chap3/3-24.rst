@@ -6,7 +6,7 @@ Problem 3.24
 .. math::
     Q_{mn}=\braket{e_m|\hat{Q}e_n}
 
-と書く。 `\hat{Q}` の Hermitian 性より，
+と書く。 `\hat{Q}` のエルミート性より，
 
 .. math::
     \braket{e_m|\hat{Q}e_n}

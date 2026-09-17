@@ -1,7 +1,7 @@
 Problem 3.4
 ==================
 
-a.  `\hat{Q}` と `\hat{R}` が Hermitian 演算子ならば，
+a.  `\hat{Q}` と `\hat{R}` がエルミート演算子ならば，
 
     .. math::
         \begin{aligned}
@@ -15,9 +15,9 @@ a.  `\hat{Q}` と `\hat{R}` が Hermitian 演算子ならば，
             &=\braket{(\hat{Q}+\hat{R})f|g}
         \end{aligned}
 
-    となる。したがって， `\hat{Q}+\hat{R}` も Hermitian 演算子である。
+    となる。したがって， `\hat{Q}+\hat{R}` もエルミート演算子である。
 
-b.  `\hat{Q}` が Hermitian 演算子ならば，
+b.  `\hat{Q}` がエルミート演算子ならば，
 
     .. math::
         \begin{aligned}
@@ -34,15 +34,15 @@ b.  `\hat{Q}` が Hermitian 演算子ならば，
     .. math::
         (\alpha\hat{Q})^\dagger=\alpha^*\hat{Q}
 
-    である。 `\hat{Q}\neq0` の場合， `\alpha\hat{Q}` が Hermitian 演算子となるための必要十分条件は，
+    である。 `\hat{Q}\neq0` の場合， `\alpha\hat{Q}` がエルミート演算子となるための必要十分条件は，
 
     .. math::
         \alpha^*=\alpha\quad\iff\quad
         \alpha\in\mathbb{R}
 
-    である。なお， `\hat{Q}=0` ならば，任意の `\alpha` に対して `\alpha\hat{Q}` は零演算子となるので，自明に Hermitian 演算子である。
+    である。なお， `\hat{Q}=0` ならば，任意の `\alpha` に対して `\alpha\hat{Q}` はゼロ演算子となるので，自明にエルミート演算子である。
 
-c.  2つの Hermitian 演算子について，
+c.  2つのエルミート演算子について，
 
     .. math::
         \begin{aligned}
@@ -58,7 +58,7 @@ c.  2つの Hermitian 演算子について，
         (\hat{Q}\hat{R})^\dagger
         =\hat{R}\hat{Q}
 
-    となる。したがって，積 `\hat{Q}\hat{R}` が Hermitian 演算子であるための必要十分条件は，
+    となる。したがって，積 `\hat{Q}\hat{R}` がエルミート演算子であるための必要十分条件は，
 
     .. math::
         \hat{Q}\hat{R}=\hat{R}\hat{Q}
@@ -79,9 +79,9 @@ d.  位置演算子について， `x` は実数であるから，
             &=\braket{\hat{x}f|g}
         \end{aligned}
 
-    となり， `\hat{x}` は Hermitian 演算子である。
+    となり， `\hat{x}` はエルミート演算子である。
 
-    Hamiltonian の運動エネルギー部分を，
+    ハミルトニアンの運動エネルギー部分を，
 
     .. math::
         \hat{T}\coloneqq-\frac{\hbar^2}{2m}\dv{^2}{x^2}
@@ -100,7 +100,7 @@ d.  位置演算子について， `x` は実数であるから，
             &=\braket{\hat{T}f|g}
         \end{aligned}
 
-    となる。最後の等号では，仮定した境界条件により境界項がゼロになることを用いた。また，物理的なポテンシャル `V(x)` は実数値なので，
+    となる。ここで境界項がゼロになることを仮定した。また，物理的なポテンシャル `V(x)` は実数値なので，
 
     .. math::
         \begin{aligned}
@@ -112,10 +112,10 @@ d.  位置演算子について， `x` は実数であるから，
             &=\braket{Vf|g}
         \end{aligned}
 
-    となり，ポテンシャル演算子も Hermitian 演算子である。したがって，\(a) より，それらの和，
+    となり，ポテンシャル演算子もエルミート演算子である。したがって，\(a) より，それらの和
 
     .. math::
         \hat{H}
         =-\frac{\hbar^2}{2m}\dv{^2}{x^2}+V(x)
 
-    も Hermitian 演算子である。
+    もエルミート演算子である。

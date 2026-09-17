@@ -76,7 +76,7 @@ c.  2つの固有値方程式を，
 
     であり， `q'\neq q` ならば `\braket{q|q'}=0` となる。よって，相異なる固有値に属する固有ベクトルは直交する。
 
-d.  `\hat{A}`， `\hat{B}` がともに Hermitian 演算子ならば，
+d.  `\hat{A}`， `\hat{B}` がともにエルミート演算子ならば，
 
     .. math::
         \begin{aligned}
@@ -90,7 +90,7 @@ d.  `\hat{A}`， `\hat{B}` がともに Hermitian 演算子ならば，
             =-[\hat{A},\hat{B}]
         \end{aligned}
 
-    となるので，その交換子は反 Hermitian である。また， `\hat{A}`， `\hat{B}` がともに反 Hermitian 演算子の場合にも，
+    となるので，その交換子は反エルミートである。また， `\hat{A}`， `\hat{B}` がともに反エルミート演算子の場合にも，
 
     .. math::
         \begin{aligned}
@@ -102,7 +102,7 @@ d.  `\hat{A}`， `\hat{B}` がともに Hermitian 演算子ならば，
             =-[\hat{A},\hat{B}]
         \end{aligned}
 
-    となる。したがって，この場合の交換子も反 Hermitian である。
+    となる。したがって，この場合の交換子も反エルミートである。
 
 e.  次の2つの演算子を定める。
 
@@ -124,4 +124,4 @@ e.  次の2つの演算子を定める。
         =\frac{\hat{Q}^\dagger-\hat{Q}}{2}
         =-\hat{B}
 
-    となる。よって， `\hat{A}` は Hermitian 演算子， `\hat{B}` は反 Hermitian 演算子であり，任意の `\hat{Q}` が両者の和に分解された。
+    となる。よって， `\hat{A}` はエルミート演算子， `\hat{B}` は反エルミート演算子であり，任意の `\hat{Q}` が両者の和に分解された。

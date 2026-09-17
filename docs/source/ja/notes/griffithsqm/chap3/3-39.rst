@@ -88,7 +88,7 @@ Problem 3.39
         \vdots & \vdots & \vdots & \ddots & \ddots
     \end{pmatrix}
 
-である。 `\mathbf{X}` は実対称行列であり， `\mathbf{P}` は純虚数の Hermitian 行列である。
+である。 `\mathbf{X}` は実対称行列であり， `\mathbf{P}` は純虚数のエルミート行列である。
 
 次に，二乗を因子の順序を保って展開する。 `c^2=\hbar/(2m\omega)`， `d^2=\hbar m\omega/2` より，
 
