@@ -7,7 +7,7 @@ Problem 3.45
     |S(t)\rangle
     =\sum_{n'=0}^{\infty}c_{n'}(t)|n'\rangle
 
-と展開する。問題 3.39 で得た位置演算子の行列要素を用いると，
+と展開する。:ref:`notes/griffithsqm/chap3/3-39:Problem 3.39` で得た位置演算子の行列要素を用いると，
 
 .. math::
     \begin{aligned}
@@ -21,16 +21,12 @@ Problem 3.45
             \sqrt{n'}\,\delta_{n,n'-1}
             +\sqrt{n}\,\delta_{n',n-1}
         \right)
+        \\
+        &=\sqrt{\frac{\hbar}{2m\omega}}
+        \left[
+            \sqrt{n+1}\,c_{n+1}(t)
+            +\sqrt{n}\,c_{n-1}(t)
+        \right]
     \end{aligned}
 
-となる。第1の Kronecker デルタは `n'=n+1`，第2のデルタは `n'=n-1` を選ぶので，
-
-.. math::
-    \braket{n|\hat{x}|S(t)}
-    =\sqrt{\frac{\hbar}{2m\omega}}
-    \left[
-        \sqrt{n+1}\,c_{n+1}(t)
-        +\sqrt{n}\,c_{n-1}(t)
-    \right]
-
-を得る。ただし， `n=0` の場合にも同じ式を使えるように， `c_{-1}(t)=0` とする。これは，位置演算子がエネルギー量子数を1だけ上げる成分と，1だけ下げる成分をもつことを表している。
+となる。

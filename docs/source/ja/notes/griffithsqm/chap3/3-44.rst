@@ -1,7 +1,7 @@
 Problem 3.44
 ==================
 
-a.  第2基底ベクトル，
+a.  ベクトル，
 
     .. math::
         |c\rangle
@@ -12,20 +12,22 @@ a.  第2基底ベクトル，
     .. math::
         \begin{pmatrix}a&b\\b&a\end{pmatrix}
 
-    を対角化すればよい。その規格化固有ベクトルと固有値は，
+    を対角化すればよく，その規格化固有ベクトルと固有値は，
 
     .. math::
-        |+\rangle
-        =\frac{1}{\sqrt{2}}
-        \begin{pmatrix}1\\0\\1\end{pmatrix},
-        \quad E_+=a+b,
-        \quad
-        |-\rangle
-        =\frac{1}{\sqrt{2}}
-        \begin{pmatrix}1\\0\\-1\end{pmatrix},
-        \quad E_-=a-b
+        \begin{aligned}
+            |+\rangle
+            &=\frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\0\\1\end{pmatrix},
+            \quad E_+=a+b
+            \\
+            |-\rangle
+            &=\frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\0\\-1\end{pmatrix},
+            \quad E_-=a-b
+        \end{aligned}
 
-    である。指定された初期状態は `|c\rangle` そのものなので，時間発展によって全体位相を得るだけであり，
+    である。初期状態は `|c\rangle` そのものなので，時間発展によって全体位相を得るだけであり，
 
     .. math::
         |S(t)\rangle
@@ -73,4 +75,4 @@ b.  この場合の初期状態は，
             \end{pmatrix}
         \end{aligned}
 
-    を得る。 `t=0` を代入すると，指定された初期状態へ戻る。
+    となる。

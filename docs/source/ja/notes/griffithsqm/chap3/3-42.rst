@@ -1,7 +1,7 @@
 Problem 3.42
 ==================
 
-a.  `a_-|\alpha\rangle=\alpha|\alpha\rangle` とし，状態は規格化されているものとする。 `a_+=a_-^\dagger` なので，Hermitian 共役を取ると，
+a.  `a_-|\alpha\rangle=\alpha|\alpha\rangle` とし，状態は規格化されているものとする。 `a_+=a_-^\dagger` なので，エルミート共役を取ると，
 
     .. math::
         \langle\alpha|a_+
@@ -36,7 +36,7 @@ a.  `a_-|\alpha\rangle=\alpha|\alpha\rangle` とし，状態は規格化され�
         \quad
         d=\sqrt{\frac{\hbar m\omega}{2}}
 
-    と置くと，1次の期待値は，
+    と置くと，
 
     .. math::
         \begin{aligned}
@@ -51,7 +51,7 @@ a.  `a_-|\alpha\rangle=\alpha|\alpha\rangle` とし，状態は規格化され�
             \operatorname{Im}\alpha
         \end{aligned}
 
-    となる。また，二乗を演算子の順序を保って展開すると，
+    となる。また，
 
     .. math::
         \begin{aligned}
@@ -89,9 +89,9 @@ a.  `a_-|\alpha\rangle=\alpha|\alpha\rangle` とし，状態は規格化され�
             &=\braket{p}^2+\frac{\hbar m\omega}{2}
         \end{aligned}
 
-    を得る。
+    となる。
 
-b.  \(a) の結果から，
+b.  \(a) の結果より，
 
     .. math::
         \sigma_x^2
@@ -102,7 +102,7 @@ b.  \(a) の結果から，
         =\braket{p^2}-\braket{p}^2
         =\frac{\hbar m\omega}{2}
 
-    となる。よって，
+    となるので，
 
     .. math::
         \sigma_x=\sqrt{\frac{\hbar}{2m\omega}},
@@ -111,9 +111,9 @@ b.  \(a) の結果から，
         \quad
         \sigma_x\sigma_p=\frac{\hbar}{2}
 
-    である。これらの不確定さは `\alpha` に依存せず，基底状態と同じである。
+    となる。
 
-c.  展開，
+c.  エネルギー固有状態による展開
 
     .. math::
         |\alpha\rangle
@@ -144,12 +144,12 @@ c.  展開，
         \quad
         c_{r+1}=\frac{\alpha}{\sqrt{r+1}}c_r
 
-    となる。この漸化式を反復すると，
+    となる。この漸化式を繰り返し用いると，
 
     .. math::
         c_n=\frac{\alpha^n}{\sqrt{n!}}c_0
 
-    を得る。
+    となる。
 
 d.  規格化条件は，
 
@@ -164,7 +164,7 @@ d.  規格化条件は，
             =|c_0|^2e^{|\alpha|^2}
         \end{aligned}
 
-    である。したがって， `|c_0|=e^{-|\alpha|^2/2}` となる。全体位相を選んで `c_0` を正の実数に取れば，
+    となるので，
 
     .. math::
         c_0=e^{-|\alpha|^2/2},
@@ -174,7 +174,7 @@ d.  規格化条件は，
         \sum_{n=0}^{\infty}
         \frac{\alpha^n}{\sqrt{n!}}|n\rangle
 
-    である。
+    とできる。
 
 e.  `E_n=(n+1/2)\hbar\omega` を代入すると，時刻 `t` の状態は，
 
@@ -195,7 +195,7 @@ e.  `E_n=(n+1/2)\hbar\omega` を代入すると，時刻 `t` の状態は，
             |\alpha e^{-i\omega t}\rangle
         \end{aligned}
 
-    となる。先頭の因子は全体位相にすぎない。したがって，
+    となる。したがって，
 
     .. math::
         a_-|\alpha;t\rangle
@@ -203,7 +203,7 @@ e.  `E_n=(n+1/2)\hbar\omega` を代入すると，時刻 `t` の状態は，
         \quad
         \alpha(t)=\alpha e^{-i\omega t}
 
-    となる。状態はすべての時刻でコヒーレント状態のままであり，\(b) の最小不確定性も保たれる。
+    となる。
 
 f.  複素数 `\alpha` を，
 
@@ -218,7 +218,7 @@ f.  複素数 `\alpha` を，
         =C\sqrt{\frac{m\omega}{2\hbar}}
         e^{i\left(\phi-\omega t\right)}
 
-    となる。\(a) の結果に代入すれば，
+    となる。これを \(a) の結果に代入すれば，
 
     .. math::
         \braket{x}(t)
@@ -226,17 +226,17 @@ f.  複素数 `\alpha` を，
         \operatorname{Re}\alpha(t)
         =C\cos\left(\omega t-\phi\right)
 
-    を得る。一方，\(b) より，
+    となる。一方，\(b) より，
 
     .. math::
         \sigma_x(t)
         =\sqrt{\frac{\hbar}{2m\omega}}
 
-    であり，波束の幅は時間によらない。したがって，形と幅を保った波束の中心だけが古典的な調和運動を行う。
+    であり，波束の幅は時間によらない。
 
 g.  基底状態は，
 
     .. math::
         a_-|0\rangle=0
 
-    を満たす。したがって， `|0\rangle` は固有値 `\alpha=0` のコヒーレント状態である。
+    を満たすので `|0\rangle` は固有値 `\alpha=0` のコヒーレント状態である。

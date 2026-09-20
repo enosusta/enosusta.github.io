@@ -24,14 +24,7 @@ a.  規格化された状態 `|\psi\rangle` に対して，
         =\braket{f|f}\braket{g|g}
         \geq|\braket{f|g}|^2
 
-    を得る。 `z=\braket{f|g}` と置けば，
-
-    .. math::
-        |z|^2
-        =\left(\operatorname{Re}z\right)^2
-        +\left(\operatorname{Im}z\right)^2
-
-    である。 `\hat{A}`， `\hat{B}` はエルミート演算子なので，
+    となる。ここで， `z:=\braket{f|g}` と置くと，`\hat{A}`， `\hat{B}` はエルミート演算子なので，
 
     .. math::
         \begin{aligned}
@@ -61,11 +54,12 @@ a.  規格化された状態 `|\psi\rangle` に対して，
             \\
             2i\operatorname{Im}z
             &=z-z^*
-            =\braket{[A,B]}
+            \\
+            &=\braket{[A,B]}
             =i\braket{C}
         \end{aligned}
 
-    である。よって，
+    となるので，
 
     .. math::
         \operatorname{Re}z=\frac{1}{2}\braket{D},
@@ -79,7 +73,7 @@ a.  規格化された状態 `|\psi\rangle` に対して，
         \geq\frac{1}{4}
         \left(\braket{C}^2+\braket{D}^2\right)
 
-    を得る。通常の不確定性関係は，右辺から非負の `\braket{D}^2/4` を除いたものである。
+    となる。
 
 b.  `B=A` とすると， `[A,A]=0` なので `\hat{C}=0` である。また，
 
@@ -100,4 +94,4 @@ b.  `B=A` とすると， `[A,A]=0` なので `\hat{C}=0` である。また，
         \geq\frac{1}{4}\left(2\sigma_A^2\right)^2
         =\sigma_A^4
 
-    となり，常に等号を満たす。ただし，これは恒等式にすぎず，新しい制約を与えない。
+    となり，常に等号が満たされる。

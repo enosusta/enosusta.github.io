@@ -1,7 +1,7 @@
 Problem 3.41
 ==================
 
-測定確率が等しいことから，時刻 `t=0` の状態は，全体位相を除いて，
+測定確率が等しいので，時刻 `t=0` の状態は，全体位相を除いて，
 
 .. math::
     |S(0)\rangle
@@ -13,16 +13,16 @@ Problem 3.41
 .. math::
     p=i\sqrt{\frac{\hbar m\omega}{2}}
     \left(a_+-a_-\right)
-    \coloneqq id\left(a_+-a_-\right)
+    \eqqcolon id\left(a_+-a_-\right)
 
-と書く。この2準位部分空間で0でない行列要素は，
+と書くと，この2準位部分空間でゼロでない行列要素は，
 
 .. math::
     \braket{0|p|1}=-id,
     \quad
     \braket{1|p|0}=id
 
-である。したがって，
+となる。したがって，
 
 .. math::
     \begin{aligned}
@@ -60,7 +60,7 @@ Problem 3.41
         +ie^{-3i\omega t/2}|1\rangle
     \right)
 
-を得る。したがって，位置表示では，
+となる。したがって，位置表示では，
 
 .. math::
     \Psi(x,t)
@@ -70,4 +70,4 @@ Problem 3.41
         +i\psi_1(x)e^{-3i\omega t/2}
     \right]
 
-である。なお，状態全体に一定の位相を掛けても同じ物理状態を表す。
+となる。

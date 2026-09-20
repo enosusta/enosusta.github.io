@@ -13,7 +13,7 @@ a.  位置表示で `\hat{p}=-i\hbar\dd/\dd x` とし，
         \quad
         \hat{A}^\dagger=-\gamma\dv{}{x}+W(x)
 
-    である。任意の試験関数 `f(x)` に作用させて積を計算すると，
+    である。任意のテスト関数 `f(x)` に作用させて積を計算すると，
 
     .. math::
         \begin{aligned}
@@ -53,7 +53,7 @@ a.  位置表示で `\hat{p}=-i\hbar\dd/\dd x` とし，
         V_2(x)=W(x)^2
         +\frac{\hbar}{\sqrt{2m}}W'(x)
 
-    を得る。
+    となる。
 
 b.  `\hat{H}_1\psi_n^{(1)}=E_n^{(1)}\psi_n^{(1)}` とする。演算子の結合則を用いると，
 
@@ -70,7 +70,7 @@ b.  `\hat{H}_1\psi_n^{(1)}=E_n^{(1)}\psi_n^{(1)}` とする。演算子の結合
             =E_n^{(1)}\left(\hat{A}\psi_n^{(1)}\right)
         \end{aligned}
 
-    となる。したがって， `\hat{A}\psi_n^{(1)}\neq0` ならば，これは `\hat{H}_2` の同じ固有値 `E_n^{(1)}` に属する固有状態である。また，規格化された `\psi_n^{(1)}` と `E_n^{(1)}>0` に対して，
+    となる。また，規格化された `\psi_n^{(1)}` と `E_n^{(1)}>0` に対して，
 
     .. math::
         \left\|\hat{A}\psi_n^{(1)}\right\|^2
@@ -85,9 +85,7 @@ b.  `\hat{H}_1\psi_n^{(1)}=E_n^{(1)}\psi_n^{(1)}` とする。演算子の結合
         =\frac{1}{\sqrt{E_n^{(1)}}}
         \hat{A}\psi_n^{(1)}
 
-    である。
-
-    逆向きにも， `\hat{H}_2\psi_n^{(2)}=E_n^{(2)}\psi_n^{(2)}` ならば，
+    となる。逆に， `\hat{H}_2\psi_n^{(2)}=E_n^{(2)}\psi_n^{(2)}` ならば，
 
     .. math::
         \begin{aligned}
@@ -103,7 +101,7 @@ b.  `\hat{H}_1\psi_n^{(1)}=E_n^{(1)}\psi_n^{(1)}` とする。演算子の結合
             \left(\hat{A}^\dagger\psi_n^{(2)}\right)
         \end{aligned}
 
-    となる。よって，消去されない正エネルギー状態は2つの ハミルトニアン の間で1対1に対応する。例外になりうるのは， `\hat{A}` または `\hat{A}^\dagger` によって0へ写されるゼロエネルギー状態である。
+    となる。
 
 c.  基底状態が `\hat{A}\psi_0^{(1)}=0` を満たすならば，
 
@@ -111,7 +109,7 @@ c.  基底状態が `\hat{A}\psi_0^{(1)}=0` を満たすならば，
         \gamma\dv{\psi_0^{(1)}}{x}
         +W(x)\psi_0^{(1)}(x)=0
 
-    である。したがって，波動関数が0でない区間では，
+    である。したがって，波動関数がゼロでない区間では，
 
     .. math::
         W(x)
@@ -127,14 +125,14 @@ c.  基底状態が `\hat{A}\psi_0^{(1)}=0` を満たすならば，
         \braket{\psi|\hat{H}_1|\psi}
         =\left\|\hat{A}\psi\right\|^2\geq0
 
-    であり， `\hat{A}\psi_0^{(1)}=0` ならば期待値も0となる。したがって， `E_0^{(1)}=0` である。
+    となり， `\hat{A}\psi_0^{(1)}=0` ならば期待値もゼロとなる。したがって， `E_0^{(1)}=0` である。
 
-d.  次の量を定める。
+d.  簡単のため，
 
     .. math::
         \kappa\coloneqq\frac{m\alpha}{\hbar^2}
 
-    と置くと，基底状態は `\psi_0^{(1)}(x)=\sqrt{\kappa}e^{-\kappa|x|}` である。 `x\neq0` では，
+    と置くと，基底状態は `\psi_0^{(1)}(x)=\sqrt{\kappa}e^{-\kappa|x|}` と書ける。 `x\neq0` では，
 
     .. math::
         \dv{}{x}\ln\psi_0^{(1)}(x)
@@ -152,19 +150,19 @@ d.  次の量を定める。
             \operatorname{sgn}(x)
         \end{aligned}
 
-    となる。 `\operatorname{sgn}(x)=2\theta(x)-1` と書けば，問題 2.23 の \(b) より，分布の意味で，
+    となる。 `\operatorname{sgn}(x)=2\theta(x)-1` と書けば，:ref:`notes/griffithsqm/chap2/2-23:Problem 2.23` の \(b) より，
 
     .. math::
         \dv{}{x}\operatorname{sgn}(x)=2\delta(x)
 
-    である。したがって，
+    となるので，
 
     .. math::
         W^2=\frac{m\alpha^2}{2\hbar^2},
         \quad
         \gamma W'=\alpha\delta(x)
 
-    となる。\(a) の2つの式へ代入すると，
+    となる。これを \(a) の2つの式へ代入すると，
 
     .. math::
         V_1(x)
@@ -176,4 +174,4 @@ d.  次の量を定める。
         V_2(x)
         =\frac{m\alpha^2}{2\hbar^2}+\alpha\delta(x)
 
-    となる。これは同じ定数だけ上方へずらした反発性デルタ関数障壁であり，束縛状態をもたない。 `\hat{H}_1` のゼロエネルギー束縛状態だけが相手をもたず，正エネルギーの散乱スペクトルは両者で対応する。
+    となる。
