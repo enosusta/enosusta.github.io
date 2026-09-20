@@ -10,7 +10,7 @@ Problem 3.40
     e^{i\left(E_m-E_n\right)t/\hbar}
     \braket{m|x|n}
 
-となる。問題 3.39 で得た行列要素より， `\braket{m|x|n}` は `m=n\pm1` の場合にだけ0でない。また，
+となる。:ref:`notes/griffithsqm/chap3/3-39:Problem 3.39` より， `\braket{m|x|n}` は `m=n\pm1` の場合にだけゼロでない。また，
 
 .. math::
     E_{n+1}-E_n=\hbar\omega
@@ -21,7 +21,7 @@ Problem 3.40
     S=\sum_{n=0}^{\infty}
     \sqrt{n+1}\,c_{n+1}^*c_n
 
-と置く。 `m=n+1` の項の和は，
+と置くと， `m=n+1` の項の和は，
 
 .. math::
     \sqrt{\frac{\hbar}{2m\omega}}Se^{i\omega t}
@@ -40,7 +40,7 @@ Problem 3.40
         \operatorname{Re}\left(Se^{i\omega t}\right)
     \end{aligned}
 
-となる。ここで，実定数 `C`， `\phi` を，
+となる。ここで，実定数 `C, \phi` を，
 
 .. math::
     Ce^{-i\phi}
@@ -49,7 +49,7 @@ Problem 3.40
     \sum_{n=0}^{\infty}
     \sqrt{n+1}\,c_{n+1}^*c_n
 
-によって定めると，
+と定義すると，
 
 .. math::
     \begin{aligned}
@@ -61,9 +61,9 @@ Problem 3.40
         &=C\cos\left(\omega t-\phi\right)
     \end{aligned}
 
-となる。よって，係数 `c_n` によらず，位置の期待値は古典的な角振動数 `\omega` で振動する。
+となる。
 
-問題 2.40 の波動関数では，0でない展開係数は，
+:ref:`notes/griffithsqm/chap2/2-40:Problem 2.40` の波動関数では，ゼロでない展開係数は，
 
 .. math::
     c_0=\frac{3}{5},
@@ -90,14 +90,14 @@ Problem 3.40
         =-\frac{14\sqrt{2}}{25}
     \end{aligned}
 
-となる。よって，
+となり，
 
 .. math::
     Ce^{-i\phi}
     =-\frac{28}{25}
     \sqrt{\frac{\hbar}{m\omega}}
 
-である。 `C\geq0` とする通常の位相規約を採用すれば，
+となる。したがって，
 
 .. math::
     C=\frac{28}{25}
@@ -105,12 +105,4 @@ Problem 3.40
     \quad
     \phi=\pi\pmod{2\pi}
 
-となる。したがって，この例では，
-
-.. math::
-    \braket{x}
-    =-\frac{28}{25}
-    \sqrt{\frac{\hbar}{m\omega}}
-    \cos(\omega t)
-
-である。
+となる。

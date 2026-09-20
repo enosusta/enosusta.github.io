@@ -14,14 +14,14 @@ Problem 3.37
     \quad
     [x,p]=i\hbar
 
-である。まず，
+であるから，まず，
 
 .. math::
     [p^2,x]
     =p[p,x]+[p,x]p
     =-2i\hbar p
 
-なので，
+で，
 
 .. math::
     [p^2,xp]
@@ -35,7 +35,7 @@ Problem 3.37
     =[V(x),x]p+x[V(x),p]
     =i\hbar xV'(x)
 
-である。したがって，
+となる。したがって，
 
 .. math::
     \begin{aligned}
@@ -53,15 +53,13 @@ Problem 3.37
         -\left\langle x\pdv{V}{x}\right\rangle
     \end{aligned}
 
-を得る。
-
-定常状態では，
+となる。定常状態では，
 
 .. math::
     |\Psi(t)\rangle
     =e^{-iEt/\hbar}|\psi\rangle
 
-である。任意の時間に陽に依存しない演算子 `\hat{Q}` について，
+であり，任意の時間に陽に依存しない演算子 `\hat{Q}` について，
 
 .. math::
     \begin{aligned}
@@ -78,9 +76,7 @@ Problem 3.37
     2\braket{T}
     =\left\langle x\dv{V}{x}\right\rangle
 
-となり，ビリアル定理が得られる。
-
-調和振動子では，
+となる。調和振動子では，
 
 .. math::
     V(x)=\frac{1}{2}m\omega^2x^2,
@@ -106,4 +102,4 @@ Problem 3.37
     \braket{T}_n=\braket{V}_n
     =\frac{1}{2}\left(n+\frac{1}{2}\right)\hbar\omega
 
-となる。 `n=0,1` では，それぞれ `\hbar\omega/4`， `3\hbar\omega/4` となり，問題 2.11 の結果と一致する。また，任意の `n` に対する上式は問題 2.12 の結果と一致する。
+となり，:ref:`notes/griffithsqm/chap2/2-12:Problem 2.12` の結果と一致する。

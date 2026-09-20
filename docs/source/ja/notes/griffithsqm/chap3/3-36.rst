@@ -1,13 +1,13 @@
 Problem 3.36
 ==================
 
-a.  `a>0` とし，全体位相を選んで `A>0` とする。規格化条件は，
+a.  規格化条件より，
 
     .. math::
-        1=A^2\int_{-\infty}^{\infty}
+        1=|A|^2\int_{-\infty}^{\infty}
         \frac{\dd x}{\left(x^2+a^2\right)^2}
 
-    である。標準積分，
+    となるので，
 
     .. math::
         \int_{-\infty}^{\infty}
@@ -17,11 +17,14 @@ a.  `a>0` とし，全体位相を選んで `A>0` とする。規格化条件は
     を用いると，
 
     .. math::
-        A^2\frac{\pi}{2a^3}=1,
-        \quad
+        |A|^2\frac{\pi}{2a^3}=1
+
+    となるので，
+
+    .. math::
         A=\sqrt{\frac{2a^3}{\pi}}
 
-    となる。
+    とできる。
 
 b.  `|\Psi|^2` は偶関数なので，
 
@@ -59,7 +62,7 @@ b.  `|\Psi|^2` は偶関数なので，
         \quad
         \sigma_x=a
 
-    を得る。
+    となる。
 
 c.  Fourier 変換に必要な積分は，
 
@@ -68,7 +71,7 @@ c.  Fourier 変換に必要な積分は，
         \frac{e^{-ipx/\hbar}}{x^2+a^2}\,\dd x
         =\frac{\pi}{a}e^{-a|p|/\hbar}
 
-    である。よって，
+    となるので，
 
     .. math::
         \begin{aligned}
@@ -80,7 +83,7 @@ c.  Fourier 変換に必要な積分は，
             e^{-a|p|/\hbar}
         \end{aligned}
 
-    となる。規格化を直接確認すると，
+    となる。規格化は，
 
     .. math::
         \begin{aligned}
@@ -94,7 +97,7 @@ c.  Fourier 変換に必要な積分は，
             =1
         \end{aligned}
 
-    となる。
+    と確認できる。
 
 d.  `|\Phi|^2` は偶関数なので，
 
@@ -129,7 +132,7 @@ d.  `|\Phi|^2` は偶関数なので，
         \quad
         \sigma_p=\frac{\hbar}{\sqrt{2}\,a}
 
-    を得る。
+    となる。
 
 e.  以上の結果から，
 

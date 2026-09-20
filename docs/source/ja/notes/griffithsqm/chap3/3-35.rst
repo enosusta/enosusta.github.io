@@ -6,7 +6,7 @@ Problem 3.35
 .. math::
     p_0=\frac{2\pi\hbar}{\lambda}
 
-と置く。定義に従って Fourier 変換すると，
+と置いて，Fourier 変換すると，
 
 .. math::
     \begin{aligned}
@@ -22,58 +22,24 @@ Problem 3.35
             \left(p-p_0\right)n\lambda/\hbar
         \right]}
         {p-p_0}
+        \\
+        &=\sqrt{\frac{\hbar}{\pi n\lambda}}
+        \frac{
+            \sin\left[
+                \left(p-p_0\right)n\lambda/\hbar
+            \right]
+        }
+        {p-p_0}
     \end{aligned}
 
-となる。したがって，
-
-.. math::
-    \Phi(p,0)
-    =\sqrt{\frac{\hbar}{\pi n\lambda}}
-    \frac{
-        \sin\left[
-            \left(p-p_0\right)n\lambda/\hbar
-        \right]
-    }
-    {p-p_0}
-
-である。 `p=p_0` における値は，連続な極限，
-
-.. math::
-    \Phi(p_0,0)
-    =\sqrt{\frac{n\lambda}{\pi\hbar}}
-
-によって定める。
-
-2つの確率密度は，
-
-.. math::
-    |\Psi(x,0)|^2
-    =\begin{cases}
-        \dfrac{1}{2n\lambda}, & |x|<n\lambda
-        \\
-        0, & |x|>n\lambda
-    \end{cases}
-
-および，
-
-.. math::
-    |\Phi(p,0)|^2
-    =\frac{\hbar}{\pi n\lambda}
-    \frac{
-        \sin^2\left[
-            \left(p-p_0\right)n\lambda/\hbar
-        \right]
-    }
-    {\left(p-p_0\right)^2}
-
-となる。前者は幅 `2n\lambda` の長方形，後者は `p=p_0` を中心とする `\operatorname{sinc}^2` 型の分布である。無次元変数，
+となる。ここで，無次元変数，
 
 .. math::
     X=\frac{x}{n\lambda},
     \quad
     Q=\frac{\left(p-p_0\right)n\lambda}{\hbar}
 
-を用いると，それらの概形は次のようになる。
+を導入する。
 
 .. plot::
     :include-source: True
@@ -123,9 +89,7 @@ Problem 3.35
 .. math::
     w_p=\frac{2\pi\hbar}{n\lambda}
 
-である。 `n\to\infty` では `w_x\to\infty`， `w_p\to0` となる。すなわち，無限に長い平面波へ近づくにつれて，位置は完全に非局在化し，運動量は `p_0` に鋭く定まる。
-
-`w_x`， `w_p` を不確定さの粗い尺度として用いると，
+である。 `n\to\infty` では `w_x\to\infty`， `w_p\to0` となる。 `w_x`， `w_p` を不確定さの粗い尺度として用いると，
 
 .. math::
     \Delta x\,\Delta p
@@ -134,7 +98,7 @@ Problem 3.35
     \frac{2\pi\hbar}{n\lambda}
     =4\pi\hbar>\frac{\hbar}{2}
 
-となり，不確定性原理と矛盾しない。ただし，これらは標準偏差ではなく，主ピークのゼロ点間の幅による見積もりである。
+となり，Heisenberg 不確定性原理を満たす。
 
 最後に，運動量の標準偏差を計算できない理由を調べる。大きな `|p|` に対して，
 

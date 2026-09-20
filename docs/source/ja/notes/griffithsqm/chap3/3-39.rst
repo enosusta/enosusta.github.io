@@ -8,7 +8,7 @@ Problem 3.39
     \quad
     d=\sqrt{\frac{\hbar m\omega}{2}}
 
-と置く。位置と運動量の演算子は，昇降演算子を用いて，
+と置くと，位置と運動量の演算子は，昇降演算子を用いて，
 
 .. math::
     x=c\left(a_++a_-\right),
@@ -24,7 +24,7 @@ Problem 3.39
     a_-|n'\rangle
     =\sqrt{n'}|n'-1\rangle
 
-である。したがって，位置の行列要素は，
+であるから，位置の行列要素は，
 
 .. math::
     \begin{aligned}
@@ -59,7 +59,7 @@ Problem 3.39
 となる。よって，対応する無限行列は，
 
 .. math::
-    \mathbf{X}
+    \bm{X}
     =c\begin{pmatrix}
         0 & 1 & 0 & 0 & \cdots
         \\
@@ -67,15 +67,15 @@ Problem 3.39
         \\
         0 & \sqrt{2} & 0 & \sqrt{3} & \cdots
         \\
-        0 & 0 & \sqrt{3} & 0 & \ddots
+        0 & 0 & \sqrt{3} & 0 & \cdots
         \\
-        \vdots & \vdots & \vdots & \ddots & \ddots
+        \vdots & \vdots & \vdots & \vdots & \ddots
     \end{pmatrix}
 
 および，
 
 .. math::
-    \mathbf{P}
+    \bm{P}
     =id\begin{pmatrix}
         0 & -1 & 0 & 0 & \cdots
         \\
@@ -83,14 +83,12 @@ Problem 3.39
         \\
         0 & \sqrt{2} & 0 & -\sqrt{3} & \cdots
         \\
-        0 & 0 & \sqrt{3} & 0 & \ddots
+        0 & 0 & \sqrt{3} & 0 & \cdots
         \\
-        \vdots & \vdots & \vdots & \ddots & \ddots
+        \vdots & \vdots & \vdots & \vdots & \ddots
     \end{pmatrix}
 
-である。 `\mathbf{X}` は実対称行列であり， `\mathbf{P}` は純虚数のエルミート行列である。
-
-次に，二乗を因子の順序を保って展開する。 `c^2=\hbar/(2m\omega)`， `d^2=\hbar m\omega/2` より，
+となる。 一方で， `c^2=\hbar/(2m\omega)`， `d^2=\hbar m\omega/2` より，
 
 .. math::
     \begin{aligned}
@@ -107,7 +105,7 @@ Problem 3.39
         \right)
     \end{aligned}
 
-となる。両者を加えると， `n` を2だけ変える `a_+^2`， `a_-^2` の項が相殺され，
+となるので，両者を加えると，
 
 .. math::
     \begin{aligned}
@@ -119,7 +117,7 @@ Problem 3.39
         \left(a_+a_-+\frac{1}{2}\right)
     \end{aligned}
 
-を得る。最後の等号では `[a_-,a_+]=1` を用いた。 `a_+a_-|n\rangle=n|n\rangle` なので，
+となる。よって， `a_+a_-|n\rangle=n|n\rangle` より，
 
 .. math::
     \braket{n|H|n'}
@@ -143,4 +141,4 @@ Problem 3.39
         \vdots & \vdots & \vdots & \ddots
     \end{pmatrix}
 
-である。対角要素は，予想どおり `E_n=(n+1/2)\hbar\omega` となっている。
+となる。対角要素は，予想どおり `E_n=(n+1/2)\hbar\omega` となっている。

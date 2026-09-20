@@ -17,9 +17,7 @@ Problem 3.31
 .. math::
     e_0(x)=\frac{1}{\sqrt{2}}
 
-である。
-
-次に， `x` の `e_0` への射影は奇関数の積分となるため0であり，
+である。次に `x` の `e_0` への射影は奇関数の積分となるためゼロであり，
 
 .. math::
     u_1(x)=x,
@@ -33,9 +31,7 @@ Problem 3.31
 .. math::
     e_1(x)=\sqrt{\frac{3}{2}}\,x
 
-である。
-
-`x^2` については，
+である。 `x^2` については，
 
 .. math::
     \braket{e_0|x^2}
@@ -64,7 +60,7 @@ Problem 3.31
         =\frac{8}{45}
     \end{aligned}
 
-であるから，
+となるから，
 
 .. math::
     e_2(x)
@@ -72,9 +68,7 @@ Problem 3.31
     \left(x^2-\frac{1}{3}\right)
     =\sqrt{\frac{5}{8}}\left(3x^2-1\right)
 
-を得る。
-
-最後に， `x^3` は偶関数 `e_0`， `e_2` と直交する。また，
+となる。最後に， `x^3` は偶関数 `e_0`， `e_2` と直交し，
 
 .. math::
     \braket{e_1|x^3}
@@ -109,7 +103,7 @@ Problem 3.31
     \left(x^3-\frac{3}{5}x\right)
     =\sqrt{\frac{7}{8}}\left(5x^3-3x\right)
 
-を得る。以上をまとめると，求める正規直交系は，
+となる。以上をまとめると，正規直交系は，
 
 .. math::
     e_0=\frac{1}{\sqrt{2}},
@@ -120,12 +114,4 @@ Problem 3.31
     \quad
     e_3=\sqrt{\frac{7}{8}}\left(5x^3-3x\right)
 
-である。これらは，
-
-.. math::
-    e_l(x)
-    =\sqrt{\frac{2l+1}{2}}P_l(x),
-    \quad
-    l=0,1,2,3
-
-と書けるので，規格化された Legendre 多項式である。
+である。

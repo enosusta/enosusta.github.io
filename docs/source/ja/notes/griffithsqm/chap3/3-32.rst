@@ -1,7 +1,7 @@
 Problem 3.32
 ==================
 
-a.  規格化された状態 `|\psi\rangle` における期待値を，
+a.  状態 `|\psi\rangle` における期待値を，
 
     .. math::
         q=\braket{\psi|\hat{Q}\psi}
@@ -19,7 +19,7 @@ a.  規格化された状態 `|\psi\rangle` における期待値を，
             =-q^*
         \end{aligned}
 
-    となる。よって， `\operatorname{Re}q=0` であり，期待値 `q` は0を含む純虚数である。
+    となる。よって， `\operatorname{Re}q=0` である。
 
 b.  `\hat{Q}|q\rangle=q|q\rangle` とし， `|q\rangle\neq0` とする。このとき，
 
@@ -41,7 +41,7 @@ b.  `\hat{Q}|q\rangle=q|q\rangle` とし， `|q\rangle\neq0` とする。この�
         =\braket{\hat{Q}^\dagger q|q}
         =-q^*\braket{q|q}
 
-    となる。 `\braket{q|q}>0` より `q=-q^*` であるから，固有値 `q` は純虚数である。
+    となる。 `\braket{q|q}>0` より `q=-q^*` である。
 
 c.  2つの固有値方程式を，
 
@@ -74,7 +74,7 @@ c.  2つの固有値方程式を，
     .. math::
         \left(q'-q\right)\braket{q|q'}=0
 
-    であり， `q'\neq q` ならば `\braket{q|q'}=0` となる。よって，相異なる固有値に属する固有ベクトルは直交する。
+    であり， `q'\neq q` ならば `\braket{q|q'}=0` となる。
 
 d.  `\hat{A}`， `\hat{B}` がともにエルミート演算子ならば，
 
@@ -102,7 +102,7 @@ d.  `\hat{A}`， `\hat{B}` がともにエルミート演算子ならば，
             =-[\hat{A},\hat{B}]
         \end{aligned}
 
-    となる。したがって，この場合の交換子も反エルミートである。
+    となるので，その交換子も反エルミートである。
 
 e.  次の2つの演算子を定める。
 
@@ -124,4 +124,4 @@ e.  次の2つの演算子を定める。
         =\frac{\hat{Q}^\dagger-\hat{Q}}{2}
         =-\hat{B}
 
-    となる。よって， `\hat{A}` はエルミート演算子， `\hat{B}` は反エルミート演算子であり，任意の `\hat{Q}` が両者の和に分解された。
+    となる。
