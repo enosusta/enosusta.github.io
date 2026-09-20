@@ -12,7 +12,7 @@ Problem 3.24
     \braket{e_m|\hat{Q}e_n}
     =\braket{\hat{Q}e_m|e_n}
 
-である。一方，内積の共役対称性から，
+である。一方，
 
 .. math::
     \begin{aligned}
@@ -22,21 +22,21 @@ Problem 3.24
         &=\braket{\hat{Q}e_m|e_n}
     \end{aligned}
 
-となる。したがって，
+となるので，
 
 .. math::
     Q_{mn}=Q_{nm}^*
 
-である。行列の随伴の成分は，
+となる。行列の随伴の成分は，
 
 .. math::
-    \left(\mathbf{Q}^\dagger\right)_{mn}=Q_{nm}^*
+    \left(Q^\dagger\right)_{mn}=Q_{nm}^*
 
 であるから，
 
 .. math::
     Q_{mn}=Q_{nm}^*
     \iff
-    \mathbf{Q}^\dagger=\mathbf{Q}
+    Q^\dagger=Q
 
-となる。特に， `m=n` とすると `Q_{nn}=Q_{nn}^*` なので，対角要素は実数である。
+となる。

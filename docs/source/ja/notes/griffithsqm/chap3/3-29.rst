@@ -1,7 +1,7 @@
 Problem 3.29
 ==================
 
-a.  `\hat{C}=[\hat{A},\hat{B}]` とし， `[\hat{A},\hat{C}]=[\hat{B},\hat{C}]=0` を仮定する。 `n=1` の場合は，
+a.  数学的帰納法を用いる。 `n=1` の場合は，
 
     .. math::
         [\hat{A},\hat{B}]=\hat{C}
@@ -28,7 +28,7 @@ a.  `\hat{C}=[\hat{A},\hat{B}]` とし， `[\hat{A},\hat{C}]=[\hat{B},\hat{C}]=0
             &=\left(n+1\right)\hat{A}^{\,n}\hat{C}
         \end{aligned}
 
-    となる。最後の等号では `\hat{A}` と `\hat{C}` が交換することを用いた。よって，数学的帰納法により，
+    となる。最後の等号では `\hat{A}` と `\hat{C}` が交換することを用いた。したがって，
 
     .. math::
         [\hat{A}^{\,n},\hat{B}]
@@ -36,7 +36,7 @@ a.  `\hat{C}=[\hat{A},\hat{B}]` とし， `[\hat{A},\hat{C}]=[\hat{B},\hat{C}]=0
 
     がすべての正整数 `n` について成り立つ。
 
-b.  指数演算子を冪級数として展開し，\(a) の結果を用いると，
+b.  指数関数演算子を冪級数として展開し，\(a) の結果を用いると，
 
     .. math::
         \begin{aligned}
@@ -55,9 +55,9 @@ b.  指数演算子を冪級数として展開し，\(a) の結果を用いる�
             &=\lambda e^{\lambda\hat{A}}\hat{C}
         \end{aligned}
 
-    となる。ここでは `r=n-1` と置いた。
+    となる。
 
-c.  次の2つの演算子値関数を定める。
+c.  次の2つの演算子値関数を定める：
 
     .. math::
         \hat{f}(\lambda)
@@ -79,9 +79,7 @@ c.  次の2つの演算子値関数を定める。
         \dv{\hat{f}}{\lambda}
         =\left(\hat{A}+\hat{B}\right)\hat{f}
 
-    を満たす。
-
-    次に，因子の順序を保ったまま `\hat{g}` を微分する。 `\hat{C}` は `\hat{A}` および `\hat{B}` と交換するので，
+    を満たす。次に，因子の順序を保ったまま `\hat{g}` を微分すると， `\hat{C}` は `\hat{A}` および `\hat{B}` と交換するので，
 
     .. math::
         \begin{aligned}
@@ -106,21 +104,21 @@ c.  次の2つの演算子値関数を定める。
         =\hat{B}e^{\lambda\hat{A}}
         +\lambda e^{\lambda\hat{A}}\hat{C}
 
-    であるから，微分の第2項は，
+    となるから，微分の第2項は，
 
     .. math::
         e^{\lambda\hat{A}}\hat{B}
         e^{\lambda\hat{B}}e^{-\lambda^2\hat{C}/2}
         =\hat{B}\hat{g}+\lambda\hat{C}\hat{g}
 
-    となる。この右辺の第2項は，微分の第3項 `-\lambda\hat{C}\hat{g}` と相殺する。したがって，
+    となる。この右辺の第2項は，微分の第3項 `-\lambda\hat{C}\hat{g}` と相殺するので，
 
     .. math::
         \dv{\hat{g}}{\lambda}
         =\hat{A}\hat{g}+\hat{B}\hat{g}
         =\left(\hat{A}+\hat{B}\right)\hat{g}
 
-    となる。 `\hat{f}` と `\hat{g}` は同じ初期条件の下で同じ1階微分方程式を満たすので，すべての `\lambda` について `\hat{f}(\lambda)=\hat{g}(\lambda)` である。 `\lambda=1` と置くと，Baker--Campbell--Hausdorff の公式，
+    となる。 `\hat{f}` と `\hat{g}` は同じ初期条件の下で同じ1階微分方程式を満たすので，すべての `\lambda` について `\hat{f}(\lambda)=\hat{g}(\lambda)` となる。特に `\lambda=1` と置くと，Baker-Campbell-Hausdorff の公式，
 
     .. math::
         e^{\hat{A}+\hat{B}}

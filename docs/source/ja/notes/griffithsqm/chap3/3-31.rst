@@ -123,9 +123,9 @@ Problem 3.31
 である。これらは，
 
 .. math::
-    e_\ell(x)
-    =\sqrt{\frac{2\ell+1}{2}}P_\ell(x),
+    e_l(x)
+    =\sqrt{\frac{2l+1}{2}}P_l(x),
     \quad
-    \ell=0,1,2,3
+    l=0,1,2,3
 
 と書けるので，規格化された Legendre 多項式である。

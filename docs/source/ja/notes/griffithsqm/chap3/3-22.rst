@@ -1,7 +1,7 @@
 Problem 3.22
 ==================
 
-可観測量として `Q=x` を選ぶと，エネルギー–時間不確定性原理は，
+可観測量として `Q=x` を選ぶと，エネルギー・時間不確定性原理は，
 
 .. math::
     \sigma_H\sigma_x
@@ -9,34 +9,16 @@ Problem 3.22
     \frac{\hbar}{2}
     \left|\dv{\braket{x}}{t}\right|
 
-となる。一方，問題 3.18 の \(c) で得た Ehrenfest の関係は，
+となる。一方，:ref:`notes/griffithsqm/chap3/3-18:Problem 3.18` の \(c) より，
 
 .. math::
     \dv{\braket{x}}{t}=\frac{\braket{p}}{m}
 
-である。これを代入すると，
+であるから，
 
 .. math::
     \sigma_x\sigma_H
     \geq
     \frac{\hbar}{2m}|\braket{p}|
 
-となる。これは問題 3.15 の「あなたの名前」の不確定性原理に一致する。
-
-実際， `\dd\braket{x}/\dd t\neq0` のとき，
-
-.. math::
-    \Delta t
-    =\frac{\sigma_x}
-    {\left|\dd\braket{x}/\dd t\right|}
-    =\frac{m\sigma_x}{|\braket{p}|}
-
-なので，
-
-.. math::
-    \sigma_H\Delta t\geq\frac{\hbar}{2}
-    \iff
-    \sigma_x\sigma_H
-    \geq\frac{\hbar}{2m}|\braket{p}|
-
-である。
+となる。

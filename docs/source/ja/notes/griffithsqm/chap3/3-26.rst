@@ -1,7 +1,7 @@
 Problem 3.26
 ==================
 
-a.  ケットの係数を複素共役し，列を行へ移すと，
+a.  ケットの係数を複素共役すれば，
 
     .. math::
         \langle\alpha|
@@ -13,19 +13,13 @@ a.  ケットの係数を複素共役し，列を行へ移すと，
     となる。成分表示では，
 
     .. math::
-        |\alpha\rangle
-        =\begin{pmatrix}i\\-2\\-i\end{pmatrix},
-        \quad
         \langle\alpha|
         =\begin{pmatrix}-i&-2&i\end{pmatrix},
-        \quad
-        |\beta\rangle
-        =\begin{pmatrix}i\\0\\2\end{pmatrix},
         \quad
         \langle\beta|
         =\begin{pmatrix}-i&0&2\end{pmatrix}
 
-    である。
+    となる。
 
 b.  正規直交性より，
 
@@ -48,9 +42,9 @@ b.  正規直交性より，
         =\left(1+2i\right)^*
         =\braket{\alpha|\beta}^*
 
-    であり，共役対称性が確かめられる。
+    となる。
 
-c.  外積 `\hat{A}=|\alpha\rangle\langle\beta|` の行列は，列ベクトル `|\alpha\rangle` と行ベクトル `\langle\beta|` の積である。したがって，
+c.  外積 `\hat{A}=|\alpha\rangle\langle\beta|` の行列は，
 
     .. math::
         \begin{aligned}
@@ -67,15 +61,4 @@ c.  外積 `\hat{A}=|\alpha\rangle\langle\beta|` の行列は，列ベクトル 
             \end{pmatrix}
         \end{aligned}
 
-    となる。すなわち，9つの行列要素は，
-
-    .. math::
-        \begin{gathered}
-            A_{11}=1,\quad A_{12}=0,\quad A_{13}=2i,
-            \\
-            A_{21}=2i,\quad A_{22}=0,\quad A_{23}=-4,
-            \\
-            A_{31}=-1,\quad A_{32}=0,\quad A_{33}=-2i
-        \end{gathered}
-
-    である。対角要素 `A_{33}=-2i` が実数でなく，また `A_{12}=0` に対して `A_{21}^*=-2i\neq0` であるから， `\hat{A}` はエルミート演算子ではない。実際， `\hat{A}^\dagger=|\beta\rangle\langle\alpha|\neq\hat{A}` である。
+    となる。これは明らかにエルミートでない。

@@ -62,11 +62,4 @@ b.  幾何級数を用いると，
             &=\frac{4}{5}\cos x-\frac{2}{5}\sin x
         \end{aligned}
 
-    となる。確認のため， `g=(4/5)\cos x-(2/5)\sin x` と置くと，
-
-    .. math::
-        \left(\mathbf{1}-\frac{\hat{D}}{2}\right)g
-        =g-\frac{1}{2}g'
-        =\cos x
-
     となる。

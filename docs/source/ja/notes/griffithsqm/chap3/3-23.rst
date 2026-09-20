@@ -23,9 +23,7 @@ Problem 3.23
         =\hat{P}
     \end{aligned}
 
-となり， `\hat{P}` は冪等である。
-
-次に， `|v\rangle\neq0` が固有値 `\lambda` の固有ベクトルであるとする。 `\hat{P}|v\rangle=\lambda|v\rangle` にもう一度 `\hat{P}` を作用させると，
+となり， `\hat{P}` は冪等である。ここで， `|v\rangle\neq0` が固有値 `\lambda` の固有ベクトルであるとする。 `\hat{P}|v\rangle=\lambda|v\rangle` にもう一度 `\hat{P}` を作用させると，
 
 .. math::
     \hat{P}^{\,2}|v\rangle
@@ -39,26 +37,18 @@ Problem 3.23
     \quad\Longrightarrow\quad
     \lambda=0,1
 
-となる。
-
-実際，
+となる。実際，
 
 .. math::
     \hat{P}|\alpha\rangle
     =|\alpha\rangle\braket{\alpha|\alpha}
     =|\alpha\rangle
 
-なので， `|\alpha\rangle` の張る1次元部分空間の非ゼロベクトルは固有値1に属する。一方， `\braket{\alpha|v_\perp}=0` ならば，
+なので， `|\alpha\rangle` の張る1次元部分空間の非ゼロベクトルは固有値 `1` に属し， `\braket{\alpha|v_\perp}=0` ならば，
 
 .. math::
     \hat{P}|v_\perp\rangle
     =|\alpha\rangle\braket{\alpha|v_\perp}
     =0
 
-なので， `|\alpha\rangle` に直交する部分空間の非ゼロベクトルは固有値0に属する。任意のベクトルは，
-
-.. math::
-    |v\rangle
-    =\braket{\alpha|v}|\alpha\rangle+|v_\perp\rangle
-
-と分解でき， `\hat{P}` は第1項だけを取り出す。
+なので， `|\alpha\rangle` に直交する部分空間の非ゼロベクトルは固有値 `0` に属する。

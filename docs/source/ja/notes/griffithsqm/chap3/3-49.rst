@@ -38,7 +38,7 @@ a.  自由粒子の位置表示における Schrödinger 方程式は，
 b.  問題 2.42 の初期状態は，
 
     .. math::
-        \Psi(x,0)=Ae^{-ax^2}e^{i\ell x},
+        \Psi(x,0)=Ae^{-ax^2}e^{il x},
         \quad
         A=\left(\frac{2a}{\pi}\right)^{1/4}
 
@@ -50,18 +50,18 @@ b.  問題 2.42 の初期状態は，
             &=\frac{A}{\sqrt{2\pi\hbar}}
             \int_{-\infty}^{\infty}
             \exp\left[
-                -ax^2-i\left(\frac{p}{\hbar}-\ell\right)x
+                -ax^2-i\left(\frac{p}{\hbar}-l\right)x
             \right]\,\dd x
             \\
             &=\frac{A}{\sqrt{2\pi\hbar}}
             \sqrt{\frac{\pi}{a}}
             \exp\left[
-                -\frac{\left(p/\hbar-\ell\right)^2}{4a}
+                -\frac{\left(p/\hbar-l\right)^2}{4a}
             \right]
             \\
             &=\frac{1}{\left(2\pi a\hbar^2\right)^{1/4}}
             \exp\left[
-                -\frac{\left(p-\hbar\ell\right)^2}
+                -\frac{\left(p-\hbarl\right)^2}
                 {4a\hbar^2}
             \right]
         \end{aligned}
@@ -72,7 +72,7 @@ b.  問題 2.42 の初期状態は，
         \Phi(p,t)
         =\frac{1}{\left(2\pi a\hbar^2\right)^{1/4}}
         \exp\left[
-            -\frac{\left(p-\hbar\ell\right)^2}{4a\hbar^2}
+            -\frac{\left(p-\hbarl\right)^2}{4a\hbar^2}
             -\frac{ip^2t}{2m\hbar}
         \right]
 
@@ -82,7 +82,7 @@ b.  問題 2.42 の初期状態は，
         |\Phi(p,t)|^2
         =\frac{1}{\hbar\sqrt{2\pi a}}
         \exp\left[
-            -\frac{\left(p-\hbar\ell\right)^2}{2a\hbar^2}
+            -\frac{\left(p-\hbarl\right)^2}{2a\hbar^2}
         \right]
 
     となり，時間に依存しない。これは，自由粒子では運動量が保存されることの直接的な表現である。
@@ -90,7 +90,7 @@ b.  問題 2.42 の初期状態は，
 c.  次の変数を定める。
 
     .. math::
-        p_0\coloneqq\hbar\ell,
+        p_0\coloneqq\hbarl,
         \quad
         s^2\coloneqq a\hbar^2,
         \quad
@@ -129,9 +129,9 @@ c.  次の変数を定める。
     となる。したがって，
 
     .. math::
-        \braket{p}=\hbar\ell,
+        \braket{p}=\hbarl,
         \quad
-        \braket{p^2}=\hbar^2\ell^2+a\hbar^2,
+        \braket{p^2}=\hbar^2l^2+a\hbar^2,
         \quad
         \sigma_p^2=a\hbar^2
 
@@ -144,7 +144,7 @@ d.  自由粒子では `H=p^2/(2m)` なので，\(c) より，
             \braket{H}
             &=\frac{\braket{p^2}}{2m}
             \\
-            &=\frac{\hbar^2\ell^2}{2m}
+            &=\frac{\hbar^2l^2}{2m}
             +\frac{a\hbar^2}{2m}
             \\
             &=\frac{\braket{p}^2}{2m}+\braket{H}_0
@@ -155,4 +155,4 @@ d.  自由粒子では `H=p^2/(2m)` なので，\(c) より，
     .. math::
         \braket{H}_0=\frac{a\hbar^2}{2m}
 
-    は `\ell=0` の静止 Gaussian の平均エネルギーである。第1項は波束全体の平均運動量，すなわち重心運動に伴う古典的運動エネルギーであり，第2項は波束を有限の幅に局在させるために残る運動エネルギーである。したがって，平均運動量が0でも波束の平均エネルギーは0にならず，波束は時間とともに広がる。
+    は `l=0` の静止 Gaussian の平均エネルギーである。第1項は波束全体の平均運動量，すなわち重心運動に伴う古典的運動エネルギーであり，第2項は波束を有限の幅に局在させるために残る運動エネルギーである。したがって，平均運動量が0でも波束の平均エネルギーは0にならず，波束は時間とともに広がる。

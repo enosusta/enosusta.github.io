@@ -1,7 +1,7 @@
 Problem 3.25
 ==================
 
-基底の正規直交性を用いると，
+正規直交性より，
 
 .. math::
     \begin{aligned}
@@ -12,10 +12,10 @@ Problem 3.25
         &=\epsilon\left(|1\rangle-|2\rangle\right)
     \end{aligned}
 
-となる。したがって， `\{|1\rangle,|2\rangle\}` 基底における ハミルトニアン の行列は，
+となる。したがって，基底 `\{|1\rangle,|2\rangle\}` におけるハミルトニアンの行列は，
 
 .. math::
-    \mathbf{H}
+    \bm{H}
     =\epsilon
     \begin{pmatrix}
         1 & 1
@@ -23,9 +23,7 @@ Problem 3.25
         1 & -1
     \end{pmatrix}
 
-である。
-
-固有値を `E=\epsilon\lambda` と書くと，特性方程式は，
+である。固有値を `E=\epsilon\lambda` と書くと，特性方程式は，
 
 .. math::
     \begin{aligned}
@@ -40,21 +38,18 @@ Problem 3.25
         &=\lambda^2-2
     \end{aligned}
 
-となる。よって，固有値は，
+となるので，固有値は，
 
 .. math::
     E_\pm=\pm\sqrt{2}\,\epsilon
 
-である。
-
-固有ベクトルを `|E\rangle=a|1\rangle+b|2\rangle` とすると，第1行から，
+となる。そこで，固有ベクトルを `|E\rangle=a|1\rangle+b|2\rangle` とすると，
 
 .. math::
-    \left(1-\lambda\right)a+b=0,
-    \quad
+    \left(1-\lambda\right)a+b=0 \implies
     b=\left(\lambda-1\right)a
 
-を得る。 `\lambda=\sqrt{2}` の場合は `b/a=\sqrt{2}-1=\tan(\pi/8)` なので，規格化固有ベクトルを，
+となる。 `\lambda=\sqrt{2}` の場合は `b/a=\sqrt{2}-1=\tan(\pi/8)` なので，規格化固有ベクトルを，
 
 .. math::
     |E_+\rangle
@@ -68,4 +63,4 @@ Problem 3.25
     =-\sin\left(\frac{\pi}{8}\right)|1\rangle
     +\cos\left(\frac{\pi}{8}\right)|2\rangle
 
-である。各固有ベクトルの全体位相は任意である。
+となる。
