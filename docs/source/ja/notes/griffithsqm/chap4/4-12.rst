@@ -1,2 +1,75 @@
 Problem 4.12
 ==================
+
+`n=3` のとき，
+
+.. math::
+    \rho=\frac{r}{3a},
+    \quad
+    R_{3\ell}(r)
+    =\frac{1}{r}\rho^{\ell+1}e^{-\rho}v(\rho)
+
+であり，係数の漸化式は，
+
+.. math::
+    c_{j+1}
+    =
+    \frac{2(j+\ell-2)}
+    {(j+1)(j+2\ell+2)}c_j
+
+となる。
+
+`\ell=0` では，
+
+.. math::
+    c_1=-2c_0,
+    \quad
+    c_2=\frac{2}{3}c_0,
+    \quad
+    c_3=0
+
+なので，
+
+.. math::
+    v(\rho)=c_0\left(1-2\rho+\frac{2}{3}\rho^2\right)
+
+である。したがって，全体の定数を `C_{30}` と書けば，
+
+.. math::
+    R_{30}(r)
+    =
+    C_{30}
+    \left[
+        1-\frac{2r}{3a}
+        +\frac{2}{27}\left(\frac{r}{a}\right)^2
+    \right]e^{-r/(3a)}
+
+となる。
+
+`\ell=1` では，
+
+.. math::
+    c_1=-\frac{1}{2}c_0,
+    \quad
+    c_2=0
+
+なので，
+
+.. math::
+    R_{31}(r)
+    =
+    C_{31}
+    \left(\frac{r}{a}\right)
+    \left(1-\frac{r}{6a}\right)e^{-r/(3a)}
+
+である。
+
+`\ell=2` では最初の項の後で級数が打ち切られ， `v(\rho)=c_0` となる。よって，
+
+.. math::
+    R_{32}(r)
+    =
+    C_{32}
+    \left(\frac{r}{a}\right)^2e^{-r/(3a)}
+
+を得る。ここで `C_{30}` ， `C_{31}` ， `C_{32}` は任意の規格化定数である。

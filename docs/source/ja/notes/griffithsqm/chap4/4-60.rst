@@ -1,2 +1,169 @@
 Problem 4.60
 ==================
+
+a.  次の二つの非結合基底を導入する。
+
+    .. math::
+        \begin{aligned}
+            \ket{+}
+            &\coloneqq
+            \ket{
+            \frac{1}{2}\ s_2\
+            \frac{1}{2}\ \left(m-\frac{1}{2}\right)
+            },
+            \\
+            \ket{-}
+            &\coloneqq
+            \ket{
+            \frac{1}{2}\ s_2\
+            -\frac{1}{2}\ \left(m+\frac{1}{2}\right)
+            }
+        \end{aligned}
+
+    求める状態を `\ket{s\,m}=A\ket{+}+B\ket{-}` と書く。全スピンの2乗は，
+
+    .. math::
+        S^2
+        =
+        \left(S^{(1)}\right)^2
+        +\left(S^{(2)}\right)^2
+        +2S_z^{(1)}S_z^{(2)}
+        +S_+^{(1)}S_-^{(2)}
+        +S_-^{(1)}S_+^{(2)}
+
+    である。`q\coloneqq s_2+1/2` と置くと，
+
+    .. math::
+        C
+        \coloneqq
+        \sqrt{
+        s_2\left(s_2+1\right)
+        -\left(m-\frac{1}{2}\right)
+        \left(m+\frac{1}{2}\right)
+        }
+        =
+        \sqrt{q^2-m^2}
+
+    であり，基底 `\{\ket{+},\ket{-}\}` における `S^2` の行列は，
+
+    .. math::
+        S^2
+        =
+        \hbar^2
+        \begin{pmatrix}
+            q^2+m&C\\
+            C&q^2-m
+        \end{pmatrix}
+
+    となる。この行列の固有値は，
+
+    .. math::
+        \hbar^2q\left(q+1\right),
+        \quad
+        \hbar^2q\left(q-1\right)
+
+    であり，それぞれ，
+
+    .. math::
+        s=s_2+\frac{1}{2},
+        \quad
+        s=s_2-\frac{1}{2}
+
+    に対応する。
+
+    上側の固有値 `q(q+1)\hbar^2` に対する固有方程式は，
+
+    .. math::
+        \left(m-q\right)A+CB=0
+
+    である。`C=\sqrt{(q-m)(q+m)}` と規格化条件 `|A|^2+|B|^2=1` を用いると，
+
+    .. math::
+        A
+        =
+        \sqrt{\frac{q+m}{2q}},
+        \quad
+        B
+        =
+        \sqrt{\frac{q-m}{2q}}
+
+    を得る。下側の固有値 `q(q-1)\hbar^2` について同様に解き，位相を通常の規約に合わせると，
+
+    .. math::
+        A
+        =
+        \sqrt{\frac{q-m}{2q}},
+        \quad
+        B
+        =
+        -\sqrt{\frac{q+m}{2q}}
+
+    となる。`q=s_2+1/2` を戻せば，二つの場合をまとめて，
+
+    .. math::
+        A
+        =
+        \sqrt{
+        \frac{
+        s_2\mathbin{\pm}m+1/2
+        }{
+        2s_2+1
+        }
+        },
+        \quad
+        B
+        =
+        \mathbin{\pm}
+        \sqrt{
+        \frac{
+        s_2\mathbin{\mp}m+1/2
+        }{
+        2s_2+1
+        }
+        }
+
+    となる。上の符号は `s=s_2+1/2`，下の符号は `s=s_2-1/2` に対応する。
+
+b.  `s_2=1/2`，`m=0` を代入すると，
+
+    .. math::
+        \begin{aligned}
+            \ket{1\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(
+            \ket{\uparrow\downarrow}
+            +\ket{\downarrow\uparrow}
+            \right),
+            \\
+            \ket{0\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(
+            \ket{\uparrow\downarrow}
+            -\ket{\downarrow\uparrow}
+            \right)
+        \end{aligned}
+
+    となり，表 4.8 の triplet と singlet に一致する。また，`s_2=1`，`m=1/2` では，
+
+    .. math::
+        \begin{aligned}
+            \ket{\frac{3}{2}\,\frac{1}{2}}
+            &=
+            \sqrt{\frac{2}{3}}
+            \ket{\uparrow}\ket{1\,0}
+            +
+            \frac{1}{\sqrt{3}}
+            \ket{\downarrow}\ket{1\,1},
+            \\
+            \ket{\frac{1}{2}\,\frac{1}{2}}
+            &=
+            \frac{1}{\sqrt{3}}
+            \ket{\uparrow}\ket{1\,0}
+            -
+            \sqrt{\frac{2}{3}}
+            \ket{\downarrow}\ket{1\,1}
+        \end{aligned}
+
+    となり，これらも表の係数と一致する。

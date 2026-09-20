@@ -1,2 +1,159 @@
 Problem 4.42
 ==================
+
+a.  力学的運動量を，
+
+    .. math::
+        \bm{\pi}\coloneqq\bm{p}-q\bm{A}
+
+    と定義すれば，
+
+    .. math::
+        H=\frac{\bm{\pi}^2}{2m}+q\varphi
+
+    である。`[\pi_j,r_i]=-i\hbar\delta_{ij}` だから，
+
+    .. math::
+        \begin{aligned}
+            [H,r_i]
+            &=
+            \frac{1}{2m}
+            \sum_j
+            \left(
+            \pi_j[\pi_j,r_i]
+            +[\pi_j,r_i]\pi_j
+            \right)
+            \\
+            &=
+            -\frac{i\hbar}{m}\pi_i
+        \end{aligned}
+
+    となる。`\bm{r}` は陽に時間へ依存しないので，一般化された Ehrenfest の定理から，
+
+    .. math::
+        \dv{}{t}\braket{r_i}
+        =
+        \frac{i}{\hbar}\braket{[H,r_i]}
+        =
+        \frac{1}{m}\braket{\pi_i}
+
+    を得る。3成分をまとめれば，
+
+    .. math::
+        \dv{}{t}\braket{\bm{r}}
+        =
+        \frac{1}{m}
+        \braket{\bm{p}-q\bm{A}}
+
+    である。
+
+b.  \(a) より `m\braket{\bm{v}}=\braket{\bm{\pi}}` である。`\bm{\pi}` は陽に時間へ依存し，
+
+    .. math::
+        \pdv{\bm{\pi}}{t}
+        =
+        -q\pdv{\bm{A}}{t}
+
+    なので，
+
+    .. math::
+        \dv{}{t}\braket{\pi_i}
+        =
+        \frac{i}{\hbar}\braket{[H,\pi_i]}
+        -q\left\langle\pdv{A_i}{t}\right\rangle
+
+    である。必要な交換子は，
+
+    .. math::
+        [\pi_i,\pi_j]
+        =
+        i\hbar q\sum_k\epsilon_{ijk}B_k,
+        \quad
+        [q\varphi,\pi_i]
+        =
+        i\hbar q\pdv{\varphi}{r_i}
+
+    である。したがって，
+
+    .. math::
+        \frac{i}{\hbar}
+        \left[
+        \frac{\bm{\pi}^2}{2m},\pi_i
+        \right]
+        =
+        \frac{q}{2m}
+        \left(
+        \bm{\pi}\times\bm{B}
+        -\bm{B}\times\bm{\pi}
+        \right)_i
+
+    となる。スカラーポテンシャルの項と陽な時間依存性を合わせると，
+
+    .. math::
+        -q\bm{\nabla}\varphi
+        -q\pdv{\bm{A}}{t}
+        =
+        q\bm{E}
+
+    だから，
+
+    .. math::
+        m\dv{}{t}\braket{\bm{v}}
+        =
+        q\braket{\bm{E}}
+        +
+        \frac{q}{2m}
+        \braket{
+        \bm{\pi}\times\bm{B}
+        -\bm{B}\times\bm{\pi}
+        }
+
+    を得る。`\bm{\pi}=\bm{p}-q\bm{A}` を代入し，`\bm{A}` と `\bm{B}` は可換であることを用いれば，
+
+    .. math::
+        \begin{aligned}
+            m\dv{}{t}\braket{\bm{v}}
+            ={}&
+            q\braket{\bm{E}}
+            +
+            \frac{q}{2m}
+            \braket{
+            \bm{p}\times\bm{B}
+            -\bm{B}\times\bm{p}
+            }
+            \\
+            &-
+            \frac{q^2}{m}
+            \braket{\bm{A}\times\bm{B}}
+        \end{aligned}
+
+    となる。
+
+c.  `\bm{E}` と `\bm{B}` が波束の領域で一様なら，これらを期待値の外へ出せる。また，`\bm{p}` と一様な `\bm{B}` は可換なので，
+
+    .. math::
+        \bm{p}\times\bm{B}
+        =
+        -\bm{B}\times\bm{p}
+
+    である。したがって，\(b) の結果は，
+
+    .. math::
+        \begin{aligned}
+            m\dv{}{t}\braket{\bm{v}}
+            &=
+            q\bm{E}
+            +
+            \frac{q}{m}
+            \braket{
+            \left(\bm{p}-q\bm{A}\right)\times\bm{B}
+            }
+            \\
+            &=
+            q\left(
+            \bm{E}
+            +\braket{\bm{v}}\times\bm{B}
+            \right)
+        \end{aligned}
+
+    となる。よって，速度の期待値は Lorentz 力の法則に従う。

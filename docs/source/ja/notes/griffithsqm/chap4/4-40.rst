@@ -1,2 +1,62 @@
 Problem 4.40
 ==================
+
+a.  第1の粒子をスピン1，第2の粒子をスピン2とする。`s=3`，`m=1` の合成状態を Clebsch--Gordan 係数で展開すると，
+
+    .. math::
+        \begin{aligned}
+            \ket{3\,1}
+            ={}&
+            \frac{1}{\sqrt{15}}
+            \ket{1\,(-1)}\ket{2\,2}
+            \\
+            &+
+            \sqrt{\frac{8}{15}}
+            \ket{1\,0}\ket{2\,1}
+            +
+            \sqrt{\frac{2}{5}}
+            \ket{1\,1}\ket{2\,0}
+        \end{aligned}
+
+    となる。実際，`m_1+m_2=1` を満たす三つの積状態だけが現れ，係数の2乗の和は，
+
+    .. math::
+        \frac{1}{15}+\frac{8}{15}+\frac{2}{5}=1
+
+    である。したがって，スピン2粒子の `S_z` の測定結果と確率は，
+
+    .. math::
+        \begin{array}{c|c}
+            S_z^{(2)}&P\\ \hline
+            2\hbar&\dfrac{1}{15}\\[2mm]
+            \hbar&\dfrac{8}{15}\\[2mm]
+            0&\dfrac{2}{5}
+        \end{array}
+
+    となる。
+
+b.  `\psi_{510}` では `\ell=1`，`m_\ell=0` であり，スピン下向きなので `s=1/2`，`m_s=-1/2` である。この非結合状態を全角運動量 `\bm{J}=\bm{L}+\bm{S}` の固有状態で展開すると，
+
+    .. math::
+        \begin{aligned}
+            &\ket{\ell=1,m_\ell=0}
+            \ket{s=\frac{1}{2},m_s=-\frac{1}{2}}
+            \\
+            &\quad=
+            \sqrt{\frac{2}{3}}
+            \ket{j=\frac{3}{2},m_j=-\frac{1}{2}}
+            +
+            \sqrt{\frac{1}{3}}
+            \ket{j=\frac{1}{2},m_j=-\frac{1}{2}}
+        \end{aligned}
+
+    となる。`J^2` の固有値は `j(j+1)\hbar^2` だから，測定結果と確率は，
+
+    .. math::
+        \begin{array}{c|c}
+            J^2&P\\ \hline
+            \dfrac{15}{4}\hbar^2&\dfrac{2}{3}\\[2mm]
+            \dfrac{3}{4}\hbar^2&\dfrac{1}{3}
+        \end{array}
+
+    である。主量子数 `n=5` はこの角運動量の合成結果には影響しない。

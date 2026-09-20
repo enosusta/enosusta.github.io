@@ -1,2 +1,46 @@
 Problem 4.66
 ==================
+
+全体位相を選ぶことで，`a` を実数かつ非負にできる。`b=u+iv` と書けば，規格化条件は，
+
+.. math::
+    a^2+u^2+v^2=1
+
+である。スピンの各成分の期待値は，
+
+.. math::
+    \braket{S_x}=\hbar au,
+    \quad
+    \braket{S_y}=\hbar av,
+    \quad
+    \braket{S_z}
+    =
+    \frac{\hbar}{2}
+    \left(a^2-u^2-v^2\right)
+
+となる。また，`S_x^2=S_y^2=\hbar^2/4` なので，
+
+.. math::
+    \sigma_{S_x}^2
+    =
+    \hbar^2\left(\frac{1}{4}-a^2u^2\right),
+    \quad
+    \sigma_{S_y}^2
+    =
+    \hbar^2\left(\frac{1}{4}-a^2v^2\right)
+
+である。不確定性関係で等号が成り立つ条件を2乗して整理すると，
+
+.. math::
+    \begin{aligned}
+        &\left(\frac{1}{4}-a^2u^2\right)
+        \left(\frac{1}{4}-a^2v^2\right)
+        =
+        \frac{1}{16}
+        \left(a^2-u^2-v^2\right)^2
+        \\
+        &\quad\iff
+        a^4u^2v^2=0
+    \end{aligned}
+
+となる。`a\neq0` なら，`u=0` または `v=0` でなければならない。すなわち，`b` が純虚数または純実数のとき，かつそのときに限り不確定性は最小となる。`a=0` の場合も全体位相によって `b` を実数に選べるため，同じ結論に含まれる。

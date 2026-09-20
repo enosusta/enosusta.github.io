@@ -1,2 +1,123 @@
 Problem 4.11
 ==================
+
+束縛状態では `-V_0<E<0` である。そこで，
+
+.. math::
+    k\coloneqq\frac{\sqrt{2m(E+V_0)}}{\hbar},
+    \quad
+    \kappa\coloneqq\frac{\sqrt{-2mE}}{\hbar}
+
+と置くと，
+
+.. math::
+    k^2+\kappa^2=\frac{2mV_0}{\hbar^2}
+
+となる。 `\ell=0` に対する動径方程式は，井戸の内外でそれぞれ，
+
+.. math::
+    \dv{^2u}{r^2}
+    =
+    \begin{cases}
+        -k^2u,&0<r\leq a,\\
+        \kappa^2u,&r>a
+    \end{cases}
+
+である。原点で `u(0)=0` となり，無限遠で波動関数が減衰する解を選ぶと，
+
+.. math::
+    u(r)=
+    \begin{cases}
+        A\sin(kr),&0\leq r\leq a,\\
+        Be^{-\kappa r},&r>a
+    \end{cases}
+
+となる。 `r=a` で `u` と `u'` を連続にすると，
+
+.. math::
+    A\sin(ka)=Be^{-\kappa a},
+    \quad
+    Ak\cos(ka)=-B\kappa e^{-\kappa a}
+
+を得る。両式の比を取れば，固有値条件は，
+
+.. math::
+    k\cot(ka)=-\kappa
+
+である。無次元量，
+
+.. math::
+    x\coloneqq ka,
+    \quad
+    y\coloneqq\kappa a,
+    \quad
+    z_0\coloneqq\frac{a}{\hbar}\sqrt{2mV_0}
+
+を導入すると，
+
+.. math::
+    x^2+y^2=z_0^2,
+    \quad
+    y=-x\cot x
+
+となる。したがって，基底状態に対応する最小の根 `x_1` は，
+
+.. math::
+    \sqrt{z_0^2-x_1^2}=-x_1\cot x_1,
+    \quad
+    \frac{\pi}{2}<x_1<\min(\pi,z_0)
+
+によって決まる。対応するエネルギーは，
+
+.. math::
+    E_0
+    =-V_0+\frac{\hbar^2x_1^2}{2ma^2}
+    =-\frac{\hbar^2}{2ma^2}\left(z_0^2-x_1^2\right)
+
+である。また，
+
+.. math::
+    B=A\sin x_1\,e^{y_1},
+    \quad
+    y_1=\sqrt{z_0^2-x_1^2}
+
+なので，規格化された基底状態は，
+
+.. math::
+    \psi_0(r,\theta,\phi)
+    =\frac{1}{\sqrt{4\pi}}\frac{u_0(r)}{r},
+
+.. math::
+    u_0(r)=A
+    \begin{cases}
+        \sin(x_1r/a),&0\leq r\leq a,\\
+        \sin x_1\,e^{-y_1(r/a-1)},&r>a
+    \end{cases}
+
+と書ける。規格化定数は，
+
+.. math::
+    |A|^{-2}
+    =
+    \frac{a}{2}
+    -\frac{a\sin(2x_1)}{4x_1}
+    +\frac{a\sin^2x_1}{2y_1}
+
+である。
+
+最後に， `y>0` であるため，固有値条件 `y=-x\cot x` の基底状態解には `x>\pi/2` が必要である。一方， `x<z_0` でなければならない。したがって，束縛状態が存在するには，
+
+.. math::
+    z_0>\frac{\pi}{2}
+
+が必要である。すなわち，
+
+.. math::
+    V_0a^2>\frac{\pi^2\hbar^2}{8m}
+
+でなければならず，
+
+.. math::
+    V_0a^2<\frac{\pi^2\hbar^2}{8m}
+
+ならば束縛状態は存在しない。

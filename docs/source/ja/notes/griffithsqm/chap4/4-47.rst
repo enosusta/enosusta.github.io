@@ -1,2 +1,186 @@
 Problem 4.47
 ==================
+
+`u(r)=rR(r)` と置くと，動径方程式は，
+
+.. math::
+    -\frac{\hbar^2}{2m}\dv[2]{u}{r}
+    +
+    \left[
+    \frac{\hbar^2\ell\left(\ell+1\right)}{2mr^2}
+    +\frac{1}{2}m\omega^2r^2
+    \right]u
+    =
+    Eu
+
+である。無次元量，
+
+.. math::
+    \rho\coloneqq\sqrt{\frac{m\omega}{\hbar}}\,r,
+    \quad
+    \epsilon\coloneqq\frac{E}{\hbar\omega}
+
+を導入すると，
+
+.. math::
+    \dv[2]{u}{\rho}
+    +
+    \left[
+    2\epsilon-\rho^2
+    -\frac{\ell\left(\ell+1\right)}{\rho^2}
+    \right]u
+    =0
+
+となる。原点付近では `u\sim\rho^{\ell+1}`，無限遠では `u\sim e^{-\rho^2/2}` なので，
+
+.. math::
+    u(\rho)
+    =
+    \rho^{\ell+1}e^{-\rho^2/2}v(\rho)
+
+と置く。代入して整理すると，
+
+.. math::
+    \dv[2]{v}{\rho}
+    +
+    2\left(
+    \frac{\ell+1}{\rho}-\rho
+    \right)\dv{v}{\rho}
+    +
+    \left(
+    2\epsilon-2\ell-3
+    \right)v
+    =0
+
+を得る。`v(\rho)=\sum_{j=0}^\infty c_j\rho^j` と展開すれば，`1/\rho` の項から `c_1=0` であり，残りの係数は，
+
+.. math::
+    c_{j+2}
+    =
+    \frac{
+    2j+2\ell+3-2\epsilon
+    }{
+    \left(j+2\right)\left(j+2\ell+3\right)
+    }
+    c_j
+
+を満たす。したがって奇数係数はすべて0である。級数が無限に続くと `v\sim e^{\rho^2}` となり，`u` が規格化不能になる。そこで最高次数を `j=2n_r` として級数を打ち切ると，
+
+.. math::
+    4n_r+2\ell+3-2\epsilon=0
+
+でなければならない。したがって，
+
+.. math::
+    E
+    =
+    \left(
+    2n_r+\ell+\frac{3}{2}
+    \right)\hbar\omega,
+    \quad
+    n_r=0,1,2,\ldots
+
+となる。規格化定数を除けば，動径関数は，
+
+.. math::
+    R_{n_r\ell}(r)
+    \propto
+    \rho^\ell e^{-\rho^2/2}
+    L_{n_r}^{\ell+1/2}\left(\rho^2\right)
+
+である。
+
+問題 4.46 の主量子数と比較すると，
+
+.. math::
+    n=2n_r+\ell
+
+である。一方，動径量子数 `N` は動径関数を節の少ない順に `N=1,2,\ldots` と数えるため，`N=n_r+1` である。よって，
+
+.. math::
+    n=2\left(N-1\right)+\ell,
+    \quad
+    N=\frac{n-\ell}{2}+1
+
+を得る。固定した `n` に許される `\ell` は，
+
+.. math::
+    \ell=n,n-2,n-4,\ldots,
+    \begin{cases}
+        0,&n\ \mathrm{even},\\
+        1,&n\ \mathrm{odd}
+    \end{cases}
+
+である。最初のいくつかの準位を，動径量子数による分類と主量子数による分類の両方で示す。
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.5), sharey=True)
+
+    ell = np.arange(0, 7)
+    for N in range(1, 5):
+        energy = 2 * (N - 1) + ell + 1.5
+        axes[0].plot(
+            ell,
+            energy,
+            marker="o",
+            linewidth=1.2,
+            label=rf"$N={N}$",
+        )
+
+    axes[0].set_title("Grouped by radial quantum number")
+    axes[0].set_xlabel(r"$\ell$")
+    axes[0].set_ylabel(r"$E/(\hbar\omega)$")
+    axes[0].set_xticks(ell)
+    axes[0].grid(alpha=0.25)
+    axes[0].legend()
+
+    for n in range(7):
+        allowed_ell = np.arange(n % 2, n + 1, 2)
+        energy = n + 1.5
+        axes[1].hlines(
+            energy,
+            allowed_ell.min() - 0.25,
+            allowed_ell.max() + 0.25,
+            color="tab:blue",
+            linewidth=1.2,
+        )
+        axes[1].scatter(
+            allowed_ell,
+            np.full_like(allowed_ell, energy, dtype=float),
+            color="tab:blue",
+            zorder=3,
+        )
+        axes[1].text(
+            6.35,
+            energy,
+            rf"$n={n}$",
+            va="center",
+            fontsize=8,
+        )
+
+    axes[1].set_title("Grouped by principal quantum number")
+    axes[1].set_xlabel(r"$\ell$")
+    axes[1].set_xticks(ell)
+    axes[1].set_xlim(-0.5, 7.1)
+    axes[1].grid(alpha=0.25)
+
+    fig.tight_layout()
+    plt.show()
+
+各 `\ell` に対して `m=-\ell,\ldots,\ell` の `2\ell+1` 状態がある。したがって，
+
+.. math::
+    d(n)
+    =
+    \sum_{\substack{\ell=n,n-2,\ldots\\ \ell\geq0}}
+    \left(2\ell+1\right)
+    =
+    \frac{\left(n+1\right)\left(n+2\right)}{2}
+
+となり，デカルト座標で得た結果と一致する。

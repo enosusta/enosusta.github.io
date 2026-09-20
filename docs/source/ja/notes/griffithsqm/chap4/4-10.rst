@@ -1,2 +1,147 @@
 Problem 4.10
 ==================
+
+a.  井戸の内部では `V(r)=0` であり， `\ell=1` に対する動径方程式は，
+
+    .. math::
+        \dv{^2u}{r^2}
+        =\left(\frac{2}{r^2}-k^2\right)u
+
+    となる。ここで，
+
+    .. math::
+        u(r)=Arj_1(kr)
+
+    と置く。 `x=kr` および，
+
+    .. math::
+        f(x)\coloneqq xj_1(x)
+        =\frac{\sin x}{x}-\cos x
+
+    を導入すれば， `u=(A/k)f(x)` である。直接微分すると，
+
+    .. math::
+        \begin{aligned}
+            f''(x)
+            &=\cos x-\frac{\sin x}{x}
+            -\frac{2\cos x}{x^2}
+            +\frac{2\sin x}{x^3}
+            \\
+            &=
+            \left(\frac{2}{x^2}-1\right)f(x)
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \begin{aligned}
+            \dv{^2u}{r^2}
+            &=Akf''(x)
+            \\
+            &=Ak\left(\frac{2}{x^2}-1\right)f(x)
+            \\
+            &=\left(\frac{2}{r^2}-k^2\right)u(r)
+        \end{aligned}
+
+    であり，確かに動径方程式を満たす。
+
+b.  境界条件は `R(a)=Aj_1(ka)=0` である。 `x=ka>0` と置くと，
+
+    .. math::
+        j_1(x)
+        =\frac{\sin x-x\cos x}{x^2}=0
+        \quad\iff\quad
+        x=\tan x
+
+    となる。直線 `y=x` と `y=\tan x` の交点を描くと，次のようになる。
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        roots = np.array([
+            4.493409,
+            7.725252,
+            10.904122,
+            14.066194,
+            17.220755,
+        ])
+
+        x = np.linspace(1.0e-3, 18.0, 12000)
+        tangent = np.tan(x)
+        tangent[np.abs(np.cos(x)) < 0.04] = np.nan
+
+        plt.plot(x, x, color="black", label=r"$y=x$")
+        plt.plot(x, tangent, label=r"$y=\tan x$")
+        plt.scatter(
+            roots,
+            roots,
+            color="tab:red",
+            zorder=3,
+            label="Allowed roots",
+        )
+        plt.xlim(0.0, 18.0)
+        plt.ylim(0.0, 18.0)
+        plt.xlabel(r"$x=ka$")
+        plt.ylabel(r"$y$")
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+    ゼロでない正の交点を小さい順に `\beta_{N1}` とすると，
+
+    .. math::
+        \begin{array}{c|c|c}
+            N&\beta_{N1}
+            &E_{N1}/\left[\hbar^2/(2ma^2)\right]
+            \\\hline
+            1&4.493409&20.190729\\
+            2&7.725252&59.679516\\
+            3&10.904122&118.899869\\
+            4&14.066194&197.857811\\
+            5&17.220755&296.554412
+        \end{array}
+
+    となる。一般に，許されるエネルギーは，
+
+    .. math::
+        E_{N1}
+        =\frac{\hbar^2}{2ma^2}\beta_{N1}^2,
+        \quad
+        N=1,2,3,\ldots
+
+    である。
+
+    大きな `N` では，交点は `\tan x` の正の枝の漸近線のすぐ左にある。そこで，
+
+    .. math::
+        \beta_{N1}
+        =\left(N+\frac{1}{2}\right)\pi-\epsilon_N,
+        \quad
+        0<\epsilon_N\ll1
+
+    と置くと，
+
+    .. math::
+        \tan\beta_{N1}
+        =\cot\epsilon_N
+        \approx\frac{1}{\epsilon_N}
+
+    である。方程式 `\beta_{N1}=\tan\beta_{N1}` より `\epsilon_N\approx1/\beta_{N1}` となるので，主要項では，
+
+    .. math::
+        \beta_{N1}
+        \approx\left(N+\frac{1}{2}\right)\pi
+
+    である。したがって，
+
+    .. math::
+        E_{N1}
+        \approx
+        \frac{\hbar^2\pi^2}{2ma^2}
+        \left(N+\frac{1}{2}\right)^2
+
+    を得る。

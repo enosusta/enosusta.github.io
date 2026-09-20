@@ -1,2 +1,133 @@
 Problem 4.36
 ==================
+
+a.  磁場は `z` 方向だけを向くので，
+
+    .. math::
+        \begin{aligned}
+            H(t)
+            &=
+            -\gamma\bm{B}(t)\cdot\bm{S}
+            \\
+            &=
+            -\gamma B_0\cos\left(\omega t\right)S_z
+            \\
+            &=
+            -\frac{\gamma B_0\hbar}{2}
+            \cos\left(\omega t\right)
+            \begin{pmatrix}
+                1&0\\
+                0&-1
+            \end{pmatrix}
+        \end{aligned}
+
+    である。
+
+b.  `\chi(t)=(a(t),b(t))^{\mathsf T}` と書くと，時間に依存する Schrödinger 方程式は，
+
+    .. math::
+        \begin{aligned}
+            i\hbar\dv{a}{t}
+            &=
+            -\frac{\gamma B_0\hbar}{2}
+            \cos\left(\omega t\right)a,
+            \\
+            i\hbar\dv{b}{t}
+            &=
+            \frac{\gamma B_0\hbar}{2}
+            \cos\left(\omega t\right)b
+        \end{aligned}
+
+    となる。積分すると，
+
+    .. math::
+        a(t)=a(0)e^{i\beta(t)},
+        \quad
+        b(t)=b(0)e^{-i\beta(t)},
+        \quad
+        \beta(t)
+        \coloneqq
+        \frac{\gamma B_0}{2\omega}
+        \sin\left(\omega t\right)
+
+    を得る。初期状態は，
+
+    .. math::
+        \chi(0)
+        =
+        \chi_+^{(x)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            1
+        \end{pmatrix}
+
+    だから，
+
+    .. math::
+        \chi(t)
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            e^{i\beta(t)}\\
+            e^{-i\beta(t)}
+        \end{pmatrix}
+
+    となる。
+
+c.  `S_x` の負の固有 spinor は，
+
+    .. math::
+        \chi_-^{(x)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            -1
+        \end{pmatrix}
+
+    なので，その確率振幅は，
+
+    .. math::
+        \left(\chi_-^{(x)}\right)^\dagger\chi(t)
+        =
+        \frac{1}{2}
+        \left(e^{i\beta(t)}-e^{-i\beta(t)}\right)
+        =
+        i\sin\beta(t)
+
+    である。したがって，
+
+    .. math::
+        P_x^-(t)
+        =
+        \sin^2
+        \left[
+        \frac{\gamma B_0}{2\omega}
+        \sin\left(\omega t\right)
+        \right]
+
+    を得る。
+
+d.  完全な反転には，ある時刻で `P_x^-=1`，すなわち `|\beta|=\pi/2` が少なくとも一度実現すればよい。`|\sin(\omega t)|\leq1` だから，
+
+    .. math::
+        \frac{|\gamma|B_0}{2\omega}
+        \geq\frac{\pi}{2}
+
+    が必要である。よって，最小磁場は，
+
+    .. math::
+        B_{0,\min}
+        =
+        \frac{\pi\omega}{|\gamma|}
+
+    となる。電子について `|\gamma|=e/m` を用いれば，
+
+    .. math::
+        B_{0,\min}
+        =
+        \frac{\pi m\omega}{e}
+
+    である。

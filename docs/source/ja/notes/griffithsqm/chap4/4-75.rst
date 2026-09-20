@@ -1,2 +1,60 @@
 Problem 4.75
 ==================
+
+円環上では `r=b` であり，時間依存のベクトルポテンシャルは，
+
+.. math::
+    \bm{A}(t)
+    =
+    \frac{\Phi(t)}{2\pi b}\hat{\bm{\phi}}
+
+である。したがって，ハミルトニアンは，
+
+.. math::
+    H(t)
+    =
+    \frac{\hbar^2}{2mb^2}
+    \left[
+    -i\pdv{}{\phi}
+    -\frac{q\Phi(t)}{2\pi\hbar}
+    \right]^2
+
+と書ける。`\phi` 依存性に作用させると，
+
+.. math::
+    \begin{aligned}
+        H(t)\Psi(t)
+        &=
+        \frac{\hbar^2}{2mb^2}
+        \left[
+        n-\frac{q\Phi(t)}{2\pi\hbar}
+        \right]^2\Psi(t)\\
+        &=E_n(t)\Psi(t)
+    \end{aligned}
+
+となる。一方，時間微分からは，
+
+.. math::
+    i\hbar\pdv{\Psi}{t}
+    =
+    \hbar\dv{f}{t}\Psi
+
+を得る。問題文の `f(t)` に対して，
+
+.. math::
+    \hbar\dv{f}{t}
+    =
+    \frac{\hbar^2}{2mb^2}
+    \left[
+    n-\frac{q\Phi(t)}{2\pi\hbar}
+    \right]^2
+    =E_n(t)
+
+なので，
+
+.. math::
+    H(t)\Psi(t)
+    =
+    i\hbar\pdv{\Psi}{t}
+
+が成り立つ。また，`|\Psi|^2=1/(2\pi)` なので，任意の時刻で正しく規格化されている。

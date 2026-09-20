@@ -1,2 +1,160 @@
 Problem 4.20
 ==================
+
+a.  太陽を原点に固定すると，地球の重力ポテンシャルエネルギーは，
+
+    .. math::
+        V(r)=-\frac{GMm_E}{r}
+
+    である。これは Coulomb ポテンシャルの `e^2/(4\pi\epsilon_0)` を `GMm_E` に置き換えた形である。
+
+b.  水素原子の Bohr 半径で電子の質量を `m_E` に，Coulomb 結合定数を `GMm_E` に置き換えると，
+
+    .. math::
+        a_g
+        =\frac{\hbar^2}{G M m_E^2}
+
+    を得る。数値は次のように計算できる。
+
+    .. exec_code::
+
+        G = 6.67430e-11
+        hbar = 1.054571817e-34
+        M = 1.98847e30
+        m_E = 5.9722e24
+
+        a_g = hbar**2 / (G * M * m_E**2)
+        print(f"a_g = {a_g:.6e} m")
+
+    したがって，
+
+    .. math::
+        a_g\approx2.35\times10^{-138}\ \mathrm{m}
+
+    である。
+
+c.  重力的な Bohr の公式は，
+
+    .. math::
+        E_n
+        =-\frac{m_E}{2\hbar^2}
+        \left(GMm_E\right)^2\frac{1}{n^2}
+        =-\frac{G^2M^2m_E^3}{2\hbar^2n^2}
+
+    となる。一方，半径 `r_o` の古典的円軌道では，
+
+    .. math::
+        \frac{m_Ev^2}{r_o}
+        =\frac{GMm_E}{r_o^2}
+
+    なので，運動エネルギーと全エネルギーは，
+
+    .. math::
+        T=\frac{GMm_E}{2r_o},
+        \quad
+        E_{\mathrm{cl}}
+        =T+V
+        =-\frac{GMm_E}{2r_o}
+
+    である。 `E_n=E_{\mathrm{cl}}` と置き， `a_g=\hbar^2/(GMm_E^2)` を用いると，
+
+    .. math::
+        \frac{G^2M^2m_E^3}{2\hbar^2n^2}
+        =\frac{GMm_E}{2r_o}
+        \quad\Longrightarrow\quad
+        n^2=\frac{r_o}{a_g}
+
+    となる。したがって，
+
+    .. math::
+        n=\sqrt{\frac{r_o}{a_g}}
+
+    である。地球の平均軌道半径 `r_o=1.495978707\times10^{11}\ \mathrm{m}` を用いると，
+
+    .. exec_code::
+
+        r_o = 1.495978707e11
+        a_g = 2.349410300240807e-138
+
+        n = (r_o / a_g)**0.5
+        print(f"n = {n:.6e}")
+
+    よって，地球の量子数は，
+
+    .. math::
+        n\approx2.52\times10^{74}
+
+    という非常に大きな値になる。
+
+d.  正の定数，
+
+    .. math::
+        C\coloneqq\frac{G^2M^2m_E^3}{2\hbar^2}
+
+    を導入すれば `E_n=-C/n^2` である。 `n` から `n-1` への遷移で放出されるエネルギーは，
+
+    .. math::
+        \begin{aligned}
+            \Delta E
+            &=E_n-E_{n-1}
+            \\
+            &=C\left[
+                \frac{1}{(n-1)^2}-\frac{1}{n^2}
+            \right]
+            \\
+            &=C\frac{2n-1}{n^2(n-1)^2}
+            \\
+            &\approx\frac{2C}{n^3}
+        \end{aligned}
+
+    となる。対応する放射の波長は `\lambda=hc/\Delta E` である。数値計算は，
+
+    .. exec_code::
+
+        import math
+
+        G = 6.67430e-11
+        hbar = 1.054571817e-34
+        h = 2.0 * math.pi * hbar
+        c = 299792458.0
+        M = 1.98847e30
+        m_E = 5.9722e24
+        r_o = 1.495978707e11
+        light_year = 9.460730472e15
+
+        a_g = hbar**2 / (G * M * m_E**2)
+        n = math.sqrt(r_o / a_g)
+        C = G**2 * M**2 * m_E**3 / (2.0 * hbar**2)
+        delta_E = 2.0 * C / n**3
+        wavelength = h * c / delta_E
+
+        print(f"Delta E = {delta_E:.6e} J")
+        print(f"lambda = {wavelength:.6e} m")
+        print(f"lambda = {wavelength / light_year:.6f} light-years")
+
+    したがって，
+
+    .. math::
+        \Delta E\approx2.10\times10^{-41}\ \mathrm{J},
+        \quad
+        \lambda\approx9.46\times10^{15}\ \mathrm{m}
+        \approx1.00\ \mathrm{light\text{-}year}
+
+    となる。
+
+    この1光年という値は偶然ではない。大きな `n` では，
+
+    .. math::
+        \Delta E\approx\frac{2C}{n^3}
+        =\hbar\sqrt{\frac{GM}{r_o^3}}
+        =\hbar\omega_{\mathrm{orb}}
+
+    である。これは Bohr の対応原理であり，遷移の角振動数が古典的な軌道角振動数へ近づくことを表す。したがって，
+
+    .. math::
+        \lambda
+        =\frac{hc}{\hbar\omega_{\mathrm{orb}}}
+        =\frac{2\pi c}{\omega_{\mathrm{orb}}}
+        =cT_{\mathrm{orb}}
+
+    となる。地球の公転周期は1年なので，この波長は光が1年間に進む距離，すなわち1光年となる。

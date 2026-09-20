@@ -1,2 +1,59 @@
 Problem 4.57
 ==================
+
+a.  `L_z=xp_y-yp_x` なので，
+
+    .. math::
+        \begin{aligned}
+            [x^2,L_z]
+            &=
+            [x^2,xp_y]-[x^2,yp_x]
+            \\
+            &=
+            -y[x^2,p_x]
+            =
+            -2i\hbar xy
+        \end{aligned}
+
+    である。したがって，不確定性原理は，
+
+    .. math::
+        \sigma_{x^2}\sigma_{L_z}
+        \geq
+        \frac{1}{2}
+        \left|\braket{[x^2,L_z]}\right|
+        =
+        \hbar|\braket{xy}|
+
+    となる。
+
+b.  水素の状態 `\psi_{nlm}` は `L_z` の固有状態であり，
+
+    .. math::
+        L_z\psi_{nlm}
+        =
+        m\hbar\psi_{nlm}
+
+    である。したがって，
+
+    .. math::
+        \sigma_{L_z}
+        =
+        \sqrt{\braket{L_z^2}-\braket{L_z}^2}
+        =0
+
+    となる。
+
+c.  \(b) を \(a) の不確定性関係へ代入すると，
+
+    .. math::
+        0
+        \geq
+        \hbar|\braket{xy}|
+
+    となる。右辺は非負なので，
+
+    .. math::
+        \braket{xy}=0
+
+    でなければならない。

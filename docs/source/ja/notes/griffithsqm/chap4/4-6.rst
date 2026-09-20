@@ -1,2 +1,50 @@
 Problem 4.6
 ==================
+
+球面調和関数の定義より，
+
+.. math::
+    Y_\ell^{-m}(\theta,\phi)
+    =
+    \sqrt{
+        \frac{2\ell+1}{4\pi}
+        \frac{(\ell+m)!}{(\ell-m)!}
+    }
+    e^{-im\phi}P_\ell^{-m}(\cos\theta)
+
+である。一方，負の `m` に対する Legendre 陪関数は，
+
+.. math::
+    P_\ell^{-m}(x)
+    =(-1)^m\frac{(\ell-m)!}{(\ell+m)!}P_\ell^m(x)
+
+と定義される。これを代入すると，
+
+.. math::
+    \begin{aligned}
+        Y_\ell^{-m}(\theta,\phi)
+        &=
+        (-1)^m
+        \sqrt{
+            \frac{2\ell+1}{4\pi}
+            \frac{(\ell+m)!}{(\ell-m)!}
+        }
+        \frac{(\ell-m)!}{(\ell+m)!}
+        e^{-im\phi}P_\ell^m(\cos\theta)
+        \\
+        &=
+        (-1)^m
+        \sqrt{
+            \frac{2\ell+1}{4\pi}
+            \frac{(\ell-m)!}{(\ell+m)!}
+        }
+        e^{-im\phi}P_\ell^m(\cos\theta)
+    \end{aligned}
+
+となる。 `P_\ell^m(\cos\theta)` は実関数なので，最後の式は，
+
+.. math::
+    Y_\ell^{-m}(\theta,\phi)
+    =(-1)^m\left[Y_\ell^m(\theta,\phi)\right]^*
+
+に等しい。

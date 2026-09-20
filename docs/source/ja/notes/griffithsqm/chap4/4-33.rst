@@ -1,2 +1,76 @@
 Problem 4.33
 ==================
+
+`\hat{\bm{r}}` 方向のスピン成分は，
+
+.. math::
+    \begin{aligned}
+        S_r
+        &=
+        \hat{\bm{r}}\cdot\bm{S}
+        \\
+        &=
+        S_x\sin\theta\cos\phi
+        +S_y\sin\theta\sin\phi
+        +S_z\cos\theta
+        \\
+        &=
+        \frac{\hbar}{2}
+        \begin{pmatrix}
+            \cos\theta&
+            \sin\theta\,e^{-i\phi}\\
+            \sin\theta\,e^{i\phi}&
+            -\cos\theta
+        \end{pmatrix}
+    \end{aligned}
+
+である。特性方程式は，
+
+.. math::
+    \det\left(S_r-\lambda\mathsf{I}\right)
+    =
+    \lambda^2-\frac{\hbar^2}{4}
+    =0
+
+だから，固有値は，
+
+.. math::
+    \lambda_\pm=\pm\frac{\hbar}{2}
+
+となる。`\lambda_+=\hbar/2` に対しては，
+
+.. math::
+    \left(\cos\theta-1\right)a
+    +\sin\theta\,e^{-i\phi}b=0
+
+である。半角公式を用いれば `b/a=e^{i\phi}\tan(\theta/2)` となるので，規格化すると，
+
+.. math::
+    \chi_+^{(r)}
+    =
+    \begin{pmatrix}
+        \cos\left(\theta/2\right)\\
+        e^{i\phi}\sin\left(\theta/2\right)
+    \end{pmatrix}
+
+を得る。同様に，`\lambda_-=-\hbar/2` の規格化固有 spinor は，
+
+.. math::
+    \chi_-^{(r)}
+    =
+    \begin{pmatrix}
+        e^{-i\phi}\sin\left(\theta/2\right)\\
+        -\cos\left(\theta/2\right)
+    \end{pmatrix}
+
+と選べる。実際，
+
+.. math::
+    S_r\chi_\pm^{(r)}
+    =
+    \pm\frac{\hbar}{2}\chi_\pm^{(r)},
+    \quad
+    \left(\chi_\pm^{(r)}\right)^\dagger
+    \chi_\pm^{(r)}=1
+
+である。各固有 spinor には任意の全体位相を掛けてもよい。

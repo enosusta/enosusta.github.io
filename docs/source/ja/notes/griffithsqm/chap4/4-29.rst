@@ -1,2 +1,77 @@
 Problem 4.29
 ==================
+
+a.  スピン行列から直接計算すると，
+
+    .. math::
+        S_xS_y
+        =
+        \frac{\hbar^2}{4}
+        \begin{pmatrix}
+            i&0\\
+            0&-i
+        \end{pmatrix},
+        \quad
+        S_yS_x
+        =
+        \frac{\hbar^2}{4}
+        \begin{pmatrix}
+            -i&0\\
+            0&i
+        \end{pmatrix}
+
+    なので，
+
+    .. math::
+        [S_x,S_y]
+        =
+        i\frac{\hbar^2}{2}
+        \begin{pmatrix}
+            1&0\\
+            0&-1
+        \end{pmatrix}
+        =i\hbar S_z
+
+    である。同様に，
+
+    .. math::
+        S_yS_z=i\frac{\hbar}{2}S_x,
+        \quad
+        S_zS_y=-i\frac{\hbar}{2}S_x,
+        \quad
+        S_zS_x=i\frac{\hbar}{2}S_y,
+        \quad
+        S_xS_z=-i\frac{\hbar}{2}S_y
+
+    だから，
+
+    .. math::
+        [S_y,S_z]=i\hbar S_x,
+        \quad
+        [S_z,S_x]=i\hbar S_y
+
+    も成り立つ。
+
+b.  各 Pauli 行列を直接2乗すると，
+
+    .. math::
+        \sigma_x^2=\sigma_y^2=\sigma_z^2=\mathsf{I}
+
+    となる。また，異なる行列の積は，
+
+    .. math::
+        \sigma_x\sigma_y=i\sigma_z,
+        \quad
+        \sigma_y\sigma_z=i\sigma_x,
+        \quad
+        \sigma_z\sigma_x=i\sigma_y
+
+    であり，順序を逆にすると符号が反転する。したがって，`j=k` では右辺の Kronecker delta の項だけが残り，`j\ne k` では Levi--Civita 記号の項だけが残る。両者をまとめれば，
+
+    .. math::
+        \sigma_j\sigma_k
+        =
+        \delta_{jk}\mathsf{I}
+        +i\sum_l\epsilon_{jkl}\sigma_l
+
+    となる。問題文の `\delta_{jk}` の項では，単位行列 `\mathsf{I}` が省略されている。

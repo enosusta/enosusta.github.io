@@ -1,2 +1,76 @@
 Problem 4.72
 ==================
+
+a.  与えられたベクトルポテンシャルは，
+
+    .. math::
+        \bm{A}
+        =
+        -\frac{1}{2}\bm{r}\times\bm{B}_0
+        =
+        \frac{1}{2}\bm{B}_0\times\bm{r}
+
+    と書ける。一定ベクトル `\bm{B}_0` に対する恒等式 `\bm{\nabla}\times\left(\bm{B}_0\times\bm{r}\right)=2\bm{B}_0` を用いると，
+
+    .. math::
+        \bm{\nabla}\times\bm{A}
+        =\bm{B}_0
+
+    となり，一様磁場を正しく与える。
+
+b.  軌道運動とスピンの磁気モーメントを含むハミルトニアンは，
+
+    .. math::
+        H
+        =
+        \frac{1}{2m}
+        \left(\bm{p}-q\bm{A}\right)^2
+        +q\varphi
+        -\gamma\bm{B}_0\cdot\bm{S}
+
+    である。`\bm{\nabla}\cdot\bm{A}=0` なので，`\bm{p}\cdot\bm{A}=\bm{A}\cdot\bm{p}` であり，
+
+    .. math::
+        \begin{aligned}
+            \frac{1}{2m}
+            \left(\bm{p}-q\bm{A}\right)^2
+            &=
+            \frac{p^2}{2m}
+            -\frac{q}{m}\bm{A}\cdot\bm{p}
+            +\frac{q^2}{2m}A^2\\
+            &=
+            \frac{p^2}{2m}
+            -\frac{q}{2m}\bm{B}_0\cdot
+            \left(\bm{r}\times\bm{p}\right)
+            +\frac{q^2}{8m}
+            \left|
+            \bm{B}_0\times\bm{r}
+            \right|^2
+        \end{aligned}
+
+    となる。ここで `\bm{L}=\bm{r}\times\bm{p}`，`\gamma_o=q/(2m)`，および，
+
+    .. math::
+        \left|
+        \bm{B}_0\times\bm{r}
+        \right|^2
+        =
+        r^2B_0^2-left(\bm{r}\cdot\bm{B}_0\right)^2
+
+    を用いると，
+
+    .. math::
+        \begin{aligned}
+            H
+            ={}&
+            \frac{p^2}{2m}+q\varphi
+            -\bm{B}_0\cdot
+            \left(\gamma_o\bm{L}+\gamma\bm{S}\right)\\
+            &+
+            \frac{q^2}{8m}
+            \left[
+            r^2B_0^2-left(\bm{r}\cdot\bm{B}_0\right)^2
+            \right]
+        \end{aligned}
+
+    を得る。

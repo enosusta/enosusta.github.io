@@ -1,2 +1,72 @@
 Problem 4.62
 ==================
+
+`S_z` の固有状態を，
+
+.. math::
+    \ket{s\,s},\ket{s\,s-1},\ldots,\ket{s\,{-s}}
+
+の順に基底として選ぶ。このとき，
+
+.. math::
+    S_z\ket{s\,m}=m\hbar\ket{s\,m}
+
+なので，
+
+.. math::
+    S_z
+    =
+    \hbar
+    \begin{pmatrix}
+        s&0&0&\cdots&0\\
+        0&s-1&0&\cdots&0\\
+        0&0&s-2&\cdots&0\\
+        \vdots&\vdots&\vdots&\ddots&\vdots\\
+        0&0&0&\cdots&-s
+    \end{pmatrix}
+
+となる。また，
+
+.. math::
+    S_\pm\ket{s\,m}
+    =
+    \hbar
+    \sqrt{\left(s\mp m\right)\left(s\pm m+1\right)}
+    \ket{s\,m\pm1}
+
+である。ここで，
+
+.. math::
+    b_j\coloneqq\sqrt{\left(s+j\right)\left(s+1-j\right)}
+
+と置く。`S_x=\left(S_++S_-\right)/2` より，
+
+.. math::
+    S_x
+    =
+    \frac{\hbar}{2}
+    \begin{pmatrix}
+        0&b_s&0&0&\cdots&0\\
+        b_s&0&b_{s-1}&0&\cdots&0\\
+        0&b_{s-1}&0&b_{s-2}&\cdots&0\\
+        0&0&b_{s-2}&0&\cdots&0\\
+        \vdots&\vdots&\vdots&\vdots&\ddots&b_{-s+1}\\
+        0&0&0&0&b_{-s+1}&0
+    \end{pmatrix}
+
+を得る。同様に，`S_y=\left(S_+-S_-\right)/(2i)` から，
+
+.. math::
+    S_y
+    =
+    \frac{\hbar}{2}
+    \begin{pmatrix}
+        0&-ib_s&0&0&\cdots&0\\
+        ib_s&0&-ib_{s-1}&0&\cdots&0\\
+        0&ib_{s-1}&0&-ib_{s-2}&\cdots&0\\
+        0&0&ib_{s-2}&0&\cdots&0\\
+        \vdots&\vdots&\vdots&\vdots&\ddots&-ib_{-s+1}\\
+        0&0&0&0&ib_{-s+1}&0
+    \end{pmatrix}
+
+となる。これらはすべて `\left(2s+1\right)\times\left(2s+1\right)` 行列である。

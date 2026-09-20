@@ -1,2 +1,70 @@
 Problem 4.46
 ==================
+
+a.  `r^2=x^2+y^2+z^2` なので，Hamiltonian は，
+
+    .. math::
+        \begin{aligned}
+            H
+            &=
+            -\frac{\hbar^2}{2m}
+            \left(
+            \pdv[2]{}{x}
+            +\pdv[2]{}{y}
+            +\pdv[2]{}{z}
+            \right)
+            +
+            \frac{1}{2}m\omega^2
+            \left(x^2+y^2+z^2\right)
+            \\
+            &=H_x+H_y+H_z
+        \end{aligned}
+
+    と分離する。`\psi(x,y,z)=X(x)Y(y)Z(z)` と置けば，各因子は同じ振動数 `\omega` をもつ1次元調和振動子の固有関数であり，
+
+    .. math::
+        E_x=\left(n_x+\frac{1}{2}\right)\hbar\omega,
+        \quad
+        E_y=\left(n_y+\frac{1}{2}\right)\hbar\omega,
+        \quad
+        E_z=\left(n_z+\frac{1}{2}\right)\hbar\omega
+
+    である。ここで `n_x,n_y,n_z=0,1,2,\ldots` である。したがって，
+
+    .. math::
+        E
+        =
+        \left(
+        n_x+n_y+n_z+\frac{3}{2}
+        \right)\hbar\omega
+
+    となる。主量子数を，
+
+    .. math::
+        n\coloneqq n_x+n_y+n_z
+
+    と定義すれば，
+
+    .. math::
+        E_n
+        =
+        \left(n+\frac{3}{2}\right)\hbar\omega,
+        \quad
+        n=0,1,2,\ldots
+
+    を得る。
+
+b.  縮退度は，`n_x+n_y+n_z=n` を満たす非負整数の組の個数である。`n_x` を固定すると `n_y` には `n-n_x+1` 通りの選択があるので，
+
+    .. math::
+        \begin{aligned}
+            d(n)
+            &=
+            \sum_{n_x=0}^{n}
+            \left(n-n_x+1\right)
+            \\
+            &=
+            \frac{\left(n+1\right)\left(n+2\right)}{2}
+        \end{aligned}
+
+    となる。

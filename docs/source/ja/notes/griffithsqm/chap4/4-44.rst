@@ -1,2 +1,82 @@
 Problem 4.44
 ==================
+
+位相因子を，
+
+.. math::
+    U\coloneqq e^{iq\Lambda/\hbar},
+    \quad
+    \Psi'=U\Psi
+
+と置く。ゲージ変換後の共変運動量を，
+
+.. math::
+    \bm{D}'
+    \coloneqq
+    -i\hbar\bm{\nabla}-q\bm{A}'
+
+とすると，`\bm{A}'=\bm{A}+\bm{\nabla}\Lambda` だから，
+
+.. math::
+    \begin{aligned}
+        \bm{D}'\Psi'
+        &=
+        \left[
+        -i\hbar\bm{\nabla}
+        -q\left(\bm{A}+\bm{\nabla}\Lambda\right)
+        \right]U\Psi
+        \\
+        &=
+        U\left(
+        -i\hbar\bm{\nabla}-q\bm{A}
+        \right)\Psi
+    \end{aligned}
+
+となる。この関係をもう一度適用すれば，
+
+.. math::
+    \left(\bm{D}'\right)^2\Psi'
+    =
+    U
+    \left(
+    -i\hbar\bm{\nabla}-q\bm{A}
+    \right)^2\Psi
+
+である。一方，時間微分は，
+
+.. math::
+    i\hbar\pdv{\Psi'}{t}
+    =
+    U\left(
+    i\hbar\pdv{\Psi}{t}
+    -q\pdv{\Lambda}{t}\Psi
+    \right)
+
+となる。変換後の Hamiltonian を `\Psi'` に作用させると，`\varphi'=\varphi-\partial\Lambda/\partial t` より，
+
+.. math::
+    \begin{aligned}
+        \left[
+        \frac{\left(\bm{D}'\right)^2}{2m}
+        +q\varphi'
+        \right]\Psi'
+        &=
+        U\left[
+        \frac{
+        \left(-i\hbar\bm{\nabla}-q\bm{A}\right)^2
+        }{2m}
+        +q\varphi
+        -q\pdv{\Lambda}{t}
+        \right]\Psi
+        \\
+        &=
+        U\left(
+        i\hbar\pdv{\Psi}{t}
+        -q\pdv{\Lambda}{t}\Psi
+        \right)
+        \\
+        &=
+        i\hbar\pdv{\Psi'}{t}
+    \end{aligned}
+
+を得る。したがって，`\Psi'` は `\varphi'`，`\bm{A}'` に対する Schrödinger 方程式を満たす。また `|U|=1` なので，確率密度は `|\Psi'|^2=|\Psi|^2` のままである。

@@ -1,2 +1,76 @@
 Problem 4.69
 ==================
+
+`\rho_0=2n` とすれば，動径方程式は，
+
+.. math::
+    \dv[2]{u}{\rho}
+    =
+    \left[
+    1-\frac{2n}{\rho}
+    +\frac{l\left(l+1\right)}{\rho^2}
+    \right]u
+
+となる。原点近傍の正則解は `u\sim\rho^{l+1}` なので，小さい `\epsilon` における初期条件を，
+
+.. math::
+    u\left(\epsilon\right)=\epsilon^{l+1},
+    \quad
+    u'\left(\epsilon\right)=\left(l+1\right)\epsilon^l
+
+とする。試行値 `n` ごとに外向きに積分すると，固有値を通過する際に遠方の裾 `u\left(\rho_{\max}\right)` の符号が反転する。これを用いて根を絞り込む。
+
+.. exec_code::
+
+    from scipy.integrate import solve_ivp
+    from scipy.optimize import brentq
+
+    epsilon = 1.0e-5
+    rho_max = 25.0
+
+    def tail(n, l):
+        initial = [
+            epsilon**(l + 1),
+            (l + 1) * epsilon**l,
+        ]
+
+        def radial_equation(rho, y):
+            coefficient = (
+                1.0 - 2.0 * n / rho
+                + l * (l + 1.0) / rho**2
+            )
+            return [y[1], coefficient * y[0]]
+
+        solution = solve_ivp(
+            radial_equation,
+            (epsilon, rho_max),
+            initial,
+            method="DOP853",
+            rtol=2.0e-9,
+            atol=1.0e-11,
+        )
+        return solution.y[0, -1]
+
+    print(f"{'l':>2} {'root':>5} {'n (shooting)':>15}")
+    for l in range(3):
+        for index in range(3):
+            center = l + index + 1.0
+            n_root = brentq(
+                lambda n: tail(n, l),
+                center - 0.1,
+                center + 0.1,
+                xtol=1.0e-10,
+            )
+            print(f"{l:2d} {index + 1:5d} {n_root:15.8f}")
+
+有効数字4桁では，
+
+.. math::
+    \begin{array}{c|ccc}
+        l&\multicolumn{3}{c}{n}\\ \hline
+        0&1.000&2.000&3.000\\
+        1&2.000&3.000&4.000\\
+        2&3.000&4.000&5.000
+    \end{array}
+
+となる。すなわち，各 `l` について許される主量子数は `n=l+1,l+2,\ldots` であり，Bohr エネルギー `E_n=E_1/n^2` が数値的に再現される。

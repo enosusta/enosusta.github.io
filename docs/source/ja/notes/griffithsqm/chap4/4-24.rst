@@ -1,2 +1,98 @@
 Problem 4.24
 ==================
+
+a.  任意の試験関数 `f(\theta,\phi)` に対して，
+
+    .. math::
+        L_-f
+        =
+        -\hbar e^{-i\phi}
+        \left(
+        \pdv{f}{\theta}
+        -i\cot\theta\pdv{f}{\phi}
+        \right)
+
+    である。ここへ `L_+` を作用させると，
+
+    .. math::
+        \begin{aligned}
+            L_+L_-f
+            ={}&
+            -\hbar^2e^{i\phi}
+            \left(
+            \pdv{}{\theta}
+            +i\cot\theta\pdv{}{\phi}
+            \right)
+            \left[
+            e^{-i\phi}
+            \left(
+            \pdv{f}{\theta}
+            -i\cot\theta\pdv{f}{\phi}
+            \right)
+            \right]
+            \\
+            ={}&
+            -\hbar^2
+            \left(
+            \pdv[2]{f}{\theta}
+            +\cot\theta\pdv{f}{\theta}
+            +\cot^2\theta\pdv[2]{f}{\phi}
+            +i\pdv{f}{\phi}
+            \right)
+        \end{aligned}
+
+    となる。途中で現れる混合微分項は打ち消し合い，`\csc^2\theta-\cot^2\theta=1` を用いた。`f` は任意だから，
+
+    .. math::
+        L_+L_-
+        =
+        -\hbar^2
+        \left(
+        \pdv[2]{}{\theta}
+        +\cot\theta\pdv{}{\theta}
+        +\cot^2\theta\pdv[2]{}{\phi}
+        +i\pdv{}{\phi}
+        \right)
+
+    を得る。
+
+b.  `L^2=L_+L_-+L_z^2-\hbar L_z` と `L_z=-i\hbar\partial/\partial\phi` を用いると，
+
+    .. math::
+        L_z^2-\hbar L_z
+        =
+        -\hbar^2\pdv[2]{}{\phi}
+        +i\hbar^2\pdv{}{\phi}
+
+    である。これを \(a) の結果に加えると，一階の `\phi` 微分が打ち消される。さらに，
+
+    .. math::
+        1+\cot^2\theta=\csc^2\theta,
+        \quad
+        \pdv[2]{}{\theta}
+        +\cot\theta\pdv{}{\theta}
+        =
+        \frac{1}{\sin\theta}
+        \pdv{}{\theta}
+        \left(
+        \sin\theta\pdv{}{\theta}
+        \right)
+
+    なので，
+
+    .. math::
+        L^2
+        =
+        -\hbar^2
+        \left[
+        \frac{1}{\sin\theta}
+        \pdv{}{\theta}
+        \left(
+        \sin\theta\pdv{}{\theta}
+        \right)
+        +
+        \frac{1}{\sin^2\theta}
+        \pdv[2]{}{\phi}
+        \right]
+
+    となる。

@@ -1,2 +1,73 @@
 Problem 4.59
 ==================
+
+一重項状態を `\ket{0\,0}` と書く。全スピンが0なので，任意の方向 `\bm{b}` に対して，
+
+.. math::
+    \left(
+    S_b^{(1)}+S_b^{(2)}
+    \right)\ket{0\,0}=0
+
+である。したがって，
+
+.. math::
+    \braket{
+    S_a^{(1)}S_b^{(2)}
+    }
+    =
+    -\braket{
+    S_a^{(1)}S_b^{(1)}
+    }
+
+となる。単位ベクトル `\hat{\bm{a}}`，`\hat{\bm{b}}` と Pauli 行列を用いれば，
+
+.. math::
+    S_a^{(1)}
+    =
+    \frac{\hbar}{2}
+    \hat{\bm{a}}\cdot\bm{\sigma}^{(1)},
+    \quad
+    S_b^{(1)}
+    =
+    \frac{\hbar}{2}
+    \hat{\bm{b}}\cdot\bm{\sigma}^{(1)}
+
+である。Pauli 行列の積の法則から，
+
+.. math::
+    \begin{aligned}
+        S_a^{(1)}S_b^{(1)}
+        &=
+        \frac{\hbar^2}{4}
+        \left[
+        \hat{\bm{a}}\cdot\hat{\bm{b}}\,\mathsf{I}
+        +
+        i\bm{\sigma}^{(1)}
+        \cdot
+        \left(
+        \hat{\bm{a}}\times\hat{\bm{b}}
+        \right)
+        \right]
+    \end{aligned}
+
+となる。一重項では各粒子のスピン期待値が0なので，
+
+.. math::
+    \braket{\bm{\sigma}^{(1)}}=0
+
+である。よって，
+
+.. math::
+    \begin{aligned}
+        \braket{
+        S_a^{(1)}S_b^{(2)}
+        }
+        &=
+        -\frac{\hbar^2}{4}
+        \hat{\bm{a}}\cdot\hat{\bm{b}}
+        \\
+        &=
+        -\frac{\hbar^2}{4}\cos\theta
+    \end{aligned}
+
+を得る。

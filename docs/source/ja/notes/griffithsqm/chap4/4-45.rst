@@ -1,2 +1,68 @@
 Problem 4.45
 ==================
+
+a.  任意の試験関数 `\psi` に作用させて展開すると，
+
+    .. math::
+        \begin{aligned}
+            &
+            \left(
+            -i\hbar\bm{\nabla}-q\bm{A}
+            \right)^2\psi
+            \\
+            &\quad=
+            -\hbar^2\nabla^2\psi
+            +i\hbar q
+            \left(\bm{\nabla}\cdot\bm{A}\right)\psi
+            +2i\hbar q\,\bm{A}\cdot\bm{\nabla}\psi
+            +q^2A^2\psi
+        \end{aligned}
+
+    となる。例 4.6 では `\bm{\nabla}\cdot\bm{A}=0` かつ `\varphi=0` なので，
+
+    .. math::
+        \hat{H}
+        =
+        \frac{1}{2m}
+        \left[
+        -\hbar^2\nabla^2
+        +q^2A^2
+        +2i\hbar q\,\bm{A}\cdot\bm{\nabla}
+        \right]
+
+    を得る。
+
+b.  `U=e^{ig}` と書けば，`\hbar\bm{\nabla}g=q\bm{A}` である。式 4.210 は，任意の関数 `f` に対する恒等式，
+
+    .. math::
+        \left(
+        -i\hbar\bm{\nabla}-q\bm{A}
+        \right)Uf
+        =
+        -i\hbar U\bm{\nabla}f
+
+    を表している。`f=\partial_i\Psi'` として各成分へもう一度作用させると，
+
+    .. math::
+        \begin{aligned}
+            &
+            \left(
+            -i\hbar\bm{\nabla}-q\bm{A}
+            \right)^2\Psi
+            \\
+            &\quad=
+            \sum_i
+            \left(
+            -i\hbar\partial_i-qA_i
+            \right)
+            \left(
+            -i\hbar U\partial_i\Psi'
+            \right)
+            \\
+            &\quad=
+            -\hbar^2U\sum_i\partial_i^2\Psi'
+            =
+            -\hbar^2e^{ig}\nabla^2\Psi'
+        \end{aligned}
+
+    となり，式 4.211 が得られる。

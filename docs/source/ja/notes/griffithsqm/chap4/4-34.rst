@@ -1,2 +1,75 @@
 Problem 4.34
 ==================
+
+基底を，
+
+.. math::
+    \left\{
+    \ket{1\,1},
+    \ket{1\,0},
+    \ket{1\,(-1)}
+    \right\}
+
+の順に取る。`S_z` と梯子演算子の作用は，
+
+.. math::
+    S_z\ket{1\,m}
+    =m\hbar\ket{1\,m},
+    \quad
+    S_\pm\ket{1\,m}
+    =
+    \hbar\sqrt{2-m\left(m\pm1\right)}
+    \ket{1,m\pm1}
+
+である。したがって，
+
+.. math::
+    S_z
+    =
+    \hbar
+    \begin{pmatrix}
+        1&0&0\\
+        0&0&0\\
+        0&0&-1
+    \end{pmatrix},
+    \quad
+    S_+
+    =
+    \sqrt{2}\hbar
+    \begin{pmatrix}
+        0&1&0\\
+        0&0&1\\
+        0&0&0
+    \end{pmatrix},
+    \quad
+    S_-
+    =
+    \sqrt{2}\hbar
+    \begin{pmatrix}
+        0&0&0\\
+        1&0&0\\
+        0&1&0
+    \end{pmatrix}
+
+を得る。`S_x=(S_++S_-)/2` および `S_y=(S_+-S_-)/(2i)` より，
+
+.. math::
+    S_x
+    =
+    \frac{\hbar}{\sqrt{2}}
+    \begin{pmatrix}
+        0&1&0\\
+        1&0&1\\
+        0&1&0
+    \end{pmatrix},
+    \quad
+    S_y
+    =
+    \frac{\hbar}{\sqrt{2}}
+    \begin{pmatrix}
+        0&-i&0\\
+        i&0&-i\\
+        0&i&0
+    \end{pmatrix}
+
+となる。これらは `[S_x,S_y]=i\hbar S_z` とその巡回置換を満たす。

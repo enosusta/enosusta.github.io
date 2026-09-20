@@ -1,2 +1,119 @@
 Problem 4.51
 ==================
+
+深さ `V_0>0`，半径 `a` の2次元円形井戸を，
+
+.. math::
+    V(r)=
+    \begin{cases}
+        -V_0,&r<a,\\
+        0,&r>a
+    \end{cases}
+
+とする。束縛状態では `-V_0<E<0` である。最低エネルギー状態は方位角量子数 `l=0` をもつので，`\psi(r,\phi)=R(r)` と置けば，井戸の内外の動径方程式は，
+
+.. math::
+    \begin{aligned}
+        R''+\frac{1}{r}R'+k^2R&=0
+        &&(r<a),
+        \\
+        R''+\frac{1}{r}R'-\kappa^2R&=0
+        &&(r>a)
+    \end{aligned}
+
+となる。ここで，
+
+.. math::
+    k\coloneqq
+    \frac{\sqrt{2m\left(E+V_0\right)}}{\hbar},
+    \quad
+    \kappa\coloneqq
+    \frac{\sqrt{-2mE}}{\hbar}
+
+である。原点で有限かつ無限遠で減衰する解は，
+
+.. math::
+    R(r)=
+    \begin{cases}
+        A J_0(kr),&r<a,\\
+        B K_0(\kappa r),&r>a
+    \end{cases}
+
+である。`r=a` で `R` と `R'` を連続にし，`J_0'=-J_1`，`K_0'=-K_1` を用いると，
+
+.. math::
+    \frac{kJ_1(ka)}{J_0(ka)}
+    =
+    \frac{\kappa K_1(\kappa a)}{K_0(\kappa a)}
+
+を得る。無次元量，
+
+.. math::
+    x\coloneqq ka,
+    \quad
+    y\coloneqq\kappa a,
+    \quad
+    z_0\coloneqq
+    \frac{a\sqrt{2mV_0}}{\hbar}
+
+を導入すれば，
+
+.. math::
+    x^2+y^2=z_0^2,
+    \quad
+    \frac{xJ_1(x)}{J_0(x)}
+    =
+    \frac{yK_1(y)}{K_0(y)}
+
+である。例として `z_0=1.5` の両辺を描く。
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.optimize import brentq
+    from scipy.special import jv, kv
+
+    z0 = 1.5
+
+    def left_side(x):
+        return x * jv(1, x) / jv(0, x)
+
+    def right_side(x):
+        y = np.sqrt(z0**2 - x**2)
+        return y * kv(1, y) / kv(0, y)
+
+    root = brentq(
+        lambda x: left_side(x) - right_side(x),
+        1.0e-8,
+        z0 - 1.0e-8,
+    )
+
+    x = np.linspace(1.0e-4, z0 - 1.0e-4, 1000)
+    plt.plot(x, left_side(x), label=r"$xJ_1(x)/J_0(x)$")
+    plt.plot(
+        x,
+        right_side(x),
+        label=r"$yK_1(y)/K_0(y)$",
+    )
+    plt.scatter(
+        [root],
+        [left_side(root)],
+        color="tab:red",
+        zorder=3,
+        label="Bound state",
+    )
+    plt.xlabel(r"$x=ka$")
+    plt.ylabel("Matching function")
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()
+
+一般の `z_0>0` についても交点は必ず存在する。`J_0` の最初の正の零点を `j_{0,1}` とする。実際，`x\to0` では左辺は0，右辺は正なので，左辺から右辺を引いた値は負である。一方，`x` を `\min\left(z_0,j_{0,1}\right)` へ近づける。`z_0<j_{0,1}` なら `y\to0` で，
+
+.. math::
+    \frac{yK_1(y)}{K_0(y)}\longrightarrow0
+
+となる一方，左辺は正である。`z_0\geq j_{0,1}` なら `J_0(x)\to0^+` のため左辺が正の無限大へ発散する。したがって，中間値の定理により両辺は必ず交わる。この交点では `\kappa>0`，すなわち `E=-\hbar^2\kappa^2/(2m)<0` なので，井戸がどれほど浅く狭くても少なくとも一つの束縛状態が存在する。

@@ -1,2 +1,74 @@
 Problem 4.65
 ==================
+
+全スピンが最大の状態から始め，`S_-=S_-^{(1)}+S_-^{(2)}+S_-^{(3)}` を順に作用させると，四重項は，
+
+.. math::
+    \begin{aligned}
+        \ket{\frac{3}{2}\,\frac{3}{2}}
+        &=\ket{\uparrow\uparrow\uparrow},\\
+        \ket{\frac{3}{2}\,\frac{1}{2}}
+        &=
+        \frac{1}{\sqrt{3}}
+        \left(
+        \ket{\downarrow\uparrow\uparrow}
+        +\ket{\uparrow\downarrow\uparrow}
+        +\ket{\uparrow\uparrow\downarrow}
+        \right),\\
+        \ket{\frac{3}{2}\,{-\frac{1}{2}}}
+        &=
+        \frac{1}{\sqrt{3}}
+        \left(
+        \ket{\uparrow\downarrow\downarrow}
+        +\ket{\downarrow\uparrow\downarrow}
+        +\ket{\downarrow\downarrow\uparrow}
+        \right),\\
+        \ket{\frac{3}{2}\,{-\frac{3}{2}}}
+        &=\ket{\downarrow\downarrow\downarrow}
+    \end{aligned}
+
+となる。
+
+最初の二粒子を一重項に結合すると，第1の二重項は，
+
+.. math::
+    \begin{aligned}
+        \ket{\frac{1}{2}\,\frac{1}{2}}_1
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow\uparrow}
+        -\ket{\downarrow\uparrow\uparrow}
+        \right),\\
+        \ket{\frac{1}{2}\,{-\frac{1}{2}}}_1
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow\downarrow}
+        -\ket{\downarrow\uparrow\downarrow}
+        \right)
+    \end{aligned}
+
+である。`m=1/2` の部分空間で，四重項および第1の二重項と直交する規格化状態を選び，下降演算子で相方を作ると，第2の二重項は，
+
+.. math::
+    \begin{aligned}
+        \ket{\frac{1}{2}\,\frac{1}{2}}_2
+        &=
+        \frac{1}{\sqrt{6}}
+        \left(
+        2\ket{\uparrow\uparrow\downarrow}
+        -\ket{\uparrow\downarrow\uparrow}
+        -\ket{\downarrow\uparrow\uparrow}
+        \right),\\
+        \ket{\frac{1}{2}\,{-\frac{1}{2}}}_2
+        &=
+        \frac{1}{\sqrt{6}}
+        \left(
+        \ket{\uparrow\downarrow\downarrow}
+        +\ket{\downarrow\uparrow\downarrow}
+        -2\ket{\downarrow\downarrow\uparrow}
+        \right)
+    \end{aligned}
+
+となる。各組は規格直交し，二つの二重項はいずれも `S^2=3\hbar^2/4` をもつ。

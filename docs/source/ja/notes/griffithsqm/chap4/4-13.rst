@@ -1,2 +1,105 @@
 Problem 4.13
 ==================
+
+a.  `\rho=r/(2a)` と置くと，
+
+    .. math::
+        R_{20}(r)
+        =\frac{c_0}{2a}(1-\rho)e^{-\rho}
+
+    である。規格化条件は，
+
+    .. math::
+        \begin{aligned}
+            1
+            &=\int_0^\infty|R_{20}(r)|^2r^2\,\dd r
+            \\
+            &=2a|c_0|^2
+            \int_0^\infty
+            \rho^2(1-\rho)^2e^{-2\rho}\,\dd\rho
+            \\
+            &=\frac{a|c_0|^2}{2}
+        \end{aligned}
+
+    となるので，正の実数を選べば `c_0=\sqrt{2/a}` である。したがって，
+
+    .. math::
+        R_{20}(r)
+        =
+        \frac{1}{\sqrt{2}a^{3/2}}
+        \left(1-\frac{r}{2a}\right)e^{-r/(2a)}
+
+    を得る。 `Y_0^0=1/\sqrt{4\pi}` より，
+
+    .. math::
+        \psi_{200}(r,\theta,\phi)
+        =
+        \frac{1}{\sqrt{8\pi a^3}}
+        \left(1-\frac{r}{2a}\right)e^{-r/(2a)}
+
+    となる。
+
+b.  今度は，
+
+    .. math::
+        R_{21}(r)=\frac{c_0}{4a^2}re^{-r/(2a)}
+
+    である。規格化すると，
+
+    .. math::
+        \begin{aligned}
+            1
+            &=\frac{|c_0|^2}{16a^4}
+            \int_0^\infty r^4e^{-r/a}\,\dd r
+            \\
+            &=\frac{|c_0|^2}{16a^4}(4!a^5)
+            \\
+            &=\frac{3a|c_0|^2}{2}
+        \end{aligned}
+
+    となるので， `c_0=\sqrt{2/(3a)}` であり，
+
+    .. math::
+        R_{21}(r)
+        =
+        \frac{1}{2\sqrt{6}a^{3/2}}
+        \left(\frac{r}{a}\right)e^{-r/(2a)}
+
+    を得る。必要な球面調和関数は，
+
+    .. math::
+        \begin{aligned}
+            Y_1^1
+            &=-\sqrt{\frac{3}{8\pi}}\sin\theta\,e^{i\phi},
+            \\
+            Y_1^0
+            &=\sqrt{\frac{3}{4\pi}}\cos\theta,
+            \\
+            Y_1^{-1}
+            &=\sqrt{\frac{3}{8\pi}}\sin\theta\,e^{-i\phi}
+        \end{aligned}
+
+    なので，
+
+    .. math::
+        \begin{aligned}
+            \psi_{211}
+            &=
+            -\frac{1}{8\sqrt{\pi}a^{3/2}}
+            \left(\frac{r}{a}\right)e^{-r/(2a)}
+            \sin\theta\,e^{i\phi},
+            \\
+            \psi_{210}
+            &=
+            \frac{1}{4\sqrt{2\pi}a^{3/2}}
+            \left(\frac{r}{a}\right)e^{-r/(2a)}
+            \cos\theta,
+            \\
+            \psi_{21-1}
+            &=
+            \frac{1}{8\sqrt{\pi}a^{3/2}}
+            \left(\frac{r}{a}\right)e^{-r/(2a)}
+            \sin\theta\,e^{-i\phi}
+        \end{aligned}
+
+    となる。

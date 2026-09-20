@@ -1,2 +1,80 @@
 Problem 4.31
 ==================
+
+一般の規格化された spinor を，
+
+.. math::
+    \chi=
+    \begin{pmatrix}
+        a\\
+        b
+    \end{pmatrix},
+    \quad
+    |a|^2+|b|^2=1
+
+とする。各スピン行列を用いると，
+
+.. math::
+    \begin{aligned}
+        \braket{S_x}
+        &=
+        \frac{\hbar}{2}
+        \begin{pmatrix}
+            a^*&b^*
+        \end{pmatrix}
+        \begin{pmatrix}
+            0&1\\
+            1&0
+        \end{pmatrix}
+        \begin{pmatrix}
+            a\\
+            b
+        \end{pmatrix}
+        =
+        \frac{\hbar}{2}
+        \left(a^*b+b^*a\right)
+        =
+        \hbar\operatorname{Re}\left(a^*b\right),
+        \\
+        \braket{S_y}
+        &=
+        \frac{\hbar}{2}
+        \left(-ia^*b+ib^*a\right)
+        =
+        \hbar\operatorname{Im}\left(a^*b\right),
+        \\
+        \braket{S_z}
+        &=
+        \frac{\hbar}{2}
+        \left(|a|^2-|b|^2\right)
+    \end{aligned}
+
+となる。一方，Pauli 行列はすべて `\sigma_j^2=\mathsf{I}` を満たすので，
+
+.. math::
+    S_x^2=S_y^2=S_z^2
+    =\frac{\hbar^2}{4}\mathsf{I}
+
+である。したがって，
+
+.. math::
+    \braket{S_x^2}
+    =
+    \braket{S_y^2}
+    =
+    \braket{S_z^2}
+    =
+    \frac{\hbar^2}{4}
+
+を得る。これらの和は，
+
+.. math::
+    \braket{S_x^2}
+    +\braket{S_y^2}
+    +\braket{S_z^2}
+    =
+    \frac{3}{4}\hbar^2
+    =
+    \braket{S^2}
+
+となり，スピン `1/2` に対する `S^2` の固有値 `s(s+1)\hbar^2=3\hbar^2/4` と一致する。

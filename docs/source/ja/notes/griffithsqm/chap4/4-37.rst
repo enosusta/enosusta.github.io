@@ -1,2 +1,90 @@
 Problem 4.37
 ==================
+
+a.  全下降演算子は `S_-=S_-^{(1)}+S_-^{(2)}` である。したがって，
+
+    .. math::
+        \begin{aligned}
+            S_-\ket{1\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(S_-^{(1)}+S_-^{(2)}\right)
+            \left(
+            \ket{\uparrow\downarrow}
+            +\ket{\downarrow\uparrow}
+            \right)
+            \\
+            &=
+            \frac{\hbar}{\sqrt{2}}
+            \left(
+            \ket{\downarrow\downarrow}
+            +\ket{\downarrow\downarrow}
+            \right)
+            \\
+            &=
+            \sqrt{2}\hbar\ket{1\,(-1)}
+        \end{aligned}
+
+    となり，梯子演算子の一般式と一致する。
+
+b.  singlet 状態へ上昇演算子を作用させると，
+
+    .. math::
+        \begin{aligned}
+            S_+\ket{0\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(S_+^{(1)}+S_+^{(2)}\right)
+            \left(
+            \ket{\uparrow\downarrow}
+            -\ket{\downarrow\uparrow}
+            \right)
+            \\
+            &=
+            \frac{\hbar}{\sqrt{2}}
+            \left(
+            \ket{\uparrow\uparrow}
+            -\ket{\uparrow\uparrow}
+            \right)
+            =0
+        \end{aligned}
+
+    となる。同様に，
+
+    .. math::
+        S_-\ket{0\,0}
+        =
+        \frac{\hbar}{\sqrt{2}}
+        \left(
+        \ket{\downarrow\downarrow}
+        -\ket{\downarrow\downarrow}
+        \right)
+        =0
+
+    である。
+
+c.  `\ket{1\,1}=\ket{\uparrow\uparrow}` は梯子の最上段なので `S_+\ket{1\,1}=0` であり，`S_z\ket{1\,1}=\hbar\ket{1\,1}` である。恒等式，
+
+    .. math::
+        S^2=S_-S_++S_z^2+\hbar S_z
+
+    を用いると，
+
+    .. math::
+        S^2\ket{1\,1}
+        =
+        2\hbar^2\ket{1\,1}
+
+    を得る。一方，`\ket{1\,(-1)}=\ket{\downarrow\downarrow}` は最下段なので `S_-\ket{1\,(-1)}=0` であり，`S_z\ket{1\,(-1)}=-\hbar\ket{1\,(-1)}` である。そこで，
+
+    .. math::
+        S^2=S_+S_-+S_z^2-\hbar S_z
+
+    を用いれば，
+
+    .. math::
+        S^2\ket{1\,(-1)}
+        =
+        2\hbar^2\ket{1\,(-1)}
+
+    となる。どちらも `s=1` に対応する固有値 `s(s+1)\hbar^2=2\hbar^2` をもつ。

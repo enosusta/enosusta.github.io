@@ -1,2 +1,61 @@
 Problem 4.70
 ==================
+
+a.  最初に `z` 方向を測定した粒子は，初期状態が `z` 方向のスピン上向きなので，すべて上向きという結果を与える。その後の `x` 方向の測定で残るかどうかにかかわらず，最初の結果は上向きである。
+
+    最初に `x` 方向を測定した粒子は，その測定によって `x` 方向の上向きまたは下向き状態になる。外力もトルクもないため，2回目の `x` 方向の測定は同じ結果を返す。したがって，最後に残った粒子は，最初の測定でも必ず上向きであった。どちらの測定方向についても求める割合は，
+
+    .. math::
+        1
+
+    である。
+
+b.  `\theta_{ab}` を `\bm{a}` と `\bm{b}` のなす角，`\theta_{bc}` を `\bm{b}` と `\bm{c}` のなす角とする。最初の測定における確率は，
+
+    .. math::
+        P_+
+        =
+        \cos^2\left(\frac{\theta_{ab}}{2}\right),
+        \quad
+        P_-
+        =
+        \sin^2\left(\frac{\theta_{ab}}{2}\right)
+
+    である。最初の結果が下向きなら，その方向と `\bm{c}` のなす角は `\pi-\theta_{bc}` である。したがって，二つの測定結果の同時確率は，
+
+    .. math::
+        \begin{aligned}
+            P_{++}
+            &=
+            \cos^2\left(\frac{\theta_{ab}}{2}\right)
+            \cos^2\left(\frac{\theta_{bc}}{2}\right),\\
+            P_{+-}
+            &=
+            \cos^2\left(\frac{\theta_{ab}}{2}\right)
+            \sin^2\left(\frac{\theta_{bc}}{2}\right),\\
+            P_{-+}
+            &=
+            \sin^2\left(\frac{\theta_{ab}}{2}\right)
+            \sin^2\left(\frac{\theta_{bc}}{2}\right),\\
+            P_{--}
+            &=
+            \sin^2\left(\frac{\theta_{ab}}{2}\right)
+            \cos^2\left(\frac{\theta_{bc}}{2}\right)
+        \end{aligned}
+
+    となる。最後の測定で上向きだったという条件のもとで，最初の測定でも上向きだった条件付き確率は，
+
+    .. math::
+        \begin{aligned}
+            P\left(b+\mid c+\right)
+            &=
+            \frac{P_{++}}{P_{++}+P_{-+}}\\
+            &=
+            \left[
+            1+
+            \tan^2\left(\frac{\theta_{ab}}{2}\right)
+            \tan^2\left(\frac{\theta_{bc}}{2}\right)
+            \right]^{-1}
+        \end{aligned}
+
+    である。

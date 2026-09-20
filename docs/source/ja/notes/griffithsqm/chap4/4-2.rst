@@ -1,2 +1,100 @@
 Problem 4.2
 ==================
+
+a.  井戸の内部では `V=0` なので，時間に依存しない Schrödinger 方程式は，
+
+    .. math::
+        -\frac{\hbar^2}{2m}
+        \left(
+            \pdv{^2\psi}{x^2}
+            +\pdv{^2\psi}{y^2}
+            +\pdv{^2\psi}{z^2}
+        \right)
+        =E\psi
+
+    となる。 `\psi(x,y,z)=X(x)Y(y)Z(z)` と置いて変数分離すると，各因子は1次元無限深井戸の方程式を満たす。境界条件，
+
+    .. math::
+        X(0)=X(a)=Y(0)=Y(a)=Z(0)=Z(a)=0
+
+    を課して規格化すると，空間波動関数は，
+
+    .. math::
+        \psi_{n_xn_yn_z}(x,y,z)
+        =\left(\frac{2}{a}\right)^{3/2}
+        \sin\left(\frac{n_x\pi x}{a}\right)
+        \sin\left(\frac{n_y\pi y}{a}\right)
+        \sin\left(\frac{n_z\pi z}{a}\right)
+
+    となる。ここで，
+
+    .. math::
+        n_x,n_y,n_z=1,2,3,\ldots
+
+    である。対応するエネルギーは，
+
+    .. math::
+        E_{n_xn_yn_z}
+        =\frac{\pi^2\hbar^2}{2ma^2}
+        \left(n_x^2+n_y^2+n_z^2\right)
+
+    であり，定常状態全体は，
+
+    .. math::
+        \Psi_{n_xn_yn_z}(x,y,z,t)
+        =\psi_{n_xn_yn_z}(x,y,z)e^{-iE_{n_xn_yn_z}t/\hbar}
+
+    と書ける。
+
+b.  エネルギーの単位を，
+
+    .. math::
+        \varepsilon\coloneqq\frac{\pi^2\hbar^2}{2ma^2}
+
+    と置く。小さい方から6個の相異なるエネルギーと，対応する量子数の組および縮退度は，
+
+    .. math::
+        \begin{array}{c|c|c|c}
+            k&E_k/\varepsilon
+            &(n_x,n_y,n_z)\ \mathrm{up\ to\ permutations}
+            &\mathrm{degeneracy}
+            \\\hline
+            1&3 &(1,1,1)&1\\
+            2&6 &(1,1,2)&3\\
+            3&9 &(1,2,2)&3\\
+            4&11&(1,1,3)&3\\
+            5&12&(2,2,2)&1\\
+            6&14&(1,2,3)&6
+        \end{array}
+
+    となる。2成分だけが等しい組には3通り，3成分がすべて異なる組には `3!=6` 通りの置換があるためである。
+
+c.  14番目の相異なるエネルギーは，
+
+    .. math::
+        \frac{E_k}{\varepsilon}
+        =3,6,9,11,12,14,17,18,19,21,22,24,26,27,\ldots
+
+    と並ぶので，
+
+    .. math::
+        E_{14}=27\varepsilon
+        =\frac{27\pi^2\hbar^2}{2ma^2}
+
+    である。実際，
+
+    .. math::
+        27=1^2+1^2+5^2=3^2+3^2+3^2
+
+    なので，状態は，
+
+    .. math::
+        (1,1,5),
+        \quad
+        (1,5,1),
+        \quad
+        (5,1,1),
+        \quad
+        (3,3,3)
+
+    の4個であり，縮退度は4である。最初の3状態の縮退は立方体の座標軸を入れ替える対称性から生じるが， `(3,3,3)` はそれらの置換では得られない。したがって，この準位には対称性だけから直ちに説明されない偶然の縮退が含まれている。

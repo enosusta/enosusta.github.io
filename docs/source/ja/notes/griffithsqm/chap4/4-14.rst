@@ -1,2 +1,86 @@
 Problem 4.14
 ==================
+
+a.  Leibniz の公式を用いて定義式を展開すると，
+
+    .. math::
+        L_q(x)
+        =\sum_{j=0}^q
+        (-1)^j\binom{q}{j}\frac{x^j}{j!}
+
+    となる。したがって，最初の4個は，
+
+    .. math::
+        \begin{aligned}
+            L_0(x)&=1,
+            \\
+            L_1(x)&=1-x,
+            \\
+            L_2(x)&=1-2x+\frac{x^2}{2},
+            \\
+            L_3(x)&=1-3x+\frac{3x^2}{2}-\frac{x^3}{6}
+        \end{aligned}
+
+    である。
+
+b.  `n=5` ， `\ell=2` のとき，
+
+    .. math::
+        n-\ell-1=2,
+        \quad
+        2\ell+1=5
+
+    なので，
+
+    .. math::
+        v(\rho)=L_2^5(2\rho)
+
+    である。Laguerre 多項式の定義と，
+
+    .. math::
+        L_q^p(x)=(-1)^p\left(\dv{}{x}\right)^pL_{p+q}(x)
+
+    を用いると，
+
+    .. math::
+        L_2^5(x)
+        =21-7x+\frac{x^2}{2}
+
+    となる。したがって，規格化定数を除いて，
+
+    .. math::
+        v(\rho)=21-14\rho+2\rho^2
+
+    を得る。
+
+c.  漸化式へ `n=5` ， `\ell=2` を代入すると，
+
+    .. math::
+        c_{j+1}
+        =
+        \frac{2(j-2)}
+        {(j+1)(j+6)}c_j
+
+    となる。これより，
+
+    .. math::
+        c_1=-\frac{2}{3}c_0,
+        \quad
+        c_2=\frac{2}{21}c_0,
+        \quad
+        c_3=0
+
+    である。したがって，
+
+    .. math::
+        v(\rho)
+        =c_0\left(
+            1-\frac{2}{3}\rho+\frac{2}{21}\rho^2
+        \right)
+
+    となる。 `c_0=21` と選べば，
+
+    .. math::
+        v(\rho)=21-14\rho+2\rho^2
+
+    となり， \(b) の結果と一致する。

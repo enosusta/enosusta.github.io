@@ -1,2 +1,133 @@
 Problem 4.7
 ==================
+
+Rodrigues の公式に現れる `(x^2-1)^\ell` の最高次の項は `x^{2\ell}` である。したがって， `P_\ell(x)` の最高次の項は，
+
+.. math::
+    P_\ell(x)
+    =
+    \frac{(2\ell)!}{2^\ell(\ell!)^2}x^\ell
+    +\mathrm{lower\ powers}
+
+となる。 `P_\ell(x)` をさらに `\ell` 回微分すると，低次の項はすべて消えるので，
+
+.. math::
+    \left(\dv{}{x}\right)^\ell P_\ell(x)
+    =\frac{(2\ell)!}{2^\ell\ell!}
+    =(2\ell-1)!!
+
+である。よって，
+
+.. math::
+    P_\ell^\ell(x)
+    =(-1)^\ell(2\ell-1)!!
+    \left(1-x^2\right)^{\ell/2}
+
+を得る。これを球面調和関数の定義へ代入すると，
+
+.. math::
+    \begin{aligned}
+        Y_\ell^\ell(\theta,\phi)
+        &=
+        (-1)^\ell
+        \sqrt{
+            \frac{2\ell+1}{4\pi(2\ell)!}
+        }
+        \frac{(2\ell)!}{2^\ell\ell!}
+        \sin^\ell\theta\,e^{i\ell\phi}
+        \\
+        &=
+        \frac{(-1)^\ell}{2^\ell\ell!}
+        \sqrt{\frac{(2\ell+1)!}{4\pi}}
+        \sin^\ell\theta\,e^{i\ell\phi}
+    \end{aligned}
+
+となる。
+
+次に，
+
+.. math::
+    P_3(x)=\frac{1}{2}\left(5x^3-3x\right)
+
+なので，
+
+.. math::
+    P_3^2(x)
+    =\left(1-x^2\right)\dv{^2P_3}{x^2}
+    =15x\left(1-x^2\right)
+
+である。したがって，
+
+.. math::
+    \begin{aligned}
+        Y_3^2(\theta,\phi)
+        &=
+        \sqrt{
+            \frac{7}{4\pi}\frac{(3-2)!}{(3+2)!}
+        }
+        e^{2i\phi}P_3^2(\cos\theta)
+        \\
+        &=
+        \sqrt{\frac{105}{32\pi}}
+        \sin^2\theta\cos\theta\,e^{2i\phi}
+    \end{aligned}
+
+を得る。
+
+これらが角度方程式を満たすことを確かめる。定数部分を `C_\ell` と書いて，
+
+.. math::
+    Y_\ell^\ell=C_\ell\sin^\ell\theta\,e^{i\ell\phi}
+
+とすると，
+
+.. math::
+    \pdv{Y_\ell^\ell}{\theta}
+    =\ell\cot\theta\,Y_\ell^\ell,
+    \quad
+    \pdv{^2Y_\ell^\ell}{\phi^2}
+    =-\ell^2Y_\ell^\ell
+
+である。ゆえに，
+
+.. math::
+    \begin{aligned}
+        &\sin\theta\pdv{}{\theta}
+        \left(
+            \sin\theta\pdv{Y_\ell^\ell}{\theta}
+        \right)
+        +\pdv{^2Y_\ell^\ell}{\phi^2}
+        \\
+        &\quad=
+        \left[
+            \ell\left(-\sin^2\theta+\ell\cos^2\theta\right)
+            -\ell^2
+        \right]Y_\ell^\ell
+        \\
+        &\quad=
+        -\ell(\ell+1)\sin^2\theta\,Y_\ell^\ell
+    \end{aligned}
+
+となり， `m=\ell` に対する角度方程式を満たす。
+
+また， `Y_3^2=C\sin^2\theta\cos\theta\,e^{2i\phi}` と置くと，
+
+.. math::
+    \begin{aligned}
+        \sin\theta\pdv{}{\theta}
+        \left(
+            \sin\theta\pdv{Y_3^2}{\theta}
+        \right)
+        &=4\left(3\cos^2\theta-2\right)Y_3^2,
+        \\
+        \pdv{^2Y_3^2}{\phi^2}
+        &=-4Y_3^2
+    \end{aligned}
+
+なので，両者の和は，
+
+.. math::
+    -12\sin^2\theta\,Y_3^2
+    =-3(3+1)\sin^2\theta\,Y_3^2
+
+となる。したがって，こちらも `\ell=3` ， `m=2` に対する角度方程式を満たす。

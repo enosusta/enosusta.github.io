@@ -1,2 +1,47 @@
 Problem 4.38
 ==================
+
+a.  まず二つの quark のスピンを合成すると，
+
+    .. math::
+        \frac{1}{2}\otimes\frac{1}{2}
+        =
+        1\oplus0
+
+    である。ここへ第3の quark のスピン `1/2` を加えると，
+
+    .. math::
+        \begin{aligned}
+            1\otimes\frac{1}{2}
+            &=
+            \frac{3}{2}\oplus\frac{1}{2},
+            \\
+            0\otimes\frac{1}{2}
+            &=
+            \frac{1}{2}
+        \end{aligned}
+
+    となる。したがって，baryon に可能な全スピンは，
+
+    .. math::
+        s=\frac{3}{2},
+        \quad
+        \frac{1}{2}
+
+    である。`s=1/2` の組合せは二つの独立な仕方で現れる。
+
+b.  quark と antiquark はともにスピン `1/2` をもつので，
+
+    .. math::
+        \frac{1}{2}\otimes\frac{1}{2}
+        =
+        1\oplus0
+
+    である。したがって，meson に可能な全スピンは，
+
+    .. math::
+        s=1,
+        \quad
+        0
+
+    となる。

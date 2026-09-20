@@ -1,2 +1,85 @@
 Problem 4.35
 ==================
+
+a.  `\omega_L\coloneqq\gamma B_0` と置く。例 4.3 の状態は，
+
+    .. math::
+        \chi(t)
+        =
+        \begin{pmatrix}
+            \cos\left(\alpha/2\right)e^{i\omega_Lt/2}\\
+            \sin\left(\alpha/2\right)e^{-i\omega_Lt/2}
+        \end{pmatrix}
+
+    であり，`S_x` の正の固有 spinor は，
+
+    .. math::
+        \chi_+^{(x)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            1
+        \end{pmatrix}
+
+    である。したがって，
+
+    .. math::
+        \begin{aligned}
+            P_x^+(t)
+            &=
+            \left|
+            \left(\chi_+^{(x)}\right)^\dagger\chi(t)
+            \right|^2
+            \\
+            &=
+            \frac{1}{2}
+            \left[
+            1+\sin\alpha\cos\left(\omega_Lt\right)
+            \right]
+        \end{aligned}
+
+    となる。
+
+b.  `S_y` の正の固有 spinor，
+
+    .. math::
+        \chi_+^{(y)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            i
+        \end{pmatrix}
+
+    を用いると，
+
+    .. math::
+        \begin{aligned}
+            P_y^+(t)
+            &=
+            \left|
+            \left(\chi_+^{(y)}\right)^\dagger\chi(t)
+            \right|^2
+            \\
+            &=
+            \frac{1}{2}
+            \left[
+            1-\sin\alpha\sin\left(\omega_Lt\right)
+            \right]
+        \end{aligned}
+
+    である。
+
+c.  `S_z` の正の固有 spinor は `\chi_+=(1,0)^{\mathsf T}` なので，
+
+    .. math::
+        P_z^+(t)
+        =
+        \left|\chi_+^\dagger\chi(t)\right|^2
+        =
+        \cos^2\left(\frac{\alpha}{2}\right)
+        =
+        \frac{1+\cos\alpha}{2}
+
+    となる。磁場は `z` 方向を向いているため，この確率は時間に依存しない。

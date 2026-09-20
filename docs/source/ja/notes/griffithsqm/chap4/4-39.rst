@@ -1,2 +1,55 @@
 Problem 4.39
 ==================
+
+`s_1=s_2=1/2` の Clebsch--Gordan 表を読む。`m=1` と `m=-1` について非零の係数はそれぞれ一つだけであり，
+
+.. math::
+    C_{\frac{1}{2}\,\frac{1}{2}\,1}
+    ^{\frac{1}{2}\,\frac{1}{2}\,1}
+    =1,
+    \quad
+    C_{-\frac{1}{2}\,-\frac{1}{2}\,-1}
+    ^{\frac{1}{2}\,\frac{1}{2}\,1}
+    =1
+
+である。したがって，
+
+.. math::
+    \ket{1\,1}=\ket{\uparrow\uparrow},
+    \quad
+    \ket{1\,(-1)}=\ket{\downarrow\downarrow}
+
+を得る。`m=0` の部分にある係数は，
+
+.. math::
+    \begin{array}{c|cc}
+        (m_1,m_2)
+        &s=1&s=0\\ \hline
+        \left(\frac{1}{2},-\frac{1}{2}\right)
+        &\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}\\[2mm]
+        \left(-\frac{1}{2},\frac{1}{2}\right)
+        &\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{2}}
+    \end{array}
+
+である。よって，合成状態の展開式から，
+
+.. math::
+    \begin{aligned}
+        \ket{1\,0}
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow}
+        +\ket{\downarrow\uparrow}
+        \right),
+        \\
+        \ket{0\,0}
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow}
+        -\ket{\downarrow\uparrow}
+        \right)
+    \end{aligned}
+
+となる。これはそれぞれ式 4.175 の triplet と式 4.176 の singlet に一致する。

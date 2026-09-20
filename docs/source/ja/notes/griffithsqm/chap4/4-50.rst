@@ -1,2 +1,141 @@
 Problem 4.50
 ==================
+
+a.  水素の基底状態は，
+
+    .. math::
+        \psi_{100}(\bm{r})
+        =
+        \frac{1}{\sqrt{\pi a^3}}e^{-r/a}
+
+    である。`\bm{p}` の方向を極軸に選び，`p=|\bm{p}|` とすれば，`\bm{p}\cdot\bm{r}=pr\cos\theta` なので，
+
+    .. math::
+        \begin{aligned}
+            \phi(\bm{p})
+            ={}&
+            \frac{1}{\left(2\pi\hbar\right)^{3/2}}
+            \frac{1}{\sqrt{\pi a^3}}
+            \int_0^\infty r^2e^{-r/a}\,\dd r
+            \int_0^{2\pi}\dd\varphi
+            \int_0^\pi
+            e^{-ipr\cos\theta/\hbar}
+            \sin\theta\,\dd\theta
+            \\
+            ={}&
+            \frac{4\pi}{\left(2\pi\hbar\right)^{3/2}}
+            \frac{1}{\sqrt{\pi a^3}}
+            \int_0^\infty
+            r^2e^{-r/a}
+            \frac{\sin\left(pr/\hbar\right)}
+            {pr/\hbar}\,\dd r
+        \end{aligned}
+
+    となる。`\alpha=1/a`，`k=p/\hbar` と置けば，
+
+    .. math::
+        \int_0^\infty
+        r^2e^{-\alpha r}
+        \frac{\sin kr}{kr}\,\dd r
+        =
+        \frac{2\alpha}{\left(\alpha^2+k^2\right)^2}
+
+    だから，
+
+    .. math::
+        \phi(\bm{p})
+        =
+        \frac{1}{\pi}
+        \left(\frac{2a}{\hbar}\right)^{3/2}
+        \frac{1}{
+        \left[
+        1+\left(ap/\hbar\right)^2
+        \right]^2
+        }
+
+    を得る。
+
+b.  `x=ap/\hbar` と置くと，
+
+    .. math::
+        \begin{aligned}
+            \int|\phi(\bm{p})|^2\,\dd^3\bm{p}
+            &=
+            4\pi\int_0^\infty
+            |\phi(p)|^2p^2\,\dd p
+            \\
+            &=
+            \frac{32}{\pi}
+            \int_0^\infty
+            \frac{x^2}{\left(1+x^2\right)^4}\,\dd x
+        \end{aligned}
+
+    である。積分値は，
+
+    .. math::
+        \int_0^\infty
+        \frac{x^2}{\left(1+x^2\right)^4}\,\dd x
+        =
+        \frac{1}{2}
+        B\left(\frac{3}{2},\frac{5}{2}\right)
+        =
+        \frac{\pi}{32}
+
+    なので，`\int|\phi|^2\dd^3\bm{p}=1` となる。
+
+c.  同じ変数変換を用いると，
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2}
+            &=
+            4\pi\int_0^\infty
+            p^4|\phi(p)|^2\,\dd p
+            \\
+            &=
+            \frac{32}{\pi}
+            \frac{\hbar^2}{a^2}
+            \int_0^\infty
+            \frac{x^4}{\left(1+x^2\right)^4}\,\dd x
+        \end{aligned}
+
+    である。また，
+
+    .. math::
+        \int_0^\infty
+        \frac{x^4}{\left(1+x^2\right)^4}\,\dd x
+        =
+        \frac{1}{2}
+        B\left(\frac{5}{2},\frac{3}{2}\right)
+        =
+        \frac{\pi}{32}
+
+    だから，
+
+    .. math::
+        \braket{p^2}
+        =
+        \frac{\hbar^2}{a^2}
+
+    を得る。
+
+d.  運動エネルギーの期待値は，
+
+    .. math::
+        \braket{T}
+        =
+        \frac{\braket{p^2}}{2m}
+        =
+        \frac{\hbar^2}{2ma^2}
+
+    である。水素の基底状態エネルギーは，
+
+    .. math::
+        E_1=-\frac{\hbar^2}{2ma^2}
+
+    なので，
+
+    .. math::
+        \braket{T}=-E_1
+
+    となり，ビリアル定理と一致する。

@@ -1,2 +1,91 @@
 Problem 4.25
 ==================
+
+a.  `Y_\ell^\ell` は固定した `\ell` に対する梯子の最上段にある。これより大きい `m` の状態は存在しないので，
+
+    .. math::
+        L_+Y_\ell^\ell=0
+
+    である。
+
+b.  `L_zY_\ell^\ell=\hbar\ell Y_\ell^\ell` と `L_z=-i\hbar\partial/\partial\phi` から，
+
+    .. math::
+        Y_\ell^\ell(\theta,\phi)
+        =\Theta(\theta)e^{i\ell\phi}
+
+    と書ける。これに，
+
+    .. math::
+        L_+
+        =
+        \hbar e^{i\phi}
+        \left(
+        \pdv{}{\theta}
+        +i\cot\theta\pdv{}{\phi}
+        \right)
+
+    を作用させ，\(a) を用いると，
+
+    .. math::
+        \dv{\Theta}{\theta}
+        -\ell\cot\theta\,\Theta=0
+
+    を得る。したがって，
+
+    .. math::
+        \frac{1}{\Theta}\dv{\Theta}{\theta}
+        =\ell\cot\theta
+        \quad\Longrightarrow\quad
+        \Theta(\theta)=C_\ell\sin^\ell\theta
+
+    であり，
+
+    .. math::
+        Y_\ell^\ell(\theta,\phi)
+        =
+        C_\ell\sin^\ell\theta\,e^{i\ell\phi}
+
+    となる。
+
+c.  規格化条件は，
+
+    .. math::
+        \begin{aligned}
+            1
+            &=
+            \int_0^{2\pi}\int_0^\pi
+            \left|Y_\ell^\ell\right|^2
+            \sin\theta\,\dd\theta\,\dd\phi
+            \\
+            &=
+            2\pi\left|C_\ell\right|^2
+            \int_0^\pi\sin^{2\ell+1}\theta\,\dd\theta
+        \end{aligned}
+
+    である。積分値，
+
+    .. math::
+        \int_0^\pi\sin^{2\ell+1}\theta\,\dd\theta
+        =
+        \frac{2^{2\ell+1}\left(\ell!\right)^2}
+        {\left(2\ell+1\right)!}
+
+    を用いると，
+
+    .. math::
+        \left|C_\ell\right|
+        =
+        \frac{1}{2^\ell\ell!}
+        \sqrt{\frac{\left(2\ell+1\right)!}{4\pi}}
+
+    を得る。規格化だけでは全体の位相は決まらない。通常の Condon--Shortley の位相規約 `C_\ell=(-1)^\ell|C_\ell|` を選べば，
+
+    .. math::
+        Y_\ell^\ell(\theta,\phi)
+        =
+        \frac{(-1)^\ell}{2^\ell\ell!}
+        \sqrt{\frac{\left(2\ell+1\right)!}{4\pi}}
+        \sin^\ell\theta\,e^{i\ell\phi}
+
+    となり，問題 4.7 の結果と一致する。

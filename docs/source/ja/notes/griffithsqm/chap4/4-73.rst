@@ -1,2 +1,53 @@
 Problem 4.73
 ==================
+
+一般化された Ehrenfest の定理を `z` に適用すると，`z` は明示的な時間依存性をもたないので，
+
+.. math::
+    \begin{aligned}
+        \dv{}{t}\braket{z}
+        &=
+        \frac{1}{i\hbar}\braket{[z,H]}\\
+        &=
+        \frac{1}{i\hbar}
+        \braket{
+        \left[z,\frac{p_z^2}{2m}\right]
+        }
+        =\frac{\braket{p_z}}{m}
+    \end{aligned}
+
+となる。次に，`p_z` に同じ定理を適用する。磁場，
+
+.. math::
+    \bm{B}
+    =-alpha x\hat{\bm{i}}
+    +\left(B_0+\alpha z\right)\hat{\bm{k}}
+
+に対して，ハミルトニアンの位置依存部分は，
+
+.. math::
+    -\gamma\bm{B}\cdot\bm{S}
+    =
+    \gamma\alpha xS_x
+    -\gamma\left(B_0+\alpha z\right)S_z
+
+である。スピン演算子は位置および運動量と可換なので，
+
+.. math::
+    \begin{aligned}
+        \dv{}{t}\braket{p_z}
+        &=
+        \frac{1}{i\hbar}\braket{[p_z,H]}\\
+        &=
+        -\braket{\pdv{H}{z}}
+        =\gamma\alpha\braket{S_z}
+    \end{aligned}
+
+を得る。したがって，
+
+.. math::
+    m\dv[2]{}{t}\braket{z}
+    =
+    \gamma\alpha\braket{S_z}
+
+である。

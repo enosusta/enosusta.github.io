@@ -1,2 +1,138 @@
 Problem 4.27
 ==================
+
+a.  重心から `m_1`，`m_2` までの距離をそれぞれ `r_1`，`r_2` とすると，
+
+    .. math::
+        r_1+r_2=a,
+        \quad
+        m_1r_1=m_2r_2
+
+    なので，
+
+    .. math::
+        r_1=\frac{m_2}{m_1+m_2}a,
+        \quad
+        r_2=\frac{m_1}{m_1+m_2}a
+
+    である。したがって，重心まわりの慣性モーメントは，
+
+    .. math::
+        \begin{aligned}
+            I
+            &=m_1r_1^2+m_2r_2^2
+            \\
+            &=\frac{m_1m_2}{m_1+m_2}a^2
+        \end{aligned}
+
+    となる。古典的な回転エネルギーは，
+
+    .. math::
+        T=\frac{1}{2}I\omega^2
+        =\frac{L^2}{2I}
+
+    である。量子力学では `L^2` の固有値が `\hbar^2n(n+1)` なので，
+
+    .. math::
+        E_n
+        =
+        \frac{\hbar^2}{2I}n\left(n+1\right),
+        \quad
+        n=0,1,2,\ldots
+
+    を得る。
+
+b.  回転子軸の向きを `(\theta,\phi)` で表すと，規格化された固有関数は球面調和関数，
+
+    .. math::
+        Y_n^m(\theta,\phi),
+        \quad
+        m=-n,-n+1,\ldots,n
+
+    である。エネルギーは `m` に依存しないので，第 `n` 準位の縮退度は `2n+1` である。
+
+c.  電気双極子遷移の選択則は `\Delta n=\pm1` である。`n=j` から `n=j-1` への遷移では，
+
+    .. math::
+        \begin{aligned}
+            h\nu_j
+            &=E_j-E_{j-1}
+            \\
+            &=
+            \frac{\hbar^2}{2I}
+            \left[
+            j\left(j+1\right)-j\left(j-1\right)
+            \right]
+            \\
+            &=\frac{\hbar^2j}{I}
+        \end{aligned}
+
+    だから，
+
+    .. math::
+        \nu_j
+        =
+        \frac{\hbar j}{2\pi I},
+        \quad
+        j=1,2,3,\ldots
+
+    となる。よって，回転スペクトルは等間隔であり，
+
+    .. math::
+        \Delta\nu=\frac{\hbar}{2\pi I}
+
+    である。
+
+d.  図 4.13 から，隣接する強い吸収線の波数間隔はおよそ，
+
+    .. math::
+        \Delta\tilde{\nu}
+        \approx3.85\ \mathrm{cm}^{-1}
+
+    と読める。したがって，振動数間隔は，
+
+    .. math::
+        \Delta\nu
+        =c\Delta\tilde{\nu}
+        \approx1.15\times10^{11}\ \mathrm{Hz}
+
+    である。`\Delta\nu=\hbar/(2\pi I)` と `I=\mu a^2` を用いれば，
+
+    .. math::
+        I=\frac{\hbar}{2\pi\Delta\nu},
+        \quad
+        \mu=\frac{m_1m_2}{m_1+m_2},
+        \quad
+        a=\sqrt{\frac{\hbar}{2\pi\mu\Delta\nu}}
+
+    となる。`m_1=12u`，`m_2=16u` を用いた数値計算は次のとおりである。
+
+    .. exec_code::
+
+        import math
+
+        hbar = 1.054571817e-34
+        c = 2.99792458e10
+        u = 1.66053906660e-27
+
+        delta_wavenumber = 3.85
+        delta_nu = c * delta_wavenumber
+        m1 = 12.0 * u
+        m2 = 16.0 * u
+        mu = m1 * m2 / (m1 + m2)
+        I = hbar / (2.0 * math.pi * delta_nu)
+        a = math.sqrt(I / mu)
+
+        print(f"Delta nu = {delta_nu:.3e} Hz")
+        print(f"I = {I:.3e} kg m^2")
+        print(f"a = {a:.3e} m")
+
+    したがって，
+
+    .. math::
+        I\approx1.45\times10^{-46}\ \mathrm{kg\,m^2},
+        \quad
+        a\approx1.13\times10^{-10}\ \mathrm{m}
+        =1.13\ \mathrm{\mathring{A}}
+
+    となる。

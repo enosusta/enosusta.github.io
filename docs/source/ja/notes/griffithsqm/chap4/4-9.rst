@@ -1,2 +1,64 @@
 Problem 4.9
 ==================
+
+a.  球 Neumann 関数の定義に `\ell=1` を代入すると，
+
+    .. math::
+        \begin{aligned}
+            n_1(x)
+            &=-(-x)\left(\frac{1}{x}\dv{}{x}\right)
+            \frac{\cos x}{x}
+            \\
+            &=\dv{}{x}\left(\frac{\cos x}{x}\right)
+            \\
+            &=-\frac{\cos x}{x^2}-\frac{\sin x}{x}
+        \end{aligned}
+
+    となる。また， `\ell=2` に対しては，
+
+    .. math::
+        \begin{aligned}
+            n_2(x)
+            &=-x^2
+            \left(\frac{1}{x}\dv{}{x}\right)^2
+            \frac{\cos x}{x}
+            \\
+            &=
+            \left(\frac{1}{x}-\frac{3}{x^3}\right)\cos x
+            -\frac{3}{x^2}\sin x
+        \end{aligned}
+
+    を得る。
+
+b.  `x\ll1` での展開，
+
+    .. math::
+        \sin x
+        =x-\frac{x^3}{6}+\frac{x^5}{120}+\cdots,
+        \quad
+        \cos x
+        =1-\frac{x^2}{2}+\frac{x^4}{24}+\cdots
+
+    を \(a) の結果へ代入すると，
+
+    .. math::
+        \begin{aligned}
+            n_1(x)
+            &=-\frac{1}{x^2}-\frac{1}{2}
+            +\frac{x^2}{8}+O(x^4),
+            \\
+            n_2(x)
+            &=-\frac{3}{x^3}-\frac{1}{2x}
+            -\frac{x}{8}+O(x^3)
+        \end{aligned}
+
+    となる。特に主要項は，
+
+    .. math::
+        n_1(x)\sim-\frac{1}{x^2},
+        \quad
+        n_2(x)\sim-\frac{3}{x^3}
+        \quad
+        (x\to0)
+
+    であり，いずれも原点で発散する。

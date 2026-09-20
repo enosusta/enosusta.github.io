@@ -1,2 +1,105 @@
 Problem 4.48
 ==================
+
+a.  Hermitian 演算子，
+
+    .. math::
+        G
+        \coloneqq
+        \frac{1}{2}
+        \left(
+        \bm{r}\cdot\bm{p}
+        +\bm{p}\cdot\bm{r}
+        \right)
+
+    を考える。定常状態では `\braket{G}` は時間に依存しないので，
+
+    .. math::
+        \dv{}{t}\braket{G}
+        =
+        \frac{i}{\hbar}\braket{[H,G]}
+        =0
+
+    である。正準交換関係を用いると，
+
+    .. math::
+        [T,G]=-2i\hbar T,
+        \quad
+        [V,G]=i\hbar\bm{r}\cdot\bm{\nabla}V
+
+    だから，
+
+    .. math::
+        [H,G]
+        =
+        i\hbar
+        \left(
+        \bm{r}\cdot\bm{\nabla}V-2T
+        \right)
+
+    となる。その期待値が0であることから，
+
+    .. math::
+        2\braket{T}
+        =
+        \braket{\bm{r}\cdot\bm{\nabla}V}
+
+    を得る。
+
+b.  水素原子では，
+
+    .. math::
+        V(r)=-\frac{\kappa}{r},
+        \quad
+        \bm{r}\cdot\bm{\nabla}V
+        =
+        r\dv{V}{r}
+        =
+        -V
+
+    である。したがって，ビリアル定理から，
+
+    .. math::
+        2\braket{T}=-\braket{V}
+
+    となる。さらに，
+
+    .. math::
+        E_n=\braket{T}+\braket{V}
+        =-\braket{T}
+
+    なので，
+
+    .. math::
+        \braket{T}=-E_n,
+        \quad
+        \braket{V}=2E_n
+
+    を得る。
+
+c.  3次元調和振動子では，
+
+    .. math::
+        V(r)=\frac{1}{2}m\omega^2r^2,
+        \quad
+        \bm{r}\cdot\bm{\nabla}V
+        =
+        r\dv{V}{r}
+        =
+        2V
+
+    である。よって `2\braket{T}=2\braket{V}` であり，
+
+    .. math::
+        \braket{T}=\braket{V}
+
+    となる。`E_n=\braket{T}+\braket{V}` と合わせると，
+
+    .. math::
+        \braket{T}
+        =
+        \braket{V}
+        =
+        \frac{E_n}{2}
+
+    である。

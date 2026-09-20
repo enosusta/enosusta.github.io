@@ -1,2 +1,104 @@
 Problem 4.22
 ==================
+
+a.  `L_z=xp_y-yp_x` と積の交換関係，
+
+    .. math::
+        [AB,C]=A[B,C]+[A,C]B
+
+    を用いる。たとえば，
+
+    .. math::
+        \begin{aligned}
+            [L_z,x]
+            &=[xp_y-yp_x,x]
+            \\
+            &=-y[p_x,x]
+            =i\hbar y,
+            \\
+            [L_z,p_x]
+            &=[x,p_x]p_y
+            =i\hbar p_y
+        \end{aligned}
+
+    である。同じ計算をほかの成分にも行うと，
+
+    .. math::
+        \begin{gathered}
+            [L_z,x]=i\hbar y,
+            \quad
+            [L_z,y]=-i\hbar x,
+            \quad
+            [L_z,z]=0,
+            \\
+            [L_z,p_x]=i\hbar p_y,
+            \quad
+            [L_z,p_y]=-i\hbar p_x,
+            \quad
+            [L_z,p_z]=0
+        \end{gathered}
+
+    を得る。
+
+b.  `L_x=yp_z-zp_y` なので，\(a) の結果から，
+
+    .. math::
+        \begin{aligned}
+            [L_z,L_x]
+            &=[L_z,y]p_z+y[L_z,p_z]
+            -[L_z,z]p_y-z[L_z,p_y]
+            \\
+            &=-i\hbar xp_z+i\hbar zp_x
+            \\
+            &=i\hbar L_y
+        \end{aligned}
+
+    となる。
+
+c.  \(a) の交換関係を用いると，
+
+    .. math::
+        \begin{aligned}
+            [L_z,r^2]
+            &=[L_z,x^2]+[L_z,y^2]+[L_z,z^2]
+            \\
+            &=i\hbar\left(yx+xy\right)
+            -i\hbar\left(xy+yx\right)
+            =0,
+            \\
+            [L_z,p^2]
+            &=[L_z,p_x^2]+[L_z,p_y^2]+[L_z,p_z^2]
+            \\
+            &=i\hbar\left(p_yp_x+p_xp_y\right)
+            -i\hbar\left(p_xp_y+p_yp_x\right)
+            =0
+        \end{aligned}
+
+    である。
+
+d.  `V=V(r)` は `r^2` の関数とみなせるので，`[L_z,r^2]=0` から，
+
+    .. math::
+        [L_z,V(r)]=0
+
+    が従う。また \(c) より `[L_z,p^2]=0` だから，
+
+    .. math::
+        [L_z,H]
+        =\frac{1}{2m}[L_z,p^2]+[L_z,V(r)]
+        =0
+
+    である。`x`，`y`，`z` を巡回置換すれば，同じ議論によって，
+
+    .. math::
+        [H,L_x]=[H,L_y]=[H,L_z]=0
+
+    を得る。したがって，
+
+    .. math::
+        [H,L^2]
+        =
+        \sum_{j=x,y,z}[H,L_j^2]
+        =0
+
+    であり，さらに `[L^2,L_z]=0` なので，`H`，`L^2`，`L_z` は相互に両立する。

@@ -1,2 +1,109 @@
 Problem 4.43
 ==================
+
+a.  与えられたポテンシャルは，
+
+    .. math::
+        \bm{A}
+        =
+        \left(
+        -\frac{B_0y}{2},
+        \frac{B_0x}{2},
+        0
+        \right),
+        \quad
+        \varphi=Kz^2
+
+    と書け，時間に依存しない。したがって，
+
+    .. math::
+        \bm{E}
+        =
+        -\bm{\nabla}\varphi
+        =
+        -2Kz\,\hat{\bm{k}},
+        \quad
+        \bm{B}
+        =
+        \bm{\nabla}\times\bm{A}
+        =
+        B_0\hat{\bm{k}}
+
+    である。
+
+b.  Hamiltonian は，
+
+    .. math::
+        \begin{aligned}
+            H
+            ={}&
+            \frac{1}{2m}
+            \left[
+            \left(p_x+\frac{qB_0}{2}y\right)^2
+            +
+            \left(p_y-\frac{qB_0}{2}x\right)^2
+            +p_z^2
+            \right]
+            +qKz^2
+            \\
+            ={}&
+            \left[
+            \frac{p_x^2+p_y^2}{2m}
+            +\frac{q^2B_0^2}{8m}
+            \left(x^2+y^2\right)
+            -\frac{qB_0}{2m}L_z
+            \right]
+            +
+            \left(
+            \frac{p_z^2}{2m}+qKz^2
+            \right)
+        \end{aligned}
+
+    と分離する。ここで，
+
+    .. math::
+        \omega_1\coloneqq\frac{qB_0}{m},
+        \quad
+        \omega_2\coloneqq\sqrt{\frac{2qK}{m}}
+
+    と置く。`x`--`y` 部分の角括弧内の最初の2項は振動数 `\omega_1/2` の2次元等方調和振動子である。その動径量子数を `n_\rho`，`L_z` の量子数を `m_\ell` とすると，
+
+    .. math::
+        \begin{aligned}
+            E_{xy}
+            &=
+            \frac{\hbar\omega_1}{2}
+            \left(
+            2n_\rho+|m_\ell|+1-m_\ell
+            \right)
+            \\
+            &=
+            \hbar\omega_1
+            \left(n_1+\frac{1}{2}\right),
+            \\
+            n_1
+            &\coloneqq
+            n_\rho+\frac{|m_\ell|-m_\ell}{2}
+            =0,1,2,\ldots
+        \end{aligned}
+
+    となる。`z` 部分は振動数 `\omega_2` の1次元調和振動子なので，
+
+    .. math::
+        E_z
+        =
+        \hbar\omega_2
+        \left(n_2+\frac{1}{2}\right),
+        \quad
+        n_2=0,1,2,\ldots
+
+    である。したがって，全エネルギーは，
+
+    .. math::
+        E(n_1,n_2)
+        =
+        \left(n_1+\frac{1}{2}\right)\hbar\omega_1
+        +
+        \left(n_2+\frac{1}{2}\right)\hbar\omega_2
+
+    となる。ここでは `qB_0>0`，`qK>0` を仮定した。一般の符号ではサイクロトロン振動数を `\omega_1=|qB_0|/m` と取る。

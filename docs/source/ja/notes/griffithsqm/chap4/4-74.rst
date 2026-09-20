@@ -1,2 +1,89 @@
 Problem 4.74
 ==================
+
+a.  磁場とスピンの内積は，
+
+    .. math::
+        \bm{B}\cdot\bm{S}
+        =
+        -\alpha xS_x
+        +\left(B_0+\alpha z\right)S_z
+
+    である。`S_x` と `S_z` の行列表現を用いると，スピン相互作用は，
+
+    .. math::
+        -\gamma\bm{B}\cdot\bm{S}
+        =
+        \frac{\hbar\gamma}{2}
+        \begin{pmatrix}
+            -\left(B_0+\alpha z\right)&\alpha x\\
+            \alpha x&B_0+\alpha z
+        \end{pmatrix}
+
+    となる。したがって，Schrödinger 方程式の二成分は，
+
+    .. math::
+        \begin{aligned}
+            -\frac{\hbar^2}{2m}\nabla^2\Psi_+
+            &-
+            \frac{\hbar\gamma}{2}
+            \left(B_0+\alpha z\right)\Psi_+
+            +
+            \frac{\hbar\gamma}{2}\alpha x\Psi_-
+            =
+            i\hbar\pdv{\Psi_+}{t},\\
+            -\frac{\hbar^2}{2m}\nabla^2\Psi_-
+            &+
+            \frac{\hbar\gamma}{2}
+            \left(B_0+\alpha z\right)\Psi_-
+            +
+            \frac{\hbar\gamma}{2}\alpha x\Psi_+
+            =
+            i\hbar\pdv{\Psi_-}{t}
+        \end{aligned}
+
+    となる。
+
+b.  `\Psi_\pm=e^{\pm i\gamma B_0t/2}\widetilde\Psi_\pm` を (a) の式へ代入すると，一様磁場 `B_0` に由来する対角項が時間微分から生じる項と相殺する。残る方程式は，
+
+    .. math::
+        \begin{aligned}
+            -\frac{\hbar^2}{2m}\nabla^2\widetilde\Psi_+
+            &-
+            \frac{\hbar\gamma}{2}\alpha z\widetilde\Psi_+
+            +
+            \frac{\hbar\gamma}{2}\alpha x
+            e^{-i\gamma B_0t}\widetilde\Psi_-
+            =
+            i\hbar\pdv{\widetilde\Psi_+}{t},\\
+            -\frac{\hbar^2}{2m}\nabla^2\widetilde\Psi_-
+            &+
+            \frac{\hbar\gamma}{2}\alpha z\widetilde\Psi_-
+            +
+            \frac{\hbar\gamma}{2}\alpha x
+            e^{i\gamma B_0t}\widetilde\Psi_+
+            =
+            i\hbar\pdv{\widetilde\Psi_-}{t}
+        \end{aligned}
+
+    である。
+
+c.  急速に振動する非対角項を平均して0とすれば，二つの成分は分離し，それぞれ，
+
+    .. math::
+        V_+(z)=-\frac{\hbar\gamma\alpha}{2}z,
+        \quad
+        V_-(z)=\frac{\hbar\gamma\alpha}{2}z
+
+    という線形ポテンシャル中を運動する。対応する力は，
+
+    .. math::
+        F_z^{(+)}
+        =-\dv{V_+}{z}
+        =\frac{\hbar\gamma\alpha}{2},
+        \quad
+        F_z^{(-)}
+        =-\dv{V_-}{z}
+        =-\frac{\hbar\gamma\alpha}{2}
+
+    である。したがって，スピン上向き成分と下向き成分の空間波束は反対方向へ加速され，入射ビームは二本に分裂する。これは `F_z=\gamma\alpha S_z` と一致する。

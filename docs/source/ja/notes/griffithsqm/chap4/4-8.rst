@@ -1,2 +1,97 @@
 Problem 4.8
 ==================
+
+まず `\ell>\ell'` とする。Rodrigues の公式を用いると，
+
+.. math::
+    \int_{-1}^1P_\ell(x)P_{\ell'}(x)\,\dd x
+    =
+    \frac{1}{2^\ell\ell!}
+    \int_{-1}^1
+    P_{\ell'}(x)
+    \frac{\dd^\ell}{\dd x^\ell}
+    \left(x^2-1\right)^\ell
+    \,\dd x
+
+となる。 `\left(x^2-1\right)^\ell` とその `\ell-1` 階までの導関数は `x=\pm1` でゼロになる。したがって，境界項はすべて消え，部分積分を `\ell` 回行うと，
+
+.. math::
+    \int_{-1}^1P_\ell P_{\ell'}\,\dd x
+    =
+    \frac{(-1)^\ell}{2^\ell\ell!}
+    \int_{-1}^1
+    \left(x^2-1\right)^\ell
+    \frac{\dd^\ell P_{\ell'}}{\dd x^\ell}
+    \,\dd x
+
+を得る。 `P_{\ell'}` は `\ell'` 次多項式であり， `\ell>\ell'` ならば，
+
+.. math::
+    \frac{\dd^\ell P_{\ell'}}{\dd x^\ell}=0
+
+である。よって， `\ell\neq\ell'` のときは積分の対称性も用いて，
+
+.. math::
+    \int_{-1}^1P_\ell(x)P_{\ell'}(x)\,\dd x=0
+
+となる。
+
+次に `\ell=\ell'` とする。Rodrigues の公式から `P_\ell` の最高次の項を取り出すと，
+
+.. math::
+    P_\ell(x)
+    =
+    \frac{(2\ell)!}{2^\ell(\ell!)^2}x^\ell
+    +\mathrm{lower\ powers}
+
+なので，
+
+.. math::
+    \frac{\dd^\ell P_\ell}{\dd x^\ell}
+    =\frac{(2\ell)!}{2^\ell\ell!}
+
+である。先ほどと同様に部分積分を `\ell` 回行えば，
+
+.. math::
+    \begin{aligned}
+        \int_{-1}^1P_\ell(x)^2\,\dd x
+        &=
+        \frac{(-1)^\ell}{2^\ell\ell!}
+        \int_{-1}^1
+        \left(x^2-1\right)^\ell
+        \frac{\dd^\ell P_\ell}{\dd x^\ell}
+        \,\dd x
+        \\
+        &=
+        \frac{(2\ell)!}{2^{2\ell}(\ell!)^2}
+        \int_{-1}^1\left(1-x^2\right)^\ell\,\dd x
+    \end{aligned}
+
+となる。最後の積分で `x=2t-1` と置くと，
+
+.. math::
+    \begin{aligned}
+        \int_{-1}^1\left(1-x^2\right)^\ell\,\dd x
+        &=2^{2\ell+1}
+        \int_0^1t^\ell(1-t)^\ell\,\dd t
+        \\
+        &=2^{2\ell+1}
+        \frac{(\ell!)^2}{(2\ell+1)!}
+    \end{aligned}
+
+である。したがって，
+
+.. math::
+    \int_{-1}^1P_\ell(x)^2\,\dd x
+    =
+    \frac{(2\ell)!}{2^{2\ell}(\ell!)^2}
+    \frac{2^{2\ell+1}(\ell!)^2}{(2\ell+1)!}
+    =\frac{2}{2\ell+1}
+
+を得る。直交性と合わせると，
+
+.. math::
+    \int_{-1}^1P_\ell(x)P_{\ell'}(x)\,\dd x
+    =\frac{2}{2\ell+1}\delta_{\ell\ell'}
+
+となる。

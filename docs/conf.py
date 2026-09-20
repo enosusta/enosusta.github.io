@@ -62,6 +62,7 @@ html_static_path = [str(DOCS_DIR / "_static")]
 html_css_files = ["fonts/fonts.css", "custom.css"]
 html_favicon = str(DOCS_DIR / "_static" / "logo.svg")
 html_baseurl = f"{SITE_URL}/{language}/"
+html_extra_path = ["robots.txt"]
 
 language_labels = {"en": "EN", "ja": "JA"}
 language_documents = {

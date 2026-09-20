@@ -1,2 +1,50 @@
 Problem 4.26
 ==================
+
+`C=\sqrt{15/(8\pi)}` と置けば，
+
+.. math::
+    Y_2^1
+    =-C\sin\theta\cos\theta\,e^{i\phi}
+
+である。上昇演算子を作用させると，
+
+.. math::
+    \begin{aligned}
+        L_+Y_2^1
+        &=
+        \hbar e^{i\phi}
+        \left(
+        \pdv{}{\theta}
+        +i\cot\theta\pdv{}{\phi}
+        \right)
+        \left(
+        -C\sin\theta\cos\theta\,e^{i\phi}
+        \right)
+        \\
+        &=
+        \hbar C\sin^2\theta\,e^{2i\phi}
+    \end{aligned}
+
+となる。一方，上昇演算子の規格化係数は，
+
+.. math::
+    A_2^1
+    =
+    \hbar\sqrt{\left(2-1\right)\left(2+1+1\right)}
+    =2\hbar
+
+だから，
+
+.. math::
+    L_+Y_2^1=2\hbar Y_2^2
+
+である。したがって，
+
+.. math::
+    Y_2^2(\theta,\phi)
+    =
+    \sqrt{\frac{15}{32\pi}}
+    \sin^2\theta\,e^{2i\phi}
+
+を得る。

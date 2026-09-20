@@ -1,2 +1,89 @@
 Problem 4.76
 ==================
+
+a.  Faraday の電磁誘導の法則から，円環に沿う起電力は，
+
+    .. math::
+        \mathcal{E}
+        =
+        \oint\bm{E}\cdot\dd\bm{l}
+        =
+        2\pi bE_\phi
+        =-\dv{\Phi}{t}
+
+    である。粒子の接線速度を `v_\phi=b\omega` とすれば，電場が粒子になす仕事の率は，
+
+    .. math::
+        \begin{aligned}
+            \dv{W}{t}
+            &=q\bm{E}\cdot\bm{v}
+            =qE_\phi b\omega\\
+            &=-\frac{q\omega}{2\pi}\dv{\Phi}{t}
+        \end{aligned}
+
+    となる。したがって，
+
+    .. math::
+        \dv{W}{\Phi}
+        =-q\frac{\omega}{2\pi}
+
+    を得る。
+
+b.  円環上で，ベクトルポテンシャルは `\bm{A}=\left[\Phi/(2\pi b)\right]\hat{\bm{\phi}}` である。したがって，力学的角運動量の `z` 成分は，
+
+    .. math::
+        \begin{aligned}
+            L_{\mathrm{mechanical},z}
+            &=
+            \left[
+            \bm{r}\times
+            \left(\bm{p}-q\bm{A}\right)
+            \right]_z\\
+            &=
+            -i\hbar\pdv{}{\phi}
+            -\frac{q\Phi}{2\pi}
+        \end{aligned}
+
+    となる。状態 `\psi_n=e^{in\phi}/\sqrt{2\pi}` に作用させれば，
+
+    .. math::
+        L_{\mathrm{mechanical},z}\psi_n
+        =
+        \left(
+        n\hbar-\frac{q\Phi}{2\pi}
+        \right)\psi_n
+
+    を得る。よって，
+
+    .. math::
+        mb^2\omega
+        =
+        n\hbar-\frac{q\Phi}{2\pi}
+
+    であり，一般には `\hbar` の整数倍ではない。
+
+c.  定常状態のエネルギーを，
+
+    .. math::
+        E_n
+        =
+        \frac{1}{2mb^2}
+        \left(
+        n\hbar-\frac{q\Phi}{2\pi}
+        \right)^2
+
+    と書く。磁束で微分し，(b) の角速度を用いると，
+
+    .. math::
+        \begin{aligned}
+            \dv{E_n}{\Phi}
+            &=
+            -\frac{q}{2\pi mb^2}
+            \left(
+            n\hbar-\frac{q\Phi}{2\pi}
+            \right)\\
+            &=-q\frac{\omega}{2\pi}
+            =\dv{W}{\Phi}
+        \end{aligned}
+
+    となる。したがって，量子論的なエネルギー準位の変化は，電磁誘導によって古典的になされる仕事と正確に一致する。

@@ -1,2 +1,64 @@
 Problem 4.53
 ==================
+
+a.  `n=4`，`l=3` の動径関数と `m=3` の球面調和関数は，
+
+    .. math::
+        R_{43}(r)
+        =
+        \frac{1}{768\sqrt{35}a^{3/2}}
+        \left(\frac{r}{a}\right)^3e^{-r/(4a)},
+
+    .. math::
+        Y_3^3(\theta,\phi)
+        =
+        -\sqrt{\frac{35}{64\pi}}
+        \sin^3\theta\,e^{3i\phi}
+
+    である。よって，
+
+    .. math::
+        \psi_{433}(r,\theta,\phi)
+        =
+        -\frac{1}{6144\sqrt{\pi}a^{3/2}}
+        \left(\frac{r}{a}\right)^3
+        e^{-r/(4a)}
+        \sin^3\theta\,e^{3i\phi}
+
+    となる。
+
+b.  `|R_{43}|^2r^2` の動径依存性は `r^8e^{-r/(2a)}` に比例する。したがって，規格化定数を明示せずに，
+
+    .. math::
+        \begin{aligned}
+            \braket{r}
+            &=
+            \frac{
+            \displaystyle
+            \int_0^\infty r^9e^{-r/(2a)}\,\dd r
+            }{
+            \displaystyle
+            \int_0^\infty r^8e^{-r/(2a)}\,\dd r
+            }
+            \\
+            &=
+            \frac{9!\left(2a\right)^{10}}
+            {8!\left(2a\right)^9}
+            =18a
+        \end{aligned}
+
+    を得る。
+
+c.  `L_x^2+L_y^2=L^2-L_z^2` である。`\psi_{433}` は `L^2` と `L_z` の同時固有状態なので，
+
+    .. math::
+        \left(L_x^2+L_y^2\right)\psi_{433}
+        =
+        \hbar^2
+        \left[
+        l\left(l+1\right)-m^2
+        \right]\psi_{433}
+        =
+        3\hbar^2\psi_{433}
+
+    となる。したがって，得られる値は `3\hbar^2` だけであり，その確率は1である。

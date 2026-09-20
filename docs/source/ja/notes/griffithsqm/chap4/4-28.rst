@@ -1,2 +1,49 @@
 Problem 4.28
 ==================
+
+電子を一様な密度をもつ剛体球とみなすと，慣性モーメントは，
+
+.. math::
+    I=\frac{2}{5}mr_c^2
+
+である。角速度を `\omega`，赤道上の速さを `v=\omega r_c` とすると，
+
+.. math::
+    S=I\omega
+    =\frac{2}{5}mr_cv
+
+となる。これを `S=\hbar/2` と置けば，
+
+.. math::
+    v=\frac{5\hbar}{4mr_c}
+
+である。古典電子半径は，微細構造定数 `\alpha` を用いて，
+
+.. math::
+    r_c
+    =\frac{e^2}{4\pi\epsilon_0mc^2}
+    =\frac{\alpha\hbar}{mc}
+
+と書けるので，
+
+.. math::
+    v=\frac{5}{4\alpha}c
+
+を得る。数値計算は次のとおりである。
+
+.. exec_code::
+
+    alpha = 7.2973525693e-3
+    c = 299792458.0
+
+    v = 5.0 * c / (4.0 * alpha)
+    print(f"v = {v:.3e} m/s")
+    print(f"v/c = {v/c:.1f}")
+
+したがって，
+
+.. math::
+    v\approx5.14\times10^{10}\ \mathrm{m/s}
+    \approx171c
+
+となる。これは光速を大幅に超えるため，電子を文字どおり自転する古典的な剛体球とする模型には意味がない。電子の半径を `r_c` より小さくすれば，必要な `v` はさらに大きくなる。

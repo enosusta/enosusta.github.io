@@ -1,2 +1,59 @@
 Problem 4.17
 ==================
+
+Hamiltonian は，
+
+.. math::
+    \hat{H}=\frac{\bm{p}^{\,2}}{2m_e}+V(r)
+
+である。 `V(r)` と `z` は可換なので，
+
+.. math::
+    [\hat{H},z]
+    =\frac{1}{2m_e}[p_z^2,z]
+    =-\frac{i\hbar}{m_e}p_z
+
+となり，したがって，
+
+.. math::
+    [z,[\hat{H},z]]
+    =-\frac{i\hbar}{m_e}[z,p_z]
+    =\frac{\hbar^2}{m_e}
+
+である。一方，二重交換子を展開すると，
+
+.. math::
+    [z,[\hat{H},z]]
+    =2z\hat{H}z-\hat{H}z^2-z^2\hat{H}
+
+となる。基底状態を `\ket{100}` と書けば，
+
+.. math::
+    \hat{H}\ket{100}=E_1\ket{100}
+
+なので，基底状態で期待値を取ると，
+
+.. math::
+    \frac{\hbar^2}{m_e}
+    =2\braket{z\hat{H}z}
+    -2E_1\braket{z^2}
+
+を得る。問題 4.15 の結果 `\braket{z^2}=a^2` と，
+
+.. math::
+    E_1=-\frac{\hbar^2}{2m_ea^2}
+
+を用いれば，
+
+.. math::
+    \begin{aligned}
+        \braket{z\hat{H}z}
+        &=E_1a^2+\frac{\hbar^2}{2m_e}
+        \\
+        &=-\frac{\hbar^2}{2m_e}
+        +\frac{\hbar^2}{2m_e}
+        \\
+        &=0
+    \end{aligned}
+
+となる。
