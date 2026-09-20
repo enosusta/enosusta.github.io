@@ -1,0 +1,64 @@
+Problem 3.6
+==================
+
+Integrating by parts twice for periodic functions `f,g` gives
+
+.. math::
+    \begin{aligned}
+        \braket{f|\hat{Q}g}
+        &=\int_0^{2\pi}f^*(\phi)g''(\phi)\,\dd\phi
+        \\
+        &=\left[f^*g'-f'^*g\right]_0^{2\pi}
+        +\int_0^{2\pi}f''^*(\phi)g(\phi)\,\dd\phi.
+    \end{aligned}
+
+Since both the functions and their derivatives are periodic, the boundary term is
+
+.. math::
+    \begin{aligned}
+        \left[f^*g'-f'^*g\right]_0^{2\pi}
+        &=f^*(2\pi)g'(2\pi)-f'^*(2\pi)g(2\pi)
+        \\
+        &\quad-f^*(0)g'(0)+f'^*(0)g(0)
+        \\
+        &=0.
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    \braket{f|\hat{Q}g}
+    =\braket{\hat{Q}f|g},
+
+and `\hat{Q}` is Hermitian.
+
+The eigenvalue equation is
+
+.. math::
+    \dv{^2u}{\phi^2}=qu.
+
+Since `\hat{Q}` is Hermitian, its eigenvalue `q` is real. Imposing the periodic boundary condition on the general solution `u=A+B\phi` for `q=0` gives `B=0`, leaving only constant functions. For `q>0`, the solution is a linear combination of real exponentials, so there is no nonzero periodic solution.
+
+For `q<0`, write `q=-k^2`. The general solution is then
+
+.. math::
+    u(\phi)=Ae^{ik\phi}+Be^{-ik\phi}.
+
+The periodic boundary condition `u(\phi+2\pi)=u(\phi)` requires `e^{i2\pi k}=1`, so `k` must be an integer. Therefore, choosing the orthonormal eigenfunctions
+
+.. math::
+    u_n(\phi)=\frac{1}{\sqrt{2\pi}}e^{in\phi},
+    \quad n\in\Z,
+
+we have
+
+.. math::
+    \hat{Q}u_n=-n^2u_n.
+
+Hence, the spectrum is
+
+.. math::
+    \operatorname{spec}(\hat{Q})
+    =\left\{0,-1,-4,-9,\ldots\right\}.
+
+The eigenvalue `0` is nondegenerate because it has only the constant eigenfunction. On the other hand, for `n=1,2,\ldots`, the eigenvalue `-n^2` is doubly degenerate because it has two linearly independent eigenfunctions, `e^{in\phi}` and `e^{-in\phi}`.

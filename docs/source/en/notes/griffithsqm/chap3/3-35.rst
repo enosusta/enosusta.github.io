@@ -1,0 +1,116 @@
+Problem 3.35
+==================
+
+Define the central momentum by
+
+.. math::
+    p_0=\frac{2\pi\hbar}{\lambda}.
+
+The Fourier transform is then
+
+.. math::
+    \begin{aligned}
+        \Phi(p,0)
+        &=\frac{1}{\sqrt{2\pi\hbar}}
+        \frac{1}{\sqrt{2n\lambda}}
+        \int_{-n\lambda}^{n\lambda}
+        e^{-i\left(p-p_0\right)x/\hbar}\,\dd x
+        \\
+        &=\frac{1}{2\sqrt{\pi\hbar n\lambda}}
+        \frac{2\hbar
+        \sin\left[
+            \left(p-p_0\right)n\lambda/\hbar
+        \right]}
+        {p-p_0}
+        \\
+        &=\sqrt{\frac{\hbar}{\pi n\lambda}}
+        \frac{
+            \sin\left[
+                \left(p-p_0\right)n\lambda/\hbar
+            \right]
+        }
+        {p-p_0}.
+    \end{aligned}
+
+Introduce the dimensionless variables
+
+.. math::
+    X=\frac{x}{n\lambda},
+    \quad
+    Q=\frac{\left(p-p_0\right)n\lambda}{\hbar}.
+
+.. plot::
+    :include-source: True
+    :context: reset
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    fig, axes = plt.subplots(1, 2, figsize=(9, 3.4))
+
+    x = np.linspace(-1.5, 1.5, 1201)
+    position_density = np.where(np.abs(x) < 1, 1.0, 0.0)
+    axes[0].plot(x, position_density)
+    axes[0].set_xlabel(r"$X=x/(n\lambda)$")
+    axes[0].set_ylabel(r"$2n\lambda|\Psi|^2$")
+    axes[0].set_ylim(-0.05, 1.15)
+    axes[0].grid(alpha=0.25)
+
+    q = np.linspace(-4 * np.pi, 4 * np.pi, 2401)
+    momentum_density = np.sinc(q / np.pi) ** 2
+    axes[1].plot(q, momentum_density)
+    axes[1].axvline(-np.pi, color="gray", linestyle=":", linewidth=0.8)
+    axes[1].axvline(np.pi, color="gray", linestyle=":", linewidth=0.8)
+    axes[1].set_xlabel(r"$Q=(p-p_0)n\lambda/\hbar$")
+    axes[1].set_ylabel(r"$\sin^2Q/Q^2$")
+    axes[1].set_ylim(-0.05, 1.15)
+    axes[1].grid(alpha=0.25)
+
+    fig.tight_layout()
+    plt.show()
+
+The endpoints of the main peak in the position distribution are `x=\pm n\lambda`, so
+
+.. math::
+    w_x=2n\lambda.
+
+The first zeros on either side of the center of the momentum distribution occur at
+
+.. math::
+    \frac{\left(p-p_0\right)n\lambda}{\hbar}
+    =\pm\pi,
+    \quad
+    p=p_0\pm\frac{\pi\hbar}{n\lambda},
+
+so
+
+.. math::
+    w_p=\frac{2\pi\hbar}{n\lambda}.
+
+As `n\to\infty`, `w_x\to\infty` and `w_p\to0`. Using `w_x` and `w_p` as rough measures of the uncertainties gives
+
+.. math::
+    \Delta x\,\Delta p
+    \sim w_xw_p
+    =\left(2n\lambda\right)
+    \frac{2\pi\hbar}{n\lambda}
+    =4\pi\hbar>\frac{\hbar}{2},
+
+which satisfies the Heisenberg uncertainty principle.
+
+Finally, consider why the standard deviation of the momentum cannot be calculated. For large `|p|`,
+
+.. math::
+    |\Phi(p,0)|^2=O\left(p^{-2}\right),
+
+and `p^2|\Phi(p,0)|^2` does not decay at infinity. Therefore,
+
+.. math::
+    \braket{p^2}
+    =\int_{-\infty}^{\infty}
+    p^2|\Phi(p,0)|^2\,\dd p
+    =\infty,
+    \quad
+    \sigma_p=\infty.
+
+This divergence is caused by the discontinuous truncation of the position-space wave function at `x=\pm n\lambda`. The sharp discontinuities produce arbitrarily large wave-number components and give the momentum distribution long tails, so the finite width `w_p` does not represent the standard deviation of the full distribution.

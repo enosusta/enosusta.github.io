@@ -1,0 +1,29 @@
+Problem 3.10
+==================
+
+Taking the infinite square well to occupy `0<x<a`, the normalized ground state is
+
+.. math::
+    \psi_1(x)=\sqrt{\frac{2}{a}}
+    \sin\left(\frac{\pi x}{a}\right)
+    \quad (0<x<a),
+
+and it is zero outside the well. Applying the momentum operator inside the well gives
+
+.. math::
+    \begin{aligned}
+        \hat{p}\psi_1
+        &=-i\hbar\dv{\psi_1}{x}
+        \\
+        &=-i\hbar\sqrt{\frac{2}{a}}\frac{\pi}{a}
+        \cos\left(\frac{\pi x}{a}\right),
+    \end{aligned}
+
+so this state does not have a definite momentum.
+
+The momentum eigenvalue equation
+
+.. math::
+    -i\hbar\dv{\psi}{x}=p\psi
+
+has the nontrivial solution `\psi(x)=Ce^{ipx/\hbar}`. This function cannot satisfy the infinite-square-well boundary conditions `\psi(0)=\psi(a)=0`.

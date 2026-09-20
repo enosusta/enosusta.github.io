@@ -1,0 +1,137 @@
+Problem 3.36
+==================
+
+a.  The normalization condition gives
+
+    .. math::
+        1=|A|^2\int_{-\infty}^{\infty}
+        \frac{\dd x}{\left(x^2+a^2\right)^2}.
+
+    Using
+
+    .. math::
+        \int_{-\infty}^{\infty}
+        \frac{\dd x}{\left(x^2+a^2\right)^2}
+        =\frac{\pi}{2a^3},
+
+    we obtain
+
+    .. math::
+        |A|^2\frac{\pi}{2a^3}=1,
+
+    so we may take
+
+    .. math::
+        A=\sqrt{\frac{2a^3}{\pi}}.
+
+b.  Since `|\Psi|^2` is even,
+
+    .. math::
+        \braket{x}=0.
+
+    Also,
+
+    .. math::
+        \frac{x^2}{\left(x^2+a^2\right)^2}
+        =\frac{1}{x^2+a^2}
+        -\frac{a^2}{\left(x^2+a^2\right)^2},
+
+    and hence
+
+    .. math::
+        \begin{aligned}
+            \int_{-\infty}^{\infty}
+            \frac{x^2\,\dd x}{\left(x^2+a^2\right)^2}
+            &=\frac{\pi}{a}
+            -a^2\frac{\pi}{2a^3}
+            =\frac{\pi}{2a}
+            \\
+            \braket{x^2}
+            &=\frac{2a^3}{\pi}\frac{\pi}{2a}
+            =a^2.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \braket{x}=0,
+        \quad
+        \braket{x^2}=a^2,
+        \quad
+        \sigma_x=a.
+
+c.  The integral needed for the Fourier transform is
+
+    .. math::
+        \int_{-\infty}^{\infty}
+        \frac{e^{-ipx/\hbar}}{x^2+a^2}\,\dd x
+        =\frac{\pi}{a}e^{-a|p|/\hbar},
+
+    so
+
+    .. math::
+        \begin{aligned}
+            \Phi(p,0)
+            &=\frac{A}{\sqrt{2\pi\hbar}}
+            \frac{\pi}{a}e^{-a|p|/\hbar}
+            \\
+            &=\sqrt{\frac{a}{\hbar}}
+            e^{-a|p|/\hbar}.
+        \end{aligned}
+
+    Its normalization can be verified as follows:
+
+    .. math::
+        \begin{aligned}
+            \int_{-\infty}^{\infty}|\Phi(p,0)|^2\,\dd p
+            &=\frac{a}{\hbar}
+            \int_{-\infty}^{\infty}
+            e^{-2a|p|/\hbar}\,\dd p
+            \\
+            &=\frac{2a}{\hbar}
+            \int_0^\infty e^{-2ap/\hbar}\,\dd p
+            =1.
+        \end{aligned}
+
+d.  Since `|\Phi|^2` is even,
+
+    .. math::
+        \braket{p}=0.
+
+    Setting `\beta=2a/\hbar` and using
+
+    .. math::
+        \int_0^\infty p^2e^{-\beta p}\,\dd p
+        =\frac{2}{\beta^3},
+
+    we obtain
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2}
+            &=\frac{2a}{\hbar}
+            \int_0^\infty p^2e^{-2ap/\hbar}\,\dd p
+            \\
+            &=\frac{2a}{\hbar}
+            \frac{2}{\left(2a/\hbar\right)^3}
+            =\frac{\hbar^2}{2a^2}.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \braket{p}=0,
+        \quad
+        \braket{p^2}=\frac{\hbar^2}{2a^2},
+        \quad
+        \sigma_p=\frac{\hbar}{\sqrt{2}\,a}.
+
+e.  From the preceding results,
+
+    .. math::
+        \sigma_x\sigma_p
+        =a\frac{\hbar}{\sqrt{2}\,a}
+        =\frac{\hbar}{\sqrt{2}}
+        >\frac{\hbar}{2},
+
+    so the Heisenberg uncertainty principle is satisfied.

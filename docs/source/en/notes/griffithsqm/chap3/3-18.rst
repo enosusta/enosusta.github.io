@@ -1,0 +1,82 @@
+Problem 3.18
+==================
+
+a.  For `Q=1`,
+
+    .. math::
+        \dv{\braket{1}}{t}
+        =\frac{i}{\hbar}\braket{[\hat{H},1]}
+        =0.
+
+    Since
+
+    .. math::
+        \braket{1}
+        =\braket{\Psi|\Psi}
+        =\int|\Psi(x,t)|^2\,\dd x,
+
+    this shows that the normalization of the wave function is preserved in time.
+
+b.  For `Q=H`,
+
+    .. math::
+        \dv{\braket{H}}{t}
+        =\left\langle\pdv{\hat{H}}{t}\right\rangle.
+
+    For a Hamiltonian with no explicit time dependence, `\partial\hat{H}/\partial t=0`, and therefore
+
+    .. math::
+        \dv{\braket{H}}{t}=0,
+
+    so the expectation value of the energy is conserved.
+
+c.  For `Q=x`, write the Hamiltonian as
+
+    .. math::
+        \hat{H}=\frac{\hat{p}^{\,2}}{2m}+V(x).
+
+    Then `[V(x),x]=0`, and
+
+    .. math::
+        \begin{aligned}
+            [\hat{p}^{\,2},x]
+            &=\hat{p}[\hat{p},x]+[\hat{p},x]\hat{p}
+            \\
+            &=\hat{p}(-i\hbar)+(-i\hbar)\hat{p}
+            \\
+            &=-2i\hbar\hat{p}.
+        \end{aligned}
+
+    Hence,
+
+    .. math::
+        [\hat{H},x]=-\frac{i\hbar}{m}\hat{p},
+
+    and
+
+    .. math::
+        \dv{\braket{x}}{t}
+        =\frac{\braket{p}}{m}.
+
+    This is Equation (1.33).
+
+d.  For `Q=p`, we have `[\hat{p}^{\,2},\hat{p}]=0`, and from \(c) of :ref:`notes/griffithsqm/chap3/3-14:Problem 3.14`,
+
+    .. math::
+        [V(x),\hat{p}]
+        =i\hbar\dv{V}{x}.
+
+    Hence,
+
+    .. math::
+        [\hat{H},\hat{p}]
+        =i\hbar\dv{V}{x},
+
+    and
+
+    .. math::
+        \dv{\braket{p}}{t}
+        =-\left\langle\dv{V}{x}\right\rangle
+        =\braket{F}.
+
+    This is Equation (1.38).

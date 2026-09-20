@@ -1,0 +1,41 @@
+Problem 3.17
+==================
+
+For convenience, define
+
+.. math::
+    x_0\coloneqq\braket{x},\quad
+    p_0\coloneqq\braket{p}.
+
+Then Equation (3.69) becomes
+
+.. math::
+    \left(-i\hbar\dv{}{x}-p_0\right)\Psi
+    =ia(x-x_0)\Psi.
+
+Rearranging while leaving the derivative term on the left-hand side gives
+
+.. math::
+    -i\hbar\dv{\Psi}{x}
+    =\left[p_0+ia(x-x_0)\right]\Psi.
+
+In a region where `\Psi\neq0`,
+
+.. math::
+    \frac{1}{\Psi}\dv{\Psi}{x}
+    =\frac{ip_0}{\hbar}-\frac{a}{\hbar}(x-x_0).
+
+Integrating both sides with respect to `x`, we obtain
+
+.. math::
+    \ln\Psi
+    =\frac{ip_0x}{\hbar}
+    -\frac{a}{2\hbar}(x-x_0)^2+C,
+
+so the general solution is
+
+.. math::
+    \Psi(x)
+    =A
+    \exp\left[-\frac{a}{2\hbar}(x-x_0)^2\right]
+    \exp\left(\frac{ip_0x}{\hbar}\right).

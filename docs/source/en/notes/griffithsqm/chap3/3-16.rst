@@ -1,0 +1,41 @@
+Problem 3.16
+==================
+
+We prove the contrapositive. Suppose that `\hat{P}` and `\hat{Q}` have a complete set of simultaneous eigenfunctions `\{f_n\}`. For each `n`, we can write
+
+.. math::
+    \hat{P}f_n=p_nf_n,\quad
+    \hat{Q}f_n=q_nf_n.
+
+It follows that
+
+.. math::
+    \begin{aligned}
+        [\hat{P},\hat{Q}]f_n
+        &=\hat{P}\hat{Q}f_n-\hat{Q}\hat{P}f_n
+        \\
+        &=\hat{P}(q_nf_n)-\hat{Q}(p_nf_n)
+        \\
+        &=q_np_nf_n-p_nq_nf_n
+        \\
+        &=0.
+    \end{aligned}
+
+By completeness, any function `f` in the Hilbert space can be expanded as
+
+.. math::
+    f=\sum_n c_nf_n.
+
+By the linearity of the commutator,
+
+.. math::
+    [\hat{P},\hat{Q}]f
+    =\sum_n c_n[\hat{P},\hat{Q}]f_n
+    =0.
+
+Since this holds for every `f`, we must have, as an operator,
+
+.. math::
+    [\hat{P},\hat{Q}]=0.
+
+Therefore, two operators for which `[\hat{P},\hat{Q}]\neq0` cannot have a complete set of simultaneous eigenfunctions.

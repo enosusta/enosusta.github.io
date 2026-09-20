@@ -1,0 +1,111 @@
+Problem 3.14
+==================
+
+a.  From the definition of the commutator,
+
+    .. math::
+        \begin{aligned}
+            [\hat{A}+\hat{B},\hat{C}]
+            &=\left(\hat{A}+\hat{B}\right)\hat{C}
+            -\hat{C}\left(\hat{A}+\hat{B}\right)
+            \\
+            &=\hat{A}\hat{C}-\hat{C}\hat{A}
+            +\hat{B}\hat{C}-\hat{C}\hat{B}
+            \\
+            &=[\hat{A},\hat{C}]+[\hat{B},\hat{C}].
+        \end{aligned}
+
+    Also,
+
+    .. math::
+        \begin{aligned}
+            [\hat{A}\hat{B},\hat{C}]
+            &=\hat{A}\hat{B}\hat{C}-\hat{C}\hat{A}\hat{B}
+            \\
+            &=\hat{A}\hat{B}\hat{C}
+            -\hat{A}\hat{C}\hat{B}
+            +\hat{A}\hat{C}\hat{B}
+            -\hat{C}\hat{A}\hat{B}
+            \\
+            &=\hat{A}\left(\hat{B}\hat{C}-\hat{C}\hat{B}\right)
+            +\left(\hat{A}\hat{C}-\hat{C}\hat{A}\right)\hat{B}
+            \\
+            &=\hat{A}[\hat{B},\hat{C}]
+            +[\hat{A},\hat{C}]\hat{B}.
+        \end{aligned}
+
+b.  We use mathematical induction. For `n=1`,
+
+    .. math::
+        [x,\hat{p}]=i\hbar.
+
+    Suppose that
+
+    .. math::
+        [x^n,\hat{p}]=i\hbar nx^{n-1}
+
+    holds for `n`. Setting `\hat{A}=x^n`, `\hat{B}=x`, and `\hat{C}=\hat{p}` in \(a) gives
+
+    .. math::
+        \begin{aligned}
+            [x^{n+1},\hat{p}]
+            &=x^n[x,\hat{p}]+[x^n,\hat{p}]x
+            \\
+            &=x^n(i\hbar)+(i\hbar nx^{n-1})x
+            \\
+            &=i\hbar(n+1)x^n,
+        \end{aligned}
+
+    so the result also holds for `n+1`. Therefore, for every positive integer `n`,
+
+    .. math::
+        [x^n,\hat{p}]=i\hbar nx^{n-1}.
+
+c.  Suppose that `f(x)` has the Taylor expansion
+
+    .. math::
+        f(x)=\sum_{n=0}^{\infty}c_nx^n.
+
+    By \(b),
+
+    .. math::
+        \begin{aligned}
+            [f(x),\hat{p}]
+            &=\sum_{n=0}^{\infty}c_n[x^n,\hat{p}]
+            \\
+            &=i\hbar\sum_{n=1}^{\infty}nc_nx^{n-1}
+            \\
+            &=i\hbar\dv{f}{x}.
+        \end{aligned}
+
+d.  From Equation (2.54), the commutation relation `[\hat{a}_-,\hat{a}_+]=1`, and \(a),
+
+    .. math::
+        \begin{aligned}
+            [\hat{H},\hat{a}_+]
+            &=\hbar\omega
+            [\hat{a}_-\hat{a}_+,\hat{a}_+]
+            \\
+            &=\hbar\omega\left(
+                \hat{a}_-[\hat{a}_+,\hat{a}_+]
+                +[\hat{a}_-,\hat{a}_+]\hat{a}_+
+            \right)
+            \\
+            &=\hbar\omega\hat{a}_+.
+        \end{aligned}
+
+    Similarly, using `[\hat{a}_+,\hat{a}_-]=-1`,
+
+    .. math::
+        \begin{aligned}
+            [\hat{H},\hat{a}_-]
+            &=\hbar\omega
+            [\hat{a}_-\hat{a}_+,\hat{a}_-]
+            \\
+            &=\hbar\omega\left(
+                \hat{a}_-[\hat{a}_+,\hat{a}_-]
+                +[\hat{a}_-,\hat{a}_-]\hat{a}_+
+            \right)
+            \\
+            &=-\hbar\omega\hat{a}_-.
+        \end{aligned}

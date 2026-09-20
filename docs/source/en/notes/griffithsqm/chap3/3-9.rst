@@ -1,0 +1,8 @@
+Problem 3.9
+==================
+
+a.  The infinite square well.
+
+b.  A delta-function potential: `V(x) = +\alpha\delta(x) \quad (\alpha>0)`.
+
+c.  A delta-function potential: `V(x) = -\alpha\delta(x) \quad (\alpha>0)`.

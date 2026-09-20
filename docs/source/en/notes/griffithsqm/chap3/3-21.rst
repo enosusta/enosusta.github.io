@@ -1,0 +1,103 @@
+Problem 3.21
+==================
+
+The Fourier transform of the wave function in :ref:`notes/griffithsqm/chap2/2-42:Problem 2.42` is
+
+.. math::
+    \phi(k) = \frac{A}{\sqrt{2a}}\exp\left[-\frac{(k-l)^2}{4a}\right],
+
+which corresponds to a Gaussian distribution with mean `l` and variance `a`. Therefore, we can write the mean and variance of the momentum as
+
+.. math::
+    \mu\coloneqq\braket{p}=\hbar l,
+    \quad
+    s^2\coloneqq\sigma_p^2=a\hbar^2.
+
+The second and fourth moments of a Gaussian distribution are
+
+.. math::
+    \braket{p^2}=\mu^2+s^2,
+    \quad
+    \braket{p^4}=\mu^4+6\mu^2s^2+3s^4,
+
+so
+
+.. math::
+    \begin{aligned}
+        \braket{p^2}
+        &=\hbar^2\left(l^2+a\right)
+        \\
+        \braket{p^4}
+        &=\hbar^4\left(l^4+6al^2+3a^2\right).
+    \end{aligned}
+
+For a free particle, `\hat{H}=\hat{p}^{\,2}/(2m)`, and hence
+
+.. math::
+    \begin{aligned}
+        \braket{H}
+        &=\frac{\hbar^2}{2m}\left(l^2+a\right)
+        \\
+        \braket{H^2}
+        &=\frac{\hbar^4}{4m^2}
+        \left(l^4+6al^2+3a^2\right).
+    \end{aligned}
+
+It follows that
+
+.. math::
+    \begin{aligned}
+        \sigma_H^2
+        &=\braket{H^2}-\braket{H}^2
+        \\
+        &=\frac{\hbar^4}{4m^2}
+        \left[
+            l^4+6al^2+3a^2
+            -\left(l^2+a\right)^2
+        \right]
+        \\
+        &=\frac{\hbar^4}{m^2}
+        a\left(l^2+\frac{a}{2}\right),
+    \end{aligned}
+
+and therefore
+
+.. math::
+    \sigma_H
+    =\frac{\hbar^2}{m}
+    \sqrt{a\left(l^2+\frac{a}{2}\right)}.
+
+From the result of :ref:`notes/griffithsqm/chap2/2-42:Problem 2.42`,
+
+.. math::
+    \sigma_x
+    =\frac{1}{2\sqrt{a}}
+    \sqrt{1+\left(\frac{2\hbar at}{m}\right)^2},
+    \quad
+    \dv{\braket{x}}{t}=\frac{\hbar l}{m}.
+
+The two sides of the energy-time uncertainty principle are thus
+
+.. math::
+    \begin{aligned}
+        \sigma_H\sigma_x
+        &=\frac{\hbar^2}{2m}
+        \sqrt{
+            \left(l^2+\frac{a}{2}\right)
+            \left(1+\left(\frac{2\hbar at}{m}\right)^2\right)
+        }
+        \\
+        \frac{\hbar}{2}
+        \left|\dv{\braket{x}}{t}\right|
+        &=\frac{\hbar^2}{2m}|l|.
+    \end{aligned}
+
+Since
+
+.. math::
+    \left(l^2+\frac{a}{2}\right)
+    \left(1+\left(\frac{2\hbar at}{m}\right)^2\right)-l^2
+    =\frac{a}{2}
+    +\left(\frac{2\hbar at}{m}\right)^2\left(l^2+\frac{a}{2}\right)>0,
+
+the energy-time uncertainty principle holds at every time.

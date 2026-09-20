@@ -1,0 +1,91 @@
+Problem 3.11
+==================
+
+Substituting the harmonic-oscillator ground state
+
+.. math::
+    \Psi_0(x,t)
+    =\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+    \exp\left(-\frac{m\omega x^2}{2\hbar}\right)
+    e^{-i\omega t/2}
+
+into Equation (3.54) gives
+
+.. math::
+    \Phi_0(p,t)
+    =\frac{1}{\sqrt{2\pi\hbar}}
+    \left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+    e^{-i\omega t/2}
+    \int_{-\infty}^{\infty}
+    \exp\left(
+        -\frac{m\omega}{2\hbar}x^2-\frac{ip}{\hbar}x
+    \right)\,\dd x.
+
+In the Gaussian integral
+
+.. math::
+    \int_{-\infty}^{\infty}e^{-Ax^2+Bx}\,\dd x
+    =\sqrt{\frac{\pi}{A}}
+    \exp\left(\frac{B^2}{4A}\right)
+    \quad (\operatorname{Re}A>0),
+
+set
+
+.. math::
+    A=\frac{m\omega}{2\hbar},
+    \quad
+    B=-\frac{ip}{\hbar}.
+
+Then
+
+.. math::
+    \int_{-\infty}^{\infty}
+    \exp\left(
+        -\frac{m\omega}{2\hbar}x^2-\frac{ip}{\hbar}x
+    \right)\,\dd x
+    =
+    \sqrt{\frac{2\pi\hbar}{m\omega}}
+    \exp\left(-\frac{p^2}{2m\hbar\omega}\right),
+
+so the momentum-space wave function is
+
+.. math::
+    \Phi_0(p,t)
+    =\left(\frac{1}{\pi m\hbar\omega}\right)^{1/4}
+    \exp\left(-\frac{p^2}{2m\hbar\omega}\right)
+    e^{-i\omega t/2}.
+
+The ground-state energy is `E_0=\hbar\omega/2`. Classically,
+
+.. math::
+    \frac{p^2}{2m}+\frac{1}{2}m\omega^2x^2=E_0,
+
+so the classically allowed range of momentum is
+
+.. math::
+    |p|\leq p_{\mathrm{c}},
+    \quad
+    p_{\mathrm{c}}=\sqrt{2mE_0}=\sqrt{m\hbar\omega}.
+
+On the other hand, changing the integration variable to `u=p/\sqrt{m\hbar\omega}`, the probability of finding the momentum outside the classically allowed range is
+
+.. math::
+    \begin{aligned}
+        P\left(|p|>p_{\mathrm{c}}\right)
+        &=2\int_{p_{\mathrm{c}}}^{\infty}
+        |\Phi_0(p,t)|^2\,\dd p
+        \\
+        &=\frac{2}{\sqrt{\pi}}\int_1^\infty e^{-u^2}\,\dd u.
+    \end{aligned}
+
+.. exec_code::
+
+    import numpy as np
+    from scipy.integrate import quad
+
+    def integrand(u):
+        return 2.0 / np.sqrt(np.pi) * np.exp(-u**2)
+
+    probability, _ = quad(integrand, 1.0, np.inf)
+
+    print(f"P(|p| > p_c) = {probability:.2g}")

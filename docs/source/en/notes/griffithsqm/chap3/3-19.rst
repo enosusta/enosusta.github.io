@@ -1,0 +1,45 @@
+Problem 3.19
+==================
+
+a.  From :ref:`notes/griffithsqm/chap3/3-18:Problem 3.18`,
+
+    .. math::
+        \dv{\braket{x}}{t}
+        =\frac{\braket{p}}{m},
+        \quad
+        \dv{\braket{p}}{t}
+        =-\left\langle\dv{V}{x}\right\rangle.
+
+    For a free particle, `V(x)=0`, so
+
+    .. math::
+        \dv{\braket{p}}{t}=0.
+
+    Therefore, `\braket{p}` is independent of time. Substituting this result into the first equation and integrating gives
+
+    .. math::
+        \braket{x}(t)
+        =\braket{x}(0)
+        +\frac{\braket{p}}{m}t.
+
+b.  For the harmonic oscillator,
+
+    .. math::
+        V(x)=\frac{1}{2}m\omega^2x^2,
+        \quad
+        \dv{V}{x}=m\omega^2x,
+
+    and hence
+
+    .. math::
+        \dv{\braket{p}}{t}
+        =-m\omega^2\braket{x}.
+
+    On the other hand, differentiating `\dd\braket{x}/\dd t=\braket{p}/m` once more gives
+
+    .. math::
+        \dv{^2\braket{x}}{t^2}
+        =\frac{1}{m}\dv{\braket{p}}{t}
+        =-\omega^2\braket{x}.
+
+    Therefore, `\braket{x}` satisfies the classical simple-harmonic-motion equation.

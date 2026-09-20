@@ -1,0 +1,54 @@
+Problem 3.23
+==================
+
+The projection operator onto the normalized vector `|\alpha\rangle` is
+
+.. math::
+    \hat{P}=|\alpha\rangle\langle\alpha|,
+    \quad
+    \braket{\alpha|\alpha}=1.
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        \hat{P}^{\,2}
+        &=|\alpha\rangle\langle\alpha|
+        \alpha\rangle\langle\alpha|
+        \\
+        &=|\alpha\rangle
+        \braket{\alpha|\alpha}\langle\alpha|
+        \\
+        &=|\alpha\rangle\langle\alpha|
+        =\hat{P},
+    \end{aligned}
+
+so `\hat{P}` is idempotent. Now let `|v\rangle\neq0` be an eigenvector with eigenvalue `\lambda`. Applying `\hat{P}` once more to `\hat{P}|v\rangle=\lambda|v\rangle` gives
+
+.. math::
+    \hat{P}^{\,2}|v\rangle
+    =\lambda\hat{P}|v\rangle
+    =\lambda^2|v\rangle.
+
+On the other hand, because `\hat{P}^{\,2}=\hat{P}`, the left-hand side equals `\lambda|v\rangle`. Hence,
+
+.. math::
+    \left(\lambda^2-\lambda\right)|v\rangle=0
+    \quad\Longrightarrow\quad
+    \lambda=0,1.
+
+Indeed,
+
+.. math::
+    \hat{P}|\alpha\rangle
+    =|\alpha\rangle\braket{\alpha|\alpha}
+    =|\alpha\rangle,
+
+so every nonzero vector in the one-dimensional subspace spanned by `|\alpha\rangle` has eigenvalue `1`. If `\braket{\alpha|v_\perp}=0`, then
+
+.. math::
+    \hat{P}|v_\perp\rangle
+    =|\alpha\rangle\braket{\alpha|v_\perp}
+    =0,
+
+so every nonzero vector in the subspace orthogonal to `|\alpha\rangle` has eigenvalue `0`.

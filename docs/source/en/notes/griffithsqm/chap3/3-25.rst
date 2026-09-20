@@ -1,0 +1,64 @@
+Problem 3.25
+==================
+
+By orthonormality,
+
+.. math::
+    \begin{aligned}
+        \hat{H}|1\rangle
+        &=\epsilon\left(|1\rangle+|2\rangle\right)
+        \\
+        \hat{H}|2\rangle
+        &=\epsilon\left(|1\rangle-|2\rangle\right).
+    \end{aligned}
+
+Therefore, the matrix of the Hamiltonian in the basis `\{|1\rangle,|2\rangle\}` is
+
+.. math::
+    \bm{H}
+    =\epsilon
+    \begin{pmatrix}
+        1 & 1
+        \\
+        1 & -1
+    \end{pmatrix}.
+
+Writing the eigenvalue as `E=\epsilon\lambda`, the characteristic equation is
+
+.. math::
+    \begin{aligned}
+        0
+        &=\det
+        \begin{pmatrix}
+            1-\lambda & 1
+            \\
+            1 & -1-\lambda
+        \end{pmatrix}
+        \\
+        &=\lambda^2-2,
+    \end{aligned}
+
+so the eigenvalues are
+
+.. math::
+    E_\pm=\pm\sqrt{2}\,\epsilon.
+
+Now let the eigenvector be `|E\rangle=a|1\rangle+b|2\rangle`. Then
+
+.. math::
+    \left(1-\lambda\right)a+b=0 \implies
+    b=\left(\lambda-1\right)a.
+
+For `\lambda=\sqrt{2}`, we have `b/a=\sqrt{2}-1=\tan(\pi/8)`, so we may choose the normalized eigenvector
+
+.. math::
+    |E_+\rangle
+    =\cos\left(\frac{\pi}{8}\right)|1\rangle
+    +\sin\left(\frac{\pi}{8}\right)|2\rangle.
+
+The other normalized eigenvector, which is orthogonal to this one, is
+
+.. math::
+    |E_-\rangle
+    =-\sin\left(\frac{\pi}{8}\right)|1\rangle
+    +\cos\left(\frac{\pi}{8}\right)|2\rangle.

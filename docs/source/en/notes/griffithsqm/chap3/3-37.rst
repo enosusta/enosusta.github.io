@@ -1,0 +1,105 @@
+Problem 3.37
+==================
+
+Since `\hat{Q}=xp` has no explicit time dependence, the generalized Ehrenfest theorem gives
+
+.. math::
+    \dv{}{t}\braket{xp}
+    =\frac{i}{\hbar}\braket{[\hat{H},xp]}.
+
+Here,
+
+.. math::
+    \hat{H}=\frac{p^2}{2m}+V(x),
+    \quad
+    [x,p]=i\hbar.
+
+First,
+
+.. math::
+    [p^2,x]
+    =p[p,x]+[p,x]p
+    =-2i\hbar p,
+
+and hence
+
+.. math::
+    [p^2,xp]
+    =[p^2,x]p+x[p^2,p]
+    =-2i\hbar p^2.
+
+Also, since `[V(x),x]=0` and `[V(x),p]=i\hbar V'(x)`,
+
+.. math::
+    [V(x),xp]
+    =[V(x),x]p+x[V(x),p]
+    =i\hbar xV'(x).
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        \dv{}{t}\braket{xp}
+        &=\frac{i}{\hbar}
+        \left\langle
+            -\frac{i\hbar}{m}p^2
+            +i\hbar xV'(x)
+        \right\rangle
+        \\
+        &=\frac{\braket{p^2}}{m}
+        -\braket{xV'(x)}
+        \\
+        &=2\braket{T}
+        -\left\langle x\pdv{V}{x}\right\rangle.
+    \end{aligned}
+
+In a stationary state,
+
+.. math::
+    |\Psi(t)\rangle
+    =e^{-iEt/\hbar}|\psi\rangle,
+
+and for any operator `\hat{Q}` with no explicit time dependence,
+
+.. math::
+    \begin{aligned}
+        \braket{\Psi(t)|\hat{Q}|\Psi(t)}
+        &=e^{iEt/\hbar}e^{-iEt/\hbar}
+        \braket{\psi|\hat{Q}|\psi}
+        \\
+        &=\braket{\psi|\hat{Q}|\psi}.
+    \end{aligned}
+
+Thus, `\braket{xp}` is also independent of time, and therefore
+
+.. math::
+    2\braket{T}
+    =\left\langle x\dv{V}{x}\right\rangle.
+
+For the harmonic oscillator,
+
+.. math::
+    V(x)=\frac{1}{2}m\omega^2x^2,
+    \quad
+    xV'(x)=m\omega^2x^2=2V(x),
+
+so the virial theorem gives
+
+.. math::
+    2\braket{T}=2\braket{V},
+    \quad
+    \braket{T}=\braket{V}.
+
+Also, the total energy of a stationary state is
+
+.. math::
+    E_n=\left(n+\frac{1}{2}\right)\hbar\omega
+    =\braket{T}_n+\braket{V}_n,
+
+and hence
+
+.. math::
+    \braket{T}_n=\braket{V}_n
+    =\frac{1}{2}\left(n+\frac{1}{2}\right)\hbar\omega.
+
+This agrees with the result of :ref:`notes/griffithsqm/chap2/2-12:Problem 2.12`.

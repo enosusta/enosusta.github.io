@@ -1,0 +1,68 @@
+Problem 3.15
+==================
+
+Let the Hamiltonian be
+
+.. math::
+    \hat{H}=\frac{\hat{p}^{\,2}}{2m}+V(x).
+
+Since `x` and `V(x)` are both functions of position, `[x,V(x)]=0`. Also,
+
+.. math::
+    \begin{aligned}
+        [x,\hat{p}^{\,2}]
+        &=[x,\hat{p}]\hat{p}
+        +\hat{p}[x,\hat{p}]
+        \\
+        &=(i\hbar)\hat{p}+\hat{p}(i\hbar)
+        \\
+        &=2i\hbar\hat{p},
+    \end{aligned}
+
+and hence
+
+.. math::
+    [x,\hat{H}]
+    =\frac{1}{2m}[x,\hat{p}^{\,2}]+[x,V]
+    =\frac{i\hbar}{m}\hat{p}.
+
+Setting `\hat{A}=x` and `\hat{B}=\hat{H}` in the generalized uncertainty principle (3.62), we obtain
+
+.. math::
+    \begin{aligned}
+        \sigma_x^2\sigma_H^2
+        &\geq
+        \left(
+            \frac{1}{2i}\braket{[x,\hat{H}]}
+        \right)^2
+        \\
+        &=\left(
+            \frac{1}{2i}\frac{i\hbar}{m}\braket{p}
+        \right)^2
+        \\
+        &=\left(
+            \frac{\hbar}{2m}\braket{p}
+        \right)^2.
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    \sigma_x\sigma_H
+    \geq\frac{\hbar}{2m}\left|\braket{p}\right|.
+
+Since a stationary state is an eigenstate of the Hamiltonian, its energy variance is
+
+.. math::
+    \sigma_H^2
+    =\braket{H^2}-\braket{H}^2
+    =E^2-E^2
+    =0.
+
+Also, `\braket{x}` is independent of time in a stationary state, so Ehrenfest's theorem,
+
+.. math::
+    \dv{\braket{x}}{t}
+    =\frac{\braket{p}}{m},
+
+implies `\braket{p}=0`. Therefore, the inequality reduces to `0\geq0` and imposes no restriction on the uncertainty in position.

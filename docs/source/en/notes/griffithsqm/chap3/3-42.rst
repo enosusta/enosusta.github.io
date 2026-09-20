@@ -1,0 +1,232 @@
+Problem 3.42
+==================
+
+a.  Let `a_-|\alpha\rangle=\alpha|\alpha\rangle`, and suppose that the state is normalized. Since `a_+=a_-^\dagger`, taking the Hermitian conjugate gives
+
+    .. math::
+        \langle\alpha|a_+
+        =\alpha^*\langle\alpha|.
+
+    Therefore,
+
+    .. math::
+        \braket{a_-}=\alpha,
+        \quad
+        \braket{a_+}=\alpha^*,
+        \quad
+        \braket{a_+a_-}=|\alpha|^2.
+
+    Furthermore, `[a_-,a_+]=1` gives
+
+    .. math::
+        \braket{a_-a_+}=|\alpha|^2+1,
+        \quad
+        \braket{a_-^2}=\alpha^2,
+        \quad
+        \braket{a_+^2}=\left(\alpha^*\right)^2.
+
+    Define
+
+    .. math::
+        x=c\left(a_++a_-\right),
+        \quad
+        p=id\left(a_+-a_-\right),
+        \quad
+        c=\sqrt{\frac{\hbar}{2m\omega}},
+        \quad
+        d=\sqrt{\frac{\hbar m\omega}{2}}.
+
+    Then
+
+    .. math::
+        \begin{aligned}
+            \braket{x}
+            &=c\left(\alpha+\alpha^*\right)
+            =\sqrt{\frac{2\hbar}{m\omega}}
+            \operatorname{Re}\alpha
+            \\
+            \braket{p}
+            &=id\left(\alpha^*-\alpha\right)
+            =\sqrt{2\hbar m\omega}
+            \operatorname{Im}\alpha.
+        \end{aligned}
+
+    Also,
+
+    .. math::
+        \begin{aligned}
+            \braket{x^2}
+            &=c^2\left[
+                \left(\alpha^*\right)^2
+                +|\alpha|^2
+                +\left(|\alpha|^2+1\right)
+                +\alpha^2
+            \right]
+            \\
+            &=c^2\left[
+                \left(\alpha+\alpha^*\right)^2+1
+            \right]
+            \\
+            &=\braket{x}^2+\frac{\hbar}{2m\omega},
+        \end{aligned}
+
+    and
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2}
+            &=-d^2\left[
+                \left(\alpha^*\right)^2
+                -|\alpha|^2
+                -\left(|\alpha|^2+1\right)
+                +\alpha^2
+            \right]
+            \\
+            &=d^2\left[
+                1-\left(\alpha-\alpha^*\right)^2
+            \right]
+            \\
+            &=\braket{p}^2+\frac{\hbar m\omega}{2}.
+        \end{aligned}
+
+b.  From the results in \(a),
+
+    .. math::
+        \sigma_x^2
+        =\braket{x^2}-\braket{x}^2
+        =\frac{\hbar}{2m\omega},
+        \quad
+        \sigma_p^2
+        =\braket{p^2}-\braket{p}^2
+        =\frac{\hbar m\omega}{2},
+
+    and hence
+
+    .. math::
+        \sigma_x=\sqrt{\frac{\hbar}{2m\omega}},
+        \quad
+        \sigma_p=\sqrt{\frac{\hbar m\omega}{2}},
+        \quad
+        \sigma_x\sigma_p=\frac{\hbar}{2}.
+
+c.  Apply `a_-` to the expansion in energy eigenstates,
+
+    .. math::
+        |\alpha\rangle
+        =\sum_{n=0}^{\infty}c_n|n\rangle.
+
+    This gives
+
+    .. math::
+        \begin{aligned}
+            a_-|\alpha\rangle
+            &=\sum_{n=1}^{\infty}
+            c_n\sqrt{n}|n-1\rangle
+            \\
+            &=\sum_{r=0}^{\infty}
+            c_{r+1}\sqrt{r+1}|r\rangle.
+        \end{aligned}
+
+    Since this must equal
+
+    .. math::
+        \alpha|\alpha\rangle
+        =\sum_{r=0}^{\infty}\alpha c_r|r\rangle,
+
+    for each `r` we have
+
+    .. math::
+        c_{r+1}\sqrt{r+1}=\alpha c_r,
+        \quad
+        c_{r+1}=\frac{\alpha}{\sqrt{r+1}}c_r.
+
+    Repeatedly applying this recurrence relation gives
+
+    .. math::
+        c_n=\frac{\alpha^n}{\sqrt{n!}}c_0.
+
+d.  The normalization condition is
+
+    .. math::
+        \begin{aligned}
+            1=\braket{\alpha|\alpha}
+            &=\sum_{n=0}^{\infty}|c_n|^2
+            \\
+            &=|c_0|^2
+            \sum_{n=0}^{\infty}
+            \frac{|\alpha|^{2n}}{n!}
+            =|c_0|^2e^{|\alpha|^2},
+        \end{aligned}
+
+    so we may take
+
+    .. math::
+        c_0=e^{-|\alpha|^2/2},
+        \quad
+        |\alpha\rangle
+        =e^{-|\alpha|^2/2}
+        \sum_{n=0}^{\infty}
+        \frac{\alpha^n}{\sqrt{n!}}|n\rangle.
+
+e.  Substituting `E_n=(n+1/2)\hbar\omega`, the state at time `t` is
+
+    .. math::
+        \begin{aligned}
+            |\alpha;t\rangle
+            &=e^{-|\alpha|^2/2}
+            \sum_{n=0}^{\infty}
+            \frac{\alpha^n}{\sqrt{n!}}
+            e^{-i\left(n+1/2\right)\omega t}|n\rangle
+            \\
+            &=e^{-i\omega t/2}e^{-|\alpha|^2/2}
+            \sum_{n=0}^{\infty}
+            \frac{\left(\alpha e^{-i\omega t}\right)^n}
+            {\sqrt{n!}}|n\rangle
+            \\
+            &=e^{-i\omega t/2}
+            |\alpha e^{-i\omega t}\rangle.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        a_-|\alpha;t\rangle
+        =\alpha e^{-i\omega t}|\alpha;t\rangle,
+        \quad
+        \alpha(t)=\alpha e^{-i\omega t}.
+
+f.  Write the complex number `\alpha` as
+
+    .. math::
+        \alpha
+        =C\sqrt{\frac{m\omega}{2\hbar}}e^{i\phi}.
+
+    Then
+
+    .. math::
+        \alpha(t)
+        =C\sqrt{\frac{m\omega}{2\hbar}}
+        e^{i\left(\phi-\omega t\right)}.
+
+    Substituting this into the result of \(a) gives
+
+    .. math::
+        \braket{x}(t)
+        =\sqrt{\frac{2\hbar}{m\omega}}
+        \operatorname{Re}\alpha(t)
+        =C\cos\left(\omega t-\phi\right).
+
+    On the other hand, from \(b),
+
+    .. math::
+        \sigma_x(t)
+        =\sqrt{\frac{\hbar}{2m\omega}},
+
+    so the width of the wave packet is independent of time.
+
+g.  Since the ground state satisfies
+
+    .. math::
+        a_-|0\rangle=0,
+
+    `|0\rangle` is the coherent state with eigenvalue `\alpha=0`.

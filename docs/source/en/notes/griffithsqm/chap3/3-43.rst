@@ -1,0 +1,95 @@
+Problem 3.43
+==================
+
+a.  For a normalized state `|\psi\rangle`, define
+
+    .. math::
+        |f\rangle
+        =\left(\hat{A}-\braket{A}\right)|\psi\rangle,
+        \quad
+        |g\rangle
+        =\left(\hat{B}-\braket{B}\right)|\psi\rangle.
+
+    Then
+
+    .. math::
+        \braket{f|f}=\sigma_A^2,
+        \quad
+        \braket{g|g}=\sigma_B^2.
+
+    By the Schwarz inequality,
+
+    .. math::
+        \sigma_A^2\sigma_B^2
+        =\braket{f|f}\braket{g|g}
+        \geq|\braket{f|g}|^2.
+
+    Let `z\coloneqq\braket{f|g}`. Since `\hat{A}` and `\hat{B}` are Hermitian,
+
+    .. math::
+        \begin{aligned}
+            z
+            &=\left\langle
+                \left(\hat{A}-\braket{A}\right)
+                \left(\hat{B}-\braket{B}\right)
+            \right\rangle
+            \\
+            z^*
+            &=\left\langle
+                \left(\hat{B}-\braket{B}\right)
+                \left(\hat{A}-\braket{A}\right)
+            \right\rangle.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            2\operatorname{Re}z
+            &=z+z^*
+            \\
+            &=\braket{AB+BA}
+            -2\braket{A}\braket{B}
+            =\braket{D}
+            \\
+            2i\operatorname{Im}z
+            &=z-z^*
+            \\
+            &=\braket{[A,B]}
+            =i\braket{C}.
+        \end{aligned}
+
+    Hence,
+
+    .. math::
+        \operatorname{Re}z=\frac{1}{2}\braket{D},
+        \quad
+        \operatorname{Im}z=\frac{1}{2}\braket{C},
+
+    and substituting back into the Schwarz inequality gives
+
+    .. math::
+        \sigma_A^2\sigma_B^2
+        \geq\frac{1}{4}
+        \left(\braket{C}^2+\braket{D}^2\right).
+
+b.  If `B=A`, then `[A,A]=0`, so `\hat{C}=0`. Also,
+
+    .. math::
+        \hat{D}=2\hat{A}^2-2\braket{A}^2,
+
+    and its expectation value is
+
+    .. math::
+        \braket{D}
+        =2\left(\braket{A^2}-\braket{A}^2\right)
+        =2\sigma_A^2.
+
+    Therefore, the strengthened uncertainty relation becomes
+
+    .. math::
+        \sigma_A^4
+        \geq\frac{1}{4}\left(2\sigma_A^2\right)^2
+        =\sigma_A^4,
+
+    so equality always holds.

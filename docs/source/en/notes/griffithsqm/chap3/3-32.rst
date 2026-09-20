@@ -1,0 +1,125 @@
+Problem 3.32
+==================
+
+a.  Let the expectation value in the state `|\psi\rangle` be
+
+    .. math::
+        q=\braket{\psi|\hat{Q}\psi}.
+
+    From the definition of the adjoint and `\hat{Q}^\dagger=-\hat{Q}`,
+
+    .. math::
+        \begin{aligned}
+            q
+            &=\braket{\hat{Q}^\dagger\psi|\psi}
+            \\
+            &=\braket{-\hat{Q}\psi|\psi}
+            \\
+            &=-\braket{\hat{Q}\psi|\psi}
+            =-q^*.
+        \end{aligned}
+
+    Hence, `\operatorname{Re}q=0`.
+
+b.  Let `\hat{Q}|q\rangle=q|q\rangle`, where `|q\rangle\neq0`. Then
+
+    .. math::
+        \braket{q|\hat{Q}|q}
+        =q\braket{q|q}.
+
+    On the other hand,
+
+    .. math::
+        \hat{Q}^\dagger|q\rangle
+        =-\hat{Q}|q\rangle
+        =-q|q\rangle,
+
+    so
+
+    .. math::
+        \braket{q|\hat{Q}|q}
+        =\braket{\hat{Q}^\dagger q|q}
+        =-q^*\braket{q|q}.
+
+    Since `\braket{q|q}>0`, we have `q=-q^*`.
+
+c.  Consider the two eigenvalue equations
+
+    .. math::
+        \hat{Q}|q\rangle=q|q\rangle,
+        \quad
+        \hat{Q}|q'\rangle=q'|q'\rangle.
+
+    Then
+
+    .. math::
+        \braket{q|\hat{Q}|q'}
+        =q'\braket{q|q'}.
+
+    On the other hand, using `q^*=-q` from \(b),
+
+    .. math::
+        \begin{aligned}
+            \braket{q|\hat{Q}|q'}
+            &=\braket{\hat{Q}^\dagger q|q'}
+            \\
+            &=\braket{-\hat{Q}q|q'}
+            \\
+            &=-q^*\braket{q|q'}
+            =q\braket{q|q'}.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \left(q'-q\right)\braket{q|q'}=0,
+
+    and if `q'\neq q`, then `\braket{q|q'}=0`.
+
+d.  If `\hat{A}` and `\hat{B}` are both Hermitian, then
+
+    .. math::
+        \begin{aligned}
+            [\hat{A},\hat{B}]^\dagger
+            &=\left(\hat{A}\hat{B}-\hat{B}\hat{A}\right)^\dagger
+            \\
+            &=\hat{B}^\dagger\hat{A}^\dagger
+            -\hat{A}^\dagger\hat{B}^\dagger
+            \\
+            &=\hat{B}\hat{A}-\hat{A}\hat{B}
+            =-[\hat{A},\hat{B}],
+        \end{aligned}
+
+    so their commutator is anti-Hermitian. If `\hat{A}` and `\hat{B}` are both anti-Hermitian, then likewise
+
+    .. math::
+        \begin{aligned}
+            [\hat{A},\hat{B}]^\dagger
+            &=\left(-\hat{B}\right)\left(-\hat{A}\right)
+            -\left(-\hat{A}\right)\left(-\hat{B}\right)
+            \\
+            &=\hat{B}\hat{A}-\hat{A}\hat{B}
+            =-[\hat{A},\hat{B}],
+        \end{aligned}
+
+    so their commutator is also anti-Hermitian.
+
+e.  Define the following two operators:
+
+    .. math::
+        \hat{A}
+        =\frac{\hat{Q}+\hat{Q}^\dagger}{2},
+        \quad
+        \hat{B}
+        =\frac{\hat{Q}-\hat{Q}^\dagger}{2}.
+
+    Then `\hat{Q}=\hat{A}+\hat{B}`, and
+
+    .. math::
+        \hat{A}^\dagger
+        =\frac{\hat{Q}^\dagger+\hat{Q}}{2}
+        =\hat{A},
+        \quad
+        \hat{B}^\dagger
+        =\frac{\hat{Q}^\dagger-\hat{Q}}{2}
+        =-\hat{B}.

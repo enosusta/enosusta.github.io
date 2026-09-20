@@ -1,0 +1,57 @@
+Problem 3.13
+==================
+
+From Equation (3.55),
+
+.. math::
+    \Psi(x,t)
+    =\frac{1}{\sqrt{2\pi\hbar}}
+    \int_{-\infty}^{\infty}
+    e^{ipx/\hbar}\Phi(p,t)\,\dd p.
+
+For the exponential,
+
+.. math::
+    xe^{ipx/\hbar}
+    =-i\hbar\pdv{}{p}e^{ipx/\hbar}.
+
+Therefore, multiplying both sides by `x` gives
+
+.. math::
+    x\Psi(x,t)
+    =\frac{1}{\sqrt{2\pi\hbar}}
+    \int_{-\infty}^{\infty}
+    \left(
+        -i\hbar\pdv{}{p}e^{ipx/\hbar}
+    \right)\Phi(p,t)\,\dd p.
+
+Integrating by parts with respect to `p`, we obtain
+
+.. math::
+    \begin{aligned}
+        x\Psi(x,t)
+        &=-\frac{i\hbar}{\sqrt{2\pi\hbar}}
+        \left[e^{ipx/\hbar}\Phi(p,t)\right]_{-\infty}^{\infty}
+        \\
+        &\quad+\frac{1}{\sqrt{2\pi\hbar}}
+        \int_{-\infty}^{\infty}
+        e^{ipx/\hbar}
+        \left(i\hbar\pdv{\Phi}{p}\right)\,\dd p.
+    \end{aligned}
+
+Assuming `\Phi(p,t)\to0` as `p\to\pm\infty`, the boundary term vanishes. Since the Fourier transform preserves inner products,
+
+.. math::
+    \begin{aligned}
+        \braket{x}
+        &=\braket{\Psi|x\Psi}
+        \\
+        &=\int_{-\infty}^{\infty}
+        \Phi(p,t)^*
+        \left(i\hbar\pdv{\Phi(p,t)}{p}\right)\,\dd p
+        \\
+        &=\int_{-\infty}^{\infty}
+        \Phi^*
+        \left(i\hbar\pdv{}{p}\right)
+        \Phi\,\dd p.
+    \end{aligned}

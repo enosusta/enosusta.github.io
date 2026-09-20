@@ -1,0 +1,60 @@
+Problem 3.26
+==================
+
+a.  Complex conjugating the coefficients of the kets gives
+
+    .. math::
+        \langle\alpha|
+        =-i\langle1|-2\langle2|+i\langle3|,
+        \quad
+        \langle\beta|
+        =-i\langle1|+2\langle3|.
+
+    In component form,
+
+    .. math::
+        \langle\alpha|
+        =\begin{pmatrix}-i&-2&i\end{pmatrix},
+        \quad
+        \langle\beta|
+        =\begin{pmatrix}-i&0&2\end{pmatrix}.
+
+b.  By orthonormality,
+
+    .. math::
+        \begin{aligned}
+            \braket{\alpha|\beta}
+            &=(-i)i+(-2)0+i(2)
+            =1+2i
+            \\
+            \braket{\beta|\alpha}
+            &=(-i)i+0(-2)+2(-i)
+            =1-2i.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \braket{\beta|\alpha}
+        =1-2i
+        =\left(1+2i\right)^*
+        =\braket{\alpha|\beta}^*.
+
+c.  The matrix of the outer product `\hat{A}=|\alpha\rangle\langle\beta|` is
+
+    .. math::
+        \begin{aligned}
+            \mathbf{A}
+            &=\begin{pmatrix}i\\-2\\-i\end{pmatrix}
+            \begin{pmatrix}-i&0&2\end{pmatrix}
+            \\
+            &=\begin{pmatrix}
+                1 & 0 & 2i
+                \\
+                2i & 0 & -4
+                \\
+                -1 & 0 & -2i
+            \end{pmatrix}.
+        \end{aligned}
+
+    This matrix is clearly not Hermitian.

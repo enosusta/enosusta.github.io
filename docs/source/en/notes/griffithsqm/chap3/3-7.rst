@@ -1,0 +1,41 @@
+Problem 3.7
+==================
+
+a.  By assumption,
+
+    .. math::
+        \hat{Q}f=qf,\quad
+        \hat{Q}g=qg.
+
+    For arbitrary complex numbers `\alpha,\beta`,
+
+    .. math::
+        \begin{aligned}
+            \hat{Q}(\alpha f+\beta g)
+            &=\alpha\hat{Q}f+\beta\hat{Q}g
+            \\
+            &=\alpha qf+\beta qg
+            \\
+            &=q(\alpha f+\beta g).
+        \end{aligned}
+
+b.  Differentiating twice gives
+
+    .. math::
+        \dv{^2}{x^2}e^x=e^x,\quad
+        \dv{^2}{x^2}e^{-x}=e^{-x},
+
+    so `f=e^x` and `g=e^{-x}` both belong to the eigenvalue `1`. By \(a),
+
+    .. math::
+        u(x)=\frac{f+g}{2}=\cosh x,\quad
+        v(x)=\frac{f-g}{2}=\sinh x
+
+    are also eigenfunctions with eigenvalue `1`. Since `u` is even and `v` is odd, the product `u^*v=\cosh x\sinh x` is odd, and
+
+    .. math::
+        \braket{u|v}
+        =\int_{-1}^{1}\cosh x\sinh x\,\dd x
+        =0.
+
+    Therefore, these two functions are orthogonal on the interval `(-1,1)`.

@@ -1,0 +1,30 @@
+Problem 3.45
+==================
+
+Expand the state in the energy eigenbasis as
+
+.. math::
+    |S(t)\rangle
+    =\sum_{n'=0}^{\infty}c_{n'}(t)|n'\rangle.
+
+Using the matrix elements of the position operator obtained in :ref:`notes/griffithsqm/chap3/3-39:Problem 3.39`, we find
+
+.. math::
+    \begin{aligned}
+        \braket{n|\hat{x}|S(t)}
+        &=\sum_{n'=0}^{\infty}
+        c_{n'}(t)\braket{n|\hat{x}|n'}
+        \\
+        &=\sqrt{\frac{\hbar}{2m\omega}}
+        \sum_{n'=0}^{\infty}c_{n'}(t)
+        \left(
+            \sqrt{n'}\,\delta_{n,n'-1}
+            +\sqrt{n}\,\delta_{n',n-1}
+        \right)
+        \\
+        &=\sqrt{\frac{\hbar}{2m\omega}}
+        \left[
+            \sqrt{n+1}\,c_{n+1}(t)
+            +\sqrt{n}\,c_{n-1}(t)
+        \right].
+    \end{aligned}

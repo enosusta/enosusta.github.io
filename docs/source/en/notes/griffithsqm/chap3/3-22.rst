@@ -1,0 +1,22 @@
+Problem 3.22
+==================
+
+Choosing `Q=x` as the observable, the energy-time uncertainty principle becomes
+
+.. math::
+    \sigma_H\sigma_x
+    \geq
+    \frac{\hbar}{2}
+    \left|\dv{\braket{x}}{t}\right|.
+
+On the other hand, from \(c) of :ref:`notes/griffithsqm/chap3/3-18:Problem 3.18`,
+
+.. math::
+    \dv{\braket{x}}{t}=\frac{\braket{p}}{m},
+
+and therefore
+
+.. math::
+    \sigma_x\sigma_H
+    \geq
+    \frac{\hbar}{2m}|\braket{p}|.

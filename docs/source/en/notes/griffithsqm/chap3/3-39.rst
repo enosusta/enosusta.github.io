@@ -1,0 +1,144 @@
+Problem 3.39
+==================
+
+For convenience, define
+
+.. math::
+    c=\sqrt{\frac{\hbar}{2m\omega}},
+    \quad
+    d=\sqrt{\frac{\hbar m\omega}{2}}.
+
+The position and momentum operators can then be written in terms of the raising and lowering operators as
+
+.. math::
+    x=c\left(a_++a_-\right),
+    \quad
+    p=id\left(a_+-a_-\right).
+
+Also,
+
+.. math::
+    a_+|n'\rangle
+    =\sqrt{n'+1}|n'+1\rangle,
+    \quad
+    a_-|n'\rangle
+    =\sqrt{n'}|n'-1\rangle,
+
+so the matrix elements of position are
+
+.. math::
+    \begin{aligned}
+        \braket{n|x|n'}
+        &=c\left(
+            \sqrt{n'+1}\,\delta_{n,n'+1}
+            +\sqrt{n'}\,\delta_{n,n'-1}
+        \right)
+        \\
+        &=c\left(
+            \sqrt{n}\,\delta_{n',n-1}
+            +\sqrt{n'}\,\delta_{n,n'-1}
+        \right).
+    \end{aligned}
+
+Similarly, the matrix elements of momentum are
+
+.. math::
+    \begin{aligned}
+        \braket{n|p|n'}
+        &=id\left(
+            \sqrt{n'+1}\,\delta_{n,n'+1}
+            -\sqrt{n'}\,\delta_{n,n'-1}
+        \right)
+        \\
+        &=id\left(
+            \sqrt{n}\,\delta_{n',n-1}
+            -\sqrt{n'}\,\delta_{n,n'-1}
+        \right).
+    \end{aligned}
+
+Thus, the corresponding infinite matrices are
+
+.. math::
+    \bm{X}
+    =c\begin{pmatrix}
+        0 & 1 & 0 & 0 & \cdots
+        \\
+        1 & 0 & \sqrt{2} & 0 & \cdots
+        \\
+        0 & \sqrt{2} & 0 & \sqrt{3} & \cdots
+        \\
+        0 & 0 & \sqrt{3} & 0 & \cdots
+        \\
+        \vdots & \vdots & \vdots & \vdots & \ddots
+    \end{pmatrix}
+
+and
+
+.. math::
+    \bm{P}
+    =id\begin{pmatrix}
+        0 & -1 & 0 & 0 & \cdots
+        \\
+        1 & 0 & -\sqrt{2} & 0 & \cdots
+        \\
+        0 & \sqrt{2} & 0 & -\sqrt{3} & \cdots
+        \\
+        0 & 0 & \sqrt{3} & 0 & \cdots
+        \\
+        \vdots & \vdots & \vdots & \vdots & \ddots
+    \end{pmatrix},
+
+respectively. On the other hand, since `c^2=\hbar/(2m\omega)` and `d^2=\hbar m\omega/2`,
+
+.. math::
+    \begin{aligned}
+        \frac{p^2}{2m}
+        &=-\frac{\hbar\omega}{4}
+        \left(
+            a_+^2-a_+a_--a_-a_++a_-^2
+        \right)
+        \\
+        \frac{m\omega^2x^2}{2}
+        &=\frac{\hbar\omega}{4}
+        \left(
+            a_+^2+a_+a_-+a_-a_++a_-^2
+        \right).
+    \end{aligned}
+
+Adding these expressions gives
+
+.. math::
+    \begin{aligned}
+        H
+        &=\frac{\hbar\omega}{2}
+        \left(a_+a_-+a_-a_+\right)
+        \\
+        &=\hbar\omega
+        \left(a_+a_-+\frac{1}{2}\right).
+    \end{aligned}
+
+Since `a_+a_-|n\rangle=n|n\rangle`,
+
+.. math::
+    \braket{n|H|n'}
+    =\hbar\omega
+    \left(n+\frac{1}{2}\right)\delta_{nn'}.
+
+Therefore,
+
+.. math::
+    \frac{1}{2m}\mathbf{P}^2
+    +\frac{m\omega^2}{2}\mathbf{X}^2
+    =\mathbf{H}
+    =\hbar\omega
+    \begin{pmatrix}
+        \dfrac{1}{2} & 0 & 0 & \cdots
+        \\
+        0 & \dfrac{3}{2} & 0 & \cdots
+        \\
+        0 & 0 & \dfrac{5}{2} & \cdots
+        \\
+        \vdots & \vdots & \vdots & \ddots
+    \end{pmatrix}.
+
+As expected, the diagonal elements are `E_n=(n+1/2)\hbar\omega`.

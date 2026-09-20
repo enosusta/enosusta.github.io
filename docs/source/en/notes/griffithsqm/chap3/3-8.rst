@@ -1,0 +1,40 @@
+Problem 3.8
+==================
+
+a.  The operator in Example 3.1 is `\hat{Q}=i\,\dd/\dd\phi`, and its normalized eigenfunctions are
+
+    .. math::
+        f_n(\phi)=\frac{1}{\sqrt{2\pi}}e^{-in\phi},
+        \quad n=0,\pm1,\pm2,\ldots.
+
+    The eigenvalues are the integers `q_n=n`. Also, for distinct integers `m,n`,
+
+    .. math::
+        \begin{aligned}
+            \braket{f_m|f_n}
+            &=\frac{1}{2\pi}\int_0^{2\pi}
+            e^{im\phi}e^{-in\phi}\,\dd\phi
+            \\
+            &=\frac{1}{2\pi}\int_0^{2\pi}
+            e^{i(m-n)\phi}\,\dd\phi
+            \\
+            &= \left.\frac{e^{i(m-n)\phi}}{i(m-n)}\right|_0^{2\pi} =0.
+        \end{aligned}
+
+    Therefore, eigenfunctions belonging to different eigenvalues are orthogonal.
+
+b.  The operator in :ref:`notes/griffithsqm/chap3/3-7:Problem 3.7` is `\hat{Q}=\dd^2/\dd\phi^2`, and its normalized eigenfunctions are
+
+    .. math::
+        u_n(\phi)=\frac{1}{\sqrt{2\pi}}e^{in\phi},
+        \quad n\in\Z.
+
+    The eigenvalues are `q_n=-n^2`. Also, for distinct integers `m,n`,
+
+    .. math::
+        \braket{u_m|u_n}
+        =\frac{1}{2\pi}\int_0^{2\pi}
+        e^{-im\phi}e^{in\phi}\,\dd\phi
+        =0,
+
+    so all eigenfunctions with different values of `n` are orthogonal.

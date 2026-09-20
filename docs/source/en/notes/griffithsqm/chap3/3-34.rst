@@ -1,0 +1,167 @@
+Problem 3.34
+==================
+
+a.  Taking the infinite square well to occupy `0<x<a`, define
+
+    .. math::
+        k_n=\frac{n\pi}{a},
+        \quad
+        p_n=\hbar k_n=\frac{n\pi\hbar}{a},
+        \quad
+        E_n=\frac{p_n^2}{2m}.
+
+    The `n`-th stationary state in position space can then be written as
+
+    .. math::
+        \Psi_n(x,t)
+        =\sqrt{\frac{2}{a}}
+        \sin(k_nx)e^{-iE_nt/\hbar},
+        \quad
+        0<x<a.
+
+    Therefore, the momentum-space wave function is
+
+    .. math::
+        \begin{aligned}
+            \Phi_n(p,t)
+            &=\frac{1}{\sqrt{2\pi\hbar}}
+            \int_0^a e^{-ipx/\hbar}\Psi_n(x,t)\,\dd x
+            \\
+            &=\frac{e^{-iE_nt/\hbar}}{\sqrt{\pi a\hbar}}
+            \int_0^a\sin(k_nx)e^{-ipx/\hbar}\,\dd x.
+        \end{aligned}
+
+    Setting `q=p/\hbar`, the integral becomes
+
+    .. math::
+        \begin{aligned}
+            \int_0^a\sin(k_nx)e^{-iqx}\,\dd x
+            &=\left[
+                \frac{e^{-iqx}
+                \left(-iq\sin k_nx-k_n\cos k_nx\right)}
+                {k_n^2-q^2}
+            \right]_0^a
+            \\
+            &=\frac{k_n
+            \left[1-(-1)^ne^{-iqa}\right]}
+            {k_n^2-q^2},
+        \end{aligned}
+
+    so
+
+    .. math::
+        \Phi_n(p,t)
+        =\sqrt{\frac{\hbar}{\pi a}}
+        \frac{p_n
+        \left[1-(-1)^ne^{-ipa/\hbar}\right]}
+        {p_n^2-p^2}
+        e^{-iE_nt/\hbar}.
+
+b.  The absolute value of the time-dependent factor is `1`, and
+
+    .. math::
+        \left|1-(-1)^ne^{-ipa/\hbar}\right|^2
+        =2\left[
+            1-(-1)^n\cos\left(\frac{pa}{\hbar}\right)
+        \right],
+
+    so
+
+    .. math::
+        |\Phi_n(p,t)|^2
+        =\frac{2\hbar p_n^2}{\pi a}
+        \frac{
+            1-(-1)^n\cos\left(pa/\hbar\right)
+        }
+        {\left(p_n^2-p^2\right)^2}.
+
+    To make the shape of the distribution easier to see, define
+
+    .. math::
+        u=\frac{pa}{\pi\hbar},
+        \quad
+        F_n(u)=\frac{\pi^3\hbar}{2a}|\Phi_n(p,t)|^2.
+
+    Then
+
+    .. math::
+        F_n(u)
+        =\frac{n^2
+        \left[1-(-1)^n\cos(\pi u)\right]}
+        {\left(n^2-u^2\right)^2}.
+
+    .. plot::
+        :include-source: True
+        :context: reset
+
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        def scaled_density(v, n):
+            numerator = 1 - (-1) ** n * np.cos(np.pi * n * v)
+            denominator = n**2 * (1 - v**2) ** 2
+            values = np.divide(
+                numerator,
+                denominator,
+                out=np.zeros_like(v),
+                where=np.abs(1 - np.abs(v)) > 1e-8,
+            )
+            values[np.isclose(np.abs(v), 1)] = np.pi**2 / 8
+            return values
+
+        v = np.linspace(-1.5, 1.5, 3001)
+        fig, axes = plt.subplots(2, 2, figsize=(9, 6), sharex=True)
+
+        for ax, n in zip(axes.flat, (1, 2, 5, 10)):
+            ax.plot(v, scaled_density(v, n))
+            ax.axvline(-1, color="gray", linestyle=":", linewidth=0.8)
+            ax.axvline(1, color="gray", linestyle=":", linewidth=0.8)
+            ax.set_title(rf"$n={n}$")
+            ax.set_ylabel(r"$F_n(nv)$")
+            ax.grid(alpha=0.25)
+
+        for ax in axes[-1]:
+            ax.set_xlabel(r"$v=p/p_n$")
+
+        fig.tight_layout()
+        plt.show()
+
+    As `n` increases, the probability density develops two sharp peaks near `p=\pm p_n`. Thus, the most probable momenta are asymptotically
+
+    .. math::
+        p\simeq\pm p_n
+        =\pm\frac{n\pi\hbar}{a}.
+
+    Classically, a particle with energy `E_n` has momentum `p=\pm\sqrt{2mE_n}=\pm p_n`, as expected from the correspondence principle.
+
+c.  By the Fourier-transform differentiation rule,
+
+    .. math::
+        p\Phi_n(p,t)
+        =F\left[
+            -i\hbar\pdv{\Psi_n}{x}
+        \right](p).
+
+    Therefore, by the Plancherel identity,
+
+    .. math::
+        \begin{aligned}
+            \braket{p^2}
+            &=\int_{-\infty}^{\infty}
+            p^2|\Phi_n(p,t)|^2\,\dd p
+            \\
+            &=\hbar^2\int_0^a
+            \left|
+                \dv{}{x}\left(
+                    \sqrt{\frac{2}{a}}\sin k_nx
+                \right)
+            \right|^2\,\dd x
+            \\
+            &=\hbar^2\frac{2k_n^2}{a}
+            \int_0^a\cos^2(k_nx)\,\dd x
+            \\
+            &=\hbar^2k_n^2
+            =\left(\frac{n\pi\hbar}{a}\right)^2.
+        \end{aligned}
+
+    This agrees with the result of :ref:`notes/griffithsqm/chap2/2-4:Problem 2.4`.

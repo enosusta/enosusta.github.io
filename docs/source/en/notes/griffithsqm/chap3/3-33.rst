@@ -1,0 +1,61 @@
+Problem 3.33
+==================
+
+a.  Immediately after measuring `a_1` for the observable `A`, the state collapses to the corresponding normalized eigenstate, so
+
+    .. math::
+        |\Psi\rangle=|\psi_1\rangle,
+
+    up to an arbitrary phase factor.
+
+b.  Expressing the state immediately before the measurement in the eigenbasis of `B` gives
+
+    .. math::
+        |\psi_1\rangle
+        =\frac{3}{5}|\phi_1\rangle
+        +\frac{4}{5}|\phi_2\rangle.
+
+    Therefore, the possible measurement outcomes and their probabilities according to the Born rule are
+
+    .. math::
+        P(b_1)=\frac{9}{25},
+        \quad
+        P(b_2)=\frac{16}{25}.
+
+c.  The inverse of the given change of basis is
+
+    .. math::
+        |\phi_1\rangle
+        =\frac{3}{5}|\psi_1\rangle
+        +\frac{4}{5}|\psi_2\rangle,
+        \quad
+        |\phi_2\rangle
+        =\frac{4}{5}|\psi_1\rangle
+        -\frac{3}{5}|\psi_2\rangle.
+
+    Therefore, the conditional probabilities are
+
+    .. math::
+        \begin{aligned}
+            P(a_1 | b_1)
+            &=|\braket{\psi_1|\phi_1}|^2
+            =\frac{9}{25}
+            \\
+            P(a_1 | b_2)
+            &=|\braket{\psi_1|\phi_2}|^2
+            =\frac{16}{25}.
+        \end{aligned}
+
+    Since the result of the measurement of `B` is not known,
+
+    .. math::
+        \begin{aligned}
+            P(a_1)
+            &=P(b_1)P(a_1 | b_1)
+            +P(b_2)P(a_1 | b_2)
+            \\
+            &=\frac{9}{25}\frac{9}{25}
+            +\frac{16}{25}\frac{16}{25}
+            \\
+            &=\frac{337}{625}.
+        \end{aligned}

@@ -1,0 +1,40 @@
+Problem 3.24
+==================
+
+Write the matrix elements in the orthonormal basis `\{|e_n\rangle\}` as
+
+.. math::
+    Q_{mn}=\braket{e_m|\hat{Q}e_n}.
+
+Since `\hat{Q}` is Hermitian,
+
+.. math::
+    \braket{e_m|\hat{Q}e_n}
+    =\braket{\hat{Q}e_m|e_n}.
+
+On the other hand,
+
+.. math::
+    \begin{aligned}
+        Q_{nm}^*
+        &=\braket{e_n|\hat{Q}e_m}^*
+        \\
+        &=\braket{\hat{Q}e_m|e_n},
+    \end{aligned}
+
+so
+
+.. math::
+    Q_{mn}=Q_{nm}^*.
+
+The components of the adjoint matrix are
+
+.. math::
+    \left(Q^\dagger\right)_{mn}=Q_{nm}^*,
+
+and therefore
+
+.. math::
+    Q_{mn}=Q_{nm}^*
+    \iff
+    Q^\dagger=Q.

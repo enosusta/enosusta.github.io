@@ -1,0 +1,71 @@
+Problem 3.41
+==================
+
+Since the measurement probabilities are equal, the state at `t=0` can be written, up to an overall phase, as
+
+.. math::
+    |S(0)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(|0\rangle+e^{i\theta}|1\rangle\right),
+
+where the relative phase `\theta` is arbitrary. Writing the momentum operator of the harmonic oscillator as
+
+.. math::
+    p=i\sqrt{\frac{\hbar m\omega}{2}}
+    \left(a_+-a_-\right)
+    \eqqcolon id\left(a_+-a_-\right),
+
+the nonzero matrix elements in this two-level subspace are
+
+.. math::
+    \braket{0|p|1}=-id,
+    \quad
+    \braket{1|p|0}=id.
+
+Therefore,
+
+.. math::
+    \begin{aligned}
+        \braket{p}_{t=0}
+        &=\frac{1}{2}\left(
+            e^{i\theta}\braket{0|p|1}
+            +e^{-i\theta}\braket{1|p|0}
+        \right)
+        \\
+        &=\frac{id}{2}
+        \left(e^{-i\theta}-e^{i\theta}\right)
+        =d\sin\theta.
+    \end{aligned}
+
+Since `\sin\theta\leq1`, the maximum is attained when `\theta=\pi/2`, and
+
+.. math::
+    \braket{p}_{\max}
+    =\sqrt{\frac{\hbar m\omega}{2}}.
+
+The initial state with this relative phase is
+
+.. math::
+    |S(0)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(|0\rangle+i|1\rangle\right).
+
+Using `E_0=\hbar\omega/2` and `E_1=3\hbar\omega/2`, its time evolution is
+
+.. math::
+    |S(t)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(
+        e^{-i\omega t/2}|0\rangle
+        +ie^{-3i\omega t/2}|1\rangle
+    \right).
+
+Therefore, in the position representation,
+
+.. math::
+    \Psi(x,t)
+    =\frac{1}{\sqrt{2}}
+    \left[
+        \psi_0(x)e^{-i\omega t/2}
+        +i\psi_1(x)e^{-3i\omega t/2}
+    \right].

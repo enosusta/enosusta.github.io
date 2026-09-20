@@ -1,0 +1,112 @@
+Problem 3.5
+==================
+
+a.  Since `x` is real,
+
+    .. math::
+        \braket{f|xg}
+        =\int f^*xg\,\dd x
+        =\int(xf)^*g\,\dd x
+        =\braket{xf|g}.
+
+    Therefore,
+
+    .. math::
+        x^\dagger=x.
+
+    For the constant `i`,
+
+    .. math::
+        \braket{f|ig}
+        =i\braket{f|g}
+        =\braket{-if|g},
+
+    so
+
+    .. math::
+        i^\dagger=-i.
+
+    Finally, integration by parts gives
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\dv{}{x}g}
+            &=\int f^*g'\,\dd x
+            \\
+            &=\left[f^*g\right]_{\text{boundary}}
+            -\int f'^*g\,\dd x
+            \\
+            &=\braket{-\dv{}{x}f|g},
+        \end{aligned}
+
+    and hence
+
+    .. math::
+        \left(\dv{}{x}\right)^\dagger=-\dv{}{x}.
+
+b.  By definition,
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\hat{Q}\hat{R}g}
+            &=\braket{\hat{Q}^\dagger f|\hat{R}g}
+            \\
+            &=\braket{\hat{R}^\dagger\hat{Q}^\dagger f|g},
+        \end{aligned}
+
+    so
+
+    .. math::
+        (\hat{Q}\hat{R})^\dagger
+        =\hat{R}^\dagger\hat{Q}^\dagger.
+
+    Similarly,
+
+    .. math::
+        \begin{aligned}
+            \braket{f|(\hat{Q}+\hat{R})g}
+            &=\braket{\hat{Q}^\dagger f|g}
+            +\braket{\hat{R}^\dagger f|g}
+            \\
+            &=\braket{(\hat{Q}^\dagger+\hat{R}^\dagger)f|g},
+        \end{aligned}
+
+    and hence
+
+    .. math::
+        (\hat{Q}+\hat{R})^\dagger
+        =\hat{Q}^\dagger+\hat{R}^\dagger.
+
+    Also,
+
+    .. math::
+        \braket{f|c\hat{Q}g}
+        =c\braket{\hat{Q}^\dagger f|g}
+        =\braket{c^*\hat{Q}^\dagger f|g},
+
+    so
+
+    .. math::
+        (c\hat{Q})^\dagger
+        =c^*\hat{Q}^\dagger.
+
+c.  Equation (2.48) gives
+
+    .. math::
+        \hat{a}_+
+        =\frac{1}{\sqrt{2\hbar m\omega}}
+        \left(-i\hat{p}+m\omega x\right),
+
+    and therefore
+
+    .. math::
+        \begin{aligned}
+            \hat{a}_+^\dagger
+            &=\frac{1}{\sqrt{2\hbar m\omega}}
+            \left[(-i\hat{p})^\dagger+(m\omega x)^\dagger\right]
+            \\
+            &=\frac{1}{\sqrt{2\hbar m\omega}}
+            \left(i\hat{p}+m\omega x\right)
+            \\
+            &=\hat{a}_-.
+        \end{aligned}

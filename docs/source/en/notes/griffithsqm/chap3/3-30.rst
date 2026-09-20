@@ -1,0 +1,47 @@
+Problem 3.30
+==================
+
+Let the position-space wave function be
+
+.. math::
+    \Psi(x,t)=\braket{x|S(t)}.
+
+Its components in the energy basis are
+
+.. math::
+    c_n(t)=\braket{n|S(t)}.
+
+Inserting the identity operator in the position basis into this inner product gives
+
+.. math::
+    \begin{aligned}
+        c_n(t)
+        &=\left\langle
+            n\middle|
+            \left(
+                \int_{-\infty}^{\infty}
+                |x\rangle\langle x|\,\dd x
+            \right)
+            \middle|S(t)
+        \right\rangle
+        \\
+        &=\int_{-\infty}^{\infty}
+        \braket{n|x}\braket{x|S(t)}\,\dd x.
+    \end{aligned}
+
+Writing the `n`-th energy eigenstate in the position representation as
+
+.. math::
+    \psi_n(x)=\braket{x|n},
+
+we have
+
+.. math::
+    \braket{n|x}=\braket{x|n}^*=\psi_n(x)^*,
+
+and therefore
+
+.. math::
+    c_n(t)
+    =\int_{-\infty}^{\infty}
+    \psi_n(x)^*\Psi(x,t)\,\dd x.

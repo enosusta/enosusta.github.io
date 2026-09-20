@@ -1,0 +1,104 @@
+Problem 3.40
+==================
+
+Expanding the expectation value of position in the energy eigenbasis gives
+
+.. math::
+    \braket{x}
+    =\sum_{m,n=0}^{\infty}
+    c_m^*c_n
+    e^{i\left(E_m-E_n\right)t/\hbar}
+    \braket{m|x|n}.
+
+From :ref:`notes/griffithsqm/chap3/3-39:Problem 3.39`, `\braket{m|x|n}` is nonzero only when `m=n\pm1`. Also,
+
+.. math::
+    E_{n+1}-E_n=\hbar\omega.
+
+Define
+
+.. math::
+    S=\sum_{n=0}^{\infty}
+    \sqrt{n+1}\,c_{n+1}^*c_n.
+
+The sum of the terms with `m=n+1` is
+
+.. math::
+    \sqrt{\frac{\hbar}{2m\omega}}Se^{i\omega t},
+
+and the sum of the terms with `m=n-1` is its complex conjugate. Therefore,
+
+.. math::
+    \begin{aligned}
+        \braket{x}
+        &=\sqrt{\frac{\hbar}{2m\omega}}
+        \left(
+            Se^{i\omega t}+S^*e^{-i\omega t}
+        \right)
+        \\
+        &=2\sqrt{\frac{\hbar}{2m\omega}}
+        \operatorname{Re}\left(Se^{i\omega t}\right).
+    \end{aligned}
+
+Now define the real constants `C,\phi` by
+
+.. math::
+    Ce^{-i\phi}
+    =\sqrt{\frac{2\hbar}{m\omega}}S
+    =\sqrt{\frac{2\hbar}{m\omega}}
+    \sum_{n=0}^{\infty}
+    \sqrt{n+1}\,c_{n+1}^*c_n.
+
+Then
+
+.. math::
+    \begin{aligned}
+        \braket{x}
+        &=\operatorname{Re}\left(
+            Ce^{-i\phi}e^{i\omega t}
+        \right)
+        \\
+        &=C\cos\left(\omega t-\phi\right).
+    \end{aligned}
+
+For the wave function in :ref:`notes/griffithsqm/chap2/2-40:Problem 2.40`, the nonzero expansion coefficients are
+
+.. math::
+    c_0=\frac{3}{5},
+    \quad
+    c_1=-\frac{2\sqrt{2}}{5},
+    \quad
+    c_2=\frac{2\sqrt{2}}{5},
+
+and all of them are real. Therefore,
+
+.. math::
+    \begin{aligned}
+        S
+        &=c_1c_0+\sqrt{2}\,c_2c_1
+        \\
+        &=\left(-\frac{2\sqrt{2}}{5}\right)
+        \frac{3}{5}
+        +\sqrt{2}
+        \left(\frac{2\sqrt{2}}{5}\right)
+        \left(-\frac{2\sqrt{2}}{5}\right)
+        \\
+        &=-\frac{6\sqrt{2}}{25}
+        -\frac{8\sqrt{2}}{25}
+        =-\frac{14\sqrt{2}}{25},
+    \end{aligned}
+
+and hence
+
+.. math::
+    Ce^{-i\phi}
+    =-\frac{28}{25}
+    \sqrt{\frac{\hbar}{m\omega}}.
+
+Therefore,
+
+.. math::
+    C=\frac{28}{25}
+    \sqrt{\frac{\hbar}{m\omega}},
+    \quad
+    \phi=\pi\pmod{2\pi}.

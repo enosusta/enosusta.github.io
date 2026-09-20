@@ -1,0 +1,73 @@
+Problem 3.27
+==================
+
+a.  Any vector `|\alpha\rangle` can be expanded as
+
+    .. math::
+        |\alpha\rangle
+        =\sum_n a_n|e_n\rangle,
+        \quad
+        a_n=\braket{e_n|\alpha}.
+
+    Using the eigenvalue equation gives
+
+    .. math::
+        \hat{Q}|\alpha\rangle
+        =\sum_n a_n\hat{Q}|e_n\rangle
+        =\sum_n q_na_n|e_n\rangle.
+
+    On the other hand,
+
+    .. math::
+        \begin{aligned}
+            \left( \sum_n q_n\ket{e_n}\bra{e_n} \right) |\alpha\rangle
+            &=\sum_n q_n|e_n\rangle
+            \braket{e_n|\alpha}
+            \\
+            &=\sum_n q_na_n|e_n\rangle.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \hat{Q}
+        =\sum_n q_n|e_n\rangle\langle e_n|.
+
+b.  Define the projection operators by
+
+    .. math::
+        \hat{P}_n\coloneqq|e_n\rangle\langle e_n|.
+
+    Orthonormality and completeness give
+
+    .. math::
+        \hat{P}_n\hat{P}_m
+        =\delta_{nm}\hat{P}_n,
+        \quad
+        \sum_n\hat{P}_n=\mathbf{1}.
+
+    Therefore, repeated multiplication of the result in \(a) gives
+
+    .. math::
+        \hat{Q}^{\,k}
+        =\left(\sum_n q_n\hat{P}_n\right)^k
+        =\sum_n q_n^k\hat{P}_n.
+
+    Substituting this expression into the power series for the exponential gives
+
+    .. math::
+        \begin{aligned}
+            e^{\hat{Q}}
+            &=\sum_{k=0}^{\infty}
+            \frac{\hat{Q}^{\,k}}{k!}
+            \\
+            &=\sum_{k=0}^{\infty}\frac{1}{k!}
+            \sum_n q_n^k\hat{P}_n
+            \\
+            &=\sum_n
+            \left(
+                \sum_{k=0}^{\infty}\frac{q_n^k}{k!}
+            \right)\hat{P}_n
+            \\
+            &=\sum_n e^{q_n}|e_n\rangle\langle e_n|.
+        \end{aligned}

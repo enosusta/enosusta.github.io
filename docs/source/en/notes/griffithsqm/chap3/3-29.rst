@@ -1,0 +1,123 @@
+Problem 3.29
+==================
+
+a.  We use mathematical induction. For `n=1`,
+
+    .. math::
+        [\hat{A},\hat{B}]=\hat{C},
+
+    so the claim holds. Suppose that, for some positive integer `n`,
+
+    .. math::
+        [\hat{A}^{\,n},\hat{B}]
+        =n\hat{A}^{\,n-1}\hat{C}.
+
+    Using the product rule for commutators gives
+
+    .. math::
+        \begin{aligned}
+            [\hat{A}^{\,n+1},\hat{B}]
+            &=[\hat{A}^{\,n}\hat{A},\hat{B}]
+            \\
+            &=\hat{A}^{\,n}[\hat{A},\hat{B}]
+            +[\hat{A}^{\,n},\hat{B}]\hat{A}
+            \\
+            &=\hat{A}^{\,n}\hat{C}
+            +n\hat{A}^{\,n-1}\hat{C}\hat{A}
+            \\
+            &=\left(n+1\right)\hat{A}^{\,n}\hat{C}.
+        \end{aligned}
+
+    In the last equality, we used the fact that `\hat{A}` and `\hat{C}` commute. Therefore,
+
+    .. math::
+        [\hat{A}^{\,n},\hat{B}]
+        =n\hat{A}^{\,n-1}\hat{C}
+
+    holds for every positive integer `n`.
+
+b.  Expanding the exponential operator as a power series and using the result from \(a), we obtain
+
+    .. math::
+        \begin{aligned}
+            [e^{\lambda\hat{A}},\hat{B}]
+            &=\sum_{n=0}^{\infty}
+            \frac{\lambda^n}{n!}
+            [\hat{A}^{\,n},\hat{B}]
+            \\
+            &=\sum_{n=1}^{\infty}
+            \frac{\lambda^n}{n!}
+            n\hat{A}^{\,n-1}\hat{C}
+            \\
+            &=\lambda\sum_{r=0}^{\infty}
+            \frac{\lambda^r\hat{A}^{\,r}}{r!}\hat{C}
+            \\
+            &=\lambda e^{\lambda\hat{A}}\hat{C}.
+        \end{aligned}
+
+c.  Define the following two operator-valued functions:
+
+    .. math::
+        \hat{f}(\lambda)
+        =e^{\lambda\left(\hat{A}+\hat{B}\right)},
+        \quad
+        \hat{g}(\lambda)
+        =e^{\lambda\hat{A}}
+        e^{\lambda\hat{B}}
+        e^{-\lambda^2\hat{C}/2}.
+
+    At `\lambda=0`,
+
+    .. math::
+        \hat{f}(0)=\hat{g}(0)=\mathbf{1},
+
+    and `\hat{f}` satisfies
+
+    .. math::
+        \dv{\hat{f}}{\lambda}
+        =\left(\hat{A}+\hat{B}\right)\hat{f}.
+
+    Next, differentiating `\hat{g}` while preserving the order of the factors, and using the fact that `\hat{C}` commutes with `\hat{A}` and `\hat{B}`, gives
+
+    .. math::
+        \begin{aligned}
+            \dv{\hat{g}}{\lambda}
+            &=\hat{A}e^{\lambda\hat{A}}
+            e^{\lambda\hat{B}}e^{-\lambda^2\hat{C}/2}
+            \\
+            &\quad
+            +e^{\lambda\hat{A}}\hat{B}
+            e^{\lambda\hat{B}}e^{-\lambda^2\hat{C}/2}
+            \\
+            &\quad
+            -\lambda e^{\lambda\hat{A}}
+            e^{\lambda\hat{B}}\hat{C}
+            e^{-\lambda^2\hat{C}/2}.
+        \end{aligned}
+
+    By \(b),
+
+    .. math::
+        e^{\lambda\hat{A}}\hat{B}
+        =\hat{B}e^{\lambda\hat{A}}
+        +\lambda e^{\lambda\hat{A}}\hat{C},
+
+    so the second term in the derivative is
+
+    .. math::
+        e^{\lambda\hat{A}}\hat{B}
+        e^{\lambda\hat{B}}e^{-\lambda^2\hat{C}/2}
+        =\hat{B}\hat{g}+\lambda\hat{C}\hat{g}.
+
+    The second term on the right-hand side cancels the third term in the derivative, `-\lambda\hat{C}\hat{g}`, and hence
+
+    .. math::
+        \dv{\hat{g}}{\lambda}
+        =\hat{A}\hat{g}+\hat{B}\hat{g}
+        =\left(\hat{A}+\hat{B}\right)\hat{g}.
+
+    The functions `\hat{f}` and `\hat{g}` satisfy the same first-order differential equation with the same initial condition, so `\hat{f}(\lambda)=\hat{g}(\lambda)` for every `\lambda`. In particular, setting `\lambda=1` gives the Baker--Campbell--Hausdorff formula
+
+    .. math::
+        e^{\hat{A}+\hat{B}}
+        =e^{\hat{A}}e^{\hat{B}}e^{-\hat{C}/2}.

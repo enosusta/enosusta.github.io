@@ -1,0 +1,76 @@
+Problem 3.38
+==================
+
+Let the energy eigenvalues of `\psi_1` and `\psi_2` be `E_1` and `E_2`, respectively, with `E_1\neq E_2`. The state at time `t` is
+
+.. math::
+    |\Psi(t)\rangle
+    =\frac{1}{\sqrt{2}}
+    \left(
+        e^{-iE_1t/\hbar}|\psi_1\rangle
+        +e^{-iE_2t/\hbar}|\psi_2\rangle
+    \right).
+
+Using orthonormality, the overlap with the initial state is
+
+.. math::
+    \begin{aligned}
+        \braket{\Psi(0)|\Psi(t)}
+        &=\frac{1}{2}
+        \left(
+            e^{-iE_1t/\hbar}+e^{-iE_2t/\hbar}
+        \right)
+        \\
+        &=e^{-i\left(E_1+E_2\right)t/(2\hbar)}
+        \cos\left(
+            \frac{\left(E_2-E_1\right)t}{2\hbar}
+        \right).
+    \end{aligned}
+
+The first positive time `\tau` at which this overlap vanishes satisfies
+
+.. math::
+    \frac{|E_2-E_1|\tau}{2\hbar}=\frac{\pi}{2},
+    \quad
+    \tau=\frac{\pi\hbar}{|E_2-E_1|}.
+
+Therefore, the time width defined in the problem is
+
+.. math::
+    \Delta t=\frac{\tau}{\pi}
+    =\frac{\hbar}{|E_2-E_1|}.
+
+On the other hand,
+
+.. math::
+    \braket{H}=\frac{E_1+E_2}{2},
+    \quad
+    \braket{H^2}=\frac{E_1^2+E_2^2}{2},
+
+so
+
+.. math::
+    \begin{aligned}
+        (\Delta E)^2
+        &=\braket{H^2}-\braket{H}^2
+        \\
+        &=\frac{E_1^2+E_2^2}{2}
+        -\frac{\left(E_1+E_2\right)^2}{4}
+        \\
+        &=\frac{\left(E_2-E_1\right)^2}{4},
+    \end{aligned}
+
+and hence
+
+.. math::
+    \Delta E=\frac{|E_2-E_1|}{2}.
+
+It follows that
+
+.. math::
+    \Delta E\,\Delta t
+    =\frac{|E_2-E_1|}{2}
+    \frac{\hbar}{|E_2-E_1|}
+    =\frac{\hbar}{2},
+
+so the equality in the energy-time uncertainty relation is attained.

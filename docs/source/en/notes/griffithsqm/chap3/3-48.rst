@@ -1,0 +1,98 @@
+Problem 3.48
+==================
+
+a.  First, let
+
+    .. math::
+        D(\hat{p})
+        =\left\{
+            f\mathrel{\big|}
+            f,f'\in L^2(0,a),\quad f(0)=f(a)=0
+        \right\}.
+
+    For `f\in D(\hat{p})`, integration by parts gives
+
+    .. math::
+        \begin{aligned}
+            \braket{g|\hat{p}f}
+            &=\int_0^a g(x)^*\left(-i\hbar f'(x)\right)\,\dd x
+            \\
+            &=-i\hbar\left[g^*f\right]_0^a
+            +\int_0^a i\hbar g'(x)^*f(x)\,\dd x
+            \\
+            &=\int_0^a\left(-i\hbar g'(x)\right)^*
+            f(x)\,\dd x
+            \\
+            &=\braket{\hat{p}^\dagger g|f}.
+        \end{aligned}
+
+    The boundary term vanishes solely because `f(0)=f(a)=0`, so no condition need be imposed on `g(0)` or `g(a)`. Thus, the action of the adjoint is
+
+    .. math::
+        \hat{p}^\dagger g=-i\hbar g',
+
+    which is the same as that of the original operator, but its domain is
+
+    .. math::
+        D(\hat{p}^\dagger)
+        =\left\{
+            g\mathrel{\big|}g,g'\in L^2(0,a)
+        \right\}.
+
+    Thus, the operator is Hermitian because its action agrees with that of its adjoint on their common domain, but
+
+    .. math::
+        D(\hat{p})
+        \subsetneq D(\hat{p}^\dagger),
+
+    so it is not self-adjoint.
+
+b.  Now let
+
+    .. math::
+        D_\lambda(\hat{p})
+        =\left\{
+            f\mathrel{\big|}
+            f,f'\in L^2(0,a),\quad f(a)=\lambda f(0)
+        \right\}.
+
+    The boundary term produced by integration by parts is
+
+    .. math::
+        \begin{aligned}
+            -i\hbar\left[g^*f\right]_0^a
+            &=-i\hbar\left[
+                g^*(a)f(a)-g^*(0)f(0)
+            \right]
+            \\
+            &=-i\hbar\left[
+                \lambda g^*(a)-g^*(0)
+            \right]f(0).
+        \end{aligned}
+
+    The condition for this term to vanish for every `f\in D_\lambda(\hat{p})` is
+
+    .. math::
+        g^*(0)=\lambda g^*(a)
+        \iff
+        g(0)=\lambda^*g(a).
+
+    If `\lambda\neq0`, this can also be written as
+
+    .. math::
+        g(a)=\frac{1}{\lambda^*}g(0).
+
+    Therefore, the necessary and sufficient condition for the original boundary condition and the adjoint boundary condition to coincide is
+
+    .. math::
+        \lambda=\frac{1}{\lambda^*}
+        \iff
+        |\lambda|=1.
+
+c.  On the half-line, the boundary term at infinity vanishes, so the boundary form is simply
+
+    .. math::
+        -i\hbar\left[g^*f\right]_0^\infty
+        =i\hbar g^*(0)f(0).
+
+    For this to vanish for all `f,g` in the same domain, one must impose `f(0)=0`. However, the adjoint determined by this domain places no restriction on `g(0)`, so the two domains do not coincide.

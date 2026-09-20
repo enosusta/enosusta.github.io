@@ -1,0 +1,39 @@
+Problem 3.12
+==================
+
+From Equation (2.101), the general solution for a free particle is
+
+.. math::
+    \Psi(x,t)
+    =\frac{1}{\sqrt{2\pi}}
+    \int_{-\infty}^{\infty}
+    \phi(k)e^{ikx}e^{-i\hbar k^2t/(2m)}\,\dd k.
+
+Changing the integration variable to `p'=\hbar k` gives
+
+.. math::
+    \begin{aligned}
+        \Psi(x,t)
+        &=\frac{1}{\sqrt{2\pi}\hbar}
+        \int_{-\infty}^{\infty}
+        \phi\left(\frac{p'}{\hbar}\right)
+        e^{ip'x/\hbar}e^{-ip'^2t/(2m\hbar)}\,\dd p'
+        \\
+        &=\frac{1}{\sqrt{2\pi\hbar}}
+        \int_{-\infty}^{\infty}e^{ip'x/\hbar}
+        \left[
+            \frac{1}{\sqrt{\hbar}}
+            \phi\left(\frac{p'}{\hbar}\right)
+            e^{-ip'^2t/(2m\hbar)}
+        \right]\,\dd p'.
+    \end{aligned}
+
+Comparing this expression with Equation (3.55), we obtain
+
+.. math::
+    \Phi(p,t)
+    =\frac{1}{\sqrt{\hbar}}
+    \phi\left(\frac{p}{\hbar}\right)
+    \exp\left(-\frac{ip^2t}{2m\hbar}\right).
+
+Since the time dependence appears only in a phase factor of absolute value `1`, the probability density is independent of time.

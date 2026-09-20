@@ -1,0 +1,156 @@
+Problem 3.49
+==================
+
+a.  The Schrödinger equation for a free particle in the position representation is
+
+    .. math::
+        i\hbar\pdv{\Psi}{t}
+        =-\frac{\hbar^2}{2m}\pdv{^2\Psi}{x^2}.
+
+    Under the Fourier transform
+
+    .. math::
+        \Phi(p,t)
+        =\frac{1}{\sqrt{2\pi\hbar}}
+        \int_{-\infty}^{\infty}
+        e^{-ipx/\hbar}\Psi(x,t)\,\dd x,
+
+    the operator `-i\hbar\partial/\partial x` becomes multiplication by `p`. Therefore, the equation in momentum space is
+
+    .. math::
+        i\hbar\pdv{\Phi(p,t)}{t}
+        =\frac{p^2}{2m}\Phi(p,t).
+
+    This is an independent first-order ordinary differential equation for each `p`. Integrating
+
+    .. math::
+        \frac{1}{\Phi}\pdv{\Phi}{t}
+        =-\frac{ip^2}{2m\hbar}
+
+    gives
+
+    .. math::
+        \Phi(p,t)
+        =e^{-ip^2t/(2m\hbar)}\Phi(p,0).
+
+b.  The initial state in :ref:`notes/griffithsqm/chap2/2-42:Problem 2.42` is
+
+    .. math::
+        \Psi(x,0)=Ae^{-ax^2}e^{il x},
+        \quad
+        A=\left(\frac{2a}{\pi}\right)^{1/4},
+
+    and its Fourier transform is
+
+    .. math::
+        \begin{aligned}
+            \Phi(p,0)
+            &=\frac{A}{\sqrt{2\pi\hbar}}
+            \int_{-\infty}^{\infty}
+            \exp\left[
+                -ax^2-i\left(\frac{p}{\hbar}-l\right)x
+            \right]\,\dd x
+            \\
+            &=\frac{A}{\sqrt{2\pi\hbar}}
+            \sqrt{\frac{\pi}{a}}
+            \exp\left[
+                -\frac{\left(p/\hbar-l\right)^2}{4a}
+            \right]
+            \\
+            &=\frac{1}{\left(2\pi a\hbar^2\right)^{1/4}}
+            \exp\left[
+                -\frac{\left(p-\hbar l\right)^2}
+                {4a\hbar^2}
+            \right].
+        \end{aligned}
+
+    Multiplying by the time-evolution factor from \(a) gives
+
+    .. math::
+        \Phi(p,t)
+        =\frac{1}{\left(2\pi a\hbar^2\right)^{1/4}}
+        \exp\left[
+            -\frac{\left(p-\hbar l\right)^2}{4a\hbar^2}
+            -\frac{ip^2t}{2m\hbar}
+        \right].
+
+    The probability density is
+
+    .. math::
+        |\Phi(p,t)|^2
+        =\frac{1}{\hbar\sqrt{2\pi a}}
+        \exp\left[
+            -\frac{\left(p-\hbar l\right)^2}{2a\hbar^2}
+        \right],
+
+    which is independent of time.
+
+c.  For convenience, define
+
+    .. math::
+        p_0\coloneqq\hbar l,
+        \quad
+        s^2\coloneqq a\hbar^2,
+        \quad
+        q=p-p_0.
+
+    The probability density is then the Gaussian distribution
+
+    .. math::
+        |\Phi|^2
+        =\frac{1}{\sqrt{2\pi}s}
+        e^{-q^2/(2s^2)}.
+
+    The integrals of odd powers of `q` vanish, and
+
+    .. math::
+        \frac{1}{\sqrt{2\pi}s}
+        \int_{-\infty}^{\infty}
+        q^2e^{-q^2/(2s^2)}\,\dd q
+        =s^2.
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            \braket{p}
+            &=\int_{-\infty}^{\infty}
+            \left(p_0+q\right)|\Phi|^2\,\dd q
+            =p_0
+            \\
+            \braket{p^2}
+            &=\int_{-\infty}^{\infty}
+            \left(p_0+q\right)^2|\Phi|^2\,\dd q
+            =p_0^2+s^2.
+        \end{aligned}
+
+    Hence,
+
+    .. math::
+        \braket{p}=\hbar l,
+        \quad
+        \braket{p^2}=\hbar^2l^2+a\hbar^2,
+        \quad
+        \sigma_p^2=a\hbar^2.
+
+    This agrees with the result of :ref:`notes/griffithsqm/chap2/2-42:Problem 2.42`.
+
+d.  For a free particle, `H=p^2/(2m)`, so by \(c),
+
+    .. math::
+        \begin{aligned}
+            \braket{H}
+            &=\frac{\braket{p^2}}{2m}
+            \\
+            &=\frac{\hbar^2l^2}{2m}
+            +\frac{a\hbar^2}{2m}
+            \\
+            &=\frac{\braket{p}^2}{2m}+\braket{H}_0.
+        \end{aligned}
+
+    Here,
+
+    .. math::
+        \braket{H}_0=\frac{a\hbar^2}{2m}
+
+    is the mean energy of the Gaussian wave packet with `l=0` and zero mean momentum. The first term is the classical kinetic energy associated with the mean momentum of the wave packet as a whole, that is, with the motion of its center. The second term is the kinetic energy that remains because the wave packet is localized to a finite width. Thus, even when the mean momentum is zero, the mean energy of the wave packet is nonzero, and the packet spreads with time.

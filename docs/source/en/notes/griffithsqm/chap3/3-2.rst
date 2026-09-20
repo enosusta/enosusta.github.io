@@ -1,0 +1,53 @@
+Problem 3.2
+==================
+
+a.  Since `x^\nu` is real and positive for `0<x<1`, it is enough to examine
+
+    .. math::
+        \int_0^1|x^\nu|^2\,\dd x
+        =\int_0^1x^{2\nu}\,\dd x.
+
+    When `2\nu\neq-1`, for `\varepsilon>0`,
+
+    .. math::
+        \int_\varepsilon^1x^{2\nu}\,\dd x
+        =\frac{1-\varepsilon^{2\nu+1}}{2\nu+1}.
+
+    The condition for this expression to have a finite limit as `\varepsilon\to0^+` is `2\nu+1>0`. At the boundary value `2\nu+1=0`,
+
+    .. math::
+        \int_\varepsilon^1\frac{\dd x}{x}=-\ln\varepsilon
+
+    diverges, and for `2\nu+1<0` it diverges as a power. Therefore,
+
+    .. math::
+        x^\nu\in L^2(0,1)\quad\iff\quad
+        \nu>-\frac{1}{2}.
+
+b.  For `\nu=1/2`, let `f(x)=x^{1/2}`. Then
+
+    .. math::
+        \int_0^1|f(x)|^2\,\dd x
+        =\int_0^1x\,\dd x
+        =\frac{1}{2}<\infty,
+
+    so `f\in L^2(0,1)`. Also, since `xf(x)=x^{3/2}`,
+
+    .. math::
+        \int_0^1|xf(x)|^2\,\dd x
+        =\int_0^1x^3\,\dd x
+        =\frac{1}{4}<\infty,
+
+    and hence `xf` belongs to the same Hilbert space. On the other hand,
+
+    .. math::
+        \dv{f}{x}=\frac{1}{2\sqrt{x}},
+
+    so
+
+    .. math::
+        \int_0^1\left|\dv{f}{x}\right|^2\,\dd x
+        =\frac{1}{4}\int_0^1\frac{\dd x}{x}
+        =\infty.
+
+    Therefore, `f'\notin L^2(0,1)`. Thus, even if a function belongs to a Hilbert space, applying a differential operator to it does not necessarily produce a function in the same space.

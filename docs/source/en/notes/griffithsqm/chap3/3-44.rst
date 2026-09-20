@@ -1,0 +1,74 @@
+Problem 3.44
+==================
+
+a.  The vector
+
+    .. math::
+        |c\rangle
+        =\begin{pmatrix}0\\1\\0\end{pmatrix}
+
+    is an eigenvector with eigenvalue `c`. In the subspace spanned by the first and third components, it is enough to diagonalize
+
+    .. math::
+        \begin{pmatrix}a&b\\b&a\end{pmatrix}.
+
+    Its normalized eigenvectors and eigenvalues are
+
+    .. math::
+        \begin{aligned}
+            |+\rangle
+            &=\frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\0\\1\end{pmatrix},
+            \quad E_+=a+b
+            \\
+            |-\rangle
+            &=\frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\0\\-1\end{pmatrix},
+            \quad E_-=a-b.
+        \end{aligned}
+
+    Since the initial state is `|c\rangle` itself, it acquires only an overall phase under time evolution:
+
+    .. math::
+        |S(t)\rangle
+        =e^{-ict/\hbar}
+        \begin{pmatrix}0\\1\\0\end{pmatrix}.
+
+b.  In this case, the initial state can be expanded as
+
+    .. math::
+        \begin{pmatrix}1\\0\\0\end{pmatrix}
+        =\frac{1}{\sqrt{2}}
+        \left(|+\rangle+|-\rangle\right).
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            |S(t)\rangle
+            &=\frac{1}{\sqrt{2}}
+            \left[
+                e^{-i\left(a+b\right)t/\hbar}|+\rangle
+                +e^{-i\left(a-b\right)t/\hbar}|-\rangle
+            \right]
+            \\
+            &=\frac{1}{2}
+            \begin{pmatrix}
+                e^{-i\left(a+b\right)t/\hbar}
+                +e^{-i\left(a-b\right)t/\hbar}
+                \\
+                0
+                \\
+                e^{-i\left(a+b\right)t/\hbar}
+                -e^{-i\left(a-b\right)t/\hbar}
+            \end{pmatrix}
+            \\
+            &=e^{-iat/\hbar}
+            \begin{pmatrix}
+                \cos\left(bt/\hbar\right)
+                \\
+                0
+                \\
+                -i\sin\left(bt/\hbar\right)
+            \end{pmatrix}.
+        \end{aligned}

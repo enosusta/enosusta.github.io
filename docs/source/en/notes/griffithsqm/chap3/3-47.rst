@@ -1,0 +1,171 @@
+Problem 3.47
+==================
+
+a.  In the position representation, let `\hat{p}=-i\hbar\dd/\dd x` and define
+
+    .. math::
+        \gamma\coloneqq\frac{\hbar}{\sqrt{2m}}.
+
+    Then
+
+    .. math::
+        \hat{A}=\gamma\dv{}{x}+W(x),
+        \quad
+        \hat{A}^\dagger=-\gamma\dv{}{x}+W(x).
+
+    Applying the product to an arbitrary test function `f(x)` gives
+
+    .. math::
+        \begin{aligned}
+            \hat{A}^\dagger\hat{A}f
+            &=\left(-\gamma\dv{}{x}+W\right)
+            \left(\gamma f'+Wf\right)
+            \\
+            &=-\gamma^2f''-\gamma\left(W'f+Wf'\right)
+            +\gamma Wf'+W^2f
+            \\
+            &=\left(
+                -\gamma^2\frac{\dd^2}{\dd x^2}
+                +W^2-\gamma W'
+            \right)f.
+        \end{aligned}
+
+    Similarly,
+
+    .. math::
+        \begin{aligned}
+            \hat{A}\hat{A}^\dagger f
+            &=\left(\gamma\dv{}{x}+W\right)
+            \left(-\gamma f'+Wf\right)
+            \\
+            &=\left(
+                -\gamma^2\frac{\dd^2}{\dd x^2}
+                +W^2+\gamma W'
+            \right)f.
+        \end{aligned}
+
+    Since `-\gamma^2\dd^2/\dd x^2=\hat{p}^{\,2}/(2m)`,
+
+    .. math::
+        V_1(x)=W(x)^2
+        -\frac{\hbar}{\sqrt{2m}}W'(x),
+        \quad
+        V_2(x)=W(x)^2
+        +\frac{\hbar}{\sqrt{2m}}W'(x).
+
+b.  Suppose that `\hat{H}_1\psi_n^{(1)}=E_n^{(1)}\psi_n^{(1)}`. By associativity of the operators,
+
+    .. math::
+        \begin{aligned}
+            \hat{H}_2\left(\hat{A}\psi_n^{(1)}\right)
+            &=\left(\hat{A}\hat{A}^\dagger\right)
+            \hat{A}\psi_n^{(1)}
+            \\
+            &=\hat{A}\left(\hat{A}^\dagger\hat{A}\right)
+            \psi_n^{(1)}
+            \\
+            &=\hat{A}\hat{H}_1\psi_n^{(1)}
+            =E_n^{(1)}\left(\hat{A}\psi_n^{(1)}\right).
+        \end{aligned}
+
+    Also, for normalized `\psi_n^{(1)}` with `E_n^{(1)}>0`,
+
+    .. math::
+        \left\|\hat{A}\psi_n^{(1)}\right\|^2
+        =\braket{\psi_n^{(1)}|
+        \hat{A}^\dagger\hat{A}|\psi_n^{(1)}}
+        =E_n^{(1)},
+
+    so the corresponding normalized state is
+
+    .. math::
+        \psi_n^{(2)}
+        =\frac{1}{\sqrt{E_n^{(1)}}}
+        \hat{A}\psi_n^{(1)}.
+
+    Conversely, if `\hat{H}_2\psi_n^{(2)}=E_n^{(2)}\psi_n^{(2)}`, then
+
+    .. math::
+        \begin{aligned}
+            \hat{H}_1\left(\hat{A}^\dagger\psi_n^{(2)}\right)
+            &=\left(\hat{A}^\dagger\hat{A}\right)
+            \hat{A}^\dagger\psi_n^{(2)}
+            \\
+            &=\hat{A}^\dagger
+            \left(\hat{A}\hat{A}^\dagger\right)
+            \psi_n^{(2)}
+            \\
+            &=E_n^{(2)}
+            \left(\hat{A}^\dagger\psi_n^{(2)}\right).
+        \end{aligned}
+
+c.  If the ground state satisfies `\hat{A}\psi_0^{(1)}=0`, then
+
+    .. math::
+        \gamma\dv{\psi_0^{(1)}}{x}
+        +W(x)\psi_0^{(1)}(x)=0.
+
+    Therefore, on an interval where the wave function is nonzero,
+
+    .. math::
+        W(x)
+        =-\gamma
+        \frac{\left(\psi_0^{(1)}\right)'(x)}
+        {\psi_0^{(1)}(x)}
+        =-\frac{\hbar}{\sqrt{2m}}
+        \dv{}{x}\ln\psi_0^{(1)}(x).
+
+    Also, since `\hat{H}_1=\hat{A}^\dagger\hat{A}`,
+
+    .. math::
+        \braket{\psi|\hat{H}_1|\psi}
+        =\left\|\hat{A}\psi\right\|^2\geq0,
+
+    and if `\hat{A}\psi_0^{(1)}=0`, this expectation value also vanishes. Therefore, `E_0^{(1)}=0`.
+
+d.  For convenience, define
+
+    .. math::
+        \kappa\coloneqq\frac{m\alpha}{\hbar^2}.
+
+    The ground state can then be written as `\psi_0^{(1)}(x)=\sqrt{\kappa}e^{-\kappa|x|}`. For `x\neq0`,
+
+    .. math::
+        \dv{}{x}\ln\psi_0^{(1)}(x)
+        =-\kappa\operatorname{sgn}(x),
+
+    so by \(c),
+
+    .. math::
+        \begin{aligned}
+            W(x)
+            &=\frac{\hbar\kappa}{\sqrt{2m}}
+            \operatorname{sgn}(x)
+            \\
+            &=\frac{\alpha\sqrt{m}}{\sqrt{2}\,\hbar}
+            \operatorname{sgn}(x).
+        \end{aligned}
+
+    Writing `\operatorname{sgn}(x)=2\theta(x)-1`, part \(b) of :ref:`notes/griffithsqm/chap2/2-23:Problem 2.23` gives
+
+    .. math::
+        \dv{}{x}\operatorname{sgn}(x)=2\delta(x),
+
+    and hence
+
+    .. math::
+        W^2=\frac{m\alpha^2}{2\hbar^2},
+        \quad
+        \gamma W'=\alpha\delta(x).
+
+    Substituting these results into the two equations in \(a) reproduces
+
+    .. math::
+        V_1(x)
+        =\frac{m\alpha^2}{2\hbar^2}-\alpha\delta(x),
+
+    and the partner potential is
+
+    .. math::
+        V_2(x)
+        =\frac{m\alpha^2}{2\hbar^2}+\alpha\delta(x).

@@ -1,0 +1,74 @@
+Problem 3.1
+==================
+
+a.  For any `f,g\in L^2(a,b)` on the interval `(a,b)`,
+
+    .. math::
+        \int_a^b|f|^2\,\dd x<\infty,\quad
+        \int_a^b|g|^2\,\dd x<\infty.
+
+    Expanding the squared absolute value of the sum gives
+
+    .. math::
+        \begin{aligned}
+            \int_a^b|f+g|^2\,\dd x
+            &= \int_a^b\left(|f|^2+|g|^2+f^*g+g^*f\right)\,\dd x
+            \\
+            &= \int_a^b|f|^2\,\dd x
+            +\int_a^b|g|^2\,\dd x
+            +2\mathop{\mathrm{Re}}\braket{f|g}.
+        \end{aligned}
+
+    By the Schwarz inequality,
+
+    .. math::
+        |\braket{f|g}|
+        \leq
+        \left(\int_a^b|f|^2\,\dd x\right)^{1/2}
+        \left(\int_a^b|g|^2\,\dd x\right)^{1/2}
+        <\infty,
+
+    so `f+g\in L^2(a,b)`. Moreover, for any `c\in\C`,
+
+    .. math::
+        \int_a^b|cf|^2\,\dd x
+        =|c|^2\int_a^b|f|^2\,\dd x
+        <\infty,
+
+    so `cf\in L^2(a,b)`. The zero function belongs to `L^2(a,b)`, as does `-f`. The remaining vector-space axioms, such as associativity of addition and the distributive laws, follow from the pointwise operations on complex-valued functions. Therefore, the set of all square-integrable functions is a complex vector space.
+
+    On the other hand, the set of all normalized functions is not a vector space. It does not contain the zero function, and even for a normalized function `f`,
+
+    .. math::
+        \braket{cf|cf}=|c|^2\braket{f|f}=|c|^2,
+
+    so `cf` is not normalized if `|c|\neq1`. In general, the sum of two normalized functions is not normalized either.
+
+b.  Taking the complex conjugate gives
+
+    .. math::
+        \begin{aligned}
+            \braket{f|g}^*
+            &=\left(\int_a^b f^*g\,\dd x\right)^*
+            \\
+            &=\int_a^b fg^*\,\dd x
+            \\
+            &=\braket{g|f}.
+        \end{aligned}
+
+    Also, for any `c_1,c_2\in\C`,
+
+    .. math::
+        \begin{aligned}
+            \bra{f}\left(c_1\ket{g}+c_2\ket{h}\right)
+            &=\int_a^b f^*(c_1g+c_2h)\,\dd x
+            \\
+            &=c_1\braket{f|g}+c_2\braket{f|h},
+        \end{aligned}
+
+    so the inner product is linear in its second argument. Finally,
+
+    .. math::
+        \braket{f|f}=\int_a^b|f(x)|^2\,\dd x\geq0,
+
+    and this quantity vanishes if and only if `f=0` almost everywhere. In `L^2(a,b)`, functions that are equal almost everywhere are identified, so this is positive definiteness. Therefore, the integral in Equation (3.6) satisfies all the conditions for an inner product.

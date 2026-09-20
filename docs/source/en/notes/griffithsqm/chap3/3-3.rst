@@ -1,0 +1,47 @@
+Problem 3.3
+==================
+
+For arbitrary functions `u,v`, define
+
+.. math::
+    D(u,v)\coloneqq
+    \braket{u|\hat{Q}v}-\braket{\hat{Q}u|v}.
+
+By assumption, `D(h,h)=0` for every `h`. First, take `h=f+g`. Using the sesquilinearity of the inner product gives
+
+.. math::
+    \begin{aligned}
+        0=D(f+g,f+g)
+        &=D(f,f)+D(f,g)+D(g,f)+D(g,g)
+        \\
+        &=D(f,g)+D(g,f).
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    D(f,g)+D(g,f)=0.
+
+Next, take `h=f+ig`. Noting that the coefficient `i` in the first argument is complex conjugated, we obtain
+
+.. math::
+    \begin{aligned}
+        0&=D(f+ig,f+ig)
+        \\
+        &=D(f,f)+iD(f,g)-iD(g,f)+D(g,g)
+        \\
+        &=iD(f,g)-iD(g,f),
+    \end{aligned}
+
+so
+
+.. math::
+    D(f,g)-D(g,f)=0.
+
+Combining the sum and difference equations gives `D(f,g)=D(g,f)=0`. Therefore, for arbitrary `f,g`,
+
+.. math::
+    \braket{f|\hat{Q}g}
+    =\braket{\hat{Q}f|g}.
+
+Conversely, setting `g=f` in this equation gives `\braket{f|\hat{Q}f}=\braket{\hat{Q}f|f}`. Therefore, the two definitions are equivalent.

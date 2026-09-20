@@ -1,0 +1,137 @@
+Problem 3.46
+==================
+
+a.  Write the standard basis as
+
+    .. math::
+        e_1=\begin{pmatrix}1\\0\\0\end{pmatrix},
+        \quad
+        e_2=\begin{pmatrix}0\\1\\0\end{pmatrix},
+        \quad
+        e_3=\begin{pmatrix}0\\0\\1\end{pmatrix}.
+
+    Since `\bm{H}` is already diagonal, its eigenvalues and eigenspaces are
+
+    .. math::
+        \hbar\omega
+        \longleftrightarrow e_1,
+        \quad
+        2\hbar\omega
+        \longleftrightarrow
+        \operatorname{span}\{e_2,e_3\}.
+
+    The eigenvalues and normalized eigenvectors of `\bm{A}` are
+
+    .. math::
+        \begin{aligned}
+            \lambda
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\1\\0\end{pmatrix}
+            \\
+            -\lambda
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}1\\-1\\0\end{pmatrix}
+            \\
+            2\lambda
+            &\longleftrightarrow e_3.
+        \end{aligned}
+
+    Similarly, for `\bm{B}`,
+
+    .. math::
+        \begin{aligned}
+            2\mu
+            &\longleftrightarrow e_1
+            \\
+            \mu
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}0\\1\\1\end{pmatrix}
+            \\
+            -\mu
+            &\longleftrightarrow
+            \frac{1}{\sqrt{2}}
+            \begin{pmatrix}0\\1\\-1\end{pmatrix}.
+        \end{aligned}
+
+b.  Direct matrix multiplication gives the expectation values at `t=0`:
+
+    .. math::
+        \begin{aligned}
+            \braket{H}_0
+            &=\hbar\omega\left(
+                |c_1|^2+2|c_2|^2+2|c_3|^2
+            \right)
+            \\
+            &=\hbar\omega\left(2-|c_1|^2\right)
+            \\
+            \braket{A}_0
+            &=\lambda\left(
+                c_1^*c_2+c_2^*c_1+2|c_3|^2
+            \right)
+            \\
+            &=2\lambda\left[
+                \operatorname{Re}\left(c_1^*c_2\right)
+                +|c_3|^2
+            \right]
+            \\
+            \braket{B}_0
+            &=\mu\left(
+                2|c_1|^2+c_2^*c_3+c_3^*c_2
+            \right)
+            \\
+            &=2\mu\left[
+                |c_1|^2
+                +\operatorname{Re}\left(c_2^*c_3\right)
+            \right].
+        \end{aligned}
+
+c.  Time evolution attaches a phase to each energy eigencomponent of the Hamiltonian, so
+
+    .. math::
+        |S(t)\rangle
+        =\begin{pmatrix}
+            c_1e^{-i\omega t}
+            \\
+            c_2e^{-2i\omega t}
+            \\
+            c_3e^{-2i\omega t}
+        \end{pmatrix}.
+
+    The possible results of an energy measurement and their probabilities are
+
+    .. math::
+        P_H(\hbar\omega)=|c_1|^2,
+        \quad
+        P_H(2\hbar\omega)=|c_2|^2+|c_3|^2.
+
+    For a measurement of `A`, the inner products with its eigenvectors give
+
+    .. math::
+        \begin{aligned}
+            P_A(\lambda;t)
+            &=\frac{1}{2}
+            \left|
+                c_1e^{-i\omega t}+c_2e^{-2i\omega t}
+            \right|^2
+            \\
+            P_A(-\lambda;t)
+            &=\frac{1}{2}
+            \left|
+                c_1e^{-i\omega t}-c_2e^{-2i\omega t}
+            \right|^2
+            \\
+            P_A(2\lambda;t)
+            &=|c_3|^2.
+        \end{aligned}
+
+    Finally, the possible results of a measurement of `B` and their probabilities are
+
+    .. math::
+        P_B(2\mu;t)=|c_1|^2,
+        \quad
+        P_B(\mu;t)=\frac{1}{2}|c_2+c_3|^2,
+        \quad
+        P_B(-\mu;t)=\frac{1}{2}|c_2-c_3|^2.

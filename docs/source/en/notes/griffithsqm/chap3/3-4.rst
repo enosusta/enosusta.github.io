@@ -1,0 +1,121 @@
+Problem 3.4
+==================
+
+a.  If `\hat{Q}` and `\hat{R}` are Hermitian operators, then
+
+    .. math::
+        \begin{aligned}
+            \braket{f|(\hat{Q}+\hat{R})g}
+            &=\braket{f|\hat{Q}g}
+            +\braket{f|\hat{R}g}
+            \\
+            &=\braket{\hat{Q}f|g}
+            +\braket{\hat{R}f|g}
+            \\
+            &=\braket{(\hat{Q}+\hat{R})f|g}.
+        \end{aligned}
+
+    Therefore, `\hat{Q}+\hat{R}` is also Hermitian.
+
+b.  If `\hat{Q}` is Hermitian, then
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\alpha\hat{Q}g}
+            &=\alpha\braket{f|\hat{Q}g}
+            \\
+            &=\alpha\braket{\hat{Q}f|g}
+            \\
+            &=\braket{\alpha^*\hat{Q}f|g}.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        (\alpha\hat{Q})^\dagger=\alpha^*\hat{Q}.
+
+    If `\hat{Q}\neq0`, the necessary and sufficient condition for `\alpha\hat{Q}` to be Hermitian is
+
+    .. math::
+        \alpha^*=\alpha\quad\iff\quad
+        \alpha\in\R.
+
+    If `\hat{Q}=0`, however, `\alpha\hat{Q}` is the zero operator for every `\alpha` and is therefore trivially Hermitian.
+
+c.  For two Hermitian operators,
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\hat{Q}\hat{R}g}
+            &=\braket{\hat{Q}f|\hat{R}g}
+            \\
+            &=\braket{\hat{R}\hat{Q}f|g},
+        \end{aligned}
+
+    and hence
+
+    .. math::
+        (\hat{Q}\hat{R})^\dagger
+        =\hat{R}\hat{Q}.
+
+    Therefore, the necessary and sufficient condition for the product `\hat{Q}\hat{R}` to be Hermitian is
+
+    .. math::
+        \hat{Q}\hat{R}=\hat{R}\hat{Q}
+        \quad\iff\quad
+        [\hat{Q},\hat{R}]=0.
+
+    Thus, the product is Hermitian if and only if the two operators commute.
+
+d.  For the position operator, `x` is real, and therefore
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\hat{x}g}
+            &=\int f^*(x)xg(x)\,\dd x
+            \\
+            &=\int\left(xf(x)\right)^*g(x)\,\dd x
+            \\
+            &=\braket{\hat{x}f|g}.
+        \end{aligned}
+
+    Thus, `\hat{x}` is Hermitian.
+
+    Define the kinetic-energy part of the Hamiltonian by
+
+    .. math::
+        \hat{T}\coloneqq-\frac{\hbar^2}{2m}\dv{^2}{x^2}.
+
+    Integrating by parts twice gives
+
+    .. math::
+        \begin{aligned}
+            \braket{f|\hat{T}g}
+            &=-\frac{\hbar^2}{2m}\int f^*g''\,\dd x
+            \\
+            &=-\frac{\hbar^2}{2m}
+            \left[f^*g'-f'^*g\right]_{\text{boundary}}
+            -\frac{\hbar^2}{2m}\int f''^*g\,\dd x
+            \\
+            &=\braket{\hat{T}f|g},
+        \end{aligned}
+
+    where the boundary term has been assumed to vanish. Also, since a physical potential `V(x)` is real-valued,
+
+    .. math::
+        \begin{aligned}
+            \braket{f|Vg}
+            &=\int f^*Vg\,\dd x
+            \\
+            &=\int(Vf)^*g\,\dd x
+            \\
+            &=\braket{Vf|g}.
+        \end{aligned}
+
+    Thus, the potential operator is also Hermitian. Therefore, by \(a), their sum
+
+    .. math::
+        \hat{H}
+        =-\frac{\hbar^2}{2m}\dv{^2}{x^2}+V(x)
+
+    is also Hermitian.
