@@ -100,7 +100,7 @@ html_theme_options = {
     "prev_next_buttons_location": "bottom",
     "style_external_links": True,
     "vcs_pageview_mode": "blob",
-    "style_nav_header_background": "#2980b9",
+    "style_nav_header_background": "#365f7d",
     "flyout_display": "hidden",
     "collapse_navigation": True,
     "sticky_navigation": True,
