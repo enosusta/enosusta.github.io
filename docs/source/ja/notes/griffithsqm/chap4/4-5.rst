@@ -1,7 +1,7 @@
 Problem 4.5
 ==================
 
-`\ell=m=0` のとき， `\theta` 方程式は，
+`l=m=0` のとき， `\theta` 方程式は，
 
 .. math::
     \sin\theta\dv{}{\theta}
@@ -21,9 +21,7 @@ Problem 4.5
     \sin\theta\dv{}{\theta}
     \left(\sin\theta\dv{\Theta}{\theta}\right)=0
 
-となる。したがって，この関数は `0<\theta<\pi` では確かに微分方程式を満たす。
-
-しかし，両極で，
+となる。したがって，この関数は `0<\theta<\pi` では確かに微分方程式を満たす。しかし，両極で，
 
 .. math::
     \lim_{\theta\to0^+}\Theta(\theta)=-\infty,
@@ -39,4 +37,4 @@ Problem 4.5
     =|A|^2\int_0^\pi\frac{\dd\theta}{\sin\theta}
     =\infty
 
-となり，運動エネルギーも発散する。したがって，この第2の解は Hamiltonian の物理的に許される定義域に属さず，棄却しなければならない。
+となり，運動エネルギーも発散する。したがって，この第2の解は棄却しなければならない。

@@ -8,7 +8,7 @@ Rodrigues の公式から，
     \quad
     P_2(x)=\frac{1}{2}(3x^2-1)
 
-である。したがって，Legendre 陪関数は，
+となるので，Legendre 陪関数は，
 
 .. math::
     \begin{aligned}
@@ -38,16 +38,14 @@ Rodrigues の公式から，
         \sin\theta\cos\theta\,e^{i\phi}
     \end{aligned}
 
-を得る。
-
-まず， `Y_0^0` について，
+となる。まず， `Y_0^0` について，
 
 .. math::
     \int_0^{2\pi}\int_0^\pi
     |Y_0^0|^2\sin\theta\,\dd\theta\,\dd\phi
     =\frac{1}{4\pi}(2\pi)(2)=1
 
-である。また，
+であり，また，
 
 .. math::
     \int_0^\pi\sin^3\theta\cos^2\theta\,\dd\theta
@@ -76,4 +74,4 @@ Rodrigues の公式から，
         &=0
     \end{aligned}
 
-であり， `Y_0^0` と `Y_2^1` は互いに直交する。
+となり， `Y_0^0` と `Y_2^1` は互いに直交する。

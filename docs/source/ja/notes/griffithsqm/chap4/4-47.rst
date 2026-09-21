@@ -7,7 +7,7 @@ Problem 4.47
     -\frac{\hbar^2}{2m}\dv[2]{u}{r}
     +
     \left[
-    \frac{\hbar^2\ell\left(\ell+1\right)}{2mr^2}
+    \frac{\hbar^2l\left(l+1\right)}{2mr^2}
     +\frac{1}{2}m\omega^2r^2
     \right]u
     =
@@ -27,16 +27,16 @@ Problem 4.47
     +
     \left[
     2\epsilon-\rho^2
-    -\frac{\ell\left(\ell+1\right)}{\rho^2}
+    -\frac{l\left(l+1\right)}{\rho^2}
     \right]u
     =0
 
-となる。原点付近では `u\sim\rho^{\ell+1}`，無限遠では `u\sim e^{-\rho^2/2}` なので，
+となる。原点付近では `u\sim\rho^{l+1}`，無限遠では `u\sim e^{-\rho^2/2}` なので，
 
 .. math::
     u(\rho)
     =
-    \rho^{\ell+1}e^{-\rho^2/2}v(\rho)
+    \rho^{l+1}e^{-\rho^2/2}v(\rho)
 
 と置く。代入して整理すると，
 
@@ -44,11 +44,11 @@ Problem 4.47
     \dv[2]{v}{\rho}
     +
     2\left(
-    \frac{\ell+1}{\rho}-\rho
+    \frac{l+1}{\rho}-\rho
     \right)\dv{v}{\rho}
     +
     \left(
-    2\epsilon-2\ell-3
+    2\epsilon-2l-3
     \right)v
     =0
 
@@ -58,16 +58,16 @@ Problem 4.47
     c_{j+2}
     =
     \frac{
-    2j+2\ell+3-2\epsilon
+    2j+2l+3-2\epsilon
     }{
-    \left(j+2\right)\left(j+2\ell+3\right)
+    \left(j+2\right)\left(j+2l+3\right)
     }
     c_j
 
 を満たす。したがって奇数係数はすべて0である。級数が無限に続くと `v\sim e^{\rho^2}` となり，`u` が規格化不能になる。そこで最高次数を `j=2n_r` として級数を打ち切ると，
 
 .. math::
-    4n_r+2\ell+3-2\epsilon=0
+    4n_r+2l+3-2\epsilon=0
 
 でなければならない。したがって，
 
@@ -75,7 +75,7 @@ Problem 4.47
     E
     =
     \left(
-    2n_r+\ell+\frac{3}{2}
+    2n_r+l+\frac{3}{2}
     \right)\hbar\omega,
     \quad
     n_r=0,1,2,\ldots
@@ -83,29 +83,29 @@ Problem 4.47
 となる。規格化定数を除けば，動径関数は，
 
 .. math::
-    R_{n_r\ell}(r)
+    R_{n_rl}(r)
     \propto
-    \rho^\ell e^{-\rho^2/2}
-    L_{n_r}^{\ell+1/2}\left(\rho^2\right)
+    \rho^l e^{-\rho^2/2}
+    L_{n_r}^{l+1/2}\left(\rho^2\right)
 
 である。
 
 問題 4.46 の主量子数と比較すると，
 
 .. math::
-    n=2n_r+\ell
+    n=2n_r+l
 
 である。一方，動径量子数 `N` は動径関数を節の少ない順に `N=1,2,\ldots` と数えるため，`N=n_r+1` である。よって，
 
 .. math::
-    n=2\left(N-1\right)+\ell,
+    n=2\left(N-1\right)+l,
     \quad
-    N=\frac{n-\ell}{2}+1
+    N=\frac{n-l}{2}+1
 
-を得る。固定した `n` に許される `\ell` は，
+を得る。固定した `n` に許される `l` は，
 
 .. math::
-    \ell=n,n-2,n-4,\ldots,
+    l=n,n-2,n-4,\ldots,
     \begin{cases}
         0,&n\ \mathrm{even},\\
         1,&n\ \mathrm{odd}
@@ -134,7 +134,7 @@ Problem 4.47
         )
 
     axes[0].set_title("Grouped by radial quantum number")
-    axes[0].set_xlabel(r"$\ell$")
+    axes[0].set_xlabel(r"$l$")
     axes[0].set_ylabel(r"$E/(\hbar\omega)$")
     axes[0].set_xticks(ell)
     axes[0].grid(alpha=0.25)
@@ -165,7 +165,7 @@ Problem 4.47
         )
 
     axes[1].set_title("Grouped by principal quantum number")
-    axes[1].set_xlabel(r"$\ell$")
+    axes[1].set_xlabel(r"$l$")
     axes[1].set_xticks(ell)
     axes[1].set_xlim(-0.5, 7.1)
     axes[1].grid(alpha=0.25)
@@ -173,13 +173,13 @@ Problem 4.47
     fig.tight_layout()
     plt.show()
 
-各 `\ell` に対して `m=-\ell,\ldots,\ell` の `2\ell+1` 状態がある。したがって，
+各 `l` に対して `m=-l,\ldots,l` の `2l+1` 状態がある。したがって，
 
 .. math::
     d(n)
     =
-    \sum_{\substack{\ell=n,n-2,\ldots\\ \ell\geq0}}
-    \left(2\ell+1\right)
+    \sum_{\substack{l=n,n-2,\ldots\\ l\geq0}}
+    \left(2l+1\right)
     =
     \frac{\left(n+1\right)\left(n+2\right)}{2}
 

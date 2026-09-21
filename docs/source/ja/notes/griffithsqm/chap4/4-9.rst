@@ -1,7 +1,7 @@
 Problem 4.9
 ==================
 
-a.  球 Neumann 関数の定義に `\ell=1` を代入すると，
+a.  球 Neumann 関数の定義に `l=1` を代入すると，
 
     .. math::
         \begin{aligned}
@@ -14,7 +14,7 @@ a.  球 Neumann 関数の定義に `\ell=1` を代入すると，
             &=-\frac{\cos x}{x^2}-\frac{\sin x}{x}
         \end{aligned}
 
-    となる。また， `\ell=2` に対しては，
+    となる。また， `l=2` に対しては，
 
     .. math::
         \begin{aligned}
@@ -28,7 +28,7 @@ a.  球 Neumann 関数の定義に `\ell=1` を代入すると，
             -\frac{3}{x^2}\sin x
         \end{aligned}
 
-    を得る。
+    となる。
 
 b.  `x\ll1` での展開，
 

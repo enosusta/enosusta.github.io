@@ -6,20 +6,20 @@ Problem 4.12
 .. math::
     \rho=\frac{r}{3a},
     \quad
-    R_{3\ell}(r)
-    =\frac{1}{r}\rho^{\ell+1}e^{-\rho}v(\rho)
+    R_{3l}(r)
+    =\frac{1}{r}\rho^{l+1}e^{-\rho}v(\rho)
 
 であり，係数の漸化式は，
 
 .. math::
     c_{j+1}
     =
-    \frac{2(j+\ell-2)}
-    {(j+1)(j+2\ell+2)}c_j
+    \frac{2(j+l-2)}
+    {(j+1)(j+2l+2)}c_j
 
 となる。
 
-`\ell=0` では，
+`l=0` では，
 
 .. math::
     c_1=-2c_0,
@@ -46,7 +46,7 @@ Problem 4.12
 
 となる。
 
-`\ell=1` では，
+`l=1` では，
 
 .. math::
     c_1=-\frac{1}{2}c_0,
@@ -64,7 +64,7 @@ Problem 4.12
 
 である。
 
-`\ell=2` では最初の項の後で級数が打ち切られ， `v(\rho)=c_0` となる。よって，
+`l=2` では最初の項の後で級数が打ち切られ， `v(\rho)=c_0` となる。よって，
 
 .. math::
     R_{32}(r)

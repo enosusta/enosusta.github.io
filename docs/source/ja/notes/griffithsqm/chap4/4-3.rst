@@ -1,7 +1,7 @@
 Problem 4.3
 ==================
 
-a.  波動関数は角度に依存しないので，球座標の Laplacian は，
+a.  波動関数は角度に依存しないので，球座標のラプラシアンは，
 
     .. math::
         \nabla^2\psi
@@ -18,7 +18,7 @@ a.  波動関数は角度に依存しないので，球座標の Laplacian は�
             &=\left(\frac{1}{a^2}-\frac{2}{ar}\right)\psi
         \end{aligned}
 
-    である。時間に依存しない Schrödinger 方程式から，
+    となるから，時間に依存しない Schrödinger 方程式より，
 
     .. math::
         V(r)
@@ -26,7 +26,7 @@ a.  波動関数は角度に依存しないので，球座標の Laplacian は�
         =E+\frac{\hbar^2}{2ma^2}
         -\frac{\hbar^2}{mar}
 
-    を得る。 `r\to\infty` で `V(r)\to0` となるためには，
+    となる。よって `r\to\infty` で `V(r)\to0` となるためには，
 
     .. math::
         E=-\frac{\hbar^2}{2ma^2}
@@ -48,14 +48,14 @@ b.  今度は `\psi=Ae^{-r^2/a^2}` なので，
             &=\left(-\frac{6}{a^2}+\frac{4r^2}{a^4}\right)\psi
         \end{aligned}
 
-    となる。したがって，
+    となるので，
 
     .. math::
         V(r)
         =E-\frac{3\hbar^2}{ma^2}
         +\frac{2\hbar^2}{ma^4}r^2
 
-    である。条件 `V(0)=0` より，
+    となる。条件 `V(0)=0` より，
 
     .. math::
         E=\frac{3\hbar^2}{ma^2}
@@ -65,4 +65,4 @@ b.  今度は `\psi=Ae^{-r^2/a^2}` なので，
     .. math::
         V(r)=\frac{2\hbar^2}{ma^4}r^2
 
-    である。これは角振動数 `\omega=2\hbar/(ma^2)` の3次元等方的調和振動子ポテンシャルであり，得られたエネルギーは `E=3\hbar\omega/2` と一致する。
+    となる。

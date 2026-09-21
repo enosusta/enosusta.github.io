@@ -1,97 +1,95 @@
 Problem 4.8
 ==================
 
-まず `\ell>\ell'` とする。Rodrigues の公式を用いると，
+まず `l>l'` とする。Rodrigues の公式を用いると，
 
 .. math::
-    \int_{-1}^1P_\ell(x)P_{\ell'}(x)\,\dd x
+    \int_{-1}^1P_l(x)P_{l'}(x)\,\dd x
     =
-    \frac{1}{2^\ell\ell!}
+    \frac{1}{2^ll!}
     \int_{-1}^1
-    P_{\ell'}(x)
-    \frac{\dd^\ell}{\dd x^\ell}
-    \left(x^2-1\right)^\ell
+    P_{l'}(x)
+    \frac{\dd^l}{\dd x^l}
+    \left(x^2-1\right)^l
     \,\dd x
 
-となる。 `\left(x^2-1\right)^\ell` とその `\ell-1` 階までの導関数は `x=\pm1` でゼロになる。したがって，境界項はすべて消え，部分積分を `\ell` 回行うと，
+となる。 `\left(x^2-1\right)^l` とその `l-1` 階までの導関数は `x=\pm1` でゼロになるので，境界項はすべて消え，部分積分を `l` 回行うと，
 
 .. math::
-    \int_{-1}^1P_\ell P_{\ell'}\,\dd x
+    \int_{-1}^1P_l P_{l'}\,\dd x
     =
-    \frac{(-1)^\ell}{2^\ell\ell!}
+    \frac{(-1)^l}{2^ll!}
     \int_{-1}^1
-    \left(x^2-1\right)^\ell
-    \frac{\dd^\ell P_{\ell'}}{\dd x^\ell}
+    \left(x^2-1\right)^l
+    \frac{\dd^l P_{l'}}{\dd x^l}
     \,\dd x
 
-を得る。 `P_{\ell'}` は `\ell'` 次多項式であり， `\ell>\ell'` ならば，
+となる。 `P_{l'}` は `l'` 次多項式であり， `l>l'` ならば，
 
 .. math::
-    \frac{\dd^\ell P_{\ell'}}{\dd x^\ell}=0
+    \frac{\dd^l P_{l'}}{\dd x^l}=0
 
-である。よって， `\ell\neq\ell'` のときは積分の対称性も用いて，
-
-.. math::
-    \int_{-1}^1P_\ell(x)P_{\ell'}(x)\,\dd x=0
-
-となる。
-
-次に `\ell=\ell'` とする。Rodrigues の公式から `P_\ell` の最高次の項を取り出すと，
+となるので， `l\neql'` のときは積分の対称性も用いて，
 
 .. math::
-    P_\ell(x)
+    \int_{-1}^1P_l(x)P_{l'}(x)\,\dd x=0
+
+となる。次に `l=l'` とする。Rodrigues の公式から `P_l` の最高次の項を取り出すと，
+
+.. math::
+    P_l(x)
     =
-    \frac{(2\ell)!}{2^\ell(\ell!)^2}x^\ell
+    \frac{(2l)!}{2^l(l!)^2}x^l
     +\mathrm{lower\ powers}
 
 なので，
 
 .. math::
-    \frac{\dd^\ell P_\ell}{\dd x^\ell}
-    =\frac{(2\ell)!}{2^\ell\ell!}
+    \frac{\dd^l P_l}{\dd x^l}
+    =\frac{(2l)!}{2^ll!}
 
-である。先ほどと同様に部分積分を `\ell` 回行えば，
+となる。先ほどと同様に部分積分を `l` 回行えば，
 
 .. math::
     \begin{aligned}
-        \int_{-1}^1P_\ell(x)^2\,\dd x
+        \int_{-1}^1P_l(x)^2\,\dd x
         &=
-        \frac{(-1)^\ell}{2^\ell\ell!}
+        \frac{(-1)^l}{2^ll!}
         \int_{-1}^1
-        \left(x^2-1\right)^\ell
-        \frac{\dd^\ell P_\ell}{\dd x^\ell}
+        \left(x^2-1\right)^l
+        \frac{\dd^l P_l}{\dd x^l}
         \,\dd x
         \\
         &=
-        \frac{(2\ell)!}{2^{2\ell}(\ell!)^2}
-        \int_{-1}^1\left(1-x^2\right)^\ell\,\dd x
+        \frac{(2l)!}{2^{2l}(l!)^2}
+        \int_{-1}^1\left(1-x^2\right)^l\,\dd x
     \end{aligned}
 
 となる。最後の積分で `x=2t-1` と置くと，
 
 .. math::
     \begin{aligned}
-        \int_{-1}^1\left(1-x^2\right)^\ell\,\dd x
-        &=2^{2\ell+1}
-        \int_0^1t^\ell(1-t)^\ell\,\dd t
+        \int_{-1}^1\left(1-x^2\right)^l\,\dd x
+        &=2^{2l+1}
+        \int_0^1t^l(1-t)^l\,\dd t
         \\
-        &=2^{2\ell+1}
-        \frac{(\ell!)^2}{(2\ell+1)!}
+        &=2^{2l+1}
+        \frac{(l!)^2}{(2l+1)!}
     \end{aligned}
 
-である。したがって，
+となるので，
 
 .. math::
-    \int_{-1}^1P_\ell(x)^2\,\dd x
+    \int_{-1}^1P_l(x)^2\,\dd x
     =
-    \frac{(2\ell)!}{2^{2\ell}(\ell!)^2}
-    \frac{2^{2\ell+1}(\ell!)^2}{(2\ell+1)!}
-    =\frac{2}{2\ell+1}
+    \frac{(2l)!}{2^{2l}(l!)^2}
+    \frac{2^{2l+1}(l!)^2}{(2l+1)!}
+    =\frac{2}{2l+1}
 
-を得る。直交性と合わせると，
+となる。以上より，
 
 .. math::
-    \int_{-1}^1P_\ell(x)P_{\ell'}(x)\,\dd x
-    =\frac{2}{2\ell+1}\delta_{\ell\ell'}
+    \int_{-1}^1P_l(x)P_{l'}(x)\,\dd x
+    =\frac{2}{2l+1}\delta_{ll'}
 
 となる。

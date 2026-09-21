@@ -21,14 +21,14 @@ a.  `i,j\in\{x,y,z\}` とし，位置演算子と運動量演算子を，
             &=i\hbar\delta_{ij}f
         \end{aligned}
 
-    となる。また，座標の乗算は互いに可換であり，偏微分の順序も交換できるので，
+    となる。また，偏微分の順序は交換できるので，
 
     .. math::
         [r_i,r_j]=0,
         \quad
         [p_i,p_j]=0
 
-    である。したがって，すべての正準交換関係は，
+    となる。したがって，すべての正準交換関係は，
 
     .. math::
         [r_i,p_j]=i\hbar\delta_{ij},
@@ -37,7 +37,7 @@ a.  `i,j\in\{x,y,z\}` とし，位置演算子と運動量演算子を，
         \quad
         [r_i,r_j]=[p_i,p_j]=0
 
-    とまとめられる。
+    となる。
 
 b.  3次元でも `\hat{H}` がエルミートであることを用いれば，任意の演算子 `\hat{Q}` に対して，
 
@@ -54,9 +54,7 @@ b.  3次元でも `\hat{H}` がエルミートであることを用いれば，�
             +\left\langle\pdv{\hat{Q}}{t}\right\rangle
         \end{aligned}
 
-    となる。これは一般化された Ehrenfest の定理の3次元版である。
-
-    ここで，
+    となる。これは一般化された Ehrenfest の定理の3次元版である。ここで，
 
     .. math::
         \hat{H}=\frac{\bm{p}^{\,2}}{2m}+V(\bm{r})
@@ -74,7 +72,7 @@ b.  3次元でも `\hat{H}` がエルミートであることを用いれば，�
             &=-\frac{i\hbar}{m}p_i
         \end{aligned}
 
-    である。したがって，
+    となるので，
 
     .. math::
         \dv{}{t}\braket{r_i}
@@ -94,7 +92,7 @@ b.  3次元でも `\hat{H}` がエルミートであることを用いれば，�
         =\frac{i}{\hbar}\braket{[\hat{H},p_i]}
         =-\left\langle\pdv{V}{r_i}\right\rangle
 
-    を得る。3成分をまとめると，
+    となる。3成分をまとめると，
 
     .. math::
         \dv{}{t}\braket{\bm{r}}

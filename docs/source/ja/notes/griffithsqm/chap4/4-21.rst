@@ -11,73 +11,73 @@ Problem 4.21
     \quad
     L_-^\dagger=L_+
 
-である。`f_\ell^m` は規格化されているから，上昇演算子を作用させた状態のノルムは，
+である。`f_l^m` は規格化されているから，上昇演算子を作用させた状態のノルムは，
 
 .. math::
     \begin{aligned}
-        \left|A_\ell^m\right|^2
+        \left|A_l^m\right|^2
         &=
-        \braket{L_+f_\ell^m|L_+f_\ell^m}
+        \braket{L_+f_l^m|L_+f_l^m}
         \\
         &=
-        \braket{f_\ell^m|L_-L_+|f_\ell^m}
+        \braket{f_l^m|L_-L_+|f_l^m}
         \\
         &=
-        \braket{f_\ell^m|
+        \braket{f_l^m|
         \left(L^2-L_z^2-\hbar L_z\right)
-        |f_\ell^m}
+        |f_l^m}
         \\
         &=
         \hbar^2
-        \left[\ell\left(\ell+1\right)-m\left(m+1\right)\right]
+        \left[l\left(l+1\right)-m\left(m+1\right)\right]
     \end{aligned}
 
 となる。同様に，下降演算子については，
 
 .. math::
     \begin{aligned}
-        \left|B_\ell^m\right|^2
+        \left|B_l^m\right|^2
         &=
-        \braket{f_\ell^m|L_+L_-|f_\ell^m}
+        \braket{f_l^m|L_+L_-|f_l^m}
         \\
         &=
-        \braket{f_\ell^m|
+        \braket{f_l^m|
         \left(L^2-L_z^2+\hbar L_z\right)
-        |f_\ell^m}
+        |f_l^m}
         \\
         &=
         \hbar^2
-        \left[\ell\left(\ell+1\right)-m\left(m-1\right)\right]
+        \left[l\left(l+1\right)-m\left(m-1\right)\right]
     \end{aligned}
 
 を得る。各固有関数の位相を適切に選び，これらの係数を実数かつ非負とすれば，
 
 .. math::
     \begin{aligned}
-        A_\ell^m
+        A_l^m
         &=
         \hbar
-        \sqrt{\ell\left(\ell+1\right)-m\left(m+1\right)}
+        \sqrt{l\left(l+1\right)-m\left(m+1\right)}
         =
-        \hbar\sqrt{\left(\ell-m\right)\left(\ell+m+1\right)},
+        \hbar\sqrt{\left(l-m\right)\left(l+m+1\right)},
         \\
-        B_\ell^m
+        B_l^m
         &=
         \hbar
-        \sqrt{\ell\left(\ell+1\right)-m\left(m-1\right)}
+        \sqrt{l\left(l+1\right)-m\left(m-1\right)}
         =
-        \hbar\sqrt{\left(\ell+m\right)\left(\ell-m+1\right)}
+        \hbar\sqrt{\left(l+m\right)\left(l-m+1\right)}
     \end{aligned}
 
 となる。したがって，梯子の両端では，
 
 .. math::
-    A_\ell^\ell=0,
+    A_l^l=0,
     \quad
-    B_\ell^{-\ell}=0,
+    B_l^{-l}=0,
     \quad
-    L_+f_\ell^\ell=0,
+    L_+f_l^l=0,
     \quad
-    L_-f_\ell^{-\ell}=0
+    L_-f_l^{-l}=0
 
 である。
