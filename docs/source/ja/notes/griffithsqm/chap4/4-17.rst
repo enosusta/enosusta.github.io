@@ -1,7 +1,7 @@
 Problem 4.17
 ==================
 
-Hamiltonian は，
+ハミルトニアンは，
 
 .. math::
     \hat{H}=\frac{\bm{p}^{\,2}}{2m_e}+V(r)
@@ -13,20 +13,20 @@ Hamiltonian は，
     =\frac{1}{2m_e}[p_z^2,z]
     =-\frac{i\hbar}{m_e}p_z
 
-となり，したがって，
+となり，
 
 .. math::
     [z,[\hat{H},z]]
     =-\frac{i\hbar}{m_e}[z,p_z]
     =\frac{\hbar^2}{m_e}
 
-である。一方，二重交換子を展開すると，
+となる。一方，
 
 .. math::
     [z,[\hat{H},z]]
     =2z\hat{H}z-\hat{H}z^2-z^2\hat{H}
 
-となる。基底状態を `\ket{100}` と書けば，
+となるので，基底状態を `\ket{100}` と書けば，
 
 .. math::
     \hat{H}\ket{100}=E_1\ket{100}
@@ -38,7 +38,7 @@ Hamiltonian は，
     =2\braket{z\hat{H}z}
     -2E_1\braket{z^2}
 
-を得る。問題 4.15 の結果 `\braket{z^2}=a^2` と，
+となる。:ref:`notes/griffithsqm/chap4/4-15:Problem 4.15` の結果 `\braket{z^2}=a^2` と，
 
 .. math::
     E_1=-\frac{\hbar^2}{2m_ea^2}

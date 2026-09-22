@@ -14,7 +14,7 @@ b.  水素原子の Bohr 半径で電子の質量を `m_E` に，Coulomb 結合�
         a_g
         =\frac{\hbar^2}{G M m_E^2}
 
-    を得る。数値は次のように計算できる。
+    となる。
 
     .. exec_code::
 
@@ -25,13 +25,6 @@ b.  水素原子の Bohr 半径で電子の質量を `m_E` に，Coulomb 結合�
 
         a_g = hbar**2 / (G * M * m_E**2)
         print(f"a_g = {a_g:.6e} m")
-
-    したがって，
-
-    .. math::
-        a_g\approx2.35\times10^{-138}\ \mathrm{m}
-
-    である。
 
 c.  重力的な Bohr の公式は，
 
@@ -56,7 +49,7 @@ c.  重力的な Bohr の公式は，
         =T+V
         =-\frac{GMm_E}{2r_o}
 
-    である。 `E_n=E_{\mathrm{cl}}` と置き， `a_g=\hbar^2/(GMm_E^2)` を用いると，
+    となる。 `E_n=E_{\mathrm{cl}}` と置き， `a_g=\hbar^2/(GMm_E^2)` を用いると，
 
     .. math::
         \frac{G^2M^2m_E^3}{2\hbar^2n^2}
@@ -64,12 +57,12 @@ c.  重力的な Bohr の公式は，
         \quad\Longrightarrow\quad
         n^2=\frac{r_o}{a_g}
 
-    となる。したがって，
+    となるので，
 
     .. math::
         n=\sqrt{\frac{r_o}{a_g}}
 
-    である。地球の平均軌道半径 `r_o=1.495978707\times10^{11}\ \mathrm{m}` を用いると，
+    となる。
 
     .. exec_code::
 
@@ -79,14 +72,7 @@ c.  重力的な Bohr の公式は，
         n = (r_o / a_g)**0.5
         print(f"n = {n:.6e}")
 
-    よって，地球の量子数は，
-
-    .. math::
-        n\approx2.52\times10^{74}
-
-    という非常に大きな値になる。
-
-d.  正の定数，
+d.  正の定数
 
     .. math::
         C\coloneqq\frac{G^2M^2m_E^3}{2\hbar^2}
@@ -107,7 +93,7 @@ d.  正の定数，
             &\approx\frac{2C}{n^3}
         \end{aligned}
 
-    となる。対応する放射の波長は `\lambda=hc/\Delta E` である。数値計算は，
+    となる。対応する放射の波長は `\lambda=hc/\Delta E` である。
 
     .. exec_code::
 
@@ -132,16 +118,6 @@ d.  正の定数，
         print(f"lambda = {wavelength:.6e} m")
         print(f"lambda = {wavelength / light_year:.6f} light-years")
 
-    したがって，
-
-    .. math::
-        \Delta E\approx2.10\times10^{-41}\ \mathrm{J},
-        \quad
-        \lambda\approx9.46\times10^{15}\ \mathrm{m}
-        \approx1.00\ \mathrm{light\text{-}year}
-
-    となる。
-
     この1光年という値は偶然ではない。大きな `n` では，
 
     .. math::
@@ -157,4 +133,4 @@ d.  正の定数，
         =\frac{2\pi c}{\omega_{\mathrm{orb}}}
         =cT_{\mathrm{orb}}
 
-    となる。地球の公転周期は1年なので，この波長は光が1年間に進む距離，すなわち1光年となる。
+    となる。地球の公転周期は1年なので，この波長は1光年となる。

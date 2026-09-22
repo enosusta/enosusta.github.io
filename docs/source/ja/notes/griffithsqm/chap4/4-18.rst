@@ -1,7 +1,7 @@
 Problem 4.18
 ==================
 
-a.  `\psi_{211}` と `\psi_{21-1}` は同じエネルギー，
+a.  `\psi_{211}` と `\psi_{21-1}` は同じエネルギー
 
     .. math::
         E_2=\frac{E_1}{4}
@@ -14,7 +14,7 @@ a.  `\psi_{211}` と `\psi_{21-1}` は同じエネルギー，
         \frac{e^{-iE_2t/\hbar}}{\sqrt{2}}
         \left(\psi_{211}+\psi_{21-1}\right)
 
-    となる。問題 4.13 の波動関数を代入すると，
+    となる。:ref:`notes/griffithsqm/chap4/4-13:Problem 4.13` の波動関数を代入すると，
 
     .. math::
         \begin{aligned}
@@ -32,7 +32,7 @@ a.  `\psi_{211}` と `\psi_{21-1}` は同じエネルギー，
             \sin\theta\sin\phi
         \end{aligned}
 
-    である。したがって，
+    となるので，
 
     .. math::
         \Psi(\bm{r},t)
@@ -42,7 +42,7 @@ a.  `\psi_{211}` と `\psi_{21-1}` は同じエネルギー，
         \left(\frac{r}{a}\right)e^{-r/(2a)}
         \sin\theta\sin\phi
 
-    となる。 `r\sin\theta\sin\phi=y` を用いれば，空間部分は `ye^{-r/(2a)}` に比例する。
+    となる。
 
 b.  Coulomb ポテンシャルは `r` だけの関数なので，期待値は規格化された角度部分の選び方に依存しない。 `R_{21}` を用いると，
 
@@ -58,7 +58,7 @@ b.  Coulomb ポテンシャルは `r` だけの関数なので，期待値は規
             &=\frac{1}{4a}
         \end{aligned}
 
-    となる。よって，
+    となるので，
 
     .. math::
         \braket{V}
@@ -66,7 +66,7 @@ b.  Coulomb ポテンシャルは `r` だけの関数なので，期待値は規
         \left\langle\frac{1}{r}\right\rangle
         =-\frac{e^2}{16\pi\epsilon_0a}
 
-    である。 `e^2/(4\pi\epsilon_0a)=-2E_1` なので，
+    となる。 `e^2/(4\pi\epsilon_0a)=-2E_1` なので，
 
     .. math::
         \braket{V}

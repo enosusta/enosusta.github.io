@@ -22,28 +22,24 @@ Problem 4.19
         &=-\frac{13.6Z^2}{n^2}\ \mathrm{eV}
     \end{aligned}
 
-である。特に基底状態エネルギーは，
+となる。特に基底状態エネルギーは，
 
 .. math::
     E_1(Z)=-13.6Z^2\ \mathrm{eV}
 
-であり，電子を基底状態から電離するのに必要な束縛エネルギーの大きさは `13.6Z^2\ \mathrm{eV}` である。
-
-Bohr 半径に対応する長さは，
+であり，電子を基底状態から電離するのに必要な束縛エネルギーの大きさは `13.6Z^2\ \mathrm{eV}` である。Bohr 半径に対応する長さは，
 
 .. math::
     a(Z)
     =\frac{4\pi\epsilon_0\hbar^2}{m_eZe^2}
     =\frac{a}{Z}
 
-となる。また，スペクトル線の波数はエネルギー差に比例するので，Rydberg 定数は，
+となり，また，スペクトル線の波数はエネルギー差に比例するので，Rydberg 定数は，
 
 .. math::
     \mathcal{R}(Z)=Z^2\mathcal{R}
 
-である。
-
-Lyman 系列では `n_f=1` であり，波長は，
+となる。Lyman 系列では `n_f=1` であり，波長は，
 
 .. math::
     \lambda_Z=\frac{\lambda_{\mathrm{H}}}{Z^2}
@@ -54,11 +50,11 @@ Lyman 系列では `n_f=1` であり，波長は，
     \begin{array}{c|c|c}
         Z&\mathrm{wavelength\ range}&\mathrm{region}
         \\\hline
-        2&22.8\text{--}30.4\ \mathrm{nm}
+        2&22.8\text{-}30.4\ \mathrm{nm}
         &\mathrm{extreme\ ultraviolet}
         \\
-        3&10.1\text{--}13.5\ \mathrm{nm}
+        3&10.1\text{-}13.5\ \mathrm{nm}
         &\mathrm{extreme\ ultraviolet}
     \end{array}
 
-となる。 `Z=3` の系列の短波長端は軟 X 線領域との境界に近い。
+となる。
