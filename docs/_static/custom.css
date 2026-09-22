@@ -73,6 +73,36 @@ body {
     font-weight: 700;
 }
 
+.wy-side-nav-search,
+.wy-nav-top {
+  background-image:
+    repeating-linear-gradient(
+      18deg,
+      rgba(255,255,255,.14) 0 1px,
+      transparent 1px 12px
+    ),
+    repeating-linear-gradient(
+      54deg,
+      rgba(255,255,255,.12) 0 1px,
+      transparent 1px 17px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,.08) 0 1px,
+      transparent 1px 14px
+    ),
+    repeating-linear-gradient(
+      126deg,
+      rgba(255,255,255,.12) 0 1px,
+      transparent 1px 17px
+    ),
+    repeating-linear-gradient(
+      162deg,
+      rgba(255,255,255,.14) 0 1px,
+      transparent 1px 12px
+    ) !important;
+}
+
 @media screen and (max-width: 768px) {
     .wy-nav-top {
         display: grid;
