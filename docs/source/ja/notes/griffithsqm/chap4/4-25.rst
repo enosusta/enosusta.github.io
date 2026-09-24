@@ -1,14 +1,14 @@
 Problem 4.25
 ==================
 
-a.  `Y_l^l` は固定した `l` に対する梯子の最上段にある。これより大きい `m` の状態は存在しないので，
+a.  `Y_l^l` は固定した `l` に対するはしごの最上段にある。これより大きい `m` の状態は存在しないので，
 
     .. math::
         L_+Y_l^l=0
 
-    である。
+    となる。
 
-b.  `L_zY_l^l=\hbarl Y_l^l` と `L_z=-i\hbar\partial/\partial\phi` から，
+b.  `L_zY_l^l=\hbar l Y_l^l` と `L_z=-i\hbar\partial/\partial\phi` から，
 
     .. math::
         Y_l^l(\theta,\phi)
@@ -31,7 +31,7 @@ b.  `L_zY_l^l=\hbarl Y_l^l` と `L_z=-i\hbar\partial/\partial\phi` から，
         \dv{\Theta}{\theta}
         -l\cot\theta\,\Theta=0
 
-    を得る。したがって，
+    となる。したがって，
 
     .. math::
         \frac{1}{\Theta}\dv{\Theta}{\theta}
@@ -39,7 +39,7 @@ b.  `L_zY_l^l=\hbarl Y_l^l` と `L_z=-i\hbar\partial/\partial\phi` から，
         \quad\Longrightarrow\quad
         \Theta(\theta)=C_l\sin^l\theta
 
-    であり，
+    となり，
 
     .. math::
         Y_l^l(\theta,\phi)
@@ -48,7 +48,7 @@ b.  `L_zY_l^l=\hbarl Y_l^l` と `L_z=-i\hbar\partial/\partial\phi` から，
 
     となる。
 
-c.  規格化条件は，
+c.  規格化条件より，
 
     .. math::
         \begin{aligned}
@@ -63,7 +63,7 @@ c.  規格化条件は，
             \int_0^\pi\sin^{2l+1}\theta\,\dd\theta
         \end{aligned}
 
-    である。積分値，
+    となるので，積分
 
     .. math::
         \int_0^\pi\sin^{2l+1}\theta\,\dd\theta
@@ -79,7 +79,7 @@ c.  規格化条件は，
         \frac{1}{2^ll!}
         \sqrt{\frac{\left(2l+1\right)!}{4\pi}}
 
-    を得る。規格化だけでは全体の位相は決まらない。通常の Condon--Shortley の位相規約 `C_l=(-1)^l|C_l|` を選べば，
+    となる。通常の Condon-Shortley の規約 `C_l=(-1)^l|C_l|` を選べば，
 
     .. math::
         Y_l^l(\theta,\phi)
@@ -88,4 +88,4 @@ c.  規格化条件は，
         \sqrt{\frac{\left(2l+1\right)!}{4\pi}}
         \sin^l\theta\,e^{il\phi}
 
-    となり，問題 4.7 の結果と一致する。
+    となり，:ref:`notes/griffithsqm/chap4/4-7:Problem 4.7` の結果と一致する。

@@ -8,7 +8,7 @@ a.  `L_i=\sum_{jk}\epsilon_{ijk}r_jp_k` と書く。`\bm{L}` は陽に時間へ�
         =
         \frac{i}{\hbar}\braket{[H,L_i]}
 
-    である。運動エネルギーは `\bm{L}` と可換である。また，
+    となる。運動エネルギーは `\bm{L}` と可換であり，また，
 
     .. math::
         [V,p_k]
@@ -46,7 +46,7 @@ a.  `L_i=\sum_{jk}\epsilon_{ijk}r_jp_k` と書く。`\bm{L}` は陽に時間へ�
             =\braket{N_i}
         \end{aligned}
 
-    である。3成分をまとめれば，
+    となり，3成分をまとめれば，
 
     .. math::
         \dv{}{t}\braket{\bm{L}}
@@ -55,7 +55,7 @@ a.  `L_i=\sum_{jk}\epsilon_{ijk}r_jp_k` と書く。`\bm{L}` は陽に時間へ�
         \bm{N}
         =\bm{r}\times\left(-\bm{\nabla}V\right)
 
-    を得る。
+    となる。
 
 b.  球対称ポテンシャル `V=V(r)` では，
 
@@ -64,7 +64,7 @@ b.  球対称ポテンシャル `V=V(r)` では，
         =\dv{V}{r}\hat{\bm{r}}
         =\frac{1}{r}\dv{V}{r}\bm{r}
 
-    であり，力は `\bm{r}` と平行である。よって，
+    となるので，力は `\bm{r}` と平行である。よって，
 
     .. math::
         \bm{N}
@@ -77,4 +77,4 @@ b.  球対称ポテンシャル `V=V(r)` では，
     .. math::
         \dv{}{t}\braket{\bm{L}}=0
 
-    である。
+    となる。

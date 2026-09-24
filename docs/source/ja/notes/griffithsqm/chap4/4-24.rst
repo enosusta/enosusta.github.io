@@ -1,7 +1,7 @@
 Problem 4.24
 ==================
 
-a.  任意の試験関数 `f(\theta,\phi)` に対して，
+a.  任意のテスト関数 `f(\theta,\phi)` に対して，
 
     .. math::
         L_-f
@@ -12,7 +12,7 @@ a.  任意の試験関数 `f(\theta,\phi)` に対して，
         -i\cot\theta\pdv{f}{\phi}
         \right)
 
-    である。ここへ `L_+` を作用させると，
+    となるので，ここへ `L_+` を作用させると，
 
     .. math::
         \begin{aligned}
@@ -41,7 +41,7 @@ a.  任意の試験関数 `f(\theta,\phi)` に対して，
             \right)
         \end{aligned}
 
-    となる。途中で現れる混合微分項は打ち消し合い，`\csc^2\theta-\cot^2\theta=1` を用いた。`f` は任意だから，
+    となる。途中で `\csc^2\theta-\cot^2\theta=1` を用いた。 `f` は任意だから，
 
     .. math::
         L_+L_-
@@ -54,22 +54,22 @@ a.  任意の試験関数 `f(\theta,\phi)` に対して，
         +i\pdv{}{\phi}
         \right)
 
-    を得る。
+    となる。
 
-b.  `L^2=L_+L_-+L_z^2-\hbar L_z` と `L_z=-i\hbar\partial/\partial\phi` を用いると，
+b.  `L_z=-i\hbar\partial/\partial\phi` より，
 
     .. math::
         L_z^2-\hbar L_z
         =
-        -\hbar^2\pdv[2]{}{\phi}
+        -\hbar^2\pdv{}{\phi^2}
         +i\hbar^2\pdv{}{\phi}
 
-    である。これを \(a) の結果に加えると，一階の `\phi` 微分が打ち消される。さらに，
+    となるので，これを \(a) の結果に加えると，一階の `\phi` 微分が打ち消される。さらに，
 
     .. math::
         1+\cot^2\theta=\csc^2\theta,
         \quad
-        \pdv[2]{}{\theta}
+        \pdv{}{\theta^2}
         +\cot\theta\pdv{}{\theta}
         =
         \frac{1}{\sin\theta}

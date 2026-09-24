@@ -32,7 +32,7 @@ a.  スピン行列から直接計算すると，
         \end{pmatrix}
         =i\hbar S_z
 
-    である。同様に，
+    となる。同様に，
 
     .. math::
         S_yS_z=i\frac{\hbar}{2}S_x,
@@ -43,14 +43,14 @@ a.  スピン行列から直接計算すると，
         \quad
         S_xS_z=-i\frac{\hbar}{2}S_y
 
-    だから，
+    より，
 
     .. math::
         [S_y,S_z]=i\hbar S_x,
         \quad
         [S_z,S_x]=i\hbar S_y
 
-    も成り立つ。
+    となる。
 
 b.  各 Pauli 行列を直接2乗すると，
 
@@ -66,12 +66,12 @@ b.  各 Pauli 行列を直接2乗すると，
         \quad
         \sigma_z\sigma_x=i\sigma_y
 
-    であり，順序を逆にすると符号が反転する。したがって，`j=k` では右辺の Kronecker delta の項だけが残り，`j\ne k` では Levi--Civita 記号の項だけが残る。両者をまとめれば，
+    であり，順序を逆にすると符号が反転する。両者をまとめれば，
 
     .. math::
         \sigma_j\sigma_k
         =
-        \delta_{jk}\mathsf{I}
+        \delta_{jk}
         +i\sum_l\epsilon_{jkl}\sigma_l
 
-    となる。問題文の `\delta_{jk}` の項では，単位行列 `\mathsf{I}` が省略されている。
+    となる。

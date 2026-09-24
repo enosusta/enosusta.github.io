@@ -1,7 +1,7 @@
 Problem 4.21
 ==================
 
-`L_x` と `L_y` は Hermitian 演算子なので，
+`L_x` と `L_y` はエルミート演算子なので，
 
 .. math::
     L_+^\dagger
@@ -11,7 +11,7 @@ Problem 4.21
     \quad
     L_-^\dagger=L_+
 
-である。`f_l^m` は規格化されているから，上昇演算子を作用させた状態のノルムは，
+となる。`f_l^m` は規格化されているから，上昇演算子を作用させた状態のノルムは，
 
 .. math::
     \begin{aligned}
@@ -50,7 +50,7 @@ Problem 4.21
         \left[l\left(l+1\right)-m\left(m-1\right)\right]
     \end{aligned}
 
-を得る。各固有関数の位相を適切に選び，これらの係数を実数かつ非負とすれば，
+となる。よって，
 
 .. math::
     \begin{aligned}
@@ -69,7 +69,7 @@ Problem 4.21
         \hbar\sqrt{\left(l+m\right)\left(l-m+1\right)}
     \end{aligned}
 
-となる。したがって，梯子の両端では，
+とできる。したがって，梯子の両端では，
 
 .. math::
     A_l^l=0,
@@ -80,4 +80,4 @@ Problem 4.21
     \quad
     L_-f_l^{-l}=0
 
-である。
+となる。

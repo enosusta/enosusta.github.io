@@ -39,7 +39,7 @@ Problem 4.26
 .. math::
     L_+Y_2^1=2\hbar Y_2^2
 
-である。したがって，
+となる。したがって，
 
 .. math::
     Y_2^2(\theta,\phi)
@@ -47,4 +47,4 @@ Problem 4.26
     \sqrt{\frac{15}{32\pi}}
     \sin^2\theta\,e^{2i\phi}
 
-を得る。
+となる。
