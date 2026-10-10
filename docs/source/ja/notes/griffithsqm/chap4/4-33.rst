@@ -24,10 +24,10 @@ Problem 4.33
         \end{pmatrix}
     \end{aligned}
 
-である。特性方程式は，
+となる。特性方程式は，
 
 .. math::
-    \det\left(S_r-\lambda\mathsf{I}\right)
+    \det\left(S_r-\lambda\right)
     =
     \lambda^2-\frac{\hbar^2}{4}
     =0
@@ -43,7 +43,7 @@ Problem 4.33
     \left(\cos\theta-1\right)a
     +\sin\theta\,e^{-i\phi}b=0
 
-である。半角公式を用いれば `b/a=e^{i\phi}\tan(\theta/2)` となるので，規格化すると，
+となるので，半角公式を用いれば `b/a=e^{i\phi}\tan(\theta/2)` となり，規格化すると，
 
 .. math::
     \chi_+^{(r)}
@@ -53,7 +53,7 @@ Problem 4.33
         e^{i\phi}\sin\left(\theta/2\right)
     \end{pmatrix}
 
-を得る。同様に，`\lambda_-=-\hbar/2` の規格化固有 spinor は，
+となる。同様に，`\lambda_-=-\hbar/2` の規格化された固有スピノールは，
 
 .. math::
     \chi_-^{(r)}
@@ -73,4 +73,4 @@ Problem 4.33
     \left(\chi_\pm^{(r)}\right)^\dagger
     \chi_\pm^{(r)}=1
 
-である。各固有 spinor には任意の全体位相を掛けてもよい。
+となる。各固有スピノールには任意の全体位相を掛けてもよい。

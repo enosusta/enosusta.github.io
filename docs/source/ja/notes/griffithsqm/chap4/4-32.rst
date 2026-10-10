@@ -16,7 +16,7 @@ a.  `S_y` の固有値を `\lambda` とすると，
         \lambda^2-\frac{\hbar^2}{4}
         =0
 
-    なので，固有値は `\lambda_\pm=\pm\hbar/2` である。対応する規格化固有 spinor は，
+    となるので，固有値は `\lambda_\pm=\pm\hbar/2` である。対応する規格化された固有スピノールは，
 
     .. math::
         \chi_+^{(y)}
@@ -37,7 +37,7 @@ a.  `S_y` の固有値を `\lambda` とすると，
 
     と選べる。
 
-b.  一般状態 `\chi=(a,b)^{\mathsf T}` と各固有 spinor との内積は，
+b.  一般的な状態 `\chi=(a,b)^{\mathsf T}` と各固有スピノールとの内積は，
 
     .. math::
         \begin{aligned}
@@ -50,7 +50,7 @@ b.  一般状態 `\chi=(a,b)^{\mathsf T}` と各固有 spinor との内積は，
             \frac{a+ib}{\sqrt{2}}
         \end{aligned}
 
-    である。したがって，測定結果とその確率は，
+    となるので，測定結果とその確率は，
 
     .. math::
         \begin{array}{c|c}
@@ -59,7 +59,7 @@ b.  一般状態 `\chi=(a,b)^{\mathsf T}` と各固有 spinor との内積は，
             -\hbar/2 & \dfrac{1}{2}|a+ib|^2
         \end{array}
 
-    となる。`a` と `b` が複素数でも，
+    となる。 `a` と `b` が複素数であっても，
 
     .. math::
         \frac{1}{2}|a-ib|^2
@@ -70,9 +70,9 @@ b.  一般状態 `\chi=(a,b)^{\mathsf T}` と各固有 spinor との内積は，
 
     であり，確率の和は1である。
 
-c.  `S_y^2=(\hbar^2/4)\mathsf{I}` なので，どの規格化状態に対しても，
+c.  `S_y^2=(\hbar^2/4)` なので，どの規格化された状態に対しても，
 
     .. math::
         S_y^2\chi=\frac{\hbar^2}{4}\chi
 
-    である。したがって，測定値は `\hbar^2/4` だけであり，その確率は1である。
+    となる。したがって，測定値は `\hbar^2/4` だけであり，その確率は1である。

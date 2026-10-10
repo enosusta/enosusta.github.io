@@ -10,7 +10,7 @@ Problem 4.34
     \ket{1\,(-1)}
     \right\}
 
-の順に取る。`S_z` と梯子演算子の作用は，
+に取る。 `S_z` とはしご演算子の作用は，
 
 .. math::
     S_z\ket{1\,m}
@@ -21,7 +21,7 @@ Problem 4.34
     \hbar\sqrt{2-m\left(m\pm1\right)}
     \ket{1,m\pm1}
 
-である。したがって，
+となるので，
 
 .. math::
     S_z
@@ -51,7 +51,7 @@ Problem 4.34
         0&1&0
     \end{pmatrix}
 
-を得る。`S_x=(S_++S_-)/2` および `S_y=(S_+-S_-)/(2i)` より，
+となる。 `S_x=(S_++S_-)/2` および `S_y=(S_+-S_-)/(2i)` より，
 
 .. math::
     S_x
@@ -72,4 +72,4 @@ Problem 4.34
         0&i&0
     \end{pmatrix}
 
-となる。これらは `[S_x,S_y]=i\hbar S_z` とその巡回置換を満たす。
+となる。
