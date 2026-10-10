@@ -1,0 +1,82 @@
+Problem 4.14
+==================
+
+a.  Expanding the defining expression using Leibniz's rule gives
+
+    .. math::
+        L_q(x)
+        =\sum_{j=0}^q
+        (-1)^j\binom{q}{j}\frac{x^j}{j!}.
+
+    Therefore, the first four polynomials are
+
+    .. math::
+        \begin{aligned}
+            L_0(x)&=1,
+            \\
+            L_1(x)&=1-x,
+            \\
+            L_2(x)&=1-2x+\frac{x^2}{2},
+            \\
+            L_3(x)&=1-3x+\frac{3x^2}{2}-\frac{x^3}{6}.
+        \end{aligned}
+
+b.  For `n=5` and `l=2`,
+
+    .. math::
+        n-l-1=2,
+        \quad
+        2l+1=5,
+
+    so
+
+    .. math::
+        v(\rho)=L_2^5(2\rho).
+
+    Using the definition of the Laguerre polynomials and
+
+    .. math::
+        L_q^p(x)=(-1)^p\left(\dv{}{x}\right)^pL_{p+q}(x),
+
+    we find
+
+    .. math::
+        L_2^5(x)
+        =21-7x+\frac{x^2}{2}.
+
+    Therefore, apart from the normalization constant,
+
+    .. math::
+        v(\rho)=21-14\rho+2\rho^2.
+
+c.  Substituting `n=5` and `l=2` into the recurrence relation gives
+
+    .. math::
+        c_{j+1}
+        =
+        \frac{2(j-2)}
+        {(j+1)(j+6)}c_j.
+
+    It follows that
+
+    .. math::
+        c_1=-\frac{2}{3}c_0,
+        \quad
+        c_2=\frac{2}{21}c_0,
+        \quad
+        c_3=0.
+
+    Therefore,
+
+    .. math::
+        v(\rho)
+        =c_0\left(
+            1-\frac{2}{3}\rho+\frac{2}{21}\rho^2
+        \right).
+
+    Choosing `c_0=21` gives
+
+    .. math::
+        v(\rho)=21-14\rho+2\rho^2,
+
+    in agreement with the result in part (b).

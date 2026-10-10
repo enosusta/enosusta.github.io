@@ -1,0 +1,77 @@
+Problem 4.4
+==================
+
+Rodrigues' formula gives
+
+.. math::
+    P_0(x)=1,
+    \quad
+    P_2(x)=\frac{1}{2}(3x^2-1),
+
+so the associated Legendre functions are
+
+.. math::
+    \begin{aligned}
+        P_0^0(x)&=1,
+        \\
+        P_2^1(x)
+        &=-(1-x^2)^{1/2}\dv{}{x}P_2(x)
+        \\
+        &=-3x\sqrt{1-x^2}.
+    \end{aligned}
+
+Substituting these into the formula for the spherical harmonics gives
+
+.. math::
+    Y_0^0(\theta,\phi)=\frac{1}{\sqrt{4\pi}}
+
+and
+
+.. math::
+    \begin{aligned}
+        Y_2^1(\theta,\phi)
+        &=\sqrt{
+            \frac{5}{4\pi}\frac{(2-1)!}{(2+1)!}
+        }e^{i\phi}P_2^1(\cos\theta)
+        \\
+        &=-\sqrt{\frac{15}{8\pi}}
+        \sin\theta\cos\theta\,e^{i\phi}.
+    \end{aligned}
+
+First, for `Y_0^0`,
+
+.. math::
+    \int_0^{2\pi}\int_0^\pi
+    |Y_0^0|^2\sin\theta\,\dd\theta\,\dd\phi
+    =\frac{1}{4\pi}(2\pi)(2)=1.
+
+Also, using
+
+.. math::
+    \int_0^\pi\sin^3\theta\cos^2\theta\,\dd\theta
+    =\frac{4}{15},
+
+we find
+
+.. math::
+    \begin{aligned}
+        \int_0^{2\pi}\int_0^\pi
+        |Y_2^1|^2\sin\theta\,\dd\theta\,\dd\phi
+        &=\frac{15}{8\pi}(2\pi)
+        \int_0^\pi\sin^3\theta\cos^2\theta\,\dd\theta
+        \\
+        &=1.
+    \end{aligned}
+
+Thus, both functions are normalized. Finally, since the inner product contains a single factor of `e^{i\phi}`,
+
+.. math::
+    \begin{aligned}
+        \int_0^{2\pi}\int_0^\pi
+        (Y_0^0)^*Y_2^1\sin\theta\,\dd\theta\,\dd\phi
+        &\propto\int_0^{2\pi}e^{i\phi}\,\dd\phi
+        \\
+        &=0.
+    \end{aligned}
+
+Therefore, `Y_0^0` and `Y_2^1` are orthogonal.

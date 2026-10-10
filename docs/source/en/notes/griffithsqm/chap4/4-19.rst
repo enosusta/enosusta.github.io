@@ -1,0 +1,58 @@
+Problem 4.19
+==================
+
+For a hydrogen-like atom, the Coulomb potential is
+
+.. math::
+    V(r)
+    =-\frac{Ze^2}{4\pi\epsilon_0r}.
+
+Thus, we need only replace `e^2` by `Ze^2` in the results for hydrogen. The Bohr energies are
+
+.. math::
+    \begin{aligned}
+        E_n(Z)
+        &=
+        -\frac{m_e}{2\hbar^2}
+        \left(\frac{Ze^2}{4\pi\epsilon_0}\right)^2
+        \frac{1}{n^2}
+        \\
+        &=Z^2E_n(1)
+        \\
+        &=-\frac{13.6Z^2}{n^2}\ \mathrm{eV}.
+    \end{aligned}
+
+In particular, the ground-state energy is
+
+.. math::
+    E_1(Z)=-13.6Z^2\ \mathrm{eV},
+
+and the magnitude of the binding energy required to ionize the electron from the ground state is `13.6Z^2\ \mathrm{eV}`. The length corresponding to the Bohr radius is
+
+.. math::
+    a(Z)
+    =\frac{4\pi\epsilon_0\hbar^2}{m_eZe^2}
+    =\frac{a}{Z}.
+
+Also, since the wavenumbers of the spectral lines are proportional to the energy differences, the Rydberg constant is
+
+.. math::
+    \mathcal{R}(Z)=Z^2\mathcal{R}.
+
+For the Lyman series, `n_f=1`, so the wavelengths scale as
+
+.. math::
+    \lambda_Z=\frac{\lambda_{\mathrm{H}}}{Z^2}.
+
+The Lyman series of hydrogen extends from the series limit at `91.2\ \mathrm{nm}` to the Lyman `\alpha` line at `121.6\ \mathrm{nm}`. Therefore,
+
+.. math::
+    \begin{array}{c|c|c}
+        Z&\mathrm{wavelength\ range}&\mathrm{region}
+        \\\hline
+        2&22.8\text{-}30.4\ \mathrm{nm}
+        &\mathrm{extreme\ ultraviolet}
+        \\
+        3&10.1\text{-}13.5\ \mathrm{nm}
+        &\mathrm{extreme\ ultraviolet}
+    \end{array}.

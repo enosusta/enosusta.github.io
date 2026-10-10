@@ -1,0 +1,76 @@
+Problem 4.23
+==================
+
+a.  Write `L_i=\sum_{jk}\epsilon_{ijk}r_jp_k`. Since `\bm{L}` has no explicit time dependence, the generalized Ehrenfest theorem gives
+
+    .. math::
+        \dv{}{t}\braket{L_i}
+        =
+        \frac{i}{\hbar}\braket{[H,L_i]}.
+
+    The kinetic energy commutes with `\bm{L}`, and
+
+    .. math::
+        [V,p_k]
+        =i\hbar\pdv{V}{r_k}.
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            [V,L_i]
+            &=
+            \sum_{jk}\epsilon_{ijk}
+            [V,r_jp_k]
+            \\
+            &=
+            i\hbar
+            \sum_{jk}\epsilon_{ijk}
+            r_j\pdv{V}{r_k}.
+        \end{aligned}
+
+    It follows that
+
+    .. math::
+        \begin{aligned}
+            \dv{}{t}\braket{L_i}
+            &=
+            -\left\langle
+            \sum_{jk}\epsilon_{ijk}
+            r_j\pdv{V}{r_k}
+            \right\rangle
+            \\
+            &=
+            \braket{\left[\bm{r}\times
+            \left(-\bm{\nabla}V\right)\right]_i}
+            =\braket{N_i}.
+        \end{aligned}
+
+    Combining the three components gives
+
+    .. math::
+        \dv{}{t}\braket{\bm{L}}
+        =\braket{\bm{N}},
+        \quad
+        \bm{N}
+        =\bm{r}\times\left(-\bm{\nabla}V\right).
+
+b.  For a spherically symmetric potential `V=V(r)`,
+
+    .. math::
+        \bm{\nabla}V
+        =\dv{V}{r}\hat{\bm{r}}
+        =\frac{1}{r}\dv{V}{r}\bm{r},
+
+    so the force is parallel to `\bm{r}`. Therefore,
+
+    .. math::
+        \bm{N}
+        =-\frac{1}{r}\dv{V}{r}
+        \left(\bm{r}\times\bm{r}\right)
+        =0,
+
+    and the result of part (a) gives
+
+    .. math::
+        \dv{}{t}\braket{\bm{L}}=0.

@@ -1,0 +1,94 @@
+Problem 4.24
+==================
+
+a.  For an arbitrary test function `f(\theta,\phi)`,
+
+    .. math::
+        L_-f
+        =
+        -\hbar e^{-i\phi}
+        \left(
+        \pdv{f}{\theta}
+        -i\cot\theta\pdv{f}{\phi}
+        \right).
+
+    Applying `L_+` to this expression gives
+
+    .. math::
+        \begin{aligned}
+            L_+L_-f
+            ={}&
+            -\hbar^2e^{i\phi}
+            \left(
+            \pdv{}{\theta}
+            +i\cot\theta\pdv{}{\phi}
+            \right)
+            \left[
+            e^{-i\phi}
+            \left(
+            \pdv{f}{\theta}
+            -i\cot\theta\pdv{f}{\phi}
+            \right)
+            \right]
+            \\
+            ={}&
+            -\hbar^2
+            \left(
+            \pdv{^2f}{\theta^2}
+            +\cot\theta\pdv{f}{\theta}
+            +\cot^2\theta\pdv{^2f}{\phi^2}
+            +i\pdv{f}{\phi}
+            \right).
+        \end{aligned}
+
+    Here, we used `\csc^2\theta-\cot^2\theta=1`. Since `f` is arbitrary,
+
+    .. math::
+        L_+L_-
+        =
+        -\hbar^2
+        \left(
+        \pdv{^2}{\theta^2}
+        +\cot\theta\pdv{}{\theta}
+        +\cot^2\theta\pdv{^2}{\phi^2}
+        +i\pdv{}{\phi}
+        \right).
+
+b.  Since `L_z=-i\hbar\partial/\partial\phi`,
+
+    .. math::
+        L_z^2-\hbar L_z
+        =
+        -\hbar^2\pdv{}{\phi^2}
+        +i\hbar^2\pdv{}{\phi}.
+
+    Adding this to the result of part (a) cancels the first derivative with respect to `\phi`. Furthermore,
+
+    .. math::
+        1+\cot^2\theta=\csc^2\theta,
+        \quad
+        \pdv{}{\theta^2}
+        +\cot\theta\pdv{}{\theta}
+        =
+        \frac{1}{\sin\theta}
+        \pdv{}{\theta}
+        \left(
+        \sin\theta\pdv{}{\theta}
+        \right),
+
+    so
+
+    .. math::
+        L^2
+        =
+        -\hbar^2
+        \left[
+        \frac{1}{\sin\theta}
+        \pdv{}{\theta}
+        \left(
+        \sin\theta\pdv{}{\theta}
+        \right)
+        +
+        \frac{1}{\sin^2\theta}
+        \pdv{^2}{\phi^2}
+        \right].

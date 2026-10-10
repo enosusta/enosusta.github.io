@@ -1,0 +1,46 @@
+Problem 4.66
+==================
+
+By choosing the overall phase, we can take `a` to be real and nonnegative. Write `b=u+iv`; the normalization condition is then
+
+.. math::
+    a^2+u^2+v^2=1.
+
+The expectation values of the spin components are
+
+.. math::
+    \braket{S_x}=\hbar au,
+    \quad
+    \braket{S_y}=\hbar av,
+    \quad
+    \braket{S_z}
+    =
+    \frac{\hbar}{2}
+    \left(a^2-u^2-v^2\right).
+
+Moreover, since `S_x^2=S_y^2=\hbar^2/4`,
+
+.. math::
+    \sigma_{S_x}^2
+    =
+    \hbar^2\left(\frac{1}{4}-a^2u^2\right),
+    \quad
+    \sigma_{S_y}^2
+    =
+    \hbar^2\left(\frac{1}{4}-a^2v^2\right).
+
+Squaring and simplifying the condition for equality in the uncertainty relation gives
+
+.. math::
+    \begin{aligned}
+        &\left(\frac{1}{4}-a^2u^2\right)
+        \left(\frac{1}{4}-a^2v^2\right)
+        =
+        \frac{1}{16}
+        \left(a^2-u^2-v^2\right)^2
+        \\
+        &\quad\iff
+        a^4u^2v^2=0.
+    \end{aligned}
+
+If `a\neq0`, either `u=0` or `v=0` is required. Thus, the uncertainty is minimized if and only if `b` is purely imaginary or purely real. The case `a=0` is included in the same conclusion because the overall phase can then be chosen to make `b` real.

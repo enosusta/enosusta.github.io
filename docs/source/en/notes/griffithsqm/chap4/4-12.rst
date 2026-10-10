@@ -1,0 +1,67 @@
+Problem 4.12
+==================
+
+For `n=3`,
+
+.. math::
+    \rho=\frac{r}{3a},
+    \quad
+    R_{3l}(r)
+    =\frac{1}{r}\rho^{l+1}e^{-\rho}v(\rho),
+
+and the recurrence relation for the coefficients is
+
+.. math::
+    c_{j+1}
+    =
+    \frac{2(j+l-2)}
+    {(j+1)(j+2l+2)}c_j.
+
+For `l=0`,
+
+.. math::
+    c_1=-2c_0,
+    \quad
+    c_2=\frac{2}{3}c_0,
+    \quad
+    c_3=0,
+
+so
+
+.. math::
+    v(\rho)=c_0\left(1-2\rho+\frac{2}{3}\rho^2\right).
+
+Therefore, writing the overall constant as `C_{30}`,
+
+.. math::
+    R_{30}(r)
+    =
+    C_{30}
+    \left[
+        1-\frac{2r}{3a}
+        +\frac{2}{27}\left(\frac{r}{a}\right)^2
+    \right]e^{-r/(3a)}.
+
+For `l=1`,
+
+.. math::
+    c_1=-\frac{1}{2}c_0,
+    \quad
+    c_2=0,
+
+so
+
+.. math::
+    R_{31}(r)
+    =
+    C_{31}
+    \left(\frac{r}{a}\right)
+    \left(1-\frac{r}{6a}\right)e^{-r/(3a)}.
+
+For `l=2`, the series terminates after the first term, so `v(\rho)=c_0` and
+
+.. math::
+    R_{32}(r)
+    =
+    C_{32}
+    \left(\frac{r}{a}\right)^2e^{-r/(3a)}.

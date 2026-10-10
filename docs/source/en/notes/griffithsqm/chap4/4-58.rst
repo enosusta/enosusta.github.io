@@ -1,0 +1,151 @@
+Problem 4.58
+==================
+
+a.  The normalization condition gives
+
+    .. math::
+        1
+        =
+        |A|^2
+        \left(
+        |1-2i|^2+|2|^2
+        \right)
+        =
+        9|A|^2.
+
+    Choosing the overall phase to be zero, we obtain
+
+    .. math::
+        A=\frac{1}{3},
+        \quad
+        \chi=
+        \frac{1}{3}
+        \begin{pmatrix}
+            1-2i\\
+            2
+        \end{pmatrix}.
+
+b.  The eigenvalues of `S_z` are `\pm\hbar/2`. The probabilities are the squared magnitudes of the corresponding spinor components, so
+
+    .. math::
+        P_z^+
+        =
+        \frac{5}{9},
+        \quad
+        P_z^-
+        =
+        \frac{4}{9}.
+
+    Therefore,
+
+    .. math::
+        \braket{S_z}
+        =
+        \frac{\hbar}{2}
+        \left(
+        P_z^+-P_z^-
+        \right)
+        =
+        \frac{\hbar}{18}.
+
+c.  The normalized eigenspinors of `S_x` are
+
+    .. math::
+        \chi_\pm^{(x)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            \pm1
+        \end{pmatrix}.
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            P_x^+
+            &=
+            \frac{1}{2}
+            \left|
+            \frac{1-2i}{3}+\frac{2}{3}
+            \right|^2
+            =
+            \frac{13}{18},
+            \\
+            P_x^-
+            &=
+            \frac{1}{2}
+            \left|
+            \frac{1-2i}{3}-\frac{2}{3}
+            \right|^2
+            =
+            \frac{5}{18}.
+        \end{aligned}
+
+    The possible measurement results are `\pm\hbar/2`, and
+
+    .. math::
+        \braket{S_x}
+        =
+        \frac{\hbar}{2}
+        \left(
+        P_x^+-P_x^-
+        \right)
+        =
+        \frac{2\hbar}{9}.
+
+d.  The normalized eigenspinors of `S_y` are
+
+    .. math::
+        \chi_+^{(y)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            i
+        \end{pmatrix},
+        \quad
+        \chi_-^{(y)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            -i
+        \end{pmatrix}.
+
+    Hence,
+
+    .. math::
+        \begin{aligned}
+            P_y^+
+            &=
+            \frac{1}{2}
+            \left|
+            \frac{1-2i}{3}
+            -i\frac{2}{3}
+            \right|^2
+            =
+            \frac{17}{18},
+            \\
+            P_y^-
+            &=
+            \frac{1}{2}
+            \left|
+            \frac{1-2i}{3}
+            +i\frac{2}{3}
+            \right|^2
+            =
+            \frac{1}{18}.
+        \end{aligned}
+
+    The possible measurement results are `\pm\hbar/2`, and
+
+    .. math::
+        \braket{S_y}
+        =
+        \frac{\hbar}{2}
+        \left(
+        P_y^+-P_y^-
+        \right)
+        =
+        \frac{4\hbar}{9}.

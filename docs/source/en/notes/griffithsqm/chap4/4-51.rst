@@ -1,0 +1,119 @@
+Problem 4.51
+==================
+
+Consider a two-dimensional circular well of depth `V_0>0` and radius `a`, given by
+
+.. math::
+    V(r)=
+    \begin{cases}
+        -V_0,&r<a,\\
+        0,&r>a.
+    \end{cases}
+
+For a bound state, `-V_0<E<0`. The lowest-energy state has azimuthal quantum number `l=0`, so setting `\psi(r,\phi)=R(r)`, the radial equations inside and outside the well are
+
+.. math::
+    \begin{aligned}
+        R''+\frac{1}{r}R'+k^2R&=0
+        &&(r<a),
+        \\
+        R''+\frac{1}{r}R'-\kappa^2R&=0
+        &&(r>a),
+    \end{aligned}
+
+where
+
+.. math::
+    k\coloneqq
+    \frac{\sqrt{2m\left(E+V_0\right)}}{\hbar},
+    \quad
+    \kappa\coloneqq
+    \frac{\sqrt{-2mE}}{\hbar}.
+
+The solution that is finite at the origin and decays at infinity is
+
+.. math::
+    R(r)=
+    \begin{cases}
+        A J_0(kr),&r<a,\\
+        B K_0(\kappa r),&r>a.
+    \end{cases}
+
+Continuity of `R` and `R'` at `r=a`, together with `J_0'=-J_1` and `K_0'=-K_1`, gives
+
+.. math::
+    \frac{kJ_1(ka)}{J_0(ka)}
+    =
+    \frac{\kappa K_1(\kappa a)}{K_0(\kappa a)}.
+
+Introducing the dimensionless quantities
+
+.. math::
+    x\coloneqq ka,
+    \quad
+    y\coloneqq\kappa a,
+    \quad
+    z_0\coloneqq
+    \frac{a\sqrt{2mV_0}}{\hbar},
+
+we obtain
+
+.. math::
+    x^2+y^2=z_0^2,
+    \quad
+    \frac{xJ_1(x)}{J_0(x)}
+    =
+    \frac{yK_1(y)}{K_0(y)}.
+
+As an example, the two sides are plotted for `z_0=1.5`.
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from scipy.optimize import brentq
+    from scipy.special import jv, kv
+
+    z0 = 1.5
+
+    def left_side(x):
+        return x * jv(1, x) / jv(0, x)
+
+    def right_side(x):
+        y = np.sqrt(z0**2 - x**2)
+        return y * kv(1, y) / kv(0, y)
+
+    root = brentq(
+        lambda x: left_side(x) - right_side(x),
+        1.0e-8,
+        z0 - 1.0e-8,
+    )
+
+    x = np.linspace(1.0e-4, z0 - 1.0e-4, 1000)
+    plt.plot(x, left_side(x), label=r"$xJ_1(x)/J_0(x)$")
+    plt.plot(
+        x,
+        right_side(x),
+        label=r"$yK_1(y)/K_0(y)$",
+    )
+    plt.scatter(
+        [root],
+        [left_side(root)],
+        color="tab:red",
+        zorder=3,
+        label="Bound state",
+    )
+    plt.xlabel(r"$x=ka$")
+    plt.ylabel("Matching function")
+    plt.grid(alpha=0.25)
+    plt.legend()
+    plt.show()
+
+An intersection exists for every `z_0>0`. Let `j_{0,1}` denote the first positive zero of `J_0`. As `x\to0`, the left-hand side approaches zero while the right-hand side is positive, so the left-hand side minus the right-hand side is negative. Now let `x` approach `\min\left(z_0,j_{0,1}\right)`. If `z_0<j_{0,1}`, then `y\to0` and
+
+.. math::
+    \frac{yK_1(y)}{K_0(y)}\longrightarrow0,
+
+while the left-hand side is positive. If `z_0\geq j_{0,1}`, the left-hand side diverges to positive infinity because `J_0(x)\to0^+`. Thus, by the intermediate value theorem, the two sides must intersect. At this intersection, `\kappa>0`, so `E=-\hbar^2\kappa^2/(2m)<0`. Therefore, at least one bound state exists no matter how shallow or narrow the well is.

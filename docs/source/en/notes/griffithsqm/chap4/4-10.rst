@@ -1,0 +1,112 @@
+Problem 4.10
+==================
+
+a.  Inside the well, `V(r)=0`, and the radial equation for `l=1` is
+
+    .. math::
+        \dv{^2u}{r^2}
+        =\left(\frac{2}{r^2}-k^2\right)u.
+
+    Let
+
+    .. math::
+        u(r)=Arj_1(kr).
+
+    Introducing `x=kr` and
+
+    .. math::
+        f(x)\coloneqq xj_1(x)
+        =\frac{\sin x}{x}-\cos x,
+
+    we can write `u=(A/k)f(x)`. Direct differentiation gives
+
+    .. math::
+        \begin{aligned}
+            f''(x)
+            &=\cos x-\frac{\sin x}{x}
+            -\frac{2\cos x}{x^2}
+            +\frac{2\sin x}{x^3}
+            \\
+            &=
+            \left(\frac{2}{x^2}-1\right)f(x),
+        \end{aligned}
+
+    and hence
+
+    .. math::
+        \begin{aligned}
+            \dv{^2u}{r^2}
+            &=Akf''(x)
+            \\
+            &=Ak\left(\frac{2}{x^2}-1\right)f(x)
+            \\
+            &=\left(\frac{2}{r^2}-k^2\right)u(r).
+        \end{aligned}
+
+    Thus, it indeed satisfies the radial equation.
+
+b.  The boundary condition is `R(a)=Aj_1(ka)=0`. Setting `x=ka>0`, we have
+
+    .. math::
+        j_1(x)
+        =\frac{\sin x-x\cos x}{x^2}=0
+        \quad\iff\quad
+        x=\tan x.
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        roots = np.array([
+            4.493409,
+            7.725252,
+            10.904122,
+            14.066194,
+            17.220755,
+        ])
+
+        x = np.linspace(1.0e-3, 18.0, 12000)
+        tangent = np.tan(x)
+        tangent[np.abs(np.cos(x)) < 0.04] = np.nan
+
+        plt.plot(x, x, color="black", label=r"$y=x$")
+        plt.plot(x, tangent, label=r"$y=\tan x$")
+        plt.scatter(
+            roots,
+            roots,
+            color="tab:red",
+            zorder=3,
+            label="Allowed roots",
+        )
+        plt.xlim(0.0, 18.0)
+        plt.ylim(0.0, 18.0)
+        plt.xlabel(r"$x=ka$")
+        plt.ylabel(r"$y$")
+        plt.grid(alpha=0.25)
+        plt.legend()
+        plt.show()
+
+    Denote the nonzero positive intersections in increasing order by `\beta_{N1}`. The allowed energies can then be written as
+
+    .. math::
+        E_{N1}
+        =\frac{\hbar^2}{2ma^2}\beta_{N1}^2,
+        \quad
+        N=1,2,3,\ldots.
+
+    For large `N`, each intersection lies just to the left of an asymptote of `\tan x`, so
+
+    .. math::
+        \beta_{N1}
+        \approx\left(N+\frac{1}{2}\right)\pi.
+
+    Therefore,
+
+    .. math::
+        E_{N1}
+        \approx
+        \frac{\hbar^2\pi^2}{2ma^2}
+        \left(N+\frac{1}{2}\right)^2.

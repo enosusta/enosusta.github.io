@@ -1,0 +1,29 @@
+Problem 4.16
+==================
+
+In the ground state,
+
+.. math::
+    |\psi_{100}(r,\theta,\phi)|^2
+    =\frac{1}{\pi a^3}e^{-2r/a}.
+
+The probability of finding the electron in a spherical shell between `r` and `r+\dd r` is
+
+.. math::
+    P(r)\,\dd r
+    =4\pi r^2|\psi_{100}|^2\,\dd r
+    =\frac{4r^2}{a^3}e^{-2r/a}\,\dd r.
+
+Differentiating the radial probability density gives
+
+.. math::
+    \dv{P}{r}
+    =\frac{8r}{a^3}e^{-2r/a}
+    \left(1-\frac{r}{a}\right).
+
+The stationary points are `r=0` and `r=a`. Since `P(0)=0` and `P(a)>0`, the maximum occurs at
+
+.. math::
+    r=a.
+
+Therefore, the most probable radius is the Bohr radius.

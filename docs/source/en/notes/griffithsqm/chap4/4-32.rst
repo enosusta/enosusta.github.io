@@ -1,0 +1,76 @@
+Problem 4.32
+==================
+
+a.  Let `\lambda` be an eigenvalue of `S_y`. Since
+
+    .. math::
+        \det\left(
+        \frac{\hbar}{2}
+        \begin{pmatrix}
+            0&-i\\
+            i&0
+        \end{pmatrix}
+        -\lambda\mathsf{I}
+        \right)
+        =
+        \lambda^2-\frac{\hbar^2}{4}
+        =0,
+
+    the eigenvalues are `\lambda_\pm=\pm\hbar/2`. The corresponding normalized eigenspinors may be chosen as
+
+    .. math::
+        \chi_+^{(y)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            i
+        \end{pmatrix},
+        \quad
+        \chi_-^{(y)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            -i
+        \end{pmatrix}.
+
+b.  The inner products of a general state `\chi=(a,b)^{\mathsf T}` with the two eigenspinors are
+
+    .. math::
+        \begin{aligned}
+            \left(\chi_+^{(y)}\right)^\dagger\chi
+            &=
+            \frac{a-ib}{\sqrt{2}},
+            \\
+            \left(\chi_-^{(y)}\right)^\dagger\chi
+            &=
+            \frac{a+ib}{\sqrt{2}}.
+        \end{aligned}
+
+    Therefore, the possible measurement results and their probabilities are
+
+    .. math::
+        \begin{array}{c|c}
+            S_y & P\\ \hline
+            +\hbar/2 & \dfrac{1}{2}|a-ib|^2\\[2mm]
+            -\hbar/2 & \dfrac{1}{2}|a+ib|^2
+        \end{array}.
+
+    Even when `a` and `b` are complex,
+
+    .. math::
+        \frac{1}{2}|a-ib|^2
+        +\frac{1}{2}|a+ib|^2
+        =
+        |a|^2+|b|^2
+        =1,
+
+    so the probabilities sum to one.
+
+c.  Since `S_y^2=\hbar^2/4`, for every normalized state,
+
+    .. math::
+        S_y^2\chi=\frac{\hbar^2}{4}\chi.
+
+    Thus, the only possible measurement result is `\hbar^2/4`, and its probability is one.

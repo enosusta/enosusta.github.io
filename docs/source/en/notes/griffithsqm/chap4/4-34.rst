@@ -1,0 +1,73 @@
+Problem 4.34
+==================
+
+Choose the basis
+
+.. math::
+    \left\{
+    \ket{1\,1},
+    \ket{1\,0},
+    \ket{1\,(-1)}
+    \right\}.
+
+The actions of `S_z` and the ladder operators are
+
+.. math::
+    S_z\ket{1\,m}
+    =m\hbar\ket{1\,m},
+    \quad
+    S_\pm\ket{1\,m}
+    =
+    \hbar\sqrt{2-m\left(m\pm1\right)}
+    \ket{1,m\pm1},
+
+so
+
+.. math::
+    S_z
+    =
+    \hbar
+    \begin{pmatrix}
+        1&0&0\\
+        0&0&0\\
+        0&0&-1
+    \end{pmatrix},
+    \quad
+    S_+
+    =
+    \sqrt{2}\hbar
+    \begin{pmatrix}
+        0&1&0\\
+        0&0&1\\
+        0&0&0
+    \end{pmatrix},
+    \quad
+    S_-
+    =
+    \sqrt{2}\hbar
+    \begin{pmatrix}
+        0&0&0\\
+        1&0&0\\
+        0&1&0
+    \end{pmatrix}.
+
+Using `S_x=(S_++S_-)/2` and `S_y=(S_+-S_-)/(2i)` gives
+
+.. math::
+    S_x
+    =
+    \frac{\hbar}{\sqrt{2}}
+    \begin{pmatrix}
+        0&1&0\\
+        1&0&1\\
+        0&1&0
+    \end{pmatrix},
+    \quad
+    S_y
+    =
+    \frac{\hbar}{\sqrt{2}}
+    \begin{pmatrix}
+        0&-i&0\\
+        i&0&-i\\
+        0&i&0
+    \end{pmatrix}.

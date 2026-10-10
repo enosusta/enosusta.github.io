@@ -1,0 +1,57 @@
+Problem 4.17
+==================
+
+The Hamiltonian is
+
+.. math::
+    \hat{H}=\frac{\bm{p}^{\,2}}{2m_e}+V(r).
+
+Since `V(r)` commutes with `z`,
+
+.. math::
+    [\hat{H},z]
+    =\frac{1}{2m_e}[p_z^2,z]
+    =-\frac{i\hbar}{m_e}p_z,
+
+and hence
+
+.. math::
+    [z,[\hat{H},z]]
+    =-\frac{i\hbar}{m_e}[z,p_z]
+    =\frac{\hbar^2}{m_e}.
+
+On the other hand,
+
+.. math::
+    [z,[\hat{H},z]]
+    =2z\hat{H}z-\hat{H}z^2-z^2\hat{H}.
+
+Writing the ground state as `\ket{100}`, we have
+
+.. math::
+    \hat{H}\ket{100}=E_1\ket{100}.
+
+Taking the expectation value in the ground state therefore gives
+
+.. math::
+    \frac{\hbar^2}{m_e}
+    =2\braket{z\hat{H}z}
+    -2E_1\braket{z^2}.
+
+Using the result `\braket{z^2}=a^2` from :ref:`notes/griffithsqm/chap4/4-15:Problem 4.15` and
+
+.. math::
+    E_1=-\frac{\hbar^2}{2m_ea^2},
+
+we find
+
+.. math::
+    \begin{aligned}
+        \braket{z\hat{H}z}
+        &=E_1a^2+\frac{\hbar^2}{2m_e}
+        \\
+        &=-\frac{\hbar^2}{2m_e}
+        +\frac{\hbar^2}{2m_e}
+        \\
+        &=0.
+    \end{aligned}

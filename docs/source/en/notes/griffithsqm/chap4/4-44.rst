@@ -1,0 +1,82 @@
+Problem 4.44
+==================
+
+Define the phase factor by
+
+.. math::
+    U\coloneqq e^{iq\Lambda/\hbar},
+    \quad
+    \Psi'=U\Psi.
+
+Let the covariant momentum after the gauge transformation be
+
+.. math::
+    \bm{D}'
+    \coloneqq
+    -i\hbar\bm{\nabla}-q\bm{A}'.
+
+Since `\bm{A}'=\bm{A}+\bm{\nabla}\Lambda`,
+
+.. math::
+    \begin{aligned}
+        \bm{D}'\Psi'
+        &=
+        \left[
+        -i\hbar\bm{\nabla}
+        -q\left(\bm{A}+\bm{\nabla}\Lambda\right)
+        \right]U\Psi
+        \\
+        &=
+        U\left(
+        -i\hbar\bm{\nabla}-q\bm{A}
+        \right)\Psi.
+    \end{aligned}
+
+Applying this relation once more gives
+
+.. math::
+    \left(\bm{D}'\right)^2\Psi'
+    =
+    U
+    \left(
+    -i\hbar\bm{\nabla}-q\bm{A}
+    \right)^2\Psi.
+
+On the other hand, the time derivative is
+
+.. math::
+    i\hbar\pdv{\Psi'}{t}
+    =
+    U\left(
+    i\hbar\pdv{\Psi}{t}
+    -q\pdv{\Lambda}{t}\Psi
+    \right).
+
+Acting on `\Psi'` with the transformed Hamiltonian and using `\varphi'=\varphi-\partial\Lambda/\partial t` gives
+
+.. math::
+    \begin{aligned}
+        \left[
+        \frac{\left(\bm{D}'\right)^2}{2m}
+        +q\varphi'
+        \right]\Psi'
+        &=
+        U\left[
+        \frac{
+        \left(-i\hbar\bm{\nabla}-q\bm{A}\right)^2
+        }{2m}
+        +q\varphi
+        -q\pdv{\Lambda}{t}
+        \right]\Psi
+        \\
+        &=
+        U\left(
+        i\hbar\pdv{\Psi}{t}
+        -q\pdv{\Lambda}{t}\Psi
+        \right)
+        \\
+        &=
+        i\hbar\pdv{\Psi'}{t}.
+    \end{aligned}
+
+Thus, `\Psi'` satisfies the Schrödinger equation for `\varphi'` and `\bm{A}'`. Also, since `|U|=1`, the probability density remains unchanged: `|\Psi'|^2=|\Psi|^2`.

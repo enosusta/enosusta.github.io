@@ -1,0 +1,125 @@
+Problem 4.36
+==================
+
+a.  Since the magnetic field points only in the `z` direction,
+
+    .. math::
+        \begin{aligned}
+            H(t)
+            &=
+            -\gamma\bm{B}(t)\cdot\bm{S}
+            \\
+            &=
+            -\gamma B_0\cos\left(\omega t\right)S_z
+            \\
+            &=
+            -\frac{\gamma B_0\hbar}{2}
+            \cos\left(\omega t\right)
+            \begin{pmatrix}
+                1&0\\
+                0&-1
+            \end{pmatrix}.
+        \end{aligned}
+
+b.  Writing `\chi(t)=(a(t),b(t))^{\mathsf T}`, the time-dependent Schrödinger equation becomes
+
+    .. math::
+        \begin{aligned}
+            i\hbar\dv{a}{t}
+            &=
+            -\frac{\gamma B_0\hbar}{2}
+            \cos\left(\omega t\right)a,
+            \\
+            i\hbar\dv{b}{t}
+            &=
+            \frac{\gamma B_0\hbar}{2}
+            \cos\left(\omega t\right)b.
+        \end{aligned}
+
+    Integrating gives
+
+    .. math::
+        a(t)=a(0)e^{i\beta(t)},
+        \quad
+        b(t)=b(0)e^{-i\beta(t)},
+        \quad
+        \beta(t)
+        \coloneqq
+        \frac{\gamma B_0}{2\omega}
+        \sin\left(\omega t\right).
+
+    Since the initial state is
+
+    .. math::
+        \chi(0)
+        =
+        \chi_+^{(x)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            1
+        \end{pmatrix},
+
+    we obtain
+
+    .. math::
+        \chi(t)
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            e^{i\beta(t)}\\
+            e^{-i\beta(t)}
+        \end{pmatrix}.
+
+c.  The negative eigenspinor of `S_x` is
+
+    .. math::
+        \chi_-^{(x)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            -1
+        \end{pmatrix},
+
+    so its probability amplitude is
+
+    .. math::
+        \left(\chi_-^{(x)}\right)^\dagger\chi(t)
+        =
+        \frac{1}{2}
+        \left(e^{i\beta(t)}-e^{-i\beta(t)}\right)
+        =
+        i\sin\beta(t).
+
+    Therefore,
+
+    .. math::
+        P_x^-(t)
+        =
+        \sin^2
+        \left[
+        \frac{\gamma B_0}{2\omega}
+        \sin\left(\omega t\right)
+        \right].
+
+d.  For complete spin reversal, it is sufficient that `P_x^-=1`, or equivalently `|\beta|=\pi/2`, occur at least once. Since `|\sin(\omega t)|\leq1`, we require
+
+    .. math::
+        \frac{|\gamma|B_0}{2\omega}
+        \geq\frac{\pi}{2}.
+
+    Thus, the minimum magnetic field is
+
+    .. math::
+        B_{0,\min}
+        =
+        \frac{\pi\omega}{|\gamma|}.
+
+    For an electron, using `|\gamma|=e/m` gives
+
+    .. math::
+        B_{0,\min}
+        =
+        \frac{\pi m\omega}{e}.

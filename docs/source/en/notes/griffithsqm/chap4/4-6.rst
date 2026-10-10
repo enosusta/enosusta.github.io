@@ -1,0 +1,48 @@
+Problem 4.6
+==================
+
+By the definition of the spherical harmonics,
+
+.. math::
+    Y_l^{-m}(\theta,\phi)
+    =
+    \sqrt{
+        \frac{2l+1}{4\pi}
+        \frac{(l+m)!}{(l-m)!}
+    }
+    e^{-im\phi}P_l^{-m}(\cos\theta).
+
+On the other hand, the associated Legendre functions for negative `m` are defined by
+
+.. math::
+    P_l^{-m}(x)
+    =(-1)^m\frac{(l-m)!}{(l+m)!}P_l^m(x).
+
+Substituting this expression gives
+
+.. math::
+    \begin{aligned}
+        Y_l^{-m}(\theta,\phi)
+        &=
+        (-1)^m
+        \sqrt{
+            \frac{2l+1}{4\pi}
+            \frac{(l+m)!}{(l-m)!}
+        }
+        \frac{(l-m)!}{(l+m)!}
+        e^{-im\phi}P_l^m(\cos\theta)
+        \\
+        &=
+        (-1)^m
+        \sqrt{
+            \frac{2l+1}{4\pi}
+            \frac{(l-m)!}{(l+m)!}
+        }
+        e^{-im\phi}P_l^m(\cos\theta).
+    \end{aligned}
+
+Since `P_l^m(\cos\theta)` is real,
+
+.. math::
+    Y_l^{-m}(\theta,\phi)
+    =(-1)^m\left[Y_l^m(\theta,\phi)\right]^*.

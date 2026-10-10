@@ -1,0 +1,110 @@
+Problem 4.64
+==================
+
+a.  Both terms have `l=1`, so the only possible result is
+
+    .. math::
+        L^2=2\hbar^2,
+
+    with probability 1.
+
+b.  The first term has `m_l=0`, whereas the second has `m_l=1`. Therefore,
+
+    .. math::
+        \begin{array}{c|cc}
+            L_z&0&\hbar\\ \hline
+            P&1/3&2/3
+        \end{array}.
+
+c.  The electron spin is fixed at `s=1/2`. Hence,
+
+    .. math::
+        S^2=\frac{3}{4}\hbar^2
+
+    is measured with probability 1.
+
+d.  The first term is spin up, and the second is spin down, so
+
+    .. math::
+        \begin{array}{c|cc}
+            S_z&\hbar/2&-\hbar/2\\ \hline
+            P&1/3&2/3
+        \end{array}.
+
+e.  The coupled basis in the `m_j=1/2` subspace is
+
+    .. math::
+        \begin{aligned}
+            \ket{\frac{3}{2}\,\frac{1}{2}}
+            &=
+            \sqrt{\frac{2}{3}}
+            \ket{1\,0}\ket{\frac{1}{2}\,\frac{1}{2}}
+            +
+            \sqrt{\frac{1}{3}}
+            \ket{1\,1}\ket{\frac{1}{2}\,{-\frac{1}{2}}},
+            \\
+            \ket{\frac{1}{2}\,\frac{1}{2}}
+            &=
+            \sqrt{\frac{1}{3}}
+            \ket{1\,0}\ket{\frac{1}{2}\,\frac{1}{2}}
+            -
+            \sqrt{\frac{2}{3}}
+            \ket{1\,1}\ket{\frac{1}{2}\,{-\frac{1}{2}}}.
+        \end{aligned}
+
+    Thus, the given angular and spin state can be written as
+
+    .. math::
+        \frac{2\sqrt{2}}{3}
+        \ket{\frac{3}{2}\,\frac{1}{2}}
+        -
+        \frac{1}{3}
+        \ket{\frac{1}{2}\,\frac{1}{2}}.
+
+    It follows that
+
+    .. math::
+        \begin{array}{c|cc}
+            J^2&15\hbar^2/4&3\hbar^2/4\\ \hline
+            P&8/9&1/9
+        \end{array}.
+
+f.  Both terms have `m_j=m_l+m_s=1/2`, so
+
+    .. math::
+        J_z=\frac{\hbar}{2}
+
+    is measured with probability 1.
+
+g.  Since the spin states are orthogonal, the position probability density is
+
+    .. math::
+        \begin{aligned}
+            \rho\left(r,\theta,\phi\right)
+            &=
+            \left|R_{21}(r)\right|^2
+            \left[
+            \frac{1}{3}\left|Y_1^0\right|^2
+            +
+            \frac{2}{3}\left|Y_1^1\right|^2
+            \right]
+            \\
+            &=
+            \frac{1}{96\pi a^3}
+            \left(\frac{r}{a}\right)^2e^{-r/a}.
+        \end{aligned}
+
+    This density is isotropic because the angular dependence cancels. The probability of finding the particle in the infinitesimal volume `\dd^3\bm{r}` is `\rho\,\dd^3\bm{r}`.
+
+h.  Retain only the spin-up component and integrate over the angles. The joint probability per unit `r` is
+
+    .. math::
+        \begin{aligned}
+            \dv{P_+}{r}
+            &=
+            \frac{1}{3}r^2\left|R_{21}(r)\right|^2
+            \int\left|Y_1^0\right|^2\dd\Omega
+            \\
+            &=
+            \frac{r^4}{72a^5}e^{-r/a}.
+        \end{aligned}

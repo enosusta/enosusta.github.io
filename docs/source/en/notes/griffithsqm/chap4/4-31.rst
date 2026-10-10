@@ -1,0 +1,78 @@
+Problem 4.31
+==================
+
+Let a general normalized spinor be
+
+.. math::
+    \chi=
+    \begin{pmatrix}
+        a\\
+        b
+    \end{pmatrix},
+    \quad
+    |a|^2+|b|^2=1.
+
+Using the spin matrices gives
+
+.. math::
+    \begin{aligned}
+        \braket{S_x}
+        &=
+        \frac{\hbar}{2}
+        \begin{pmatrix}
+            a^*&b^*
+        \end{pmatrix}
+        \begin{pmatrix}
+            0&1\\
+            1&0
+        \end{pmatrix}
+        \begin{pmatrix}
+            a\\
+            b
+        \end{pmatrix}
+        =
+        \frac{\hbar}{2}
+        \left(a^*b+b^*a\right)
+        =
+        \hbar\operatorname{Re}\left(a^*b\right),
+        \\
+        \braket{S_y}
+        &=
+        \frac{\hbar}{2}
+        \left(-ia^*b+ib^*a\right)
+        =
+        \hbar\operatorname{Im}\left(a^*b\right),
+        \\
+        \braket{S_z}
+        &=
+        \frac{\hbar}{2}
+        \left(|a|^2-|b|^2\right).
+    \end{aligned}
+
+On the other hand, all the Pauli matrices satisfy `\sigma_j^2=\mathsf{I}`, so
+
+.. math::
+    S_x^2=S_y^2=S_z^2
+    =\frac{\hbar^2}{4}.
+
+Therefore,
+
+.. math::
+    \braket{S_x^2}
+    =
+    \braket{S_y^2}
+    =
+    \braket{S_z^2}
+    =
+    \frac{\hbar^2}{4},
+
+and their sum is
+
+.. math::
+    \braket{S_x^2}
+    +\braket{S_y^2}
+    +\braket{S_z^2}
+    =
+    \frac{3}{4}\hbar^2
+    =
+    \braket{S^2}.

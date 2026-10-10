@@ -1,0 +1,45 @@
+Problem 4.38
+==================
+
+a.  Combining the spins of the first two quarks gives
+
+    .. math::
+        \frac{1}{2}\otimes\frac{1}{2}
+        =
+        1\oplus0.
+
+    Adding the spin `1/2` of the third quark then gives
+
+    .. math::
+        \begin{aligned}
+            1\otimes\frac{1}{2}
+            &=
+            \frac{3}{2}\oplus\frac{1}{2},
+            \\
+            0\otimes\frac{1}{2}
+            &=
+            \frac{1}{2}.
+        \end{aligned}
+
+    Therefore, the possible total spins of a baryon are
+
+    .. math::
+        s=\frac{3}{2},
+        \quad
+        \frac{1}{2}.
+
+    The `s=1/2` combination occurs in two independent ways.
+
+b.  Both the quark and the antiquark have spin `1/2`, so
+
+    .. math::
+        \frac{1}{2}\otimes\frac{1}{2}
+        =
+        1\oplus0.
+
+    Therefore, the possible total spins of a meson are
+
+    .. math::
+        s=1,
+        \quad
+        0.

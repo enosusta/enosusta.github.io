@@ -1,0 +1,81 @@
+Problem 4.21
+==================
+
+Since `L_x` and `L_y` are Hermitian operators,
+
+.. math::
+    L_+^\dagger
+    =\left(L_x+iL_y\right)^\dagger
+    =L_x-iL_y
+    =L_-,
+    \quad
+    L_-^\dagger=L_+.
+
+Since `f_l^m` is normalized, the norm of the state obtained by applying the raising operator is
+
+.. math::
+    \begin{aligned}
+        \left|A_l^m\right|^2
+        &=
+        \braket{L_+f_l^m|L_+f_l^m}
+        \\
+        &=
+        \braket{f_l^m|L_-L_+|f_l^m}
+        \\
+        &=
+        \braket{f_l^m|
+        \left(L^2-L_z^2-\hbar L_z\right)
+        |f_l^m}
+        \\
+        &=
+        \hbar^2
+        \left[l\left(l+1\right)-m\left(m+1\right)\right].
+    \end{aligned}
+
+Similarly, for the lowering operator,
+
+.. math::
+    \begin{aligned}
+        \left|B_l^m\right|^2
+        &=
+        \braket{f_l^m|L_+L_-|f_l^m}
+        \\
+        &=
+        \braket{f_l^m|
+        \left(L^2-L_z^2+\hbar L_z\right)
+        |f_l^m}
+        \\
+        &=
+        \hbar^2
+        \left[l\left(l+1\right)-m\left(m-1\right)\right].
+    \end{aligned}
+
+Thus, we may choose
+
+.. math::
+    \begin{aligned}
+        A_l^m
+        &=
+        \hbar
+        \sqrt{l\left(l+1\right)-m\left(m+1\right)}
+        =
+        \hbar\sqrt{\left(l-m\right)\left(l+m+1\right)},
+        \\
+        B_l^m
+        &=
+        \hbar
+        \sqrt{l\left(l+1\right)-m\left(m-1\right)}
+        =
+        \hbar\sqrt{\left(l+m\right)\left(l-m+1\right)}.
+    \end{aligned}
+
+Therefore, at the two ends of the ladder,
+
+.. math::
+    A_l^l=0,
+    \quad
+    B_l^{-l}=0,
+    \quad
+    L_+f_l^l=0,
+    \quad
+    L_-f_l^{-l}=0.

@@ -1,0 +1,71 @@
+Problem 4.59
+==================
+
+Write the singlet state as `\ket{0\,0}`. Since the total spin is zero, for any direction `\bm{b}`,
+
+.. math::
+    \left(
+    S_b^{(1)}+S_b^{(2)}
+    \right)\ket{0\,0}=0.
+
+Therefore,
+
+.. math::
+    \braket{
+    S_a^{(1)}S_b^{(2)}
+    }
+    =
+    -\braket{
+    S_a^{(1)}S_b^{(1)}
+    }.
+
+In terms of the unit vectors `\hat{\bm{a}}`, `\hat{\bm{b}}` and the Pauli matrices,
+
+.. math::
+    S_a^{(1)}
+    =
+    \frac{\hbar}{2}
+    \hat{\bm{a}}\cdot\bm{\sigma}^{(1)},
+    \quad
+    S_b^{(1)}
+    =
+    \frac{\hbar}{2}
+    \hat{\bm{b}}\cdot\bm{\sigma}^{(1)}.
+
+The multiplication rule for the Pauli matrices gives
+
+.. math::
+    \begin{aligned}
+        S_a^{(1)}S_b^{(1)}
+        &=
+        \frac{\hbar^2}{4}
+        \left[
+        \hat{\bm{a}}\cdot\hat{\bm{b}}\,\mathsf{I}
+        +
+        i\bm{\sigma}^{(1)}
+        \cdot
+        \left(
+        \hat{\bm{a}}\times\hat{\bm{b}}
+        \right)
+        \right].
+    \end{aligned}
+
+In the singlet state, the expectation value of either particle's spin is zero, so
+
+.. math::
+    \braket{\bm{\sigma}^{(1)}}=0.
+
+Hence,
+
+.. math::
+    \begin{aligned}
+        \braket{
+        S_a^{(1)}S_b^{(2)}
+        }
+        &=
+        -\frac{\hbar^2}{4}
+        \hat{\bm{a}}\cdot\hat{\bm{b}}
+        \\
+        &=
+        -\frac{\hbar^2}{4}\cos\theta.
+    \end{aligned}

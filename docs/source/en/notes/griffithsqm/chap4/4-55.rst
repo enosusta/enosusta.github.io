@@ -1,0 +1,150 @@
+Problem 4.55
+==================
+
+a.  For `l=n-1`, we have `N=n-l=1`, so the polynomial determined by the recurrence relation consists only of a constant. Therefore,
+
+    .. math::
+        R_{n(n-1)}(r)
+        =
+        N_n r^{n-1}e^{-r/(na)}.
+
+    The normalization condition is
+
+    .. math::
+        \begin{aligned}
+            1
+            &=
+            |N_n|^2
+            \int_0^\infty
+            r^{2n}e^{-2r/(na)}\,\dd r
+            \\
+            &=
+            |N_n|^2
+            \left(2n\right)!
+            \left(\frac{na}{2}\right)^{2n+1}.
+        \end{aligned}
+
+    Thus, choosing `N_n` to be real and positive gives
+
+    .. math::
+        N_n
+        =
+        \frac{
+        \left[2/(na)\right]^{n+1/2}
+        }{
+        \sqrt{\left(2n\right)!}
+        }.
+
+b.  More generally,
+
+    .. math::
+        \braket{r^k}
+        =
+        \frac{
+        \left(2n+k\right)!
+        }{
+        \left(2n\right)!
+        }
+        \left(\frac{na}{2}\right)^k.
+
+    Therefore,
+
+    .. math::
+        \braket{r}
+        =
+        \frac{na}{2}\left(2n+1\right)
+
+    and
+
+    .. math::
+        \braket{r^2}
+        =
+        \left(\frac{na}{2}\right)^2
+        \left(2n+1\right)\left(2n+2\right).
+
+c.  From part (b),
+
+    .. math::
+        \begin{aligned}
+            \sigma_r^2
+            &=
+            \braket{r^2}-\braket{r}^2
+            \\
+            &=
+            \left(\frac{na}{2}\right)^2
+            \left(2n+1\right),
+        \end{aligned}
+
+    so
+
+    .. math::
+        \sigma_r
+        =
+        \frac{na}{2}\sqrt{2n+1}
+        =
+        \frac{\braket{r}}{\sqrt{2n+1}}.
+
+    Thus, the relative width `\sigma_r/\braket{r}=1/\sqrt{2n+1}` decreases as `n` increases.
+
+    The radial wave functions and radial probability distributions have the following forms. The horizontal axis is scaled by the classical radial scale `n^2a`.
+
+    .. plot::
+        :include-source: true
+        :context: reset
+
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from scipy.special import gammaln
+
+        quantum_numbers = [1, 3, 10, 30]
+        x = np.linspace(0.0, 2.2, 1200)
+        x_safe = np.maximum(x, 1.0e-12)
+
+        fig, axes = plt.subplots(1, 2, figsize=(10, 4.2))
+
+        for n in quantum_numbers:
+            if n == 1:
+                radial = np.exp(-x)
+            else:
+                x_peak = (n - 1) / n
+                log_radial = (
+                    (n - 1) * np.log(x_safe / x_peak)
+                    - n * (x - x_peak)
+                )
+                radial = np.exp(log_radial)
+                radial[0] = 0.0
+
+            log_probability = (
+                (2 * n + 1) * np.log(2 * n)
+                - gammaln(2 * n + 1)
+                + 2 * n * np.log(x_safe)
+                - 2 * n * x
+            )
+            probability = np.exp(log_probability)
+            probability[0] = 0.0
+
+            axes[0].plot(
+                x,
+                radial,
+                label=rf"$n={n}$",
+            )
+            axes[1].plot(
+                x,
+                probability,
+                label=rf"$n={n}$",
+            )
+
+        axes[0].set_title("Scaled radial wavefunction")
+        axes[0].set_xlabel(r"$r/(n^2a)$")
+        axes[0].set_ylabel(r"$R/R_{\max}$")
+        axes[0].grid(alpha=0.25)
+        axes[0].legend()
+
+        axes[1].set_title("Scaled radial probability density")
+        axes[1].set_xlabel(r"$r/(n^2a)$")
+        axes[1].set_ylabel(r"$n^2a\,r^2|R|^2$")
+        axes[1].grid(alpha=0.25)
+        axes[1].legend()
+
+        fig.tight_layout()
+        plt.show()

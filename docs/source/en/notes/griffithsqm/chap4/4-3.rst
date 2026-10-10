@@ -1,0 +1,64 @@
+Problem 4.3
+==================
+
+a.  Since the wave function is independent of the angles, the Laplacian in spherical coordinates is
+
+    .. math::
+        \nabla^2\psi
+        =\frac{1}{r^2}\dv{}{r}
+        \left(r^2\dv{\psi}{r}\right).
+
+    For `\psi=Ae^{-r/a}`,
+
+    .. math::
+        \begin{aligned}
+            \dv{\psi}{r}&=-\frac{1}{a}\psi,
+            \\
+            \nabla^2\psi
+            &=\left(\frac{1}{a^2}-\frac{2}{ar}\right)\psi.
+        \end{aligned}
+
+    Therefore, the time-independent Schrödinger equation gives
+
+    .. math::
+        V(r)
+        =E+\frac{\hbar^2}{2m}\frac{\nabla^2\psi}{\psi}
+        =E+\frac{\hbar^2}{2ma^2}
+        -\frac{\hbar^2}{mar}.
+
+    For `V(r)\to0` as `r\to\infty`, we must have
+
+    .. math::
+        E=-\frac{\hbar^2}{2ma^2}.
+
+    Hence,
+
+    .. math::
+        V(r)=-\frac{\hbar^2}{mar}.
+
+b.  This time, `\psi=Ae^{-r^2/a^2}`, so
+
+    .. math::
+        \begin{aligned}
+            \dv{\psi}{r}&=-\frac{2r}{a^2}\psi,
+            \\
+            \nabla^2\psi
+            &=\left(-\frac{6}{a^2}+\frac{4r^2}{a^4}\right)\psi.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        V(r)
+        =E-\frac{3\hbar^2}{ma^2}
+        +\frac{2\hbar^2}{ma^4}r^2.
+
+    The condition `V(0)=0` gives
+
+    .. math::
+        E=\frac{3\hbar^2}{ma^2},
+
+    and hence the required potential is
+
+    .. math::
+        V(r)=\frac{2\hbar^2}{ma^4}r^2.

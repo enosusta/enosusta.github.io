@@ -1,0 +1,99 @@
+Problem 4.52
+==================
+
+a.  The radial function for `n=3` and `l=2`, and the spherical harmonic for `m=1`, are
+
+    .. math::
+        R_{32}(r)
+        =
+        \frac{4}{81\sqrt{30}a^{3/2}}
+        \left(\frac{r}{a}\right)^2
+        e^{-r/(3a)}
+
+    and
+
+    .. math::
+        Y_2^1(\theta,\phi)
+        =
+        -\sqrt{\frac{15}{8\pi}}
+        \sin\theta\cos\theta\,e^{i\phi}.
+
+    Therefore,
+
+    .. math::
+        \psi_{321}(r,\theta,\phi)
+        =
+        -\frac{1}{81\sqrt{\pi}a^{3/2}}
+        \left(\frac{r}{a}\right)^2
+        e^{-r/(3a)}
+        \sin\theta\cos\theta\,e^{i\phi}.
+
+b.  The normalization integral is
+
+    .. math::
+        \begin{aligned}
+            \int|\psi_{321}|^2\,\dd^3\bm{r}
+            ={}&
+            \frac{1}{81^2\pi a^7}
+            \int_0^\infty
+            r^6e^{-2r/(3a)}\,\dd r
+            \\
+            &\times
+            \int_0^\pi
+            \sin^3\theta\cos^2\theta\,\dd\theta
+            \int_0^{2\pi}\dd\phi.
+        \end{aligned}
+
+    The individual integrals are
+
+    .. math::
+        \int_0^\infty
+        r^6e^{-2r/(3a)}\,\dd r
+        =
+        6!\left(\frac{3a}{2}\right)^7,
+        \quad
+        \int_0^\pi
+        \sin^3\theta\cos^2\theta\,\dd\theta
+        =
+        \frac{4}{15},
+        \quad
+        \int_0^{2\pi}\dd\phi=2\pi,
+
+    so
+
+    .. math::
+        \int|\psi_{321}|^2\,\dd^3\bm{r}
+        =
+        \frac{
+        6!\left(3a/2\right)^7
+        }{
+        81^2\pi a^7
+        }
+        \frac{4}{15}\left(2\pi\right)
+        =1.
+
+c.  The angular integrals cancel by normalization, so
+
+    .. math::
+        \begin{aligned}
+            \braket{r^s}
+            &=
+            \frac{
+            \displaystyle
+            \int_0^\infty
+            r^{s+6}e^{-2r/(3a)}\,\dd r
+            }{
+            \displaystyle
+            \int_0^\infty
+            r^6e^{-2r/(3a)}\,\dd r
+            }
+            \\
+            &=
+            \frac{\Gamma\left(s+7\right)}{\Gamma(7)}
+            \left(\frac{3a}{2}\right)^s.
+        \end{aligned}
+
+    The condition for integrability at the origin is `s+6>-1`. Therefore, the expectation value is finite if and only if
+
+    .. math::
+        s>-7.

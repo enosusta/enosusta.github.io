@@ -1,0 +1,53 @@
+Problem 4.57
+==================
+
+a.  Since `L_z=xp_y-yp_x`,
+
+    .. math::
+        \begin{aligned}
+            [x^2,L_z]
+            &=
+            [x^2,xp_y]-[x^2,yp_x]
+            \\
+            &=
+            -y[x^2,p_x]
+            =
+            -2i\hbar xy.
+        \end{aligned}
+
+    Therefore, the uncertainty principle gives
+
+    .. math::
+        \sigma_{x^2}\sigma_{L_z}
+        \geq
+        \frac{1}{2}
+        \left|\braket{[x^2,L_z]}\right|
+        =
+        \hbar|\braket{xy}|.
+
+b.  A hydrogen state `\psi_{nlm}` is an eigenstate of `L_z`, with
+
+    .. math::
+        L_z\psi_{nlm}
+        =
+        m\hbar\psi_{nlm}.
+
+    Therefore,
+
+    .. math::
+        \sigma_{L_z}
+        =
+        \sqrt{\braket{L_z^2}-\braket{L_z}^2}
+        =0.
+
+c.  Substituting part (b) into the uncertainty relation from part (a) gives
+
+    .. math::
+        0
+        \geq
+        \hbar|\braket{xy}|.
+
+    Since the right-hand side is nonnegative, we must have
+
+    .. math::
+        \braket{xy}=0.

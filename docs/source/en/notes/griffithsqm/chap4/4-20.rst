@@ -1,0 +1,132 @@
+Problem 4.20
+==================
+
+a.  Fixing the Sun at the origin, the gravitational potential energy of the Earth is
+
+    .. math::
+        V(r)=-\frac{GMm_E}{r}.
+
+    This has the form of the Coulomb potential with `e^2/(4\pi\epsilon_0)` replaced by `GMm_E`.
+
+b.  Replacing the electron mass in the Bohr radius of hydrogen by `m_E` and the Coulomb coupling constant by `GMm_E` gives
+
+    .. math::
+        a_g
+        =\frac{\hbar^2}{G M m_E^2}.
+
+    .. exec_code::
+
+        G = 6.67430e-11
+        hbar = 1.054571817e-34
+        M = 1.98847e30
+        m_E = 5.9722e24
+
+        a_g = hbar**2 / (G * M * m_E**2)
+        print(f"a_g = {a_g:.6e} m")
+
+c.  The gravitational analogue of the Bohr formula is
+
+    .. math::
+        E_n
+        =-\frac{m_E}{2\hbar^2}
+        \left(GMm_E\right)^2\frac{1}{n^2}
+        =-\frac{G^2M^2m_E^3}{2\hbar^2n^2}.
+
+    On the other hand, for a classical circular orbit of radius `r_o`,
+
+    .. math::
+        \frac{m_Ev^2}{r_o}
+        =\frac{GMm_E}{r_o^2}.
+
+    Therefore, the kinetic and total energies are
+
+    .. math::
+        T=\frac{GMm_E}{2r_o},
+        \quad
+        E_{\mathrm{cl}}
+        =T+V
+        =-\frac{GMm_E}{2r_o}.
+
+    Setting `E_n=E_{\mathrm{cl}}` and using `a_g=\hbar^2/(GMm_E^2)` gives
+
+    .. math::
+        \frac{G^2M^2m_E^3}{2\hbar^2n^2}
+        =\frac{GMm_E}{2r_o}
+        \quad\Longrightarrow\quad
+        n^2=\frac{r_o}{a_g},
+
+    so
+
+    .. math::
+        n=\sqrt{\frac{r_o}{a_g}}.
+
+    .. exec_code::
+
+        r_o = 1.495978707e11
+        a_g = 2.349410300240807e-138
+
+        n = (r_o / a_g)**0.5
+        print(f"n = {n:.6e}")
+
+d.  Introduce the positive constant
+
+    .. math::
+        C\coloneqq\frac{G^2M^2m_E^3}{2\hbar^2}.
+
+    Then `E_n=-C/n^2`. The energy emitted in a transition from `n` to `n-1` is
+
+    .. math::
+        \begin{aligned}
+            \Delta E
+            &=E_n-E_{n-1}
+            \\
+            &=C\left[
+                \frac{1}{(n-1)^2}-\frac{1}{n^2}
+            \right]
+            \\
+            &=C\frac{2n-1}{n^2(n-1)^2}
+            \\
+            &\approx\frac{2C}{n^3}.
+        \end{aligned}
+
+    The wavelength of the corresponding radiation is `\lambda=hc/\Delta E`.
+
+    .. exec_code::
+
+        import math
+
+        G = 6.67430e-11
+        hbar = 1.054571817e-34
+        h = 2.0 * math.pi * hbar
+        c = 299792458.0
+        M = 1.98847e30
+        m_E = 5.9722e24
+        r_o = 1.495978707e11
+        light_year = 9.460730472e15
+
+        a_g = hbar**2 / (G * M * m_E**2)
+        n = math.sqrt(r_o / a_g)
+        C = G**2 * M**2 * m_E**3 / (2.0 * hbar**2)
+        delta_E = 2.0 * C / n**3
+        wavelength = h * c / delta_E
+
+        print(f"Delta E = {delta_E:.6e} J")
+        print(f"lambda = {wavelength:.6e} m")
+        print(f"lambda = {wavelength / light_year:.6f} light-years")
+
+    The value of one light-year is not a coincidence. For large `n`,
+
+    .. math::
+        \Delta E\approx\frac{2C}{n^3}
+        =\hbar\sqrt{\frac{GM}{r_o^3}}
+        =\hbar\omega_{\mathrm{orb}}.
+
+    This is the Bohr correspondence principle: the angular frequency of the transition approaches the classical orbital angular frequency. Therefore,
+
+    .. math::
+        \lambda
+        =\frac{hc}{\hbar\omega_{\mathrm{orb}}}
+        =\frac{2\pi c}{\omega_{\mathrm{orb}}}
+        =cT_{\mathrm{orb}}.
+
+    Since the Earth's orbital period is one year, this wavelength is one light-year.

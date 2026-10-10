@@ -1,0 +1,87 @@
+Problem 4.74
+==================
+
+a.  The scalar product of the magnetic field and spin is
+
+    .. math::
+        \bm{B}\cdot\bm{S}
+        =
+        -\alpha xS_x
+        +\left(B_0+\alpha z\right)S_z.
+
+    Using the matrix representations of `S_x` and `S_z`, the spin interaction becomes
+
+    .. math::
+        -\gamma\bm{B}\cdot\bm{S}
+        =
+        \frac{\hbar\gamma}{2}
+        \begin{pmatrix}
+            -\left(B_0+\alpha z\right)&\alpha x\\
+            \alpha x&B_0+\alpha z
+        \end{pmatrix}.
+
+    Therefore, the two components of the Schrödinger equation are
+
+    .. math::
+        \begin{aligned}
+            -\frac{\hbar^2}{2m}\nabla^2\Psi_+
+            &-
+            \frac{\hbar\gamma}{2}
+            \left(B_0+\alpha z\right)\Psi_+
+            +
+            \frac{\hbar\gamma}{2}\alpha x\Psi_-
+            =
+            i\hbar\pdv{\Psi_+}{t},
+            \\
+            -\frac{\hbar^2}{2m}\nabla^2\Psi_-
+            &+
+            \frac{\hbar\gamma}{2}
+            \left(B_0+\alpha z\right)\Psi_-
+            +
+            \frac{\hbar\gamma}{2}\alpha x\Psi_+
+            =
+            i\hbar\pdv{\Psi_-}{t}.
+        \end{aligned}
+
+b.  Substituting `\Psi_\pm=e^{\pm i\gamma B_0t/2}\widetilde\Psi_\pm` into the equations in part (a), the diagonal terms due to the uniform field `B_0` cancel the terms arising from the time derivatives. The remaining equations are
+
+    .. math::
+        \begin{aligned}
+            -\frac{\hbar^2}{2m}\nabla^2\widetilde\Psi_+
+            &-
+            \frac{\hbar\gamma}{2}\alpha z\widetilde\Psi_+
+            +
+            \frac{\hbar\gamma}{2}\alpha x
+            e^{-i\gamma B_0t}\widetilde\Psi_-
+            =
+            i\hbar\pdv{\widetilde\Psi_+}{t},
+            \\
+            -\frac{\hbar^2}{2m}\nabla^2\widetilde\Psi_-
+            &+
+            \frac{\hbar\gamma}{2}\alpha z\widetilde\Psi_-
+            +
+            \frac{\hbar\gamma}{2}\alpha x
+            e^{i\gamma B_0t}\widetilde\Psi_+
+            =
+            i\hbar\pdv{\widetilde\Psi_-}{t}.
+        \end{aligned}
+
+c.  If the rapidly oscillating off-diagonal terms are averaged to zero, the two components decouple and move in the respective linear potentials
+
+    .. math::
+        V_+(z)=-\frac{\hbar\gamma\alpha}{2}z,
+        \quad
+        V_-(z)=\frac{\hbar\gamma\alpha}{2}z.
+
+    The corresponding forces are
+
+    .. math::
+        F_z^{(+)}
+        =-\dv{V_+}{z}
+        =\frac{\hbar\gamma\alpha}{2},
+        \quad
+        F_z^{(-)}
+        =-\dv{V_-}{z}
+        =-\frac{\hbar\gamma\alpha}{2}.
+
+    Thus, the spatial wave packets of the spin-up and spin-down components accelerate in opposite directions, splitting the incident beam into two. This agrees with `F_z=\gamma\alpha S_z`.

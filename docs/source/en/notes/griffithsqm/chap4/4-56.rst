@@ -1,0 +1,45 @@
+Problem 4.56
+==================
+
+According to the Rydberg formula, the inverse wavelength for a transition `n_i\to n_f` is
+
+.. math::
+    \frac{1}{\lambda}
+    =
+    R
+    \left(
+    \frac{1}{n_f^2}-\frac{1}{n_i^2}
+    \right).
+
+Consider the two distinct pairs
+
+.. math::
+    \{n_i,n_f\}=\{7,5\},
+    \quad
+    \{n_i,n_f\}=\{35,7\}.
+
+Then
+
+.. math::
+    \begin{aligned}
+        \frac{1}{5^2}-\frac{1}{7^2}
+        &=
+        \frac{49-25}{1225}
+        =
+        \frac{24}{1225},
+        \\
+        \frac{1}{7^2}-\frac{1}{35^2}
+        &=
+        \frac{25-1}{1225}
+        =
+        \frac{24}{1225}.
+    \end{aligned}
+
+Therefore, the transitions
+
+.. math::
+    7\longrightarrow5,
+    \quad
+    35\longrightarrow7
+
+produce spectral lines with exactly the same wavelength.

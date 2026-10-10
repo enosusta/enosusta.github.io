@@ -1,0 +1,97 @@
+Problem 4.48
+==================
+
+a.  Consider the Hermitian operator
+
+    .. math::
+        G
+        \coloneqq
+        \frac{1}{2}
+        \left(
+        \bm{r}\cdot\bm{p}
+        +\bm{p}\cdot\bm{r}
+        \right).
+
+    In a stationary state, `\braket{G}` is independent of time, so
+
+    .. math::
+        \dv{}{t}\braket{G}
+        =
+        \frac{i}{\hbar}\braket{[H,G]}
+        =0.
+
+    The canonical commutation relations give
+
+    .. math::
+        [T,G]=-2i\hbar T,
+        \quad
+        [V,G]=i\hbar\bm{r}\cdot\bm{\nabla}V,
+
+    and hence
+
+    .. math::
+        [H,G]
+        =
+        i\hbar
+        \left(
+        \bm{r}\cdot\bm{\nabla}V-2T
+        \right).
+
+    Since its expectation value vanishes,
+
+    .. math::
+        2\braket{T}
+        =
+        \braket{\bm{r}\cdot\bm{\nabla}V}.
+
+b.  For the hydrogen atom,
+
+    .. math::
+        V(r)=-\frac{\kappa}{r},
+        \quad
+        \bm{r}\cdot\bm{\nabla}V
+        =
+        r\dv{V}{r}
+        =-V.
+
+    Therefore, the virial theorem gives
+
+    .. math::
+        2\braket{T}=-\braket{V}.
+
+    Furthermore,
+
+    .. math::
+        E_n=\braket{T}+\braket{V}
+        =-\braket{T},
+
+    so
+
+    .. math::
+        \braket{T}=-E_n,
+        \quad
+        \braket{V}=2E_n.
+
+c.  For the three-dimensional harmonic oscillator,
+
+    .. math::
+        V(r)=\frac{1}{2}m\omega^2r^2,
+        \quad
+        \bm{r}\cdot\bm{\nabla}V
+        =
+        r\dv{V}{r}
+        =2V.
+
+    Thus, `2\braket{T}=2\braket{V}`, and hence
+
+    .. math::
+        \braket{T}=\braket{V}.
+
+    Combining this with `E_n=\braket{T}+\braket{V}` gives
+
+    .. math::
+        \braket{T}
+        =
+        \braket{V}
+        =
+        \frac{E_n}{2}.

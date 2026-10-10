@@ -1,0 +1,77 @@
+Problem 4.65
+==================
+
+Starting with the state of maximum total spin and successively applying `S_-=S_-^{(1)}+S_-^{(2)}+S_-^{(3)}`, the quartet is
+
+.. math::
+    \begin{aligned}
+        \ket{\frac{3}{2}\,\frac{3}{2}}
+        &=\ket{\uparrow\uparrow\uparrow},
+        \\
+        \ket{\frac{3}{2}\,\frac{1}{2}}
+        &=
+        \frac{1}{\sqrt{3}}
+        \left(
+        \ket{\downarrow\uparrow\uparrow}
+        +\ket{\uparrow\downarrow\uparrow}
+        +\ket{\uparrow\uparrow\downarrow}
+        \right),
+        \\
+        \ket{\frac{3}{2}\,{-\frac{1}{2}}}
+        &=
+        \frac{1}{\sqrt{3}}
+        \left(
+        \ket{\uparrow\downarrow\downarrow}
+        +\ket{\downarrow\uparrow\downarrow}
+        +\ket{\downarrow\downarrow\uparrow}
+        \right),
+        \\
+        \ket{\frac{3}{2}\,{-\frac{3}{2}}}
+        &=\ket{\downarrow\downarrow\downarrow}.
+    \end{aligned}
+
+Coupling the first two particles into a singlet gives the first doublet:
+
+.. math::
+    \begin{aligned}
+        \ket{\frac{1}{2}\,\frac{1}{2}}_1
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow\uparrow}
+        -\ket{\downarrow\uparrow\uparrow}
+        \right),
+        \\
+        \ket{\frac{1}{2}\,{-\frac{1}{2}}}_1
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow\downarrow}
+        -\ket{\downarrow\uparrow\downarrow}
+        \right).
+    \end{aligned}
+
+In the `m=1/2` subspace, choose a normalized state orthogonal to both the quartet and the first doublet, and construct its partner with the lowering operator. This gives the second doublet:
+
+.. math::
+    \begin{aligned}
+        \ket{\frac{1}{2}\,\frac{1}{2}}_2
+        &=
+        \frac{1}{\sqrt{6}}
+        \left(
+        2\ket{\uparrow\uparrow\downarrow}
+        -\ket{\uparrow\downarrow\uparrow}
+        -\ket{\downarrow\uparrow\uparrow}
+        \right),
+        \\
+        \ket{\frac{1}{2}\,{-\frac{1}{2}}}_2
+        &=
+        \frac{1}{\sqrt{6}}
+        \left(
+        \ket{\uparrow\downarrow\downarrow}
+        +\ket{\downarrow\uparrow\downarrow}
+        -2\ket{\downarrow\downarrow\uparrow}
+        \right).
+    \end{aligned}
+
+The states are orthonormal, and both doublets have `S^2=3\hbar^2/4`.

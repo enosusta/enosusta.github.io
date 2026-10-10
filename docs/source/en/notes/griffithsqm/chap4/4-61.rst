@@ -1,0 +1,51 @@
+Problem 4.61
+==================
+
+Choose the eigenstates of `S_z` as the basis, ordered by `m=3/2,1/2,-1/2,-3/2`. The ladder operators act according to
+
+.. math::
+    S_\pm\ket{s\,m}
+    =
+    \hbar\sqrt{s\left(s+1\right)-m\left(m\pm1\right)}
+    \ket{s\,m\pm1}.
+
+Using `S_x=\left(S_++S_-\right)/2` and `s=3/2` gives
+
+.. math::
+    S_x
+    =
+    \frac{\hbar}{2}
+    \begin{pmatrix}
+        0&\sqrt{3}&0&0\\
+        \sqrt{3}&0&2&0\\
+        0&2&0&\sqrt{3}\\
+        0&0&\sqrt{3}&0
+    \end{pmatrix}.
+
+Let `\mu\coloneqq2\lambda/\hbar`. The characteristic equation is then
+
+.. math::
+    \begin{aligned}
+        0
+        &=
+        \det
+        \begin{pmatrix}
+            -\mu&\sqrt{3}&0&0\\
+            \sqrt{3}&-\mu&2&0\\
+            0&2&-\mu&\sqrt{3}\\
+            0&0&\sqrt{3}&-\mu
+        \end{pmatrix}
+        \\
+        &=\mu^4-10\mu^2+9
+        =\left(\mu^2-1\right)\left(\mu^2-9\right).
+    \end{aligned}
+
+Therefore, the eigenvalues of `S_x` are
+
+.. math::
+    \lambda
+    =
+    \frac{3\hbar}{2},\quad
+    \frac{\hbar}{2},\quad
+    -\frac{\hbar}{2},\quad
+    -\frac{3\hbar}{2}.

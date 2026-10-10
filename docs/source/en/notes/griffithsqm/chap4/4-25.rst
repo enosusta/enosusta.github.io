@@ -1,0 +1,87 @@
+Problem 4.25
+==================
+
+a.  The function `Y_l^l` is at the top of the ladder for fixed `l`. Since no state with a larger value of `m` exists,
+
+    .. math::
+        L_+Y_l^l=0.
+
+b.  From `L_zY_l^l=\hbar l Y_l^l` and `L_z=-i\hbar\partial/\partial\phi`, we can write
+
+    .. math::
+        Y_l^l(\theta,\phi)
+        =\Theta(\theta)e^{il\phi}.
+
+    Applying
+
+    .. math::
+        L_+
+        =
+        \hbar e^{i\phi}
+        \left(
+        \pdv{}{\theta}
+        +i\cot\theta\pdv{}{\phi}
+        \right)
+
+    and using part (a) gives
+
+    .. math::
+        \dv{\Theta}{\theta}
+        -l\cot\theta\,\Theta=0.
+
+    Therefore,
+
+    .. math::
+        \frac{1}{\Theta}\dv{\Theta}{\theta}
+        =l\cot\theta
+        \quad\Longrightarrow\quad
+        \Theta(\theta)=C_l\sin^l\theta,
+
+    and hence
+
+    .. math::
+        Y_l^l(\theta,\phi)
+        =
+        C_l\sin^l\theta\,e^{il\phi}.
+
+c.  The normalization condition gives
+
+    .. math::
+        \begin{aligned}
+            1
+            &=
+            \int_0^{2\pi}\int_0^\pi
+            \left|Y_l^l\right|^2
+            \sin\theta\,\dd\theta\,\dd\phi
+            \\
+            &=
+            2\pi\left|C_l\right|^2
+            \int_0^\pi\sin^{2l+1}\theta\,\dd\theta.
+        \end{aligned}
+
+    Using the integral
+
+    .. math::
+        \int_0^\pi\sin^{2l+1}\theta\,\dd\theta
+        =
+        \frac{2^{2l+1}\left(l!\right)^2}
+        {\left(2l+1\right)!}
+
+    gives
+
+    .. math::
+        \left|C_l\right|
+        =
+        \frac{1}{2^ll!}
+        \sqrt{\frac{\left(2l+1\right)!}{4\pi}}.
+
+    Choosing the usual Condon--Shortley convention `C_l=(-1)^l|C_l|`, we obtain
+
+    .. math::
+        Y_l^l(\theta,\phi)
+        =
+        \frac{(-1)^l}{2^ll!}
+        \sqrt{\frac{\left(2l+1\right)!}{4\pi}}
+        \sin^l\theta\,e^{il\phi},
+
+    in agreement with the result in :ref:`notes/griffithsqm/chap4/4-7:Problem 4.7`.

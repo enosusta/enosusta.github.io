@@ -1,0 +1,61 @@
+Problem 4.70
+==================
+
+a.  For the particles whose first measurement is along `z`, the initial state is spin up along `z`, so every particle gives the up result. Regardless of whether it is retained by the subsequent measurement along `x`, its first result was up.
+
+    For the particles whose first measurement is along `x`, that measurement leaves each particle in either the spin-up or spin-down state along `x`. Since there are no external forces or torques, the second measurement along `x` repeats the same result. Thus, every particle retained at the end must also have been up in the first measurement. For either measurement direction, the required fraction is
+
+    .. math::
+        1.
+
+b.  Let `\theta_{ab}` be the angle between `\bm{a}` and `\bm{b}`, and let `\theta_{bc}` be the angle between `\bm{b}` and `\bm{c}`. The probabilities in the first measurement are
+
+    .. math::
+        P_+
+        =
+        \cos^2\left(\frac{\theta_{ab}}{2}\right),
+        \quad
+        P_-
+        =
+        \sin^2\left(\frac{\theta_{ab}}{2}\right).
+
+    If the first result is down, the angle between that direction and `\bm{c}` is `\pi-\theta_{bc}`. Therefore, the joint probabilities for the two measurement results are
+
+    .. math::
+        \begin{aligned}
+            P_{++}
+            &=
+            \cos^2\left(\frac{\theta_{ab}}{2}\right)
+            \cos^2\left(\frac{\theta_{bc}}{2}\right),
+            \\
+            P_{+-}
+            &=
+            \cos^2\left(\frac{\theta_{ab}}{2}\right)
+            \sin^2\left(\frac{\theta_{bc}}{2}\right),
+            \\
+            P_{-+}
+            &=
+            \sin^2\left(\frac{\theta_{ab}}{2}\right)
+            \sin^2\left(\frac{\theta_{bc}}{2}\right),
+            \\
+            P_{--}
+            &=
+            \sin^2\left(\frac{\theta_{ab}}{2}\right)
+            \cos^2\left(\frac{\theta_{bc}}{2}\right).
+        \end{aligned}
+
+    Conditioned on the final measurement having given the up result, the probability that the first measurement also gave the up result is
+
+    .. math::
+        \begin{aligned}
+            P\left(b+\mid c+\right)
+            &=
+            \frac{P_{++}}{P_{++}+P_{-+}}
+            \\
+            &=
+            \left[
+            1+
+            \tan^2\left(\frac{\theta_{ab}}{2}\right)
+            \tan^2\left(\frac{\theta_{bc}}{2}\right)
+            \right]^{-1}.
+        \end{aligned}

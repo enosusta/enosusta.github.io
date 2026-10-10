@@ -1,0 +1,138 @@
+Problem 4.49
+==================
+
+a.  The time-dependent Schrödinger equation and its complex conjugate are
+
+    .. math::
+        \begin{aligned}
+            i\hbar\pdv{\Psi}{t}
+            &=
+            -\frac{\hbar^2}{2m}\nabla^2\Psi
+            +V\Psi,
+            \\
+            -i\hbar\pdv{\Psi^*}{t}
+            &=
+            -\frac{\hbar^2}{2m}\nabla^2\Psi^*
+            +V\Psi^*.
+        \end{aligned}
+
+    Here, `V` is assumed to be real. These equations give
+
+    .. math::
+        \begin{aligned}
+            \pdv{}{t}|\Psi|^2
+            &=
+            \Psi^*\pdv{\Psi}{t}
+            +\Psi\pdv{\Psi^*}{t}
+            \\
+            &=
+            \frac{i\hbar}{2m}
+            \left(
+            \Psi^*\nabla^2\Psi
+            -\Psi\nabla^2\Psi^*
+            \right).
+        \end{aligned}
+
+    On the other hand, the divergence of the probability current is
+
+    .. math::
+        \begin{aligned}
+            \bm{\nabla}\cdot\bm{J}
+            &=
+            \frac{i\hbar}{2m}
+            \bm{\nabla}\cdot
+            \left(
+            \Psi\bm{\nabla}\Psi^*
+            -\Psi^*\bm{\nabla}\Psi
+            \right)
+            \\
+            &=
+            \frac{i\hbar}{2m}
+            \left(
+            \Psi\nabla^2\Psi^*
+            -\Psi^*\nabla^2\Psi
+            \right)
+            \\
+            &=
+            -\pdv{}{t}|\Psi|^2.
+        \end{aligned}
+
+    Integrating over a volume `\mathcal V` and using the divergence theorem also gives
+
+    .. math::
+        \oint_S\bm{J}\cdot\dd\bm{a}
+        =
+        -\dv{}{t}
+        \int_{\mathcal V}|\Psi|^2\,\dd^3\bm{r}.
+
+b.  The normalized spatial wave function is
+
+    .. math::
+        \psi_{211}
+        =
+        -\frac{1}{8\sqrt{\pi}a^{3/2}}
+        \left(\frac{r}{a}\right)
+        e^{-r/(2a)}
+        \sin\theta\,e^{i\phi}.
+
+    Since every factor except the `\phi` dependence is real,
+
+    .. math::
+        \bm{J}
+        =
+        \frac{\hbar}{m}
+        \operatorname{Im}
+        \left(\psi_{211}^*\bm{\nabla}\psi_{211}\right)
+        =
+        \frac{\hbar}{m}
+        \frac{|\psi_{211}|^2}{r\sin\theta}
+        \hat{\bm{\phi}}.
+
+    Substituting `|\psi_{211}|^2` gives
+
+    .. math::
+        \bm{J}
+        =
+        \frac{\hbar}{64\pi ma^5}
+        re^{-r/a}\sin\theta\,
+        \hat{\bm{\phi}}.
+
+c.  The azimuthal current is axially symmetric, so the `x` and `y` components of `\bm{L}` vanish upon integration. Also,
+
+    .. math::
+        \left(\bm{r}\times\bm{J}\right)_z
+        =
+        rJ_\phi\sin\theta.
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            L_z
+            &=
+            m\int
+            rJ_\phi\sin\theta\,
+            r^2\sin\theta\,
+            \dd r\,\dd\theta\,\dd\phi
+            \\
+            &=
+            \frac{\hbar}{64\pi a^5}
+            \left(
+            \int_0^\infty r^4e^{-r/a}\,\dd r
+            \right)
+            \left(
+            \int_0^\pi\sin^3\theta\,\dd\theta
+            \right)
+            \left(
+            \int_0^{2\pi}\dd\phi
+            \right)
+            \\
+            &=
+            \frac{\hbar}{64\pi a^5}
+            \left(24a^5\right)
+            \left(\frac{4}{3}\right)
+            \left(2\pi\right)
+            =\hbar.
+        \end{aligned}
+
+    This agrees with the fact that `\psi_{211}` has the `L_z` eigenvalue `m_l\hbar=\hbar`.

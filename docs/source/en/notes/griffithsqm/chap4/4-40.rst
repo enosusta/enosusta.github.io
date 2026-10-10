@@ -1,0 +1,60 @@
+Problem 4.40
+==================
+
+a.  Let the first particle have spin 1 and the second particle have spin 2. Expanding the coupled state with `s=3` and `m=1` in terms of Clebsch--Gordan coefficients gives
+
+    .. math::
+        \begin{aligned}
+            \ket{3\,1}
+            ={}&
+            \frac{1}{\sqrt{15}}
+            \ket{1\,(-1)}\ket{2\,2}
+            \\
+            &+
+            \sqrt{\frac{8}{15}}
+            \ket{1\,0}\ket{2\,1}
+            +
+            \sqrt{\frac{2}{5}}
+            \ket{1\,1}\ket{2\,0}.
+        \end{aligned}
+
+    Indeed, only the three product states satisfying `m_1+m_2=1` appear, and the sum of the squared coefficients is
+
+    .. math::
+        \frac{1}{15}+\frac{8}{15}+\frac{2}{5}=1.
+
+    Therefore, the possible results and probabilities for measuring `S_z` of the spin-2 particle are
+
+    .. math::
+        \begin{array}{c|c}
+            S_z^{(2)}&P\\ \hline
+            2\hbar&\dfrac{1}{15}\\[2mm]
+            \hbar&\dfrac{8}{15}\\[2mm]
+            0&\dfrac{2}{5}
+        \end{array}.
+
+b.  In `\psi_{510}`, `l=1` and `m_l=0`. Since the spin points down, `s=1/2` and `m_s=-1/2`. Expanding this uncoupled state in eigenstates of the total angular momentum `\bm{J}=\bm{L}+\bm{S}` gives
+
+    .. math::
+        \begin{aligned}
+            &\ket{l=1,m_l=0}
+            \ket{s=\frac{1}{2},m_s=-\frac{1}{2}}
+            \\
+            &\quad=
+            \sqrt{\frac{2}{3}}
+            \ket{j=\frac{3}{2},m_j=-\frac{1}{2}}
+            +
+            \sqrt{\frac{1}{3}}
+            \ket{j=\frac{1}{2},m_j=-\frac{1}{2}}.
+        \end{aligned}
+
+    Since the eigenvalues of `J^2` are `j(j+1)\hbar^2`, the possible measurement results and their probabilities are
+
+    .. math::
+        \begin{array}{c|c}
+            J^2&P\\ \hline
+            \dfrac{15}{4}\hbar^2&\dfrac{2}{3}\\[2mm]
+            \dfrac{3}{4}\hbar^2&\dfrac{1}{3}
+        \end{array}.
+
+    The principal quantum number `n=5` does not affect the result of coupling the angular momenta.

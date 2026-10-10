@@ -1,0 +1,73 @@
+Problem 4.29
+==================
+
+a.  Direct calculation using the spin matrices gives
+
+    .. math::
+        S_xS_y
+        =
+        \frac{\hbar^2}{4}
+        \begin{pmatrix}
+            i&0\\
+            0&-i
+        \end{pmatrix},
+        \quad
+        S_yS_x
+        =
+        \frac{\hbar^2}{4}
+        \begin{pmatrix}
+            -i&0\\
+            0&i
+        \end{pmatrix},
+
+    so
+
+    .. math::
+        [S_x,S_y]
+        =
+        i\frac{\hbar^2}{2}
+        \begin{pmatrix}
+            1&0\\
+            0&-1
+        \end{pmatrix}
+        =i\hbar S_z.
+
+    Similarly,
+
+    .. math::
+        S_yS_z=i\frac{\hbar}{2}S_x,
+        \quad
+        S_zS_y=-i\frac{\hbar}{2}S_x,
+        \quad
+        S_zS_x=i\frac{\hbar}{2}S_y,
+        \quad
+        S_xS_z=-i\frac{\hbar}{2}S_y,
+
+    and hence
+
+    .. math::
+        [S_y,S_z]=i\hbar S_x,
+        \quad
+        [S_z,S_x]=i\hbar S_y.
+
+b.  Squaring each Pauli matrix directly gives
+
+    .. math::
+        \sigma_x^2=\sigma_y^2=\sigma_z^2=\mathsf{I}.
+
+    Also, the products of distinct matrices are
+
+    .. math::
+        \sigma_x\sigma_y=i\sigma_z,
+        \quad
+        \sigma_y\sigma_z=i\sigma_x,
+        \quad
+        \sigma_z\sigma_x=i\sigma_y,
+
+    and reversing the order changes the sign. Combining these results gives
+
+    .. math::
+        \sigma_j\sigma_k
+        =
+        \delta_{jk}
+        +i\sum_l\epsilon_{jkl}\sigma_l.

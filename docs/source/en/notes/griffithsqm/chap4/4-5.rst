@@ -1,0 +1,40 @@
+Problem 4.5
+==================
+
+For `l=m=0`, the `\theta` equation is
+
+.. math::
+    \sin\theta\dv{}{\theta}
+    \left(\sin\theta\dv{\Theta}{\theta}\right)=0.
+
+On the other hand,
+
+.. math::
+    \dv{}{\theta}\ln\left[\tan\left(\frac{\theta}{2}\right)\right]
+    =\frac{1}{\sin\theta},
+
+so for `\Theta(\theta)=A\ln[\tan(\theta/2)]`,
+
+.. math::
+    \sin\theta\dv{\Theta}{\theta}=A,
+    \quad
+    \sin\theta\dv{}{\theta}
+    \left(\sin\theta\dv{\Theta}{\theta}\right)=0.
+
+Thus, this function does indeed satisfy the differential equation for `0<\theta<\pi`. At the two poles, however,
+
+.. math::
+    \lim_{\theta\to0^+}\Theta(\theta)=-\infty,
+    \quad
+    \lim_{\theta\to\pi^-}\Theta(\theta)=+\infty,
+
+so the wave function diverges at `\theta=0,\pi`. Furthermore, the integral arising from angular derivatives is
+
+.. math::
+    \int_0^\pi
+    \left|\dv{\Theta}{\theta}\right|^2
+    \sin\theta\,\dd\theta
+    =|A|^2\int_0^\pi\frac{\dd\theta}{\sin\theta}
+    =\infty,
+
+and the kinetic energy diverges as well. Therefore, this second solution must be discarded.

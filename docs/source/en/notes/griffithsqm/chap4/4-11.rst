@@ -1,0 +1,121 @@
+Problem 4.11
+==================
+
+For a bound state, `-V_0<E<0`. Define
+
+.. math::
+    k\coloneqq\frac{\sqrt{2m(E+V_0)}}{\hbar},
+    \quad
+    \kappa\coloneqq\frac{\sqrt{-2mE}}{\hbar}.
+
+Then
+
+.. math::
+    k^2+\kappa^2=\frac{2mV_0}{\hbar^2}.
+
+For `l=0`, the radial equation inside and outside the well is, respectively,
+
+.. math::
+    \dv{^2u}{r^2}
+    =
+    \begin{cases}
+        -k^2u,&0<r\leq a,\\
+        \kappa^2u,&r>a.
+    \end{cases}
+
+Choosing a solution that satisfies `u(0)=0` at the origin and decays at infinity gives
+
+.. math::
+    u(r)=
+    \begin{cases}
+        A\sin(kr),&0\leq r\leq a,\\
+        Be^{-\kappa r},&r>a.
+    \end{cases}
+
+Continuity of `u` and `u'` at `r=a` gives
+
+.. math::
+    A\sin(ka)=Be^{-\kappa a},
+    \quad
+    Ak\cos(ka)=-B\kappa e^{-\kappa a}.
+
+Taking the ratio of these two equations yields the eigenvalue condition
+
+.. math::
+    k\cot(ka)=-\kappa.
+
+Introduce the dimensionless quantities
+
+.. math::
+    x\coloneqq ka,
+    \quad
+    y\coloneqq\kappa a,
+    \quad
+    z_0\coloneqq\frac{a}{\hbar}\sqrt{2mV_0}.
+
+Then
+
+.. math::
+    x^2+y^2=z_0^2,
+    \quad
+    y=-x\cot x.
+
+Therefore, the smallest solution `x_1`, which corresponds to the ground state, is determined by
+
+.. math::
+    \sqrt{z_0^2-x_1^2}=-x_1\cot x_1,
+    \quad
+    \frac{\pi}{2}<x_1<\min(\pi,z_0).
+
+The corresponding energy is
+
+.. math::
+    E_0
+    =-V_0+\frac{\hbar^2x_1^2}{2ma^2}
+    =-\frac{\hbar^2}{2ma^2}\left(z_0^2-x_1^2\right).
+
+Also, since
+
+.. math::
+    B=A\sin x_1\,e^{y_1},
+    \quad
+    y_1=\sqrt{z_0^2-x_1^2},
+
+the normalized ground state can be written as
+
+.. math::
+    \psi_0(r,\theta,\phi)
+    =\frac{1}{\sqrt{4\pi}}\frac{u_0(r)}{r},
+
+where
+
+.. math::
+    u_0(r)=A
+    \begin{cases}
+        \sin(x_1r/a),&0\leq r\leq a,\\
+        \sin x_1\,e^{-y_1(r/a-1)},&r>a.
+    \end{cases}
+
+The normalization constant is given by
+
+.. math::
+    |A|^{-2}
+    =
+    \frac{a}{2}
+    -\frac{a\sin(2x_1)}{4x_1}
+    +\frac{a\sin^2x_1}{2y_1}.
+
+Finally, since `y>0`, the ground-state solution of the eigenvalue condition `y=-x\cot x` requires `x>\pi/2`. On the other hand, we must have `x<z_0`. Thus, a bound state can exist only if
+
+.. math::
+    z_0>\frac{\pi}{2}.
+
+Equivalently, we must have
+
+.. math::
+    V_0a^2>\frac{\pi^2\hbar^2}{8m},
+
+and no bound state exists if
+
+.. math::
+    V_0a^2<\frac{\pi^2\hbar^2}{8m}.

@@ -1,0 +1,88 @@
+Problem 4.37
+==================
+
+a.  The total lowering operator is `S_-=S_-^{(1)}+S_-^{(2)}`. Therefore,
+
+    .. math::
+        \begin{aligned}
+            S_-\ket{1\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(S_-^{(1)}+S_-^{(2)}\right)
+            \left(
+            \ket{\uparrow\downarrow}
+            +\ket{\downarrow\uparrow}
+            \right)
+            \\
+            &=
+            \frac{\hbar}{\sqrt{2}}
+            \left(
+            \ket{\downarrow\downarrow}
+            +\ket{\downarrow\downarrow}
+            \right)
+            \\
+            &=
+            \sqrt{2}\hbar\ket{1\,(-1)},
+        \end{aligned}
+
+    in agreement with the general formula for the ladder operators.
+
+b.  Applying the raising operator to the singlet state gives
+
+    .. math::
+        \begin{aligned}
+            S_+\ket{0\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(S_+^{(1)}+S_+^{(2)}\right)
+            \left(
+            \ket{\uparrow\downarrow}
+            -\ket{\downarrow\uparrow}
+            \right)
+            \\
+            &=
+            \frac{\hbar}{\sqrt{2}}
+            \left(
+            \ket{\uparrow\uparrow}
+            -\ket{\uparrow\uparrow}
+            \right)
+            =0.
+        \end{aligned}
+
+    Similarly,
+
+    .. math::
+        S_-\ket{0\,0}
+        =
+        \frac{\hbar}{\sqrt{2}}
+        \left(
+        \ket{\downarrow\downarrow}
+        -\ket{\downarrow\downarrow}
+        \right)
+        =0.
+
+c.  The state `\ket{1\,1}=\ket{\uparrow\uparrow}` is at the top of the ladder, so `S_+\ket{1\,1}=0`, and `S_z\ket{1\,1}=\hbar\ket{1\,1}`. Using the identity
+
+    .. math::
+        S^2=S_-S_++S_z^2+\hbar S_z
+
+    gives
+
+    .. math::
+        S^2\ket{1\,1}
+        =
+        2\hbar^2\ket{1\,1}.
+
+    On the other hand, `\ket{1\,(-1)}=\ket{\downarrow\downarrow}` is at the bottom of the ladder, so `S_-\ket{1\,(-1)}=0`, and `S_z\ket{1\,(-1)}=-\hbar\ket{1\,(-1)}`. Using
+
+    .. math::
+        S^2=S_+S_-+S_z^2-\hbar S_z
+
+    then gives
+
+    .. math::
+        S^2\ket{1\,(-1)}
+        =
+        2\hbar^2\ket{1\,(-1)}.
+
+    Both states have the eigenvalue `s(s+1)\hbar^2=2\hbar^2` corresponding to `s=1`.

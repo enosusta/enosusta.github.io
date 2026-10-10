@@ -1,0 +1,93 @@
+Problem 4.8
+==================
+
+First, suppose that `l>l'`. Rodrigues' formula gives
+
+.. math::
+    \int_{-1}^1P_l(x)P_{l'}(x)\,\dd x
+    =
+    \frac{1}{2^ll!}
+    \int_{-1}^1
+    P_{l'}(x)
+    \frac{\dd^l}{\dd x^l}
+    \left(x^2-1\right)^l
+    \,\dd x.
+
+The function `\left(x^2-1\right)^l` and its derivatives through order `l-1` vanish at `x=\pm1`. Thus, all boundary terms vanish, and integrating by parts `l` times gives
+
+.. math::
+    \int_{-1}^1P_l P_{l'}\,\dd x
+    =
+    \frac{(-1)^l}{2^ll!}
+    \int_{-1}^1
+    \left(x^2-1\right)^l
+    \frac{\dd^l P_{l'}}{\dd x^l}
+    \,\dd x.
+
+Since `P_{l'}` is a polynomial of degree `l'`, if `l>l'`, then
+
+.. math::
+    \frac{\dd^l P_{l'}}{\dd x^l}=0.
+
+Using the symmetry of the integral as well, for `l\neq l'` we therefore have
+
+.. math::
+    \int_{-1}^1P_l(x)P_{l'}(x)\,\dd x=0.
+
+Next, let `l=l'`. Extracting the highest-degree term of `P_l` from Rodrigues' formula gives
+
+.. math::
+    P_l(x)
+    =
+    \frac{(2l)!}{2^l(l!)^2}x^l
+    +\mathrm{lower\ powers},
+
+so
+
+.. math::
+    \frac{\dd^l P_l}{\dd x^l}
+    =\frac{(2l)!}{2^ll!}.
+
+Integrating by parts `l` times as before gives
+
+.. math::
+    \begin{aligned}
+        \int_{-1}^1P_l(x)^2\,\dd x
+        &=
+        \frac{(-1)^l}{2^ll!}
+        \int_{-1}^1
+        \left(x^2-1\right)^l
+        \frac{\dd^l P_l}{\dd x^l}
+        \,\dd x
+        \\
+        &=
+        \frac{(2l)!}{2^{2l}(l!)^2}
+        \int_{-1}^1\left(1-x^2\right)^l\,\dd x.
+    \end{aligned}
+
+In the last integral, the substitution `x=2t-1` gives
+
+.. math::
+    \begin{aligned}
+        \int_{-1}^1\left(1-x^2\right)^l\,\dd x
+        &=2^{2l+1}
+        \int_0^1t^l(1-t)^l\,\dd t
+        \\
+        &=2^{2l+1}
+        \frac{(l!)^2}{(2l+1)!}.
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    \int_{-1}^1P_l(x)^2\,\dd x
+    =
+    \frac{(2l)!}{2^{2l}(l!)^2}
+    \frac{2^{2l+1}(l!)^2}{(2l+1)!}
+    =\frac{2}{2l+1}.
+
+Combining the two cases gives
+
+.. math::
+    \int_{-1}^1P_l(x)P_{l'}(x)\,\dd x
+    =\frac{2}{2l+1}\delta_{ll'}.

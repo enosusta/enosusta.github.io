@@ -1,0 +1,86 @@
+Problem 4.67
+==================
+
+a.  Expanding the square of the total spin `\bm{S}=\bm{S}_1+\bm{S}_2+\bm{S}_3` gives
+
+    .. math::
+        S^2
+        =
+        \sum_{i=1}^3S_i^2
+        +2\left(
+        \bm{S}_1\cdot\bm{S}_2
+        +\bm{S}_2\cdot\bm{S}_3
+        +\bm{S}_3\cdot\bm{S}_1
+        \right).
+
+    Since `S_i^2=3\hbar^2/4` for each particle, the Hamiltonian can be written as
+
+    .. math::
+        H
+        =
+        \frac{J}{2}
+        \left(S^2-\frac{9}{4}\hbar^2\right).
+
+b.  Three spin-`1/2` particles give one quartet with total spin `s=3/2` and two doublets with `s=1/2`. The energy is
+
+    .. math::
+        E_s
+        =
+        \frac{J\hbar^2}{2}
+        \left[
+        s\left(s+1\right)-\frac{9}{4}
+        \right],
+
+    so
+
+    .. math::
+        E_{3/2}=\frac{3}{4}J\hbar^2,
+        \quad
+        E_{1/2}=-\frac{3}{4}J\hbar^2.
+
+    Since `J>0`, the ground-state energy is `-3J\hbar^2/4`. There are two `s=1/2` doublets, so the degeneracy is 4.
+
+c.  Define `\bm{A}\coloneqq\bm{S}_1+\bm{S}_3` and `\bm{B}\coloneqq\bm{S}_2+\bm{S}_4`. Then `\bm{S}=\bm{A}+\bm{B}`, and
+
+    .. math::
+        \begin{aligned}
+            S^2-A^2-B^2
+            &=2\bm{A}\cdot\bm{B}
+            \\
+            &=2\left(
+            \bm{S}_1\cdot\bm{S}_2
+            +\bm{S}_2\cdot\bm{S}_3
+            +\bm{S}_3\cdot\bm{S}_4
+            +\bm{S}_4\cdot\bm{S}_1
+            \right).
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        H
+        =
+        \frac{J}{2}
+        \left[
+        S^2-\left(\bm{S}_1+\bm{S}_3\right)^2
+        -\left(\bm{S}_2+\bm{S}_4\right)^2
+        \right].
+
+    If `s_{13}` and `s_{24}` denote the spin quantum numbers of the two diagonal pairs, then
+
+    .. math::
+        E
+        =
+        \frac{J\hbar^2}{2}
+        \left[
+        s\left(s+1\right)
+        -s_{13}\left(s_{13}+1\right)
+        -s_{24}\left(s_{24}+1\right)
+        \right].
+
+    The minimum occurs when `s_{13}=s_{24}=1` are coupled to total spin `s=0`, giving
+
+    .. math::
+        E_0=-2J\hbar^2.
+
+    There is only one singlet in this `1\otimes1` product, so the ground state is unique.

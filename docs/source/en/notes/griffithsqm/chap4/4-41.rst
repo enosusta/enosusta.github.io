@@ -1,0 +1,75 @@
+Problem 4.41
+==================
+
+Expand the square of the total angular momentum as
+
+.. math::
+    S^2
+    =
+    \left(\bm{S}^{(1)}+\bm{S}^{(2)}\right)^2
+    =
+    \left(S^{(1)}\right)^2
+    +\left(S^{(2)}\right)^2
+    +2\bm{S}^{(1)}\cdot\bm{S}^{(2)}.
+
+Operators belonging to different particles commute with one another, and `(S^{(1)})^2` also commutes with `S_z^{(1)}`. Therefore,
+
+.. math::
+    \begin{aligned}
+        [S^2,S_z^{(1)}]
+        &=
+        2\left[
+        S_x^{(1)}S_x^{(2)}
+        +S_y^{(1)}S_y^{(2)},
+        S_z^{(1)}
+        \right]
+        \\
+        &=
+        2\left(
+        [S_x^{(1)},S_z^{(1)}]S_x^{(2)}
+        +[S_y^{(1)},S_z^{(1)}]S_y^{(2)}
+        \right)
+        \\
+        &=
+        2i\hbar
+        \left(
+        S_x^{(1)}S_y^{(2)}
+        -S_y^{(1)}S_x^{(2)}
+        \right)
+        \\
+        &=
+        2i\hbar
+        \left(\bm{S}^{(1)}\times\bm{S}^{(2)}\right)_z.
+    \end{aligned}
+
+Carrying out the same calculation for an arbitrary component `i` gives
+
+.. math::
+    \begin{aligned}
+        [S^2,S_i^{(1)}]
+        &=
+        2\sum_j
+        [S_j^{(1)},S_i^{(1)}]S_j^{(2)}
+        \\
+        &=
+        2i\hbar
+        \left(\bm{S}^{(1)}\times\bm{S}^{(2)}\right)_i.
+    \end{aligned}
+
+Thus, in vector form,
+
+.. math::
+    [S^2,\bm{S}^{(1)}]
+    =
+    2i\hbar
+    \left(\bm{S}^{(1)}\times\bm{S}^{(2)}\right).
+
+Similarly,
+
+.. math::
+    [S^2,\bm{S}^{(2)}]
+    =
+    -2i\hbar
+    \left(\bm{S}^{(1)}\times\bm{S}^{(2)}\right).
+
+Adding these two equations also verifies `[S^2,\bm{S}]=0`.

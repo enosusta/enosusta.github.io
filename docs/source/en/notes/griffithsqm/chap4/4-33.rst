@@ -1,0 +1,76 @@
+Problem 4.33
+==================
+
+The component of spin in the `\hat{\bm{r}}` direction is
+
+.. math::
+    \begin{aligned}
+        S_r
+        &=
+        \hat{\bm{r}}\cdot\bm{S}
+        \\
+        &=
+        S_x\sin\theta\cos\phi
+        +S_y\sin\theta\sin\phi
+        +S_z\cos\theta
+        \\
+        &=
+        \frac{\hbar}{2}
+        \begin{pmatrix}
+            \cos\theta&
+            \sin\theta\,e^{-i\phi}\\
+            \sin\theta\,e^{i\phi}&
+            -\cos\theta
+        \end{pmatrix}.
+    \end{aligned}
+
+The characteristic equation is
+
+.. math::
+    \det\left(S_r-\lambda\right)
+    =
+    \lambda^2-\frac{\hbar^2}{4}
+    =0,
+
+so the eigenvalues are
+
+.. math::
+    \lambda_\pm=\pm\frac{\hbar}{2}.
+
+For `\lambda_+=\hbar/2`,
+
+.. math::
+    \left(\cos\theta-1\right)a
+    +\sin\theta\,e^{-i\phi}b=0.
+
+The half-angle formulas therefore give `b/a=e^{i\phi}\tan(\theta/2)`, and normalization yields
+
+.. math::
+    \chi_+^{(r)}
+    =
+    \begin{pmatrix}
+        \cos\left(\theta/2\right)\\
+        e^{i\phi}\sin\left(\theta/2\right)
+    \end{pmatrix}.
+
+Similarly, a normalized eigenspinor for `\lambda_-=-\hbar/2` may be chosen as
+
+.. math::
+    \chi_-^{(r)}
+    =
+    \begin{pmatrix}
+        e^{-i\phi}\sin\left(\theta/2\right)\\
+        -\cos\left(\theta/2\right)
+    \end{pmatrix}.
+
+Indeed,
+
+.. math::
+    S_r\chi_\pm^{(r)}
+    =
+    \pm\frac{\hbar}{2}\chi_\pm^{(r)},
+    \quad
+    \left(\chi_\pm^{(r)}\right)^\dagger
+    \chi_\pm^{(r)}=1.
+
+Each eigenspinor may also be multiplied by an arbitrary overall phase.

@@ -1,0 +1,127 @@
+Problem 4.7
+==================
+
+The highest-degree term of `(x^2-1)^l` in Rodrigues' formula is `x^{2l}`. Therefore, the highest-degree term of `P_l(x)` is
+
+.. math::
+    P_l(x)
+    =
+    \frac{(2l)!}{2^l(l!)^2}x^l
+    +\mathrm{lower\ powers}.
+
+Differentiating `P_l(x)` another `l` times eliminates all the lower-degree terms, so
+
+.. math::
+    \left(\dv{}{x}\right)^l P_l(x)
+    =\frac{(2l)!}{2^ll!}
+    =(2l-1)!!,
+
+and hence
+
+.. math::
+    P_l^l(x)
+    =(-1)^l(2l-1)!!
+    \left(1-x^2\right)^{l/2}.
+
+Substituting this into the definition of the spherical harmonics gives
+
+.. math::
+    \begin{aligned}
+        Y_l^l(\theta,\phi)
+        &=
+        (-1)^l
+        \sqrt{
+            \frac{2l+1}{4\pi(2l)!}
+        }
+        \frac{(2l)!}{2^ll!}
+        \sin^l\theta\,e^{il\phi}
+        \\
+        &=
+        \frac{(-1)^l}{2^ll!}
+        \sqrt{\frac{(2l+1)!}{4\pi}}
+        \sin^l\theta\,e^{il\phi}.
+    \end{aligned}
+
+Also,
+
+.. math::
+    P_3(x)=\frac{1}{2}\left(5x^3-3x\right),
+
+so
+
+.. math::
+    P_3^2(x)
+    =\left(1-x^2\right)\dv{^2P_3}{x^2}
+    =15x\left(1-x^2\right),
+
+and therefore
+
+.. math::
+    \begin{aligned}
+        Y_3^2(\theta,\phi)
+        &=
+        \sqrt{
+            \frac{7}{4\pi}\frac{(3-2)!}{(3+2)!}
+        }
+        e^{2i\phi}P_3^2(\cos\theta)
+        \\
+        &=
+        \sqrt{\frac{105}{32\pi}}
+        \sin^2\theta\cos\theta\,e^{2i\phi}.
+    \end{aligned}
+
+We now verify that these functions satisfy the angular equation. Writing the constant factor as `C_l`, let
+
+.. math::
+    Y_l^l=C_l\sin^l\theta\,e^{il\phi}.
+
+Then
+
+.. math::
+    \pdv{Y_l^l}{\theta}
+    =l\cot\theta\,Y_l^l,
+    \quad
+    \pdv{^2Y_l^l}{\phi^2}
+    =-l^2Y_l^l,
+
+and hence
+
+.. math::
+    \begin{aligned}
+        &\sin\theta\pdv{}{\theta}
+        \left(
+            \sin\theta\pdv{Y_l^l}{\theta}
+        \right)
+        +\pdv{^2Y_l^l}{\phi^2}
+        \\
+        &\quad=
+        \left[
+            l\left(-\sin^2\theta+l\cos^2\theta\right)
+            -l^2
+        \right]Y_l^l
+        \\
+        &\quad=
+        -l(l+1)\sin^2\theta\,Y_l^l.
+    \end{aligned}
+
+Thus, it satisfies the angular equation for `m=l`. Also, setting `Y_3^2=C\sin^2\theta\cos\theta\,e^{2i\phi}` gives
+
+.. math::
+    \begin{aligned}
+        \sin\theta\pdv{}{\theta}
+        \left(
+            \sin\theta\pdv{Y_3^2}{\theta}
+        \right)
+        &=4\left(3\cos^2\theta-2\right)Y_3^2,
+        \\
+        \pdv{^2Y_3^2}{\phi^2}
+        &=-4Y_3^2.
+    \end{aligned}
+
+Therefore, the sum of these two expressions is
+
+.. math::
+    -12\sin^2\theta\,Y_3^2
+    =-3(3+1)\sin^2\theta\,Y_3^2.
+
+Thus, this function also satisfies the angular equation for `l=3` and `m=2`.

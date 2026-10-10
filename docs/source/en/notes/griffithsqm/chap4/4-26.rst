@@ -1,0 +1,48 @@
+Problem 4.26
+==================
+
+Let `C=\sqrt{15/(8\pi)}`. Then
+
+.. math::
+    Y_2^1
+    =-C\sin\theta\cos\theta\,e^{i\phi}.
+
+Applying the raising operator gives
+
+.. math::
+    \begin{aligned}
+        L_+Y_2^1
+        &=
+        \hbar e^{i\phi}
+        \left(
+        \pdv{}{\theta}
+        +i\cot\theta\pdv{}{\phi}
+        \right)
+        \left(
+        -C\sin\theta\cos\theta\,e^{i\phi}
+        \right)
+        \\
+        &=
+        \hbar C\sin^2\theta\,e^{2i\phi}.
+    \end{aligned}
+
+On the other hand, the normalization coefficient of the raising operator is
+
+.. math::
+    A_2^1
+    =
+    \hbar\sqrt{\left(2-1\right)\left(2+1+1\right)}
+    =2\hbar,
+
+so
+
+.. math::
+    L_+Y_2^1=2\hbar Y_2^2.
+
+Therefore,
+
+.. math::
+    Y_2^2(\theta,\phi)
+    =
+    \sqrt{\frac{15}{32\pi}}
+    \sin^2\theta\,e^{2i\phi}.

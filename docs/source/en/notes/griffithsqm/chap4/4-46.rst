@@ -1,0 +1,66 @@
+Problem 4.46
+==================
+
+a.  Since `r^2=x^2+y^2+z^2`, the Hamiltonian separates as
+
+    .. math::
+        \begin{aligned}
+            H
+            &=
+            -\frac{\hbar^2}{2m}
+            \left(
+            \pdv{^2}{x^2}
+            +\pdv{^2}{y^2}
+            +\pdv{^2}{z^2}
+            \right)
+            +
+            \frac{1}{2}m\omega^2
+            \left(x^2+y^2+z^2\right)
+            \\
+            &=H_x+H_y+H_z.
+        \end{aligned}
+
+    Setting `\psi(x,y,z)=X(x)Y(y)Z(z)`, each factor is an eigenfunction of a one-dimensional harmonic oscillator with the same frequency `\omega`, and
+
+    .. math::
+        E_x=\left(n_x+\frac{1}{2}\right)\hbar\omega,
+        \quad
+        E_y=\left(n_y+\frac{1}{2}\right)\hbar\omega,
+        \quad
+        E_z=\left(n_z+\frac{1}{2}\right)\hbar\omega.
+
+    Here, `n_x,n_y,n_z=0,1,2,\ldots`. Therefore,
+
+    .. math::
+        E
+        =
+        \left(
+        n_x+n_y+n_z+\frac{3}{2}
+        \right)\hbar\omega.
+
+    Defining the principal quantum number by
+
+    .. math::
+        n\coloneqq n_x+n_y+n_z,
+
+    we obtain
+
+    .. math::
+        E_n
+        =
+        \left(n+\frac{3}{2}\right)\hbar\omega,
+        \quad
+        n=0,1,2,\ldots.
+
+b.  The degeneracy is the number of triples of nonnegative integers satisfying `n_x+n_y+n_z=n`. For fixed `n_x`, there are `n-n_x+1` choices for `n_y`, so
+
+    .. math::
+        \begin{aligned}
+            d(n)
+            &=
+            \sum_{n_x=0}^{n}
+            \left(n-n_x+1\right)
+            \\
+            &=
+            \frac{\left(n+1\right)\left(n+2\right)}{2}.
+        \end{aligned}

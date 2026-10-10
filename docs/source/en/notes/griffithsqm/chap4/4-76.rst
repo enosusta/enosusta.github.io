@@ -1,0 +1,90 @@
+Problem 4.76
+==================
+
+a.  Faraday's law of induction gives the electromotive force around the ring as
+
+    .. math::
+        \mathcal{E}
+        =
+        \oint\bm{E}\cdot\dd\bm{l}
+        =
+        2\pi bE_\phi
+        =-\dv{\Phi}{t}.
+
+    If the tangential velocity of the particle is `v_\phi=b\omega`, the rate at which the electric field does work on the particle is
+
+    .. math::
+        \begin{aligned}
+            \dv{W}{t}
+            &=q\bm{E}\cdot\bm{v}
+            =qE_\phi b\omega
+            \\
+            &=-\frac{q\omega}{2\pi}\dv{\Phi}{t}.
+        \end{aligned}
+
+    Therefore,
+
+    .. math::
+        \dv{W}{\Phi}
+        =-q\frac{\omega}{2\pi}.
+
+b.  On the ring, the vector potential is `\bm{A}=\left[\Phi/(2\pi b)\right]\hat{\bm{\phi}}`. Therefore, the `z` component of the mechanical angular momentum is
+
+    .. math::
+        \begin{aligned}
+            L_{\mathrm{mechanical},z}
+            &=
+            \left[
+            \bm{r}\times
+            \left(\bm{p}-q\bm{A}\right)
+            \right]_z
+            \\
+            &=
+            -i\hbar\pdv{}{\phi}
+            -\frac{q\Phi}{2\pi}.
+        \end{aligned}
+
+    Acting on the state `\psi_n=e^{in\phi}/\sqrt{2\pi}` gives
+
+    .. math::
+        L_{\mathrm{mechanical},z}\psi_n
+        =
+        \left(
+        n\hbar-\frac{q\Phi}{2\pi}
+        \right)\psi_n.
+
+    Hence,
+
+    .. math::
+        mb^2\omega
+        =
+        n\hbar-\frac{q\Phi}{2\pi},
+
+    which is not, in general, an integer multiple of `\hbar`.
+
+c.  Write the energy of the stationary state as
+
+    .. math::
+        E_n
+        =
+        \frac{1}{2mb^2}
+        \left(
+        n\hbar-\frac{q\Phi}{2\pi}
+        \right)^2.
+
+    Differentiating with respect to the magnetic flux and using the angular velocity from part (b) gives
+
+    .. math::
+        \begin{aligned}
+            \dv{E_n}{\Phi}
+            &=
+            -\frac{q}{2\pi mb^2}
+            \left(
+            n\hbar-\frac{q\Phi}{2\pi}
+            \right)
+            \\
+            &=-q\frac{\omega}{2\pi}
+            =\dv{W}{\Phi}.
+        \end{aligned}
+
+    Thus, the change in the quantum-mechanical energy level agrees exactly with the work done classically by electromagnetic induction.

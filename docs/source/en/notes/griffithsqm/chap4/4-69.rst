@@ -1,0 +1,76 @@
+Problem 4.69
+==================
+
+With `\rho_0=2n`, the radial equation is
+
+.. math::
+    \dv{^2u}{\rho^2}
+    =
+    \left[
+    1-\frac{2n}{\rho}
+    +\frac{l\left(l+1\right)}{\rho^2}
+    \right]u.
+
+Since the regular solution near the origin is `u\sim\rho^{l+1}`, choose the initial conditions at small `\epsilon` to be
+
+.. math::
+    u\left(\epsilon\right)=\epsilon^{l+1},
+    \quad
+    u'\left(\epsilon\right)=\left(l+1\right)\epsilon^l.
+
+For each trial value of `n`, integrate outward. The sign of the far tail `u\left(\rho_{\max}\right)` reverses as an eigenvalue is crossed, which allows the root to be bracketed.
+
+.. exec_code::
+
+    from scipy.integrate import solve_ivp
+    from scipy.optimize import brentq
+
+    epsilon = 1.0e-5
+    rho_max = 25.0
+
+    def tail(n, l):
+        initial = [
+            epsilon**(l + 1),
+            (l + 1) * epsilon**l,
+        ]
+
+        def radial_equation(rho, y):
+            coefficient = (
+                1.0 - 2.0 * n / rho
+                + l * (l + 1.0) / rho**2
+            )
+            return [y[1], coefficient * y[0]]
+
+        solution = solve_ivp(
+            radial_equation,
+            (epsilon, rho_max),
+            initial,
+            method="DOP853",
+            rtol=2.0e-9,
+            atol=1.0e-11,
+        )
+        return solution.y[0, -1]
+
+    print(f"{'l':>2} {'root':>5} {'n (shooting)':>15}")
+    for l in range(3):
+        for index in range(3):
+            center = l + index + 1.0
+            n_root = brentq(
+                lambda n: tail(n, l),
+                center - 0.1,
+                center + 0.1,
+                xtol=1.0e-10,
+            )
+            print(f"{l:2d} {index + 1:5d} {n_root:15.8f}")
+
+To four significant figures, the results are
+
+.. math::
+    \begin{array}{c|ccc}
+        l & & n & \\ \hline
+        0 & 1.000 & 2.000 & 3.000\\
+        1 & 2.000 & 3.000 & 4.000\\
+        2 & 3.000 & 4.000 & 5.000
+    \end{array}.
+
+Thus, for each `l`, the allowed principal quantum numbers are `n=l+1,l+2,\ldots`, and the Bohr energies `E_n=E_1/n^2` are reproduced numerically.

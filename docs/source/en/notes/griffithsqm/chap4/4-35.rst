@@ -1,0 +1,81 @@
+Problem 4.35
+==================
+
+a.  Define `\omega_L\coloneqq\gamma B_0`. The state in Example 4.3 is
+
+    .. math::
+        \chi(t)
+        =
+        \begin{pmatrix}
+            \cos\left(\alpha/2\right)e^{i\omega_Lt/2}\\
+            \sin\left(\alpha/2\right)e^{-i\omega_Lt/2}
+        \end{pmatrix},
+
+    and the positive eigenspinor of `S_x` is
+
+    .. math::
+        \chi_+^{(x)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            1
+        \end{pmatrix}.
+
+    Therefore,
+
+    .. math::
+        \begin{aligned}
+            P_x^+(t)
+            &=
+            \left|
+            \left(\chi_+^{(x)}\right)^\dagger\chi(t)
+            \right|^2
+            \\
+            &=
+            \frac{1}{2}
+            \left[
+            1+\sin\alpha\cos\left(\omega_Lt\right)
+            \right].
+        \end{aligned}
+
+b.  Using the positive eigenspinor of `S_y`,
+
+    .. math::
+        \chi_+^{(y)}
+        =
+        \frac{1}{\sqrt{2}}
+        \begin{pmatrix}
+            1\\
+            i
+        \end{pmatrix},
+
+    gives
+
+    .. math::
+        \begin{aligned}
+            P_y^+(t)
+            &=
+            \left|
+            \left(\chi_+^{(y)}\right)^\dagger\chi(t)
+            \right|^2
+            \\
+            &=
+            \frac{1}{2}
+            \left[
+            1-\sin\alpha\sin\left(\omega_Lt\right)
+            \right].
+        \end{aligned}
+
+c.  The positive eigenspinor of `S_z` is `\chi_+=(1,0)^{\mathsf T}`, so
+
+    .. math::
+        P_z^+(t)
+        =
+        \left|\chi_+^\dagger\chi(t)\right|^2
+        =
+        \cos^2\left(\frac{\alpha}{2}\right)
+        =
+        \frac{1+\cos\alpha}{2}.
+
+    Since the magnetic field points in the `z` direction, this probability is independent of time.

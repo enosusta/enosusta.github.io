@@ -1,0 +1,55 @@
+Problem 4.39
+==================
+
+Read the Clebsch--Gordan table for `s_1=s_2=1/2`. For `m=1` and `m=-1`, there is only one nonzero coefficient in each case:
+
+.. math::
+    C_{\frac{1}{2}\,\frac{1}{2}\,1}
+    ^{\frac{1}{2}\,\frac{1}{2}\,1}
+    =1,
+    \quad
+    C_{-\frac{1}{2}\,-\frac{1}{2}\,-1}
+    ^{\frac{1}{2}\,\frac{1}{2}\,1}
+    =1.
+
+Therefore,
+
+.. math::
+    \ket{1\,1}=\ket{\uparrow\uparrow},
+    \quad
+    \ket{1\,(-1)}=\ket{\downarrow\downarrow}.
+
+The coefficients in the `m=0` sector are
+
+.. math::
+    \begin{array}{c|cc}
+        (m_1,m_2)
+        &s=1&s=0\\ \hline
+        \left(\frac{1}{2},-\frac{1}{2}\right)
+        &\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}\\[2mm]
+        \left(-\frac{1}{2},\frac{1}{2}\right)
+        &\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{2}}
+    \end{array}.
+
+Thus, the expansion of the coupled states gives
+
+.. math::
+    \begin{aligned}
+        \ket{1\,0}
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow}
+        +\ket{\downarrow\uparrow}
+        \right),
+        \\
+        \ket{0\,0}
+        &=
+        \frac{1}{\sqrt{2}}
+        \left(
+        \ket{\uparrow\downarrow}
+        -\ket{\downarrow\uparrow}
+        \right).
+    \end{aligned}
+
+These agree with the triplet in Equation (4.175) and the singlet in Equation (4.176), respectively.

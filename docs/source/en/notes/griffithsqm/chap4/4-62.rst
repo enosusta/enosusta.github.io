@@ -1,0 +1,72 @@
+Problem 4.62
+==================
+
+Choose the eigenstates of `S_z` as the basis in the order
+
+.. math::
+    \ket{s\,s},\ket{s\,s-1},\ldots,\ket{s\,{-s}}.
+
+Since
+
+.. math::
+    S_z\ket{s\,m}=m\hbar\ket{s\,m},
+
+we have
+
+.. math::
+    S_z
+    =
+    \hbar
+    \begin{pmatrix}
+        s&0&0&\cdots&0\\
+        0&s-1&0&\cdots&0\\
+        0&0&s-2&\cdots&0\\
+        \vdots&\vdots&\vdots&\ddots&\vdots\\
+        0&0&0&\cdots&-s
+    \end{pmatrix}.
+
+Also,
+
+.. math::
+    S_\pm\ket{s\,m}
+    =
+    \hbar
+    \sqrt{\left(s\mp m\right)\left(s\pm m+1\right)}
+    \ket{s\,m\pm1}.
+
+Define
+
+.. math::
+    b_j\coloneqq\sqrt{\left(s+j\right)\left(s+1-j\right)}.
+
+It follows from `S_x=\left(S_++S_-\right)/2` that
+
+.. math::
+    S_x
+    =
+    \frac{\hbar}{2}
+    \begin{pmatrix}
+        0&b_s&0&0&\cdots&0\\
+        b_s&0&b_{s-1}&0&\cdots&0\\
+        0&b_{s-1}&0&b_{s-2}&\cdots&0\\
+        0&0&b_{s-2}&0&\cdots&0\\
+        \vdots&\vdots&\vdots&\vdots&\ddots&b_{-s+1}\\
+        0&0&0&0&b_{-s+1}&0
+    \end{pmatrix}.
+
+Similarly, `S_y=\left(S_+-S_-\right)/(2i)` gives
+
+.. math::
+    S_y
+    =
+    \frac{\hbar}{2}
+    \begin{pmatrix}
+        0&-ib_s&0&0&\cdots&0\\
+        ib_s&0&-ib_{s-1}&0&\cdots&0\\
+        0&ib_{s-1}&0&-ib_{s-2}&\cdots&0\\
+        0&0&ib_{s-2}&0&\cdots&0\\
+        \vdots&\vdots&\vdots&\vdots&\ddots&-ib_{-s+1}\\
+        0&0&0&0&ib_{-s+1}&0
+    \end{pmatrix}.
+
+All three matrices have dimensions `\left(2s+1\right)\times\left(2s+1\right)`.

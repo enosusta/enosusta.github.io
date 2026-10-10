@@ -1,0 +1,41 @@
+Problem 4.28
+==================
+
+If the electron is regarded as a rigid sphere of uniform density, its moment of inertia is
+
+.. math::
+    I=\frac{2}{5}mr_c^2.
+
+If its angular velocity is `\omega` and its speed at the equator is `v=\omega r_c`, then
+
+.. math::
+    S=I\omega
+    =\frac{2}{5}mr_cv.
+
+Setting this equal to `S=\hbar/2` gives
+
+.. math::
+    v=\frac{5\hbar}{4mr_c}.
+
+The classical electron radius can be written in terms of the fine-structure constant `\alpha` as
+
+.. math::
+    r_c
+    =\frac{e^2}{4\pi\epsilon_0mc^2}
+    =\frac{\alpha\hbar}{mc},
+
+so
+
+.. math::
+    v=\frac{5}{4\alpha}c.
+
+.. exec_code::
+
+    alpha = 7.2973525693e-3
+    c = 299792458.0
+
+    v = 5.0 * c / (4.0 * alpha)
+    print(f"v = {v:.3e} m/s")
+    print(f"v/c = {v/c:.1f}")
+
+This greatly exceeds the speed of light, so a model that treats the electron as a classical rigid sphere that literally rotates is not physically meaningful.

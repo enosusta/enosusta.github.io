@@ -1,0 +1,184 @@
+Problem 4.47
+==================
+
+Setting `u(r)=rR(r)`, the radial equation is
+
+.. math::
+    -\frac{\hbar^2}{2m}\dv{^2u}{r^2}
+    +
+    \left[
+    \frac{\hbar^2l\left(l+1\right)}{2mr^2}
+    +\frac{1}{2}m\omega^2r^2
+    \right]u
+    =
+    Eu.
+
+Introduce the dimensionless quantities
+
+.. math::
+    \rho\coloneqq\sqrt{\frac{m\omega}{\hbar}}\,r,
+    \quad
+    \epsilon\coloneqq\frac{E}{\hbar\omega}.
+
+Then
+
+.. math::
+    \dv{^2u}{\rho^2}
+    +
+    \left[
+    2\epsilon-\rho^2
+    -\frac{l\left(l+1\right)}{\rho^2}
+    \right]u
+    =0.
+
+Near the origin, `u\sim\rho^{l+1}`, while at infinity, `u\sim e^{-\rho^2/2}`. We therefore set
+
+.. math::
+    u(\rho)
+    =
+    \rho^{l+1}e^{-\rho^2/2}v(\rho).
+
+Substitution and simplification give
+
+.. math::
+    \dv{^2v}{\rho^2}
+    +
+    2\left(
+    \frac{l+1}{\rho}-\rho
+    \right)\dv{v}{\rho}
+    +
+    \left(
+    2\epsilon-2l-3
+    \right)v
+    =0.
+
+Expanding `v(\rho)=\sum_{j=0}^\infty c_j\rho^j`, the term proportional to `1/\rho` gives `c_1=0`, while the remaining coefficients satisfy
+
+.. math::
+    c_{j+2}
+    =
+    \frac{
+    2j+2l+3-2\epsilon
+    }{
+    \left(j+2\right)\left(j+2l+3\right)
+    }
+    c_j.
+
+Thus, all the odd coefficients vanish. If the series continues indefinitely, then `v\sim e^{\rho^2}`, making `u` non-normalizable. Therefore, terminating the series at the highest power `j=2n_r` requires
+
+.. math::
+    4n_r+2l+3-2\epsilon=0.
+
+Hence,
+
+.. math::
+    E
+    =
+    \left(
+    2n_r+l+\frac{3}{2}
+    \right)\hbar\omega,
+    \quad
+    n_r=0,1,2,\ldots.
+
+Apart from the normalization constant, the radial function is
+
+.. math::
+    R_{n_rl}(r)
+    \propto
+    \rho^l e^{-\rho^2/2}
+    L_{n_r}^{l+1/2}\left(\rho^2\right).
+
+Comparison with the principal quantum number in :ref:`notes/griffithsqm/chap4/4-46:Problem 4.46` gives
+
+.. math::
+    n=2n_r+l.
+
+On the other hand, the radial quantum number `N` labels the radial functions in order of increasing number of nodes as `N=1,2,\ldots`, so `N=n_r+1`. Therefore,
+
+.. math::
+    n=2\left(N-1\right)+l,
+    \quad
+    N=\frac{n-l}{2}+1.
+
+For fixed `n`, the allowed values of `l` are
+
+.. math::
+    l=n,n-2,n-4,\ldots,
+    \begin{cases}
+        0,&n\ \mathrm{even},\\
+        1,&n\ \mathrm{odd}.
+    \end{cases}
+
+The first few levels are shown using both the classification by radial quantum number and the classification by principal quantum number.
+
+.. plot::
+    :include-source: true
+    :context: reset
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.5), sharey=True)
+
+    ell = np.arange(0, 7)
+    for N in range(1, 5):
+        energy = 2 * (N - 1) + ell + 1.5
+        axes[0].plot(
+            ell,
+            energy,
+            marker="o",
+            linewidth=1.2,
+            label=rf"$N={N}$",
+        )
+
+    axes[0].set_title("Grouped by radial quantum number")
+    axes[0].set_xlabel(r"$l$")
+    axes[0].set_ylabel(r"$E/(\hbar\omega)$")
+    axes[0].set_xticks(ell)
+    axes[0].grid(alpha=0.25)
+    axes[0].legend()
+
+    for n in range(7):
+        allowed_ell = np.arange(n % 2, n + 1, 2)
+        energy = n + 1.5
+        axes[1].hlines(
+            energy,
+            allowed_ell.min() - 0.25,
+            allowed_ell.max() + 0.25,
+            color="tab:blue",
+            linewidth=1.2,
+        )
+        axes[1].scatter(
+            allowed_ell,
+            np.full_like(allowed_ell, energy, dtype=float),
+            color="tab:blue",
+            zorder=3,
+        )
+        axes[1].text(
+            6.35,
+            energy,
+            rf"$n={n}$",
+            va="center",
+            fontsize=8,
+        )
+
+    axes[1].set_title("Grouped by principal quantum number")
+    axes[1].set_xlabel(r"$l$")
+    axes[1].set_xticks(ell)
+    axes[1].set_xlim(-0.5, 7.1)
+    axes[1].grid(alpha=0.25)
+
+    fig.tight_layout()
+    plt.show()
+
+For each `l`, there are `2l+1` states with `m=-l,\ldots,l`. Therefore,
+
+.. math::
+    d(n)
+    =
+    \sum_{\substack{l=n,n-2,\ldots\\ l\geq0}}
+    \left(2l+1\right)
+    =
+    \frac{\left(n+1\right)\left(n+2\right)}{2},
+
+in agreement with the result obtained in Cartesian coordinates.

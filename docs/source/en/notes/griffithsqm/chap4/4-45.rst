@@ -1,0 +1,66 @@
+Problem 4.45
+==================
+
+a.  Acting on an arbitrary test function `\psi` and expanding gives
+
+    .. math::
+        \begin{aligned}
+            &
+            \left(
+            -i\hbar\bm{\nabla}-q\bm{A}
+            \right)^2\psi
+            \\
+            &\quad=
+            -\hbar^2\nabla^2\psi
+            +i\hbar q
+            \left(\bm{\nabla}\cdot\bm{A}\right)\psi
+            +2i\hbar q\,\bm{A}\cdot\bm{\nabla}\psi
+            +q^2A^2\psi.
+        \end{aligned}
+
+    In Example 4.6, `\bm{\nabla}\cdot\bm{A}=0` and `\varphi=0`, so
+
+    .. math::
+        \hat{H}
+        =
+        \frac{1}{2m}
+        \left[
+        -\hbar^2\nabla^2
+        +q^2A^2
+        +2i\hbar q\,\bm{A}\cdot\bm{\nabla}
+        \right].
+
+b.  Writing `U=e^{ig}`, we have `\hbar\bm{\nabla}g=q\bm{A}`. Equation (4.210) expresses the identity
+
+    .. math::
+        \left(
+        -i\hbar\bm{\nabla}-q\bm{A}
+        \right)Uf
+        =
+        -i\hbar U\bm{\nabla}f
+
+    for an arbitrary function `f`. Applying the operator once more to each component with `f=\partial_i\Psi'` gives
+
+    .. math::
+        \begin{aligned}
+            &
+            \left(
+            -i\hbar\bm{\nabla}-q\bm{A}
+            \right)^2\Psi
+            \\
+            &\quad=
+            \sum_i
+            \left(
+            -i\hbar\partial_i-qA_i
+            \right)
+            \left(
+            -i\hbar U\partial_i\Psi'
+            \right)
+            \\
+            &\quad=
+            -\hbar^2U\sum_i\partial_i^2\Psi'
+            =
+            -\hbar^2e^{ig}\nabla^2\Psi'.
+        \end{aligned}
+
+    This proves Equation (4.211).

@@ -1,0 +1,61 @@
+Problem 4.75
+==================
+
+On the ring, `r=b`, and the time-dependent vector potential is
+
+.. math::
+    \bm{A}(t)
+    =
+    \frac{\Phi(t)}{2\pi b}\hat{\bm{\phi}}.
+
+Therefore, the Hamiltonian can be written as
+
+.. math::
+    H(t)
+    =
+    \frac{\hbar^2}{2mb^2}
+    \left[
+    -i\pdv{}{\phi}
+    -\frac{q\Phi(t)}{2\pi\hbar}
+    \right]^2.
+
+Acting on the `\phi` dependence gives
+
+.. math::
+    \begin{aligned}
+        H(t)\Psi(t)
+        &=
+        \frac{\hbar^2}{2mb^2}
+        \left[
+        n-\frac{q\Phi(t)}{2\pi\hbar}
+        \right]^2\Psi(t)
+        \\
+        &=E_n(t)\Psi(t).
+    \end{aligned}
+
+On the other hand, the time derivative gives
+
+.. math::
+    i\hbar\pdv{\Psi}{t}
+    =
+    \hbar\dv{f}{t}\Psi.
+
+For the function `f(t)` given in the problem,
+
+.. math::
+    \hbar\dv{f}{t}
+    =
+    \frac{\hbar^2}{2mb^2}
+    \left[
+    n-\frac{q\Phi(t)}{2\pi\hbar}
+    \right]^2
+    =E_n(t),
+
+and hence
+
+.. math::
+    H(t)\Psi(t)
+    =
+    i\hbar\pdv{\Psi}{t}.
+
+Moreover, since `|\Psi|^2=1/(2\pi)`, the state is correctly normalized at every time.

@@ -4,7 +4,7 @@ Problem 4.69
 `\rho_0=2n` とすれば，動径方程式は，
 
 .. math::
-    \dv[2]{u}{\rho}
+    \dv{^2u}{\rho^2}
     =
     \left[
     1-\frac{2n}{\rho}

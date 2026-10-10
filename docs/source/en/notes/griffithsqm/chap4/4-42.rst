@@ -1,0 +1,155 @@
+Problem 4.42
+==================
+
+a.  Define the mechanical momentum by
+
+    .. math::
+        \bm{\pi}\coloneqq\bm{p}-q\bm{A}.
+
+    Then
+
+    .. math::
+        H=\frac{\bm{\pi}^2}{2m}+q\varphi.
+
+    Since `[\pi_j,r_i]=-i\hbar\delta_{ij}`,
+
+    .. math::
+        \begin{aligned}
+            [H,r_i]
+            &=
+            \frac{1}{2m}
+            \sum_j
+            \left(
+            \pi_j[\pi_j,r_i]
+            +[\pi_j,r_i]\pi_j
+            \right)
+            \\
+            &=
+            -\frac{i\hbar}{m}\pi_i.
+        \end{aligned}
+
+    Since `\bm{r}` has no explicit time dependence, the generalized Ehrenfest theorem gives
+
+    .. math::
+        \dv{}{t}\braket{r_i}
+        =
+        \frac{i}{\hbar}\braket{[H,r_i]}
+        =
+        \frac{1}{m}\braket{\pi_i}.
+
+    Combining the three components gives
+
+    .. math::
+        \dv{}{t}\braket{\bm{r}}
+        =
+        \frac{1}{m}
+        \braket{\bm{p}-q\bm{A}}.
+
+b.  From part (a), `m\braket{\bm{v}}=\braket{\bm{\pi}}`. The operator `\bm{\pi}` has explicit time dependence, with
+
+    .. math::
+        \pdv{\bm{\pi}}{t}
+        =
+        -q\pdv{\bm{A}}{t},
+
+    so
+
+    .. math::
+        \dv{}{t}\braket{\pi_i}
+        =
+        \frac{i}{\hbar}\braket{[H,\pi_i]}
+        -q\left\langle\pdv{A_i}{t}\right\rangle.
+
+    The required commutators are
+
+    .. math::
+        [\pi_i,\pi_j]
+        =
+        i\hbar q\sum_k\epsilon_{ijk}B_k,
+        \quad
+        [q\varphi,\pi_i]
+        =
+        i\hbar q\pdv{\varphi}{r_i}.
+
+    Therefore,
+
+    .. math::
+        \frac{i}{\hbar}
+        \left[
+        \frac{\bm{\pi}^2}{2m},\pi_i
+        \right]
+        =
+        \frac{q}{2m}
+        \left(
+        \bm{\pi}\times\bm{B}
+        -\bm{B}\times\bm{\pi}
+        \right)_i.
+
+    Combining the scalar-potential term with the explicit time dependence gives
+
+    .. math::
+        -q\bm{\nabla}\varphi
+        -q\pdv{\bm{A}}{t}
+        =
+        q\bm{E},
+
+    and hence
+
+    .. math::
+        m\dv{}{t}\braket{\bm{v}}
+        =
+        q\braket{\bm{E}}
+        +
+        \frac{q}{2m}
+        \braket{
+        \bm{\pi}\times\bm{B}
+        -\bm{B}\times\bm{\pi}
+        }.
+
+    Substituting `\bm{\pi}=\bm{p}-q\bm{A}` and using the fact that `\bm{A}` and `\bm{B}` commute gives
+
+    .. math::
+        \begin{aligned}
+            m\dv{}{t}\braket{\bm{v}}
+            ={}&
+            q\braket{\bm{E}}
+            +
+            \frac{q}{2m}
+            \braket{
+            \bm{p}\times\bm{B}
+            -\bm{B}\times\bm{p}
+            }
+            \\
+            &-
+            \frac{q^2}{m}
+            \braket{\bm{A}\times\bm{B}}.
+        \end{aligned}
+
+c.  If `\bm{E}` and `\bm{B}` are uniform over the region occupied by the wave packet, they can be taken outside the expectation values. Also, `\bm{p}` commutes with a uniform `\bm{B}`, so
+
+    .. math::
+        \bm{p}\times\bm{B}
+        =
+        -\bm{B}\times\bm{p}.
+
+    Therefore, the result of part (b) becomes
+
+    .. math::
+        \begin{aligned}
+            m\dv{}{t}\braket{\bm{v}}
+            &=
+            q\bm{E}
+            +
+            \frac{q}{m}
+            \braket{
+            \left(\bm{p}-q\bm{A}\right)\times\bm{B}
+            }
+            \\
+            &=
+            q\left(
+            \bm{E}
+            +\braket{\bm{v}}\times\bm{B}
+            \right).
+        \end{aligned}
+
+    Thus, the expectation value of the velocity obeys the Lorentz force law.

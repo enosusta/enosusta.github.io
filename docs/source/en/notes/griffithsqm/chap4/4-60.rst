@@ -1,0 +1,167 @@
+Problem 4.60
+==================
+
+a.  Introduce the following two uncoupled basis states:
+
+    .. math::
+        \begin{aligned}
+            \ket{+}
+            &\coloneqq
+            \ket{
+            \frac{1}{2}\ s_2\
+            \frac{1}{2}\ \left(m-\frac{1}{2}\right)
+            },
+            \\
+            \ket{-}
+            &\coloneqq
+            \ket{
+            \frac{1}{2}\ s_2\
+            -\frac{1}{2}\ \left(m+\frac{1}{2}\right)
+            }.
+        \end{aligned}
+
+    Write the desired state as `\ket{s\,m}=A\ket{+}+B\ket{-}`. The square of the total spin is
+
+    .. math::
+        S^2
+        =
+        \left(S^{(1)}\right)^2
+        +\left(S^{(2)}\right)^2
+        +2S_z^{(1)}S_z^{(2)}
+        +S_+^{(1)}S_-^{(2)}
+        +S_-^{(1)}S_+^{(2)}.
+
+    Defining `q\coloneqq s_2+1/2`, we have
+
+    .. math::
+        C
+        \coloneqq
+        \sqrt{
+        s_2\left(s_2+1\right)
+        -\left(m-\frac{1}{2}\right)
+        \left(m+\frac{1}{2}\right)
+        }
+        =
+        \sqrt{q^2-m^2}.
+
+    In the basis `\{\ket{+},\ket{-}\}`, the matrix for `S^2` is
+
+    .. math::
+        S^2
+        =
+        \hbar^2
+        \begin{pmatrix}
+            q^2+m&C\\
+            C&q^2-m
+        \end{pmatrix}.
+
+    Its eigenvalues are
+
+    .. math::
+        \hbar^2q\left(q+1\right),
+        \quad
+        \hbar^2q\left(q-1\right),
+
+    corresponding, respectively, to
+
+    .. math::
+        s=s_2+\frac{1}{2},
+        \quad
+        s=s_2-\frac{1}{2}.
+
+    For the upper eigenvalue `q(q+1)\hbar^2`, the eigenvalue equation is
+
+    .. math::
+        \left(m-q\right)A+CB=0.
+
+    Using `C=\sqrt{(q-m)(q+m)}` and the normalization condition `|A|^2+|B|^2=1` gives
+
+    .. math::
+        A
+        =
+        \sqrt{\frac{q+m}{2q}},
+        \quad
+        B
+        =
+        \sqrt{\frac{q-m}{2q}}.
+
+    Solving similarly for the lower eigenvalue `q(q-1)\hbar^2` and choosing the conventional phase gives
+
+    .. math::
+        A
+        =
+        \sqrt{\frac{q-m}{2q}},
+        \quad
+        B
+        =
+        -\sqrt{\frac{q+m}{2q}}.
+
+    Substituting back `q=s_2+1/2`, the two cases can be written together as
+
+    .. math::
+        A
+        =
+        \sqrt{
+        \frac{
+        s_2\mathbin{\pm}m+1/2
+        }{
+        2s_2+1
+        }
+        },
+        \quad
+        B
+        =
+        \mathbin{\pm}
+        \sqrt{
+        \frac{
+        s_2\mathbin{\mp}m+1/2
+        }{
+        2s_2+1
+        }
+        }.
+
+    The upper signs correspond to `s=s_2+1/2`, and the lower signs correspond to `s=s_2-1/2`.
+
+b.  Substituting `s_2=1/2` and `m=0` gives
+
+    .. math::
+        \begin{aligned}
+            \ket{1\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(
+            \ket{\uparrow\downarrow}
+            +\ket{\downarrow\uparrow}
+            \right),
+            \\
+            \ket{0\,0}
+            &=
+            \frac{1}{\sqrt{2}}
+            \left(
+            \ket{\uparrow\downarrow}
+            -\ket{\downarrow\uparrow}
+            \right),
+        \end{aligned}
+
+    in agreement with the triplet and singlet in Table 4.8. Also, for `s_2=1` and `m=1/2`,
+
+    .. math::
+        \begin{aligned}
+            \ket{\frac{3}{2}\,\frac{1}{2}}
+            &=
+            \sqrt{\frac{2}{3}}
+            \ket{\uparrow}\ket{1\,0}
+            +
+            \frac{1}{\sqrt{3}}
+            \ket{\downarrow}\ket{1\,1},
+            \\
+            \ket{\frac{1}{2}\,\frac{1}{2}}
+            &=
+            \frac{1}{\sqrt{3}}
+            \ket{\uparrow}\ket{1\,0}
+            -
+            \sqrt{\frac{2}{3}}
+            \ket{\downarrow}\ket{1\,1}.
+        \end{aligned}
+
+    These coefficients also agree with the table.

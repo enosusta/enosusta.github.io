@@ -1,0 +1,53 @@
+Problem 4.73
+==================
+
+Apply the generalized Ehrenfest theorem to `z`. Since `z` has no explicit time dependence,
+
+.. math::
+    \begin{aligned}
+        \dv{}{t}\braket{z}
+        &=
+        \frac{1}{i\hbar}\braket{[z,H]}
+        \\
+        &=
+        \frac{1}{i\hbar}
+        \braket{
+        \left[z,\frac{p_z^2}{2m}\right]
+        }
+        =\frac{\braket{p_z}}{m}.
+    \end{aligned}
+
+Next, apply the same theorem to `p_z`. For the magnetic field
+
+.. math::
+    \bm{B}
+    =-\alpha x\hat{\bm{i}}
+    +\left(B_0+\alpha z\right)\hat{\bm{k}},
+
+the position-dependent part of the Hamiltonian is
+
+.. math::
+    -\gamma\bm{B}\cdot\bm{S}
+    =
+    \gamma\alpha xS_x
+    -\gamma\left(B_0+\alpha z\right)S_z.
+
+Since the spin operators commute with position and momentum,
+
+.. math::
+    \begin{aligned}
+        \dv{}{t}\braket{p_z}
+        &=
+        \frac{1}{i\hbar}\braket{[p_z,H]}
+        \\
+        &=
+        -\braket{\pdv{H}{z}}
+        =\gamma\alpha\braket{S_z}.
+    \end{aligned}
+
+Therefore,
+
+.. math::
+    m\dv{^2}{t^2}\braket{z}
+    =
+    \gamma\alpha\braket{S_z}.

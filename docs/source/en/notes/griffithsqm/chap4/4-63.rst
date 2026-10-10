@@ -1,0 +1,92 @@
+Problem 4.63
+==================
+
+Write the spherical harmonics as
+
+.. math::
+    Y_l^m
+    =
+    K_l^m e^{im\phi}P_l^m\left(\cos\theta\right).
+
+Applying the raising operator gives
+
+.. math::
+    \begin{aligned}
+        L_+Y_l^m
+        &=
+        \hbar K_l^m e^{i\left(m+1\right)\phi}
+        \left[
+        \pdv{}{\theta}
+        -m\cot\theta
+        \right]
+        P_l^m\left(\cos\theta\right)
+        \\
+        &=
+        \hbar K_l^m e^{i\left(m+1\right)\phi}
+        P_l^{m+1}\left(\cos\theta\right).
+    \end{aligned}
+
+In the second line, we used `x=\cos\theta` and the differentiation formula given in the problem. On the other hand, the raising operator acts on normalized angular-momentum eigenstates according to
+
+.. math::
+    L_+Y_l^m
+    =
+    \hbar\sqrt{\left(l-m\right)\left(l+m+1\right)}
+    Y_l^{m+1}.
+
+Comparing the two expressions gives
+
+.. math::
+    K_l^{m+1}
+    =
+    \frac{K_l^m}
+    {\sqrt{\left(l-m\right)\left(l+m+1\right)}}.
+
+Setting `C(l)\coloneqq K_l^0` and iterating this recurrence relation yields
+
+.. math::
+    K_l^m
+    =
+    C(l)
+    \sqrt{\frac{\left(l-m\right)!}{\left(l+m\right)!}}.
+
+Using the lowering operator extends this result to negative `m` as well.
+
+Compare the result of :ref:`notes/griffithsqm/chap4/4-25:Problem 4.25` with
+
+.. math::
+    P_l^l\left(\cos\theta\right)
+    =
+    \frac{\left(-1\right)^l\left(2l\right)!}
+    {2^l l!}
+    \sin^l\theta.
+
+The general expression above gives
+
+.. math::
+    \begin{aligned}
+        Y_l^l
+        &=
+        \frac{C(l)}{\sqrt{\left(2l\right)!}}
+        e^{il\phi}P_l^l\left(\cos\theta\right)
+        \\
+        &=
+        \frac{\left(-1\right)^l C(l)\sqrt{\left(2l\right)!}}
+        {2^l l!}
+        \sin^l\theta e^{il\phi}.
+    \end{aligned}
+
+Equating its normalization factor to that in :ref:`notes/griffithsqm/chap4/4-25:Problem 4.25` gives
+
+.. math::
+    C(l)=\sqrt{\frac{2l+1}{4\pi}}.
+
+Therefore, the required normalization factor is
+
+.. math::
+    K_l^m
+    =
+    \sqrt{
+    \frac{2l+1}{4\pi}
+    \frac{\left(l-m\right)!}{\left(l+m\right)!}
+    }.

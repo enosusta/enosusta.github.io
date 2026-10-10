@@ -1,0 +1,96 @@
+Problem 4.30
+==================
+
+a.  The normalization condition gives
+
+    .. math::
+        1
+        =\chi^\dagger\chi
+        =|A|^2\left(9+16\right)
+        =25|A|^2,
+
+    so we may take
+
+    .. math::
+        A=\frac{1}{5},
+        \quad
+        \chi=\frac{1}{5}
+        \begin{pmatrix}
+            3i\\
+            4
+        \end{pmatrix}.
+
+b.  Using the spin matrices gives
+
+    .. math::
+        \begin{aligned}
+            \braket{S_x}
+            &=
+            \chi^\dagger S_x\chi
+            =0,
+            \\
+            \braket{S_y}
+            &=
+            \chi^\dagger S_y\chi
+            =-\frac{12}{25}\hbar,
+            \\
+            \braket{S_z}
+            &=
+            \chi^\dagger S_z\chi
+            =-\frac{7}{50}\hbar.
+        \end{aligned}
+
+c.  For spin `1/2`,
+
+    .. math::
+        S_x^2=S_y^2=S_z^2
+        =\frac{\hbar^2}{4},
+
+    so `\braket{S_j^2}=\hbar^2/4`. Therefore,
+
+    .. math::
+        \begin{aligned}
+            \sigma_{S_x}
+            &=
+            \sqrt{\braket{S_x^2}-\braket{S_x}^2}
+            =\frac{\hbar}{2},
+            \\
+            \sigma_{S_y}
+            &=
+            \sqrt{\frac{\hbar^2}{4}
+            -\frac{144\hbar^2}{625}}
+            =\frac{7\hbar}{50},
+            \\
+            \sigma_{S_z}
+            &=
+            \sqrt{\frac{\hbar^2}{4}
+            -\frac{49\hbar^2}{2500}}
+            =\frac{12\hbar}{25}.
+        \end{aligned}
+
+d.  Checking the three uncertainty relations in turn gives
+
+    .. math::
+        \begin{aligned}
+            \sigma_{S_x}\sigma_{S_y}
+            &=
+            \frac{7\hbar^2}{100}
+            =
+            \frac{\hbar}{2}
+            \left|\braket{S_z}\right|,
+            \\
+            \sigma_{S_y}\sigma_{S_z}
+            &=
+            \frac{42\hbar^2}{625}
+            \geq
+            \frac{\hbar}{2}
+            \left|\braket{S_x}\right|
+            =0,
+            \\
+            \sigma_{S_z}\sigma_{S_x}
+            &=
+            \frac{6\hbar^2}{25}
+            =
+            \frac{\hbar}{2}
+            \left|\braket{S_y}\right|.
+        \end{aligned}
