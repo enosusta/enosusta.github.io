@@ -11,7 +11,7 @@ a.  Faraday の電磁誘導の法則から，円環に沿う起電力は，
         2\pi bE_\phi
         =-\dv{\Phi}{t}
 
-    である。粒子の接線速度を `v_\phi=b\omega` とすれば，電場が粒子になす仕事の率は，
+    となる。粒子の接線速度を `v_\phi=b\omega` とすれば，電場が粒子になす仕事の率は，
 
     .. math::
         \begin{aligned}
@@ -27,7 +27,7 @@ a.  Faraday の電磁誘導の法則から，円環に沿う起電力は，
         \dv{W}{\Phi}
         =-q\frac{\omega}{2\pi}
 
-    を得る。
+    となる。
 
 b.  円環上で，ベクトルポテンシャルは `\bm{A}=\left[\Phi/(2\pi b)\right]\hat{\bm{\phi}}` である。したがって，力学的角運動量の `z` 成分は，
 
@@ -53,7 +53,7 @@ b.  円環上で，ベクトルポテンシャルは `\bm{A}=\left[\Phi/(2\pi b)
         n\hbar-\frac{q\Phi}{2\pi}
         \right)\psi_n
 
-    を得る。よって，
+    となる。よって，
 
     .. math::
         mb^2\omega
@@ -72,7 +72,7 @@ c.  定常状態のエネルギーを，
         n\hbar-\frac{q\Phi}{2\pi}
         \right)^2
 
-    と書く。磁束で微分し，(b) の角速度を用いると，
+    と書く。磁束で微分し，\(b) の角速度を用いると，
 
     .. math::
         \begin{aligned}

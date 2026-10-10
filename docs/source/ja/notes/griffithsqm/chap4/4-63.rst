@@ -41,7 +41,7 @@ Problem 4.63
     \frac{K_l^m}
     {\sqrt{\left(l-m\right)\left(l+m+1\right)}}
 
-を得る。`C(l)\coloneqq K_l^0` としてこの漸化式を反復すれば，
+となる。`C(l)\coloneqq K_l^0` としてこの漸化式を反復すれば，
 
 .. math::
     K_l^m
@@ -51,7 +51,7 @@ Problem 4.63
 
 となる。この式は下降演算子を用いることで，負の `m` にも拡張される。
 
-問題 4.25 の結果と，
+:ref:`notes/griffithsqm/chap4/4-25:Problem 4.25` の結果と，
 
 .. math::
     P_l^l\left(\cos\theta\right)
@@ -74,12 +74,12 @@ Problem 4.63
         \sin^l\theta e^{il\phi}
     \end{aligned}
 
-である。問題 4.25 の規格化係数と等置すると，
+となる。:ref:`notes/griffithsqm/chap4/4-25:Problem 4.25` の規格化係数と等置すると，
 
 .. math::
     C(l)=\sqrt{\frac{2l+1}{4\pi}}
 
-を得る。したがって，求める規格化因子は，
+となる。したがって，求める規格化因子は，
 
 .. math::
     K_l^m
@@ -89,4 +89,4 @@ Problem 4.63
     \frac{\left(l-m\right)!}{\left(l+m\right)!}
     }
 
-である。
+となる。

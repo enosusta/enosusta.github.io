@@ -11,7 +11,7 @@ a.  力学的運動量を，
     .. math::
         H=\frac{\bm{\pi}^2}{2m}+q\varphi
 
-    である。`[\pi_j,r_i]=-i\hbar\delta_{ij}` だから，
+    となる。`[\pi_j,r_i]=-i\hbar\delta_{ij}` だから，
 
     .. math::
         \begin{aligned}
@@ -37,7 +37,7 @@ a.  力学的運動量を，
         =
         \frac{1}{m}\braket{\pi_i}
 
-    を得る。3成分をまとめれば，
+    となる。3成分をまとめれば，
 
     .. math::
         \dv{}{t}\braket{\bm{r}}
@@ -45,7 +45,7 @@ a.  力学的運動量を，
         \frac{1}{m}
         \braket{\bm{p}-q\bm{A}}
 
-    である。
+    となる。
 
 b.  \(a) より `m\braket{\bm{v}}=\braket{\bm{\pi}}` である。`\bm{\pi}` は陽に時間へ依存し，
 
@@ -62,7 +62,7 @@ b.  \(a) より `m\braket{\bm{v}}=\braket{\bm{\pi}}` である。`\bm{\pi}` は�
         \frac{i}{\hbar}\braket{[H,\pi_i]}
         -q\left\langle\pdv{A_i}{t}\right\rangle
 
-    である。必要な交換子は，
+    となる。必要な交換子は，
 
     .. math::
         [\pi_i,\pi_j]
@@ -73,7 +73,7 @@ b.  \(a) より `m\braket{\bm{v}}=\braket{\bm{\pi}}` である。`\bm{\pi}` は�
         =
         i\hbar q\pdv{\varphi}{r_i}
 
-    である。したがって，
+    となる。したがって，
 
     .. math::
         \frac{i}{\hbar}
@@ -108,7 +108,7 @@ b.  \(a) より `m\braket{\bm{v}}=\braket{\bm{\pi}}` である。`\bm{\pi}` は�
         -\bm{B}\times\bm{\pi}
         }
 
-    を得る。`\bm{\pi}=\bm{p}-q\bm{A}` を代入し，`\bm{A}` と `\bm{B}` は可換であることを用いれば，
+    となる。`\bm{\pi}=\bm{p}-q\bm{A}` を代入し，`\bm{A}` と `\bm{B}` は可換であることを用いれば，
 
     .. math::
         \begin{aligned}
@@ -136,7 +136,7 @@ c.  `\bm{E}` と `\bm{B}` が波束の領域で一様なら，これらを期待
         =
         -\bm{B}\times\bm{p}
 
-    である。したがって，\(b) の結果は，
+    となる。したがって，\(b) の結果は，
 
     .. math::
         \begin{aligned}

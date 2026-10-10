@@ -21,7 +21,7 @@ a.  磁場は `z` 方向だけを向くので，
             \end{pmatrix}
         \end{aligned}
 
-    である。
+    となる。
 
 b.  `\chi(t)=(a(t),b(t))^{\mathsf T}` と書くと，時間に依存する Schrödinger 方程式は，
 
@@ -50,7 +50,7 @@ b.  `\chi(t)=(a(t),b(t))^{\mathsf T}` と書くと，時間に依存する Schr�
         \frac{\gamma B_0}{2\omega}
         \sin\left(\omega t\right)
 
-    を得る。初期状態は，
+    となる。初期状態は，
 
     .. math::
         \chi(0)
@@ -76,7 +76,7 @@ b.  `\chi(t)=(a(t),b(t))^{\mathsf T}` と書くと，時間に依存する Schr�
 
     となる。
 
-c.  `S_x` の負の固有 spinor は，
+c.  `S_x` の負の固有スピノールは，
 
     .. math::
         \chi_-^{(x)}
@@ -97,7 +97,7 @@ c.  `S_x` の負の固有 spinor は，
         =
         i\sin\beta(t)
 
-    である。したがって，
+    となる。したがって，
 
     .. math::
         P_x^-(t)
@@ -108,7 +108,7 @@ c.  `S_x` の負の固有 spinor は，
         \sin\left(\omega t\right)
         \right]
 
-    を得る。
+    となる。
 
 d.  完全な反転には，ある時刻で `P_x^-=1`，すなわち `|\beta|=\pi/2` が少なくとも一度実現すればよい。`|\sin(\omega t)|\leq1` だから，
 
@@ -130,4 +130,4 @@ d.  完全な反転には，ある時刻で `P_x^-=1`，すなわち `|\beta|=\p
         =
         \frac{\pi m\omega}{e}
 
-    である。
+    となる。

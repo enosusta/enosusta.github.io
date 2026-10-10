@@ -32,7 +32,7 @@ Problem 4.59
     \frac{\hbar}{2}
     \hat{\bm{b}}\cdot\bm{\sigma}^{(1)}
 
-である。Pauli 行列の積の法則から，
+となる。Pauli 行列の積の法則から，
 
 .. math::
     \begin{aligned}
@@ -55,7 +55,7 @@ Problem 4.59
 .. math::
     \braket{\bm{\sigma}^{(1)}}=0
 
-である。よって，
+となる。よって，
 
 .. math::
     \begin{aligned}
@@ -70,4 +70,4 @@ Problem 4.59
         -\frac{\hbar^2}{4}\cos\theta
     \end{aligned}
 
-を得る。
+となる。

@@ -1,7 +1,7 @@
 Problem 4.46
 ==================
 
-a.  `r^2=x^2+y^2+z^2` なので，Hamiltonian は，
+a.  `r^2=x^2+y^2+z^2` なので，ハミルトニアンは，
 
     .. math::
         \begin{aligned}
@@ -9,9 +9,9 @@ a.  `r^2=x^2+y^2+z^2` なので，Hamiltonian は，
             &=
             -\frac{\hbar^2}{2m}
             \left(
-            \pdv[2]{}{x}
-            +\pdv[2]{}{y}
-            +\pdv[2]{}{z}
+            \pdv{^2}{x^2}
+            +\pdv{^2}{y^2}
+            +\pdv{^2}{z^2}
             \right)
             +
             \frac{1}{2}m\omega^2
@@ -52,7 +52,7 @@ a.  `r^2=x^2+y^2+z^2` なので，Hamiltonian は，
         \quad
         n=0,1,2,\ldots
 
-    を得る。
+    となる。
 
 b.  縮退度は，`n_x+n_y+n_z=n` を満たす非負整数の組の個数である。`n_x` を固定すると `n_y` には `n-n_x+1` 通りの選択があるので，
 

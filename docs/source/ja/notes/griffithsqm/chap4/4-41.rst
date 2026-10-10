@@ -42,7 +42,7 @@ Problem 4.41
         \left(\bm{S}^{(1)}\times\bm{S}^{(2)}\right)_z
     \end{aligned}
 
-を得る。同じ計算を任意の成分 `i` について行うと，
+となる。同じ計算を任意の成分 `i` について行うと，
 
 .. math::
     \begin{aligned}
@@ -64,7 +64,7 @@ Problem 4.41
     2i\hbar
     \left(\bm{S}^{(1)}\times\bm{S}^{(2)}\right)
 
-である。同様に，
+となる。同様に，
 
 .. math::
     [S^2,\bm{S}^{(2)}]

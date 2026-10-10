@@ -42,7 +42,7 @@ Problem 4.44
     -i\hbar\bm{\nabla}-q\bm{A}
     \right)^2\Psi
 
-である。一方，時間微分は，
+となる。一方，時間微分は，
 
 .. math::
     i\hbar\pdv{\Psi'}{t}
@@ -52,7 +52,7 @@ Problem 4.44
     -q\pdv{\Lambda}{t}\Psi
     \right)
 
-となる。変換後の Hamiltonian を `\Psi'` に作用させると，`\varphi'=\varphi-\partial\Lambda/\partial t` より，
+となる。変換後のハミルトニアンを `\Psi'` に作用させると，`\varphi'=\varphi-\partial\Lambda/\partial t` より，
 
 .. math::
     \begin{aligned}
@@ -79,4 +79,4 @@ Problem 4.44
         i\hbar\pdv{\Psi'}{t}
     \end{aligned}
 
-を得る。したがって，`\Psi'` は `\varphi'`，`\bm{A}'` に対する Schrödinger 方程式を満たす。また `|U|=1` なので，確率密度は `|\Psi'|^2=|\Psi|^2` のままである。
+となる。したがって，`\Psi'` は `\varphi'`，`\bm{A}'` に対する Schrödinger 方程式を満たす。また `|U|=1` なので，確率密度は `|\Psi'|^2=|\Psi|^2` のままである。

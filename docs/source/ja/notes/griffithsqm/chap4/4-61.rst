@@ -22,7 +22,7 @@ Problem 4.61
         0&0&\sqrt{3}&0
     \end{pmatrix}
 
-を得る。`\mu\coloneqq2\lambda/\hbar` と置けば，特性方程式は，
+となる。`\mu\coloneqq2\lambda/\hbar` と置けば，特性方程式は，
 
 .. math::
     \begin{aligned}
@@ -50,4 +50,4 @@ Problem 4.61
     -\frac{\hbar}{2},\quad
     -\frac{3\hbar}{2}
 
-である。
+となる。

@@ -30,9 +30,9 @@ a.  任意の試験関数 `\psi` に作用させて展開すると，
         +2i\hbar q\,\bm{A}\cdot\bm{\nabla}
         \right]
 
-    を得る。
+    となる。
 
-b.  `U=e^{ig}` と書けば，`\hbar\bm{\nabla}g=q\bm{A}` である。式 4.210 は，任意の関数 `f` に対する恒等式，
+b.  `U=e^{ig}` と書けば，`\hbar\bm{\nabla}g=q\bm{A}` である。式 (4.210) は，任意の関数 `f` に対する恒等式，
 
     .. math::
         \left(
@@ -65,4 +65,4 @@ b.  `U=e^{ig}` と書けば，`\hbar\bm{\nabla}g=q\bm{A}` である。式 4.210 
             -\hbar^2e^{ig}\nabla^2\Psi'
         \end{aligned}
 
-    となり，式 4.211 が得られる。
+    となり，式 (4.211) が成り立つ。

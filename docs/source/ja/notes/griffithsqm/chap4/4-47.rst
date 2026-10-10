@@ -4,7 +4,7 @@ Problem 4.47
 `u(r)=rR(r)` と置くと，動径方程式は，
 
 .. math::
-    -\frac{\hbar^2}{2m}\dv[2]{u}{r}
+    -\frac{\hbar^2}{2m}\dv{^2u}{r^2}
     +
     \left[
     \frac{\hbar^2l\left(l+1\right)}{2mr^2}
@@ -13,7 +13,7 @@ Problem 4.47
     =
     Eu
 
-である。無次元量，
+となる。無次元量，
 
 .. math::
     \rho\coloneqq\sqrt{\frac{m\omega}{\hbar}}\,r,
@@ -23,7 +23,7 @@ Problem 4.47
 を導入すると，
 
 .. math::
-    \dv[2]{u}{\rho}
+    \dv{^2u}{\rho^2}
     +
     \left[
     2\epsilon-\rho^2
@@ -41,7 +41,7 @@ Problem 4.47
 と置く。代入して整理すると，
 
 .. math::
-    \dv[2]{v}{\rho}
+    \dv{^2v}{\rho^2}
     +
     2\left(
     \frac{l+1}{\rho}-\rho
@@ -52,7 +52,7 @@ Problem 4.47
     \right)v
     =0
 
-を得る。`v(\rho)=\sum_{j=0}^\infty c_j\rho^j` と展開すれば，`1/\rho` の項から `c_1=0` であり，残りの係数は，
+となる。`v(\rho)=\sum_{j=0}^\infty c_j\rho^j` と展開すれば，`1/\rho` の項から `c_1=0` であり，残りの係数は，
 
 .. math::
     c_{j+2}
@@ -88,21 +88,21 @@ Problem 4.47
     \rho^l e^{-\rho^2/2}
     L_{n_r}^{l+1/2}\left(\rho^2\right)
 
-である。
+となる。
 
-問題 4.46 の主量子数と比較すると，
+:ref:`notes/griffithsqm/chap4/4-46:Problem 4.46` の主量子数と比較すると，
 
 .. math::
     n=2n_r+l
 
-である。一方，動径量子数 `N` は動径関数を節の少ない順に `N=1,2,\ldots` と数えるため，`N=n_r+1` である。よって，
+となる。一方，動径量子数 `N` は動径関数を節の少ない順に `N=1,2,\ldots` と数えるため，`N=n_r+1` である。よって，
 
 .. math::
     n=2\left(N-1\right)+l,
     \quad
     N=\frac{n-l}{2}+1
 
-を得る。固定した `n` に許される `l` は，
+となる。固定した `n` に許される `l` は，
 
 .. math::
     l=n,n-2,n-4,\ldots,
@@ -111,7 +111,7 @@ Problem 4.47
         1,&n\ \mathrm{odd}
     \end{cases}
 
-である。最初のいくつかの準位を，動径量子数による分類と主量子数による分類の両方で示す。
+となる。最初のいくつかの準位を，動径量子数による分類と主量子数による分類の両方で示す。
 
 .. plot::
     :include-source: true

@@ -39,7 +39,7 @@ Problem 4.75
     =
     \hbar\dv{f}{t}\Psi
 
-を得る。問題文の `f(t)` に対して，
+となる。問題文の `f(t)` に対して，
 
 .. math::
     \hbar\dv{f}{t}

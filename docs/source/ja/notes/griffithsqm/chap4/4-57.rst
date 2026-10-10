@@ -15,7 +15,7 @@ a.  `L_z=xp_y-yp_x` なので，
             -2i\hbar xy
         \end{aligned}
 
-    である。したがって，不確定性原理は，
+    となる。したがって，不確定性原理は，
 
     .. math::
         \sigma_{x^2}\sigma_{L_z}

@@ -8,7 +8,7 @@ a.  格子間隔を `\Delta r=b/(N+1)`，内部格子点を `r_j=j\Delta r` と�
         \coloneqq
         \frac{\hbar^2}{2m_e\left(\Delta r\right)^2}
 
-    である。有効ポテンシャルをこの尺度で割ると，
+    となる。有効ポテンシャルをこの尺度で割ると，
 
     .. math::
         \begin{aligned}
@@ -29,7 +29,7 @@ a.  格子間隔を `\Delta r=b/(N+1)`，内部格子点を `r_j=j\Delta r` と�
             \beta\coloneqq\frac{b}{\left(N+1\right)a}
         \end{aligned}
 
-    を得る。ここでは `a=4\pi\epsilon_0\hbar^2/(m_ee^2)` を用いた。したがって，無次元ハミルトニアン `\bm{H}/\lambda` は，対角要素が `2+v_j`，隣接する非対角要素が `-1` の三重対角行列である。
+    となる。ここでは `a=4\pi\epsilon_0\hbar^2/(m_ee^2)` を用いた。したがって，無次元ハミルトニアン `\bm{H}/\lambda` は，対角要素が `2+v_j`，隣接する非対角要素が `-1` の三重対角行列である。
 
 b.  `\beta=1/50`，`N=1000` として，三重対角行列の最低三つの固有値を計算する。`|E_1|=\hbar^2/(2m_ea^2)` とすると `\lambda=|E_1|/\beta^2` なので，数値固有値 `\varepsilon` は `E/|E_1|=\varepsilon/\beta^2` に変換できる。
 

@@ -34,7 +34,7 @@ Problem 4.62
     \sqrt{\left(s\mp m\right)\left(s\pm m+1\right)}
     \ket{s\,m\pm1}
 
-である。ここで，
+となる。ここで，
 
 .. math::
     b_j\coloneqq\sqrt{\left(s+j\right)\left(s+1-j\right)}
@@ -54,7 +54,7 @@ Problem 4.62
         0&0&0&0&b_{-s+1}&0
     \end{pmatrix}
 
-を得る。同様に，`S_y=\left(S_+-S_-\right)/(2i)` から，
+となる。同様に，`S_y=\left(S_+-S_-\right)/(2i)` から，
 
 .. math::
     S_y

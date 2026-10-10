@@ -55,7 +55,7 @@ b.  軌道運動とスピンの磁気モーメントを含むハミルトニア�
         \bm{B}_0\times\bm{r}
         \right|^2
         =
-        r^2B_0^2-left(\bm{r}\cdot\bm{B}_0\right)^2
+        r^2B_0^2-\left(\bm{r}\cdot\bm{B}_0\right)^2
 
     を用いると，
 
@@ -69,8 +69,8 @@ b.  軌道運動とスピンの磁気モーメントを含むハミルトニア�
             &+
             \frac{q^2}{8m}
             \left[
-            r^2B_0^2-left(\bm{r}\cdot\bm{B}_0\right)^2
+            r^2B_0^2-\left(\bm{r}\cdot\bm{B}_0\right)^2
             \right]
         \end{aligned}
 
-    を得る。
+    となる。

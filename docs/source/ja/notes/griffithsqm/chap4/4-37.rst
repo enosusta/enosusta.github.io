@@ -25,9 +25,9 @@ a.  全下降演算子は `S_-=S_-^{(1)}+S_-^{(2)}` である。したがって�
             \sqrt{2}\hbar\ket{1\,(-1)}
         \end{aligned}
 
-    となり，梯子演算子の一般式と一致する。
+    となり，はしご演算子の一般式と一致する。
 
-b.  singlet 状態へ上昇演算子を作用させると，
+b.  一重項状態へ上昇演算子を作用させると，
 
     .. math::
         \begin{aligned}
@@ -61,9 +61,9 @@ b.  singlet 状態へ上昇演算子を作用させると，
         \right)
         =0
 
-    である。
+    となる。
 
-c.  `\ket{1\,1}=\ket{\uparrow\uparrow}` は梯子の最上段なので `S_+\ket{1\,1}=0` であり，`S_z\ket{1\,1}=\hbar\ket{1\,1}` である。恒等式，
+c.  `\ket{1\,1}=\ket{\uparrow\uparrow}` ははしごの最上段なので `S_+\ket{1\,1}=0` であり，`S_z\ket{1\,1}=\hbar\ket{1\,1}` である。恒等式
 
     .. math::
         S^2=S_-S_++S_z^2+\hbar S_z
@@ -75,7 +75,7 @@ c.  `\ket{1\,1}=\ket{\uparrow\uparrow}` は梯子の最上段なので `S_+\ket{
         =
         2\hbar^2\ket{1\,1}
 
-    を得る。一方，`\ket{1\,(-1)}=\ket{\downarrow\downarrow}` は最下段なので `S_-\ket{1\,(-1)}=0` であり，`S_z\ket{1\,(-1)}=-\hbar\ket{1\,(-1)}` である。そこで，
+    となる。一方，`\ket{1\,(-1)}=\ket{\downarrow\downarrow}` は最下段なので `S_-\ket{1\,(-1)}=0` であり，`S_z\ket{1\,(-1)}=-\hbar\ket{1\,(-1)}` である。そこで，
 
     .. math::
         S^2=S_+S_-+S_z^2-\hbar S_z

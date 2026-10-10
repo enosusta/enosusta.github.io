@@ -31,7 +31,7 @@ a.  与えられたポテンシャルは，
 
     である。
 
-b.  Hamiltonian は，
+b.  ハミルトニアンは，
 
     .. math::
         \begin{aligned}
@@ -66,7 +66,7 @@ b.  Hamiltonian は，
         \quad
         \omega_2\coloneqq\sqrt{\frac{2qK}{m}}
 
-    と置く。`x`--`y` 部分の角括弧内の最初の2項は振動数 `\omega_1/2` の2次元等方調和振動子である。その動径量子数を `n_\rho`，`L_z` の量子数を `m_l` とすると，
+    と置く。`x`-`y` 部分の角括弧内の最初の2項は振動数 `\omega_1/2` の2次元等方調和振動子である。その動径量子数を `n_\rho`，`L_z` の量子数を `m_l` とすると，
 
     .. math::
         \begin{aligned}
@@ -97,7 +97,7 @@ b.  Hamiltonian は，
         \quad
         n_2=0,1,2,\ldots
 
-    である。したがって，全エネルギーは，
+    となる。したがって，全エネルギーは，
 
     .. math::
         E(n_1,n_2)

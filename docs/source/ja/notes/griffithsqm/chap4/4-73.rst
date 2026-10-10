@@ -20,7 +20,7 @@ Problem 4.73
 
 .. math::
     \bm{B}
-    =-alpha x\hat{\bm{i}}
+    =-\alpha x\hat{\bm{i}}
     +\left(B_0+\alpha z\right)\hat{\bm{k}}
 
 に対して，ハミルトニアンの位置依存部分は，
@@ -31,7 +31,7 @@ Problem 4.73
     \gamma\alpha xS_x
     -\gamma\left(B_0+\alpha z\right)S_z
 
-である。スピン演算子は位置および運動量と可換なので，
+となる。スピン演算子は位置および運動量と可換なので，
 
 .. math::
     \begin{aligned}
@@ -43,11 +43,11 @@ Problem 4.73
         =\gamma\alpha\braket{S_z}
     \end{aligned}
 
-を得る。したがって，
+となる。したがって，
 
 .. math::
-    m\dv[2]{}{t}\braket{z}
+    m\dv{^2}{t^2}\braket{z}
     =
     \gamma\alpha\braket{S_z}
 
-である。
+となる。
